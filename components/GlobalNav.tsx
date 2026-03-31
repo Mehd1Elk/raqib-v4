@@ -31,8 +31,10 @@ export function GlobalNav() {
           <a href="/eigen?tab=agents" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">255 Agents</a>
           <a href="/eigen?tab=board" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Board Meeting</a>
           <a href="/eigen?tab=gallery" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Galerie 59 docs</a>
-          <a href="/eigen?tab=terminal" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Terminal</a>
           <a href="/eigen?tab=conquest" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Conquête 2026</a>
+          <a href="/eigen?tab=decisions" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Décisions</a>
+          <a href="/eigen?tab=stream" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Stream</a>
+          <a href="/eigen?tab=terminal" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Terminal</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">DASHBOARDS</div>
           <a href="/dashboards/investor" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Investisseur (Londres)</a>
@@ -47,17 +49,16 @@ export function GlobalNav() {
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">ENTITÉS</div>
           {[
-            { label: 'NOOS', href: '/noos' },
-            { label: 'ÆLYA', href: '/aelya' },
-            { label: 'MYNε', href: '/myne' },
-            { label: 'BURHAN', href: '/burhan' },
-            { label: 'YrKnown', href: '/yrknown' },
+            { label: 'NOOS — Psychiatrie', href: '/entity/noos' },
+            { label: 'ÆLYA — Consentement', href: '/entity/aelya' },
+            { label: 'MYNε — Marketplace', href: '/entity/myne' },
+            { label: 'BURHAN — Audit trail', href: '/entity/burhan' },
+            { label: 'YrKnown — Savoir tacite', href: '/entity/yrknown' },
             { label: 'DIWANE', href: '/diwane' },
             { label: 'AlgueSov', href: '/alguesov' },
             { label: 'AMANA', href: '/amana' },
             { label: 'CG SA', href: '/cg' },
             { label: 'Cercle du Gazoduc', href: '/cercle' },
-            { label: 'EIGEN Stratégique', href: '/eigen' },
           ].map(e => (
             <a key={e.label} href={e.href} className="block px-3 py-1 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[10px] text-t3 pl-6">{e.label}</a>
           ))}

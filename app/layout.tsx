@@ -7,6 +7,7 @@ import WormholeBreadcrumb from '@/components/wormhole/WormholeBreadcrumb';
 import LoadingBar from '@/components/LoadingBar';
 import { ClientProviders } from '@/components/ClientProviders';
 import StatusBar from '@/components/StatusBar';
+import ConscienceBar from '@/components/ConscienceBar';
 
 const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');
 
@@ -70,6 +71,7 @@ export default function RootLayout({
         <ClientProviders>
           {children}
         </ClientProviders>
+        <ConscienceBar />
         <StatusBar />
       </body>
     </html>
