@@ -16,6 +16,7 @@ const SynergyMatrix = dynamic(() => import('@/components/viz/networks/SynergyMat
 const HeatMap = dynamic(() => import('@/components/viz/maps/HeatMap').then(m => ({ default: m.HeatMap })), { ssr: false });
 const PinMap = dynamic(() => import('@/components/viz/maps/PinMap').then(m => ({ default: m.PinMap })), { ssr: false });
 const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false });
+const INSEEMap = dynamic(() => import('@/components/viz/maps/INSEEMap').then(m => ({ default: m.INSEEMap })), { ssr: false });
 
 // Entity → map type
 const GEO_ENTITIES = ['noos', 'cg', 'alguesov', 'amana'];
@@ -87,6 +88,16 @@ export function EntityDashboardClient({ entityId, entityColor, recentEntries, to
         </div>
         <EntityMap entityId={entityId} />
       </section>
+
+      {/* Rangée 2b — INSEEMap pour NOOS (vue France détaillée) */}
+      {entityId === 'noos' && (
+        <section>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            FRANCE — DENSITÉ PSYCHIATRES / 100K HAB.
+          </div>
+          <INSEEMap height={500} />
+        </section>
+      )}
 
       {/* Rangée 3 — 2 colonnes */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
