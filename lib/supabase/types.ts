@@ -14,6 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
+      agent_chats: {
+        Row: {
+          agent_id: string
+          content: string
+          created_at: string | null
+          id: string
+          role: string
+        }
+        Insert: {
+          agent_id: string
+          content: string
+          created_at?: string | null
+          id?: string
+          role: string
+        }
+        Update: {
+          agent_id?: string
+          content?: string
+          created_at?: string | null
+          id?: string
+          role?: string
+        }
+        Relationships: []
+      }
+      agent_communications: {
+        Row: {
+          comm_type: string | null
+          content: string
+          created_at: string | null
+          from_agent: string
+          id: string
+          metadata: Json | null
+          to_agent: string
+        }
+        Insert: {
+          comm_type?: string | null
+          content: string
+          created_at?: string | null
+          from_agent: string
+          id?: string
+          metadata?: Json | null
+          to_agent: string
+        }
+        Update: {
+          comm_type?: string | null
+          content?: string
+          created_at?: string | null
+          from_agent?: string
+          id?: string
+          metadata?: Json | null
+          to_agent?: string
+        }
+        Relationships: []
+      }
       agent_registry: {
         Row: {
           created_at: string | null
@@ -188,6 +242,141 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      cohort_discussions: {
+        Row: {
+          closed_at: string | null
+          cohort_id: string
+          created_at: string | null
+          id: string
+          message_count: number | null
+          status: string | null
+          topic: string
+        }
+        Insert: {
+          closed_at?: string | null
+          cohort_id: string
+          created_at?: string | null
+          id?: string
+          message_count?: number | null
+          status?: string | null
+          topic: string
+        }
+        Update: {
+          closed_at?: string | null
+          cohort_id?: string
+          created_at?: string | null
+          id?: string
+          message_count?: number | null
+          status?: string | null
+          topic?: string
+        }
+        Relationships: []
+      }
+      cohort_messages: {
+        Row: {
+          agent_id: string
+          agent_name: string
+          content: string
+          created_at: string | null
+          discussion_id: string
+          id: string
+          message_type: string | null
+          reply_to: string | null
+        }
+        Insert: {
+          agent_id: string
+          agent_name: string
+          content: string
+          created_at?: string | null
+          discussion_id: string
+          id?: string
+          message_type?: string | null
+          reply_to?: string | null
+        }
+        Update: {
+          agent_id?: string
+          agent_name?: string
+          content?: string
+          created_at?: string | null
+          discussion_id?: string
+          id?: string
+          message_type?: string | null
+          reply_to?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cohort_messages_discussion_id_fkey"
+            columns: ["discussion_id"]
+            isOneToOne: false
+            referencedRelation: "cohort_discussions"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "cohort_messages_reply_to_fkey"
+            columns: ["reply_to"]
+            isOneToOne: false
+            referencedRelation: "cohort_messages"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      conquest_cards: {
+        Row: {
+          blockers: string[] | null
+          column_status: string | null
+          days_left: number | null
+          deadline: string | null
+          description: string | null
+          entity: string | null
+          entity_color: string | null
+          id: string
+          notes: string | null
+          position: number | null
+          priority: string | null
+          progress: number | null
+          responsible: string | null
+          title: string
+          updated_at: string | null
+          validated: boolean | null
+        }
+        Insert: {
+          blockers?: string[] | null
+          column_status?: string | null
+          days_left?: number | null
+          deadline?: string | null
+          description?: string | null
+          entity?: string | null
+          entity_color?: string | null
+          id: string
+          notes?: string | null
+          position?: number | null
+          priority?: string | null
+          progress?: number | null
+          responsible?: string | null
+          title: string
+          updated_at?: string | null
+          validated?: boolean | null
+        }
+        Update: {
+          blockers?: string[] | null
+          column_status?: string | null
+          days_left?: number | null
+          deadline?: string | null
+          description?: string | null
+          entity?: string | null
+          entity_color?: string | null
+          id?: string
+          notes?: string | null
+          position?: number | null
+          priority?: string | null
+          progress?: number | null
+          responsible?: string | null
+          title?: string
+          updated_at?: string | null
+          validated?: boolean | null
+        }
+        Relationships: []
       }
       entities: {
         Row: {

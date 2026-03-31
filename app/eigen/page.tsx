@@ -1,6 +1,6 @@
 'use client';
 
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import { EigenTabNav } from '@/components/eigen/EigenTabNav';
@@ -11,7 +11,7 @@ import { EigenConquest } from '@/components/eigen/EigenConquest';
 import { EigenTerminal } from '@/components/eigen/EigenTerminal';
 import { EigenAgents } from '@/components/eigen/EigenAgents';
 
-const EigenBoard = dynamic(() => import('@/components/eigen/EigenBoard'), { ssr: false });
+const EigenBoard = nextDynamic(() => import('@/components/eigen/EigenBoard'), { ssr: false });
 
 const TABS: Record<string, React.ComponentType> = {
   overview: EigenOverview,
