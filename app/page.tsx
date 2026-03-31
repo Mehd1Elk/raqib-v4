@@ -1,7 +1,12 @@
 'use client';
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
+import dynamic from 'next/dynamic';
+import { Activity } from 'lucide-react';
 import { ENTITIES, PLATFORMS } from '@/lib/constants';
+
+const EigenStream = dynamic(() => import('@/components/stream/EigenStream'), { ssr: false });
+
 import { getEntityLayers } from '@/lib/mock-data';
 import { computeEntityStats } from '@/lib/helpers';
 import { EntityTabs } from '@/components/EntityTabs';
@@ -215,6 +220,21 @@ export default function Dashboard() {
             <div className="font-[family-name:var(--font-jetbrains)] text-[14px] mb-1">&gt; status</div>
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">8 commandes · Live feed · 255 agents</div>
           </a>
+        </div>
+      </div>
+
+      {/* ═══ ZONE 2.5 — ACTIVITÉ RÉCENTE ═══ */}
+      <div className="shrink-0 px-8 py-5 bg-ivory border-b border-div">
+        <div className="flex items-center gap-3 mb-4">
+          <Activity size={16} className="text-gold" />
+          <h2 className="font-[family-name:var(--font-cormorant)] text-[20px] font-bold italic text-noir">Activité Récente</h2>
+          <div className="flex-1 h-px bg-div" />
+          <a href="/eigen?tab=stream" className="font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 uppercase tracking-wider hover:text-gold transition">
+            Ouvrir le Stream Complet →
+          </a>
+        </div>
+        <div className="h-[250px] border border-div rounded-lg overflow-hidden bg-cream shadow-inner">
+          <EigenStream maxHeight="250px" limit={10} />
         </div>
       </div>
 

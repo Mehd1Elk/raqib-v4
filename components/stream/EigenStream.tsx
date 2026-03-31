@@ -1,0 +1,203 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
+import { Activity, Pause, Play, Download } from 'lucide-react';
+import StatusDot from '@/components/ui/StatusDot';
+
+export interface StreamEvent {
+  id: string;
+  created_at: string;
+  entity: string;
+  entity_color: string;
+  event_type: 'data' | 'agent' | 'decision' | 'alert' | 'conquest' | 'deploy';
+  title: string;
+  detail: string;
+  urgency: 'critical' | 'normal' | 'low';
+  link?: string;
+}
+
+const TYPE_COLORS: Record<string, string> = {
+  data: '#3D7C5E', agent: '#3D5E8C', decision: '#B8963E', alert: '#9C3D3D', conquest: '#7B5EA7', deploy: '#B87D3E'
+};
+
+const ENTITIES = ['NOOS','ÆLYA','MYNε','BURHAN','YrKnown','DIWANE','AlgueSov','AMANA','CG SA','Cercle','EIGEN'];
+const ENTITY_COLORS: Record<string, string> = {
+  'NOOS': '#B8963E', 'ÆLYA': '#7B5EA7', 'MYNε': '#3D7C5E', 'BURHAN': '#B87D3E', 'YrKnown': '#918977',
+  'DIWANE': '#6E2A3D', 'AlgueSov': '#3D7C8C', 'AMANA': '#5E6E3D', 'CG SA': '#162B20', 'Cercle': '#C9A96E', 'EIGEN': '#D4B662'
+};
+
+const EVENT_TYPES = ['data', 'agent', 'decision', 'alert', 'conquest', 'deploy'] as const;
+
+function generateSimulatedEvent(): StreamEvent {
+  const entity = ENTITIES[Math.floor(Math.random() * ENTITIES.length)];
+  const type = EVENT_TYPES[Math.floor(Math.random() * EVENT_TYPES.length)];
+  const isCritical = Math.random() > 0.9;
+  
+  const titles: Record<string, string[]> = {
+    data: ['Nouvelle synchronisation Supabase', 'Upload dataset massif', 'Indexation terminée'],
+    agent: ['Création agent spécialisé', 'Modification de prompt', 'Agent mis en sommeil'],
+    decision: ['Vote conseil validé', 'Stratégie approuvée', 'Objection retenue'],
+    alert: ['⚠️ Chute de confiance sur entité', 'Conflit de modèles', 'Saturation API détectée'],
+    conquest: ['Nouveau marché sécurisé', 'Mouvement géopolitique majeur', 'Acquisition cible validée'],
+    deploy: ['Déploiement production V4', 'Mise à jour infrastructure', 'Rollback demandé']
+  };
+
+  return {
+    id: `ev_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+    created_at: new Date().toISOString(),
+    entity,
+    entity_color: ENTITY_COLORS[entity],
+    event_type: type,
+    title: titles[type][Math.floor(Math.random() * titles[type].length)],
+    detail: `Activité enregistrée par le système sur le flux ${entity} [auto-généré]`,
+    urgency: type === 'alert' || isCritical ? 'critical' : 'normal',
+    link: type === 'agent' ? `/eigen/agent/${Math.floor(Math.random() * 200)}` : undefined
+  };
+}
+
+export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?: string, limit?: number }) {
+  const [events, setEvents] = useState<StreamEvent[]>([]);
+  const [filters, setFilters] = useState({ entities: new Set<string>(), types: new Set<string>() });
+  const [paused, setPaused] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const initial = Array.from({ length: limit || 50 }, () => {
+      const e = generateSimulatedEvent();
+      e.created_at = new Date(Date.now() - Math.random() * 86400000).toISOString();
+      return e;
+    }).sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    setEvents(initial);
+  }, [limit]);
+
+  useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setEvents(prev => {
+        const result = [generateSimulatedEvent(), ...prev].slice(0, limit ? Math.max(limit, 200) : 200);
+        return result;
+      });
+    }, 30000);
+    return () => clearInterval(interval);
+  }, [paused, limit]);
+
+  useEffect(() => {
+    if (!paused && scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [events, paused]);
+
+  const toggleEntityFilter = (entity: string) => {
+    setFilters(prev => {
+      const next = new Set(prev.entities);
+      if (next.has(entity)) next.delete(entity);
+      else next.add(entity);
+      return { ...prev, entities: next };
+    });
+  };
+
+  const toggleTypeFilter = (type: string) => {
+    setFilters(prev => {
+      const next = new Set(prev.types);
+      if (next.has(type)) next.delete(type);
+      else next.add(type);
+      return { ...prev, types: next };
+    });
+  };
+
+  const downloadDayExport = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(events, null, 2));
+    const dlAnchorElem = document.createElement('a');
+    dlAnchorElem.setAttribute("href", dataStr);
+    dlAnchorElem.setAttribute("download", `stream_export_journee_${new Date().toISOString().slice(0,10)}.json`);
+    dlAnchorElem.click();
+  };
+
+  const filtered = events.filter(e => {
+    if (filters.entities.size > 0 && !filters.entities.has(e.entity)) return false;
+    if (filters.types.size > 0 && !filters.types.has(e.event_type)) return false;
+    return true;
+  });
+  
+  const displayed = limit ? filtered.slice(0, limit) : filtered;
+
+  return (
+    <div className="flex flex-col h-full bg-[#FDFAF3]">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[rgba(60,52,40,0.10)] bg-[#FDFAF3] flex-wrap gap-2">
+        <div className="flex items-center gap-3">
+          <Activity size={14} className="text-[#B8963E]" />
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">STREAM</span>
+        </div>
+        
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex gap-1">
+            {ENTITIES.map(e => (
+              <button key={e} onClick={() => toggleEntityFilter(e)} className="relative group" title={e}>
+                <div className="w-2.5 h-2.5 rounded-full transition" style={{
+                  backgroundColor: ENTITY_COLORS[e],
+                  opacity: filters.entities.size === 0 || filters.entities.has(e) ? 1 : 0.2
+                }} />
+              </button>
+            ))}
+          </div>
+          
+          <div className="flex gap-1">
+            {Object.entries(TYPE_COLORS).map(([type, color]) => (
+              <button key={type} onClick={() => toggleTypeFilter(type)} className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded transition uppercase border" style={{
+                backgroundColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '20' : 'transparent',
+                color: (filters.types.size === 0 || filters.types.has(type)) ? color : '#D4CCBA',
+                borderColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '40' : 'transparent'
+              }}>
+                {type}
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        <div className="flex items-center gap-2">
+          <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977]">{filtered.length} events</span>
+          <button onClick={() => setPaused(!paused)} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title={paused ? "Reprendre" : "Pause"}>
+            {paused ? <Play size={12} className="text-[#3D7C5E]" /> : <Pause size={12} className="text-[#918977]" />}
+          </button>
+          <button onClick={downloadDayExport} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title="Export de la journée">
+            <Download size={12} className="text-[#918977]" />
+          </button>
+        </div>
+      </div>
+      
+      <div ref={scrollRef} className="flex-1 overflow-y-auto" style={{ maxHeight }}>
+        {displayed.map(event => (
+          <div key={event.id} className={`flex items-start gap-3 px-4 py-2 border-b border-[rgba(60,52,40,0.04)] hover:bg-[rgba(184,150,62,0.03)] transition ${event.link ? 'cursor-pointer' : ''} ${event.urgency === 'critical' ? 'bg-[rgba(156,61,61,0.03)]' : ''}`}
+            onClick={() => event.link ? (window.location.href = event.link) : undefined}>
+            
+            <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || '#918977' }} />
+            
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] w-10 flex-shrink-0 mt-1">
+              {new Date(event.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
+            </div>
+            
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-0.5">
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded uppercase" style={{ backgroundColor: (event.entity_color || '#918977') + '12', color: event.entity_color }}>
+                  {event.entity}
+                </span>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 rounded uppercase" style={{ color: TYPE_COLORS[event.event_type] }}>
+                  {event.event_type}
+                </span>
+                <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1C1814] truncate font-medium">{event.title}</span>
+              </div>
+              {event.detail && <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#918977] truncate">{event.detail}</div>}
+            </div>
+            
+            {event.urgency === 'critical' && <StatusDot status="error" size={6} />}
+          </div>
+        ))}
+        {displayed.length === 0 && (
+          <div className="flex items-center justify-center p-8 text-[#918977] font-[family-name:var(--font-jetbrains)] text-[10px]">
+            Aucun événement correspondant.
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, JetBrains_Mono, Noto_Sans } from 'next/font/google'
 import 'leaflet/dist/leaflet.css';
 import './globals.css';
 import { Breadcrumb } from '@/components/Breadcrumb';
+import WormholeBreadcrumb from '@/components/wormhole/WormholeBreadcrumb';
 import LoadingBar from '@/components/LoadingBar';
 import { ClientProviders } from '@/components/ClientProviders';
 import StatusBar from '@/components/StatusBar';
@@ -65,6 +66,7 @@ export default function RootLayout({
       <body className="h-full font-[family-name:var(--font-noto)] text-t1 bg-cream antialiased pb-[22px]">
         <LoadingBar />
         <Breadcrumb />
+        <WormholeBreadcrumb />
         <ClientProviders>
           {children}
         </ClientProviders>

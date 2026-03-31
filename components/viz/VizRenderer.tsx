@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { BarChart3, Map, Table2, Network, Clock, Monitor } from 'lucide-react';
+import { BarChart3, Map, Table2, Network, Clock, Monitor, Link2 } from 'lucide-react';
+import { useWormhole } from '@/components/wormhole/WormholeContext';
 import { resolveVizType, getArtifactName, VIZ_LABELS, type VizType } from '@/lib/viz-routing';
 import { ArtifactViewer } from '@/components/ArtifactViewer';
 import { fetchEntries, subscribeToEntries } from '@/lib/supabase/client-queries';
@@ -66,6 +67,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
   const [entries, setEntries] = useState<EntryRow[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [totalRows, setTotalRows] = useState(0);
+  const { setShowWormhole, setEntry } = useWormhole();
 
   const loadEntries = useCallback(async () => {
     setIsLoading(true);
@@ -143,7 +145,16 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
       >
         <Table2 size={12} /> TABLEAU
       </button>
-      <span className="ml-auto text-[8px] font-[family-name:var(--font-jetbrains)] text-tm">
+      <button 
+        onClick={() => {
+          setEntry({ layer_id: layerId, data: entries[0]?.data || {} });
+          setShowWormhole(true);
+        }} 
+        className="ml-auto flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded font-['JetBrains_Mono'] text-[8px] hover:bg-[#7B5EA7] hover:text-white transition"
+      >
+        <Link2 size={12} strokeWidth={1.5} /> CONNEXIONS
+      </button>
+      <span className="ml-3 text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hidden sm:block">
         {VIZ_LABELS[vizType]}
       </span>
     </div>
