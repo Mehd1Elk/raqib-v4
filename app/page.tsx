@@ -184,6 +184,23 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card NEXUS */}
+          <a href="/nexus" className="bg-noir text-gold-l rounded-lg p-5 hover:ring-1 hover:ring-gold transition no-underline group">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[2px] mb-2 text-[#D4B662]">NEXUS</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-white mb-1">Carte ecosysteme</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-stone mb-3">11 entites &middot; 19 flux &middot; Force-directed</div>
+            <div className="flex gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#B8963E]" />
+              <span className="w-2 h-2 rounded-full bg-[#7B5EA7]" />
+              <span className="w-2 h-2 rounded-full bg-[#3D7C5E]" />
+              <span className="w-2 h-2 rounded-full bg-[#B87D3E]" />
+              <span className="w-2 h-2 rounded-full bg-[#D4B662]" />
+            </div>
+            <div className="mt-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-gold opacity-0 group-hover:opacity-100 transition">
+              OUVRIR LE NEXUS &rarr;
+            </div>
+          </a>
+
           {/* Card DASHBOARDS */}
           <a href="/dashboards/investor" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-gold tracking-[2px] mb-2">DASHBOARDS</div>

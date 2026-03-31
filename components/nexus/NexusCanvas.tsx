@@ -113,8 +113,8 @@ export default function NexusCanvas() {
     const zoom = d3.zoom<SVGSVGElement, unknown>()
       .scaleExtent([0.3, 5])
       .on('zoom', (e) => { world.attr('transform', e.transform.toString()); });
-    svg.call(zoom);
-    svg.call(zoom.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(0.85));
+    (svg as unknown as d3.Selection<SVGSVGElement, unknown, null, undefined>).call(zoom);
+    (svg as unknown as d3.Selection<SVGSVGElement, unknown, null, undefined>).call(zoom.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(0.85));
 
     /* ── simulation ── */
     const nodes: SimNode[] = ENTITIES.map(e => ({ ...e, x: (Math.random() - 0.5) * 300, y: (Math.random() - 0.5) * 300 }));
@@ -238,14 +238,14 @@ export default function NexusCanvas() {
         // Dim unconnected
         const connected = new Set<string>();
         links.forEach(l => {
-          const sId = typeof l.source === 'object' ? (l.source as SimNode).id : l.source;
-          const tId = typeof l.target === 'object' ? (l.target as SimNode).id : l.target;
+          const sId = typeof l.source === 'object' ? (l.source as SimNode).id : String(l.source);
+          const tId = typeof l.target === 'object' ? (l.target as SimNode).id : String(l.target);
           if (sId === d.id || tId === d.id) { connected.add(sId); connected.add(tId); }
         });
         nodeGs.attr('opacity', n => connected.has(n.id) ? 1 : 0.2);
         linkPaths.attr('opacity', l => {
-          const sId = typeof l.source === 'object' ? (l.source as SimNode).id : l.source;
-          const tId = typeof l.target === 'object' ? (l.target as SimNode).id : l.target;
+          const sId = typeof l.source === 'object' ? (l.source as SimNode).id : String(l.source);
+          const tId = typeof l.target === 'object' ? (l.target as SimNode).id : String(l.target);
           return (sId === d.id || tId === d.id) ? 0.7 : 0.05;
         });
         selectEntity(d as unknown as NexusEntity);
@@ -327,7 +327,7 @@ export default function NexusCanvas() {
       });
 
       // Hide inactive flows
-      linkPaths.attr('display', d => activeTypes.has(d.type) ? null : 'none');
+      linkPaths.attr('display', d => activeTypesRef.current.has(d.type) ? null : 'none');
 
       // Pulse ring animation
       const pulse = Math.sin(t * 8) * 4;
@@ -349,7 +349,7 @@ export default function NexusCanvas() {
       simulation.stop();
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeTypes]);
+  }, []);
 
   return (
     <div className="absolute inset-0">

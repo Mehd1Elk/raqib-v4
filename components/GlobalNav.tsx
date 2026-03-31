@@ -26,7 +26,8 @@ export function GlobalNav() {
       {open && (
         <div className="absolute right-0 top-full mt-1 w-[280px] bg-ivory border border-div rounded-lg shadow-lg z-50 py-2">
           <div className="px-3 py-1 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">COCKPIT</div>
-          <a href="/eigen" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-noir">EIGEN Stratégique</a>
+          <a href="/nexus" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-[#D4B662]">Nexus &mdash; Carte ecosysteme</a>
+          <a href="/eigen" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-noir">EIGEN Strategique</a>
           <a href="/eigen?tab=agents" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">255 Agents</a>
           <a href="/eigen?tab=board" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Board Meeting</a>
           <a href="/eigen?tab=gallery" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Galerie 59 docs</a>

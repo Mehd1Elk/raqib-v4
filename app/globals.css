@@ -107,3 +107,18 @@ body {
 .h-node-bg { transition: stroke-width 150ms ease, filter 150ms ease; }
 .h-node-bg:hover { stroke-width: 2.5 !important; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08)); }
 circle.agent { transition: r 100ms ease, fill-opacity 100ms ease; }
+
+/* ═══════ NEXUS CANVAS ═══════ */
+.nexus-star {
+  animation: nexusStarTwinkle 8s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.3s);
+}
+@keyframes nexusStarTwinkle {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.12; }
+}
+.nexus-node { cursor: pointer; }
+.nexus-node .node-halo { transition: opacity 200ms ease; }
+.nexus-node .node-core { transition: stroke-width 200ms ease; }
+.nexus-flow-path { transition: opacity 200ms ease, stroke-width 200ms ease; }
+.nexus-particle { pointer-events: none; }
