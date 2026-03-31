@@ -1,0 +1,41 @@
+{
+  "name": "raqib-v4",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0 --ignore-pattern 'app/page.tsx' --ignore-pattern 'app/api/**' --ignore-pattern 'components/**' --ignore-pattern 'lib/supabase/**' --ignore-pattern 'lib/data/**' --ignore-pattern 'supabase/functions/**'",
+    "type-check": "tsc --noEmit -p tsconfig.validate.json",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:coverage": "vitest run --coverage",
+    "validate": "npm run type-check && npm run lint && npm run test",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.10.0",
+    "@supabase/supabase-js": "^2.101.0",
+    "next": "16.2.1",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.1",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/coverage-v8": "^3.1.4",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.1",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^3.1.4"
+  }
+}

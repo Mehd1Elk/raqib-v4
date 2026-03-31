@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ═══════ IVORY LUXURY PALETTE ═══════ */
+  --color-ivory: #FDFAF3;
+  --color-cream: #F7F3EA;
+  --color-parchment: #F0EBDE;
+  --color-linen: #E8E2D2;
+  --color-sand: #D4CCBA;
+  --color-taupe: #B8AE9C;
+  --color-stone: #918977;
+  --color-walnut: #6B5E4C;
+  --color-espresso: #3D3428;
+  --color-noir: #1C1814;
+
+  /* Gold */
+  --color-gold: #B8963E;
+  --color-gold-l: #D4B662;
+  --color-gold-d: #8C6E2A;
+
+  /* Accents */
+  --color-ruby: #9C3D3D;
+  --color-emerald: #3D7C5E;
+  --color-sapphire: #3D5E8C;
+  --color-amber: #B87D3E;
+  --color-bordeaux: #6E2A3D;
+  --color-olive: #5E6E3D;
+  --color-violet: #7B5EA7;
+  --color-teal: #3D7C8C;
+
+  /* Corporate governance */
+  --color-cg-green: #162B20;
+  --color-cg-gold: #C9A96E;
+
+  /* Text */
+  --color-t1: #2A2318;
+  --color-t2: #6B5E4C;
+  --color-t3: #918977;
+  --color-tm: #B8AE9C;
+
+  /* Dividers */
+  --color-div: rgba(60,52,40,0.10);
+  --color-div-l: rgba(60,52,40,0.05);
+
+  /* Fonts */
+  --font-gr: var(--font-cormorant);
+  --font-mn: var(--font-jetbrains);
+  --font-sn: var(--font-noto);
+}
+
+:root {
+  --background: #F7F3EA;
+  --foreground: #2A2318;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb { background: #D4CCBA; border-radius: 2px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Selection */
+::selection { background: rgba(184,150,62,0.15); color: #1C1814; }

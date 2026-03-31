@@ -1,0 +1,65 @@
+import type { Metadata } from 'next';
+import { Cormorant_Garamond, JetBrains_Mono, Noto_Sans } from 'next/font/google';
+import './globals.css';
+
+const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');
+
+const cormorant = Cormorant_Garamond({
+  variable: '--font-cormorant',
+  subsets: ['latin'],
+  weight: ['300', '400', '600', '700'],
+  style: ['normal', 'italic'],
+});
+
+const jetbrains = JetBrains_Mono({
+  variable: '--font-jetbrains',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+const noto = Noto_Sans({
+  variable: '--font-noto',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+
+export const metadata: Metadata = {
+  metadataBase,
+  title: {
+    default: 'Raqib V4 · رقيب · Intelligence Stratégique',
+    template: '%s | Raqib V4',
+  },
+  description: 'Raqib V4 — 1000 couches uniques · 9 plateformes · 10 entités · Eigen Holding SAS · Souveraineté Intégrale',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Raqib V4 · رقيب · Intelligence Stratégique',
+    description: '1000 couches uniques, 10 entités et 9 plateformes pour l’architecture multi-plateforme RAQIB V4.',
+    locale: 'fr_FR',
+    siteName: 'Raqib V4',
+    type: 'website',
+    url: '/',
+  },
+  robots: {
+    follow: true,
+    index: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="fr"
+      className={`${cormorant.variable} ${jetbrains.variable} ${noto.variable} h-full`}
+    >
+      <body className="h-full font-[family-name:var(--font-noto)] text-t1 bg-cream antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
