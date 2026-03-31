@@ -1,16 +1,10 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import type { Database } from '@/lib/supabase/types';
 import { DataTable } from '@/components/viz/tables/DataTable';
+import { RouteMap, NetworkGraph, EventTimeline } from '@/lib/viz-dynamic';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
-
-const LoadingViz = ({ h = 400 }: { h?: number }) => <div className={`bg-[#F7F3EA] animate-pulse rounded`} style={{ height: h }} />;
-
-const RouteMap = dynamic(() => import('@/components/viz/maps/RouteMap').then(m => ({ default: m.RouteMap })), { ssr: false, loading: () => <LoadingViz /> });
-const NetworkGraph = dynamic(() => import('@/components/viz/networks/NetworkGraph').then(m => ({ default: m.NetworkGraph })), { ssr: false, loading: () => <LoadingViz /> });
-const EventTimeline = dynamic(() => import('@/components/viz/timelines/EventTimeline').then(m => ({ default: m.EventTimeline })), { ssr: false, loading: () => <LoadingViz h={200} /> });
 
 interface GitexClientProps {
   eventEntries: EntryRow[];

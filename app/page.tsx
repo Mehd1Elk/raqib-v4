@@ -153,6 +153,12 @@ export default function Dashboard() {
             GITEX
           </a>
           <a
+            href="/dashboards/london"
+            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
+          >
+            LONDON
+          </a>
+          <a
             href="/stats"
             className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
           >

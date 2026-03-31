@@ -1,27 +1,25 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import type { Database } from '@/lib/supabase/types';
 import { DataTable } from '@/components/viz/tables/DataTable';
+import {
+  ChoroplethMap,
+  NetworkGraph,
+  DataFlowDiagram,
+  GeopoliticsRadarChart,
+  MarketBubbleChart,
+  DealFlowFunnelChart,
+  SynergyMatrix,
+  HeatMap,
+  PinMap,
+  EntitiesBarChart,
+  INSEEMap,
+  EigenOrgChart,
+  MilestoneTimeline,
+  InnerCircleGraph,
+} from '@/lib/viz-dynamic';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
-
-const LoadingViz = ({ h = 400 }: { h?: number }) => <div className={`bg-[#F7F3EA] animate-pulse rounded`} style={{ height: h }} />;
-
-const ChoroplethMap = dynamic(() => import('@/components/viz/maps/ChoroplethMap').then(m => ({ default: m.ChoroplethMap })), { ssr: false, loading: () => <LoadingViz /> });
-const NetworkGraph = dynamic(() => import('@/components/viz/networks/NetworkGraph').then(m => ({ default: m.NetworkGraph })), { ssr: false, loading: () => <LoadingViz /> });
-const DataFlowDiagram = dynamic(() => import('@/components/viz/networks/DataFlowDiagram').then(m => ({ default: m.DataFlowDiagram })), { ssr: false, loading: () => <LoadingViz /> });
-const GeopoliticsRadarChart = dynamic(() => import('@/components/viz/charts/GeopoliticsRadarChart').then(m => ({ default: m.GeopoliticsRadarChart })), { ssr: false, loading: () => <LoadingViz h={300} /> });
-const MarketBubbleChart = dynamic(() => import('@/components/viz/charts/MarketBubbleChart').then(m => ({ default: m.MarketBubbleChart })), { ssr: false, loading: () => <LoadingViz h={300} /> });
-const DealFlowFunnelChart = dynamic(() => import('@/components/viz/charts/DealFlowFunnelChart').then(m => ({ default: m.DealFlowFunnelChart })), { ssr: false, loading: () => <LoadingViz h={300} /> });
-const SynergyMatrix = dynamic(() => import('@/components/viz/networks/SynergyMatrix').then(m => ({ default: m.SynergyMatrix })), { ssr: false, loading: () => <LoadingViz /> });
-const HeatMap = dynamic(() => import('@/components/viz/maps/HeatMap').then(m => ({ default: m.HeatMap })), { ssr: false, loading: () => <LoadingViz /> });
-const PinMap = dynamic(() => import('@/components/viz/maps/PinMap').then(m => ({ default: m.PinMap })), { ssr: false, loading: () => <LoadingViz /> });
-const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false, loading: () => <LoadingViz h={300} /> });
-const INSEEMap = dynamic(() => import('@/components/viz/maps/INSEEMap').then(m => ({ default: m.INSEEMap })), { ssr: false, loading: () => <LoadingViz /> });
-const EigenOrgChart = dynamic(() => import('@/components/viz/networks/EigenOrgChart').then(m => ({ default: m.EigenOrgChart })), { ssr: false, loading: () => <LoadingViz /> });
-const MilestoneTimeline = dynamic(() => import('@/components/viz/timelines/MilestoneTimeline').then(m => ({ default: m.MilestoneTimeline })), { ssr: false, loading: () => <LoadingViz h={200} /> });
-const InnerCircleGraph = dynamic(() => import('@/components/viz/networks/InnerCircleGraph').then(m => ({ default: m.InnerCircleGraph })), { ssr: false, loading: () => <LoadingViz /> });
 
 // Entity → map type
 const GEO_ENTITIES = ['noos', 'cg', 'alguesov', 'amana'];

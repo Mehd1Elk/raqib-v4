@@ -52,6 +52,12 @@ export function DashboardHeader({ title, subtitle, entityColor }: Props) {
           GITEX
         </Link>
         <Link
+          href="/dashboards/london"
+          className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
+        >
+          LONDON
+        </Link>
+        <Link
           href="/"
           className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
         >

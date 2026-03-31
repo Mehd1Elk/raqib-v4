@@ -1,17 +1,17 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import type { Database } from '@/lib/supabase/types';
+import {
+  CorridorMap,
+  EigenOrgChart,
+  SynergyMatrix,
+  DataFlowDiagram,
+  FirewallDiagram,
+  MilestoneTimeline,
+  FundraisingTimeline,
+} from '@/lib/viz-dynamic';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
-
-const CorridorMap = dynamic(() => import('@/components/viz/maps/CorridorMap').then(m => ({ default: m.CorridorMap })), { ssr: false });
-const EigenOrgChart = dynamic(() => import('@/components/viz/networks/EigenOrgChart').then(m => ({ default: m.EigenOrgChart })), { ssr: false });
-const SynergyMatrix = dynamic(() => import('@/components/viz/networks/SynergyMatrix').then(m => ({ default: m.SynergyMatrix })), { ssr: false });
-const DataFlowDiagram = dynamic(() => import('@/components/viz/networks/DataFlowDiagram').then(m => ({ default: m.DataFlowDiagram })), { ssr: false });
-const FirewallDiagram = dynamic(() => import('@/components/viz/networks/FirewallDiagram').then(m => ({ default: m.FirewallDiagram })), { ssr: false });
-const MilestoneTimeline = dynamic(() => import('@/components/viz/timelines/MilestoneTimeline').then(m => ({ default: m.MilestoneTimeline })), { ssr: false });
-const FundraisingTimeline = dynamic(() => import('@/components/viz/timelines/FundraisingTimeline').then(m => ({ default: m.FundraisingTimeline })), { ssr: false });
 
 interface LondonClientProps {
   milestoneEntries: EntryRow[];
