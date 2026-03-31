@@ -1,35 +1,39 @@
 'use client';
 
 import { useMemo, useState, useCallback } from 'react';
-import MapGL, { Marker, Source, Layer, Popup } from 'react-map-gl/mapbox';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import { MapContainer, TileLayer, Polyline, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import { useMapEntries } from './use-map-entries';
-import { MAP_STYLE, ARC_CITIES } from './map-constants';
+import { CARTO_TILE_URL, CARTO_ATTRIBUTION, ARC_CITIES } from './map-constants';
 import type { BaseMapProps, RouteDatum } from './map-types';
 
 interface RouteMapProps extends BaseMapProps {
-  /** Layer ID pour l'itineraire (ex: cg68) */
   layerId?: string;
-  /** Donnees pre-calculees (sinon utilise ARC_CITIES par defaut) */
   data?: RouteDatum[];
-  /** Afficher les numeros d'etape */
   showStepNumbers?: boolean;
 }
 
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN ?? '';
 const ROUTE_COLOR = '#B8963E';
-const STOP_COLOR = '#162B20';
+const STOP_BG = '#162B20';
 
-/**
- * RouteMap — Itineraire Arc Conquete 2026 (cg68) avec les 7 trips / 9 villes.
- */
+function createStopIcon(order: number, showNumber: boolean): L.DivIcon {
+  return L.divIcon({
+    className: '',
+    iconSize: [28, 28],
+    iconAnchor: [14, 14],
+    popupAnchor: [0, -14],
+    html: `<div style="width:28px;height:28px;border-radius:50%;background:${STOP_BG};border:2px solid ${ROUTE_COLOR};display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)">
+      ${showNumber ? `<span style="color:#FDFAF3;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace">${order}</span>` : ''}
+    </div>`,
+  });
+}
+
 export function RouteMap({
   layerId,
   data: externalData,
   showStepNumbers = true,
   className,
   height = 480,
-  interactive = true,
 }: RouteMapProps) {
   const { entries } = useMapEntries(layerId ?? '');
   const [selected, setSelected] = useState<RouteDatum | null>(null);
@@ -37,7 +41,6 @@ export function RouteMap({
   const route = useMemo<RouteDatum[]>(() => {
     if (externalData) return externalData;
 
-    // Essayer de construire depuis les entries Supabase
     if (entries.length) {
       return entries
         .map((entry, i) => {
@@ -58,7 +61,6 @@ export function RouteMap({
         .sort((a, b) => a!.order - b!.order) as RouteDatum[];
     }
 
-    // Defaut : les 9 villes de l'Arc Conquete
     return ARC_CITIES.map((c, i) => ({
       order: i + 1,
       city: c.name,
@@ -67,121 +69,69 @@ export function RouteMap({
     }));
   }, [entries, externalData]);
 
-  // GeoJSON LineString pour la route
-  const routeLine = useMemo(() => ({
-    type: 'Feature' as const,
-    properties: {},
-    geometry: {
-      type: 'LineString' as const,
-      coordinates: route.map((r) => [r.lng, r.lat]),
-    },
-  }), [route]);
-
-  const onStopClick = useCallback((stop: RouteDatum) => {
-    setSelected((prev) => (prev?.order === stop.order ? null : stop));
-  }, []);
-
-  if (!MAPBOX_TOKEN) {
-    return (
-      <div className={`bg-cream rounded-lg border border-div flex items-center justify-center ${className ?? ''}`} style={{ height }}>
-        <p className="text-t3 text-sm font-[family-name:var(--font-mn)]">
-          Token Mapbox manquant — definir NEXT_PUBLIC_MAPBOX_TOKEN
-        </p>
-      </div>
-    );
-  }
+  const routePositions = useMemo(
+    () => route.map((r): [number, number] => [r.lat, r.lng]),
+    [route]
+  );
 
   return (
     <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
-      <MapGL
-        mapboxAccessToken={MAPBOX_TOKEN}
-        initialViewState={{ longitude: 0, latitude: 12, zoom: 3.2 }}
+      <MapContainer
+        center={[12, 0]}
+        zoom={3.2}
         style={{ width: '100%', height: '100%' }}
-        mapStyle={MAP_STYLE}
-        interactive={interactive}
+        scrollWheelZoom={true}
+        attributionControl={false}
       >
-        {/* Ligne de route */}
-        <Source id="route-line" type="geojson" data={routeLine}>
-          <Layer
-            id="route-line-layer"
-            type="line"
-            paint={{
-              'line-color': ROUTE_COLOR,
-              'line-width': 3,
-              'line-dasharray': [2, 1],
-              'line-opacity': 0.85,
-            }}
-          />
-        </Source>
+        <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
 
-        {/* Marqueurs etape */}
+        {/* Route line */}
+        <Polyline
+          positions={routePositions}
+          pathOptions={{
+            color: ROUTE_COLOR,
+            weight: 3,
+            dashArray: '8 4',
+            opacity: 0.85,
+          }}
+        />
+
+        {/* Stop markers */}
         {route.map((stop) => (
           <Marker
             key={stop.order}
-            latitude={stop.lat}
-            longitude={stop.lng}
-            anchor="center"
-            onClick={(e) => {
-              e.originalEvent.stopPropagation();
-              onStopClick(stop);
+            position={[stop.lat, stop.lng]}
+            icon={createStopIcon(stop.order, showStepNumbers)}
+            eventHandlers={{
+              click: () => setSelected((prev) => (prev?.order === stop.order ? null : stop)),
             }}
           >
-            <div className="cursor-pointer relative">
-              <div
-                className="w-7 h-7 rounded-full flex items-center justify-center shadow-md border-2"
-                style={{
-                  background: STOP_COLOR,
-                  borderColor: ROUTE_COLOR,
-                }}
-              >
-                {showStepNumbers && (
-                  <span className="text-[10px] font-bold text-ivory font-[family-name:var(--font-mn)]">
-                    {stop.order}
-                  </span>
+            <Popup>
+              <div className="min-w-[140px]">
+                <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-cormorant)]">
+                  Etape {stop.order} — {stop.city}
+                </h4>
+                {stop.tripLabel && (
+                  <p className="text-xs text-gold font-[family-name:var(--font-jetbrains)] mt-1">
+                    {stop.tripLabel}
+                  </p>
+                )}
+                {stop.dates && (
+                  <p className="text-xs text-t3 mt-0.5">{stop.dates}</p>
                 )}
               </div>
-              <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap text-[9px] text-t1 font-semibold font-[family-name:var(--font-sn)]">
-                {stop.city}
-              </span>
-            </div>
+            </Popup>
           </Marker>
         ))}
+      </MapContainer>
 
-        {/* Popup detail */}
-        {selected && (
-          <Popup
-            latitude={selected.lat}
-            longitude={selected.lng}
-            anchor="bottom"
-            offset={20}
-            onClose={() => setSelected(null)}
-            closeOnClick={false}
-            className="[&_.mapboxgl-popup-content]:!bg-ivory [&_.mapboxgl-popup-content]:!rounded-lg [&_.mapboxgl-popup-content]:!border [&_.mapboxgl-popup-content]:!border-div [&_.mapboxgl-popup-content]:!shadow-md [&_.mapboxgl-popup-content]:!p-3"
-          >
-            <div className="min-w-[140px]">
-              <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-gr)]">
-                Etape {selected.order} — {selected.city}
-              </h4>
-              {selected.tripLabel && (
-                <p className="text-xs text-gold font-[family-name:var(--font-mn)] mt-1">
-                  {selected.tripLabel}
-                </p>
-              )}
-              {selected.dates && (
-                <p className="text-xs text-t3 mt-0.5">{selected.dates}</p>
-              )}
-            </div>
-          </Popup>
-        )}
-      </MapGL>
-
-      {/* Badge itineraire */}
-      <div className="absolute top-3 left-3 bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-1.5">
-        <p className="text-[10px] text-t1 font-semibold font-[family-name:var(--font-gr)]">
+      {/* Badge */}
+      <div className="absolute top-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-1.5">
+        <p className="text-[10px] text-t1 font-semibold font-[family-name:var(--font-cormorant)]">
           Arc Conquete 2026
         </p>
-        <p className="text-[9px] text-t3 font-[family-name:var(--font-mn)]">
-          {route.length} etapes — Tanger → Luanda
+        <p className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
+          {route.length} etapes — Tanger &rarr; Luanda
         </p>
       </div>
     </div>

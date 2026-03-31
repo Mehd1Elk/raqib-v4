@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, JetBrains_Mono, Noto_Sans } from 'next/font/google';
+import 'leaflet/dist/leaflet.css';
 import './globals.css';
 
 const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');

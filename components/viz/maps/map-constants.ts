@@ -1,7 +1,8 @@
 import { C } from '@/lib/constants';
 
-/** Style de carte Mapbox clair / ivory */
-export const MAP_STYLE = 'mapbox://styles/mapbox/light-v11';
+/** Tile URL CartoDB Positron (pas de token) */
+export const CARTO_TILE_URL = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+export const CARTO_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>';
 
 /** Centre par defaut : Atlantique (entre Afrique et Ameriques) */
 export const DEFAULT_CENTER = { longitude: -10, latitude: 20 };
