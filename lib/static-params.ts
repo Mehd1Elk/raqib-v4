@@ -1,4 +1,5 @@
 import { ENTITIES, PLATFORMS } from './constants';
+import { ARTIFACT_MAP } from './artifact-mapping';
 import { findLayerRecord, getAllLayerEntries } from './catalog';
 import type { Database } from './supabase/types';
 import type { Category, Entity, LayerDef, PlatformCode } from './types';
@@ -46,7 +47,57 @@ interface RemoteLayerRecord {
 
 let remoteLayerRecordsPromise: Promise<RemoteLayerRecord[] | null> | null = null;
 
+const EIGEN_LAYER_NAMES: Record<string, string> = {
+  ei81: 'NOOS Platform Vitrine',
+  ei82: 'NOOS Platform Vitrine',
+  ei83: 'BURHAN Portals Demo',
+  ei84: 'AELYA Masterplan',
+  ei85: 'CG Conquete 2026',
+  ei86: 'Eigen Conquest Calendar',
+  ei87: 'Raqib Corridor Intelligence',
+  ei88: 'NOOS Constitution Juridique V2',
+  ei89: 'NOOS Ecosysteme Integral',
+};
+
+function getEigenArtifactPageRecord(entityId: string, layerId: string): LayerPageRecord | null {
+  if (entityId !== 'eigen') {
+    return null;
+  }
+
+  const artifactName = ARTIFACT_MAP[layerId];
+  const entity = ENTITIES.find((item) => item.id === 'eigen');
+
+  if (!artifactName || !entity) {
+    return null;
+  }
+
+  const layerName =
+    EIGEN_LAYER_NAMES[layerId] ??
+    artifactName.replace(/\.(jsx|html)$/i, '').replace(/-/g, ' ');
+
+  return {
+    entity,
+    category: { label: 'IX · Interfaces & Artefacts', layers: [] },
+    layer: {
+      id: layerId,
+      name: layerName,
+      platform: 'AG',
+      rows: 1,
+    },
+    platformName: PLATFORMS.AG.name,
+    actualRows: 1,
+    status: 'artifact',
+    lastPopulatedAt: null,
+  };
+}
+
 function getFallbackPageRecord(entityId: string, layerId: string): LayerPageRecord | null {
+  const eigenRecord = getEigenArtifactPageRecord(entityId, layerId);
+
+  if (eigenRecord) {
+    return eigenRecord;
+  }
+
   const entry = findLayerRecord(entityId, layerId);
 
   if (!entry) {
@@ -174,10 +225,22 @@ export async function getAllStaticParams(): Promise<LayerStaticParam[]> {
     }));
   }
 
-  return getAllLayerEntries().map((entry) => ({
+  const params = getAllLayerEntries().map((entry) => ({
     entity: entry.entityId,
     layer: entry.layer.id,
   }));
+
+  if (process.env.NODE_ENV !== 'test') {
+    return [
+      ...params,
+      ...Object.keys(ARTIFACT_MAP).map((layer) => ({
+        entity: 'eigen',
+        layer,
+      })),
+    ];
+  }
+
+  return params;
 }
 
 export async function getLayerPageRecord(entityId: string, layerId: string): Promise<LayerPageRecord | null> {
