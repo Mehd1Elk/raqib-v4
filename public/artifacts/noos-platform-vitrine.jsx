@@ -1,0 +1,1 @@
+export default function Placeholder() { return <div style={{padding:40,fontFamily:'Cormorant Garamond',fontSize:24,color:'#B8963E',textAlign:'center'}}>Interface noos-platform-vitrine — en cours d intégration</div>; }

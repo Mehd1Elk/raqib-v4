@@ -12,30 +12,40 @@ const fetchEntriesMock = vi.mocked(fetchEntries);
 const subscribeToEntriesMock = vi.mocked(subscribeToEntries);
 type EntryRow = Database['public']['Tables']['entries']['Row'];
 
+function buildEntry(index: number): EntryRow {
+  return {
+    confidence: 88,
+    created_at: `2026-03-${String((index % 28) + 1).padStart(2, '0')}T00:00:00Z`,
+    created_by: null,
+    data: {
+      city: `Ville ${index}`,
+      name: `Personne ${index}`,
+    },
+    id: `entry-${index}`,
+    layer_id: 'n01',
+    source: `https://example.com/entry-${index}`,
+    source_date: null,
+    verified: index % 2 === 0,
+    verified_at: null,
+    verified_by: null,
+  };
+}
+
 describe('EntriesTable', () => {
   const clickedAnchors: HTMLAnchorElement[] = [];
-  const createdBlobUrls: string[] = [];
   let realtimeCallback: ((payload: { new: { layer_id: string } }) => void) | undefined;
-  let createObjectURLMock: ReturnType<typeof vi.fn>;
   let revokeObjectURLMock: ReturnType<typeof vi.fn>;
 
   beforeEach(() => {
     clickedAnchors.length = 0;
-    createdBlobUrls.length = 0;
     realtimeCallback = undefined;
-
-    createObjectURLMock = vi.fn(() => {
-      const url = `blob:entries-${createdBlobUrls.length + 1}`;
-      createdBlobUrls.push(url);
-      return url;
-    });
-    revokeObjectURLMock = vi.fn(() => undefined);
 
     Object.defineProperty(URL, 'createObjectURL', {
       configurable: true,
       writable: true,
-      value: createObjectURLMock,
+      value: vi.fn(() => 'blob:entries-1'),
     });
+    revokeObjectURLMock = vi.fn(() => undefined);
     Object.defineProperty(URL, 'revokeObjectURL', {
       configurable: true,
       writable: true,
@@ -57,47 +67,27 @@ describe('EntriesTable', () => {
     vi.clearAllMocks();
   });
 
-  test('renders entries, exports CSV, paginates, and refreshes on matching realtime events', async () => {
-    const firstEntry: EntryRow = {
-      id: 'entry-1',
-      layer_id: 'n01',
-      data: { name: 'Alice', city: 'Casablanca' },
+  test('renders entries, exports CSV/Excel, paginates locally, and refreshes on matching realtime events', async () => {
+    const entries = Array.from({ length: 55 }, (_, index) => buildEntry(index + 1));
+    entries[0] = {
+      ...entries[0],
+      data: { city: 'Casablanca', name: 'Alice' },
+      id: 'entry-alice',
       source: 'https://example.com/alice',
-      confidence: 88,
       verified: true,
-      created_at: '2026-03-31T00:00:00Z',
-      created_by: null,
-      source_date: null,
-      verified_at: null,
-      verified_by: null,
     };
-
-    const secondEntry: EntryRow = {
-      id: 'entry-2',
-      layer_id: 'n01',
-      data: { name: 'Bob', city: 'Rabat' },
-      source: null,
+    entries[30] = {
+      ...entries[30],
       confidence: 42,
+      data: { city: 'Rabat', name: 'Bob' },
+      id: 'entry-bob',
+      source: null,
       verified: false,
-      created_at: '2026-04-01T00:00:00Z',
-      created_by: null,
-      source_date: null,
-      verified_at: null,
-      verified_by: null,
     };
 
-    fetchEntriesMock.mockImplementation(async (_layerId, page = 0) => {
-      if (page === 0) {
-        return {
-          entries: [firstEntry],
-          total: 55,
-        };
-      }
-
-      return {
-        entries: [secondEntry],
-        total: 55,
-      };
+    fetchEntriesMock.mockResolvedValue({
+      entries,
+      total: 55,
     });
 
     render(
@@ -108,18 +98,20 @@ describe('EntriesTable', () => {
       />,
     );
 
-    expect(screen.getByText(/Chargement des entries/i)).toBeInTheDocument();
-    await screen.findByText(/Alice/);
+    expect(screen.getByText(/Chargement des donnees/i)).toBeInTheDocument();
+    await screen.findByText('Alice');
 
     expect(screen.getByRole('link', { name: 'https://example.com/alice' })).toBeInTheDocument();
-    expect(screen.getByText('✓')).toBeInTheDocument();
-    expect(screen.getByText('ENTRIES (55)')).toBeInTheDocument();
+    expect(screen.getByText('Tableau de donnees (55)')).toBeInTheDocument();
+    expect(screen.queryByText('Bob')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByRole('button', { name: /EXPORT ENTRIES CSV/i }));
+    fireEvent.click(screen.getByRole('button', { name: /EXPORT CSV/i }));
+    fireEvent.click(screen.getByRole('button', { name: /EXPORT EXCEL/i }));
 
-    expect(clickedAnchors).toHaveLength(1);
-    expect(clickedAnchors[0]?.download).toBe('RAQIB_entries_n01.csv');
-    expect(revokeObjectURLMock).toHaveBeenCalledWith('blob:entries-1');
+    await waitFor(() => expect(clickedAnchors).toHaveLength(2));
+    expect(clickedAnchors[0]?.download).toBe('RAQIB_n01_tableau_donnees.csv');
+    expect(clickedAnchors[1]?.download).toBe('RAQIB_n01_tableau_donnees.xlsx');
+    expect(revokeObjectURLMock).toHaveBeenCalled();
 
     act(() => {
       realtimeCallback?.({ new: { layer_id: 'other-layer' } });
@@ -134,11 +126,10 @@ describe('EntriesTable', () => {
 
     await waitFor(() => expect(fetchEntriesMock).toHaveBeenCalledTimes(2));
 
-    fireEvent.click(screen.getByRole('button', { name: /SUIVANT/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Suivant/i }));
 
-    await screen.findByText(/Bob/);
-    expect(screen.getByText('Page 2 / 2')).toBeInTheDocument();
-    expect(screen.getAllByText('—')).toHaveLength(2);
+    await screen.findByText('Bob');
+    expect(screen.getByText('Page 2 / 3')).toBeInTheDocument();
   });
 
   test('shows the empty state when no entries are available', async () => {
@@ -155,6 +146,6 @@ describe('EntriesTable', () => {
     await screen.findByText(/Couche en attente de peuplement/i);
 
     expect(screen.getByText('Psychiatres par ville/pays')).toBeInTheDocument();
-    expect(screen.getByText(/Plateforme assignée : Claude Code/i)).toBeInTheDocument();
+    expect(screen.getByText(/Plateforme assignee : Claude Code/i)).toBeInTheDocument();
   });
 });

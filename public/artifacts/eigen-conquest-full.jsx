@@ -1,0 +1,1 @@
+export default function Placeholder() { return <div style={{padding:40,fontFamily:'Cormorant Garamond',fontSize:24,color:'#B8963E',textAlign:'center'}}>Interface eigen-conquest-full — en cours d intégration</div>; }

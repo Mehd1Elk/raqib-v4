@@ -2,6 +2,7 @@
  * Viz-routing: maps each layer (or category) to the appropriate visualization component.
  *
  * Component types:
+ * - 'artifact' (JSX/HTML rendered in iframe via ArtifactViewer)
  * - 'map:pin' | 'map:choropleth' | 'map:heat' | 'map:route' | 'map:insee'
  * - 'chart:bubble' | 'chart:treemap' | 'chart:bar' | 'chart:radar' | 'chart:funnel' | 'chart:heatmap'
  * - 'network:graph' | 'network:org' | 'network:inner' | 'network:synergy' | 'network:flow' | 'network:firewall'
@@ -9,7 +10,10 @@
  * - 'table:comparison' | 'table:scoring' | 'table:data'
  */
 
+import { ARTIFACT_MAP } from './artifact-mapping';
+
 export type VizType =
+  | 'artifact'
   | 'map:pin' | 'map:choropleth' | 'map:heat' | 'map:route' | 'map:insee'
   | 'chart:bubble' | 'chart:treemap' | 'chart:bar' | 'chart:radar' | 'chart:funnel' | 'chart:heatmap'
   | 'network:graph' | 'network:org' | 'network:inner' | 'network:synergy' | 'network:flow' | 'network:firewall'
@@ -161,6 +165,7 @@ export const CATEGORY_VIZ: Record<string, VizType> = {
 
 // ── Human-readable labels for each viz type (used in placeholder) ────
 export const VIZ_LABELS: Record<VizType, string> = {
+  'artifact': 'Interface interactive',
   'map:pin': 'Carte avec pins',
   'map:choropleth': 'Carte choroplethe',
   'map:heat': 'Carte de chaleur',
@@ -192,11 +197,19 @@ export const VIZ_LABELS: Record<VizType, string> = {
  * Resolve the visualization type for a given layer.
  * Falls back to category-based mapping, then to 'table:data'.
  */
+/**
+ * Resolve the visualization type for a given layer.
+ * Priority: artifact (JSX/HTML) > layer mapping > category fallback > table:data.
+ */
 export function resolveVizType(layerId: string, categoryLabel?: string): VizType {
+  // Priority 1: artifact JSX/HTML
+  if (ARTIFACT_MAP[layerId]) return 'artifact';
+
+  // Priority 2: explicit layer mapping
   if (VIZ_ROUTING[layerId]) return VIZ_ROUTING[layerId];
 
+  // Priority 3: category-based fallback
   if (categoryLabel) {
-    // Normalize: remove accents and uppercase
     const normalized = categoryLabel
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
@@ -205,4 +218,11 @@ export function resolveVizType(layerId: string, categoryLabel?: string): VizType
   }
 
   return 'table:data';
+}
+
+/**
+ * Get the artifact filename for a layer, or null if none.
+ */
+export function getArtifactName(layerId: string): string | null {
+  return ARTIFACT_MAP[layerId] ?? null;
 }

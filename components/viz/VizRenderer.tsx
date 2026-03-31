@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
-import { BarChart3, Map, Table2, Network, Clock } from 'lucide-react';
-import { resolveVizType, VIZ_LABELS, type VizType } from '@/lib/viz-routing';
+import { BarChart3, Map, Table2, Network, Clock, Monitor } from 'lucide-react';
+import { resolveVizType, getArtifactName, VIZ_LABELS, type VizType } from '@/lib/viz-routing';
+import { ArtifactViewer } from '@/components/ArtifactViewer';
 import { fetchEntries, subscribeToEntries } from '@/lib/supabase/client-queries';
 import type { Database } from '@/lib/supabase/types';
 
@@ -40,6 +41,7 @@ const DataTable = dynamic(() => import('@/components/viz/tables/DataTable').then
 
 // ── Icon for each viz category ───────────────────────────────────────
 function vizIcon(vizType: VizType) {
+  if (vizType === 'artifact') return <Monitor size={12} />;
   if (vizType.startsWith('map:')) return <Map size={12} />;
   if (vizType.startsWith('chart:')) return <BarChart3 size={12} />;
   if (vizType.startsWith('network:')) return <Network size={12} />;
@@ -87,6 +89,32 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
   }, [layerId, loadEntries]);
 
   const isEmpty = !isLoading && entries.length === 0;
+
+  // ── Artifact mode: render JSX/HTML in ArtifactViewer ──────────────
+  const artifactName = getArtifactName(layerId);
+  if (vizType === 'artifact' && artifactName) {
+    return (
+      <div>
+        <ArtifactViewer artifactName={artifactName} height={700} />
+        <details className="mt-3">
+          <summary className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm cursor-pointer hover:text-t1 tracking-[1px]">
+            VOIR LES DONNEES ({totalRows} entrees)
+          </summary>
+          <div className="mt-2">
+            <DataTable
+              entries={entries}
+              isLoading={isLoading}
+              layerId={layerId}
+              layerName={layerName}
+              platformName={platformName}
+              totalRows={totalRows}
+              pageSize={25}
+            />
+          </div>
+        </details>
+      </div>
+    );
+  }
 
   // ── Toggle bar ─────────────────────────────────────────────────────
   const toggleBar = (
