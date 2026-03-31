@@ -45,7 +45,17 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
 
   return (
     <div 
+      role="button"
+      tabIndex={0}
+      aria-label={`Ouvrir ${agent.name}`}
+      data-testid={`agent-card-${agent.id}`}
       onClick={() => onClick(agent)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onClick(agent);
+        }
+      }}
       style={style}
       className={`stagger-card relative flex flex-col justify-between w-[280px] h-[180px] p-3 text-stone-800 border-l-[3px] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer ${getLayerStyles(agent.layer)}`}
     >

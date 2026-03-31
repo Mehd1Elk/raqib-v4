@@ -1,5 +1,13 @@
 export type AgentLayer = 'L1' | 'L1.5' | 'L2' | 'L3' | 'L4' | 'OPS';
-export type AgentPole = 'Neurosciences & Santé' | 'IA & Ingénierie' | 'Données & Conformité' | 'Marché & Acquisition' | 'Communication & Design' | 'Raqib' | 'Viz' | 'Réserve';
+export type AgentPole =
+  | 'Neurosciences & Santé'
+  | 'IA & Ingénierie'
+  | 'Données & Conformité'
+  | 'Marché & Acquisition'
+  | 'Communication & Design'
+  | 'Raqib'
+  | 'Viz'
+  | 'Réserve';
 export type AgentPlatform = 'Claude' | 'GPT' | 'Gemini' | 'Mistral' | 'Qwen' | 'DeepSeek';
 export type AgentStatus = 'Actif' | 'En attente' | 'Erreur' | 'Inactif';
 
@@ -22,112 +30,343 @@ export interface Agent {
   errorCount: number;
 }
 
-const generateMockData = (): Agent[] => {
+const BASE_TIME = Date.parse('2026-03-31T12:00:00.000Z');
+
+const PLATFORM_DEFAULTS: Record<AgentPlatform, { fallback: string; model: string }> = {
+  Claude: { fallback: 'Perplexity', model: 'Claude Opus 4.6' },
+  GPT: { fallback: 'Claude', model: 'GPT-5.2' },
+  Gemini: { fallback: 'GPT', model: 'Gemini 3 Pro' },
+  Mistral: { fallback: 'Claude', model: 'Mistral Large' },
+  Qwen: { fallback: 'DeepSeek', model: 'Qwen 2.5' },
+  DeepSeek: { fallback: 'Claude', model: 'DeepSeek R1' },
+};
+
+function buildAgents(): Agent[] {
   const agents: Agent[] = [];
-  
+
   const addAgent = (partial: Partial<Agent>) => {
-    const idNum = agents.length + 1;
-    const padId = idNum.toString().padStart(3, '0');
+    const index = agents.length + 1;
+    const padId = index.toString().padStart(3, '0');
+    const platform = partial.platform ?? 'Claude';
+    const defaults = PLATFORM_DEFAULTS[platform];
+
     agents.push({
-      id: partial.id || `#${padId}`,
-      name: partial.name || `Agent ${padId}`,
-      layer: partial.layer || 'L1',
-      pole: partial.pole || 'Réserve',
-      platform: partial.platform || 'Claude',
-      fallback: partial.fallback || 'Perplexity',
-      model: partial.model || 'Claude Opus 4.6',
-      instructions: partial.instructions || 'Instructions standards d\'exécution et de classification. Vérification des sources de données avant production. Format de sortie JSON structuré.',
-      tone: partial.tone || 'Technique',
-      languages: partial.languages || ['FR', 'EN'],
-      perimeter: partial.perimeter || 'EIGEN OS',
-      knowledge: partial.knowledge || 'Base de données générale Raqib',
-      status: partial.status || 'Inactif',
-      lastRunAt: partial.lastRunAt || new Date(Date.now() - Math.random() * 100000000).toISOString(),
-      entriesProduced: partial.entriesProduced ?? Math.floor(Math.random() * 1000),
-      errorCount: partial.errorCount ?? (Math.random() > 0.9 ? 1 : 0),
+      id: partial.id ?? `#${padId}`,
+      name: partial.name ?? `Agent ${padId}`,
+      layer: partial.layer ?? 'L1',
+      pole: partial.pole ?? 'Réserve',
+      platform,
+      fallback: partial.fallback ?? defaults.fallback,
+      model: partial.model ?? defaults.model,
+      instructions:
+        partial.instructions ??
+        "Instructions d'exécution standards. Vérifier les sources, structurer la sortie et remonter les risques avant publication.",
+      tone: partial.tone ?? 'Technique',
+      languages: partial.languages ?? ['FR', 'EN'],
+      perimeter: partial.perimeter ?? 'EIGEN OS',
+      knowledge: partial.knowledge ?? 'Base de données souveraine Raqib',
+      status: partial.status ?? 'En attente',
+      lastRunAt:
+        partial.lastRunAt ??
+        new Date(BASE_TIME - index * 45 * 60 * 1000).toISOString(),
+      entriesProduced: partial.entriesProduced ?? Math.max(12, 1800 - index * 7),
+      errorCount: partial.errorCount ?? 0,
     });
   };
 
-  // L1 Pôle Neurosciences & Santé (10)
-  const neuroNames = ['Calibrateur NOOS', 'Architecte UX patient', 'Neuroscientifique computationnel', 'Chercheur SCID-5', 'Ingénieur NLP clinique', 'Data engineer MYNε', 'Spécialiste observance', 'Chercheur fertilité LALLA', 'Spécialiste trauma SAWT', 'Analyste addictologie NAFAS'];
-  neuroNames.forEach((n, i) => addAgent({
-    id: `#NOOS-${(i+1).toString().padStart(2, '0')}`, name: n, layer: 'L1', pole: 'Neurosciences & Santé', platform: 'Claude', model: 'Claude Opus 4.6', status: i === 0 ? 'Actif' : 'En attente'
-  }));
-
-  // L1 IA & Ingénierie (12)
-  const iaNames = ['Ingénieur Rust NOOS', 'Ingénieur TypeScript API', 'Ingénieur React portails', 'Architecte BURHAN Solidity', 'Ingénieur ÆLYA ZKP', 'DevSecOps', 'DBA PostgreSQL', 'Ingénieur MLX/LoRA', 'QA automaticien', 'Ingénieur MCP/A2A', 'Architecte Web 4.0', 'Ingénieur mobile React Native'];
-  iaNames.forEach(n => addAgent({ name: n, layer: 'L1', pole: 'IA & Ingénierie', platform: 'GPT', model: 'GPT-5.2' }));
-
-  // L1 Données & Conformité (8)
-  const dataNames = ['DPO RGPD', 'Analyste AI Act', 'Analyste MiCA', 'Spécialiste ISO 13485', 'Cartographe données', 'Analyst KYC/AML', 'Veilleur réglementaire', 'Data quality analyst'];
-  dataNames.forEach(n => addAgent({ name: n, layer: 'L1', pole: 'Données & Conformité', platform: 'Gemini', model: 'Gemini 3 Pro' }));
-
-  // L1 Marché & Acquisition (10)
-  const marketNames = ['Analyste concurrentiel NOOS', 'Analyste TAM/SAM/SOM', 'Chasseur VC', 'Profiler GITEX', 'Rédacteur pitch deck', 'Analyste M&A', 'Business developer corridor', 'Growth hacker', 'Pricing analyst', 'LP relationship manager'];
-  marketNames.forEach(n => addAgent({ name: n, layer: 'L1', pole: 'Marché & Acquisition', platform: 'Mistral', model: 'Mistral Large' }));
-
-  // L1 Communication & Design (8)
-  const commNames = ['Rédacteur content FR', 'Rédacteur content EN', 'Designer UI/UX', 'Vidéaste motion', 'Community manager', 'PR/Media', 'Traducteur AR/FR', 'Brand strategist'];
-  commNames.forEach(n => addAgent({ name: n, layer: 'L1', pole: 'Communication & Design', platform: 'Claude', model: 'Claude Sonnet' }));
-
-  // L1 Raqib collectors (10)
   const collectors = ['noos', 'aelya', 'myne', 'burhan', 'yrknown', 'diwane', 'alguesov', 'amana', 'cg', 'cercle'];
-  collectors.forEach(n => addAgent({ name: `Collector ${n}`.toUpperCase(), layer: 'L1', pole: 'Raqib', platform: 'DeepSeek', model: 'DeepSeek R1', status: 'Actif' }));
-
-  // L1 Viz (6)
   const vizNames = ['viz-charts', 'viz-maps', 'viz-tables', 'viz-networks', 'viz-timelines', 'viz-dashboards'];
-  vizNames.forEach(n => addAgent({ name: n, layer: 'L1', pole: 'Viz', platform: 'Qwen', model: 'Qwen 2.5' }));
 
-  // Réserve L1 (56) pour arriver à 120 (10+12+8+10+8+10+6=64, 120-64=56)
-  for (let i = 0; i < 56; i++) {
-    addAgent({ name: `Agent Réserve Alpha ${i+1}`, layer: 'L1', pole: 'Réserve', status: 'Inactif', platform: ['Claude', 'GPT', 'Gemini'][Math.floor(Math.random() * 3)] as AgentPlatform });
+  // L1 (120)
+  const neuroNames = [
+    'Calibrateur NOOS',
+    'Architecte UX patient',
+    'Neuroscientifique computationnel',
+    'Chercheur SCID-5',
+    'Ingénieur NLP clinique',
+    'Data engineer MYNE',
+    'Spécialiste observance',
+    'Chercheur fertilité LALLA',
+    'Spécialiste trauma SAWT',
+    'Analyste addictologie NAFAS',
+  ];
+  neuroNames.forEach((name, index) =>
+    addAgent({
+      id: `#NOOS-${String(index + 1).padStart(2, '0')}`,
+      name,
+      layer: 'L1',
+      pole: 'Neurosciences & Santé',
+      platform: 'Claude',
+      status: 'En attente',
+    }),
+  );
+
+  const engineeringNames = [
+    'Ingénieur Rust NOOS',
+    'Ingénieur TypeScript API',
+    'Ingénieur React portails',
+    'Architecte BURHAN Solidity',
+    'Ingénieur AELYA ZKP',
+    'DevSecOps',
+    'DBA PostgreSQL',
+    'Ingénieur MLX/LoRA',
+    'QA automaticien',
+    'Ingénieur MCP/A2A',
+    'Architecte Web 4.0',
+    'Ingénieur mobile React Native',
+  ];
+  engineeringNames.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L1',
+      pole: 'IA & Ingénierie',
+      platform: 'GPT',
+      model: 'GPT-5.2',
+    }),
+  );
+
+  const dataNames = [
+    'DPO RGPD',
+    'Analyste AI Act',
+    'Analyste MiCA',
+    'Spécialiste ISO 13485',
+    'Cartographe données',
+    'Analyste KYC/AML',
+    'Veilleur réglementaire',
+    'Data quality analyst',
+  ];
+  dataNames.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L1',
+      pole: 'Données & Conformité',
+      platform: 'Gemini',
+      model: 'Gemini 3 Pro',
+    }),
+  );
+
+  const marketNames = [
+    'Analyste concurrentiel NOOS',
+    'Analyste TAM/SAM/SOM',
+    'Chasseur VC',
+    'Profiler GITEX',
+    'Rédacteur pitch deck',
+    'Analyste M&A',
+    'Business developer corridor',
+    'Growth hacker',
+    'Pricing analyst',
+    'LP relationship manager',
+  ];
+  marketNames.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L1',
+      pole: 'Marché & Acquisition',
+      platform: 'Mistral',
+      model: 'Mistral Large',
+    }),
+  );
+
+  const communicationNames = [
+    'Rédacteur content FR',
+    'Rédacteur content EN',
+    'Designer UI/UX',
+    'Vidéaste motion',
+    'Community manager',
+    'PR/Media',
+    'Traducteur AR/FR',
+    'Brand strategist',
+  ];
+  communicationNames.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L1',
+      pole: 'Communication & Design',
+      platform: 'Claude',
+      model: 'Claude Sonnet',
+    }),
+  );
+
+  collectors.forEach((collector) =>
+    addAgent({
+      id: `#${collector.toUpperCase()}-COL`,
+      name: `Collector ${collector}`.toUpperCase(),
+      layer: 'L1',
+      pole: 'Raqib',
+      platform: 'DeepSeek',
+      model: 'DeepSeek R1',
+      status: 'Actif',
+      entriesProduced: 2200 - agents.length * 4,
+    }),
+  );
+
+  vizNames.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L1',
+      pole: 'Viz',
+      platform: 'Qwen',
+      model: 'Qwen 2.5',
+    }),
+  );
+
+  for (let index = 0; index < 56; index += 1) {
+    const reservePlatform: AgentPlatform[] = ['Claude', 'GPT', 'Gemini'];
+    addAgent({
+      name: `Agent Réserve Alpha ${index + 1}`,
+      layer: 'L1',
+      pole: 'Réserve',
+      platform: reservePlatform[index % reservePlatform.length],
+      status: 'Inactif',
+      entriesProduced: 80 + index,
+    });
   }
 
-  // L1.5 SUPER-AGENTS (40)
-  const saTerms = ['FR', 'EN', 'AR', 'OHADA', 'UE', 'MA', 'Corridor'];
-  saTerms.forEach((zone, i) => addAgent({ id: `SA${(i+1).toString().padStart(2, '0')}`, name: `Vérificateur terminologique ${zone}`, layer: 'L1.5', pole: 'Données & Conformité', status: 'En attente' }));
-  
-  const saFacts = ['santé', 'finance', 'juridique', 'tech', 'géo', 'marché', 'science'];
-  saFacts.forEach((dom, i) => addAgent({ id: `SA${(i+8).toString().padStart(2, '0')}`, name: `Vérificateur factuel ${dom}`, layer: 'L1.5', pole: 'Données & Conformité' }));
+  // L1.5 (72)
+  const terminologyTerms = ['FR', 'EN', 'AR', 'OHADA', 'UE', 'MA', 'Corridor'];
+  terminologyTerms.forEach((term, index) =>
+    addAgent({
+      id: `SA${String(index + 1).padStart(2, '0')}`,
+      name: `Vérificateur terminologique ${term}`,
+      layer: 'L1.5',
+      pole: 'Données & Conformité',
+      platform: 'Claude',
+      status: 'En attente',
+    }),
+  );
 
-  const saCode = ['Rust', 'TypeScript', 'Solidity', 'Python', 'React', 'SQL', 'infra', 'API', 'perf', 'sécu'];
-  saCode.forEach((cod, i) => addAgent({ id: `SA${(i+15).toString().padStart(2, '0')}`, name: `Vérificateur code ${cod}`, layer: 'L1.5', pole: 'IA & Ingénierie' }));
+  const factualDomains = ['santé', 'finance', 'juridique', 'tech', 'géo', 'marché', 'science'];
+  factualDomains.forEach((domain, index) =>
+    addAgent({
+      id: `SA${String(index + 8).padStart(2, '0')}`,
+      name: `Vérificateur factuel ${domain}`,
+      layer: 'L1.5',
+      pole: 'Données & Conformité',
+      platform: 'Gemini',
+      model: 'Gemini 3 Pro',
+    }),
+  );
 
-  for(let i=1; i<=16; i++) {
-    addAgent({ id: `SA${i+24}`, name: `QA Adversariale Unité ${i}`, layer: 'L1.5', pole: 'IA & Ingénierie' });
+  const codeDomains = ['Rust', 'TypeScript', 'Solidity', 'Python', 'React', 'SQL', 'infra', 'API', 'perf', 'sécu'];
+  codeDomains.forEach((domain, index) =>
+    addAgent({
+      id: `SA${String(index + 15).padStart(2, '0')}`,
+      name: `Vérificateur code ${domain}`,
+      layer: 'L1.5',
+      pole: 'IA & Ingénierie',
+      platform: 'GPT',
+      model: 'GPT-5.2',
+    }),
+  );
+
+  for (let index = 1; index <= 16; index += 1) {
+    addAgent({
+      id: `SA${index + 24}`,
+      name: `QA Adversariale Unité ${index}`,
+      layer: 'L1.5',
+      pole: 'IA & Ingénierie',
+      platform: 'Qwen',
+      model: 'Qwen 2.5',
+    });
   }
 
-  // L2 SUPERVISION (6)
-  const l2Names = ['Superviseur NOOS', 'ÆLYA/MYNε', 'BURHAN/YrKnown', 'DIWANE/AlgueSov', 'CG/Cercle', 'AMANA'];
-  l2Names.forEach(n => addAgent({ name: n, layer: 'L2', pole: 'Raqib', platform: 'Claude', model: 'Claude Opus 4.6', status: 'Actif' }));
-
-  // L3 REPORTING (3)
-  const l3Names = ['Planificateur', 'Reporter', 'Optimiseur'];
-  l3Names.forEach(n => addAgent({ name: n, layer: 'L3', pole: 'Raqib', status: 'Actif' }));
-
-  // L4 FONDATEUR (8)
-  addAgent({ name: 'Mehdi (Fondateur)', layer: 'L4', pole: 'Raqib', status: 'Actif' });
-  const l4Stagiaires = ['Rust', 'Psychométricien', 'Réglementaire', 'Chief of Staff', 'Data Science', 'Blockchain', 'Biotech'];
-  l4Stagiaires.forEach(n => addAgent({ name: `Architecte Stagiaire ${n} (À recruter)`, layer: 'L4', pole: 'Réserve', status: 'Inactif' }));
-
-  // OPS RAQIB (28)
-  const opsNames = ['scaffold', 'data-extract', 'components', 'api-routes', 'assembly', 'qa', 'verif', 'supervisor-local', 'raqib-supervisor', 'eigen-collector', ...collectors.map(c => `${c}-collector`), ...vizNames.map(v => `${v}-gen`)];
-  opsNames.forEach(n => addAgent({ 
-    name: `ops-${n}`, layer: 'OPS', pole: 'Raqib', 
-    status: Math.random() > 0.5 ? 'Actif' : 'En attente',
-    platform: 'GPT', model: 'GPT-4o'
-  }));
-
-  // On complète OPS si on n'a pas 28. (10 + 10 collectors + 6 viz = 26). Plus 'raqib-supervisor', 'eigen-collector' = 28. Perfect.
-
-  // Total should be exactly 237. Let's enforce it exactly.
-  if (agents.length < 237) {
-    const remaining = 237 - agents.length;
-    for(let i=0; i<remaining; i++) addAgent({ name: `Agent Supplémentaire ${i}`, layer: 'L1', pole: 'Réserve' });
+  for (let index = 0; index < 32; index += 1) {
+    addAgent({
+      id: `SV${String(index + 1).padStart(2, '0')}`,
+      name: `Superviseur qualité L1.5 ${index + 1}`,
+      layer: 'L1.5',
+      pole: index % 2 === 0 ? 'Réserve' : 'Données & Conformité',
+      platform: index % 2 === 0 ? 'Claude' : 'Gemini',
+      status: index % 3 === 0 ? 'Inactif' : 'En attente',
+      entriesProduced: 40 + index,
+    });
   }
-  agents.splice(237); // truncate just in case
+
+  // L2 (6) -> active to total exactly 16 active agents with the 10 collectors
+  const l2Names = ['Superviseur NOOS', 'AELYA/MYNE', 'BURHAN/YrKnown', 'DIWANE/AlgueSov', 'CG/Cercle', 'AMANA'];
+  l2Names.forEach((name) =>
+    addAgent({
+      name,
+      layer: 'L2',
+      pole: 'Raqib',
+      platform: 'Claude',
+      model: 'Claude Opus 4.6',
+      status: 'Actif',
+      entriesProduced: 950,
+    }),
+  );
+
+  // L3 (3)
+  ['Planificateur', 'Reporter', 'Optimiseur'].forEach((name, index) =>
+    addAgent({
+      name,
+      layer: 'L3',
+      pole: 'Raqib',
+      platform: index === 0 ? 'Claude' : 'GPT',
+      status: 'En attente',
+      entriesProduced: 420 - index * 30,
+    }),
+  );
+
+  // L4 (8)
+  addAgent({
+    name: 'Mehdi (Fondateur)',
+    layer: 'L4',
+    pole: 'Raqib',
+    platform: 'Claude',
+    status: 'En attente',
+    entriesProduced: 320,
+  });
+  [
+    'Rust',
+    'Psychométricien',
+    'Réglementaire',
+    'Chief of Staff',
+    'Data Science',
+    'Blockchain',
+    'Biotech',
+  ].forEach((domain, index) =>
+    addAgent({
+      name: `Architecte Stagiaire ${domain} (À recruter)`,
+      layer: 'L4',
+      pole: 'Réserve',
+      platform: index % 2 === 0 ? 'Claude' : 'GPT',
+      status: 'Inactif',
+      entriesProduced: 10 + index,
+    }),
+  );
+
+  // OPS (28)
+  const opsNames = [
+    'scaffold',
+    'data-extract',
+    'components',
+    'api-routes',
+    'assembly',
+    'qa',
+    'verif',
+    'supervisor-local',
+    'raqib-supervisor',
+    'eigen-collector',
+    ...collectors.map((collector) => `${collector}-collector`),
+    ...vizNames.map((name) => `${name}-gen`),
+    'artifact-sync',
+    'release-notifier',
+  ];
+
+  opsNames.forEach((name, index) =>
+    addAgent({
+      name: `ops-${name}`,
+      layer: 'OPS',
+      pole: 'Raqib',
+      platform: 'GPT',
+      model: index % 2 === 0 ? 'GPT-4o' : 'GPT-5.2',
+      status: index % 5 === 0 ? 'Inactif' : 'En attente',
+      entriesProduced: 210 - index * 3,
+    }),
+  );
 
   return agents;
-};
+}
 
-export const agentsData: Agent[] = generateMockData();
+export const agentsData: Agent[] = buildAgents();
