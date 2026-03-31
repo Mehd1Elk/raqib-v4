@@ -135,6 +135,24 @@ export default function Dashboard() {
         </div>
         <div className="flex items-center gap-3">
           <a
+            href="/dashboards/investor"
+            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-gold hover:bg-gold hover:text-white no-underline border border-gold rounded px-2 py-0.5 transition-colors"
+          >
+            INVESTOR
+          </a>
+          <a
+            href="/dashboards/supervisor"
+            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
+          >
+            SUPERVISOR
+          </a>
+          <a
+            href="/dashboards/gitex"
+            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
+          >
+            GITEX
+          </a>
+          <a
             href="/stats"
             className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
           >

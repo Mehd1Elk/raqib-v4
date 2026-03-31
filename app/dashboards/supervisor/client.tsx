@@ -5,10 +5,12 @@ import type { Database } from '@/lib/supabase/types';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
 
-const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false });
-const AgentActivityTimeline = dynamic(() => import('@/components/viz/timelines/AgentActivityTimeline').then(m => ({ default: m.AgentActivityTimeline })), { ssr: false });
-const PlatformsPieChart = dynamic(() => import('@/components/viz/charts/PlatformsPieChart').then(m => ({ default: m.PlatformsPieChart })), { ssr: false });
-const TimelineLineChart = dynamic(() => import('@/components/viz/charts/TimelineLineChart').then(m => ({ default: m.TimelineLineChart })), { ssr: false });
+const LoadingViz = ({ h = 300 }: { h?: number }) => <div className={`bg-[#F7F3EA] animate-pulse rounded`} style={{ height: h }} />;
+
+const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false, loading: () => <LoadingViz /> });
+const AgentActivityTimeline = dynamic(() => import('@/components/viz/timelines/AgentActivityTimeline').then(m => ({ default: m.AgentActivityTimeline })), { ssr: false, loading: () => <LoadingViz h={200} /> });
+const PlatformsPieChart = dynamic(() => import('@/components/viz/charts/PlatformsPieChart').then(m => ({ default: m.PlatformsPieChart })), { ssr: false, loading: () => <LoadingViz /> });
+const TimelineLineChart = dynamic(() => import('@/components/viz/charts/TimelineLineChart').then(m => ({ default: m.TimelineLineChart })), { ssr: false, loading: () => <LoadingViz h={200} /> });
 
 interface SupervisorClientProps {
   agentRunEntries: EntryRow[];
