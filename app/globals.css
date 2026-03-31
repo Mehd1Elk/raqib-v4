@@ -102,3 +102,8 @@ body {
 }
 .leaflet-popup-tip { background: #FDFAF3; }
 .leaflet-popup-content { margin: 8px 12px; font-family: 'Noto Sans', sans-serif; font-size: 11px; }
+
+/* Org chart views — SVG hover via CSS (D3 transitions break in ssr:false) */
+.h-node-bg { transition: stroke-width 150ms ease, filter 150ms ease; }
+.h-node-bg:hover { stroke-width: 2.5 !important; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08)); }
+circle.agent { transition: r 100ms ease, fill-opacity 100ms ease; }

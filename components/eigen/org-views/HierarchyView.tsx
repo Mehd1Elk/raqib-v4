@@ -152,17 +152,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
           return 1.5;
         })
         .style('filter', 'drop-shadow(0 1px 3px rgba(0,0,0,0.04))')
-        .on('mouseenter', function () {
-          d3.select(this)
-            .attr('stroke-width', 2)
-            .style('filter', 'drop-shadow(0 2px 6px rgba(0,0,0,0.08))');
-        })
-        .on('mouseleave', function (event, d: any) {
-          const isHighlighted = searchHighlight && d.data.name.toLowerCase().includes(searchHighlight.toLowerCase());
-          d3.select(this)
-            .attr('stroke-width', isHighlighted ? 2.5 : 1.5)
-            .style('filter', 'drop-shadow(0 1px 3px rgba(0,0,0,0.04))');
-        });
+        .attr('class', 'h-node-bg');
 
       // Color bar
       nodes.append('rect')

@@ -168,7 +168,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
         }
 
         dot.on('mouseenter', function () {
-          d3.select(this).transition().duration(100).attr('r', 7);
+          d3.select(this).attr('r', 7);
           tooltip.style('display', null);
           tooltipText.text(`${agent.name} (${agent.layer})`);
           const bbox = (tooltipText.node() as SVGTextElement).getBBox();
@@ -176,7 +176,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
           tooltip.attr('transform', `translate(${ex + dx},${ey + dy - 16})`);
         });
         dot.on('mouseleave', function () {
-          d3.select(this).transition().duration(100).attr('r', agent.status === 'Actif' ? 4 : 3);
+          d3.select(this).attr('r', agent.status === 'Actif' ? 4 : 3);
           tooltip.style('display', 'none');
         });
         dot.on('click', () => { if (onSelectAgent) onSelectAgent(agent.id); });
@@ -189,7 +189,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
           .translate(width / 2, height / 2)
           .scale(2)
           .translate(-ex, -ey);
-        svg.transition().duration(500).call(zoomBehavior.transform, transform);
+        svg.call(zoomBehavior.transform, transform);
       });
     });
 

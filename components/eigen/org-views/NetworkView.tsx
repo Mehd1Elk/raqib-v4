@@ -207,7 +207,7 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
           connected.has((l.source as NetNode).id) && connected.has((l.target as NetNode).id) ? 0.5 : 0.03
         );
 
-        d3.select(this).transition().duration(100).attr('r', d.radius * 1.6);
+        d3.select(this).attr('r', d.radius * 1.6);
 
         tooltip.style('display', null);
         tooltipText.text(`${d.name} (${d.layer}) · ${d.entries} entries`);
@@ -218,22 +218,17 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
       .on('mouseleave', function (event, d) {
         nodeElements.attr('fill-opacity', n => n.status === 'Actif' ? 0.9 : 0.35);
         linkElements.attr('stroke-opacity', 0.15);
-        d3.select(this).transition().duration(100).attr('r', d.radius);
+        d3.select(this).attr('r', d.radius);
         tooltip.style('display', 'none');
       })
       .on('click', function (event, d) {
         if (onSelectAgent) onSelectAgent(d.id);
       });
 
-    // Pulse active agents
-    const activeNodes = nodeElements.filter(d => d.status === 'Actif');
-    function pulse() {
-      activeNodes
-        .transition().duration(1500).attr('fill-opacity', 0.5)
-        .transition().duration(1500).attr('fill-opacity', 0.9)
-        .on('end', pulse);
-    }
-    pulse();
+    // Active agent highlight
+    nodeElements.filter(d => d.status === 'Actif')
+      .attr('stroke', d => LAYER_COLORS[d.layer] || '#918977')
+      .attr('stroke-width', 1.5);
 
     // Layer legend
     const legend = g.append('g').attr('transform', `translate(${-width / 2 + 20}, ${-height / 2 + 20})`);

@@ -115,34 +115,19 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
         .attr('stroke-width', thickness)
         .attr('stroke-linecap', 'round');
 
-      // Animated flow particles
+      // Static flow direction arrows along path
       const pathNode = path.node()!;
       const totalLength = pathNode.getTotalLength();
-
-      function animateParticle() {
-        const particle = linkGroup.append('circle')
-          .attr('r', Math.max(2, thickness / 4))
+      const arrowCount = Math.max(1, Math.floor(totalLength / 60));
+      for (let ai = 1; ai <= arrowCount; ai++) {
+        const t = ai / (arrowCount + 1);
+        const p = pathNode.getPointAtLength(t * totalLength);
+        linkGroup.append('circle')
+          .attr('cx', p.x).attr('cy', p.y)
+          .attr('r', Math.max(2, thickness / 5))
           .attr('fill', link.color)
-          .attr('fill-opacity', 0.7);
-
-        particle.transition()
-          .duration(2000 + Math.random() * 1000)
-          .ease(d3.easeLinear)
-          .attrTween('transform', () => {
-            return (t: number) => {
-              const p = pathNode.getPointAtLength(t * totalLength);
-              return `translate(${p.x},${p.y})`;
-            };
-          })
-          .on('end', function () {
-            d3.select(this).remove();
-          });
+          .attr('fill-opacity', 0.5);
       }
-
-      // Start particles at intervals
-      const interval = setInterval(animateParticle, 400 + (2000 / Math.max(1, link.value / 100)));
-      // Save for cleanup
-      (path.node() as any).__interval = interval;
 
       // Hover tooltip on link
       path
@@ -208,13 +193,7 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
       .attr('fill', '#FDFAF3').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
       .attr('text-anchor', 'middle');
 
-    return () => {
-      // Cleanup particle intervals
-      linkGroup.selectAll('path').each(function () {
-        const interval = (this as any).__interval;
-        if (interval) clearInterval(interval);
-      });
-    };
+    return () => {};
   }, [agents, width, height]);
 
   return <svg ref={svgRef} width={width} height={height} />;

@@ -140,7 +140,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
             const svgEl = containerRef.current?.querySelector('svg');
             if (svgEl) {
               const svg = d3.select(svgEl);
-              svg.transition().duration(300).call(d3.zoom().scaleBy as any, 1.3);
+              svg.call(d3.zoom().scaleBy as any, 1.3);
             }
           }}
           className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
@@ -152,7 +152,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
             const svgEl = containerRef.current?.querySelector('svg');
             if (svgEl) {
               const svg = d3.select(svgEl);
-              svg.transition().duration(300).call(d3.zoom().scaleBy as any, 0.7);
+              svg.call(d3.zoom().scaleBy as any, 0.7);
             }
           }}
           className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
@@ -166,7 +166,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               const svg = d3.select(svgEl);
               const w = dimensions.width;
               const h = dimensions.height - 90;
-              svg.transition().duration(500).call(
+              svg.call(
                 d3.zoom().transform as any,
                 d3.zoomIdentity.translate(w / 2, h / 2).scale(0.65)
               );

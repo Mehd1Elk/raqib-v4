@@ -173,7 +173,7 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
 
     circles
       .on('mouseenter', function (event, d) {
-        d3.select(this).transition().duration(150).attr('r', d.radius * 1.8);
+        d3.select(this).attr('r', d.radius * 1.8);
         tooltip.style('display', null);
         tooltipText.text(`${d.name} (${d.layer})`);
         const bbox = (tooltipText.node() as SVGTextElement).getBBox();
@@ -183,22 +183,15 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
         tooltip.attr('transform', `translate(${d.x},${d.y! - 20})`);
       })
       .on('mouseleave', function (event, d) {
-        d3.select(this).transition().duration(150).attr('r', d.radius);
+        d3.select(this).attr('r', d.radius);
         tooltip.style('display', 'none');
       })
       .on('click', function (event, d) {
         if (onSelectAgent) onSelectAgent(d.id);
       });
 
-    // Active agent pulse animation
-    const activeCircles = circles.filter(d => d.status === 'Actif');
-    function pulse() {
-      activeCircles
-        .transition().duration(1200).attr('fill-opacity', 0.5)
-        .transition().duration(1200).attr('fill-opacity', 0.9)
-        .on('end', pulse);
-    }
-    pulse();
+    // Active agent highlight
+    circles.filter(d => d.status === 'Actif').attr('stroke', d => PLATFORM_COLORS[d.platform] || '#918977').attr('stroke-width', 1);
 
     // Tick
     simulation.on('tick', () => {
