@@ -4,9 +4,10 @@ interface Props {
   title: string;
   subtitle?: string;
   entityColor?: string;
+  children?: React.ReactNode;
 }
 
-export function DashboardHeader({ title, subtitle, entityColor }: Props) {
+export function DashboardHeader({ title, subtitle, entityColor, children }: Props) {
   return (
     <div className="h-[52px] flex items-center justify-between px-6 border-b border-div bg-ivory sticky top-0 z-40">
       <div className="flex items-center gap-3.5">
@@ -33,6 +34,7 @@ export function DashboardHeader({ title, subtitle, entityColor }: Props) {
         )}
       </div>
       <div className="flex items-center gap-3">
+        {children}
         <Link
           href="/dashboards/investor"
           className="text-[8px] font-[family-name:var(--font-jetbrains)] text-gold hover:bg-gold hover:text-white no-underline border border-gold rounded px-2 py-0.5 transition-colors"

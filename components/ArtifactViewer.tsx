@@ -29,7 +29,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
 
   if (!content) return (
     <div style={{ height: 200, background: '#F7F3EA', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #D4CCBA' }}>
-      <span style={{ color: '#918977', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Interface non trouvee : {artifactName}</span>
+      <span style={{ color: '#918977', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Interface non trouvée : {artifactName}</span>
     </div>
   );
 
@@ -74,6 +74,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
         </span>
         <div style={{ display: 'flex', gap: 8 }}>
           <button
+            aria-label={fullscreen ? 'Réduire artifact' : 'Plein écran artifact'}
             onClick={() => setFullscreen(!fullscreen)}
             style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -90,6 +91,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
             {fullscreen ? 'REDUIRE' : 'PLEIN ECRAN'}
           </button>
           <button
+            aria-label="Ouvrir artifact séparément"
             onClick={() => window.open(`/artifacts/${artifactName}`, '_blank')}
             style={{
               fontFamily: 'JetBrains Mono, monospace',
@@ -110,6 +112,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
 
       {/* Iframe */}
       <iframe
+        data-testid="artifact-iframe"
         srcDoc={srcDoc}
         sandbox="allow-scripts allow-same-origin"
         style={{

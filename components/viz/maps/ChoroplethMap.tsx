@@ -6,6 +6,7 @@ import L from 'leaflet';
 import { useMapEntries } from './use-map-entries';
 import { useCountriesGeoJSON } from './use-countries-geojson';
 import { CARTO_TILE_URL, CARTO_ATTRIBUTION, DEFAULT_CENTER, DEFAULT_ZOOM, CHOROPLETH_SCALE } from './map-constants';
+import { CustomZoomControl } from './CustomZoomControl';
 import type { BaseMapProps, ChoroplethDatum } from './map-types';
 import type { Feature, Geometry } from 'geojson';
 
@@ -109,8 +110,10 @@ export function ChoroplethMap({
         style={{ width: '100%', height: '100%' }}
         scrollWheelZoom={true}
         attributionControl={false}
+        zoomControl={false}
       >
         <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
+        <CustomZoomControl />
         {countriesGeoJSON && (
           <GeoJSON
             ref={geoRef}

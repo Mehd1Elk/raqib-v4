@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function EigenKPIBar({
   label,
   value,
@@ -9,7 +11,7 @@ export function EigenKPIBar({
 }: {
   label: string;
   value: string | number;
-  icon: string;
+  icon: React.ReactNode;
   trend?: 'up' | 'down' | 'neutral';
   trendValue?: string;
   color: 'gold' | 'emerald' | 'red';
@@ -44,7 +46,7 @@ export function EigenKPIBar({
       style={{ borderLeft: `3px solid ${borderColor}` }}
     >
       <div className="flex items-center gap-2 mb-1">
-        <span className="text-[16px]">{icon}</span>
+        <span className="text-[16px] flex items-center">{icon}</span>
         <span className="font-[family-name:var(--font-cormorant)] text-[28px] font-bold text-black leading-none">
           {value}
         </span>

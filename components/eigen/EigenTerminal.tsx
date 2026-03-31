@@ -214,7 +214,7 @@ export function EigenTerminal() {
   }, [addLine]);
 
   return (
-    <div className="w-full h-full bg-[#1C1814] text-[#D4B662] font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6] flex flex-col overflow-hidden">
+    <div data-testid="eigen-terminal" className="w-full h-full bg-[#1C1814] text-[#D4B662] font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6] flex flex-col overflow-hidden">
       {/* Header */}
       <div className="flex justify-between items-center px-6 pt-4 pb-2 shrink-0">
         <div className="font-bold tracking-widest text-[12px]">

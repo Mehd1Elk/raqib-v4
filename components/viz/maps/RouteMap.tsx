@@ -5,6 +5,7 @@ import { MapContainer, TileLayer, Polyline, Marker, Popup } from 'react-leaflet'
 import L from 'leaflet';
 import { useMapEntries } from './use-map-entries';
 import { CARTO_TILE_URL, CARTO_ATTRIBUTION, ARC_CITIES } from './map-constants';
+import { CustomZoomControl } from './CustomZoomControl';
 import type { BaseMapProps, RouteDatum } from './map-types';
 
 interface RouteMapProps extends BaseMapProps {
@@ -82,8 +83,10 @@ export function RouteMap({
         style={{ width: '100%', height: '100%' }}
         scrollWheelZoom={true}
         attributionControl={false}
+        zoomControl={false}
       >
         <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
+        <CustomZoomControl />
 
         {/* Route line */}
         <Polyline

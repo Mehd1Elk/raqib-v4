@@ -11,6 +11,7 @@ import {
   CORRIDOR_COUNTRIES,
   CORRIDOR_NAMES,
 } from './map-constants';
+import { CustomZoomControl } from './CustomZoomControl';
 import type { BaseMapProps } from './map-types';
 import type { Feature, Geometry } from 'geojson';
 
@@ -91,8 +92,10 @@ export function CorridorMap({
         style={{ width: '100%', height: '100%' }}
         scrollWheelZoom={true}
         attributionControl={false}
+        zoomControl={false}
       >
         <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
+        <CustomZoomControl />
         {countriesGeoJSON && (
           <GeoJSON
             ref={geoRef}

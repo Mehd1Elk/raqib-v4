@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import StatusDot from '../ui/StatusDot';
 
 interface AgentStatus {
   id: string;
@@ -43,12 +44,12 @@ const STATIC_AGENTS: AgentStatus[] = [
   { id: 'report-gen', name: 'report-gen', model: 'Opus', status: 'idle', lastActivity: '24h ago', entriesProduced: 5 },
 ];
 
-function statusIcon(status: string): string {
+function statusIcon(status: string) {
   switch (status) {
-    case 'active': return '\u{1F7E2}';
-    case 'idle': return '\u{26AA}';
-    case 'error': return '\u{1F534}';
-    default: return '\u{26AA}';
+    case 'active': return <StatusDot status="active" />;
+    case 'idle': return <StatusDot status="standby" />;
+    case 'error': return <StatusDot status="error" />;
+    default: return <StatusDot status="inactive" />;
   }
 }
 
@@ -113,11 +114,12 @@ export function AgentStatusGrid() {
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1C1814] font-bold truncate">
               {agent.name}
             </div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">
-              {'\u25CF'} {agent.model}
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex items-center gap-1">
+              <span className="text-[#1C1814]">{'\u25CF'}</span> {agent.model}
             </div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">
-              {statusIcon(agent.status)} {agent.lastActivity}
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex items-center gap-1">
+              {statusIcon(agent.status)} 
+              <span>{agent.lastActivity}</span>
             </div>
             <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#B8963E]">
               {agent.entriesProduced > 0 ? `${agent.entriesProduced} entries` : '-'}

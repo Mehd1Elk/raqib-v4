@@ -155,7 +155,7 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
         </button>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-stone-200 text-left text-sm">
+        <table aria-label="Liste des agents EIGEN" className="min-w-full divide-y divide-stone-200 text-left text-sm">
           <thead className="bg-[#F7F3EA] text-[#D4AF37]">
             {table.getHeaderGroups().map(headerGroup => (
               <tr key={headerGroup.id}>

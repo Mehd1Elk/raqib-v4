@@ -1,6 +1,8 @@
 'use client';
 
 import { useLiveFeed, type FeedEvent } from '@/lib/supabase/realtime-feed';
+import StatusDot from '../ui/StatusDot';
+import { CircleDot, CheckCircle2, Rocket, AlertTriangle } from 'lucide-react';
 
 const STATIC_EVENTS: FeedEvent[] = [
   { id: 's1', timestamp: new Date(Date.now() - 60000), type: 'insert', agent: 'noos-collector', layer: 'n01', entity: 'noos', message: 'noos-collector \u2192 n01 \u00B7 +5 entries (psychiatres FR)', count: 5 },
@@ -25,15 +27,15 @@ const STATIC_EVENTS: FeedEvent[] = [
   { id: 's20', timestamp: new Date(Date.now() - 3900000), type: 'insert', agent: 'pdf-extractor', message: 'pdf-extractor \u00B7 +3 documents pars\u00E9s', count: 3 },
 ];
 
-function eventIcon(type: FeedEvent['type']): string {
+function eventIcon(type: FeedEvent['type']) {
   switch (type) {
-    case 'insert': return '\u{1F7E2}';
-    case 'update': return '\u{1F535}';
-    case 'check': return '\u2705';
-    case 'deploy': return '\u{1F535}';
-    case 'delete': return '\u26AA';
-    case 'error': return '\u{1F7E1}';
-    default: return '\u26AA';
+    case 'insert': return <StatusDot status="active" />;
+    case 'update': return <CircleDot size={12} className="text-[#3D5E8C]" />;
+    case 'check': return <CheckCircle2 size={12} className="text-[#3D7C5E]" />;
+    case 'deploy': return <Rocket size={12} className="text-[#3D5E8C]" />;
+    case 'delete': return <StatusDot status="inactive" />;
+    case 'error': return <StatusDot status="error" />;
+    default: return <StatusDot status="inactive" />;
   }
 }
 
@@ -79,9 +81,9 @@ export function EigenLiveFeed({ mode = 'compact', limit }: EigenLiveFeedProps) {
     return (
       <div className="flex flex-col gap-0.5 font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6]">
         {events.map(evt => (
-          <div key={evt.id} className="flex gap-2 text-[#D4B662]">
+          <div key={evt.id} className="flex gap-2 items-center text-[#D4B662]">
             <span className="text-[#918977] shrink-0">[{formatTimeFull(evt.timestamp)}]</span>
-            <span className="shrink-0">{eventIcon(evt.type)}</span>
+            <span className="shrink-0 flex items-center w-3 h-3">{eventIcon(evt.type)}</span>
             <span className="text-white font-bold shrink-0 w-[52px]">{eventLabel(evt.type)}</span>
             <span className="truncate">{evt.message}</span>
           </div>
@@ -101,7 +103,7 @@ export function EigenLiveFeed({ mode = 'compact', limit }: EigenLiveFeedProps) {
       <div className="flex-1 overflow-y-auto p-3 flex flex-col gap-1.5">
         {events.map(evt => (
           <div key={evt.id} className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] text-[10px] leading-tight">
-            <span className="shrink-0 text-[11px]">{eventIcon(evt.type)}</span>
+            <span className="shrink-0 flex items-center justify-center w-3 h-3 text-[11px]">{eventIcon(evt.type)}</span>
             <span className="text-[#1C1814] truncate flex-1">
               {evt.message}
             </span>

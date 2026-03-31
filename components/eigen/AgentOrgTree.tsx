@@ -68,8 +68,8 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .join('path')
       .attr('class', 'link')
       .attr('d', d3.linkVertical<any, any>()
-        .x(d => d.x)
-        .y(d => d.y)
+        .x((d: any) => d.x)
+        .y((d: any) => d.y)
       )
       .attr('fill', 'none')
       .attr('stroke', '#D4CCBA')
@@ -81,7 +81,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .data(root.descendants())
       .join('g')
       .attr('class', 'node')
-      .attr('transform', d => `translate(${d.x},${d.y})`)
+      .attr('transform', (d: any) => `translate(${d.x},${d.y})`)
       .style('cursor', 'pointer');
 
     // Rectangle fond
@@ -92,7 +92,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .attr('height', 56)
       .attr('rx', 6)
       .attr('fill', '#FDFAF3')
-      .attr('stroke', d => d.data.color + '40')
+      .attr('stroke', (d: any) => d.data.color + '40')
       .attr('stroke-width', 1.5)
       .style('filter', 'drop-shadow(0 1px 3px rgba(0,0,0,0.04))')
       .on('mouseenter', function() {
@@ -117,7 +117,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .attr('width', 3)
       .attr('height', 56)
       .attr('rx', 1.5)
-      .attr('fill', d => d.data.color);
+      .attr('fill', (d: any) => d.data.color);
 
     // Nom
     nodes.append('text')
@@ -128,7 +128,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .attr('font-weight', 700)
       .attr('font-style', 'italic')
       .attr('fill', '#1C1814')
-      .text(d => {
+      .text((d: any) => {
         const name = d.data.name;
         return name.length > 22 ? name.slice(0, 22) + '…' : name;
       });
@@ -140,21 +140,21 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
       .attr('font-family', 'JetBrains Mono')
       .attr('font-size', 8)
       .attr('fill', '#918977')
-      .text(d => d.data.count ? `${d.data.layer} · ${d.data.count} agents` : d.data.layer);
+      .text((d: any) => d.data.count ? `${d.data.layer} · ${d.data.count} agents` : d.data.layer);
 
     // Status dot
-    nodes.filter(d => !!d.data.status)
+    nodes.filter((d: any) => !!d.data.status)
       .append('circle')
       .attr('cx', 68)
       .attr('cy', -10)
       .attr('r', 3)
-      .attr('fill', d => {
+      .attr('fill', (d: any) => {
         const s = d.data.status;
         return s === 'active' ? '#3D7C5E' : s === 'error' ? '#9C3D3D' : '#918977';
       });
 
     // Click → callback
-    nodes.on('click', (event, d) => {
+    nodes.on('click', (event: any, d: any) => {
       if (onSelectAgent && d.data.id) {
         onSelectAgent(d.data.id);
       }

@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { BarChart3, Cpu, CheckCircle2, Calendar, AlertTriangle } from 'lucide-react';
 import { EigenKPIBar } from './EigenKPIBar';
 import { EigenLiveFeed } from './EigenLiveFeed';
 import { AgentStatusGrid } from './AgentStatusGrid';
@@ -26,7 +27,7 @@ export function EigenOverview() {
         <EigenKPIBar
           label="Entries totales"
           value="16 384"
-          icon="📊"
+          icon={<BarChart3 size={16} strokeWidth={1.5} />}
           trend="up"
           trendValue="+3470 (24h)"
           color="gold"
@@ -34,7 +35,7 @@ export function EigenOverview() {
         <EigenKPIBar
           label="Agents actifs"
           value="16/237"
-          icon="🤖"
+          icon={<Cpu size={16} strokeWidth={1.5} />}
           trend="up"
           trendValue="+2"
           color="emerald"
@@ -42,7 +43,7 @@ export function EigenOverview() {
         <EigenKPIBar
           label="Score qualité"
           value="88/100"
-          icon="✅"
+          icon={<CheckCircle2 size={16} strokeWidth={1.5} />}
           trend="up"
           trendValue="+1.2%"
           color="emerald"
@@ -50,7 +51,7 @@ export function EigenOverview() {
         <EigenKPIBar
           label="Prochaine deadline"
           value="GITEX"
-          icon="📅"
+          icon={<Calendar size={16} strokeWidth={1.5} />}
           trend="neutral"
           trendValue="7 avril"
           color="gold"
@@ -58,7 +59,7 @@ export function EigenOverview() {
         <EigenKPIBar
           label="Anomalies"
           value="0"
-          icon="⚠️"
+          icon={<AlertTriangle size={16} strokeWidth={1.5} />}
           trend="down"
           trendValue="-2"
           color="emerald"

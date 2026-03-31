@@ -4,6 +4,7 @@ import { useMemo, useState, useCallback } from 'react';
 import { MapContainer, TileLayer, Polyline, CircleMarker, Tooltip } from 'react-leaflet';
 import { useMapEntries } from './use-map-entries';
 import { CARTO_TILE_URL, CARTO_ATTRIBUTION } from './map-constants';
+import { CustomZoomControl } from './CustomZoomControl';
 import type { BaseMapProps, FlowDatum } from './map-types';
 import type { LatLngExpression } from 'leaflet';
 
@@ -95,8 +96,10 @@ export function FlowMap({
         style={{ width: '100%', height: '100%' }}
         scrollWheelZoom={true}
         attributionControl={false}
+        zoomControl={false}
       >
         <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
+        <CustomZoomControl />
 
         {flows.map((flow) => {
           const width = Math.max(1, (flow.value / maxValue) * 5);

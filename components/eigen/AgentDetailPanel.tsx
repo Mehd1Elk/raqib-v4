@@ -1,6 +1,6 @@
 import React from 'react';
 import { Agent } from '../../lib/agents-data';
-import { X, PlayCircle, Edit3, Database } from 'lucide-react';
+import { X, PlayCircle, Edit3, Database, CheckCircle2, XCircle } from 'lucide-react';
 
 interface AgentDetailPanelProps {
   agent: Agent | null;
@@ -19,7 +19,12 @@ export const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({ agent, onClo
       />
       
       {/* Panel */}
-      <div className="fixed right-0 top-0 h-full w-[400px] bg-white border-l border-[#D4AF37] z-50 shadow-2xl overflow-y-auto transform transition-transform duration-300 translate-x-0">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={`Détail agent ${agent.name}`}
+        className="fixed right-0 top-0 h-full w-[400px] bg-white border-l border-[#D4AF37] z-50 shadow-2xl overflow-y-auto transform transition-transform duration-300 translate-x-0"
+      >
         <div className="p-6">
           {/* Header */}
           <div className="flex justify-between items-start mb-6 border-b border-stone-200 pb-4">
@@ -92,13 +97,13 @@ export const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({ agent, onClo
                 <div key={idx} className="flex justify-between items-center text-stone-600">
                   <span>31/03 {18 - idx * 2}:00</span>
                   <span className="text-green-600">+{Math.floor(Math.random() * 20 + 5)} entries</span>
-                  <span className="text-lg">✅</span>
+                  <CheckCircle2 size={16} className="text-green-600" />
                 </div>
               ))}
               <div className="flex justify-between items-center text-red-500">
                 <span>31/03 12:00</span>
                 <span>erreur timeout</span>
-                <span className="text-lg">❌</span>
+                <XCircle size={16} className="text-red-500" />
               </div>
             </div>
           </div>

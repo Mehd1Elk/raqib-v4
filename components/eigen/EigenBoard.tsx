@@ -11,42 +11,55 @@ import {
   Plus,
   Users,
   ChevronRight,
-  RefreshCw
+  RefreshCw,
+  Target,
+  TrendingUp,
+  Scale,
+  Cog,
+  Globe
 } from 'lucide-react';
+
+const AGENT_ICONS: Record<string, React.ComponentType<{size?: number; strokeWidth?: number; className?: string}>> = {
+  target: Target,
+  finance: TrendingUp,
+  juridique: Scale,
+  technique: Cog,
+  commercial: Globe,
+};
 
 const BOARD_AGENTS = [
   {
     id: 'strategie',
     name: 'Directeur Stratégie',
-    icon: '🎯',
+    icon: 'target',
     color: '#B8963E',
     system: `Tu es le Directeur Stratégie d'Eigen Holding. Tu analyses les priorités, les opportunités et les risques macro. Ton ton est directif et tranchant. Tu connais l'écosystème Eigen : 6 subsidiaires (NOOS, ÆLYA, MYNε, BURHAN, YrKnown + DIWANE, AlgueSov, AMANA), CG SA (investment club CFC), Cercle du Gazoduc (écosystème). Corridor atlantique 22 pays + UE. Runway 31 mois. Tu ne fais jamais plus de 150 mots. Tu conclus toujours par une recommandation d'action claire.`
   },
   {
     id: 'finance',
     name: 'Directeur Finance',
-    icon: '💰',
+    icon: 'finance',
     color: '#3D7C5E',
     system: `Tu es le Directeur Finance d'Eigen. Tu parles en chiffres : valorisations, IRR, runway, burn rate, unit economics. Tu connais : runway 31 mois, cible €15-45M levée, 6 briques Eigen, budget agents ~600-810€/mois. Tu es prudent sur les projections et exigeant sur les métriques. Tu ne fais jamais plus de 150 mots.`
   },
   {
     id: 'juridique',
     name: 'Directeur Juridique',
-    icon: '⚖️',
+    icon: 'juridique',
     color: '#3D5E8C',
     system: `Tu es le Directeur Juridique d'Eigen. Tu analyses les risques réglementaires : AI Act (UE 2024/1689), RGPD, MiCA, droit marocain des SA (Dahir 1-96-124), CFC Casablanca, conventions réglementées. Tu es systématiquement prudent. Tu signales les risques avant les opportunités. Tu ne fais jamais plus de 150 mots.`
   },
   {
     id: 'technique',
     name: 'Directeur Technique',
-    icon: '⚙️',
+    icon: 'technique',
     color: '#7B5EA7',
     system: `Tu es le CTO d'Eigen. Tu analyses la faisabilité technique et l'architecture. Tu connais : Rust (scoring <2ms), TypeScript (API), React (portails), 160+ agents IA, 9 plateformes, Supabase, Vercel, OpenClaw, Mac Mini cluster. Tu évalues les délais réalistes. Tu ne fais jamais plus de 150 mots.`
   },
   {
     id: 'commercial',
     name: 'Directeur Commercial',
-    icon: '🌍',
+    icon: 'commercial',
     color: '#6E2A3D',
     system: `Tu es le Directeur Commercial d'Eigen. Tu analyses le marché, la concurrence, le positionnement, l'acquisition client. Tu connais : corridor atlantique 22 pays, 1000 cibles entreprises, GITEX Africa, ATS London, VivaTech, Holmarcom, Bank of Africa, OCP. Tu es orienté action et résultats. Tu ne fais jamais plus de 150 mots.`
   }
@@ -447,13 +460,9 @@ export default function EigenBoard() {
                       className={isActive ? 'drop-shadow-[0_0_15px_rgba(184,150,62,0.5)]' : 'opacity-70'}
                       style={{ transition: 'all 0.4s ease' }}
                     />
-                    <text 
-                      x={pos.x} y={pos.y} 
-                      textAnchor="middle" dy=".35em" fontSize="20"
-                      className={isActive ? 'opacity-100' : 'opacity-60'}
-                    >
-                      {pos.agent.icon}
-                    </text>
+                    <foreignObject x={pos.x - 12} y={pos.y - 12} width="24" height="24" className={isActive ? 'opacity-100' : 'opacity-60'}>
+                      {(() => { const Icon = AGENT_ICONS[pos.agent.icon]; return Icon ? <Icon size={20} strokeWidth={1.5} className="text-white" /> : null; })()}
+                    </foreignObject>
                     <text 
                       x={pos.x} y={pos.y + 38} 
                       textAnchor="middle" 
@@ -473,7 +482,7 @@ export default function EigenBoard() {
                 className="mt-8 px-5 py-2.5 bg-[#B8963E]/10 border border-[#B8963E]/30 text-[#B8963E] rounded-full text-sm font-medium hover:bg-[#B8963E]/20 transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(184,150,62,0.1)]"
               >
                 <FileText size={16} />
-                📋 Synthèse du comité
+                Synthèse du comité
               </button>
             )}
 
@@ -544,7 +553,7 @@ export default function EigenBoard() {
                 >
                   <div className="flex justify-between items-end mb-1">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-                      <span className="text-base">{agent.icon}</span> 
+                      {(() => { const Icon = AGENT_ICONS[agent.icon]; return Icon ? <Icon size={16} strokeWidth={1.5} /> : null; })()}
                       <span style={{ color: agent.color }}>{agent.name}</span>
                       {isReply && replyTarget && (
                         <span className="text-slate-500 font-normal lowercase flex gap-1 items-center">
@@ -582,7 +591,7 @@ export default function EigenBoard() {
                            className="text-[10px] px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer flex gap-1 items-center border border-white/5"
                            title={`Demander à ${otherAgent.name} de répondre`}
                          >
-                           {otherAgent.icon} Rép.
+                           {(() => { const Icon = AGENT_ICONS[otherAgent.icon]; return Icon ? <Icon size={10} strokeWidth={1.5} /> : null; })()} Rép.
                          </button>
                        ))}
                      </div>
@@ -599,7 +608,7 @@ export default function EigenBoard() {
                   {(() => {
                     const agent = BOARD_AGENTS.find(a => a.id === activeAgent);
                     return agent ? (
-                      <><span className="text-base">{agent.icon}</span> <span style={{ color: agent.color }}>{agent.name} analyse...</span></>
+                      <>{(() => { const Icon = AGENT_ICONS[agent.icon]; return Icon ? <Icon size={16} strokeWidth={1.5} /> : null; })()} <span style={{ color: agent.color }}>{agent.name} analyse...</span></>
                     ) : null;
                   })()}
                 </div>

@@ -4,6 +4,7 @@ import { useMemo } from 'react';
 import { MapContainer, TileLayer, CircleMarker } from 'react-leaflet';
 import { useMapEntries } from './use-map-entries';
 import { CARTO_TILE_URL, CARTO_ATTRIBUTION } from './map-constants';
+import { CustomZoomControl } from './CustomZoomControl';
 import type { BaseMapProps, HeatDatum } from './map-types';
 
 interface HeatMapProps extends BaseMapProps {
@@ -68,8 +69,10 @@ export function HeatMap({
         style={{ width: '100%', height: '100%' }}
         scrollWheelZoom={true}
         attributionControl={false}
+        zoomControl={false}
       >
         <TileLayer url={CARTO_TILE_URL} attribution={CARTO_ATTRIBUTION} />
+        <CustomZoomControl />
 
         {points.map((p, i) => (
           <CircleMarker

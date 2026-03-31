@@ -74,6 +74,7 @@ export function CommandInput({ onCommand }: CommandInputProps) {
         <input
           ref={inputRef}
           type="text"
+          aria-label="Commande terminal"
           value={value}
           onChange={(e) => {
             setValue(e.target.value);

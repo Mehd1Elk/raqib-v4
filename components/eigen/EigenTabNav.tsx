@@ -9,12 +9,15 @@ export function EigenTabNav({ activeTab, onTabSelect }: { activeTab: string; onT
   ];
 
   return (
-    <div className="w-full flex items-center border-b border-[#D4CCBA] bg-[#FDFAF3] overflow-x-auto sm:overflow-visible">
+    <div role="tablist" aria-label="Navigation EIGEN" className="w-full flex items-center border-b border-[#D4CCBA] bg-[#FDFAF3] overflow-x-auto sm:overflow-visible">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         return (
           <button
             key={tab.id}
+            aria-label={tab.label}
+            aria-pressed={isActive}
+            data-testid={`eigen-tab-${tab.id}`}
             onClick={() => onTabSelect(tab.id)}
             className={`flex items-center gap-2 px-5 py-[14px] shrink-0 transition-colors border-b-2 ${
               isActive
