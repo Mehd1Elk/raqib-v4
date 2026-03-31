@@ -6,6 +6,8 @@ import { BarChart3, Map, Table2, Network, Clock, Monitor } from 'lucide-react';
 import { resolveVizType, getArtifactName, VIZ_LABELS, type VizType } from '@/lib/viz-routing';
 import { ArtifactViewer } from '@/components/ArtifactViewer';
 import { fetchEntries, subscribeToEntries } from '@/lib/supabase/client-queries';
+import { EntryCardGrid } from '@/components/entry-templates/EntryCardGrid';
+import { detectTemplate } from '@/lib/entry-template-routing';
 import type { Database } from '@/lib/supabase/types';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
@@ -166,21 +168,30 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
     );
   }
 
-  // ── Table view (always DataTable for raw data) ─────────────────────
+  // ── Table view — try rich cards first, fallback to raw DataTable ────
   if (view === 'table') {
+    const entryData = entries.map(e => ({ id: e.id, data: (e.data ?? {}) as Record<string, any> }));
+    const firstData = entryData[0]?.data ?? {};
+    const template = detectTemplate(layerId, firstData);
+    const hasRichTemplate = template !== 'default' && template !== 'blockchain' && entryData.length > 0;
+
     return (
       <>
         {toggleBar}
-        <DataTable
-          entries={entries}
-          isLoading={isLoading}
-          layerId={layerId}
-          layerName={layerName}
-          platformName={platformName}
-          totalRows={totalRows}
-          pageSize={25}
-          paginationMode={totalRows > 100 ? 'server' : 'client'}
-        />
+        {hasRichTemplate ? (
+          <EntryCardGrid layerId={layerId} entries={entryData} />
+        ) : (
+          <DataTable
+            entries={entries}
+            isLoading={isLoading}
+            layerId={layerId}
+            layerName={layerName}
+            platformName={platformName}
+            totalRows={totalRows}
+            pageSize={25}
+            paginationMode={totalRows > 100 ? 'server' : 'client'}
+          />
+        )}
       </>
     );
   }

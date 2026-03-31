@@ -11,6 +11,7 @@ import {
   GeopoliticsRadarChart,
   EntitiesBarChart,
 } from '@/lib/viz-dynamic';
+import CollapsibleSection from '@/components/ui/CollapsibleSection';
 
 type EntryRow = Database['public']['Tables']['entries']['Row'];
 
@@ -22,73 +23,73 @@ export function InvestorClient({ fundraisingEntries }: InvestorClientProps) {
   return (
     <>
       {/* Rangée 1 — Hero : ChoroplethMap pleine largeur */}
-      <section>
-        <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-          CORRIDORS GÉOPOLITIQUES — 22 PAYS
-        </div>
+      <CollapsibleSection title="Corridors Géopolitiques" badge="22 pays" defaultOpen={true}>
         <ChoroplethMap
           layerIds={['cg41', 'cg42', 'cg43', 'cg44', 'cg45', 'cg46', 'cg47', 'cg48', 'cg49', 'cg50']}
           valueField="pib"
           countryField="pays"
           legendLabel="PIB (Md$)"
         />
-      </section>
+      </CollapsibleSection>
 
       {/* Rangée 2 — 2 colonnes */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            ORGANIGRAMME EIGEN HOLDING
+      <CollapsibleSection title="Structure & Deal Flow" defaultOpen={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              ORGANIGRAMME EIGEN HOLDING
+            </div>
+            <EigenOrgChart />
           </div>
-          <EigenOrgChart />
-        </div>
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            ENTONNOIR DEAL FLOW
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              ENTONNOIR DEAL FLOW
+            </div>
+            <DealFlowFunnelChart layerId="cg01" />
           </div>
-          <DealFlowFunnelChart layerId="cg01" />
         </div>
-      </section>
+      </CollapsibleSection>
 
       {/* Rangée 3 — 2 colonnes */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            CERCLE INTÉRIEUR — RÉSEAU CONTACTS
+      <CollapsibleSection title="Réseau & Investisseurs" defaultOpen={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              CERCLE INTÉRIEUR — RÉSEAU CONTACTS
+            </div>
+            <InnerCircleGraph />
           </div>
-          <InnerCircleGraph />
-        </div>
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            FONDS VC PAR AUM
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              FONDS VC PAR AUM
+            </div>
+            <InvestorsTreemapChart layerId="n51" />
           </div>
-          <InvestorsTreemapChart layerId="n51" />
         </div>
-      </section>
+      </CollapsibleSection>
 
       {/* Rangée 4 — FundraisingTimeline pleine largeur */}
-      <section>
-        <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-          SÉQUENÇAGE LEVÉES EIGEN 2026-2028
-        </div>
+      <CollapsibleSection title="Séquençage Levées" badge="2026-2028" defaultOpen={false}>
         <FundraisingTimeline data={fundraisingEntries} />
-      </section>
+      </CollapsibleSection>
 
       {/* Rangée 5 — 2 colonnes */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            RADAR GÉOPOLITIQUE — 5 AXES PAR PAYS
+      <CollapsibleSection title="Analyse Géopolitique & Completion" defaultOpen={false}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              RADAR GÉOPOLITIQUE — 5 AXES PAR PAYS
+            </div>
+            <GeopoliticsRadarChart layerId="cg41" />
           </div>
-          <GeopoliticsRadarChart layerId="cg41" />
-        </div>
-        <div>
-          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
-            COMPLETION PAR ENTITÉ
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              COMPLETION PAR ENTITÉ
+            </div>
+            <EntitiesBarChart />
           </div>
-          <EntitiesBarChart />
         </div>
-      </section>
+      </CollapsibleSection>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { fetchInvestorDashboard } from '@/lib/supabase/dashboard-queries';
 import { DashboardHeader } from '@/components/dashboards/DashboardHeader';
-import { DashboardFooter } from '@/components/dashboards/DashboardFooter';
 import { StatCard } from '@/components/dashboards/StatCard';
+import { ExportPDFButton } from '@/components/ExportPDFButton';
 import { InvestorClient } from './client';
 
 export const metadata = { title: 'Investisseurs Londres — Tableau de bord' };
@@ -26,9 +26,11 @@ export default async function InvestorDashboardPage() {
         title="INVESTISSEURS · LONDRES"
         subtitle="ATS London mai 2026 · Vue CG SA"
         entityColor="#162B20"
-      />
+      >
+        <ExportPDFButton elementId="dashboard-content" title="Dashboard Investisseur" />
+      </DashboardHeader>
 
-      <div className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
+      <div id="dashboard-content" className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
         {/* KPI Cards */}
         <section>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -43,7 +45,6 @@ export default async function InvestorDashboardPage() {
         <InvestorClient fundraisingEntries={fundraising as any} />
       </div>
 
-      <DashboardFooter label="INVESTISSEURS · LONDRES" />
     </div>
   );
 }
