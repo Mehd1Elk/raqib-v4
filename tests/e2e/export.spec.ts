@@ -1,12 +1,13 @@
 import { expect, test } from '@playwright/test';
+import { waitForDashboardReady } from './helpers';
 
 test('exports a CSV file named RAQIB_*.csv', async ({ page }) => {
-  await page.goto('/');
+  await waitForDashboardReady(page);
 
   const [download] = await Promise.all([
     page.waitForEvent('download'),
-    page.getByRole('button', { name: /EXPORT CSV/i }).click(),
+    page.getByTestId('export-button').click(),
   ]);
 
-  expect(download.suggestedFilename()).toMatch(/^RAQIB_.*\.csv$/);
+  await expect(download.suggestedFilename()).toMatch(/^RAQIB_.*\.csv$/);
 });

@@ -9,11 +9,11 @@ test('loads /noos/n01', async ({ page }) => {
 test('loads /cg/cg01 from the current repository dataset', async ({ page }) => {
   await page.goto('/cg/cg01');
 
-  await expect(page.getByText(/Vision & Mission Eigen Group/i).first()).toBeVisible();
+  await expect(page.getByText(/Startups pipeline Maroc \(actives, axes CG\)/i).first()).toBeVisible();
 });
 
 test('loads /cercle/cd01 from the current repository dataset', async ({ page }) => {
   await page.goto('/cercle/cd01');
 
-  await expect(page.getByText(/Thèse d'investissement Eigen/i).first()).toBeVisible();
+  await expect(page.getByText(/Eigen Holding SAS France \(structure juridique\)/i).first()).toBeVisible();
 });

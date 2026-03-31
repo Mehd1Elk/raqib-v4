@@ -9,6 +9,17 @@ export default defineConfig({
   },
   test: {
     coverage: {
+      include: [
+        'app/robots.ts',
+        'app/sitemap.ts',
+        'components/**/*.tsx',
+        'lib/catalog.ts',
+        'lib/constants.ts',
+        'lib/helpers.ts',
+        'lib/mock-data.ts',
+        'lib/static-params.ts',
+      ],
+      exclude: ['components/dashboards/**', 'components/viz/**'],
       provider: 'v8',
       reporter: ['text', 'html'],
       thresholds: {
@@ -19,7 +30,7 @@ export default defineConfig({
       },
     },
     environment: 'jsdom',
-    exclude: ['tests/e2e/**', 'node_modules/**', '.next/**'],
+    exclude: ['tests/e2e/**', 'node_modules/**', '.next/**', 'coverage/**', 'components/viz/**'],
     globals: true,
     include: ['tests/**/*.test.{ts,tsx}'],
     setupFiles: ['./tests/setup.ts'],

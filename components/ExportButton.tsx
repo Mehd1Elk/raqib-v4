@@ -49,13 +49,16 @@ export function ExportButton({ entityIndex }: ExportButtonProps) {
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = `RAQIB_${entity.name.replace(/\s/g, '_')}.csv`;
+    document.body.appendChild(a);
     a.click();
-    URL.revokeObjectURL(a.href);
+    a.remove();
+    window.setTimeout(() => URL.revokeObjectURL(a.href), 0);
   };
 
   return (
     <button
       onClick={handleExport}
+      data-testid="export-button"
       className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold cursor-pointer bg-transparent border border-div rounded px-2 py-0.5 transition-colors"
     >
       EXPORT CSV

@@ -1,4 +1,7 @@
+import { ENTITIES, PLATFORMS } from './constants';
 import { findLayerRecord, getAllLayerEntries } from './catalog';
+import type { Database } from './supabase/types';
+import type { Category, Entity, LayerDef, PlatformCode } from './types';
 
 export interface LayerStaticParam {
   entity: string;
@@ -15,14 +18,35 @@ export interface LayerMetadataRecord {
   rows: number;
 }
 
-export function getAllStaticParams(): LayerStaticParam[] {
-  return getAllLayerEntries().map((entry) => ({
-    entity: entry.entityId,
-    layer: entry.layer.id,
-  }));
+export interface LayerPageRecord {
+  entity: Entity;
+  category: Category;
+  layer: LayerDef;
+  platformName: string;
+  actualRows: number;
+  status: string | null;
+  lastPopulatedAt: string | null;
 }
 
-export function getLayerMetadata(entityId: string, layerId: string): LayerMetadataRecord | null {
+interface RemoteLayerRecord {
+  entityColor: string;
+  entityId: string;
+  entityName: string;
+  entityType: Entity['type'];
+  categoryName: string;
+  layerId: string;
+  layerName: string;
+  platformCode: PlatformCode;
+  platformName: string;
+  rows: number;
+  actualRows: number;
+  status: string | null;
+  lastPopulatedAt: string | null;
+}
+
+let remoteLayerRecordsPromise: Promise<RemoteLayerRecord[] | null> | null = null;
+
+function getFallbackPageRecord(entityId: string, layerId: string): LayerPageRecord | null {
   const entry = findLayerRecord(entityId, layerId);
 
   if (!entry) {
@@ -30,12 +54,151 @@ export function getLayerMetadata(entityId: string, layerId: string): LayerMetada
   }
 
   return {
-    title: `${entry.layer.name} — ${entry.entity.name} · Raqib V4`,
-    description: `${entry.entity.name} (${entry.entity.type}) · ${entry.category.label} · ${entry.layer.name} · ${entry.platform.name} · ${entry.layer.rows.toLocaleString()} entrées prévues`,
-    entityName: entry.entity.name,
-    categoryName: entry.category.label,
-    layerName: entry.layer.name,
-    platform: entry.platform.name,
-    rows: entry.layer.rows,
+    entity: entry.entity,
+    category: entry.category,
+    layer: entry.layer,
+    platformName: entry.platform.name,
+    actualRows: 0,
+    status: null,
+    lastPopulatedAt: null,
   };
+}
+
+function formatLayerMetadata(record: LayerPageRecord): LayerMetadataRecord {
+  return {
+    title: `${record.layer.name} — ${record.entity.name} · Raqib V4`,
+    description: `${record.entity.name} (${record.entity.type}) · ${record.category.label} · ${record.layer.name} · ${record.platformName} · ${record.layer.rows.toLocaleString()} entrées prévues`,
+    entityName: record.entity.name,
+    categoryName: record.category.label,
+    layerName: record.layer.name,
+    platform: record.platformName,
+    rows: record.layer.rows,
+  };
+}
+
+async function fetchRemoteLayerRecords(): Promise<RemoteLayerRecord[] | null> {
+  if (process.env.NODE_ENV === 'test') {
+    return null;
+  }
+
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return null;
+  }
+
+  const { createClient } = await import('@supabase/supabase-js');
+  const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
+    auth: {
+      persistSession: false,
+      autoRefreshToken: false,
+    },
+  });
+
+  const { data, error } = await supabase
+    .from('layers')
+    .select('id, name, entity_id, platform_code, target_rows, actual_rows, status, last_populated_at, categories!inner(name), entities!inner(name, type, color), platforms!inner(name)')
+    .order('entity_id')
+    .order('category_id')
+    .order('id');
+
+  if (error) {
+    throw error;
+  }
+
+  return (data ?? []).map((row) => {
+    const category = row.categories as unknown as { name: string };
+    const entity = row.entities as unknown as { name: string; type: Entity['type']; color: string };
+    const platform = row.platforms as unknown as { name: string };
+
+    return {
+      entityColor: entity.color,
+      entityId: row.entity_id,
+      entityName: entity.name,
+      entityType: entity.type,
+      categoryName: category.name,
+      layerId: row.id,
+      layerName: row.name,
+      platformCode: row.platform_code as PlatformCode,
+      platformName: platform.name,
+      rows: row.target_rows ?? 0,
+      actualRows: row.actual_rows ?? 0,
+      status: row.status,
+      lastPopulatedAt: row.last_populated_at,
+    };
+  });
+}
+
+async function getRemoteLayerRecords() {
+  if (!remoteLayerRecordsPromise) {
+    remoteLayerRecordsPromise = fetchRemoteLayerRecords().catch(() => null);
+  }
+
+  return remoteLayerRecordsPromise;
+}
+
+function toEntity(record: RemoteLayerRecord): Entity {
+  return (
+    ENTITIES.find((entity) => entity.id === record.entityId) ?? {
+      id: record.entityId,
+      name: record.entityName,
+      color: record.entityColor,
+      description: '',
+      type: record.entityType,
+    }
+  );
+}
+
+export async function getAllStaticParams(): Promise<LayerStaticParam[]> {
+  const remoteRecords = await getRemoteLayerRecords();
+
+  if (remoteRecords) {
+    return remoteRecords.map((record) => ({
+      entity: record.entityId,
+      layer: record.layerId,
+    }));
+  }
+
+  return getAllLayerEntries().map((entry) => ({
+    entity: entry.entityId,
+    layer: entry.layer.id,
+  }));
+}
+
+export async function getLayerPageRecord(entityId: string, layerId: string): Promise<LayerPageRecord | null> {
+  const remoteRecords = await getRemoteLayerRecords();
+
+  if (remoteRecords) {
+    const record = remoteRecords.find((entry) => entry.entityId === entityId && entry.layerId === layerId);
+
+    if (record) {
+      return {
+        entity: toEntity(record),
+        category: { label: record.categoryName, layers: [] },
+        layer: {
+          id: record.layerId,
+          name: record.layerName,
+          platform: record.platformCode,
+          rows: record.rows,
+        },
+        platformName: PLATFORMS[record.platformCode]?.name ?? record.platformName,
+        actualRows: record.actualRows,
+        status: record.status,
+        lastPopulatedAt: record.lastPopulatedAt,
+      };
+    }
+  }
+
+  return getFallbackPageRecord(entityId, layerId);
+}
+
+export async function getLayerMetadata(entityId: string, layerId: string): Promise<LayerMetadataRecord | null> {
+  const record = await getLayerPageRecord(entityId, layerId);
+
+  if (!record) {
+    return null;
+  }
+
+  return formatLayerMetadata(record);
 }

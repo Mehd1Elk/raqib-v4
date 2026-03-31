@@ -1,21 +1,25 @@
 import { expect, test } from '@playwright/test';
 import { ENTITIES } from '../../lib/constants';
+import { waitForDashboardReady } from './helpers';
 
 test('loads the dashboard, switches entity tabs, navigates categories, and shows layer detail', async ({ page }) => {
-  await page.goto('/');
-
-  await expect(page.getByText(/V4 · 1000 COUCHES · 9 PLATEFORMES/i)).toBeVisible();
+  await waitForDashboardReady(page);
 
   for (const entity of ENTITIES) {
-    await page.getByRole('button', { name: new RegExp(entity.name, 'i') }).first().click();
+    const tab = page.getByTestId(`entity-tab-${entity.id}`);
+    await expect(tab).toBeVisible();
+    await tab.click();
+    await expect(tab).toHaveAttribute('aria-pressed', 'true');
   }
 
-  await page.getByRole('button', { name: /CG SA/i }).first().click();
+  await page.getByTestId('entity-tab-cg').click();
   await expect(page.getByText('10 AXES STRATÉGIQUES × 10 COUCHES')).toBeVisible();
+  await expect(page.getByTestId('category-0')).toContainText(/I ·/i);
+  await page.getByTestId('category-0').click();
+  await expect(page.getByTestId('layer-cg01')).toBeVisible();
+  await page.getByTestId('layer-cg01').click();
 
-  await page.getByRole('button', { name: /I · AXES STRATÉGIQUES CORPORATE/i }).click();
-  await page.getByRole('button', { name: /Vision & Mission Eigen Group/i }).click();
-
-  await expect(page.getByText(/SPÉCIFICATION DE COUCHE/i)).toBeVisible();
-  await expect(page.getByText(/Vision & Mission Eigen Group/i).first()).toBeVisible();
+  await expect(page.getByTestId('layer-detail')).toBeVisible();
+  await expect(page.getByTestId('layer-detail')).toContainText(/SPÉCIFICATION DE COUCHE/i);
+  await expect(page.getByTestId('layer-detail')).toContainText(/ID : cg01/i);
 });

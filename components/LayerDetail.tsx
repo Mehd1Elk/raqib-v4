@@ -65,7 +65,7 @@ export function LayerDetail({
   const platform = PLATFORMS[layer.platform];
 
   return (
-    <div className="bg-cream p-5 px-7">
+    <div data-testid="layer-detail" className="bg-cream p-5 px-7">
       {/* Breadcrumb */}
       <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm mb-1">
         {entity.name} / {category.label} /{' '}

@@ -2,13 +2,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LayerDetail } from '@/components/LayerDetail';
 import { EntriesTable } from '@/components/EntriesTable';
-import { getLayerDetail } from '@/lib/supabase/queries';
-import { findLayerRecord } from '@/lib/catalog';
-import { getAllStaticParams, getLayerMetadata } from '@/lib/static-params';
-import { PLATFORMS, ENTITIES } from '@/lib/constants';
+import { getAllStaticParams, getLayerMetadata, getLayerPageRecord } from '@/lib/static-params';
 import { computeEntityStats } from '@/lib/helpers';
 import type { Metadata } from 'next';
-import type { Category, Entity, LayerDef, PlatformCode } from '@/lib/types';
 
 interface PageProps {
   params: Promise<{ entity: string; layer: string }>;
@@ -16,13 +12,13 @@ interface PageProps {
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return getAllStaticParams();
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { entity, layer } = await params;
-  const metadata = getLayerMetadata(entity, layer);
+  const metadata = await getLayerMetadata(entity, layer);
   if (!metadata) return { title: 'Not Found' };
 
   return {
@@ -36,52 +32,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function LayerPage({ params }: PageProps) {
   const { entity: entitySlug, layer: layerId } = await params;
+  const record = await getLayerPageRecord(entitySlug, layerId);
 
-  // Try Supabase first, fall back to mock catalog
-  let entity: Entity;
-  let category: Category;
-  let layer: LayerDef;
-  let platformName: string;
-  let actualRows = 0;
-  let status: string | null = null;
-  let lastPopulatedAt: string | null = null;
-
-  try {
-    const sbData = await getLayerDetail(layerId);
-    if (!sbData || sbData.entity_id !== entitySlug) throw new Error('not found');
-
-    const ent = sbData.entities as unknown as { name: string; type: string; color: string };
-    const cat = sbData.categories as unknown as { name: string; position: number };
-    const plat = sbData.platforms as unknown as { name: string; color: string };
-
-    entity = ENTITIES.find(e => e.id === entitySlug) ?? {
-      id: entitySlug,
-      name: ent.name,
-      color: ent.color,
-      description: '',
-      type: ent.type as Entity['type'],
-    };
-    category = { label: cat.name, layers: [] };
-    layer = {
-      id: sbData.id,
-      name: sbData.name,
-      platform: sbData.platform_code as PlatformCode,
-      rows: sbData.target_rows ?? 0,
-    };
-    platformName = plat.name;
-    actualRows = sbData.actual_rows ?? 0;
-    status = sbData.status;
-    lastPopulatedAt = sbData.last_populated_at;
-  } catch {
-    // Fallback to mock catalog
-    const data = findLayerRecord(entitySlug, layerId);
-    if (!data) notFound();
-
-    entity = data.entity;
-    category = data.category;
-    layer = data.layer;
-    platformName = PLATFORMS[layer.platform]?.name ?? layer.platform;
+  if (!record) {
+    notFound();
   }
+
+  const { entity, category, layer, platformName, actualRows, status, lastPopulatedAt } = record;
 
   const stats = computeEntityStats([category]);
 

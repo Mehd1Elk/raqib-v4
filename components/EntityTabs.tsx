@@ -16,6 +16,9 @@ export function EntityTabs({ activeIndex, onChange }: EntityTabsProps) {
           <button
             key={e.id}
             onClick={() => onChange(i)}
+            data-testid={`entity-tab-${e.id}`}
+            data-active={active}
+            aria-pressed={active}
             className="border-none px-4 cursor-pointer whitespace-nowrap tracking-wide font-[family-name:var(--font-cormorant)] italic"
             style={{
               background: active ? '#F7F3EA' : 'transparent',

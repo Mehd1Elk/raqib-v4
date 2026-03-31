@@ -96,6 +96,9 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
 
   return (
     <div
+      data-testid="search-overlay"
+      role="dialog"
+      aria-modal="true"
       className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh]"
       style={{ background: 'rgba(28,24,20,0.5)' }}
       onClick={() => setOpen(false)}
@@ -110,6 +113,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
           </span>
           <input
             ref={inputRef}
+            data-testid="search-input"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Rechercher parmi 1000 couches..."
@@ -125,6 +129,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
             {results.map((r) => (
               <button
                 key={r.key}
+                data-testid={`search-result-${r.key}`}
                 className="w-full text-left px-4 py-2.5 border-b border-div-l hover:bg-cream cursor-pointer flex items-center gap-3"
                 onClick={() => {
                   onSelect(r.entityIndex, r.categoryIndex, r.layerIndex);

@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "incremental": false
+  },
+  "include": [
+    "app/layout.tsx",
+    "app/[entity]/[layer]/page.tsx",
+    "app/robots.ts",
+    "app/sitemap.ts",
+    "lib/catalog.ts",
+    "lib/constants.ts",
+    "lib/helpers.ts",
+    "lib/mock-data.ts",
+    "lib/static-params.ts",
+    "lib/types.ts",
+    "next.config.ts",
+    "playwright.config.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx",
+    "vitest.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

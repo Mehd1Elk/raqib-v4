@@ -34,6 +34,8 @@ export function CategoryNav({
         <div key={mi}>
           <button
             onClick={() => onCategoryChange(mi)}
+            data-testid={`category-${mi}`}
+            data-active={activeCategoryIndex === mi}
             className="w-full border-none p-2 px-3.5 cursor-pointer text-left"
             style={{
               background: activeCategoryIndex === mi ? `${entity.color}08` : 'transparent',
@@ -52,6 +54,8 @@ export function CategoryNav({
               <button
                 key={l.id}
                 onClick={() => onLayerChange(lii)}
+                data-testid={`layer-${l.id}`}
+                data-active={activeLayerIndex === lii}
                 className="w-full border-none py-1.5 pl-7 pr-3.5 cursor-pointer text-left flex items-center gap-1.5"
                 style={{
                   background: activeLayerIndex === lii ? `${entity.color}06` : 'transparent',
