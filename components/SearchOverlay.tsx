@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { PLATFORMS } from '@/lib/constants';
+import { fmtNum } from '@/lib/helpers';
 import { searchLayerRecords, type LayerCatalogEntry } from '@/lib/catalog';
 import { searchLayersClient } from '@/lib/supabase/client-queries';
 
@@ -145,7 +146,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
                     {r.layerName}
                   </div>
                   <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3">
-                    {r.entityName} · {r.categoryLabel} · {r.platformName} · {r.rows.toLocaleString()} rows
+                    {r.entityName} · {r.categoryLabel} · {r.platformName} · {fmtNum(r.rows)} rows
                   </div>
                 </div>
               </button>

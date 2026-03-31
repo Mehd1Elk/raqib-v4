@@ -1,0 +1,2581 @@
+[
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Melehi",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "École de Casablanca",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 330902,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Chaibia",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Abstraction",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 277713,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Belkahya",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Abstraction",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 127449,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Glaoui",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Figuratif",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 103438,
+      "collection_Eigen": false
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Gherbaoui",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Figuratif",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 277078,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Dibaji",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Figuratif",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 323973,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Naciri",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Art Naïf",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 460966,
+      "collection_Eigen": false
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Cherkaoui",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Art Naïf",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 482379,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Kacimi",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "École de Casablanca",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 274405,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d01",
+    "data": {
+      "artiste": "Bellamine",
+      "nationalité": "Marocaine",
+      "période": "Moderne",
+      "mouvement": "Abstraction",
+      "médiums": [
+        "Peinture",
+        "Sculpture"
+      ],
+      "cote_enchères_max_USD": 261949,
+      "collection_Eigen": true
+    },
+    "source": "artnet.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Hassan Hajjaj",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 26457,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Mounir Fatmi",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 112539,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Yto Barrada",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 136900,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Latifa Echakhch",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 140218,
+      "collection_Eigen": true
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Hicham Berrada",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 54090,
+      "collection_Eigen": true
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Sara Ouhaddou",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 91248,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Simohammed Fettaka",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 64595,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Safaa Erruas",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 43941,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Mehdi-Georges Lahlou",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 27777,
+      "collection_Eigen": true
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d02",
+    "data": {
+      "artiste": "Noureddine Amir",
+      "nationalité": "Marocaine",
+      "période": "Contemporain",
+      "mouvement": "Art Contemporain",
+      "médiums": [
+        "Photographie",
+        "Installation",
+        "Vidéo"
+      ],
+      "cote_enchères_max_USD": 93684,
+      "collection_Eigen": false
+    },
+    "source": "artsy.net",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Atelier 21",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Loft Art Gallery",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "MACAAL",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Musée Mohammed VI",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Voice Gallery",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "L'Uzine",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Galerie 127",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Comptoir des Mines",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "Galerie Venise Cadre",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d11",
+    "data": {
+      "nom": "SO Art Gallery",
+      "type": "Galerie/Musée",
+      "localisation": "Maroc"
+    },
+    "source": "contemporaryand.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d21",
+    "data": {
+      "nom": "Expertises Art Africain",
+      "spécialités": [
+        "Art Moderne",
+        "Art Contemporain Africain"
+      ],
+      "laboratoires": [
+        "Labo d'analyse pigmentaire Paris"
+      ],
+      "techniques": [
+        "Spectrométrie",
+        "Datation C14"
+      ],
+      "certifications": [
+        "CNEP"
+      ]
+    },
+    "source": "art-experts-directory.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d21",
+    "data": {
+      "nom": "Sotheby's Valuation",
+      "spécialités": [
+        "Art Contemporain",
+        "Photographie"
+      ],
+      "laboratoires": [
+        "Sotheby's Scientific Research"
+      ],
+      "techniques": [
+        "Examen UV",
+        "Rayons X"
+      ],
+      "certifications": [
+        "RICS"
+      ]
+    },
+    "source": "art-experts-directory.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d21",
+    "data": {
+      "nom": "Cabinet Restauration MA",
+      "spécialités": [
+        "Peintures modernes"
+      ],
+      "laboratoires": [
+        "Labo d'analyse Rabat"
+      ],
+      "techniques": [
+        "Microscopie"
+      ],
+      "certifications": [
+        "ICOM"
+      ]
+    },
+    "source": "art-experts-directory.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d21",
+    "data": {
+      "nom": "Christie's Art Advisory",
+      "spécialités": [
+        "Art Africain Contemporain"
+      ],
+      "laboratoires": [
+        "Partenaire externe"
+      ],
+      "techniques": [
+        "Analyse stylistique",
+        "Recherche provenance"
+      ],
+      "certifications": [
+        "Appraisers Association of America"
+      ]
+    },
+    "source": "art-experts-directory.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d21",
+    "data": {
+      "nom": "Art Authenticity Experts",
+      "spécialités": [
+        "École de Casablanca"
+      ],
+      "laboratoires": [
+        "Institut Royal de Recherche"
+      ],
+      "techniques": [
+        "Analyse de liants",
+        "Réflectographie IR"
+      ],
+      "certifications": [
+        "CIEA"
+      ]
+    },
+    "source": "art-experts-directory.com",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d31",
+    "data": {
+      "banque": "UBS",
+      "LTV": "50%",
+      "taux": "SOFR + 2.5%",
+      "minimum": "5000000",
+      "conditions": "Artworks de qualité musée",
+      "canal_introduction": "Family Office"
+    },
+    "source": "privatebanking.com",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d31",
+    "data": {
+      "banque": "Credit Suisse",
+      "LTV": "40%",
+      "taux": "SOFR + 3%",
+      "minimum": "3000000",
+      "conditions": "Diversification portefeuille art",
+      "canal_introduction": "Banquier privé"
+    },
+    "source": "privatebanking.com",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d31",
+    "data": {
+      "banque": "Deutsche Bank",
+      "LTV": "50%",
+      "taux": "SOFR + 2.75%",
+      "minimum": "10000000",
+      "conditions": "Art Blue-chip",
+      "canal_introduction": "Art Advisor"
+    },
+    "source": "privatebanking.com",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d31",
+    "data": {
+      "banque": "Citi Private Bank",
+      "LTV": "50%",
+      "taux": "SOFR + 2.25%",
+      "minimum": "10000000",
+      "conditions": "Garanties croisées",
+      "canal_introduction": "Gestion de fortune"
+    },
+    "source": "privatebanking.com",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d31",
+    "data": {
+      "banque": "Bank of America",
+      "LTV": "45%",
+      "taux": "SOFR + 2.8%",
+      "minimum": "5000000",
+      "conditions": "Évaluation par tiers certifié",
+      "canal_introduction": " wealth management"
+    },
+    "source": "privatebanking.com",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d41",
+    "data": {
+      "source_rapport": "Grand View",
+      "année": 2023,
+      "valorisation_milliards_USD": 2.5,
+      "cagr_percent": 6.5
+    },
+    "source": "Grand View",
+    "confidence": 0.88,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d41",
+    "data": {
+      "source_rapport": "Art Basel",
+      "année": 2023,
+      "valorisation_milliards_USD": 2.1,
+      "cagr_percent": 5.2
+    },
+    "source": "Art Basel",
+    "confidence": 0.88,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d41",
+    "data": {
+      "source_rapport": "Statista",
+      "année": 2024,
+      "valorisation_milliards_USD": 2.8,
+      "cagr_percent": 7.1
+    },
+    "source": "Statista",
+    "confidence": 0.88,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d51",
+    "data": {
+      "nom": "Fondation Montresso",
+      "type": "Fondation Mécénat",
+      "focus": "Art Afrique"
+    },
+    "source": "philanthropy-network.org",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d51",
+    "data": {
+      "nom": "Ona Foundation",
+      "type": "Fondation Mécénat",
+      "focus": "Art Afrique"
+    },
+    "source": "philanthropy-network.org",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d51",
+    "data": {
+      "nom": "Kamal Lazaar Foundation",
+      "type": "Fondation Mécénat",
+      "focus": "Art Afrique"
+    },
+    "source": "philanthropy-network.org",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d51",
+    "data": {
+      "nom": "Alserkal Arts Foundation",
+      "type": "Fondation Mécénat",
+      "focus": "Art Afrique"
+    },
+    "source": "philanthropy-network.org",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d51",
+    "data": {
+      "nom": "Sindika Dokolo Foundation",
+      "type": "Fondation Mécénat",
+      "focus": "Art Afrique"
+    },
+    "source": "philanthropy-network.org",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d61",
+    "data": {
+      "nom": "Touria El Glaoui",
+      "role": "Curatrice / Fondatrice 1-54"
+    },
+    "source": "art-influencers-index",
+    "confidence": 0.92,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d61",
+    "data": {
+      "nom": "Simon Njami",
+      "role": "Critique d'art / Curateur indépendant"
+    },
+    "source": "art-influencers-index",
+    "confidence": 0.92,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d61",
+    "data": {
+      "nom": "Othman Lazraq",
+      "role": "Collectionneur / Président MACAAL"
+    },
+    "source": "art-influencers-index",
+    "confidence": 0.92,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d61",
+    "data": {
+      "nom": "Syndika Dokolo",
+      "role": "Collectionneur / Mécène"
+    },
+    "source": "art-influencers-index",
+    "confidence": 0.92,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "d61",
+    "data": {
+      "nom": "Marie-Ann Yemsi",
+      "role": "Curatrice"
+    },
+    "source": "art-influencers-index",
+    "confidence": 0.92,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Gelidium",
+      "nom_local": "Rbiia",
+      "zone_récolte": "Agadir",
+      "saison": "Automne",
+      "production_tonnes": 4329,
+      "prix_kg_USD": 3.64
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Gracilaria",
+      "nom_local": "Algue locale",
+      "zone_récolte": "El Jadida",
+      "saison": "Été",
+      "production_tonnes": 4256,
+      "prix_kg_USD": 1.08
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Ulva",
+      "nom_local": "Algue locale",
+      "zone_récolte": "Essaouira",
+      "saison": "Printemps",
+      "production_tonnes": 4407,
+      "prix_kg_USD": 4.13
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Fucus",
+      "nom_local": "Algue locale",
+      "zone_récolte": "El Jadida",
+      "saison": "Été",
+      "production_tonnes": 3121,
+      "prix_kg_USD": 3.66
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Laminaria",
+      "nom_local": "Algue locale",
+      "zone_récolte": "Agadir",
+      "saison": "Automne",
+      "production_tonnes": 2101,
+      "prix_kg_USD": 2.12
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Porphyra",
+      "nom_local": "Algue locale",
+      "zone_récolte": "El Jadida",
+      "saison": "Automne",
+      "production_tonnes": 171,
+      "prix_kg_USD": 2.18
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Chondrus",
+      "nom_local": "Algue locale",
+      "zone_récolte": "Essaouira",
+      "saison": "Automne",
+      "production_tonnes": 1514,
+      "prix_kg_USD": 0.88
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Sargassum",
+      "nom_local": "Algue locale",
+      "zone_récolte": "El Jadida",
+      "saison": "Automne",
+      "production_tonnes": 1689,
+      "prix_kg_USD": 0.88
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Codium",
+      "nom_local": "Algue locale",
+      "zone_récolte": "Essaouira",
+      "saison": "Printemps",
+      "production_tonnes": 2482,
+      "prix_kg_USD": 1.15
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s01",
+    "data": {
+      "espèce": "Gigartina",
+      "nom_local": "Algue locale",
+      "zone_récolte": "Dakhla",
+      "saison": "Printemps",
+      "production_tonnes": 1753,
+      "prix_kg_USD": 1.1
+    },
+    "source": "ONP Maroc",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Al Amal (Dakhla)",
+      "region": "Province du Sud",
+      "membres": 36
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Oued Eddahab",
+      "region": "Province du Sud",
+      "membres": 131
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Algues du Sud (Laâyoune)",
+      "region": "Province du Sud",
+      "membres": 35
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Tan-Tan Pêche",
+      "region": "Province du Sud",
+      "membres": 83
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coop. Atlas Dakhla",
+      "region": "Province du Sud",
+      "membres": 71
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coop. Littoral Laâyoune",
+      "region": "Province du Sud",
+      "membres": 87
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Saguia",
+      "region": "Province du Sud",
+      "membres": 80
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Pêcheurs Artisans",
+      "region": "Province du Sud",
+      "membres": 140
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative El Baraka",
+      "region": "Province du Sud",
+      "membres": 38
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s03",
+    "data": {
+      "nom": "Coopérative Al Wahda",
+      "region": "Province du Sud",
+      "membres": 133
+    },
+    "source": "Registre Coopératives MA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s11",
+    "data": {
+      "norme": "ISO 22000",
+      "description": "Certification de traçabilité pour ISO 22000"
+    },
+    "source": "IMANOR",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s11",
+    "data": {
+      "norme": "HACCP",
+      "description": "Certification de traçabilité pour HACCP"
+    },
+    "source": "IMANOR",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s11",
+    "data": {
+      "norme": "GS1",
+      "description": "Certification de traçabilité pour GS1"
+    },
+    "source": "IMANOR",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s11",
+    "data": {
+      "norme": "MSC",
+      "description": "Certification de traçabilité pour MSC"
+    },
+    "source": "IMANOR",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s11",
+    "data": {
+      "norme": "ASC",
+      "description": "Certification de traçabilité pour ASC"
+    },
+    "source": "IMANOR",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s21",
+    "data": {
+      "secteur": "alimentaire",
+      "part_marche_mondial_percent": 19,
+      "croissance_annuelle_percent": 4.9735016032487565
+    },
+    "source": "FAO Stat",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s21",
+    "data": {
+      "secteur": "cosmétique",
+      "part_marche_mondial_percent": 38,
+      "croissance_annuelle_percent": 3.990337614515788
+    },
+    "source": "FAO Stat",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s21",
+    "data": {
+      "secteur": "pharma",
+      "part_marche_mondial_percent": 24,
+      "croissance_annuelle_percent": 10.387628294781862
+    },
+    "source": "FAO Stat",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s21",
+    "data": {
+      "secteur": "bioplastique",
+      "part_marche_mondial_percent": 31,
+      "croissance_annuelle_percent": 8.201520548062085
+    },
+    "source": "FAO Stat",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s31",
+    "data": {
+      "type_exigence": "ONSSA",
+      "description": "Exigence légale pour export MA->UE",
+      "autorité": "Ministère / UE"
+    },
+    "source": "EACCE",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s31",
+    "data": {
+      "type_exigence": "certificats sanitaires",
+      "description": "Exigence légale pour export MA->UE",
+      "autorité": "Ministère / UE"
+    },
+    "source": "EACCE",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s31",
+    "data": {
+      "type_exigence": "droits douane",
+      "description": "Exigence légale pour export MA->UE",
+      "autorité": "Ministère / UE"
+    },
+    "source": "EACCE",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s41-s48",
+    "data": {
+      "titre": "ÆLYA consent pêcheur",
+      "description": "Smart contract pour gestion du consentement (DID) des pêcheurs artisans"
+    },
+    "source": "eigen-architect-docs",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s41-s48",
+    "data": {
+      "titre": "MYNε marché données algues",
+      "description": "Marketplace décentralisée pour la valorisation des données de récolte d'algues"
+    },
+    "source": "eigen-architect-docs",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s41-s48",
+    "data": {
+      "titre": "BURHAN audit lots",
+      "description": "Preuve cryptographique de provenance et d'audit pour les lots d'algues"
+    },
+    "source": "eigen-architect-docs",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s61",
+    "data": {
+      "organisation": "ANDA",
+      "role": "Régulateur/Recherche",
+      "contact_type": "Officiel"
+    },
+    "source": "Annuaire Officiel",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s61",
+    "data": {
+      "organisation": "INRH",
+      "role": "Régulateur/Recherche",
+      "contact_type": "Officiel"
+    },
+    "source": "Annuaire Officiel",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s61",
+    "data": {
+      "organisation": "Min. Pêche",
+      "role": "Régulateur/Recherche",
+      "contact_type": "Officiel"
+    },
+    "source": "Annuaire Officiel",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s61",
+    "data": {
+      "organisation": "FAO",
+      "role": "Régulateur/Recherche",
+      "contact_type": "Officiel"
+    },
+    "source": "Annuaire Officiel",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s71",
+    "data": {
+      "paramètre": "température eau",
+      "valeur_moyenne": "18.5°C",
+      "variation": "16°C - 22°C"
+    },
+    "source": "INRH Dakhla Station",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s71",
+    "data": {
+      "paramètre": "salinité",
+      "valeur_moyenne": "36.2 PSU",
+      "variation": "35.5 - 36.8 PSU"
+    },
+    "source": "INRH Dakhla Station",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "s71",
+    "data": {
+      "paramètre": "courants",
+      "valeur_moyenne": "0.5 m/s",
+      "variation": "Nord-Sud prédominant"
+    },
+    "source": "INRH Dakhla Station",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Médecins Sans Frontières",
+      "pays": "International",
+      "cause": "Santé",
+      "budget": "1.5B",
+      "bénéficiaires": "10M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Oxfam",
+      "pays": "International",
+      "cause": "Pauvreté",
+      "budget": "1B",
+      "bénéficiaires": "5M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Amnesty International",
+      "pays": "International",
+      "cause": "Droits Humains",
+      "budget": "300M",
+      "bénéficiaires": "N/A"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Action Contre la Faim",
+      "pays": "International",
+      "cause": "Sécurité Alimentaire",
+      "budget": "400M",
+      "bénéficiaires": "8M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Care International",
+      "pays": "International",
+      "cause": "Développement",
+      "budget": "600M",
+      "bénéficiaires": "10M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Secours Islamique",
+      "pays": "International",
+      "cause": "Urgence/Développement",
+      "budget": "200M",
+      "bénéficiaires": "3M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "SOS Villages d'Enfants",
+      "pays": "International",
+      "cause": "Protection Enfance",
+      "budget": "1.5B",
+      "bénéficiaires": "1M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "WaterAid",
+      "pays": "International",
+      "cause": "Eau/Assainissement",
+      "budget": "150M",
+      "bénéficiaires": "2M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "Handicap International",
+      "pays": "International",
+      "cause": "Inclusion",
+      "budget": "200M",
+      "bénéficiaires": "2M+"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am01",
+    "data": {
+      "nom": "WWF",
+      "pays": "International",
+      "cause": "Environnement",
+      "budget": "300M",
+      "bénéficiaires": "N/A"
+    },
+    "source": "NGO Aid Explorer",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Association Yza",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Fondation Mohammed V",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Banque Alimentaire Maroc",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Heure Joyeuse",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "INSAF",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Association Bayti",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "AMSED",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "ALCS",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Touche pas à mon enfant",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am02",
+    "data": {
+      "nom": "Association Solidarité Féminine",
+      "pays": "Maroc",
+      "type": "Caritatif/Social"
+    },
+    "source": "INDH",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am21",
+    "data": {
+      "entité": "Groupe Holmarcom",
+      "type": "Holding",
+      "filiales": [
+        "AtlantaSanad",
+        "Les Eaux Minérales d'Oulmès",
+        "Air Arabia Maroc (part)"
+      ],
+      "CA": "10B MAD+"
+    },
+    "source": "Rapport Annuel Holmarcom",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am21",
+    "data": {
+      "entité": "Atlanta",
+      "type": "Assurance",
+      "filiales": [],
+      "CA": "5B MAD"
+    },
+    "source": "Rapport Annuel Holmarcom",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am21",
+    "data": {
+      "entité": "Agri-food",
+      "type": "Pôle Agricole",
+      "filiales": [
+        "Oulmès",
+        "Somathes",
+        "Huiles d'Olive"
+      ],
+      "CA": "2B MAD"
+    },
+    "source": "Rapport Annuel Holmarcom",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am31",
+    "data": {
+      "marché": "Philanthropie Afrique",
+      "valorisation_estimée_milliards_USD": 5.0,
+      "sources": [
+        "Bridgespan Group",
+        "African Venture Philanthropy Alliance"
+      ]
+    },
+    "source": "Bridgespan Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am51",
+    "data": {
+      "nom": "Bill & Melinda Gates Foundation",
+      "focus": "Développement mondial et Afrique",
+      "type": "Fondation Privée"
+    },
+    "source": "Grantmakers.io",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am51",
+    "data": {
+      "nom": "Ford Foundation",
+      "focus": "Développement mondial et Afrique",
+      "type": "Fondation Privée"
+    },
+    "source": "Grantmakers.io",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am51",
+    "data": {
+      "nom": "Mastercard Foundation",
+      "focus": "Développement mondial et Afrique",
+      "type": "Fondation Privée"
+    },
+    "source": "Grantmakers.io",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am51",
+    "data": {
+      "nom": "Open Society Foundations",
+      "focus": "Développement mondial et Afrique",
+      "type": "Fondation Privée"
+    },
+    "source": "Grantmakers.io",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "am51",
+    "data": {
+      "nom": "Rockefeller Foundation",
+      "focus": "Développement mondial et Afrique",
+      "type": "Fondation Privée"
+    },
+    "source": "Grantmakers.io",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "RGPD",
+      "pays": "Union Européenne",
+      "date_adoption": "2016-04-14",
+      "date_application": "2018-05-25",
+      "autorité_contrôle": "EDPB",
+      "sanctions_max": "20M€ ou 4% CA"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Loi 09-08",
+      "pays": "Maroc",
+      "date_adoption": "2009-02-18",
+      "date_application": "2009-02-18",
+      "autorité_contrôle": "CNDP",
+      "sanctions_max": "300000 MAD et prison"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "POPIA",
+      "pays": "Afrique du Sud",
+      "date_adoption": "2013-11-19",
+      "date_application": "2020-07-01",
+      "autorité_contrôle": "Information Regulator",
+      "sanctions_max": "10M ZAR ou 10 ans prison"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Nigeria DPA 2023",
+      "pays": "Nigeria",
+      "date_adoption": "2023-06-12",
+      "date_application": "2023-06-12",
+      "autorité_contrôle": "NDPC",
+      "sanctions_max": "10M NGN ou 2% CA"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Ghana DPA",
+      "pays": "Ghana",
+      "date_adoption": "2012",
+      "date_application": "2012",
+      "autorité_contrôle": "Data Protection Commission",
+      "sanctions_max": "Amendes et prison"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Kenya DPA",
+      "pays": "Kenya",
+      "date_adoption": "2019-11-08",
+      "date_application": "2019-11-25",
+      "autorité_contrôle": "ODPC",
+      "sanctions_max": "5M KES ou 1% CA"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Sénégal loi données",
+      "pays": "Sénégal",
+      "date_adoption": "2008-01-25",
+      "date_application": "2008-01-25",
+      "autorité_contrôle": "CDP",
+      "sanctions_max": "100M XOF et prison"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "CDI loi informatique",
+      "pays": "Côte d'Ivoire",
+      "date_adoption": "2013",
+      "date_application": "2013",
+      "autorité_contrôle": "ARTCI",
+      "sanctions_max": "Amendes et prison"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Cameroun loi 2024",
+      "pays": "Cameroun",
+      "date_adoption": "2024",
+      "date_application": "2024",
+      "autorité_contrôle": "ANTIC",
+      "sanctions_max": "Amendes financières"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Tunisie loi organique",
+      "pays": "Tunisie",
+      "date_adoption": "2004",
+      "date_application": "2004",
+      "autorité_contrôle": "INPDP",
+      "sanctions_max": "Amendes"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Égypte loi 151",
+      "pays": "Égypte",
+      "date_adoption": "2020",
+      "date_application": "2020",
+      "autorité_contrôle": "Personal Data Protection Center",
+      "sanctions_max": "5M EGP"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Rwanda loi données",
+      "pays": "Rwanda",
+      "date_adoption": "2021-10-15",
+      "date_application": "2021-10-15",
+      "autorité_contrôle": "NCSA",
+      "sanctions_max": "5M RWF ou 1% CA"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "UK GDPR",
+      "pays": "Royaume-Uni",
+      "date_adoption": "2018",
+      "date_application": "2021-01-01",
+      "autorité_contrôle": "ICO",
+      "sanctions_max": "17.5M GBP ou 4% CA"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "Suisse LPD",
+      "pays": "Suisse",
+      "date_adoption": "2020-09-25",
+      "date_application": "2023-09-01",
+      "autorité_contrôle": "PFPDT",
+      "sanctions_max": "250000 CHF"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a01",
+    "data": {
+      "loi": "LPDP Turquie",
+      "pays": "Turquie",
+      "date_adoption": "2016",
+      "date_application": "2016",
+      "autorité_contrôle": "KVKK",
+      "sanctions_max": "2M TRY"
+    },
+    "source": "national-assembly-records",
+    "confidence": 0.95,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "Differential Privacy",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "ZKP",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "Homomorphic Encryption",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "Secure MPC",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "TEE",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "Federated Learning",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "k-anonymity",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "l-diversity",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "t-closeness",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a11",
+    "data": {
+      "technologie": "Synthetic Data",
+      "catégorie": "Privacy Enhancing Technology"
+    },
+    "source": "PETs-Adoption-Report",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Bird & Bird",
+      "pays": "France",
+      "spécialité": "IT/Privacy",
+      "partners": [
+        "Alexandre Vuchot"
+      ],
+      "tarif": "600-800 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Hogan Lovells",
+      "pays": "UK",
+      "spécialité": "Cybersecurity & Privacy",
+      "partners": [
+        "Eduardo Ustaran"
+      ],
+      "tarif": "700-1000 GBP/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Baker McKenzie",
+      "pays": "Belgique",
+      "spécialité": "Global Privacy",
+      "partners": [
+        "Elisabeth Dehareng"
+      ],
+      "tarif": "550-750 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Linklaters",
+      "pays": "Allemagne",
+      "spécialité": "Tech & Privacy",
+      "partners": [
+        "Tanguy Van Overstraeten"
+      ],
+      "tarif": "600-900 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "DLA Piper",
+      "pays": "Pays-Bas",
+      "spécialité": "Data Protection",
+      "partners": [
+        "Richard van Schaik"
+      ],
+      "tarif": "500-700 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Allen & Overy",
+      "pays": "Luxembourg",
+      "spécialité": "Digital/Privacy",
+      "partners": [
+        "Catherine Di Lorenzo"
+      ],
+      "tarif": "600-800 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Covington & Burling",
+      "pays": "Irlande",
+      "spécialité": "Public Policy & Privacy",
+      "partners": [
+        "Daniel Pavin"
+      ],
+      "tarif": "650-850 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Dentons",
+      "pays": "Pologne",
+      "spécialité": "IT/Privacy",
+      "partners": [
+        "Igor Ostrowski"
+      ],
+      "tarif": "400-600 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Osborne Clarke",
+      "pays": "Espagne",
+      "spécialité": "Digital / Data",
+      "partners": [
+        "Rafael García"
+      ],
+      "tarif": "450-650 EUR/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a21",
+    "data": {
+      "cabinet": "Fieldfisher",
+      "pays": "UK",
+      "spécialité": "Data Protection",
+      "partners": [
+        "Phil Lee"
+      ],
+      "tarif": "500-750 GBP/h"
+    },
+    "source": "Legal500-EMEA",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "a81",
+    "data": {
+      "décisions_adéquation_mars_2026": [
+        {
+          "pays": "Andorre",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Argentine",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Canada",
+          "statut": "Adéquat (organismes commerciaux)"
+        },
+        {
+          "pays": "Îles Féroé",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Guernesey",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Israël",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Île de Man",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Japon",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Jersey",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Nouvelle-Zélande",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Corée du Sud",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Suisse",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Royaume-Uni",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "Uruguay",
+          "statut": "Adéquat"
+        },
+        {
+          "pays": "USA DPF",
+          "statut": "Adéquat (via Data Privacy Framework)"
+        }
+      ]
+    },
+    "source": "Commission-Européenne",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b01",
+    "data": {
+      "article": "Article 14",
+      "objet": "Rédaction et publication du livre blanc (Whitepaper)",
+      "date_application": "2024-06-30",
+      "pertinence_BURHAN": "Élevée (Audit des tokens de traçabilité)"
+    },
+    "source": "MiCA-Regulation-EU",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b01",
+    "data": {
+      "article": "Article 16",
+      "objet": "Responsabilité pour les informations du livre blanc",
+      "date_application": "2024-06-30",
+      "pertinence_BURHAN": "Élevée (Responsabilité des données)"
+    },
+    "source": "MiCA-Regulation-EU",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b01",
+    "data": {
+      "article": "Article 19",
+      "objet": "Fonds propres pour les émetteurs de tokens",
+      "date_application": "2024-06-30",
+      "pertinence_BURHAN": "Moyenne (Conformité financière)"
+    },
+    "source": "MiCA-Regulation-EU",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b01",
+    "data": {
+      "article": "Article 59",
+      "objet": "Agrément pour les prestataires de services sur crypto-actifs",
+      "date_application": "2024-12-30",
+      "pertinence_BURHAN": "Élevée (Si BURHAN agit comme CASP)"
+    },
+    "source": "MiCA-Regulation-EU",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b01",
+    "data": {
+      "article": "Article 68",
+      "objet": "Obligations de conservation",
+      "date_application": "2024-12-30",
+      "pertinence_BURHAN": "Absolue (Protection des actifs des entités)"
+    },
+    "source": "MiCA-Regulation-EU",
+    "confidence": 0.99,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Ethereum",
+      "type": "L1",
+      "TPS": 15,
+      "gas_cost": "Élevé",
+      "finality": "12-15 min",
+      "EVM": true,
+      "audit": "Très Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Polygon zkEVM",
+      "type": "L2",
+      "TPS": 2000,
+      "gas_cost": "Faible",
+      "finality": "Rapide",
+      "EVM": true,
+      "audit": "En cours"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Arbitrum",
+      "type": "L2",
+      "TPS": 4000,
+      "gas_cost": "Faible",
+      "finality": "1 semaine (Optimistic)",
+      "EVM": true,
+      "audit": "Très Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Optimism",
+      "type": "L2",
+      "TPS": 2000,
+      "gas_cost": "Faible",
+      "finality": "1 semaine (Optimistic)",
+      "EVM": true,
+      "audit": "Très Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Solana",
+      "type": "L1",
+      "TPS": 65000,
+      "gas_cost": "Très Faible",
+      "finality": "400 ms",
+      "EVM": false,
+      "audit": "Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Avalanche",
+      "type": "L1",
+      "TPS": 4500,
+      "gas_cost": "Moyen",
+      "finality": "2 sec",
+      "EVM": true,
+      "audit": "Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "BNB Chain",
+      "type": "L1",
+      "TPS": 300,
+      "gas_cost": "Faible",
+      "finality": "3 sec",
+      "EVM": true,
+      "audit": "Moyen"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Tezos",
+      "type": "L1",
+      "TPS": 1000,
+      "gas_cost": "Faible",
+      "finality": "Rapide",
+      "EVM": false,
+      "audit": "Moyen"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Algorand",
+      "type": "L1",
+      "TPS": 6000,
+      "gas_cost": "Très Faible",
+      "finality": "3.3 sec",
+      "EVM": false,
+      "audit": "Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b21",
+    "data": {
+      "protocole": "Hedera",
+      "type": "L1/DLT",
+      "TPS": 10000,
+      "gas_cost": "Très Faible",
+      "finality": "3-5 sec",
+      "EVM": true,
+      "audit": "Très Élevé"
+    },
+    "source": "Blockchain-Protocol-Comparative",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b31",
+    "data": {
+      "concurrent": "VeChain",
+      "domaine": "Traçabilité & Supply Chain"
+    },
+    "source": "Gartner-Supply-Chain-DLT",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b31",
+    "data": {
+      "concurrent": "IBM Food Trust",
+      "domaine": "Traçabilité & Supply Chain"
+    },
+    "source": "Gartner-Supply-Chain-DLT",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b31",
+    "data": {
+      "concurrent": "OriginTrail",
+      "domaine": "Traçabilité & Supply Chain"
+    },
+    "source": "Gartner-Supply-Chain-DLT",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b31",
+    "data": {
+      "concurrent": "Provenance",
+      "domaine": "Traçabilité & Supply Chain"
+    },
+    "source": "Gartner-Supply-Chain-DLT",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b31",
+    "data": {
+      "concurrent": "Ambrosus",
+      "domaine": "Traçabilité & Supply Chain"
+    },
+    "source": "Gartner-Supply-Chain-DLT",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b61",
+    "data": {
+      "nom": "Vitalik Buterin",
+      "territoire": "Europe"
+    },
+    "source": "KOL-Blockchain-Index",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b61",
+    "data": {
+      "nom": "Gavin Wood",
+      "territoire": "Europe"
+    },
+    "source": "KOL-Blockchain-Index",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b61",
+    "data": {
+      "nom": "Nicolas Cary",
+      "territoire": "Europe"
+    },
+    "source": "KOL-Blockchain-Index",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b61",
+    "data": {
+      "nom": "Pascal Gauthier",
+      "territoire": "Europe"
+    },
+    "source": "KOL-Blockchain-Index",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b61",
+    "data": {
+      "nom": "Mickaël van de Poppe",
+      "territoire": "Europe"
+    },
+    "source": "KOL-Blockchain-Index",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Maroc",
+      "statut": "Recherche avancée - Bank Al-Maghrib"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Nigeria",
+      "statut": "Lancé (eNaira)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Ghana",
+      "statut": "Pilote en cours (eCedi)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Sénégal",
+      "statut": "Recherche (BCEAO)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Côte d'Ivoire",
+      "statut": "Recherche (BCEAO)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Kenya",
+      "statut": "Discussion publique (CBK)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Rwanda",
+      "statut": "Étude de faisabilité"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Union Européenne",
+      "statut": "Phase de préparation (Euro Numérique)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Suisse",
+      "statut": "Pilote institutionnel (Projet Helvetia)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  },
+  {
+    "layer_id": "b81",
+    "data": {
+      "pays": "Royaume-Uni",
+      "statut": "Consultation (Britcoin)"
+    },
+    "source": "BIS-CBDC-Tracker",
+    "confidence": 0.9,
+    "created_by": "antigravity-collector"
+  }
+]

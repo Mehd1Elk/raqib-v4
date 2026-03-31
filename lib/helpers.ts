@@ -1,5 +1,10 @@
 import type { Category, EntityStats, PlatformCode } from './types';
 
+const intlFr = new Intl.NumberFormat('fr-FR');
+export function fmtNum(n: number): string {
+  return intlFr.format(n);
+}
+
 export function computeEntityStats(categories: Category[]): EntityStats {
   const platformDistribution: Record<string, { count: number; rows: number }> = {};
   let totalLayers = 0;

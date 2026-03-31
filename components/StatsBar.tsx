@@ -1,4 +1,5 @@
 import { PLATFORMS } from '@/lib/constants';
+import { fmtNum } from '@/lib/helpers';
 import type { Entity, EntityStats } from '@/lib/types';
 
 interface StatsBarProps {
@@ -23,7 +24,7 @@ export function StatsBar({ entity, stats }: StatsBarProps) {
       <div className="flex gap-3 items-center text-[9px] font-[family-name:var(--font-jetbrains)] text-t3">
         <span>{stats.totalLayers} couches</span>
         <span>·</span>
-        <span>{stats.totalRows.toLocaleString()} entrées prévues</span>
+        <span>{fmtNum(stats.totalRows)} entrées prévues</span>
         <span>·</span>
         <span>
           {Object.entries(stats.platformDistribution)

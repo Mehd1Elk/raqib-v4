@@ -1,6 +1,7 @@
 'use client';
 
 import { PLATFORMS } from '@/lib/constants';
+import { fmtNum } from '@/lib/helpers';
 import type { Category, Entity } from '@/lib/types';
 
 interface CategoryNavProps {
@@ -76,7 +77,7 @@ export function CategoryNav({
                   {l.name}
                 </span>
                 <span className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm shrink-0">
-                  {l.rows.toLocaleString()}
+                  {fmtNum(l.rows)}
                 </span>
               </button>
             ))}

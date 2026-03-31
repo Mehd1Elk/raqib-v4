@@ -1,4 +1,5 @@
 import { PLATFORMS } from '@/lib/constants';
+import { fmtNum } from '@/lib/helpers';
 import type { Entity, EntityStats } from '@/lib/types';
 
 interface PlatformGridProps {
@@ -35,7 +36,7 @@ export function PlatformGrid({ entity, stats }: PlatformGridProps) {
                 {p.name}
               </div>
               <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3 mt-0.5">
-                {v.count} couches · {v.rows.toLocaleString()} entrées
+                {v.count} couches · {fmtNum(v.rows)} entrées
               </div>
             </div>
           );

@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useState, useMemo, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import { AgentCard } from './AgentCard';
 import { AgentDetailPanel } from './AgentDetailPanel';
 import { AgentListTable } from './AgentListTable';
 import { Search, Filter, LayoutGrid, List, Network, Download } from 'lucide-react';
 import { agentsData, Agent, AgentLayer, AgentPole, AgentPlatform, AgentStatus } from '../../lib/agents-data';
+import CohortGrid from './CohortGrid';
 
 // D3 Tree loads on client side only
 const AgentOrgTree = dynamic(() => import('./AgentOrgTree').then(mod => mod.default), {
@@ -21,8 +23,8 @@ const STATUSES: AgentStatus[] = ['Actif', 'En attente', 'Erreur', 'Inactif'];
 const MODELS = ['Opus', 'Sonnet', 'Haiku', 'GPT-4o', 'GPT-5.2', 'Gemini 3 Pro', 'Mistral Large', 'Qwen 2.5', 'DeepSeek R1', 'Claude Opus 4.6'];
 
 export const EigenAgents: React.FC = () => {
-  const [view, setView] = useState<'grid' | 'list' | 'tree'>('grid');
-  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
+  const router = useRouter();
+  const [view, setView] = useState<'tree' | 'cohorts'>('tree');
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Filters State
@@ -85,8 +87,11 @@ export const EigenAgents: React.FC = () => {
       `}</style>
 
       {/* BACKGROUND ORG TREE */}
-      <div className="absolute inset-0 z-0">
-        {isLoaded && <AgentOrgTree onSelectAgent={(id) => { const a = agentsData.find(ag => ag.id === id); if (a) setSelectedAgent(a); }} />}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${view === 'tree' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {isLoaded && <AgentOrgTree onSelectAgent={(id) => {
+          const a = agentsData.find(ag => ag.id === id);
+          if (a) router.push(`/eigen/agent/${encodeURIComponent(a.id)}`);
+        }} />}
       </div>
       
       {/* Floating Header */}
@@ -95,27 +100,20 @@ export const EigenAgents: React.FC = () => {
           <h1 className="font-mono text-[12px] text-[#D4AF37] font-bold tracking-widest uppercase">
             {count} AGENTS — Écosystème EIGEN
           </h1>
-          <div className="flex bg-stone-100 p-1 rounded">
-            <button
-              aria-label="Vue grille"
-              onClick={() => setView('grid')}
-              className={`p-1.5 rounded transition-colors ${view === 'grid' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
-            >
-              <LayoutGrid size={16} />
-            </button>
-            <button
-              aria-label="Vue liste"
-              onClick={() => setView('list')}
-              className={`p-1.5 rounded transition-colors ${view === 'list' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
-            >
-              <List size={16} />
-            </button>
+          <div className="flex bg-stone-100 p-1 rounded gap-1">
             <button
               aria-label="Vue organigramme"
               onClick={() => setView('tree')}
-              className={`p-1.5 rounded transition-colors ${view === 'tree' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
+              className={`px-3 py-1.5 flex items-center gap-2 rounded transition-all font-mono text-[10px] uppercase font-bold tracking-wider ${view === 'tree' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
             >
-              <Network size={16} />
+              <Network size={14} /> Organigramme
+            </button>
+            <button
+              aria-label="Vue cohortes"
+              onClick={() => setView('cohorts')}
+              className={`px-3 py-1.5 flex items-center gap-2 rounded transition-all font-mono text-[10px] uppercase font-bold tracking-wider ${view === 'cohorts' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
+            >
+              <LayoutGrid size={14} /> Cohortes
             </button>
           </div>
         </div>
@@ -203,36 +201,12 @@ export const EigenAgents: React.FC = () => {
           </div>
       </header>
 
-      {/* Main Content for Grid and List (Overlays tree) */}
-      {view !== 'tree' && (
+      {/* Main Content for Cohorts */}
+      {view === 'cohorts' && (
         <main className="absolute inset-0 z-20 pt-[140px] px-6 pb-6 overflow-auto bg-[#FDFCFB]/95 backdrop-blur-2xl">
-          {!isLoaded ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="w-[280px] h-[180px] bg-stone-100 animate-pulse rounded border border-stone-200" />
-              ))}
-            </div>
-          ) : view === 'grid' ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center sm:justify-items-start">
-              {filteredAgents.map((agent, index) => (
-                <AgentCard 
-                  key={agent.id} 
-                  agent={agent} 
-                  onClick={setSelectedAgent}
-                  style={{ animationDelay: `${index * 50}ms` }} 
-                />
-              ))}
-              {filteredAgents.length === 0 && (
-                <div className="col-span-full py-20 text-center text-stone-400 font-mono text-sm">Aucun agent ne correspond aux filtres.</div>
-              )}
-            </div>
-          ) : (
-            <AgentListTable data={filteredAgents} onRowClick={setSelectedAgent} />
-          )}
+          <CohortGrid />
         </main>
       )}
-
-      <AgentDetailPanel agent={selectedAgent} onClose={() => setSelectedAgent(null)} />
     </div>
   );
 };

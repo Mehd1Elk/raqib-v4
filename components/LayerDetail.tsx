@@ -1,4 +1,5 @@
 import { PLATFORMS } from '@/lib/constants';
+import { fmtNum } from '@/lib/helpers';
 import { PlatformBadge } from './PlatformBadge';
 import { PlatformGrid } from './PlatformGrid';
 import type { Category, Entity, EntityStats, LayerDef } from '@/lib/types';
@@ -39,8 +40,8 @@ function ProgressBar({ actual, target }: { actual: number; target: number }) {
       </div>
       <div className="flex gap-6 text-[10px] font-[family-name:var(--font-noto)] text-t3">
         <span>
-          <span className="font-semibold text-t2">{actual.toLocaleString()}</span> /{' '}
-          {target.toLocaleString()} entrées
+          <span className="font-semibold text-t2">{fmtNum(actual)}</span> /{' '}
+          {fmtNum(target)} entrées
         </span>
         <span
           className="px-2 py-0.5 rounded text-[9px] font-[family-name:var(--font-jetbrains)] font-semibold"
@@ -88,7 +89,7 @@ export function LayerDetail({
         </span>
         <div className="w-px h-3.5 bg-div" />
         <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-t2">
-          {layer.rows.toLocaleString()} entrées prévues
+          {fmtNum(layer.rows)} entrées prévues
         </span>
         {lastPopulatedAt && (
           <>
@@ -126,7 +127,7 @@ export function LayerDetail({
           </div>
           <div>
             <span className="font-semibold text-t1">Volume cible :</span>{' '}
-            {layer.rows.toLocaleString()} entrées
+            {fmtNum(layer.rows)} entrées
           </div>
           <div>
             <span className="font-semibold text-t1">ID :</span>{' '}
