@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import { AgentCard } from './AgentCard';
 import { AgentDetailPanel } from './AgentDetailPanel';
 import { AgentListTable } from './AgentListTable';
-import { Search, Filter, LayoutGrid, List, Network, Download } from 'lucide-react';
+import { Search, Filter, LayoutGrid, List, Network, Download, GitBranch, Users } from 'lucide-react';
 import { agentsData, Agent, AgentLayer, AgentPole, AgentPlatform, AgentStatus } from '../../lib/agents-data';
 import CohortGrid from './CohortGrid';
 
@@ -24,7 +24,9 @@ const MODELS = ['Opus', 'Sonnet', 'Haiku', 'GPT-4o', 'GPT-5.2', 'Gemini 3 Pro', 
 
 export const EigenAgents: React.FC = () => {
   const router = useRouter();
-  const [view, setView] = useState<'tree' | 'cohorts'>('tree');
+  const [view, setView] = useState<'org' | 'cohorts' | 'grid' | 'list'>('grid');
+  const [selectedAgent, setSelectedAgent] = useState<Agent | null>(null);
+  const [localAgents, setLocalAgents] = useState<Agent[]>(agentsData);
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Filters State
@@ -53,11 +55,27 @@ export const EigenAgents: React.FC = () => {
         setCount(Math.floor(start));
       }
     }, 16);
+
+    // Fetch real data
+    fetch('/api/agents')
+      .then(res => res.json())
+      .then(data => {
+        if (data && Array.isArray(data)) {
+          // Merge based on id but trust the DB data
+          const merged = agentsData.map((a) => {
+            const real = data.find((d: any) => d.id === a.id);
+            return real ? { ...a, ...real } : a;
+          });
+          setLocalAgents(merged);
+        }
+      })
+      .catch(console.error);
+
     return () => clearInterval(timer);
   }, []);
 
   const filteredAgents = useMemo(() => {
-    return agentsData.filter(a => {
+    return localAgents.filter(a => {
       if (layerFilter !== 'ALL' && a.layer !== layerFilter) return false;
       if (poleFilter !== 'ALL' && a.pole !== poleFilter) return false;
       if (platformFilter !== 'ALL' && a.platform !== platformFilter) return false;
@@ -68,10 +86,10 @@ export const EigenAgents: React.FC = () => {
     });
   }, [search, layerFilter, poleFilter, platformFilter, statusFilter, modelFilter]);
 
-  const activeCount = agentsData.filter(a => a.status === 'Actif').length;
-  const errorCount = agentsData.filter(a => a.status === 'Erreur').length;
-  const entriesTotal = agentsData.reduce((acc, a) => acc + a.entriesProduced, 0);
-  const layerSummary = LAYER_ORDER.map((layer) => `${agentsData.filter((agent) => agent.layer === layer).length} ${layer}`);
+  const activeCount = localAgents.filter(a => ['Actif', 'active', 'actif'].includes(a.status as string)).length;
+  const errorCount = localAgents.filter(a => ['Erreur', 'error', 'erreur'].includes(a.status as string)).length;
+  const entriesTotal = localAgents.reduce((acc, a) => acc + (a.entriesProduced || 0), 0);
+  const layerSummary = LAYER_ORDER.map((layer) => `${localAgents.filter((agent) => agent.layer === layer).length} ${layer}`);
 
   return (
     <div className="relative w-full h-full min-h-[800px] bg-[#FDFCFB] font-sans overflow-hidden">
@@ -87,9 +105,9 @@ export const EigenAgents: React.FC = () => {
       `}</style>
 
       {/* BACKGROUND ORG TREE */}
-      <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${view === 'tree' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${view === 'org' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         {isLoaded && <AgentOrgTree onSelectAgent={(id) => {
-          const a = agentsData.find(ag => ag.id === id);
+          const a = localAgents.find(ag => ag.id === id);
           if (a) router.push(`/eigen/agent/${encodeURIComponent(a.id)}`);
         }} />}
       </div>
@@ -100,21 +118,26 @@ export const EigenAgents: React.FC = () => {
           <h1 className="font-mono text-[12px] text-[#D4AF37] font-bold tracking-widest uppercase">
             {count} AGENTS — Écosystème EIGEN
           </h1>
-          <div className="flex bg-stone-100 p-1 rounded gap-1">
-            <button
-              aria-label="Vue organigramme"
-              onClick={() => setView('tree')}
-              className={`px-3 py-1.5 flex items-center gap-2 rounded transition-all font-mono text-[10px] uppercase font-bold tracking-wider ${view === 'tree' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
-            >
-              <Network size={14} /> Organigramme
-            </button>
-            <button
-              aria-label="Vue cohortes"
-              onClick={() => setView('cohorts')}
-              className={`px-3 py-1.5 flex items-center gap-2 rounded transition-all font-mono text-[10px] uppercase font-bold tracking-wider ${view === 'cohorts' ? 'bg-white shadow-sm text-[#D4AF37]' : 'text-stone-500 hover:text-stone-800'}`}
-            >
-              <LayoutGrid size={14} /> Cohortes
-            </button>
+          <div className="flex border border-[#E5E0D8] rounded overflow-hidden shadow-sm bg-white">
+            {[
+              { id: 'org', label: 'ORGANIGRAMME', icon: GitBranch },
+              { id: 'cohorts', label: 'COHORTES', icon: Users },
+              { id: 'grid', label: 'GRILLE', icon: LayoutGrid },
+              { id: 'list', label: 'LISTE', icon: List },
+            ].map(v => (
+              <button 
+                key={v.id}
+                onClick={() => setView(v.id as any)}
+                className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-[9px] uppercase font-bold tracking-wider transition-colors ${
+                  view === v.id 
+                    ? 'bg-[#B8963E] text-white' 
+                    : 'text-stone-500 hover:text-[#B8963E] hover:bg-stone-50'
+                }`}
+              >
+                <v.icon size={12} strokeWidth={2} />
+                {v.label}
+              </button>
+            ))}
           </div>
         </div>
         
@@ -201,12 +224,37 @@ export const EigenAgents: React.FC = () => {
           </div>
       </header>
 
-      {/* Main Content for Cohorts */}
-      {view === 'cohorts' && (
+      {/* Main Content for Lists/Grids/Cohorts */}
+      {view !== 'org' && (
         <main className="absolute inset-0 z-20 pt-[140px] px-6 pb-6 overflow-auto bg-[#FDFCFB]/95 backdrop-blur-2xl">
-          <CohortGrid />
+          {!isLoaded ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <div key={i} className="w-[280px] h-[180px] bg-stone-100 animate-pulse rounded border border-stone-200" />
+              ))}
+            </div>
+          ) : view === 'cohorts' ? (
+            <div className="animate-in fade-in duration-500"><CohortGrid agentsData={localAgents} /></div>
+          ) : view === 'grid' ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 justify-items-center sm:justify-items-start animate-in fade-in duration-500">
+              {filteredAgents.map((agent, index) => (
+                <AgentCard 
+                  key={agent.id} 
+                  agent={agent} 
+                  onClick={setSelectedAgent}
+                  style={{ animationDelay: `${index * 50}ms` }} 
+                />
+              ))}
+              {filteredAgents.length === 0 && (
+                <div className="col-span-full py-20 text-center text-stone-400 font-mono text-sm">Aucun agent ne correspond aux filtres.</div>
+              )}
+            </div>
+          ) : view === 'list' ? (
+            <div className="animate-in fade-in duration-500"><AgentListTable data={filteredAgents} onRowClick={setSelectedAgent} /></div>
+          ) : null}
         </main>
       )}
+      <AgentDetailPanel agent={selectedAgent} onClose={() => setSelectedAgent(null)} />
     </div>
   );
 };

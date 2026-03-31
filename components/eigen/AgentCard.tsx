@@ -63,7 +63,15 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
         <div className="flex justify-between items-start mb-1">
           <div className="flex items-center space-x-2">
             <Bot size={14} className="text-stone-600" />
-            <span className="font-['Cormorant_Garamond'] text-[12px] font-bold truncate max-w-[180px]">{agent.name}</span>
+            <span 
+              className="font-['Cormorant_Garamond'] text-[12px] font-bold truncate max-w-[180px] hover:text-[#D4AF37] hover:underline transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.location.href = `/eigen/agent/${encodeURIComponent(agent.id)}`;
+              }}
+            >
+              {agent.name}
+            </span>
           </div>
           <span className="text-[10px] text-stone-500 font-mono">{agent.id}</span>
         </div>

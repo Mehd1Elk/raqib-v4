@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { MessageCircle, Users } from 'lucide-react';
-import { agentsData } from '../../lib/agents-data';
-import CohortPanel, { Agent } from './CohortPanel';
+import CohortPanel from './CohortPanel';
+import type { Agent } from '../../lib/agents-data';
 import StatusDot from '../ui/StatusDot';
 
 const COHORTS_DEF = [
@@ -23,7 +23,7 @@ const COHORTS_DEF = [
   { id: 'l4-found', name: 'Fondateur & Architectes', color: '#7B5EA7', layer: 'L4', description: 'Mehdi + 7 architectes stagiaires', filter: (a: any) => a.layer === 'L4' },
 ];
 
-export default function CohortGrid() {
+export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
   const [selectedCohortId, setSelectedCohortId] = useState<string | null>(null);
 
   const activeCohort = COHORTS_DEF.find(c => c.id === selectedCohortId);
