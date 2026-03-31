@@ -16,15 +16,17 @@ function findLocalAgent(id: string): Agent | undefined {
 
 async function findSupabaseAgent(id: string): Promise<Agent | null> {
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/agents/${encodeURIComponent(id)}`, {
-      cache: 'no-store',
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data.error) return null;
+    const { createClient } = await import('../../../../lib/supabase/server');
+    const supabase = await createClient();
+    const { data, error } = await supabase
+      .from('agent_registry')
+      .select('*')
+      .eq('id', id)
+      .single();
+    if (error || !data) return null;
+    const statusMap: Record<string, string> = {
+      active: 'Actif', error: 'Erreur', inactive: 'Inactif', pending: 'En attente',
+    };
     return {
       id: data.id,
       name: data.name ?? data.id,
@@ -32,7 +34,7 @@ async function findSupabaseAgent(id: string): Promise<Agent | null> {
       pole: data.pole ?? 'Raqib',
       platform: data.platform ?? 'Claude',
       model: data.model ?? 'Unknown',
-      status: data.status === 'active' ? 'Actif' : data.status === 'error' ? 'Erreur' : data.status === 'inactive' ? 'Inactif' : (data.status ?? 'En attente'),
+      status: (statusMap[data.status ?? ''] ?? data.status ?? 'En attente') as Agent['status'],
       entriesProduced: data.entries_produced ?? 0,
     } as Agent;
   } catch {
