@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import { ENTITIES } from '@/lib/constants';
+import { ENTITIES, PLATFORMS } from '@/lib/constants';
 import { getEntityLayers } from '@/lib/mock-data';
 import { computeEntityStats } from '@/lib/helpers';
 import { EntityTabs } from '@/components/EntityTabs';
@@ -11,8 +11,8 @@ import { LayerDetail } from '@/components/LayerDetail';
 import { SearchOverlay } from '@/components/SearchOverlay';
 import { ExportButton } from '@/components/ExportButton';
 import { EntriesTable } from '@/components/EntriesTable';
+import { GlobalNav } from '@/components/GlobalNav';
 import { subscribeToLayerUpdates, fetchCategoriesWithLayers } from '@/lib/supabase/client-queries';
-import { PLATFORMS } from '@/lib/constants';
 import type { Category } from '@/lib/types';
 
 interface LayerLiveData {
@@ -38,18 +38,15 @@ export default function Dashboard() {
 
   const entity = ENTITIES[entityIndex];
   const mockCategories = useMemo(() => getEntityLayers(entity.id), [entity.id]);
-  // Use Supabase categories if loaded, otherwise mock
   const categories = sbCategories ?? mockCategories;
   const stats = useMemo(() => computeEntityStats(categories), [categories]);
   const category = categories[categoryIndex];
   const layer = category?.layers?.[layerIndex];
 
-  // Fetch categories + layers from Supabase for current entity
   const loadFromSupabase = useCallback(async (entityId: string) => {
     try {
       const cats = await fetchCategoriesWithLayers(entityId);
       if (cats.length > 0) {
-        // Map to Category[] type and extract live data
         const mapped: Category[] = cats.map(c => ({
           label: c.label,
           layers: c.layers.map(l => ({
@@ -74,17 +71,15 @@ export default function Dashboard() {
         setLiveData(live);
       }
     } catch {
-      // Supabase not available — use mock data
       setSbCategories(null);
     }
   }, []);
 
   useEffect(() => {
-    setSbCategories(null); // Reset while loading
+    setSbCategories(null);
     loadFromSupabase(entity.id);
   }, [entity.id, loadFromSupabase]);
 
-  // Realtime subscription for layer updates
   useEffect(() => {
     const unsub = subscribeToLayerUpdates((payload) => {
       const l = payload.new;
@@ -118,72 +113,124 @@ export default function Dashboard() {
     <div className="w-screen h-screen flex flex-col overflow-hidden">
       <SearchOverlay onSelect={handleSearch} />
 
-      {/* TOP BAR */}
-      <div className="h-[52px] shrink-0 flex items-center justify-between px-6 border-b border-div bg-ivory">
-        <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-gold" />
-          <span className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-noir tracking-[3px]">
-            Raqib
-          </span>
-          <span className="font-[family-name:var(--font-cormorant)] text-[15px] text-sand">
-            رقيب
-          </span>
-          <div className="w-px h-5 bg-div" />
-          <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)] tracking-[2px]">
-            V4 · 1000 COUCHES · 9 PLATEFORMES · {ENTITIES.length} ENTITÉS
-          </span>
+      {/* ═══ ZONE 1 — HERO HEADER ═══ */}
+      <div className="shrink-0 bg-ivory border-b border-div px-8 py-6">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-1.5">
+              <div className="w-3 h-3 rounded-full bg-gold" />
+              <h1 className="font-[family-name:var(--font-cormorant)] text-[32px] font-bold italic text-noir">
+                Raqib <span className="font-normal text-[22px] text-gold">رقيب</span>
+              </h1>
+            </div>
+            <p className="font-[family-name:var(--font-jetbrains)] text-[10px] text-t3 tracking-[2px]">
+              V4 · 1100 COUCHES · 11 ENTITÉS · 16 384 ENTRIES · 255 AGENTS
+            </p>
+          </div>
+          <div className="flex items-center gap-3">
+            <a href="/eigen" className="px-4 py-2 bg-gold text-white font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:bg-gold-d transition">
+              COCKPIT EIGEN →
+            </a>
+            <a href="/upload" className="px-4 py-2 border border-stone text-stone font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:border-gold hover:text-gold transition">
+              IMPORTER
+            </a>
+            <GlobalNav />
+            <ExportButton entityIndex={entityIndex} />
+            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">
+              ⌘K
+            </kbd>
+            <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
+              {time}
+            </span>
+          </div>
         </div>
+      </div>
+
+      {/* ═══ ZONE 2 — NAVIGATION CARDS ═══ */}
+      <div className="shrink-0 px-8 py-5 bg-cream border-b border-div">
+        <div className="grid grid-cols-3 gap-4">
+
+          {/* Card COCKPIT EIGEN */}
+          <a href="/eigen" className="col-span-1 row-span-2 bg-noir text-white rounded-lg p-6 hover:ring-2 hover:ring-gold transition group no-underline">
+            <div className="text-gold font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[3px] mb-3">COCKPIT</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[24px] font-bold italic mb-2">EIGEN Stratégique</div>
+            <div className="font-[family-name:var(--font-noto)] text-[11px] text-stone mb-4">
+              6 sous-onglets · 255 agents · Board meeting · Galerie · Terminal
+            </div>
+            <div className="grid grid-cols-3 gap-2 mt-4">
+              <div className="text-center">
+                <div className="font-[family-name:var(--font-cormorant)] text-[20px] font-bold text-gold">255</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">AGENTS</div>
+              </div>
+              <div className="text-center">
+                <div className="font-[family-name:var(--font-cormorant)] text-[20px] font-bold text-gold">59</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">DOCUMENTS</div>
+              </div>
+              <div className="text-center">
+                <div className="font-[family-name:var(--font-cormorant)] text-[20px] font-bold text-gold">88</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">SCORE</div>
+              </div>
+            </div>
+            <div className="mt-4 font-[family-name:var(--font-jetbrains)] text-[8px] text-gold opacity-0 group-hover:opacity-100 transition">
+              OUVRIR LE COCKPIT →
+            </div>
+          </a>
+
+          {/* Card DASHBOARDS */}
+          <a href="/dashboards/investor" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-gold tracking-[2px] mb-2">DASHBOARDS</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Tableaux de bord</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">Investor · Supervisor · GITEX · London</div>
+            <div className="flex gap-2">
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(184,150,62,0.1)] text-gold rounded">INVESTOR</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">SUPERVISOR</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">GITEX</span>
+            </div>
+          </a>
+
+          {/* Card STATS */}
+          <a href="/stats" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-emerald tracking-[2px] mb-2">PROGRESSION</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Stats & Qualité</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">100% completion · 16 384 entries · conf 0.85</div>
+            <div className="w-full h-2 bg-parchment rounded-full overflow-hidden">
+              <div className="h-full bg-emerald rounded-full" style={{width:'100%'}} />
+            </div>
+          </a>
+
+          {/* Card BOARD MEETING */}
+          <a href="/eigen?tab=board" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-violet tracking-[2px] mb-2">COMITÉ</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Board Meeting</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">5 directeurs IA · Débat stratégique</div>
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">Stratégie · Finance · Juridique · Tech · Commercial</div>
+          </a>
+
+          {/* Card TERMINAL */}
+          <a href="/eigen?tab=terminal" className="bg-noir text-gold-l rounded-lg p-5 hover:ring-1 hover:ring-gold transition no-underline">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[2px] mb-2 text-stone">TERMINAL</div>
+            <div className="font-[family-name:var(--font-jetbrains)] text-[14px] mb-1">&gt; status</div>
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">8 commandes · Live feed · 255 agents</div>
+          </a>
+        </div>
+      </div>
+
+      {/* ═══ ZONE 3 — 11 ENTITÉS VIEWER ═══ */}
+      <div className="shrink-0 px-8 pt-4 pb-2 bg-cream">
         <div className="flex items-center gap-3">
-          <a
-            href="/dashboards/investor"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-gold hover:bg-gold hover:text-white no-underline border border-gold rounded px-2 py-0.5 transition-colors"
-          >
-            INVESTOR
-          </a>
-          <a
-            href="/dashboards/supervisor"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
-          >
-            SUPERVISOR
-          </a>
-          <a
-            href="/dashboards/gitex"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
-          >
-            GITEX
-          </a>
-          <a
-            href="/dashboards/london"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
-          >
-            LONDON
-          </a>
-          <a
-            href="/stats"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
-          >
-            STATS
-          </a>
-          <a
-            href="/upload"
-            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
-          >
-            IMPORTER
-          </a>
-          <ExportButton entityIndex={entityIndex} />
-          <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">
-            ⌘K
-          </kbd>
-          <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
-            {time}
-          </span>
+          <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic text-noir">
+            11 Entités · 1100 Couches
+          </div>
+          <div className="flex-1 h-px bg-div" />
+          <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-t3">
+            NAVIGUER LES DONNÉES
+          </div>
         </div>
       </div>
 
       <EntityTabs activeIndex={entityIndex} onChange={handleEntityChange} />
       <StatsBar entity={entity} stats={stats} />
 
-      {/* MAIN CONTENT */}
       <div className="flex-1 flex overflow-hidden">
         <CategoryNav
           entity={entity}
@@ -222,10 +269,10 @@ export default function Dashboard() {
       {/* BOTTOM BAR */}
       <div className="h-[26px] shrink-0 flex items-center justify-between px-6 border-t border-div bg-ivory">
         <span className="text-[7px] text-tm font-[family-name:var(--font-jetbrains)]">
-          RAQIB V4 · 1000 COUCHES UNIQUES · 9 PLATEFORMES · CLAUDE CODE + COWORK + OPENCLAW + CODEX + PERPLEXITY + ANTIGRAVITY + MISTRAL + DEEPSEEK/QWEN + CLAUDE.AI
+          RAQIB V4 · 1100 COUCHES · 11 ENTITÉS · 255 AGENTS · EIGEN HOLDING SAS
         </span>
         <span className="text-[7px] text-gold font-[family-name:var(--font-jetbrains)]">
-          MARS 2026 · EIGEN HOLDING SAS · SOUVERAINETÉ INTÉGRALE
+          MARS 2026 · SOUVERAINETÉ INTÉGRALE
         </span>
       </div>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, JetBrains_Mono, Noto_Sans } from 'next/font/google';
 import 'leaflet/dist/leaflet.css';
 import './globals.css';
+import { Breadcrumb } from '@/components/Breadcrumb';
 
 const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');
 
@@ -59,6 +60,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${jetbrains.variable} ${noto.variable} h-full`}
     >
       <body className="h-full font-[family-name:var(--font-noto)] text-t1 bg-cream antialiased">
+        <Breadcrumb />
         {children}
       </body>
     </html>
