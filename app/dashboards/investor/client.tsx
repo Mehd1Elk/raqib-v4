@@ -1,42 +1,94 @@
 'use client';
 
-import { PresentationMode } from '@/components/dashboards/PresentationMode';
-import { SectionPanel } from '@/components/dashboards/SectionPanel';
-import { FunnelChart } from '@/components/dashboards/FunnelChart';
-import { NetworkGraph } from '@/components/dashboards/NetworkGraph';
+import dynamic from 'next/dynamic';
+import type { Database } from '@/lib/supabase/types';
 
-interface Props {
-  dealFlowStages: { label: string; value: number; color: string }[];
-  networkNodes: { id: string; label: string; group?: string; size?: number }[];
-  networkEdges: { from: string; to: string }[];
+type EntryRow = Database['public']['Tables']['entries']['Row'];
+
+const ChoroplethMap = dynamic(() => import('@/components/viz/maps/ChoroplethMap').then(m => ({ default: m.ChoroplethMap })), { ssr: false });
+const EigenOrgChart = dynamic(() => import('@/components/viz/networks/EigenOrgChart').then(m => ({ default: m.EigenOrgChart })), { ssr: false });
+const DealFlowFunnelChart = dynamic(() => import('@/components/viz/charts/DealFlowFunnelChart').then(m => ({ default: m.DealFlowFunnelChart })), { ssr: false });
+const InnerCircleGraph = dynamic(() => import('@/components/viz/networks/InnerCircleGraph').then(m => ({ default: m.InnerCircleGraph })), { ssr: false });
+const InvestorsTreemapChart = dynamic(() => import('@/components/viz/charts/InvestorsTreemapChart').then(m => ({ default: m.InvestorsTreemapChart })), { ssr: false });
+const FundraisingTimeline = dynamic(() => import('@/components/viz/timelines/FundraisingTimeline').then(m => ({ default: m.FundraisingTimeline })), { ssr: false });
+const GeopoliticsRadarChart = dynamic(() => import('@/components/viz/charts/GeopoliticsRadarChart').then(m => ({ default: m.GeopoliticsRadarChart })), { ssr: false });
+const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false });
+
+interface InvestorClientProps {
+  fundraisingEntries: EntryRow[];
 }
 
-const SECTIONS = [
-  { id: 's-noos', label: 'NOOS' },
-  { id: 's-dealflow', label: 'Deal flow' },
-  { id: 's-network', label: 'Inner circle' },
-  { id: 's-corridors', label: 'Corridors' },
-  { id: 's-fundraising', label: 'Fundraising' },
-];
-
-export function InvestorClient({ dealFlowStages, networkNodes, networkEdges }: Props) {
+export function InvestorClient({ fundraisingEntries }: InvestorClientProps) {
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <SectionPanel id="s-dealflow" title="DEAL FLOW FUNNEL · CG SA">
-          <FunnelChart stages={dealFlowStages} />
-        </SectionPanel>
+      {/* Rangée 1 — Hero : ChoroplethMap pleine largeur */}
+      <section>
+        <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+          CORRIDORS GÉOPOLITIQUES — 22 PAYS
+        </div>
+        <ChoroplethMap
+          layerIds={['cg41', 'cg42', 'cg43', 'cg44', 'cg45', 'cg46', 'cg47', 'cg48', 'cg49', 'cg50']}
+          valueField="pib"
+          countryField="pays"
+          legendLabel="PIB (Md$)"
+        />
+      </section>
 
-        <SectionPanel id="s-network" title="INNER CIRCLE · RESEAU">
-          <NetworkGraph
-            nodes={networkNodes}
-            edges={networkEdges}
-            centerLabel="EIGEN"
-          />
-        </SectionPanel>
-      </div>
+      {/* Rangée 2 — 2 colonnes */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            ORGANIGRAMME EIGEN HOLDING
+          </div>
+          <EigenOrgChart />
+        </div>
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            ENTONNOIR DEAL FLOW
+          </div>
+          <DealFlowFunnelChart layerId="cg01" />
+        </div>
+      </section>
 
-      <PresentationMode sections={SECTIONS}>{null}</PresentationMode>
+      {/* Rangée 3 — 2 colonnes */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            CERCLE INTÉRIEUR — RÉSEAU CONTACTS
+          </div>
+          <InnerCircleGraph />
+        </div>
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            FONDS VC PAR AUM
+          </div>
+          <InvestorsTreemapChart layerId="n51" />
+        </div>
+      </section>
+
+      {/* Rangée 4 — FundraisingTimeline pleine largeur */}
+      <section>
+        <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+          SÉQUENÇAGE LEVÉES EIGEN 2026-2028
+        </div>
+        <FundraisingTimeline data={fundraisingEntries} />
+      </section>
+
+      {/* Rangée 5 — 2 colonnes */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            RADAR GÉOPOLITIQUE — 5 AXES PAR PAYS
+          </div>
+          <GeopoliticsRadarChart layerId="cg41" />
+        </div>
+        <div>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            COMPLETION PAR ENTITÉ
+          </div>
+          <EntitiesBarChart />
+        </div>
+      </section>
     </>
   );
 }
