@@ -7,7 +7,7 @@ export interface Platform {
   description: string;
 }
 
-export type EntityType = 'BRIQUE' | 'VENTURE' | 'HOLDING' | 'ECOSYSTEM';
+export type EntityType = 'BRIQUE' | 'VENTURE' | 'HOLDING' | 'ECOSYSTEM' | 'CERVEAU';
 
 export interface Entity {
   id: string;

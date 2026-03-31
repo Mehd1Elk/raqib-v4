@@ -91,6 +91,41 @@ export const VIZ_ROUTING: Record<string, VizType> = {
   'cd31': 'network:graph',      // Partenariats
   'cd51': 'network:firewall',   // Gouvernance
   'cd81': 'table:data',         // Data room
+
+  // EIGEN Strategique
+  'ei01': 'network:org',         // Architecture multi-agent
+  'ei02': 'table:data',          // 120 agents usine
+  'ei03': 'table:data',          // Agents cognitifs
+  'ei04': 'table:data',          // 145 agents marketing
+  'ei05': 'table:data',          // 160 super-agents QA
+  'ei06': 'table:data',          // 50 agents blueprint
+  'ei07': 'chart:bar',           // 800 livrables/jour
+  'ei08': 'table:data',          // 20 consultants fantomes
+  'ei09': 'table:data',          // Plan execution IA
+  'ei10': 'table:data',          // Stagiaires vs IA
+  'ei11': 'network:flow',        // Moteur chaine de valeur
+  'ei12': 'network:flow',        // Moteur unifie B2B-B2B2C
+  'ei13': 'table:data',          // Strategie cheval de Troie
+  'ei14': 'chart:funnel',        // Moteur acquisition startups
+  'ei15': 'network:flow',        // Moteur B2B2C
+  'ei21': 'timeline:milestone',  // Conquete 2026
+  'ei22': 'timeline:event',      // Calendrier conquete
+  'ei24': 'map:route',           // Arc conquete 9 villes
+  'ei25': 'timeline:event',      // GITEX prep
+  'ei30': 'chart:bubble',        // Cibles 1000 entreprises
+  'ei37': 'network:flow',        // Web 4.0 architecture
+  'ei41': 'table:data',          // Memorandum
+  'ei46': 'table:data',          // La Cathedrale
+  'ei48': 'chart:bar',           // Road to Unicorn
+  'ei51': 'table:data',          // NOOS memorandum
+  'ei57': 'network:org',         // NOOS ecosysteme integral
+  'ei61': 'chart:treemap',       // CG Invest
+  'ei65': 'timeline:fundraising',// Strategie fundraising
+  'ei68': 'map:choropleth',      // 6 groupes marocains corridor
+  'ei70': 'network:inner',       // Double Cercle CG Invest
+  'ei75': 'network:graph',       // Organigramme reseaux
+  'ei99': 'timeline:milestone',  // Road to Unicorn trajectoire
+  'ei100': 'table:data',         // Raqib 1100 couches
 };
 
 // ── Category fallback ────────────────────────────────────────────────
@@ -112,6 +147,16 @@ export const CATEGORY_VIZ: Record<string, VizType> = {
   'GOUVERNANCE': 'network:firewall',
   'PARTENARIATS': 'network:graph',
   'CHARITABLE': 'map:pin',
+  'ARCHITECTURE & AGENTS IA': 'network:org',
+  'STRATEGIE D\'ACQUISITION': 'network:flow',
+  'CONQUETE 2026': 'timeline:event',
+  'OBSERVANCE & TRACTATION': 'table:data',
+  'MEMORANDUM & POSITIONNEMENT': 'table:data',
+  'NOOS DEEP DIVE': 'table:data',
+  'CG INVEST & FUNDRAISING': 'chart:treemap',
+  'RESEAU & ADVISORY': 'network:graph',
+  'INTERFACES & DEMOS': 'table:data',
+  'VISION & PHILOSOPHIE': 'table:data',
 };
 
 // ── Human-readable labels for each viz type (used in placeholder) ────

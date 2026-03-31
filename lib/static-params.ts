@@ -96,18 +96,32 @@ async function fetchRemoteLayerRecords(): Promise<RemoteLayerRecord[] | null> {
     },
   });
 
-  const { data, error } = await supabase
+  // Supabase default limit is 1000 rows — fetch in two pages to get all 1100+
+  const selectQuery = 'id, name, entity_id, platform_code, target_rows, actual_rows, status, last_populated_at, categories!inner(name), entities!inner(name, type, color), platforms!inner(name)';
+
+  const { data: page1, error: err1 } = await supabase
     .from('layers')
-    .select('id, name, entity_id, platform_code, target_rows, actual_rows, status, last_populated_at, categories!inner(name), entities!inner(name, type, color), platforms!inner(name)')
+    .select(selectQuery)
     .order('entity_id')
     .order('category_id')
-    .order('id');
+    .order('id')
+    .range(0, 999);
 
-  if (error) {
-    throw error;
-  }
+  if (err1) throw err1;
 
-  return (data ?? []).map((row) => {
+  const { data: page2, error: err2 } = await supabase
+    .from('layers')
+    .select(selectQuery)
+    .order('entity_id')
+    .order('category_id')
+    .order('id')
+    .range(1000, 1999);
+
+  if (err2) throw err2;
+
+  const data = [...(page1 ?? []), ...(page2 ?? [])];
+
+  return data.map((row) => {
     const category = row.categories as unknown as { name: string };
     const entity = row.entities as unknown as { name: string; type: Entity['type']; color: string };
     const platform = row.platforms as unknown as { name: string };

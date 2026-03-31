@@ -58,6 +58,7 @@ export const ENTITIES: Entity[] = [
   { id: 'amana', name: 'AMANA', color: C.olive, description: 'Charitable Trust Infrastructure', type: 'VENTURE' },
   { id: 'cg', name: 'CG SA', color: C.cgGreen, description: 'Corporate Governance & Group Strategy', type: 'HOLDING' },
   { id: 'cercle', name: 'Cercle du Gazoduc', color: C.cgGold, description: 'Ecosystem Orchestration & Sovereign Infrastructure', type: 'ECOSYSTEM' },
+  { id: 'eigen', name: 'EIGEN Stratégique', color: '#2C1810', description: 'Intelligence stratégique · Architecture · Acquisition · Conquête · Gouvernance', type: 'CERVEAU' },
 ];
 
 export const PLATFORM_CODES = Object.keys(PLATFORMS) as PlatformCode[];

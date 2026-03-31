@@ -17,11 +17,14 @@ const HeatMap = dynamic(() => import('@/components/viz/maps/HeatMap').then(m => 
 const PinMap = dynamic(() => import('@/components/viz/maps/PinMap').then(m => ({ default: m.PinMap })), { ssr: false });
 const EntitiesBarChart = dynamic(() => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })), { ssr: false });
 const INSEEMap = dynamic(() => import('@/components/viz/maps/INSEEMap').then(m => ({ default: m.INSEEMap })), { ssr: false });
+const EigenOrgChart = dynamic(() => import('@/components/viz/networks/EigenOrgChart').then(m => ({ default: m.EigenOrgChart })), { ssr: false });
+const MilestoneTimeline = dynamic(() => import('@/components/viz/timelines/MilestoneTimeline').then(m => ({ default: m.MilestoneTimeline })), { ssr: false });
+const InnerCircleGraph = dynamic(() => import('@/components/viz/networks/InnerCircleGraph').then(m => ({ default: m.InnerCircleGraph })), { ssr: false });
 
 // Entity → map type
 const GEO_ENTITIES = ['noos', 'cg', 'alguesov', 'amana'];
 const NETWORK_ENTITIES = ['diwane', 'yrknown'];
-const FLOW_ENTITIES = ['cercle', 'aelya', 'burhan', 'myne'];
+const FLOW_ENTITIES = ['cercle', 'aelya', 'burhan', 'myne', 'eigen'];
 
 // Entity → primary chart config
 const CHART_CONFIG: Record<string, { type: string; layerId: string; label: string }> = {
@@ -35,6 +38,7 @@ const CHART_CONFIG: Record<string, { type: string; layerId: string; label: strin
   amana: { type: 'pinmap', layerId: 'am01', label: 'ASSOCIATIONS PAR RÉGION' },
   cg: { type: 'funnel', layerId: 'cg01', label: 'DEAL FLOW FUNNEL' },
   cercle: { type: 'synergy', layerId: 'cd01', label: 'MATRICE SYNERGIES' },
+  eigen: { type: 'synergy', layerId: 'ei01', label: 'ARCHITECTURE MULTI-AGENT' },
 };
 
 interface EntityDashboardClientProps {
@@ -88,6 +92,48 @@ export function EntityDashboardClient({ entityId, entityColor, recentEntries, to
         </div>
         <EntityMap entityId={entityId} />
       </section>
+
+      {/* Rangée 2b — EIGEN: OrgChart hero + compteurs */}
+      {entityId === 'eigen' && (
+        <section>
+          <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+            ORGANIGRAMME EIGEN HOLDING
+          </div>
+          <EigenOrgChart />
+          <div className="grid grid-cols-3 gap-4 mt-4">
+            <div className="bg-ivory border border-div rounded p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">44</div>
+              <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">DOCUMENTS .DOCX</div>
+            </div>
+            <div className="bg-ivory border border-div rounded p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">15</div>
+              <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">INTERFACES .JSX</div>
+            </div>
+            <div className="bg-ivory border border-div rounded p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">100</div>
+              <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">COUCHES STRATEGIQUES</div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Rangée 2c — EIGEN: Timeline jalons + Inner Circle */}
+      {entityId === 'eigen' && (
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              JALONS 2026-2028
+            </div>
+            <MilestoneTimeline data={recentEntries} />
+          </div>
+          <div>
+            <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
+              RÉSEAU ADVISORY
+            </div>
+            <InnerCircleGraph />
+          </div>
+        </section>
+      )}
 
       {/* Rangée 2b — INSEEMap pour NOOS (vue France détaillée) */}
       {entityId === 'noos' && (
