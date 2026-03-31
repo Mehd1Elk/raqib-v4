@@ -2,6 +2,8 @@
 
 import { ToastProvider } from '@/components/ui/Toast';
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts';
+import { FocusProvider } from '@/components/focus/FocusContext';
+import { FocusManager } from '@/components/focus/FocusManager';
 
 function KeyboardShortcuts({ children }: { children: React.ReactNode }) {
   useKeyboardShortcuts();
@@ -11,9 +13,12 @@ function KeyboardShortcuts({ children }: { children: React.ReactNode }) {
 export function ClientProviders({ children }: { children: React.ReactNode }) {
   return (
     <ToastProvider>
-      <KeyboardShortcuts>
-        {children}
-      </KeyboardShortcuts>
+      <FocusProvider>
+        <KeyboardShortcuts>
+          <FocusManager />
+          {children}
+        </KeyboardShortcuts>
+      </FocusProvider>
     </ToastProvider>
   );
 }

@@ -17,7 +17,7 @@ export function useKeyboardShortcuts() {
       if (cmd && e.key === '4') { e.preventDefault(); router.push('/eigen?tab=board'); }
       if (cmd && e.key === '5') { e.preventDefault(); router.push('/eigen?tab=conquest'); }
       if (cmd && e.key === '6') { e.preventDefault(); router.push('/eigen?tab=terminal'); }
-      if (cmd && e.key === 'd') { e.preventDefault(); router.push('/dashboards/investor'); }
+      if (cmd && e.key === 'd') { e.preventDefault(); router.push('/eigen?tab=decisions'); }
       if (cmd && e.key === 't') { e.preventDefault(); router.push('/eigen?tab=terminal'); }
       if (cmd && e.key === 'b') { e.preventDefault(); router.push('/eigen?tab=board'); }
       if (e.key === 'Escape') { document.querySelector<HTMLElement>('[data-close]')?.click(); }

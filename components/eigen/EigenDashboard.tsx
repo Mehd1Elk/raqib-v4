@@ -11,6 +11,7 @@ import { EigenConquest } from '@/components/eigen/EigenConquest';
 import { EigenTerminal } from '@/components/eigen/EigenTerminal';
 import { EigenAgents } from '@/components/eigen/EigenAgents';
 import { EigenVault } from '@/components/eigen/EigenVault';
+import { DecisionQueue } from '@/components/decisions/DecisionQueue';
 
 const EigenBoard = dynamic(() => import('@/components/eigen/EigenBoard'), { ssr: false });
 
@@ -20,6 +21,7 @@ const TABS: Record<string, React.ComponentType> = {
   gallery: EigenGallery,
   board: EigenBoard,
   conquest: EigenConquest,
+  decisions: DecisionQueue,
   terminal: EigenTerminal,
   vault: EigenVault,
 };
@@ -77,6 +79,7 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
             <option value="gallery">Galerie</option>
             <option value="board">Board</option>
             <option value="conquest">Conquête</option>
+            <option value="decisions">Décisions</option>
             <option value="terminal">Terminal</option>
             <option value="vault">Vault</option>
           </select>
