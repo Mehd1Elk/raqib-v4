@@ -2,6 +2,7 @@ import { fetchSupervisorDashboard } from '@/lib/supabase/dashboard-queries';
 import { DashboardHeader } from '@/components/dashboards/DashboardHeader';
 import { DashboardFooter } from '@/components/dashboards/DashboardFooter';
 import { StatCard } from '@/components/dashboards/StatCard';
+import { ExportPDFButton } from '@/components/ExportPDFButton';
 import { SupervisorClient } from './client';
 
 type SupervisorDashboard = Awaited<ReturnType<typeof fetchSupervisorDashboard>>;
@@ -57,9 +58,11 @@ export default async function SupervisorDashboardPage() {
 
   return (
     <div className="min-h-screen bg-cream flex flex-col">
-      <DashboardHeader title="SUPERVISEUR · AGENT 0" subtitle="Vue globale multi-entités" />
+      <DashboardHeader title="SUPERVISEUR · AGENT 0" subtitle="Vue globale multi-entités">
+        <ExportPDFButton elementId="dashboard-content" title="Dashboard Superviseur" />
+      </DashboardHeader>
 
-      <div className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
+      <div id="dashboard-content" className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
         {/* Rangée 1 — 3 KPI cards */}
         <section>
           <div className="grid grid-cols-3 gap-4">

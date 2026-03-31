@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 import { EigenTabNav } from '@/components/eigen/EigenTabNav';
+import { ExportPDFButton } from '@/components/ExportPDFButton';
 import { EigenOverview } from '@/components/eigen/EigenOverview';
 import { EigenGallery } from '@/components/eigen/EigenGallery';
 import { EigenConquest } from '@/components/eigen/EigenConquest';
@@ -62,10 +63,15 @@ function EigenDashboardContent() {
             Sous-système Souverain
           </span>
         </div>
+        <div className="flex items-center gap-3">
+          <ExportPDFButton elementId="eigen-content" title="EIGEN Dashboard" />
+        </div>
         
         {/* Responsive Mobile Select */}
         <div className="block sm:hidden flex-1 max-w-[150px] ml-auto">
           <select 
+            aria-label="Navigation mobile EIGEN"
+            data-testid="eigen-mobile-select"
             value={tabParam}
             onChange={(e) => handleTabChange(e.target.value)}
             className="w-full bg-[#F2EFE8] border border-[#D4CCBA] text-[#1C1814] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1 outline-none"
@@ -86,7 +92,7 @@ function EigenDashboardContent() {
       </div>
 
       {/* CONTENU ANIMÉ */}
-      <div className="flex-1 overflow-hidden relative bg-[#FDFAF3]">
+      <div id="eigen-content" className="flex-1 overflow-hidden relative bg-[#FDFAF3]">
         <div 
           className={`absolute inset-0 w-full h-full transition-opacity duration-150 ease-in-out ${
             isTransitioning ? 'opacity-0' : 'opacity-100'

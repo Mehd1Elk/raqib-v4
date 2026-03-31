@@ -2,6 +2,7 @@ import { fetchLondonDashboard } from '@/lib/supabase/dashboard-queries';
 import { DashboardHeader } from '@/components/dashboards/DashboardHeader';
 import { DashboardFooter } from '@/components/dashboards/DashboardFooter';
 import { StatCard } from '@/components/dashboards/StatCard';
+import { ExportPDFButton } from '@/components/ExportPDFButton';
 import { LondonClient } from './client';
 
 export const metadata = { title: 'ATS London Mai 2026 — Tableau de bord' };
@@ -28,9 +29,11 @@ export default async function LondonDashboardPage() {
         title="ATS LONDON · MAI 2026"
         subtitle="38 cibles investisseurs · Due diligence"
         entityColor="#162B20"
-      />
+      >
+        <ExportPDFButton elementId="dashboard-content" title="Dashboard London" />
+      </DashboardHeader>
 
-      <div className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
+      <div id="dashboard-content" className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
         {/* KPIs */}
         <section>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
