@@ -214,6 +214,36 @@ export type Database = {
         }
         Relationships: []
       }
+      captured_thoughts: {
+        Row: {
+          content: string
+          created_at: string | null
+          id: string
+          routed_to_agent: string | null
+          routed_to_entity: string | null
+          routed_to_layer: string | null
+          status: string | null
+        }
+        Insert: {
+          content: string
+          created_at?: string | null
+          id?: string
+          routed_to_agent?: string | null
+          routed_to_entity?: string | null
+          routed_to_layer?: string | null
+          status?: string | null
+        }
+        Update: {
+          content?: string
+          created_at?: string | null
+          id?: string
+          routed_to_agent?: string | null
+          routed_to_entity?: string | null
+          routed_to_layer?: string | null
+          status?: string | null
+        }
+        Relationships: []
+      }
       categories: {
         Row: {
           entity_id: string
@@ -378,6 +408,45 @@ export type Database = {
         }
         Relationships: []
       }
+      decisions: {
+        Row: {
+          chosen_option: string | null
+          context: string | null
+          created_at: string | null
+          decided_at: string | null
+          entity: string | null
+          id: string
+          options: Json
+          question: string
+          source: string | null
+          urgency: string | null
+        }
+        Insert: {
+          chosen_option?: string | null
+          context?: string | null
+          created_at?: string | null
+          decided_at?: string | null
+          entity?: string | null
+          id?: string
+          options?: Json
+          question: string
+          source?: string | null
+          urgency?: string | null
+        }
+        Update: {
+          chosen_option?: string | null
+          context?: string | null
+          created_at?: string | null
+          decided_at?: string | null
+          entity?: string | null
+          id?: string
+          options?: Json
+          question?: string
+          source?: string | null
+          urgency?: string | null
+        }
+        Relationships: []
+      }
       entities: {
         Row: {
           color: string
@@ -451,6 +520,33 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      focus_sessions: {
+        Row: {
+          decisions_taken: number | null
+          ended_at: string | null
+          id: string
+          mode_id: string
+          mode_label: string
+          started_at: string | null
+        }
+        Insert: {
+          decisions_taken?: number | null
+          ended_at?: string | null
+          id?: string
+          mode_id: string
+          mode_label: string
+          started_at?: string | null
+        }
+        Update: {
+          decisions_taken?: number | null
+          ended_at?: string | null
+          id?: string
+          mode_id?: string
+          mode_label?: string
+          started_at?: string | null
+        }
+        Relationships: []
       }
       layers: {
         Row: {
@@ -589,6 +685,42 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      stream_events: {
+        Row: {
+          created_at: string | null
+          detail: string | null
+          entity: string
+          entity_color: string | null
+          event_type: string
+          id: string
+          link: string | null
+          title: string
+          urgency: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          detail?: string | null
+          entity: string
+          entity_color?: string | null
+          event_type: string
+          id?: string
+          link?: string | null
+          title: string
+          urgency?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          detail?: string | null
+          entity?: string
+          entity_color?: string | null
+          event_type?: string
+          id?: string
+          link?: string | null
+          title?: string
+          urgency?: string | null
+        }
+        Relationships: []
       }
     }
     Views: {
