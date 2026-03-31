@@ -27,7 +27,7 @@ export function EigenVault() {
         </div>
       </div>
       <iframe
-        src="https://component-vault-ashy.vercel.app/vault"
+        src="https://component-vault-ashy.vercel.app/embed"
         className="flex-1 w-full border-0"
         allow="clipboard-write"
         title="Component Vault — Eigen Cartier"

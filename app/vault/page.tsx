@@ -27,7 +27,7 @@ export default function VaultPage() {
       </div>
 
       <iframe
-        src="https://component-vault-ashy.vercel.app/vault"
+        src="https://component-vault-ashy.vercel.app/embed"
         className="w-full border-0"
         style={{ height: 'calc(100vh - 52px)' }}
         allow="clipboard-write"
