@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useCallback } from 'react';
-import { Upload, LayoutGrid, Rows3, Search, Pencil, Trash2, Copy, MoreVertical, X, FileText, Code2, Cpu } from 'lucide-react';
+import { Upload, LayoutGrid, Rows3, Search, Pencil, Trash2, Copy, MoreVertical, X, FileText, Code2, Cpu, Archive } from 'lucide-react';
 import { ArtifactViewer } from '@/components/ArtifactViewer';
 import { useToast } from '@/components/ui/Toast';
 
@@ -351,6 +351,10 @@ export function EigenGallery() {
           </button>
           <input ref={fileRef} type="file" hidden accept=".jsx,.html,.docx,.pdf,.png,.svg,.pptx"
             onChange={e => { if (e.target.files?.[0]) handleFileSelect(e.target.files[0]); e.target.value = ''; }} />
+
+          <a href="/vault" className="flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded font-[family-name:var(--font-jetbrains)] text-[9px] hover:bg-[#7B5EA7] hover:text-white transition">
+            <Archive size={12} /> VAULT — 111
+          </a>
 
           <div className="relative flex-1 max-w-[220px]">
             <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#918977]" />

@@ -12,6 +12,7 @@ const LABELS: Record<string, string> = {
   london: 'London',
   stats: 'Stats',
   upload: 'Importer',
+  vault: 'Vault',
 };
 
 export function Breadcrumb() {

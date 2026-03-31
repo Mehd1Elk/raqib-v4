@@ -134,6 +134,9 @@ export default function Dashboard() {
             <a href="/upload" className="px-4 py-2 border border-stone text-stone font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:border-gold hover:text-gold transition">
               IMPORTER
             </a>
+            <a href="/vault" className="px-3 py-2 text-[10px] font-[family-name:var(--font-jetbrains)] tracking-wider text-[#7B5EA7] border border-[#7B5EA7] rounded hover:bg-[#7B5EA7] hover:text-white transition">
+              VAULT
+            </a>
             <GlobalNav />
             <ExportButton entityIndex={entityIndex} />
             <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">

@@ -42,6 +42,7 @@ export function GlobalNav() {
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">OUTILS</div>
           <a href="/stats" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Stats & Qualité</a>
           <a href="/upload" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Importer datasets</a>
+          <a href="/vault" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Vault — 111 composants</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">ENTITÉS</div>
           {[
