@@ -1,14 +1,48 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { agentsData } from '../../../../lib/agents-data';
+import { agentsData, type Agent } from '../../../../lib/agents-data';
 import { AgentProfile } from '../../../../components/eigen/profile/AgentProfile';
 import Link from 'next/link';
 
-export default function AgentProfilePage({ params }: { params: { id: string } }) {
-  // Decode ID since it might contain # which is handled differently in URL but if passed as path param it's probably standard string
-  // Note: if id is #NOOS-01, it is uri encoded. Let's decode it.
-  const decodedId = decodeURIComponent(params.id);
-  const agent = agentsData.find(a => a.id === decodedId || a.id.replace('#', '') === decodedId);
+function findLocalAgent(id: string): Agent | undefined {
+  const decoded = decodeURIComponent(id);
+  return agentsData.find(
+    (a) =>
+      a.id === decoded ||
+      a.id.replace('#', '') === decoded ||
+      a.name === decoded,
+  );
+}
+
+async function findSupabaseAgent(id: string): Promise<Agent | null> {
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/agents/${encodeURIComponent(id)}`, {
+      cache: 'no-store',
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data.error) return null;
+    return {
+      id: data.id,
+      name: data.name ?? data.id,
+      layer: data.layer ?? 'OPS',
+      pole: data.pole ?? 'Raqib',
+      platform: data.platform ?? 'Claude',
+      model: data.model ?? 'Unknown',
+      status: data.status === 'active' ? 'Actif' : data.status === 'error' ? 'Erreur' : data.status === 'inactive' ? 'Inactif' : (data.status ?? 'En attente'),
+      entriesProduced: data.entries_produced ?? 0,
+    } as Agent;
+  } catch {
+    return null;
+  }
+}
+
+export default async function AgentProfilePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const agent = findLocalAgent(id) ?? (await findSupabaseAgent(id));
 
   if (!agent) {
     notFound();
@@ -16,7 +50,6 @@ export default function AgentProfilePage({ params }: { params: { id: string } })
 
   return (
     <div className="w-full min-h-screen flex flex-col bg-[#FDFAF3]">
-      {/* HEADER BREADCRUMB */}
       <div className="h-[52px] shrink-0 flex items-center px-6 border-b border-[#D4CCBA] bg-[#FDFAF3] z-20">
         <div className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wide text-[#918977] uppercase">
           <Link href="/" className="hover:text-[#1C1814] transition-colors">Raqib</Link>
