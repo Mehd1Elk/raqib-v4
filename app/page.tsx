@@ -140,6 +140,12 @@ export default function Dashboard() {
           >
             STATS
           </a>
+          <a
+            href="/upload"
+            className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold no-underline border border-div rounded px-2 py-0.5 transition-colors"
+          >
+            IMPORTER
+          </a>
           <ExportButton entityIndex={entityIndex} />
           <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">
             ⌘K
