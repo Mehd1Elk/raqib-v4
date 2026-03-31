@@ -137,6 +137,48 @@ export function subscribeToEntries(callback: (payload: { new: EntryRow }) => voi
   };
 }
 
+export async function fetchPlatformBreakdown(entityId: string): Promise<{ platform_code: string; count: number }[]> {
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from('entries')
+    .select('layer_id, layers!inner(platform_code, entity_id)')
+    .eq('layers.entity_id', entityId);
+
+  if (error) throw error;
+  if (!data) return [];
+
+  const counts = new Map<string, number>();
+  for (const row of data) {
+    const pc = (row.layers as unknown as { platform_code: string }).platform_code;
+    counts.set(pc, (counts.get(pc) ?? 0) + 1);
+  }
+  return Array.from(counts.entries()).map(([platform_code, count]) => ({ platform_code, count }));
+}
+
+export async function fetchConfidenceStats(): Promise<{ entity_id: string; high_confidence: number; total: number }[]> {
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from('entries')
+    .select('confidence, layer_id, layers!inner(entity_id)');
+
+  if (error) throw error;
+  if (!data) return [];
+
+  const map = new Map<string, { high: number; total: number }>();
+  for (const row of data) {
+    const eid = (row.layers as unknown as { entity_id: string }).entity_id;
+    const entry = map.get(eid) ?? { high: 0, total: 0 };
+    entry.total++;
+    if ((row.confidence ?? 0) >= 0.85) entry.high++;
+    map.set(eid, entry);
+  }
+  return Array.from(map.entries()).map(([entity_id, { high, total }]) => ({
+    entity_id,
+    high_confidence: high,
+    total,
+  }));
+}
+
 export function subscribeToLayerUpdates(callback: (payload: { new: LayerRow }) => void) {
   const supabase = createClient();
   const channel = supabase
