@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { LayerDetail } from '@/components/LayerDetail';
-import { EntriesTable } from '@/components/EntriesTable';
+import { VizRenderer } from '@/components/viz/VizRenderer';
 import { getAllStaticParams, getLayerMetadata, getLayerPageRecord } from '@/lib/static-params';
 import { computeEntityStats } from '@/lib/helpers';
 import type { Metadata } from 'next';
@@ -82,12 +82,14 @@ export default async function LayerPage({ params }: PageProps) {
           lastPopulatedAt={lastPopulatedAt}
         />
 
-        {/* Entries table */}
+        {/* Visualization + Table (toggle) */}
         <div className="mt-6">
-          <EntriesTable
+          <VizRenderer
             layerId={layer.id}
             layerName={layer.name}
             platformName={platformName}
+            categoryLabel={category.label}
+            entityColor={entity.color}
           />
         </div>
       </div>
