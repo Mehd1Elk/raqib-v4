@@ -1,165 +1,156 @@
 /**
  * Centralized dynamic imports for ALL viz components.
  * Every dashboard should import from this file instead of doing its own dynamic().
- * All components use ssr: false + loading placeholder.
+ * All components use ssr: false + skeleton loading placeholder.
  */
 'use client';
 
 import dynamic from 'next/dynamic';
+import { SkeletonChart } from '@/components/ui/Skeleton';
 
-function Placeholder({ height = 400, label = 'Chargement...' }: { height?: number; label?: string }) {
-  return (
-    <div
-      style={{
-        height,
-        background: '#F7F3EA',
-        borderRadius: 8,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        border: '1px solid #D4CCBA',
-      }}
-    >
-      <span style={{ color: '#918977', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>{label}</span>
-    </div>
-  );
+function ChartSkeleton({ height = 400 }: { height?: number }) {
+  return <SkeletonChart height={height - 60} />;
+}
+
+function TimelineSkeleton() {
+  return <SkeletonChart height={140} />;
 }
 
 // ── Charts ──────────────────────────────────────────────────────────
 export const EntitiesBarChart = dynamic(
   () => import('@/components/viz/charts/EntitiesBarChart').then(m => ({ default: m.EntitiesBarChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement barres..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const MarketBubbleChart = dynamic(
   () => import('@/components/viz/charts/MarketBubbleChart').then(m => ({ default: m.MarketBubbleChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement bulles..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const InvestorsTreemapChart = dynamic(
   () => import('@/components/viz/charts/InvestorsTreemapChart').then(m => ({ default: m.InvestorsTreemapChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement treemap..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const GeopoliticsRadarChart = dynamic(
   () => import('@/components/viz/charts/GeopoliticsRadarChart').then(m => ({ default: m.GeopoliticsRadarChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement radar..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const DealFlowFunnelChart = dynamic(
   () => import('@/components/viz/charts/DealFlowFunnelChart').then(m => ({ default: m.DealFlowFunnelChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement entonnoir..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const PlatformsPieChart = dynamic(
   () => import('@/components/viz/charts/PlatformsPieChart').then(m => ({ default: m.PlatformsPieChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement distribution..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const TimelineLineChart = dynamic(
   () => import('@/components/viz/charts/TimelineLineChart').then(m => ({ default: m.TimelineLineChart })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement timeline..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const FieldDataHeatmapChart = dynamic(
   () => import('@/components/viz/charts/FieldDataHeatmapChart').then(m => ({ default: m.FieldDataHeatmapChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement heatmap..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 // ── Maps ────────────────────────────────────────────────────────────
 export const ChoroplethMap = dynamic(
   () => import('@/components/viz/maps/ChoroplethMap').then(m => ({ default: m.ChoroplethMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement carte..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const PinMap = dynamic(
   () => import('@/components/viz/maps/PinMap').then(m => ({ default: m.PinMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement pins..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const HeatMap = dynamic(
   () => import('@/components/viz/maps/HeatMap').then(m => ({ default: m.HeatMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement heatmap..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const RouteMap = dynamic(
   () => import('@/components/viz/maps/RouteMap').then(m => ({ default: m.RouteMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement itinéraire..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const CorridorMap = dynamic(
   () => import('@/components/viz/maps/CorridorMap').then(m => ({ default: m.CorridorMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement corridor..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const FlowMap = dynamic(
   () => import('@/components/viz/maps/FlowMap').then(m => ({ default: m.FlowMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement flux..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const INSEEMap = dynamic(
   () => import('@/components/viz/maps/INSEEMap').then(m => ({ default: m.INSEEMap })),
-  { ssr: false, loading: () => <Placeholder label="Chargement carte INSEE..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 // ── Networks ────────────────────────────────────────────────────────
 export const EigenOrgChart = dynamic(
   () => import('@/components/viz/networks/EigenOrgChart').then(m => ({ default: m.EigenOrgChart })),
-  { ssr: false, loading: () => <Placeholder label="Chargement organigramme..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const InnerCircleGraph = dynamic(
   () => import('@/components/viz/networks/InnerCircleGraph').then(m => ({ default: m.InnerCircleGraph })),
-  { ssr: false, loading: () => <Placeholder label="Chargement réseau..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const NetworkGraph = dynamic(
   () => import('@/components/viz/networks/NetworkGraph').then(m => ({ default: m.NetworkGraph })),
-  { ssr: false, loading: () => <Placeholder label="Chargement graphe..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const SynergyMatrix = dynamic(
   () => import('@/components/viz/networks/SynergyMatrix').then(m => ({ default: m.SynergyMatrix })),
-  { ssr: false, loading: () => <Placeholder label="Chargement matrice..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const DataFlowDiagram = dynamic(
   () => import('@/components/viz/networks/DataFlowDiagram').then(m => ({ default: m.DataFlowDiagram })),
-  { ssr: false, loading: () => <Placeholder label="Chargement flux..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 export const FirewallDiagram = dynamic(
   () => import('@/components/viz/networks/FirewallDiagram').then(m => ({ default: m.FirewallDiagram })),
-  { ssr: false, loading: () => <Placeholder label="Chargement gouvernance..." /> }
+  { ssr: false, loading: () => <ChartSkeleton /> }
 );
 
 // ── Timelines ───────────────────────────────────────────────────────
 export const FundraisingTimeline = dynamic(
   () => import('@/components/viz/timelines/FundraisingTimeline').then(m => ({ default: m.FundraisingTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement levées..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const EventTimeline = dynamic(
   () => import('@/components/viz/timelines/EventTimeline').then(m => ({ default: m.EventTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement événements..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const MilestoneTimeline = dynamic(
   () => import('@/components/viz/timelines/MilestoneTimeline').then(m => ({ default: m.MilestoneTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement jalons..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const AgentActivityTimeline = dynamic(
   () => import('@/components/viz/timelines/AgentActivityTimeline').then(m => ({ default: m.AgentActivityTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement activité..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const RegulatoryTimeline = dynamic(
   () => import('@/components/viz/timelines/RegulatoryTimeline').then(m => ({ default: m.RegulatoryTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement réglementaire..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );
 
 export const PublicationTimeline = dynamic(
   () => import('@/components/viz/timelines/PublicationTimeline').then(m => ({ default: m.PublicationTimeline })),
-  { ssr: false, loading: () => <Placeholder height={200} label="Chargement publications..." /> }
+  { ssr: false, loading: () => <TimelineSkeleton /> }
 );

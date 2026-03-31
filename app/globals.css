@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "../styles/interactions.css";
 
 @theme inline {
   /* ═══════ IVORY LUXURY PALETTE ═══════ */
@@ -48,9 +49,34 @@
   --font-sn: var(--font-noto);
 }
 
+/* ═══════ THEME VARIABLES ═══════ */
 :root {
   --background: #F7F3EA;
   --foreground: #2A2318;
+  --bg: #F7F3EA;
+  --bg-panel: #FDFAF3;
+  --text: #1C1814;
+  --text-secondary: #6B5E4C;
+  --text-tertiary: #918977;
+  --gold: #B8963E;
+  --border: rgba(60,52,40,0.10);
+}
+
+[data-theme="dark"] {
+  --background: #1C1814;
+  --foreground: #D4B662;
+  --bg: #1C1814;
+  --bg-panel: #252019;
+  --text: #D4B662;
+  --text-secondary: #918977;
+  --text-tertiary: #6B5E4C;
+  --gold: #D4B662;
+  --border: rgba(212,182,98,0.15);
+}
+
+[data-theme="dark"] body {
+  background: var(--bg);
+  color: var(--text);
 }
 
 body {
@@ -65,3 +91,14 @@ body {
 
 /* Selection */
 ::selection { background: rgba(184,150,62,0.15); color: #1C1814; }
+
+/* Leaflet popup overrides — branded ivory */
+.leaflet-popup-content-wrapper {
+  background: #FDFAF3;
+  border: 1px solid rgba(60,52,40,0.10);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(28,24,20,0.08);
+  padding: 0;
+}
+.leaflet-popup-tip { background: #FDFAF3; }
+.leaflet-popup-content { margin: 8px 12px; font-family: 'Noto Sans', sans-serif; font-size: 11px; }
