@@ -1,11 +1,4 @@
-import type { Metadata } from 'next';
-import BurhanClient from './client';
-
-export const metadata: Metadata = {
-  title: 'BURHAN — Blockchain & Preuve',
-  description: 'Couche de preuve immutable pour l\'ecosysteme sante. Transactions hashees on-chain via Polygon zkEVM.',
-};
-
-export default function Page() {
-  return <BurhanClient />;
-}
+'use client';
+import dynamic from 'next/dynamic';
+const BurhanPage = dynamic(() => import('@/components/entity/BurhanPage'), { ssr: false });
+export default function Page() { return <BurhanPage />; }
