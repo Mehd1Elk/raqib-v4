@@ -31,10 +31,10 @@ function EmptyQueue() {
     <div className="max-w-2xl mx-auto py-24 text-center">
       <Inbox size={32} className="mx-auto text-[#D4CCBA] mb-4" />
       <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic text-[#918977]">
-        Aucune d\u00e9cision en attente
+        Aucune décision en attente
       </div>
       <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mt-2">
-        Les nouvelles d\u00e9cisions appara\u00eetront ici automatiquement
+        Les nouvelles décisions apparaîtront ici automatiquement
       </div>
     </div>
   );
@@ -52,7 +52,7 @@ export function DecisionQueue() {
       .then(data => {
         if (Array.isArray(data)) setDecisions(data);
       })
-      .catch(() => toast('error', '\u00c9chec du chargement des d\u00e9cisions'))
+      .catch(() => toast('error', 'Échec du chargement des décisions'))
       .finally(() => setLoading(false));
   }, [toast]);
 
@@ -79,13 +79,13 @@ export function DecisionQueue() {
         body: JSON.stringify({ chosen_option: choice }),
       });
       if (!res.ok) throw new Error();
-      toast('success', `D\u00e9cision prise : ${choice}`);
+      toast('success', `Décision prise : ${choice}`);
       setDecisions(prev => prev.filter(d => d.id !== id));
       if (currentIndex >= decisions.length - 1) {
         setCurrentIndex(Math.max(0, currentIndex - 1));
       }
     } catch {
-      toast('error', '\u00c9chec de l\u2019enregistrement');
+      toast('error', 'Échec de l\'enregistrement');
     }
   }
 
@@ -97,7 +97,7 @@ export function DecisionQueue() {
     <div className="max-w-2xl mx-auto py-12 px-4">
       {/* Counter */}
       <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] text-center mb-6">
-        D\u00c9CISION {currentIndex + 1} / {decisions.length}
+        DÉCISION {currentIndex + 1} / {decisions.length}
       </div>
 
       {/* Decision Card */}
@@ -141,7 +141,7 @@ export function DecisionQueue() {
         </div>
 
         <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977] text-center mt-6">
-          Source : {current.source ?? 'system'} {current.deadline ? `\u00b7 Deadline : ${current.deadline}` : ''}
+          Source : {current.source ?? 'system'} {current.deadline ? `· Deadline : ${current.deadline}` : ''}
         </div>
       </div>
 
@@ -152,7 +152,7 @@ export function DecisionQueue() {
           disabled={currentIndex === 0}
           className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] disabled:opacity-30 transition"
         >
-          \u2190 Pr\u00e9c\u00e9dente
+          ← Précédente
         </button>
         <button
           onClick={() => skip(current.id)}
@@ -165,7 +165,7 @@ export function DecisionQueue() {
           disabled={currentIndex >= decisions.length - 1}
           className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] disabled:opacity-30 transition"
         >
-          Suivante \u2192
+          Suivante →
         </button>
       </div>
     </div>
