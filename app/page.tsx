@@ -213,11 +213,22 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card DATA VIEWER */}
+          <a href="/data" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#B87D3E] tracking-[2px] mb-2">DATA</div>
+            <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Data Viewer</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">11 entites &middot; 1100 couches &middot; Plein ecran</div>
+            <div className="flex gap-2">
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(184,125,62,0.1)] text-[#B87D3E] rounded">FULL SCREEN</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">SEARCH</span>
+            </div>
+          </a>
+
           {/* Card STATS */}
           <a href="/stats" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-emerald tracking-[2px] mb-2">PROGRESSION</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Stats & Qualité</div>
-            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">100% completion · 16 384 entries · conf 0.85</div>
+            <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">100% completion &middot; 16 384 entries &middot; conf 0.85</div>
             <div className="w-full h-2 bg-parchment rounded-full overflow-hidden">
               <div className="h-full bg-emerald rounded-full" style={{width:'100%'}} />
             </div>
