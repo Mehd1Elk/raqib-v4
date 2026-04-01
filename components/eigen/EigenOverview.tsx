@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { BarChart3, Cpu, CheckCircle2, Calendar, AlertTriangle } from 'lucide-react';
+import { RoutingTableSankey } from '@/components/openclaw/RoutingTableSankey';
 import { EigenKPIBar } from './EigenKPIBar';
 import { EigenLiveFeed } from './EigenLiveFeed';
 import { AgentStatusGrid } from './AgentStatusGrid';
@@ -85,6 +86,11 @@ export function EigenOverview() {
       {/* ZONE 3: Timeline pleine largeur */}
       <div className="flex-1 min-h-[200px]">
         <MilestoneTimeline />
+      </div>
+
+      {/* ZONE 4: Routing Sankey */}
+      <div className="shrink-0 mt-2">
+        <RoutingTableSankey />
       </div>
     </div>
   );

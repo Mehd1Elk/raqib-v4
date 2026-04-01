@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback, type ReactNode } from 'react'
 import { createClient } from '@/lib/supabase/client';
 import { EigenLiveFeed } from './EigenLiveFeed';
 import { CommandInput } from './CommandInput';
+import { MCPRegistryPanel } from '@/components/openclaw/MCPRegistryPanel';
 
 interface TerminalLine {
   id: string;
@@ -250,6 +251,14 @@ export function EigenTerminal() {
             ── Live Stream ──
           </div>
           <EigenLiveFeed mode="full" limit={30} />
+        </div>
+
+        {/* MCP Registry */}
+        <div className="mt-4 border-t border-[#918977] border-opacity-30 pt-3">
+          <div className="text-[#918977] text-[9px] uppercase tracking-widest mb-2">
+            ── MCP Registry ──
+          </div>
+          <MCPRegistryPanel />
         </div>
 
         <div ref={bottomRef} />

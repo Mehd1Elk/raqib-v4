@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { Activity, Pause, Play, Download } from 'lucide-react';
+import { Activity, Pause, Play, Download, ArrowRightLeft } from 'lucide-react';
 import StatusDot from '@/components/ui/StatusDot';
+import { subscribeToStream } from '@/lib/supabase/stream-realtime';
 
 export interface StreamEvent {
   id: string;
@@ -14,6 +15,7 @@ export interface StreamEvent {
   detail: string;
   urgency: 'critical' | 'normal' | 'low';
   link?: string;
+  isA2A?: boolean;
 }
 
 const TYPE_COLORS: Record<string, string> = {
@@ -59,19 +61,31 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
   const [events, setEvents] = useState<StreamEvent[]>([]);
   const [filters, setFilters] = useState({ entities: new Set<string>(), types: new Set<string>() });
   const [paused, setPaused] = useState(false);
+  const [connectionMode, setConnectionMode] = useState<'checking' | 'live' | 'simulated'>('checking');
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Detect connection mode on mount
   useEffect(() => {
+    fetch('/api/openclaw/status')
+      .then(r => r.json())
+      .then(data => setConnectionMode(data.mode === 'LIVE' ? 'live' : 'simulated'))
+      .catch(() => setConnectionMode('simulated'));
+  }, []);
+
+  // Simulation: initial seed (only when simulated)
+  useEffect(() => {
+    if (connectionMode !== 'simulated') return;
     const initial = Array.from({ length: limit || 50 }, () => {
       const e = generateSimulatedEvent();
       e.created_at = new Date(Date.now() - Math.random() * 86400000).toISOString();
       return e;
     }).sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
     setEvents(initial);
-  }, [limit]);
+  }, [limit, connectionMode]);
 
+  // Simulation: periodic generation (only when simulated)
   useEffect(() => {
-    if (paused) return;
+    if (paused || connectionMode !== 'simulated') return;
     const interval = setInterval(() => {
       setEvents(prev => {
         const result = [generateSimulatedEvent(), ...prev].slice(0, limit ? Math.max(limit, 200) : 200);
@@ -79,7 +93,29 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
       });
     }, 30000);
     return () => clearInterval(interval);
-  }, [paused, limit]);
+  }, [paused, limit, connectionMode]);
+
+  // Realtime subscription (only when live)
+  useEffect(() => {
+    if (connectionMode !== 'live') return;
+    const unsubscribe = subscribeToStream((row: any) => {
+      const isA2A = row.event_type === 'agent' && row.detail && /→|->/.test(row.detail);
+      const event: StreamEvent = {
+        id: row.id,
+        created_at: row.created_at,
+        entity: row.entity,
+        entity_color: row.entity_color,
+        event_type: row.event_type,
+        title: row.title,
+        detail: row.detail || '',
+        urgency: row.urgency || 'normal',
+        link: row.link,
+        isA2A,
+      };
+      setEvents(prev => [event, ...prev].slice(0, 50));
+    });
+    return unsubscribe;
+  }, [connectionMode]);
 
   useEffect(() => {
     if (!paused && scrollRef.current) {
@@ -127,6 +163,9 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
         <div className="flex items-center gap-3">
           <Activity size={14} className="text-[#B8963E]" />
           <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">STREAM</span>
+          <span className={`inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full font-[family-name:var(--font-jetbrains)] text-[7px] tracking-wider uppercase text-white ${connectionMode === 'live' ? 'bg-[#3D7C5E]' : 'bg-[#918977]'}`}>
+            {connectionMode === 'live' ? 'LIVE \u2014 OpenClaw' : connectionMode === 'simulated' ? 'SIMUL\u00c9' : '...'}
+          </span>
         </div>
         
         <div className="flex items-center gap-3 flex-wrap">
@@ -167,9 +206,10 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
       
       <div ref={scrollRef} className="flex-1 overflow-y-auto" style={{ maxHeight }}>
         {displayed.map(event => (
-          <div key={event.id} className={`flex items-start gap-3 px-4 py-2 border-b border-[rgba(60,52,40,0.04)] hover:bg-[rgba(184,150,62,0.03)] transition ${event.link ? 'cursor-pointer' : ''} ${event.urgency === 'critical' ? 'bg-[rgba(156,61,61,0.03)]' : ''}`}
+          <div key={event.id} className={`flex items-start gap-3 px-4 py-2 border-b border-[rgba(60,52,40,0.04)] hover:bg-[rgba(184,150,62,0.03)] transition ${event.link ? 'cursor-pointer' : ''} ${event.urgency === 'critical' ? 'bg-[rgba(156,61,61,0.03)]' : ''} ${event.isA2A ? 'bg-[rgba(123,94,167,0.06)] border-l-2 border-l-[#7B5EA7] pl-2' : ''}`}
             onClick={() => event.link ? (window.location.href = event.link) : undefined}>
-            
+
+            {event.isA2A && <ArrowRightLeft size={10} className="text-[#7B5EA7] flex-shrink-0 mt-1.5" />}
             <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || '#918977' }} />
             
             <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] w-10 flex-shrink-0 mt-1">

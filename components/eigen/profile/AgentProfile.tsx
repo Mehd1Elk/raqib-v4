@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Cpu, Play, Pencil, MessageCircle } from 'lucide-react';
+import { Cpu, Play, MessageCircle } from 'lucide-react';
+import AgentExecutionLogs from '@/components/openclaw/AgentExecutionLogs';
+import { SOULEditor } from '@/components/openclaw/SOULEditor';
 import { Agent, agentsData } from '../../../lib/agents-data';
 import StatusDot from '../../ui/StatusDot';
 import { ActivityHeatmap } from './ActivityHeatmap';
@@ -111,9 +113,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
               <span>·</span>
               <span>{agent.platform}</span>
             </div>
-            <div className="font-['Noto_Sans'] text-[12px] text-[#6B5E4C] mt-4 leading-relaxed max-w-2xl bg-white/50 p-3 rounded border border-white">
-              {agent.instructions}
-            </div>
+            <SOULEditor agentId={agent.id} />
           </div>
         </div>
 
@@ -215,6 +215,11 @@ export function AgentProfile({ agent }: { agent: Agent }) {
         </div>
       </div>
 
+      {/* LOGS D'EXÉCUTION */}
+      <div className="mb-4">
+        <AgentExecutionLogs agentId={agent.id} />
+      </div>
+
       {/* ACTIONS */}
       {showChat || showCompare ? null : (
         <div className="flex flex-wrap gap-4 mt-8">
@@ -227,10 +232,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
           >
             <MessageCircle size={14} /> Parler à cet agent
           </button>
-          <button className="flex items-center gap-2 px-5 py-2.5 bg-white border border-[rgba(60,52,40,0.20)] rounded font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#1C1814] hover:border-[#B8963E] hover:text-[#B8963E] transition-all shadow-sm">
-            <Pencil size={14} /> Modifier instructions
-          </button>
-          <button 
+          <button
             onClick={() => setShowCompare(true)}
             className="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-dashed border-[#918977] rounded font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#6B5E4C] hover:border-[#1C1814] hover:text-[#1C1814] transition-all ml-auto"
           >

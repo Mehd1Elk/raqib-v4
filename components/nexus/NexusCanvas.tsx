@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { useNexusStore } from './nexus-store';
+import { useNexusStore, nexusPositions } from './nexus-store';
 import type { NexusEntity, NexusFlow } from './nexus-store';
 
 /* ═══ DATA ═══ */
@@ -112,9 +112,13 @@ export default function NexusCanvas() {
     const world = svg.append('g').attr('class', 'nexus-world');
     const zoom = d3.zoom<SVGSVGElement, unknown>()
       .scaleExtent([0.3, 5])
-      .on('zoom', (e) => { world.attr('transform', e.transform.toString()); });
+      .on('zoom', (e) => {
+        world.attr('transform', e.transform.toString());
+        nexusPositions.transform = { x: e.transform.x, y: e.transform.y, k: e.transform.k };
+      });
     (svg as unknown as d3.Selection<SVGSVGElement, unknown, null, undefined>).call(zoom);
     (svg as unknown as d3.Selection<SVGSVGElement, unknown, null, undefined>).call(zoom.transform, d3.zoomIdentity.translate(W / 2, H / 2).scale(0.85));
+    nexusPositions.transform = { x: W / 2, y: H / 2, k: 0.85 };
 
     /* ── simulation ── */
     const nodes: SimNode[] = ENTITIES.map(e => ({ ...e, x: (Math.random() - 0.5) * 300, y: (Math.random() - 0.5) * 300 }));
@@ -303,6 +307,11 @@ export default function NexusCanvas() {
 
       // Update node positions
       nodeGs.attr('transform', d => `translate(${d.x},${d.y})`);
+
+      // Expose positions for A2A overlay
+      nodes.forEach(n => {
+        nexusPositions.nodes.set(n.id, { x: n.x ?? 0, y: n.y ?? 0 });
+      });
 
       // Animate particles along paths
       t += 0.004;

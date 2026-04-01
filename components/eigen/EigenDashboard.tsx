@@ -8,13 +8,20 @@ import { ExportPDFButton } from '@/components/ExportPDFButton';
 import { EigenOverview } from '@/components/eigen/EigenOverview';
 import { EigenGallery } from '@/components/eigen/EigenGallery';
 import { EigenConquest } from '@/components/eigen/EigenConquest';
-import { EigenTerminal } from '@/components/eigen/EigenTerminal';
+// import { EigenTerminal } from '@/components/eigen/EigenTerminal';
+import CommandPanel from '@/components/openclaw/CommandPanel';
 import { EigenAgents } from '@/components/eigen/EigenAgents';
 import { EigenVault } from '@/components/eigen/EigenVault';
 import { DecisionQueue } from '@/components/decisions/DecisionQueue';
+import ChainEditor from '@/components/openclaw/ChainEditor';
+import { SecurityDashboard } from '@/components/openclaw/SecurityDashboard';
 
 const EigenBoard = dynamic(() => import('@/components/eigen/EigenBoard'), { ssr: false });
 const EigenStream = dynamic(() => import('@/components/stream/EigenStream'), { ssr: false });
+const CronScheduler = dynamic(
+  () => import('@/components/openclaw/CronScheduler').then(mod => mod.CronScheduler),
+  { ssr: false }
+);
 
 const TABS: Record<string, React.ComponentType> = {
   overview: EigenOverview,
@@ -24,8 +31,11 @@ const TABS: Record<string, React.ComponentType> = {
   conquest: EigenConquest,
   decisions: DecisionQueue,
   stream: EigenStream,
-  terminal: EigenTerminal,
+  terminal: CommandPanel,
+  scheduler: CronScheduler,
   vault: EigenVault,
+  workflows: ChainEditor,
+  security: SecurityDashboard,
 };
 
 export function EigenDashboard({ initialTab }: { initialTab: string }) {
@@ -84,7 +94,10 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
             <option value="decisions">Décisions</option>
             <option value="stream">Stream</option>
             <option value="terminal">Terminal</option>
+            <option value="scheduler">Scheduler</option>
             <option value="vault">Vault</option>
+            <option value="workflows">Workflows</option>
+            <option value="security">Sécurité</option>
           </select>
         </div>
       </div>

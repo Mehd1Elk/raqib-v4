@@ -66,6 +66,12 @@ export function toggleFlowType(type: string) {
   emit();
 }
 
+/* ═══ Shared mutable positions for A2A overlay (non-reactive) ═══ */
+export const nexusPositions = {
+  nodes: new Map<string, { x: number; y: number }>(),
+  transform: { x: 0, y: 0, k: 1 },
+};
+
 /* ═══ Hook ═══ */
 export function useNexusStore() {
   const snap = useSyncExternalStore(subscribe, getSnapshot, getSnapshot);

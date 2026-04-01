@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 const NexusCanvas = dynamic(() => import('@/components/nexus/NexusCanvas'), { ssr: false });
 const NexusControls = dynamic(() => import('@/components/nexus/NexusControls'), { ssr: false });
 const NexusMiniInfo = dynamic(() => import('@/components/nexus/NexusMiniInfo'), { ssr: false });
+const A2AOverlay = dynamic(() => import('@/components/nexus/A2AOverlay'), { ssr: false });
 const EigenStream = dynamic(() => import('@/components/stream/EigenStream'), { ssr: false });
 
 export default function NexusPageClient() {
@@ -12,6 +13,7 @@ export default function NexusPageClient() {
     <div className="h-screen w-screen overflow-hidden bg-[#1C1814] relative flex">
       <div className="flex-1 relative">
         <NexusCanvas />
+        <A2AOverlay />
         <NexusControls />
         <NexusMiniInfo />
       </div>
