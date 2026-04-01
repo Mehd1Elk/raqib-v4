@@ -92,7 +92,7 @@ export const EigenAgents: React.FC = () => {
   const layerSummary = LAYER_ORDER.map((layer) => `${localAgents.filter((agent) => agent.layer === layer).length} ${layer}`);
 
   return (
-    <div className="relative w-full h-full min-h-[800px] bg-[#FDFCFB] font-sans overflow-hidden">
+    <div className="relative w-full h-full min-h-[800px] bg-[#FDFCFB] font-sans flex flex-col overflow-hidden">
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
@@ -105,32 +105,50 @@ export const EigenAgents: React.FC = () => {
       `}</style>
 
       {/* BACKGROUND ORG TREE */}
-      <div className={`absolute inset-0 z-0 transition-opacity duration-500 ${view === 'org' ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        {isLoaded && <AgentOrgTree onSelectAgent={(id) => {
-          const a = localAgents.find(ag => ag.id === id);
-          if (a) router.push(`/eigen/agent/${encodeURIComponent(a.id)}`);
-        }} />}
-      </div>
+      {view === 'org' && (
+        <div className="absolute inset-0 z-0">
+          {isLoaded && <AgentOrgTree onSelectAgent={(id) => {
+            const a = localAgents.find(ag => ag.id === id);
+            if (a) router.push(`/eigen/agent/${encodeURIComponent(a.id)}`);
+          }} />}
+        </div>
+      )}
       
       {/* Floating Header */}
-      <header className="absolute top-0 left-0 right-0 z-10 bg-white/70 backdrop-blur-md border-b border-[#E5E0D8]/50 px-6 py-4 flex flex-col space-y-3 shadow-sm">
+      <header className={`shrink-0 relative z-10 ${view === 'org' ? 'bg-white/70 backdrop-blur-md' : 'bg-[#FDFCFB]'} border-b border-[#E5E0D8]/50 px-6 py-4 flex flex-col space-y-3`}>
+        {/* Row 1 — Title + Stats */}
         <div className="flex justify-between items-center">
           <h1 className="font-mono text-[12px] text-[#D4AF37] font-bold tracking-widest uppercase">
             {count} AGENTS — Écosystème EIGEN
           </h1>
-          <div className="flex border border-[#E5E0D8] rounded overflow-hidden shadow-sm bg-white">
+          <div className="flex space-x-4 text-[10px] font-mono font-medium text-stone-500 uppercase tracking-wide">
+            <span className="text-emerald-600 flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span>{activeCount} actifs</span></span>
+            <span className={errorCount > 0 ? 'text-red-500' : ''}>{errorCount} erreurs</span>
+            <span>~{Math.round(entriesTotal / 30)} livrables/jour</span>
+          </div>
+        </div>
+
+        {/* Row 2 — Layer summary */}
+        <div className="text-[10px] font-mono font-medium text-stone-500 uppercase tracking-wide">
+          {layerSummary.join(' · ')}
+        </div>
+
+        {/* Row 3 — Toggle 4 vues */}
+        <div className="flex items-center gap-3 pt-2 border-t border-stone-200/50">
+          <span className="font-mono text-[8px] text-stone-400 uppercase tracking-wider shrink-0">Vue</span>
+          <div className="flex border border-[#E5E0D8] rounded overflow-hidden bg-white">
             {[
               { id: 'org', label: 'ORGANIGRAMME', icon: GitBranch },
               { id: 'cohorts', label: 'COHORTES', icon: Users },
               { id: 'grid', label: 'GRILLE', icon: LayoutGrid },
               { id: 'list', label: 'LISTE', icon: List },
             ].map(v => (
-              <button 
+              <button
                 key={v.id}
                 onClick={() => setView(v.id as any)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-[9px] uppercase font-bold tracking-wider transition-colors ${
-                  view === v.id 
-                    ? 'bg-[#B8963E] text-white' 
+                  view === v.id
+                    ? 'bg-[#B8963E] text-white'
                     : 'text-stone-500 hover:text-[#B8963E] hover:bg-stone-50'
                 }`}
               >
@@ -140,19 +158,9 @@ export const EigenAgents: React.FC = () => {
             ))}
           </div>
         </div>
-        
-        <div className="flex justify-between items-center text-[10px] font-mono font-medium text-stone-500 uppercase tracking-wide">
-          <div className="flex space-x-3">
-            <span>{layerSummary.join(' · ')}</span>
-          </div>
-          <div className="flex space-x-4 border-l pl-4 border-stone-200">
-            <span className="text-emerald-600 flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span>{activeCount} actifs</span></span>
-            <span className={errorCount > 0 ? 'text-red-500' : ''}>{errorCount} erreurs</span>
-            <span>~{Math.round(entriesTotal / 30)} livrables/jour</span>
-          </div>
-        </div>
 
-        {/* Filters */}
+        {/* Row 4 — Filters (hidden in org view) */}
+        {view !== 'org' && (
         <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-stone-200/50">
             <div className="relative flex-1 min-w-[200px] max-w-sm">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" size={14} />
@@ -222,11 +230,12 @@ export const EigenAgents: React.FC = () => {
               Affichage {filteredAgents.length} / {agentsData.length} agents
             </div>
           </div>
+        )}
       </header>
 
       {/* Main Content for Lists/Grids/Cohorts */}
       {view !== 'org' && (
-        <main className="absolute inset-0 z-20 pt-[140px] px-6 pb-6 overflow-auto bg-[#FDFCFB]/95 backdrop-blur-2xl">
+        <main className="flex-1 overflow-auto px-6 py-6 bg-[#FDFCFB]">
           {!isLoaded ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {Array.from({ length: 12 }).map((_, i) => (
@@ -253,6 +262,9 @@ export const EigenAgents: React.FC = () => {
             <div className="animate-in fade-in duration-500"><AgentListTable data={filteredAgents} onRowClick={setSelectedAgent} /></div>
           ) : null}
         </main>
+      )}
+      {view === 'org' && (
+        <div className="flex-1 relative z-0" />
       )}
       <AgentDetailPanel agent={selectedAgent} onClose={() => setSelectedAgent(null)} />
     </div>
