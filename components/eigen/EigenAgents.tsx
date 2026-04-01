@@ -116,7 +116,7 @@ export const EigenAgents: React.FC = () => {
       
       {/* Floating Header */}
       <header className={`shrink-0 relative z-10 ${view === 'org' ? 'bg-white/70 backdrop-blur-md' : 'bg-[#FDFCFB]'} border-b border-[#E5E0D8]/50 px-6 py-4 flex flex-col space-y-3`}>
-        {/* Row 1 — Title + Stats */}
+        {/* Row 1 -- Title + Stats */}
         <div className="flex justify-between items-center">
           <h1 className="font-mono text-[12px] text-[#D4AF37] font-bold tracking-widest uppercase">
             {count} AGENTS — Écosystème EIGEN
@@ -128,12 +128,12 @@ export const EigenAgents: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 2 — Layer summary */}
+        {/* Row 2 -- Layer summary */}
         <div className="text-[10px] font-mono font-medium text-stone-500 uppercase tracking-wide">
           {layerSummary.join(' · ')}
         </div>
 
-        {/* Row 3 — Toggle 4 vues */}
+        {/* Row 3 -- Toggle 4 vues */}
         <div className="flex items-center gap-3 pt-2 border-t border-stone-200/50">
           <span className="font-mono text-[8px] text-stone-400 uppercase tracking-wider shrink-0">Vue</span>
           <div className="flex border border-[#E5E0D8] rounded overflow-hidden bg-white">
@@ -159,25 +159,25 @@ export const EigenAgents: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 4 — Filters (hidden in org view) */}
+        {/* Row 4 -- Filters (hidden in org view) */}
         {view !== 'org' && (
-        <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-stone-200/50">
+          <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-stone-200/50">
             <div className="relative flex-1 min-w-[200px] max-w-sm">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" size={14} />
-              <input 
-                type="text" 
+              <input
+                type="text"
                 aria-label="Recherche agents"
-                placeholder="Rechercher par hash ou nom..." 
+                placeholder="Rechercher par hash ou nom..."
                 className="w-full pl-9 pr-3 py-1.5 bg-stone-50 border border-stone-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[#D4AF37] focus:border-[#D4AF37] text-stone-700 font-mono transition-all"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
               />
             </div>
-            
+
             <div className="flex bg-stone-50 border border-stone-200 rounded p-0.5 space-x-0.5">
               {(['ALL', ...LAYER_ORDER]).map(l => (
-                <button 
-                  key={l} 
+                <button
+                  key={l}
                   onClick={() => setLayerFilter(l as any)}
                   className={`px-3 py-1 text-[10px] uppercase font-bold rounded transition-colors ${layerFilter === l ? 'bg-[#D4AF37] text-white shadow-sm' : 'text-stone-500 hover:bg-stone-200'}`}
                 >
@@ -187,12 +187,12 @@ export const EigenAgents: React.FC = () => {
             </div>
 
             <select
-              aria-label="Filtrer par pôle"
+              aria-label="Filtrer par pole"
               className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[140px]"
               value={poleFilter}
               onChange={e => setPoleFilter(e.target.value as any)}
             >
-              <option value="ALL">Tous les pôles</option>
+              <option value="ALL">Tous les poles</option>
               {POLES.map(p => <option key={p} value={p}>{p}</option>)}
             </select>
 
@@ -217,12 +217,12 @@ export const EigenAgents: React.FC = () => {
             </select>
 
             <select
-              aria-label="Filtrer par modèle"
+              aria-label="Filtrer par modele"
               className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
               value={modelFilter}
               onChange={e => setModelFilter(e.target.value)}
             >
-              <option value="ALL">Modèles LLM</option>
+              <option value="ALL">Modeles LLM</option>
               {MODELS.map(p => <option key={p} value={p}>{p}</option>)}
             </select>
 
