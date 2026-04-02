@@ -11,13 +11,13 @@ interface AgentCardProps {
 export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) => {
   const getLayerStyles = (layer: Agent['layer']) => {
     switch (layer) {
-      case 'L1': return 'bg-[#F7F3EA] border-l-[#D4AF37]';
-      case 'L1.5': return 'bg-[#FEF3F2] border-l-red-500';
-      case 'L2': return 'bg-[#F0F4FE] border-l-blue-600';
-      case 'L3': return 'bg-[#F0FEF4] border-l-emerald-500';
-      case 'L4': return 'bg-[#FDF4FF] border-l-violet-600';
-      case 'OPS': return 'bg-[#F7F3EA] border-l-stone-500';
-      default: return 'bg-[#F7F3EA] border-l-gray-400';
+      case 'L1': return 'bg-[#FAF8FC] border-l-[#1E0A20]';
+      case 'L1.5': return 'bg-[#FAF8FC] border-l-[#8C3040]';
+      case 'L2': return 'bg-[#FAF8FC] border-l-[#5A6E9C]';
+      case 'L3': return 'bg-[#FAF8FC] border-l-[#5A8A6E]';
+      case 'L4': return 'bg-[#FAF8FC] border-l-[#8B5EB0]';
+      case 'OPS': return 'bg-[#FAF8FC] border-l-[rgba(30,10,32,0.40)]';
+      default: return 'bg-[#FAF8FC] border-l-[rgba(30,10,32,0.20)]';
     }
   };
 
@@ -57,14 +57,14 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
         }
       }}
       style={style}
-      className={`stagger-card relative flex flex-col justify-between w-[280px] h-[180px] p-3 text-stone-800 border-l-[3px] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer ${getLayerStyles(agent.layer)}`}
+      className={`stagger-card relative flex flex-col justify-between w-[280px] h-[180px] p-3 text-[#1E0A20] border-l-[3px] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 cursor-pointer ${getLayerStyles(agent.layer)}`}
     >
       <div>
         <div className="flex justify-between items-start mb-1">
           <div className="flex items-center space-x-2">
-            <Bot size={14} className="text-stone-600" />
-            <span 
-              className="font-['Playfair_Display'] text-[12px] font-bold truncate max-w-[180px] hover:text-[#D4AF37] hover:underline transition-colors"
+            <Bot size={14} className="text-[rgba(30,10,32,0.60)]" />
+            <span
+              className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold truncate max-w-[180px] hover:text-[rgba(30,10,32,0.70)] hover:underline transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 window.location.href = `/eigen/agent/${encodeURIComponent(agent.id)}`;
@@ -76,26 +76,26 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
           <span className="text-[10px] text-stone-500 font-mono">{agent.id}</span>
         </div>
         
-        <div className="flex items-center text-[9px] text-stone-500 mb-3 space-x-1">
+        <div className="flex items-center text-[9px] text-[rgba(30,10,32,0.45)] mb-3 space-x-1">
           {getPlatformIcon(agent.platform)}
           <span>{agent.model} · {agent.platform}</span>
         </div>
 
-        <div className="font-mono text-[8px] font-semibold text-stone-700 tracking-wider mb-1">
+        <div className="font-mono text-[8px] font-semibold text-[rgba(30,10,32,0.60)] tracking-wider mb-1">
           {agent.layer} · {agent.pole.toUpperCase()}
         </div>
-        
-        <div className="text-[9px] text-stone-600 line-clamp-2 leading-snug">
+
+        <div className="text-[9px] text-[rgba(30,10,32,0.55)] line-clamp-2 leading-snug">
           {agent.instructions}
         </div>
       </div>
 
-      <div className="mt-auto border-t border-stone-200/50 pt-2 flex justify-between items-center text-[9px]">
+      <div className="mt-auto border-t border-[rgba(30,10,32,0.08)] pt-2 flex justify-between items-center text-[9px]">
         <div className="flex items-center space-x-1">
           {getStatusIcon(agent.status)}
-          <span className="text-stone-700">{agent.status}</span>
+          <span className="text-[rgba(30,10,32,0.70)]">{agent.status}</span>
         </div>
-        <div className="text-stone-500 flex space-x-2 text-right">
+        <div className="text-[rgba(30,10,32,0.45)] flex space-x-2 text-right">
           <span>{agent.entriesProduced} pts</span>
           {agent.errorCount > 0 && <span className="text-red-500 font-bold">{agent.errorCount} err</span>}
         </div>

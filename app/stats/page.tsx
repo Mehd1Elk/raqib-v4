@@ -31,7 +31,7 @@ const REGULATORY_SCORE = { before: 90.4, after: 100 };
 
 // ═══════ Shared CompletionBar ═══════
 function CompletionBar({ pct, color }: { pct: number; color?: string }) {
-  const barColor = color ?? (pct >= 75 ? '#3D7C5E' : pct >= 25 ? '#B87D3E' : pct > 0 ? '#9C3D3D' : '#D4CCBA');
+  const barColor = color ?? (pct >= 75 ? '#5A8A6E' : pct >= 25 ? '#A87D3E' : pct > 0 ? '#8C3040' : 'rgba(30,10,32,0.18)');
   return (
     <div className="flex items-center gap-2">
       <div className="flex-1 h-1.5 bg-parchment rounded-none-none overflow-hidden">
@@ -74,7 +74,7 @@ function ProgressDashboard({
         {stats.map((s) => {
           const entity = ENTITIES.find((e) => e.id === s.entity_id);
           const pct = s.total_target_rows > 0 ? (s.total_entries / s.total_target_rows) * 100 : 0;
-          const barColor = pct >= 75 ? '#3D7C5E' : pct >= 25 ? '#B87D3E' : '#9C3D3D';
+          const barColor = pct >= 75 ? '#5A8A6E' : pct >= 25 ? '#A87D3E' : '#8C3040';
           return (
             <div key={s.entity_id}>
               <div className="flex items-center justify-between mb-1">
@@ -84,7 +84,7 @@ function ProgressDashboard({
                     style={{ background: entity?.color }}
                   />
                   <span
-                    className="text-[11px] font-[family-name:var(--font-playfair)] font-bold "
+                    className="text-[11px] font-[family-name:var(--font-cormorant)] font-bold "
                     style={{ color: entity?.color }}
                   >
                     {s.entity_name}
@@ -133,7 +133,7 @@ function QualityScore({
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
             M1 TERMINOLOGIE (MOY.)
           </div>
-          <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-emerald">
+          <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold  text-emerald">
             100/100
           </div>
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm">
@@ -144,7 +144,7 @@ function QualityScore({
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
             M2 RÉGLEMENTAIRE
           </div>
-          <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-emerald">
+          <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold  text-emerald">
             {REGULATORY_SCORE.after}/100
           </div>
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm">
@@ -174,7 +174,7 @@ function QualityScore({
               <tr key={s.entity_id} className="border-b border-div-l hover:bg-cream/50">
                 <td className="px-4 py-2.5">
                   <span
-                    className="font-[family-name:var(--font-playfair)] font-bold  text-[12px]"
+                    className="font-[family-name:var(--font-cormorant)] font-bold  text-[12px]"
                     style={{ color: entity?.color }}
                   >
                     {s.entity_name}
@@ -267,11 +267,11 @@ export default function StatsPage() {
           <div className="w-1.5 h-1.5 rounded-none-none bg-gold" />
           <Link
             href="/"
-            className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
+            className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold text-noir tracking-[3px] no-underline hover:opacity-70 transition-opacity"
           >
             Raqib
           </Link>
-          <span className="font-[family-name:var(--font-playfair)] text-[15px] text-sand">
+          <span className="font-[family-name:var(--font-cormorant)] text-[15px] text-t3">
             رقيب
           </span>
           <div className="w-px h-5 bg-div" />
@@ -301,7 +301,7 @@ export default function StatsPage() {
               <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
                 {item.label}
               </div>
-              <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-noir">
+              <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold text-noir">
                 {item.value}
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function StatsPage() {
               </thead>
               <tbody>
                 {runs.map((run) => {
-                  const statusColor = run.status === 'success' ? '#3D7C5E' : run.status === 'running' ? '#B87D3E' : '#9C3D3D';
+                  const statusColor = run.status === 'success' ? '#5A8A6E' : run.status === 'running' ? '#A87D3E' : '#8C3040';
                   return (
                     <tr key={run.id} className="border-b border-div-l hover:bg-cream/50">
                       <td className="px-4 py-2 font-[family-name:var(--font-jetbrains)]">{run.agent_id}</td>

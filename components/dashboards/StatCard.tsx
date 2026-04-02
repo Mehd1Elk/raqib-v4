@@ -12,8 +12,8 @@ export function StatCard({ label, value, sub, color }: Props) {
         {label}
       </div>
       <div
-        className="text-lg font-[family-name:var(--font-playfair)] font-bold "
-        style={{ color: color ?? '#1C1814' }}
+        className="text-lg font-[family-name:var(--font-cormorant)] font-bold"
+        style={{ color: color ?? '#1E0A20' }}
       >
         {value}
       </div>

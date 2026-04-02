@@ -40,14 +40,14 @@ export function EigenKPIBar({
   return (
     <div
       onClick={onClick}
-      className={`h-[80px] flex-1 bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] flex flex-col justify-center px-4 relative overflow-hidden transition-all duration-200 ${
-        onClick ? 'cursor-pointer hover:bg-[#F2EFE8] hover:shadow-sm hover:-translate-y-[1px]' : ''
+      className={`h-[80px] flex-1 bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] flex flex-col justify-center px-4 relative overflow-hidden transition-all duration-200 ${
+        onClick ? 'cursor-pointer hover:bg-[#EEEBF4] hover:shadow-sm hover:-translate-y-[1px]' : ''
       }`}
       style={{ borderLeft: `3px solid ${borderColor}` }}
     >
       <div className="flex items-center gap-2 mb-1">
         <span className="text-[16px] flex items-center">{icon}</span>
-        <span className="font-[family-name:var(--font-playfair)] text-[28px] font-bold text-black leading-none">
+        <span className="font-[family-name:var(--font-cormorant)] text-[28px] font-bold text-[#1E0A20] leading-none">
           {value}
         </span>
       </div>
