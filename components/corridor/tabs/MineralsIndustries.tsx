@@ -28,21 +28,21 @@ export default function MineralsIndustries() {
           >
             {/* Header */}
             <div style={{ padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{ width: 36, height: 36, borderRadius: '50%', background: ind.color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: ind.color, fontSize: '1rem', flexShrink: 0 }}>
+              <div style={{ width: 36, height: 36, borderRadius: 0, background: ind.color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center', color: ind.color, fontSize: '1rem', flexShrink: 0 }}>
                 {ind.name.charAt(0)}
               </div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text)' }}>{ind.name}</div>
                 <div style={{ display: 'flex', gap: 8, marginTop: 4, flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '0.6rem', color: 'var(--gold)', padding: '1px 6px', background: 'rgba(201,169,110,0.08)', borderRadius: 8 }}>{ind.growth} croissance</span>
+                  <span style={{ fontSize: '0.6rem', color: 'var(--gold)', padding: '1px 6px', background: 'rgba(201,169,110,0.08)', borderRadius: 0, }}>{ind.growth} croissance</span>
                   <span style={{ fontSize: '0.6rem', color: 'var(--text-faint)' }}>{ind.minerals.length} mineraux requis</span>
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
                 <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Risque appro.</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 4, justifyContent: 'flex-end', marginTop: 2 }}>
-                  <div style={{ width: 60, height: 5, background: 'var(--bg-hover)', borderRadius: 3, overflow: 'hidden' }}>
-                    <div style={{ height: '100%', width: `${ind.supplyRisk * 10}%`, background: ind.supplyRisk >= 8 ? '#A13544' : ind.supplyRisk >= 6 ? '#E07850' : '#C9A96E', borderRadius: 3 }} />
+                  <div style={{ width: 60, height: 5, background: 'var(--bg-hover)', borderRadius: 0, overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${ind.supplyRisk * 10}%`, background: ind.supplyRisk >= 8 ? '#A13544' : ind.supplyRisk >= 6 ? '#E07850' : '#C9A96E', borderRadius: 0, }} />
                   </div>
                   <span style={{ fontSize: '0.68rem', fontWeight: 600, color: ind.supplyRisk >= 8 ? '#A13544' : '#E07850' }}>{ind.supplyRisk}/10</span>
                 </div>
@@ -58,7 +58,7 @@ export default function MineralsIndustries() {
                     <div style={{ fontSize: '0.64rem', color: 'var(--text-faint)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.5px' }}>Mineraux requis</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                       {ind.minerals.map(m => (
-                        <span key={m} style={{ fontSize: '0.62rem', padding: '2px 8px', background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 10, color: 'var(--text-muted)' }}>{m}</span>
+                        <span key={m} style={{ fontSize: '0.62rem', padding: '2px 8px', background: 'var(--bg-elevated)', border: '1px solid var(--border)', borderRadius: 0, color: 'var(--text-muted)' }}>{m}</span>
                       ))}
                     </div>
                   </div>
@@ -70,7 +70,7 @@ export default function MineralsIndustries() {
                     <div style={{ fontSize: '0.64rem', color: 'var(--text-faint)', marginBottom: 6, textTransform: 'uppercase', letterSpacing: '0.5px' }}>OEM europeens</div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                       {ind.euCompanies.map(c => (
-                        <span key={c} style={{ fontSize: '0.62rem', padding: '2px 8px', background: ind.color + '10', border: `1px solid ${ind.color}30`, borderRadius: 10, color: ind.color }}>{c}</span>
+                        <span key={c} style={{ fontSize: '0.62rem', padding: '2px 8px', background: ind.color + '10', border: `1px solid ${ind.color}30`, borderRadius: 0, color: ind.color }}>{c}</span>
                       ))}
                     </div>
                   </div>

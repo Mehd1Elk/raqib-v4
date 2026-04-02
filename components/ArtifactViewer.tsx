@@ -22,13 +22,13 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
   }, [artifactName]);
 
   if (loading) return (
-    <div style={{ height, background: '#F7F3EA', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ height, background: '#F7F3EA', borderRadius: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <span style={{ color: '#B8963E', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Chargement de l&apos;interface...</span>
     </div>
   );
 
   if (!content) return (
-    <div style={{ height: 200, background: '#F7F3EA', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #D4CCBA' }}>
+    <div style={{ height: 200, background: '#F7F3EA', borderRadius: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #D4CCBA' }}>
       <span style={{ color: '#918977', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Interface non trouvée : {artifactName}</span>
     </div>
   );
@@ -82,7 +82,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
               color: '#B8963E',
               background: 'none',
               border: '1px solid #B8963E',
-              borderRadius: 3,
+              borderRadius: 0,
               padding: '2px 8px',
               cursor: 'pointer',
               letterSpacing: '0.5px',
@@ -99,7 +99,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
               color: '#918977',
               background: 'none',
               border: '1px solid #918977',
-              borderRadius: 3,
+              borderRadius: 0,
               padding: '2px 8px',
               cursor: 'pointer',
               letterSpacing: '0.5px',

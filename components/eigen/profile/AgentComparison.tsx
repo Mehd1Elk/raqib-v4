@@ -27,7 +27,7 @@ export function AgentComparison({ agents }: { agents: Agent[] }) {
   if (!agents || agents.length === 0) return null;
 
   return (
-    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg overflow-hidden">
+    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none overflow-hidden">
       <div className="p-3 bg-[#F7F3EA] border-b border-[rgba(60,52,40,0.10)]">
         <h3 className="font-['JetBrains_Mono'] text-[9px] text-[#918977] tracking-[2px]">COMPARAISON AGENTS</h3>
       </div>
@@ -35,10 +35,10 @@ export function AgentComparison({ agents }: { agents: Agent[] }) {
         {agents.map(agent => (
           <div key={agent.id} className="p-4">
             <div className="flex items-center gap-2 mb-4">
-              <span className="font-['JetBrains_Mono'] text-[8px] bg-[#B8963E] bg-opacity-10 text-[#B8963E] px-1.5 py-0.5 rounded">
+              <span className="font-['JetBrains_Mono'] text-[8px] bg-[#B8963E] bg-opacity-10 text-[#B8963E] px-1.5 py-0.5 rounded-none">
                 {agent.layer}
               </span>
-              <div className="font-['Cormorant_Garamond'] text-[16px] font-bold italic truncate text-[#1C1814]" title={agent.name}>
+              <div className="font-['Playfair_Display'] text-[16px] font-bold  truncate text-[#1C1814]" title={agent.name}>
                 {agent.name}
               </div>
             </div>

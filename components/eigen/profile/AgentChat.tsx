@@ -59,7 +59,7 @@ export function AgentChat({ agent }: { agent: Agent }) {
   }
 
   return (
-    <div className="flex flex-col h-[400px] border border-[rgba(60,52,40,0.10)] rounded-lg bg-[#FDFAF3] overflow-hidden">
+    <div className="flex flex-col h-[400px] border border-[rgba(60,52,40,0.10)] rounded-none-none bg-[#FDFAF3] overflow-hidden">
       <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.length === 0 && (
           <div className="text-center text-[#918977] font-['Noto_Sans'] text-xs mt-10">
@@ -68,10 +68,10 @@ export function AgentChat({ agent }: { agent: Agent }) {
         )}
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${msg.role === 'user' ? 'bg-[#1C1814]' : 'bg-[#B8963E] bg-opacity-10 border border-[#B8963E] border-opacity-30'}`}>
+            <div className={`w-8 h-8 rounded-none-none flex items-center justify-center shrink-0 ${msg.role === 'user' ? 'bg-[#1C1814]' : 'bg-[#B8963E] bg-opacity-10 border border-[#B8963E] border-opacity-30'}`}>
               {msg.role === 'user' ? <User size={14} className="text-[#FDFCFB]" /> : <Cpu size={14} className="text-[#B8963E]" />}
             </div>
-            <div className={`max-w-[80%] rounded-lg p-3 text-[11px] font-['Noto_Sans'] leading-relaxed ${
+            <div className={`max-w-[80%] rounded-none-none p-3 text-[11px] font-['Noto_Sans'] leading-relaxed ${
               msg.role === 'user' ? 'bg-[#FDFCFB] border border-[#E5E0D8] text-[#1C1814]' : 'bg-transparent text-[#6B5E4C]'
             }`}>
               {msg.content}
@@ -80,13 +80,13 @@ export function AgentChat({ agent }: { agent: Agent }) {
         ))}
         {isLoading && (
           <div className="flex gap-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 bg-[#B8963E] bg-opacity-10 border border-[#B8963E] border-opacity-30">
+            <div className="w-8 h-8 rounded-none-none flex items-center justify-center shrink-0 bg-[#B8963E] bg-opacity-10 border border-[#B8963E] border-opacity-30">
               <Cpu size={14} className="text-[#B8963E]" />
             </div>
-            <div className="max-w-[80%] rounded-lg p-3 text-[11px] font-['Noto_Sans'] text-[#918977] flex items-center gap-1">
-              <span className="w-1.5 h-1.5 bg-[#918977] rounded-full animate-bounce"></span>
-              <span className="w-1.5 h-1.5 bg-[#918977] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-              <span className="w-1.5 h-1.5 bg-[#918977] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+            <div className="max-w-[80%] rounded-none-none p-3 text-[11px] font-['Noto_Sans'] text-[#918977] flex items-center gap-1">
+              <span className="w-1.5 h-1.5 bg-[#918977] rounded-none-none animate-bounce"></span>
+              <span className="w-1.5 h-1.5 bg-[#918977] rounded-none-none animate-bounce" style={{ animationDelay: '150ms' }}></span>
+              <span className="w-1.5 h-1.5 bg-[#918977] rounded-none-none animate-bounce" style={{ animationDelay: '300ms' }}></span>
             </div>
           </div>
         )}
@@ -98,13 +98,13 @@ export function AgentChat({ agent }: { agent: Agent }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Écrivez votre message..."
-            className="flex-1 bg-white border border-[rgba(60,52,40,0.15)] rounded px-3 py-2 text-xs font-['Noto_Sans'] text-[#1C1814] focus:outline-none focus:border-[#B8963E]"
+            className="flex-1 bg-white border border-[rgba(60,52,40,0.15)] rounded-none px-3 py-2 text-xs font-['Noto_Sans'] text-[#1C1814] focus:outline-none focus:border-[#B8963E]"
             disabled={isLoading}
           />
           <button 
             type="submit" 
             disabled={isLoading || !input.trim()}
-            className="px-3 py-2 bg-[#B8963E] text-white rounded flex items-center justify-center disabled:opacity-50"
+            className="px-3 py-2 bg-[#B8963E] text-white rounded-none flex items-center justify-center disabled:opacity-50"
           >
             <Send size={14} />
           </button>

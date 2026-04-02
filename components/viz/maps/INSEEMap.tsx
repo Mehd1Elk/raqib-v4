@@ -137,7 +137,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
   };
 
   return (
-    <div className={`bg-ivory border border-div rounded overflow-hidden relative ${className ?? ''}`} style={{ height }}>
+    <div className={`bg-ivory border border-div rounded-none overflow-hidden relative ${className ?? ''}`} style={{ height }}>
       {/* Title */}
       <div className="absolute top-3 left-3 z-10">
         <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] font-bold">
@@ -172,10 +172,10 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="absolute z-20 bg-noir/90 text-ivory px-3 py-2 rounded pointer-events-none"
+          className="absolute z-20 bg-noir/90 text-ivory px-3 py-2 rounded-none pointer-events-none"
           style={{ left: tooltip.x, top: tooltip.y, transform: 'translate(-50%, -100%)' }}
         >
-          <div className="text-[10px] font-[family-name:var(--font-cormorant)] font-bold italic">
+          <div className="text-[10px] font-[family-name:var(--font-playfair)] font-bold ">
             {tooltip.dept} ({tooltip.code})
           </div>
           <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold">
@@ -188,7 +188,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
       )}
 
       {/* Legend */}
-      <div className="absolute bottom-3 right-3 bg-ivory/90 border border-div rounded p-2 z-10">
+      <div className="absolute bottom-3 right-3 bg-ivory/90 border border-div rounded-none p-2 z-10">
         <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-t3 mb-1">DENSITÉ / 100K</div>
         <div className="flex gap-1">
           {[
@@ -200,7 +200,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
             { color: '#162B20', label: '>100' },
           ].map(s => (
             <div key={s.label} className="flex flex-col items-center gap-0.5">
-              <div className="w-4 h-3 rounded-sm" style={{ background: s.color }} />
+              <div className="w-4 h-3 rounded-none-none" style={{ background: s.color }} />
               <span className="text-[6px] font-[family-name:var(--font-jetbrains)] text-tm">{s.label}</span>
             </div>
           ))}

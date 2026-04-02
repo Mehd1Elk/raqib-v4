@@ -130,10 +130,10 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
         .attr('x', cluster.cx)
         .attr('y', cluster.cy - Math.sqrt(count) * 14 - 38)
         .attr('text-anchor', 'middle')
-        .attr('font-family', 'Cormorant Garamond')
+        .attr('font-family', 'Playfair Display')
         .attr('font-size', 14)
         .attr('font-weight', 700)
-        .attr('font-style', 'italic')
+        
         .attr('fill', cluster.color)
         .text(cluster.label);
 

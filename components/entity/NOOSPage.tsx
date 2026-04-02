@@ -100,13 +100,13 @@ function GaugeKPI({ label, value, target, unit, icon }: typeof gaugeKPIs[0]) {
         <span className="text-[#B8963E]">{icon}</span>
         <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-[1px] uppercase">{label}</span>
       </div>
-      <div className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold text-[#1C1814] leading-none">
+      <div className="font-[family-name:var(--font-playfair)] text-[22px] font-bold text-[#1C1814] leading-none">
         {typeof value === 'number' && value >= 1000 ? value.toLocaleString('fr-FR') : value}{unit && <span className="text-[14px] text-[#918977] ml-0.5">{unit}</span>}
       </div>
       <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-[#918977] mt-0.5">/ {typeof target === 'number' && target >= 1000 ? target.toLocaleString('fr-FR') : target}{unit}</div>
-      <div className="mt-2 h-[3px] bg-[rgba(60,52,40,0.08)] rounded-full overflow-hidden">
+      <div className="mt-2 h-[3px] bg-[rgba(60,52,40,0.08)] rounded-none-none overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-none-none transition-all duration-700"
           style={{ width: `${pct}%`, backgroundColor: isComplete ? '#3D7C5E' : GOLD }}
         />
       </div>
@@ -217,9 +217,9 @@ function NOOSSprints() {
             onMouseLeave={() => setHovered(null)}
           >
             <div className="w-[60px] font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] text-right flex-shrink-0">{s.id}</div>
-            <div className="flex-1 h-[28px] bg-[rgba(60,52,40,0.04)] rounded relative overflow-hidden">
+            <div className="flex-1 h-[28px] bg-[rgba(60,52,40,0.04)] rounded-none relative overflow-hidden">
               <div
-                className="absolute top-0 h-full rounded flex items-center px-2 transition-all duration-300"
+                className="absolute top-0 h-full rounded-none flex items-center px-2 transition-all duration-300"
                 style={{
                   left: `${left}%`,
                   width: `${width}%`,
@@ -236,12 +236,12 @@ function NOOSSprints() {
             <div className="w-[80px] font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex-shrink-0">{s.agent}</div>
             {/* tooltip */}
             {hovered === s.id && (
-              <div className="absolute left-[80px] top-full z-20 mt-1 bg-[#1C1814] text-[#FDFAF3] p-3 rounded shadow-lg min-w-[200px]">
+              <div className="absolute left-[80px] top-full z-20 mt-1 bg-[#1C1814] text-[#FDFAF3] p-3 rounded-none shadow-lg min-w-[200px]">
                 <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#D4B662] mb-2">{s.id} · Sem {s.weeks[0]}-{s.weeks[1]}</div>
                 <ul className="space-y-1">
                   {s.tasks.map(t => (
                     <li key={t} className="font-[family-name:var(--font-noto)] text-[9px] flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full" style={{ backgroundColor: s.color }} />
+                      <span className="w-1 h-1 rounded-none-none" style={{ backgroundColor: s.color }} />
                       {t}
                     </li>
                   ))}
@@ -275,7 +275,7 @@ function DataCard({ range, label, desc }: { range: string; label: string; desc: 
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#B8963E] font-bold">{range}</span>
-          <span className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#1C1814]">{label}</span>
+          <span className="font-[family-name:var(--font-playfair)] text-[14px] font-bold  text-[#1C1814]">{label}</span>
         </div>
         {open ? <ChevronDown size={12} className="text-[#918977]" /> : <ChevronRight size={12} className="text-[#918977]" />}
       </div>
@@ -283,7 +283,7 @@ function DataCard({ range, label, desc }: { range: string; label: string; desc: 
         <div className="mt-2 pt-2 border-t border-[rgba(60,52,40,0.06)] font-[family-name:var(--font-noto)] text-[10px] text-[#6B5E4C]">
           {desc}
           <div className="mt-2 flex gap-2">
-            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[rgba(184,150,62,0.1)] text-[#B8963E] rounded">10 couches</span>
+            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[rgba(184,150,62,0.1)] text-[#B8963E] rounded-none">10 couches</span>
             <a href={`/noos`} className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#3D5E8C] hover:underline flex items-center gap-0.5">
               Explorer <ArrowRight size={8} />
             </a>
@@ -329,7 +329,7 @@ function Section({ id, title, icon, children }: { id: string; title: string; ico
     <section id={id} className="mt-12">
       <div className="flex items-center gap-2 mb-5">
         <span className="text-[#B8963E]">{icon}</span>
-        <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814]">{title}</h2>
+        <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814]">{title}</h2>
       </div>
       {children}
     </section>
@@ -345,7 +345,7 @@ export default function NOOSPage() {
       <div className="bg-gradient-to-br from-[#1C1814] to-[#2A3040] text-white px-8 py-12">
         <div className="max-w-6xl mx-auto">
           <div className="font-[family-name:var(--font-jetbrains)] text-[8px] tracking-[3px] text-[#B8963E] mb-3">SUBSIDIAIRE EIGEN</div>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-[42px] font-bold italic flex items-center gap-4">
+          <h1 className="font-[family-name:var(--font-playfair)] text-[42px] font-bold  flex items-center gap-4">
             <Brain size={32} strokeWidth={1} className="text-[#B8963E]" />
             NOOS
           </h1>
@@ -379,7 +379,7 @@ export default function NOOSPage() {
               { color: '#918977', label: 'Planifié' },
             ].map(l => (
               <div key={l.label} className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: l.color }} />
+                <span className="w-2.5 h-2.5 rounded-none-none" style={{ backgroundColor: l.color }} />
                 <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{l.label}</span>
               </div>
             ))}
@@ -406,7 +406,7 @@ export default function NOOSPage() {
                 style={{ borderLeft: `3px solid ${m.layer === 'L2' ? '#3D5E8C' : GOLD}` }}
               >
                 <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-wider mb-1">{m.id} · {m.layer}</div>
-                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814]">{m.name}</div>
+                <div className="font-[family-name:var(--font-playfair)] text-[13px] font-bold  text-[#1C1814]">{m.name}</div>
                 <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#6B5E4C] mt-0.5">{m.role}</div>
               </div>
             ))}
@@ -417,7 +417,7 @@ export default function NOOSPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {pfeSlots.map(p => (
                 <div key={p.title} className="bg-[rgba(184,150,62,0.06)] border border-dashed border-[rgba(184,150,62,0.3)] p-3">
-                  <div className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold italic text-[#1C1814]">{p.title}</div>
+                  <div className="font-[family-name:var(--font-playfair)] text-[12px] font-bold  text-[#1C1814]">{p.title}</div>
                   <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#918977] mt-0.5">{p.focus}</div>
                 </div>
               ))}

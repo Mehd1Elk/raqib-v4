@@ -12,7 +12,7 @@ const C = {
   div:"rgba(60,52,40,0.10)",divL:"rgba(60,52,40,0.05)",
   t1:"#2A2318",t2:"#6B5E4C",t3:"#918977",tm:"#B8AE9C",
 };
-const GR=`"Cormorant Garamond",Georgia,serif`;
+const GR=`"Playfair Display",Georgia,serif`;
 const MN=`"JetBrains Mono",monospace`;
 const SN=`"Noto Sans",system-ui,sans-serif`;
 
@@ -488,7 +488,7 @@ function downloadCSV(name, cols, rows) {
 function Score({v}){
   if(typeof v!=="number")return null;
   const color=v>=75?C.emerald:v>=50?C.amber:v>=25?C.ruby:C.tm;
-  return <span style={{display:"inline-block",padding:"2px 8px",borderRadius:2,fontSize:10,fontFamily:MN,fontWeight:600,color,background:`${color}0D`,border:`1px solid ${color}22`}}>{v}</span>;
+  return <span style={{display:"inline-block",padding:"2px 8px",borderRadius: 0,fontSize:10,fontFamily:MN,fontWeight:600,color,background:`${color}0D`,border:`1px solid ${color}22`}}>{v}</span>;
 }
 
 // ═══════ MAIN APP ═══════
@@ -521,14 +521,14 @@ export default function RAQIB_V3(){
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
         *{box-sizing:border-box;margin:0;padding:0}
-        ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-thumb{background:${C.sand};border-radius:2px}
+        ::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-thumb{background:${C.sand};border-radius: 0;}
       `}</style>
 
       {/* TOP */}
       <div style={{height:52,flexShrink:0,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 24px",borderBottom:`1px solid ${C.div}`,background:C.ivory}}>
         <div style={{display:"flex",alignItems:"center",gap:14}}>
-          <div style={{width:6,height:6,borderRadius:"50%",background:C.gold}}/>
-          <span style={{fontFamily:GR,fontSize:22,fontWeight:700,fontStyle:"italic",color:C.noir,letterSpacing:3}}>Raqib</span>
+          <div style={{width:6,height:6,borderRadius: 0,background:C.gold}}/>
+          <span style={{fontFamily:GR,fontSize:22,fontWeight:700,color:C.noir,letterSpacing:3}}>Raqib</span>
           <span style={{fontFamily:GR,fontSize:15,color:C.sand}}>رقيب</span>
           <div style={{width:1,height:20,background:C.div}}/>
           <span style={{fontSize:9,color:C.t3,fontFamily:MN,letterSpacing:2}}>V4 · 1000 COUCHES · 9 PLATEFORMES · {ENTITIES.length} ENTITÉS</span>
@@ -545,7 +545,7 @@ export default function RAQIB_V3(){
             background:ei===i?C.cream:"transparent",border:"none",
             borderBottom:ei===i?`2px solid ${e.c}`:"2px solid transparent",
             color:ei===i?e.c:C.t3,fontSize:12,fontFamily:GR,fontWeight:ei===i?700:400,
-            fontStyle:"italic",padding:"0 16px",cursor:"pointer",whiteSpace:"nowrap",letterSpacing:0.5,
+            padding:"0 16px",cursor:"pointer",whiteSpace:"nowrap",letterSpacing:0.5,
           }}>{e.n}<span style={{fontSize:7,fontFamily:MN,fontStyle:"normal",marginLeft:5,opacity:0.5}}>{e.type}</span></button>
         ))}
       </div>
@@ -553,7 +553,7 @@ export default function RAQIB_V3(){
       {/* ENTITY HEADER */}
       <div style={{flexShrink:0,padding:"10px 24px",borderBottom:`1px solid ${C.div}`,background:`${ent.c}04`,display:"flex",alignItems:"center",justifyContent:"space-between"}}>
         <div>
-          <span style={{fontSize:18,fontFamily:GR,fontWeight:700,fontStyle:"italic",color:C.noir}}>{ent.n}</span>
+          <span style={{fontSize:18,fontFamily:GR,fontWeight:700,color:C.noir}}>{ent.n}</span>
           <span style={{fontSize:11,fontFamily:SN,color:C.t3,marginLeft:12}}>{ent.desc}</span>
         </div>
         <div style={{display:"flex",gap:12,alignItems:"center",fontSize:9,fontFamily:MN,color:C.t3}}>
@@ -576,7 +576,7 @@ export default function RAQIB_V3(){
                 borderLeft:ci===mi?`3px solid ${ent.c}`:"3px solid transparent",
                 padding:"8px 14px",cursor:"pointer",textAlign:"left",
               }}>
-                <div style={{fontSize:11,fontFamily:GR,fontWeight:700,fontStyle:"italic",color:ci===mi?ent.c:C.t2,letterSpacing:0.3}}>{c.cat}</div>
+                <div style={{fontSize:11,fontFamily:GR,fontWeight:700,color:ci===mi?ent.c:C.t2,letterSpacing:0.3}}>{c.cat}</div>
               </button>
               {ci===mi && c.layers.map((l,lii)=>(
                 <button key={l.id} onClick={()=>setLi(lii)} style={{
@@ -585,7 +585,7 @@ export default function RAQIB_V3(){
                   padding:"5px 14px 5px 28px",cursor:"pointer",textAlign:"left",
                   display:"flex",alignItems:"center",gap:6,
                 }}>
-                  <span style={{width:4,height:4,borderRadius:"50%",background:PLATFORMS[l.p]?.c||C.sand,flexShrink:0}}/>
+                  <span style={{width:4,height:4,borderRadius: 0,background:PLATFORMS[l.p]?.c||C.sand,flexShrink:0}}/>
                   <span style={{fontSize:10,fontFamily:SN,color:li===lii?C.noir:C.t2,fontWeight:li===lii?600:400,flex:1,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{l.n}</span>
                   <span style={{fontSize:8,fontFamily:MN,color:C.tm,flexShrink:0}}>{(l.rows||0).toLocaleString()}</span>
                 </button>
@@ -600,13 +600,13 @@ export default function RAQIB_V3(){
             <div style={{fontSize:9,fontFamily:MN,color:C.tm,marginBottom:4}}>
               {ent.n} / {cat.cat} / <span style={{color:ent.c}}>{layer.n}</span>
             </div>
-            <div style={{fontSize:20,fontFamily:GR,fontWeight:700,fontStyle:"italic",color:C.noir,marginBottom:4}}>{layer.n}</div>
+            <div style={{fontSize:20,fontFamily:GR,fontWeight:700,color:C.noir,marginBottom:4}}>{layer.n}</div>
             <div style={{width:36,height:2,background:ent.c,marginBottom:16,opacity:0.5}}/>
 
             {/* Platform badge */}
             <div style={{display:"flex",gap:12,marginBottom:20,alignItems:"center"}}>
-              <div style={{display:"flex",alignItems:"center",gap:6,padding:"5px 12px",background:`${PLATFORMS[layer.p]?.c||C.sand}0A`,border:`1px solid ${PLATFORMS[layer.p]?.c||C.sand}25`,borderRadius:3}}>
-                <div style={{width:6,height:6,borderRadius:"50%",background:PLATFORMS[layer.p]?.c}}/>
+              <div style={{display:"flex",alignItems:"center",gap:6,padding:"5px 12px",background:`${PLATFORMS[layer.p]?.c||C.sand}0A`,border:`1px solid ${PLATFORMS[layer.p]?.c||C.sand}25`,borderRadius: 0,}}>
+                <div style={{width:6,height:6,borderRadius: 0,background:PLATFORMS[layer.p]?.c}}/>
                 <span style={{fontSize:10,fontFamily:MN,fontWeight:600,color:PLATFORMS[layer.p]?.c}}>{PLATFORMS[layer.p]?.n}</span>
               </div>
               <span style={{fontSize:10,fontFamily:SN,color:C.t3}}>Plateforme assignée</span>
@@ -615,7 +615,7 @@ export default function RAQIB_V3(){
             </div>
 
             {/* Description panel */}
-            <div style={{background:C.ivory,border:`1px solid ${C.div}`,borderRadius:4,padding:16,marginBottom:20}}>
+            <div style={{background:C.ivory,border:`1px solid ${C.div}`,borderRadius: 0,padding:16,marginBottom:20}}>
               <div style={{fontSize:10,fontFamily:MN,color:ent.c,letterSpacing:1,marginBottom:8,fontWeight:700}}>SPÉCIFICATION DE COUCHE</div>
               <div style={{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:12,fontSize:11,fontFamily:SN,color:C.t2,lineHeight:1.6}}>
                 <div><span style={{fontWeight:600,color:C.t1}}>Entité :</span> {ent.n} ({ent.type})</div>
@@ -625,17 +625,17 @@ export default function RAQIB_V3(){
                 <div><span style={{fontWeight:600,color:C.t1}}>Volume cible :</span> {(layer.rows||0).toLocaleString()} entrées</div>
                 <div><span style={{fontWeight:600,color:C.t1}}>ID :</span> <span style={{fontFamily:MN,fontSize:10}}>{layer.id}</span></div>
               </div>
-              <div style={{marginTop:12,padding:"8px 12px",background:`${PLATFORMS[layer.p]?.c}08`,borderRadius:3,fontSize:10,fontFamily:SN,color:C.t2}}>
+              <div style={{marginTop:12,padding:"8px 12px",background:`${PLATFORMS[layer.p]?.c}08`,borderRadius: 0,fontSize:10,fontFamily:SN,color:C.t2}}>
                 <span style={{fontWeight:600,color:PLATFORMS[layer.p]?.c}}>Routing :</span> {PLATFORMS[layer.p]?.s}
               </div>
             </div>
 
             {/* All platforms overview */}
-            <div style={{background:C.ivory,border:`1px solid ${C.div}`,borderRadius:4,padding:16}}>
+            <div style={{background:C.ivory,border:`1px solid ${C.div}`,borderRadius: 0,padding:16}}>
               <div style={{fontSize:10,fontFamily:MN,color:C.gold,letterSpacing:1,marginBottom:12,fontWeight:700}}>DISTRIBUTION PLATEFORMES — {ent.n}</div>
               <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8}}>
                 {Object.entries(platformStats).map(([k,v])=>(
-                  <div key={k} style={{padding:"8px 12px",background:`${PLATFORMS[k]?.c}06`,border:`1px solid ${PLATFORMS[k]?.c}15`,borderRadius:3}}>
+                  <div key={k} style={{padding:"8px 12px",background:`${PLATFORMS[k]?.c}06`,border:`1px solid ${PLATFORMS[k]?.c}15`,borderRadius: 0,}}>
                     <div style={{fontSize:10,fontFamily:MN,fontWeight:700,color:PLATFORMS[k]?.c}}>{PLATFORMS[k]?.n}</div>
                     <div style={{fontSize:9,fontFamily:MN,color:C.t3,marginTop:2}}>{v.count} couches · {v.rows.toLocaleString()} entrées</div>
                   </div>

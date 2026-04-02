@@ -188,7 +188,7 @@ export function FirewallDiagram() {
   }, []);
 
   return (
-    <div className="bg-ivory border border-div rounded p-4 relative">
+    <div className="bg-ivory border border-div rounded-none p-4 relative">
       <div
         className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-3 font-bold"
         style={{ color: C.gold }}
@@ -198,18 +198,18 @@ export function FirewallDiagram() {
       <svg ref={svgRef} className="w-full" style={{ maxHeight: 480 }} />
       <div
         ref={tooltipRef}
-        className="absolute pointer-events-none bg-noir text-ivory px-3 py-2 rounded text-[9px] font-[family-name:var(--font-jetbrains)] leading-relaxed"
+        className="absolute pointer-events-none bg-noir text-ivory px-3 py-2 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] leading-relaxed"
         style={{ display: 'none', zIndex: 10 }}
       />
       <div className="mt-3 flex gap-4 text-[8px] font-[family-name:var(--font-jetbrains)] text-t3">
         <span className="flex items-center gap-1">
-          <span className="inline-block w-3 h-2 rounded-sm" style={{ background: C.ruby }} /> Firewall
+          <span className="inline-block w-3 h-2 rounded-none-none" style={{ background: C.ruby }} /> Firewall
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: C.cgGreen }} /> Entite
+          <span className="inline-block w-2.5 h-2.5 rounded-none-none" style={{ background: C.cgGreen }} /> Entite
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block w-2 h-2 rounded-full" style={{ background: C.sapphire }} /> Flux
+          <span className="inline-block w-2 h-2 rounded-none-none" style={{ background: C.sapphire }} /> Flux
         </span>
       </div>
     </div>

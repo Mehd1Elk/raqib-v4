@@ -24,7 +24,7 @@ export function FunnelChart({ stages }: Props) {
             </span>
             <div className="flex-1 relative">
               <div
-                className="h-7 rounded flex items-center px-3 transition-all duration-500"
+                className="h-7 rounded-none flex items-center px-3 transition-all duration-500"
                 style={{ width: `${widthPct}%`, background: stage.color }}
               >
                 <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-ivory font-bold">

@@ -83,5 +83,5 @@ a[data-link]:hover::after {
 /* Scrollbar custom (override globals for dark mode compat) */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #D4CCBA; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #D4CCBA; border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold, #B8963E); }

@@ -49,7 +49,7 @@ export function PublicationTimeline({ data }: Props) {
     if (active && payload && payload.length) {
       const rawData = payload[0].payload;
       return (
-        <div className="bg-[#1A1A1A] border border-stone-700 p-3 rounded shadow-xl font-[family-name:var(--font-jetbrains)] text-xs text-stone-300 z-50">
+        <div className="bg-[#1A1A1A] border border-stone-700 p-3 rounded-none shadow-xl font-[family-name:var(--font-jetbrains)] text-xs text-stone-300 z-50">
           <p className="text-[#B8963E] font-bold mb-2">Année {label}</p>
           <p className="mb-2">Total : {payload[0].value} publications</p>
           <ul className="space-y-1 list-disc list-inside opacity-80 line-clamp-3">

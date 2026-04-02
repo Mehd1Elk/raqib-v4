@@ -26,7 +26,7 @@ export function ExportPDFButton({ elementId, title, classification = 'CONFIDENTI
     <button
       onClick={handleExport}
       disabled={exporting}
-      className="flex items-center gap-1.5 px-3 py-1.5 border border-div rounded text-tm hover:border-gold hover:text-gold transition-colors cursor-pointer disabled:opacity-50"
+      className="flex items-center gap-1.5 px-3 py-1.5 border border-div rounded-none text-tm hover:border-gold hover:text-gold transition-colors cursor-pointer disabled:opacity-50"
     >
       <Download size={12} strokeWidth={1.5} />
       <span className="font-[family-name:var(--font-jetbrains)] text-[9px]">

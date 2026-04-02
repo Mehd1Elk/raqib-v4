@@ -8,7 +8,7 @@ interface Props {
 
 export function SectionPanel({ id, title, children }: Props) {
   return (
-    <section id={id} className="bg-ivory border border-div rounded overflow-hidden">
+    <section id={id} className="bg-ivory border border-div rounded-none overflow-hidden">
       <div className="px-5 py-3 border-b border-div">
         <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[1px] font-bold uppercase">
           {title}

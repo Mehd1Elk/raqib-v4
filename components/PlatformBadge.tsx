@@ -7,19 +7,13 @@ export function PlatformBadge({ platform }: { platform: PlatformCode }) {
 
   return (
     <div
-      className="inline-flex items-center gap-1.5 px-3 py-1 rounded"
+      className="inline-flex items-center px-2.5 py-1 rounded-none"
       style={{
-        background: `${p.color}0A`,
-        border: `1px solid ${p.color}25`,
+        background: p.color,
       }}
     >
       <span
-        className="w-1.5 h-1.5 rounded-full shrink-0"
-        style={{ background: p.color }}
-      />
-      <span
-        className="text-[10px] font-[family-name:var(--font-jetbrains)] font-semibold"
-        style={{ color: p.color }}
+        className="text-[9px] font-[family-name:var(--font-jetbrains)] text-white uppercase tracking-[1px]"
       >
         {p.name}
       </span>

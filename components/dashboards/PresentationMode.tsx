@@ -64,11 +64,11 @@ export function PresentationMode({ sections, children }: Props) {
 
       {/* Floating controls */}
       <div className="fixed bottom-4 right-4 z-50 flex items-center gap-2">
-        <div className="flex items-center bg-noir/90 text-ivory rounded-full shadow-lg px-1 py-1 gap-1">
+        <div className="flex items-center bg-noir/90 text-ivory rounded-none-none shadow-lg px-1 py-1 gap-1">
           <button
             onClick={goPrev}
             disabled={activeSection === 0}
-            className="p-1.5 hover:bg-walnut/50 rounded-full disabled:opacity-30 transition-colors"
+            className="p-1.5 hover:bg-walnut/50 rounded-none-none disabled:opacity-30 transition-colors"
             aria-label="Section précédente"
           >
             <ChevronLeft className="w-3.5 h-3.5" />
@@ -79,7 +79,7 @@ export function PresentationMode({ sections, children }: Props) {
           <button
             onClick={goNext}
             disabled={activeSection === sections.length - 1}
-            className="p-1.5 hover:bg-walnut/50 rounded-full disabled:opacity-30 transition-colors"
+            className="p-1.5 hover:bg-walnut/50 rounded-none-none disabled:opacity-30 transition-colors"
             aria-label="Section suivante"
           >
             <ChevronRight className="w-3.5 h-3.5" />
@@ -87,7 +87,7 @@ export function PresentationMode({ sections, children }: Props) {
         </div>
         <button
           onClick={toggleFullscreen}
-          className="p-2 bg-noir/90 text-ivory rounded-full shadow-lg hover:bg-walnut transition-colors"
+          className="p-2 bg-noir/90 text-ivory rounded-none-none shadow-lg hover:bg-walnut transition-colors"
           aria-label={isFullscreen ? 'Quitter plein écran' : 'Plein écran'}
         >
           {isFullscreen ? <Minimize2 className="w-3.5 h-3.5" /> : <Maximize2 className="w-3.5 h-3.5" />}

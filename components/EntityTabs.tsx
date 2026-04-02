@@ -19,13 +19,13 @@ export function EntityTabs({ activeIndex, onChange }: EntityTabsProps) {
             data-testid={`entity-tab-${e.id}`}
             data-active={active}
             aria-pressed={active}
-            className="border-none px-4 cursor-pointer whitespace-nowrap tracking-wide font-[family-name:var(--font-cormorant)] italic"
+            className="border-none px-4 cursor-pointer whitespace-nowrap tracking-[1px] font-[family-name:var(--font-jetbrains)]"
             style={{
               background: active ? '#F7F3EA' : 'transparent',
               borderBottom: active ? `2px solid ${e.color}` : '2px solid transparent',
-              color: active ? e.color : '#918977',
-              fontSize: 12,
-              fontWeight: active ? 700 : 400,
+              color: active ? e.color : 'rgba(0,0,0,0.50)',
+              fontSize: 10,
+              fontWeight: 500,
             }}
           >
             {e.name}

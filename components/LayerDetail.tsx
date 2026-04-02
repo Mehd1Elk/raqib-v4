@@ -20,14 +20,14 @@ function ProgressBar({ actual, target }: { actual: number; target: number }) {
   const label = pct >= 75 ? 'complete' : pct > 0 ? 'partial' : 'empty';
 
   return (
-    <div className="bg-ivory border border-div rounded p-4 mb-5">
-      <div className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-3 font-bold text-gold">
+    <div className="bg-ivory border border-div rounded-none p-4 mb-5">
+      <div className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[3px] uppercase mb-3 font-semibold text-gold">
         PROGRESSION PEUPLEMENT
       </div>
       <div className="flex items-center gap-4 mb-2">
-        <div className="flex-1 h-2 bg-parchment rounded-full overflow-hidden">
+        <div className="flex-1 h-2 bg-parchment rounded-none-none overflow-hidden">
           <div
-            className="h-full rounded-full transition-all duration-500"
+            className="h-full rounded-none-none transition-all duration-500"
             style={{ width: `${pct}%`, background: color }}
           />
         </div>
@@ -44,7 +44,7 @@ function ProgressBar({ actual, target }: { actual: number; target: number }) {
           {fmtNum(target)} entrées
         </span>
         <span
-          className="px-2 py-0.5 rounded text-[9px] font-[family-name:var(--font-jetbrains)] font-semibold"
+          className="px-2 py-0.5 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] font-semibold"
           style={{ color, background: `${color}0D`, border: `1px solid ${color}22` }}
         >
           {label.toUpperCase()}
@@ -68,13 +68,14 @@ export function LayerDetail({
   return (
     <div data-testid="layer-detail" className="bg-cream p-5 px-7">
       {/* Breadcrumb */}
-      <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm mb-1">
+      <div className="text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-1"
+           style={{ color: 'rgba(0,0,0,0.40)' }}>
         {entity.name} / {category.label} /{' '}
         <span style={{ color: entity.color }}>{layer.name}</span>
       </div>
 
       {/* Title */}
-      <div className="text-xl font-[family-name:var(--font-cormorant)] font-bold italic text-noir mb-1">
+      <div className="text-[22px] font-[family-name:var(--font-playfair)] font-normal text-noir mb-1">
         {layer.name}
       </div>
 
@@ -84,11 +85,11 @@ export function LayerDetail({
       {/* Platform badge row */}
       <div className="flex gap-3 mb-5 items-center flex-wrap">
         <PlatformBadge platform={layer.platform} />
-        <span className="text-[10px] font-[family-name:var(--font-noto)] text-t3">
+        <span className="text-[11px] font-[family-name:var(--font-geist)]">
           Plateforme assignée
         </span>
         <div className="w-px h-3.5 bg-div" />
-        <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-t2">
+        <span className="text-[11px] font-[family-name:var(--font-geist)]">
           {fmtNum(layer.rows)} entrées prévues
         </span>
         {lastPopulatedAt && (
@@ -105,9 +106,9 @@ export function LayerDetail({
       <ProgressBar actual={actualRows} target={layer.rows} />
 
       {/* Specification panel */}
-      <div className="bg-ivory border border-div rounded p-4 mb-5">
+      <div className="bg-ivory border border-div rounded-none p-4 mb-5">
         <div
-          className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-2 font-bold"
+          className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[3px] uppercase mb-2 font-semibold"
           style={{ color: entity.color }}
         >
           SPÉCIFICATION DE COUCHE
@@ -138,7 +139,7 @@ export function LayerDetail({
         {/* Routing */}
         {platform && (
           <div
-            className="mt-3 p-2 px-3 rounded text-[10px] font-[family-name:var(--font-noto)] text-t2"
+            className="mt-3 p-2 px-3 rounded-none text-[10px] font-[family-name:var(--font-noto)] text-t2"
             style={{ background: `${platform.color}08` }}
           >
             <span className="font-semibold" style={{ color: platform.color }}>

@@ -153,14 +153,14 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
     <div
       draggable
       onDragStart={() => onDragStart(card.id)}
-      className={`bg-white border rounded-lg overflow-hidden transition-all hover:shadow-md cursor-grab active:cursor-grabbing ${
+      className={`bg-white border rounded-none-none overflow-hidden transition-all hover:shadow-md cursor-grab active:cursor-grabbing ${
         card.validated ? 'opacity-60 border-[#3D7C5E40]' : card.priority === 'P0' ? 'border-[#9C3D3D30]' : 'border-[#D4CCBA]'
       }`}
     >
       {/* Header */}
       <div className="flex items-center justify-between px-3 py-2 border-b border-[#D4CCBA]">
         <div className="flex items-center gap-2 flex-1 min-w-0">
-          <span className="w-2 h-2 rounded-full shrink-0"
+          <span className="w-2 h-2 rounded-none-none shrink-0"
             style={{ backgroundColor: card.priority === 'P0' ? '#9C3D3D' : card.priority === 'P1' ? '#B87D3E' : '#918977' }} />
           {editingTitle ? (
             <input
@@ -168,18 +168,18 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
               onBlur={e => { onUpdate({ ...card, title: e.target.value }); setEditingTitle(false); }}
               onKeyDown={e => { if (e.key === 'Enter') e.currentTarget.blur(); }}
               autoFocus
-              className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold italic bg-transparent border-b border-[#B8963E] outline-none w-full"
+              className="font-[family-name:var(--font-playfair)] text-[12px] font-bold  bg-transparent border-b border-[#B8963E] outline-none w-full"
             />
           ) : (
             <span
-              className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold italic truncate cursor-text"
+              className="font-[family-name:var(--font-playfair)] text-[12px] font-bold  truncate cursor-text"
               onClick={e => { e.stopPropagation(); setEditingTitle(true); }}>
               {card.title}
             </span>
           )}
         </div>
         <div className="flex items-center gap-1 shrink-0 ml-2">
-          <span className={`px-1 py-0.5 border rounded-[2px] text-[8px] font-[family-name:var(--font-jetbrains)] leading-none ${PRIORITY_STYLES[card.priority]}`}>
+          <span className={`px-1 py-0.5 border rounded-none-[2px] text-[8px] font-[family-name:var(--font-jetbrains)] leading-none ${PRIORITY_STYLES[card.priority]}`}>
             {card.priority}
           </span>
           <button onClick={e => { e.stopPropagation(); setExpanded(!expanded); }} className="p-0.5 hover:text-[#B8963E]">
@@ -197,9 +197,9 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
           </div>
         )}
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-[family-name:var(--font-jetbrains)] text-[8px] bg-[#F2EFE8] text-[#1C1814] px-1.5 py-0.5 rounded border border-[#D4CCBA] font-bold">{card.responsible}</span>
+          <span className="font-[family-name:var(--font-jetbrains)] text-[8px] bg-[#F2EFE8] text-[#1C1814] px-1.5 py-0.5 rounded-none border border-[#D4CCBA] font-bold">{card.responsible}</span>
           {card.entity && (
-            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded"
+            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none"
               style={{ backgroundColor: (card.entityColor || '#918977') + '15', color: card.entityColor }}>
               {card.entity}
             </span>
@@ -211,8 +211,8 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
           )}
         </div>
         {/* Progress */}
-        <div className="w-full h-1.5 bg-[#F2EFE8] rounded-full overflow-hidden">
-          <div className="h-full rounded-full transition-all duration-500" style={{ width: `${card.progress}%`, backgroundColor: progressColor }} />
+        <div className="w-full h-1.5 bg-[#F2EFE8] rounded-none-none overflow-hidden">
+          <div className="h-full rounded-none-none transition-all duration-500" style={{ width: `${card.progress}%`, backgroundColor: progressColor }} />
         </div>
         <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977] mt-0.5 text-right">{card.progress}%</div>
       </div>
@@ -225,7 +225,7 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
             defaultValue={card.description}
             placeholder="Ajouter une description..."
             onBlur={e => onUpdate({ ...card, description: e.target.value })}
-            className="w-full font-[family-name:var(--font-noto)] text-[10px] bg-transparent border border-[#D4CCBA] rounded p-2 min-h-[50px] resize-none focus:border-[#B8963E] outline-none mb-2"
+            className="w-full font-[family-name:var(--font-noto)] text-[10px] bg-transparent border border-[#D4CCBA] rounded-none p-2 min-h-[50px] resize-none focus:border-[#B8963E] outline-none mb-2"
           />
 
           {/* Progress slider */}
@@ -243,7 +243,7 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
             <div className="flex gap-1">
               {(['P0', 'P1', 'P2'] as Priority[]).map(p => (
                 <button key={p} onClick={() => onUpdate({ ...card, priority: p })}
-                  className={`px-2 py-0.5 rounded text-[8px] font-[family-name:var(--font-jetbrains)] border transition ${card.priority === p ? PRIORITY_STYLES[p] + ' font-bold' : 'border-[#D4CCBA] text-[#918977]'}`}>
+                  className={`px-2 py-0.5 rounded-none text-[8px] font-[family-name:var(--font-jetbrains)] border transition ${card.priority === p ? PRIORITY_STYLES[p] + ' font-bold' : 'border-[#D4CCBA] text-[#918977]'}`}>
                   {p}
                 </button>
               ))}
@@ -281,24 +281,24 @@ function ConquestCardUI({ card, onUpdate, onDelete, onDragStart }: {
             defaultValue={card.notes}
             placeholder="Notes..."
             onBlur={e => onUpdate({ ...card, notes: e.target.value })}
-            className="w-full font-[family-name:var(--font-noto)] text-[9px] bg-[#FDFAF3] border border-[#D4CCBA] rounded p-2 min-h-[40px] resize-none focus:border-[#B8963E] outline-none mb-2"
+            className="w-full font-[family-name:var(--font-noto)] text-[9px] bg-[#FDFAF3] border border-[#D4CCBA] rounded-none p-2 min-h-[40px] resize-none focus:border-[#B8963E] outline-none mb-2"
           />
 
           {/* Actions */}
           <div className="flex items-center gap-2 pt-2 border-t border-[#D4CCBA]">
             {!card.validated ? (
               <button onClick={() => onUpdate({ ...card, validated: true, progress: 100, columnStatus: 'done' })}
-                className="flex items-center gap-1 px-2 py-1 bg-[#3D7C5E10] text-[#3D7C5E] rounded hover:bg-[#3D7C5E20] transition">
+                className="flex items-center gap-1 px-2 py-1 bg-[#3D7C5E10] text-[#3D7C5E] rounded-none hover:bg-[#3D7C5E20] transition">
                 <Check size={10} /><span className="font-[family-name:var(--font-jetbrains)] text-[8px]">VALIDER</span>
               </button>
             ) : (
               <button onClick={() => onUpdate({ ...card, validated: false, progress: Math.min(card.progress, 90), columnStatus: 'in_progress' })}
-                className="flex items-center gap-1 px-2 py-1 bg-[#B87D3E10] text-[#B87D3E] rounded hover:bg-[#B87D3E20] transition">
+                className="flex items-center gap-1 px-2 py-1 bg-[#B87D3E10] text-[#B87D3E] rounded-none hover:bg-[#B87D3E20] transition">
                 <X size={10} /><span className="font-[family-name:var(--font-jetbrains)] text-[8px]">INVALIDER</span>
               </button>
             )}
             <button onClick={() => onDelete(card.id)}
-              className="flex items-center gap-1 px-2 py-1 ml-auto text-[#9C3D3D] hover:bg-[#9C3D3D10] rounded transition">
+              className="flex items-center gap-1 px-2 py-1 ml-auto text-[#9C3D3D] hover:bg-[#9C3D3D10] rounded-none transition">
               <Trash2 size={10} /><span className="font-[family-name:var(--font-jetbrains)] text-[8px]">SUPPRIMER</span>
             </button>
           </div>
@@ -423,12 +423,12 @@ export function EigenConquest() {
           <Flag size={14} strokeWidth={1.5} className="text-[#B8963E]" />
           <span className="font-[family-name:var(--font-jetbrains)] text-[11px] text-[#1C1814] font-bold">CONQUÊTE 2026</span>
           <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977]">{cards.length} jalons</span>
-          <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#3D7C5E] bg-[#3D7C5E10] px-1.5 py-0.5 rounded">
+          <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#3D7C5E] bg-[#3D7C5E10] px-1.5 py-0.5 rounded-none">
             {cards.filter(c => c.validated).length} validés
           </span>
         </div>
         <button onClick={addCard}
-          className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-[#B8963E] rounded text-[#B8963E] hover:bg-[rgba(184,150,62,0.05)] transition font-[family-name:var(--font-jetbrains)] text-[9px]">
+          className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-[#B8963E] rounded-none text-[#B8963E] hover:bg-[rgba(184,150,62,0.05)] transition font-[family-name:var(--font-jetbrains)] text-[9px]">
           <Plus size={12} />
           NOUVEAU JALON
         </button>
@@ -440,12 +440,12 @@ export function EigenConquest() {
           const colCards = cards.filter(c => c.columnStatus === col.dbStatus);
           return (
             <div key={col.id}
-              className={`flex-1 min-w-[280px] max-w-[340px] flex flex-col border border-[#D4CCBA] rounded-lg overflow-hidden ${col.bg} ${draggedId ? 'ring-1 ring-dashed ring-[#B8963E30]' : ''}`}
+              className={`flex-1 min-w-[280px] max-w-[340px] flex flex-col border border-[#D4CCBA] rounded-none-none overflow-hidden ${col.bg} ${draggedId ? 'ring-1 ring-dashed ring-[#B8963E30]' : ''}`}
               onDragOver={e => e.preventDefault()}
               onDrop={() => handleDrop(col.dbStatus)}>
               <div className="px-4 py-3 border-b border-[#D4CCBA] bg-white flex justify-between items-center" style={{ borderTop: `2px solid ${col.color}` }}>
                 <span className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold tracking-widest uppercase text-[#1C1814]">{col.label}</span>
-                <span className="font-[family-name:var(--font-jetbrains)] text-[8px] bg-[#F2EFE8] px-2 py-0.5 border border-[#D4CCBA] rounded-full text-[#918977]">{colCards.length}</span>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[8px] bg-[#F2EFE8] px-2 py-0.5 border border-[#D4CCBA] rounded-none-none text-[#918977]">{colCards.length}</span>
               </div>
               <div className="flex-1 p-3 flex flex-col gap-3 overflow-y-auto">
                 {colCards.map(card => (

@@ -47,7 +47,7 @@ export function EigenKPIBar({
     >
       <div className="flex items-center gap-2 mb-1">
         <span className="text-[16px] flex items-center">{icon}</span>
-        <span className="font-[family-name:var(--font-cormorant)] text-[28px] font-bold text-black leading-none">
+        <span className="font-[family-name:var(--font-playfair)] text-[28px] font-bold text-black leading-none">
           {value}
         </span>
       </div>

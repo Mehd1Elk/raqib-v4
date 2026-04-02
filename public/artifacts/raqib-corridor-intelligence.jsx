@@ -6,7 +6,7 @@ const COLORS = {
   goldFaint: 'rgba(184,150,62,0.08)', greenFaint: 'rgba(91,140,110,0.12)',
   redFaint: 'rgba(180,60,60,0.08)', red: '#A0523C',
 };
-const FONT_H = 'Cormorant Garamond, serif';
+const FONT_H = 'Playfair Display, serif';
 const FONT_M = 'JetBrains Mono, monospace';
 
 const COUNTRIES = [
@@ -56,14 +56,14 @@ function fmt(n) {
 function Badge(props) {
   var s = STATUS_STYLES[props.status];
   return React.createElement('span', { style: {
-    display: 'inline-block', padding: '2px 10px', borderRadius: 12, fontSize: 11,
+    display: 'inline-block', padding: '2px 10px', borderRadius: 0, fontSize: 11,
     fontFamily: FONT_M, background: s.bg, color: s.color, fontWeight: 600, letterSpacing: 0.5
   } }, s.label);
 }
 
 function StatBox(props) {
   return React.createElement('div', { style: {
-    textAlign: 'center', padding: '10px 16px', background: COLORS.cream, borderRadius: 8, minWidth: 90
+    textAlign: 'center', padding: '10px 16px', background: COLORS.cream, borderRadius: 0, minWidth: 90
   } },
     React.createElement('div', { style: { fontSize: 20, fontWeight: 700, color: props.accent || COLORS.noir, fontFamily: FONT_H } }, props.value),
     React.createElement('div', { style: { fontSize: 10, color: COLORS.t3, fontFamily: FONT_M, marginTop: 2 } },
@@ -82,7 +82,7 @@ function CountryDetail(props) {
   },
     React.createElement('div', {
       style: {
-        background: COLORS.ivory, borderRadius: 18, padding: 36, maxWidth: 520, width: '92%',
+        background: COLORS.ivory, borderRadius: 0, padding: 36, maxWidth: 520, width: '92%',
         boxShadow: '0 24px 64px rgba(0,0,0,0.2)', border: '1px solid ' + COLORS.div
       },
       onClick: function (e) { e.stopPropagation(); }
@@ -97,7 +97,7 @@ function CountryDetail(props) {
       React.createElement('div', { style: { display: 'flex', gap: 8, marginBottom: 18, flexWrap: 'wrap' } },
         React.createElement(Badge, { status: c.status }),
         React.createElement('span', { style: {
-          display: 'inline-block', padding: '2px 10px', borderRadius: 12, fontSize: 11,
+          display: 'inline-block', padding: '2px 10px', borderRadius: 0, fontSize: 11,
           fontFamily: FONT_M, background: REGION_COLORS[c.region] + '18', color: REGION_COLORS[c.region], fontWeight: 600
         } }, c.region)
       ),
@@ -108,7 +108,7 @@ function CountryDetail(props) {
         React.createElement(StatBox, { label: 'Population', value: c.pop + 'M' })
       ),
       React.createElement('div', { style: {
-        padding: 16, background: COLORS.cream, borderRadius: 12, fontFamily: FONT_M, fontSize: 12,
+        padding: 16, background: COLORS.cream, borderRadius: 0, fontFamily: FONT_M, fontSize: 12,
         color: COLORS.t2, lineHeight: 1.7, borderLeft: '3px solid ' + COLORS.gold
       } },
         React.createElement('strong', { style: { color: COLORS.noir } }, 'Strategic Intel: '),
@@ -116,21 +116,21 @@ function CountryDetail(props) {
       ),
       React.createElement('div', { style: { marginTop: 16, display: 'flex', gap: 10, flexWrap: 'wrap' } },
         React.createElement('div', { style: {
-          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 10, textAlign: 'center'
+          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 0, textAlign: 'center'
         } },
           React.createElement('div', { style: { fontFamily: FONT_M, fontSize: 10, color: COLORS.t3, marginBottom: 4 } }, 'IDE / CAPITA'),
           React.createElement('div', { style: { fontFamily: FONT_H, fontSize: 18, fontWeight: 700, color: COLORS.gold } },
             '$' + (c.ide / c.pop).toFixed(0) + 'M')
         ),
         React.createElement('div', { style: {
-          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 10, textAlign: 'center'
+          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 0, textAlign: 'center'
         } },
           React.createElement('div', { style: { fontFamily: FONT_M, fontSize: 10, color: COLORS.t3, marginBottom: 4 } }, 'STARTUP DENSITY'),
           React.createElement('div', { style: { fontFamily: FONT_H, fontSize: 18, fontWeight: 700, color: COLORS.green } },
             (c.startups / c.pop).toFixed(1) + '/M')
         ),
         React.createElement('div', { style: {
-          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 10, textAlign: 'center'
+          flex: 1, padding: 12, background: COLORS.cream, borderRadius: 0, textAlign: 'center'
         } },
           React.createElement('div', { style: { fontFamily: FONT_M, fontSize: 10, color: COLORS.t3, marginBottom: 4 } }, 'PIB / CAPITA'),
           React.createElement('div', { style: { fontFamily: FONT_H, fontSize: 18, fontWeight: 700, color: COLORS.t1 } },
@@ -159,7 +159,7 @@ function CorridorTab(props) {
   ];
   var arrow = function (k) { return k === sortKey ? (sortDir === 'asc' ? ' \u25B2' : ' \u25BC') : ''; };
 
-  return React.createElement('div', { style: { borderRadius: 14, overflow: 'hidden', border: '1px solid ' + COLORS.div } },
+  return React.createElement('div', { style: { borderRadius: 0, overflow: 'hidden', border: '1px solid ' + COLORS.div } },
     React.createElement('div', { style: {
       display: 'flex', padding: '12px 18px', background: COLORS.cream, borderBottom: '2px solid ' + COLORS.div
     } },
@@ -206,7 +206,7 @@ function RegionTab(props) {
       var activeCount = group.filter(function (c) { return c.status === 'active'; }).length;
 
       return React.createElement('div', { key: region, style: {
-        background: COLORS.cream, borderRadius: 16, padding: 24, border: '1px solid ' + COLORS.div,
+        background: COLORS.cream, borderRadius: 0, padding: 24, border: '1px solid ' + COLORS.div,
         borderLeft: '4px solid ' + REGION_COLORS[region]
       } },
         React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 } },
@@ -228,7 +228,7 @@ function RegionTab(props) {
               key: c.id,
               onClick: function () { props.onSelect(c); },
               style: {
-                padding: '8px 16px', borderRadius: 10, background: COLORS.ivory, cursor: 'pointer',
+                padding: '8px 16px', borderRadius: 0, background: COLORS.ivory, cursor: 'pointer',
                 fontFamily: FONT_M, fontSize: 12, color: COLORS.t1, border: '1px solid ' + COLORS.div,
                 transition: 'all 0.15s', display: 'flex', alignItems: 'center', gap: 8
               },
@@ -256,7 +256,7 @@ function RankingsTab(props) {
       var top = COUNTRIES.slice().sort(function (a, b) { return b[m.key] - a[m.key]; }).slice(0, 7);
       var maxVal = top[0][m.key];
       return React.createElement('div', { key: m.key, style: {
-        background: COLORS.cream, borderRadius: 16, padding: 22, border: '1px solid ' + COLORS.div
+        background: COLORS.cream, borderRadius: 0, padding: 22, border: '1px solid ' + COLORS.div
       } },
         React.createElement('div', { style: {
           fontFamily: FONT_H, fontSize: 18, fontWeight: 700, color: COLORS.noir, marginBottom: 18,
@@ -272,7 +272,7 @@ function RankingsTab(props) {
             }
           },
             React.createElement('div', { style: {
-              width: 24, height: 24, borderRadius: 12, flexShrink: 0,
+              width: 24, height: 24, borderRadius: 0, flexShrink: 0,
               background: i === 0 ? m.color : i < 3 ? COLORS.div : 'transparent',
               color: i === 0 ? '#fff' : COLORS.t2,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -285,10 +285,10 @@ function RankingsTab(props) {
                 whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
               } }, c.flag + ' ' + c.name),
               React.createElement('div', { style: {
-                height: 4, borderRadius: 2, background: COLORS.div, marginTop: 4, overflow: 'hidden'
+                height: 4, borderRadius: 0, background: COLORS.div, marginTop: 4, overflow: 'hidden'
               } },
                 React.createElement('div', { style: {
-                  height: '100%', borderRadius: 2, background: m.color,
+                  height: '100%', borderRadius: 0, background: m.color,
                   width: (c[m.key] / maxVal * 100) + '%', transition: 'width 0.4s',
                   opacity: 0.7 + (1 - i / top.length) * 0.3
                 } })
@@ -334,7 +334,7 @@ function StrategyTab() {
     React.createElement('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 14 } },
       kpis.map(function (k) {
         return React.createElement('div', { key: k.label, style: {
-          background: COLORS.cream, borderRadius: 14, padding: 18, textAlign: 'center',
+          background: COLORS.cream, borderRadius: 0, padding: 18, textAlign: 'center',
           border: '1px solid ' + COLORS.div
         } },
           React.createElement('div', { style: { fontFamily: FONT_H, fontSize: 26, fontWeight: 700, color: k.color } }, k.value),
@@ -347,7 +347,7 @@ function StrategyTab() {
     tiers.map(function (t) {
       var group = t.ids.map(function (id) { return COUNTRIES.find(function (c) { return c.id === id; }); }).filter(Boolean);
       return React.createElement('div', { key: t.tier, style: {
-        background: COLORS.cream, borderRadius: 16, padding: 22, border: '1px solid ' + COLORS.div,
+        background: COLORS.cream, borderRadius: 0, padding: 22, border: '1px solid ' + COLORS.div,
         borderLeft: '4px solid ' + t.color
       } },
         React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 } },
@@ -358,7 +358,7 @@ function StrategyTab() {
         React.createElement('div', { style: { display: 'flex', flexWrap: 'wrap', gap: 8 } },
           group.map(function (c) {
             return React.createElement('span', { key: c.id, style: {
-              padding: '5px 14px', borderRadius: 8, background: COLORS.ivory, fontFamily: FONT_M,
+              padding: '5px 14px', borderRadius: 0, background: COLORS.ivory, fontFamily: FONT_M,
               fontSize: 12, color: COLORS.t1, border: '1px solid ' + COLORS.div
             } }, c.flag + ' ' + c.name);
           })
@@ -370,7 +370,7 @@ function StrategyTab() {
     React.createElement('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 } },
       timeline.map(function (t) {
         return React.createElement('div', { key: t.phase, style: {
-          background: COLORS.cream, borderRadius: 14, padding: 20, border: '1px solid ' + COLORS.div
+          background: COLORS.cream, borderRadius: 0, padding: 20, border: '1px solid ' + COLORS.div
         } },
           React.createElement('div', { style: {
             fontFamily: FONT_M, fontSize: 14, fontWeight: 700, color: COLORS.gold, marginBottom: 12,

@@ -1,6 +1,6 @@
 const { useState } = React;
 const C = { ivory:'#FDFAF3', cream:'#F7F3EA', gold:'#B8963E', noir:'#2C2925', t1:'#4A4640', t2:'#6B6560', t3:'#918977', div:'#D4CCBA', green:'#5B8C6E' };
-const HF = 'Cormorant Garamond, serif';
+const HF = 'Playfair Display, serif';
 const MF = 'JetBrains Mono, monospace';
 const phases = [
   { id:1, name:'Foundation', period:'Q1-Q2 2026', color:C.gold, status:'active', progress:42,
@@ -60,7 +60,7 @@ function App() {
   const [expandedPhase, setExpandedPhase] = useState(0);
   const h = (tag, props, ...ch) => React.createElement(tag, props, ...ch);
 
-  const overallProgress = h('div', { style:{ display:'flex', gap:4, height:8, borderRadius:4, overflow:'hidden', marginBottom:20 } },
+  const overallProgress = h('div', { style:{ display:'flex', gap:4, height:8, borderRadius: 0, overflow:'hidden', marginBottom:20 } },
     ...phases.map((p,i) => h('div', { key:i, style:{ flex:1, background: p.progress > 0 ? p.color : C.div, position:'relative' } },
       p.progress > 0 && h('div', { style:{ position:'absolute', top:0, left:0, width:p.progress+'%', height:'100%', background:p.color, opacity:0.6 } })
     ))
@@ -71,14 +71,14 @@ function App() {
       onMouseEnter:()=>setHover('tab-'+t), onMouseLeave:()=>setHover(null),
       style:{ padding:'8px 20px', fontFamily:MF, fontSize:11, textTransform:'uppercase', letterSpacing:1.5,
         background: tab===t ? C.gold : hover==='tab-'+t ? C.cream : 'transparent',
-        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius:6, cursor:'pointer', transition:'all 0.2s' }
+        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius: 0, cursor:'pointer', transition:'all 0.2s' }
     }, t))
   );
 
   const phasesView = h('div', { style:{ display:'flex', flexDirection:'column', gap:16 } },
     ...phases.map((p,i) => h('div', { key:i,
       onMouseEnter:()=>setHover('p-'+i), onMouseLeave:()=>setHover(null),
-      style:{ background: hover==='p-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:12, padding:24,
+      style:{ background: hover==='p-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:24,
         borderLeft:'5px solid '+p.color, transition:'all 0.25s', transform: hover==='p-'+i?'translateX(4px)':'none',
         cursor:'pointer' },
       onClick:()=>setExpandedPhase(expandedPhase===i?null:i)
@@ -90,12 +90,12 @@ function App() {
         ),
         h('div', { style:{ display:'flex', alignItems:'center', gap:10 } },
           p.progress > 0 && h('div', { style:{ display:'flex', alignItems:'center', gap:6 } },
-            h('div', { style:{ width:60, height:6, background:C.div, borderRadius:3, overflow:'hidden' } },
-              h('div', { style:{ width:p.progress+'%', height:'100%', background:p.color, borderRadius:3 } })
+            h('div', { style:{ width:60, height:6, background:C.div, borderRadius: 0, overflow:'hidden' } },
+              h('div', { style:{ width:p.progress+'%', height:'100%', background:p.color, borderRadius: 0, } })
             ),
             h('span', { style:{ fontFamily:MF, fontSize:10, color:p.color } }, p.progress+'%')
           ),
-          h('div', { style:{ fontFamily:MF, fontSize:10, padding:'4px 12px', borderRadius:20,
+          h('div', { style:{ fontFamily:MF, fontSize:10, padding:'4px 12px', borderRadius: 0,
             background:p.color+'22', color:p.color, textTransform:'uppercase', letterSpacing:1 } }, p.status),
           h('span', { style:{ fontFamily:MF, fontSize:14, color:C.t3, transition:'transform 0.2s',
             transform: expandedPhase===i ? 'rotate(90deg)':'none' } }, '\u25B6')
@@ -104,7 +104,7 @@ function App() {
       expandedPhase===i && h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))', gap:8,
         paddingTop:12, borderTop:'1px solid '+C.div } },
         ...p.objectives.map((o,j) => h('div', { key:j, style:{ display:'flex', alignItems:'flex-start', gap:8,
-          fontFamily:MF, fontSize:11, color:C.t1, padding:'6px 10px', borderRadius:6, background:p.color+'08',
+          fontFamily:MF, fontSize:11, color:C.t1, padding:'6px 10px', borderRadius: 0, background:p.color+'08',
           border:'1px solid '+p.color+'22' } },
           h('span', { style:{ color:p.color, fontWeight:700, flexShrink:0 } }, (j+1)+'.'), o
         ))
@@ -113,22 +113,22 @@ function App() {
   );
 
   const kpisView = h('div', { style:{ display:'flex', flexDirection:'column', gap:20 } },
-    ...phases.map((p,i) => h('div', { key:i, style:{ background:C.ivory, border:'1px solid '+C.div, borderRadius:12, padding:20 } },
+    ...phases.map((p,i) => h('div', { key:i, style:{ background:C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:20 } },
       h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:16 } },
         h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:p.color } }, 'Phase '+p.id+': '+p.name),
         h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3 } }, p.kpis.length+' KPIs tracked')
       ),
       h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12 } },
         ...p.kpis.map((k,j) => h('div', { key:j, onMouseEnter:()=>setHover('k-'+i+'-'+j), onMouseLeave:()=>setHover(null),
-          style:{ background: hover==='k-'+i+'-'+j ? C.cream : 'transparent', border:'1px solid '+C.div, borderRadius:8, padding:14, transition:'all 0.2s' }
+          style:{ background: hover==='k-'+i+'-'+j ? C.cream : 'transparent', border:'1px solid '+C.div, borderRadius: 0, padding:14, transition:'all 0.2s' }
         },
           h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t3, textTransform:'uppercase', letterSpacing:1, marginBottom:4 } }, k.label),
           h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'baseline', margin:'6px 0' } },
             h('span', { style:{ fontFamily:HF, fontSize:22, fontWeight:700, color:C.noir } }, k.current),
             h('span', { style:{ fontFamily:MF, fontSize:9, color:C.t3 } }, 'target: '+k.target+' '+k.unit)
           ),
-          h('div', { style:{ height:5, background:C.div, borderRadius:3, overflow:'hidden' } },
-            h('div', { style:{ width:k.pct+'%', height:'100%', background:p.color, borderRadius:3, transition:'width 0.5s' } })
+          h('div', { style:{ height:5, background:C.div, borderRadius: 0, overflow:'hidden' } },
+            h('div', { style:{ width:k.pct+'%', height:'100%', background:p.color, borderRadius: 0, transition:'width 0.5s' } })
           )
         ))
       )
@@ -137,22 +137,22 @@ function App() {
 
   const sevColor = { high:'#D4443B', medium:C.gold, low:C.green };
   const risksView = h('div', { style:{ display:'flex', flexDirection:'column', gap:16 } },
-    ...phases.map((p,i) => h('div', { key:i, style:{ background:C.ivory, border:'1px solid '+C.div, borderRadius:12, padding:20 } },
+    ...phases.map((p,i) => h('div', { key:i, style:{ background:C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:20 } },
       h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:12 } },
         h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:p.color } }, 'Phase '+p.id+' Risks'),
         h('div', { style:{ display:'flex', gap:6 } },
           ...['high','medium','low'].map(s => {
             const count = p.risks.filter(r=>r.severity===s).length;
-            return count > 0 && h('span', { key:s, style:{ fontFamily:MF, fontSize:9, padding:'2px 8px', borderRadius:10,
+            return count > 0 && h('span', { key:s, style:{ fontFamily:MF, fontSize:9, padding:'2px 8px', borderRadius: 0,
               background:sevColor[s]+'22', color:sevColor[s] } }, count+' '+s);
           })
         )
       ),
       ...p.risks.map((r,j) => h('div', { key:j, onMouseEnter:()=>setHover('r-'+i+'-'+j), onMouseLeave:()=>setHover(null),
         style:{ display:'flex', gap:12, padding:12, marginBottom:8, background: hover==='r-'+i+'-'+j ? C.cream:'transparent',
-          borderRadius:8, border:'1px solid '+C.div, transition:'all 0.2s' }
+          borderRadius: 0, border:'1px solid '+C.div, transition:'all 0.2s' }
       },
-        h('div', { style:{ width:10, height:10, borderRadius:'50%', background:sevColor[r.severity], marginTop:4, flexShrink:0 } }),
+        h('div', { style:{ width:10, height:10, borderRadius: 0, background:sevColor[r.severity], marginTop:4, flexShrink:0 } }),
         h('div', { style:{ flex:1 } },
           h('div', { style:{ fontFamily:MF, fontSize:12, color:C.noir, marginBottom:3 } }, r.desc),
           h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3, marginBottom:2 } }, 'Mitigation: '+r.mitigation),

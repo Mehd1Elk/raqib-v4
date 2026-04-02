@@ -105,7 +105,7 @@ export function CronScheduler() {
             {filteredJobs.length} tache{filteredJobs.length !== 1 ? 's' : ''}
           </span>
           <span
-            className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-[2px] rounded-sm ${
+            className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-[2px] rounded-none-none ${
               source === 'LIVE'
                 ? 'bg-emerald-100 text-emerald-700'
                 : 'bg-[#F2EFE8] text-[#918977]'
@@ -116,7 +116,7 @@ export function CronScheduler() {
         </div>
         <button
           onClick={() => { setLoading(true); fetchJobs(); }}
-          className="p-1 hover:bg-[#F2EFE8] rounded transition-colors"
+          className="p-1 hover:bg-[#F2EFE8] rounded-none transition-colors"
           aria-label="Actualiser"
         >
           <RefreshCw
@@ -135,7 +135,7 @@ export function CronScheduler() {
             <button
               key={layer}
               onClick={() => setLayerFilter(layer)}
-              className="shrink-0 font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-sm transition-all"
+              className="shrink-0 font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-none-none transition-all"
               style={
                 isActive && lc
                   ? { backgroundColor: lc.bg, color: lc.text }
@@ -156,11 +156,11 @@ export function CronScheduler() {
           <div className="p-4 space-y-2">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="flex items-center gap-4 px-4 py-3 animate-pulse">
-                <div className="w-2 h-2 rounded-full bg-[#D4CCBA]" />
-                <div className="h-3 w-12 rounded bg-[#D4CCBA]" />
-                <div className="h-3 flex-1 rounded bg-[#D4CCBA]" />
-                <div className="h-3 w-10 rounded bg-[#D4CCBA]" />
-                <div className="h-3 w-16 rounded bg-[#D4CCBA]" />
+                <div className="w-2 h-2 rounded-none-none bg-[#D4CCBA]" />
+                <div className="h-3 w-12 rounded-none bg-[#D4CCBA]" />
+                <div className="h-3 flex-1 rounded-none bg-[#D4CCBA]" />
+                <div className="h-3 w-10 rounded-none bg-[#D4CCBA]" />
+                <div className="h-3 w-16 rounded-none bg-[#D4CCBA]" />
               </div>
             ))}
           </div>
@@ -197,14 +197,14 @@ export function CronScheduler() {
                     {/* Status dot */}
                     <td className="pl-4 pr-2 py-3 w-6">
                       <span
-                        className={`w-2 h-2 rounded-full inline-block ${STATUS_DOT[job.status] ?? 'bg-[#918977]'}`}
+                        className={`w-2 h-2 rounded-none-none inline-block ${STATUS_DOT[job.status] ?? 'bg-[#918977]'}`}
                       />
                     </td>
 
                     {/* Layer badge */}
                     <td className="px-3 py-3 whitespace-nowrap">
                       <span
-                        className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-sm"
+                        className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-none-none"
                         style={{ backgroundColor: lc.bg, color: lc.text }}
                       >
                         {job.layer}

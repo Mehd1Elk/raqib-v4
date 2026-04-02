@@ -2,15 +2,15 @@ import { MapPin, Building2, Award } from 'lucide-react';
 
 export default function ContactCard({ data }: { data: Record<string, any> }) {
   return (
-    <div data-card className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-4 flex gap-4">
+    <div data-card className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-4 flex gap-4">
       {/* Avatar initiales */}
-      <div className="w-12 h-12 rounded-full bg-[#B8963E15] border border-[#B8963E30] flex items-center justify-center flex-shrink-0">
-        <span className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-[#B8963E]">
+      <div className="w-12 h-12 rounded-none-none bg-[#B8963E15] border border-[#B8963E30] flex items-center justify-center flex-shrink-0">
+        <span className="font-[family-name:var(--font-playfair)] text-[16px] font-bold  text-[#B8963E]">
           {(data.nom || data.name || '?')[0]}{(data.prénom || '')[0] || ''}
         </span>
       </div>
       <div className="flex-1 min-w-0">
-        <div className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#1C1814] truncate">
+        <div className="font-[family-name:var(--font-playfair)] text-[14px] font-bold  text-[#1C1814] truncate">
           {data.prénom || ''} {data.nom || data.name || 'Inconnu'}
         </div>
         {(data.spécialité || data.fonction || data.titre) && (

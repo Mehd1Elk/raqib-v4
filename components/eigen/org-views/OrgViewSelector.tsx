@@ -20,7 +20,7 @@ interface OrgViewSelectorProps {
 
 export function OrgViewSelector({ activeView, onViewChange }: OrgViewSelectorProps) {
   return (
-    <div className="flex items-center gap-1 bg-[#F7F3EA] border border-[#E5E0D8] rounded-lg p-1">
+    <div className="flex items-center gap-1 bg-[#F7F3EA] border border-[#E5E0D8] rounded-none-none p-1">
       {ORG_VIEWS.map((view) => {
         const Icon = view.icon;
         const isActive = activeView === view.id;
@@ -30,7 +30,7 @@ export function OrgViewSelector({ activeView, onViewChange }: OrgViewSelectorPro
             onClick={() => onViewChange(view.id)}
             title={view.description}
             className={`
-              flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wide
+              flex items-center gap-1.5 px-3 py-1.5 rounded-none-none text-[10px] font-mono font-bold uppercase tracking-wide
               transition-all duration-200
               ${isActive
                 ? 'bg-white text-[#B8963E] shadow-sm border border-[#B8963E]/20'

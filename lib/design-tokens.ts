@@ -1,5 +1,5 @@
 export const FONTS = {
-  title: "'Cormorant Garamond', serif",
+  title: "'Playfair Display', serif",
   mono: "'JetBrains Mono', monospace",
   body: "'Noto Sans', sans-serif",
 } as const;

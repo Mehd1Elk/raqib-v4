@@ -213,9 +213,9 @@ export default function NexusCanvas() {
       .attr('text-anchor', 'middle')
       .attr('dy', -2)
       .attr('fill', '#FFFFFF')
-      .attr('font-family', 'Cormorant Garamond, serif')
+      .attr('font-family', 'Playfair Display, serif')
       .attr('font-weight', '700')
-      .attr('font-style', 'italic')
+      
       .attr('font-size', d => Math.max(10, d.size / 5))
       .text(d => d.name);
 

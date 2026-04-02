@@ -89,7 +89,7 @@ export function PipelineArchitecture({ nodes, links, title }: PipelineArchitectu
                 y={y}
                 width={nodeW}
                 height={nodeH}
-                rx={8}
+                rx={0}
                 fill={node.dashed ? 'transparent' : `${node.color}18`}
                 stroke={node.color}
                 strokeWidth={node.dashed ? 1 : 1.5}
@@ -128,7 +128,7 @@ export function PipelineArchitecture({ nodes, links, title }: PipelineArchitectu
                   y={y + nodeH + 10}
                   textAnchor="middle"
                   className="font-[family-name:var(--font-jetbrains)]"
-                  style={{ fontSize: '5px', fill: '#918977', fontStyle: 'italic' }}
+                  style={{ fontSize: '5px', fill: '#918977',  }}
                 >
                   Phase future
                 </text>

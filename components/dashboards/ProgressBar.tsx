@@ -17,9 +17,9 @@ export function ProgressBar({ pct, label, color, height = 'h-2', showPct = true 
           {label}
         </span>
       )}
-      <div className={`flex-1 ${height} bg-parchment rounded-full overflow-hidden`}>
+      <div className={`flex-1 ${height} bg-parchment rounded-none-none overflow-hidden`}>
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-none-none transition-all duration-700"
           style={{ width: `${Math.min(pct, 100)}%`, background: barColor }}
         />
       </div>

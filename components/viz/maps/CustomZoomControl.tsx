@@ -10,14 +10,14 @@ export function CustomZoomControl() {
       <div className="flex flex-col gap-1">
         <button
           onClick={() => map.zoomIn()}
-          className="w-7 h-7 bg-ivory border border-div rounded flex items-center justify-center hover:border-gold transition-colors cursor-pointer"
+          className="w-7 h-7 bg-ivory border border-div rounded-none flex items-center justify-center hover:border-gold transition-colors cursor-pointer"
           aria-label="Zoom avant"
         >
           <Plus size={12} strokeWidth={1.5} />
         </button>
         <button
           onClick={() => map.zoomOut()}
-          className="w-7 h-7 bg-ivory border border-div rounded flex items-center justify-center hover:border-gold transition-colors cursor-pointer"
+          className="w-7 h-7 bg-ivory border border-div rounded-none flex items-center justify-center hover:border-gold transition-colors cursor-pointer"
           aria-label="Zoom arriere"
         >
           <Minus size={12} strokeWidth={1.5} />

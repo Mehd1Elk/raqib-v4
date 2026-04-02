@@ -138,7 +138,7 @@ export function TableShell<TData extends RowData>({
 
   if (isLoading) {
     return (
-      <div className="overflow-hidden rounded border border-div bg-ivory">
+      <div className="overflow-hidden rounded-none border border-div bg-ivory">
         <div className="px-4 py-3 text-[10px] font-bold tracking-[1px] text-gold font-[family-name:var(--font-jetbrains)]">
           {title}
         </div>
@@ -151,12 +151,12 @@ export function TableShell<TData extends RowData>({
 
   if (totalRows === 0) {
     return (
-      <div className="overflow-hidden rounded border border-div bg-ivory">
+      <div className="overflow-hidden rounded-none border border-div bg-ivory">
         <div className="px-4 py-3 text-[10px] font-bold tracking-[1px] text-gold font-[family-name:var(--font-jetbrains)]">
           {title}
         </div>
         <div className="px-6 py-8 text-center">
-          <div className="mb-2 text-[15px] italic font-bold text-t1 font-[family-name:var(--font-cormorant)]">
+          <div className="mb-2 text-[15px]  font-bold text-t1 font-[family-name:var(--font-playfair)]">
             {emptyState.title}
           </div>
           {emptyState.description ? (
@@ -175,21 +175,21 @@ export function TableShell<TData extends RowData>({
   }
 
   return (
-    <div className="overflow-hidden rounded border border-div bg-ivory">
+    <div className="overflow-hidden rounded-none border border-div bg-ivory">
       <div className="flex flex-col gap-3 border-b border-div bg-ivory px-4 py-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center gap-3">
           <span className="text-[10px] font-bold tracking-[1px] text-gold font-[family-name:var(--font-jetbrains)]">
             {title} ({totalRows.toLocaleString('fr-FR')})
           </span>
           {paginationMode === 'server' ? (
-            <span className="rounded-full border border-div bg-cream px-2 py-0.5 text-[8px] tracking-[1px] text-t3 font-[family-name:var(--font-jetbrains)]">
+            <span className="rounded-none-none border border-div bg-cream px-2 py-0.5 text-[8px] tracking-[1px] text-t3 font-[family-name:var(--font-jetbrains)]">
               PAGINATION SUPABASE
             </span>
           ) : null}
         </div>
 
         <div className="flex flex-col gap-2 md:flex-row md:items-center">
-          <label className="flex min-w-[220px] items-center rounded border border-div bg-cream px-3 py-2">
+          <label className="flex min-w-[220px] items-center rounded-none border border-div bg-cream px-3 py-2">
             <span className="sr-only">Recherche</span>
             <input
               aria-label="Recherche"
@@ -204,10 +204,10 @@ export function TableShell<TData extends RowData>({
       </div>
 
       <div className="overflow-x-auto">
-        <table className="min-w-full border-separate border-spacing-0 text-[10px] font-[family-name:var(--font-noto)]">
+        <table className="min-w-full border-separate border-spacing-0 text-[12px] font-[family-name:var(--font-geist)]">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id} className="bg-noir text-ivory">
+              <tr key={headerGroup.id} style={{ background: 'rgba(0,0,0,0.03)', color: '#1C1814' }}>
                 {headerGroup.headers.map((header) => {
                   const canSort = header.column.getCanSort();
                   const sortDirection = header.column.getIsSorted();
@@ -217,7 +217,8 @@ export function TableShell<TData extends RowData>({
                   return (
                     <th
                       key={header.id}
-                      className={`border-b border-ivory/10 px-4 py-3 text-[9px] tracking-[1.4px] uppercase font-semibold font-[family-name:var(--font-jetbrains)] ${alignment} ${meta?.headerClassName ?? ''}`}
+                      className={`px-4 py-3 text-[9px] tracking-[2px] uppercase font-semibold font-[family-name:var(--font-jetbrains)] ${alignment} ${meta?.headerClassName ?? ''}`}
+                      style={{ borderBottom: '0.5px solid rgba(0,0,0,0.06)' }}
                     >
                       {header.isPlaceholder ? null : canSort ? (
                         <button
@@ -262,9 +263,10 @@ export function TableShell<TData extends RowData>({
                     return (
                       <td
                         key={cell.id}
-                        className={`border-b border-div px-4 py-3 align-top text-t1 ${alignment} ${
-                          meta?.monospace ? 'font-[family-name:var(--font-jetbrains)]' : 'font-[family-name:var(--font-noto)]'
+                        className={`px-4 py-3 align-top text-t1 ${alignment} ${
+                          meta?.monospace ? 'font-[family-name:var(--font-jetbrains)] text-[10px]' : 'font-[family-name:var(--font-geist)] text-[12px]'
                         } ${meta?.className ?? ''}`}
+                        style={{ borderBottom: '0.5px solid rgba(0,0,0,0.06)' }}
                       >
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </td>
@@ -282,7 +284,7 @@ export function TableShell<TData extends RowData>({
           <span>Lignes par page</span>
           <select
             aria-label="Lignes par page"
-            className="rounded border border-div bg-cream px-2 py-1 text-[9px] text-t1 outline-none"
+            className="rounded-none border border-div bg-cream px-2 py-1 text-[9px] text-t1 outline-none"
             onChange={(event) => table.setPageSize(Number(event.target.value))}
             value={pageState.pageSize}
           >
@@ -296,7 +298,7 @@ export function TableShell<TData extends RowData>({
 
         <div className="flex items-center justify-between gap-3 text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
           <button
-            className="cursor-pointer rounded border border-div px-2.5 py-1 text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-35"
+            className="cursor-pointer rounded-none border border-div px-2.5 py-1 text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-35"
             disabled={!table.getCanPreviousPage()}
             onClick={() => table.previousPage()}
             type="button"
@@ -307,7 +309,7 @@ export function TableShell<TData extends RowData>({
             Page {pageState.pageIndex + 1} / {pageCount}
           </span>
           <button
-            className="cursor-pointer rounded border border-div px-2.5 py-1 text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-35"
+            className="cursor-pointer rounded-none border border-div px-2.5 py-1 text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-35"
             disabled={!table.getCanNextPage()}
             onClick={() => table.nextPage()}
             type="button"

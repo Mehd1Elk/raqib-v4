@@ -110,8 +110,8 @@ export default function DataViewerPage() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center gap-2 no-underline">
-              <div className="w-2.5 h-2.5 rounded-full bg-gold" />
-              <span className="font-[family-name:var(--font-cormorant)] text-[26px] font-bold italic text-noir">
+              <div className="w-2.5 h-2.5 rounded-none-none bg-gold" />
+              <span className="font-[family-name:var(--font-playfair)] text-[26px] font-bold  text-noir">
                 Raqib <span className="font-normal text-[18px] text-gold">رقيب</span>
               </span>
             </a>
@@ -126,7 +126,7 @@ export default function DataViewerPage() {
             </a>
             <GlobalNav />
             <ExportButton entityIndex={entityIndex} />
-            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">
+            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded-none border border-div cursor-pointer">
               ⌘K
             </kbd>
           </div>
@@ -136,8 +136,8 @@ export default function DataViewerPage() {
       {/* TITLE BAR */}
       <div className="shrink-0 px-8 pt-4 pb-2 bg-cream">
         <div className="flex items-center gap-3">
-          <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic text-noir">
-            11 Entites &middot; 1100 Couches
+          <div className="font-[family-name:var(--font-playfair)] text-[24px] font-normal uppercase tracking-[3px] text-noir">
+            11 Entités &middot; 1100 Couches
           </div>
           <div className="flex-1 h-px bg-div" />
           <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-t3">

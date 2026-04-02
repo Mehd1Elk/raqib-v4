@@ -19,7 +19,7 @@ export default function CollapsibleSection({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border border-[rgba(60,52,40,0.10)] rounded-lg overflow-hidden mb-4">
+    <div className="border border-[rgba(60,52,40,0.10)] rounded-none-none overflow-hidden mb-4">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-4 py-3 bg-[#FDFAF3] hover:bg-[rgba(184,150,62,0.04)] transition"
@@ -30,12 +30,12 @@ export default function CollapsibleSection({
             strokeWidth={1.5}
             className={`text-[#918977] transition-transform duration-200 ${open ? '' : '-rotate-90'}`}
           />
-          <span className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814]">{title}</span>
+          <span className="font-[family-name:var(--font-playfair)] text-[13px] font-bold  text-[#1C1814]">{title}</span>
           {count !== undefined && (
             <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">({count})</span>
           )}
           {badge && (
-            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#B8963E15] text-[#B8963E] rounded">{badge}</span>
+            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#B8963E15] text-[#B8963E] rounded-none">{badge}</span>
           )}
         </div>
       </button>

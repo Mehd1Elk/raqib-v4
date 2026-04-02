@@ -163,7 +163,7 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
         <div className="flex items-center gap-3">
           <Activity size={14} className="text-[#B8963E]" />
           <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">STREAM</span>
-          <span className={`inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full font-[family-name:var(--font-jetbrains)] text-[7px] tracking-wider uppercase text-white ${connectionMode === 'live' ? 'bg-[#3D7C5E]' : 'bg-[#918977]'}`}>
+          <span className={`inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-none-none font-[family-name:var(--font-jetbrains)] text-[7px] tracking-wider uppercase text-white ${connectionMode === 'live' ? 'bg-[#3D7C5E]' : 'bg-[#918977]'}`}>
             {connectionMode === 'live' ? 'LIVE \u2014 OpenClaw' : connectionMode === 'simulated' ? 'SIMUL\u00c9' : '...'}
           </span>
         </div>
@@ -172,7 +172,7 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
           <div className="flex gap-1">
             {ENTITIES.map(e => (
               <button key={e} onClick={() => toggleEntityFilter(e)} className="relative group" title={e}>
-                <div className="w-2.5 h-2.5 rounded-full transition" style={{
+                <div className="w-2.5 h-2.5 rounded-none-none transition" style={{
                   backgroundColor: ENTITY_COLORS[e],
                   opacity: filters.entities.size === 0 || filters.entities.has(e) ? 1 : 0.2
                 }} />
@@ -182,7 +182,7 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
           
           <div className="flex gap-1">
             {Object.entries(TYPE_COLORS).map(([type, color]) => (
-              <button key={type} onClick={() => toggleTypeFilter(type)} className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded transition uppercase border" style={{
+              <button key={type} onClick={() => toggleTypeFilter(type)} className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none transition uppercase border" style={{
                 backgroundColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '20' : 'transparent',
                 color: (filters.types.size === 0 || filters.types.has(type)) ? color : '#D4CCBA',
                 borderColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '40' : 'transparent'
@@ -195,10 +195,10 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
         
         <div className="flex items-center gap-2">
           <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977]">{filtered.length} events</span>
-          <button onClick={() => setPaused(!paused)} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title={paused ? "Reprendre" : "Pause"}>
+          <button onClick={() => setPaused(!paused)} className="p-1 rounded-none hover:bg-[rgba(184,150,62,0.08)] transition" title={paused ? "Reprendre" : "Pause"}>
             {paused ? <Play size={12} className="text-[#3D7C5E]" /> : <Pause size={12} className="text-[#918977]" />}
           </button>
-          <button onClick={downloadDayExport} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title="Export de la journée">
+          <button onClick={downloadDayExport} className="p-1 rounded-none hover:bg-[rgba(184,150,62,0.08)] transition" title="Export de la journée">
             <Download size={12} className="text-[#918977]" />
           </button>
         </div>
@@ -210,7 +210,7 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
             onClick={() => event.link ? (window.location.href = event.link) : undefined}>
 
             {event.isA2A && <ArrowRightLeft size={10} className="text-[#7B5EA7] flex-shrink-0 mt-1.5" />}
-            <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || '#918977' }} />
+            <div className="w-1.5 h-1.5 rounded-none-none mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || '#918977' }} />
             
             <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] w-10 flex-shrink-0 mt-1">
               {new Date(event.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
@@ -218,10 +218,10 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
             
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5">
-                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded uppercase" style={{ backgroundColor: (event.entity_color || '#918977') + '12', color: event.entity_color }}>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none uppercase" style={{ backgroundColor: (event.entity_color || '#918977') + '12', color: event.entity_color }}>
                   {event.entity}
                 </span>
-                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 rounded uppercase" style={{ color: TYPE_COLORS[event.event_type] }}>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 rounded-none uppercase" style={{ color: TYPE_COLORS[event.event_type] }}>
                   {event.event_type}
                 </span>
                 <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1C1814] truncate font-medium">{event.title}</span>

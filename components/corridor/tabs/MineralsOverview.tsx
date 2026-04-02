@@ -69,8 +69,8 @@ export default function MineralsOverview() {
                 <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>{b.label}</span>
                 <span style={{ fontSize: '0.72rem', color: b.color, fontWeight: 600 }}>{b.china}%</span>
               </div>
-              <div style={{ height: 6, background: 'var(--bg-hover)', borderRadius: 3, overflow: 'hidden' }}>
-                <div style={{ height: '100%', width: `${b.china}%`, background: b.color, borderRadius: 3, transition: 'width 0.8s ease' }} />
+              <div style={{ height: 6, background: 'var(--bg-hover)', borderRadius: 0, overflow: 'hidden' }}>
+                <div style={{ height: '100%', width: `${b.china}%`, background: b.color, borderRadius: 0, transition: 'width 0.8s ease' }} />
               </div>
             </div>
           ))}
@@ -101,7 +101,7 @@ export default function MineralsOverview() {
             <div key={f.name} style={{ background: 'var(--bg)', border: '1px solid var(--border-gold)', borderRadius: 'var(--radius)', padding: 14 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--gold)' }}>{f.name}</span>
-                <span style={{ fontSize: '0.58rem', padding: '2px 6px', background: 'rgba(201,169,110,0.1)', border: '1px solid var(--border-gold)', borderRadius: 10, color: 'var(--gold-dim)' }}>{f.status}</span>
+                <span style={{ fontSize: '0.58rem', padding: '2px 6px', background: 'rgba(201,169,110,0.1)', border: '1px solid var(--border-gold)', borderRadius: 0, color: 'var(--gold-dim)' }}>{f.status}</span>
               </div>
               <div style={{ fontSize: '0.66rem', color: 'var(--text-muted)', marginTop: 6 }}>{f.fullName}</div>
               <div style={{ fontSize: '0.64rem', color: 'var(--text-faint)', marginTop: 4 }}>{f.impact}</div>
@@ -137,7 +137,7 @@ export default function MineralsOverview() {
           {TIMELINE.map((t, i) => (
             <div key={t.year} style={{ display: 'flex', gap: 16, position: 'relative' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 50 }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'var(--gold)', border: '2px solid var(--bg-elevated)', zIndex: 1 }} />
+                <div style={{ width: 10, height: 10, borderRadius: 0, background: 'var(--gold)', border: '2px solid var(--bg-elevated)', zIndex: 1 }} />
                 {i < TIMELINE.length - 1 && <div style={{ width: 1, flex: 1, background: 'var(--border)' }} />}
               </div>
               <div style={{ paddingBottom: 16 }}>

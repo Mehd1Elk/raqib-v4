@@ -58,7 +58,7 @@ export function SOULEditor({ agentId }: { agentId: string }) {
       {/* Header row */}
       <div className="flex items-center gap-2 mb-2">
         <span
-          className="font-['JetBrains_Mono'] text-[8px] px-2 py-0.5 rounded-sm font-bold uppercase tracking-wider"
+          className="font-['JetBrains_Mono'] text-[8px] px-2 py-0.5 rounded-none-none font-bold uppercase tracking-wider"
           style={{ color: badge.color, backgroundColor: badge.bg }}
         >
           {badge.label}
@@ -70,14 +70,14 @@ export function SOULEditor({ agentId }: { agentId: string }) {
           <button
             onClick={() => setIsEditing(false)}
             title="Preview"
-            className={`p-1 rounded transition-colors ${!isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
+            className={`p-1 rounded-none transition-colors ${!isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
           >
             <Eye size={12} />
           </button>
           <button
             onClick={() => setIsEditing(true)}
             title="Éditer"
-            className={`p-1 rounded transition-colors ${isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
+            className={`p-1 rounded-none transition-colors ${isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
           >
             <Edit3 size={12} />
           </button>
@@ -97,7 +97,7 @@ export function SOULEditor({ agentId }: { agentId: string }) {
           <textarea
             value={soul}
             onChange={e => setSoul(e.target.value)}
-            className="w-full min-h-[200px] rounded border border-[rgba(60,52,40,0.25)] p-3 resize-y outline-none focus:border-[#B8963E] transition-colors"
+            className="w-full min-h-[200px] rounded-none border border-[rgba(60,52,40,0.25)] p-3 resize-y outline-none focus:border-[#B8963E] transition-colors"
             style={{
               backgroundColor: '#1C1814',
               color: '#D4B662',
@@ -111,7 +111,7 @@ export function SOULEditor({ agentId }: { agentId: string }) {
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className="flex items-center gap-1.5 px-4 py-1.5 bg-[#B8963E] text-white rounded font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider font-bold hover:bg-[#a38435] disabled:opacity-50 transition-colors"
+              className="flex items-center gap-1.5 px-4 py-1.5 bg-[#B8963E] text-white rounded-none font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider font-bold hover:bg-[#a38435] disabled:opacity-50 transition-colors"
             >
               {isSaving ? <Loader2 size={11} className="animate-spin" /> : <Save size={11} />}
               Sauvegarder
@@ -120,11 +120,11 @@ export function SOULEditor({ agentId }: { agentId: string }) {
         </div>
       ) : (
         <div
-          className="font-['Noto_Sans'] text-[12px] text-[#6B5E4C] leading-relaxed max-w-2xl bg-white/50 p-3 rounded border border-white whitespace-pre-wrap cursor-text"
+          className="font-['Noto_Sans'] text-[12px] text-[#6B5E4C] leading-relaxed max-w-2xl bg-white/50 p-3 rounded-none border border-white whitespace-pre-wrap cursor-text"
           onClick={() => setIsEditing(true)}
           title="Cliquer pour éditer"
         >
-          {soul || <span className="italic text-[#918977]">Aucun contenu SOUL</span>}
+          {soul || <span className=" text-[#918977]">Aucun contenu SOUL</span>}
         </div>
       )}
     </div>

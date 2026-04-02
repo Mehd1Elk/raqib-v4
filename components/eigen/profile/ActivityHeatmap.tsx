@@ -29,7 +29,7 @@ export function ActivityHeatmap({ agentId }: { agentId: string }) {
       {days.map((day, i) => (
         <div
           key={i}
-          className="w-3 h-3 rounded-sm transition-colors cursor-help hover:ring-1 hover:ring-[#B8963E]"
+          className="w-3 h-3 rounded-none-none transition-colors cursor-help hover:ring-1 hover:ring-[#B8963E]"
           style={{ backgroundColor: getHeatColor(day.activity) }}
           title={`${day.date.toLocaleDateString('fr-FR')} — ${day.activity} actions`}
         />

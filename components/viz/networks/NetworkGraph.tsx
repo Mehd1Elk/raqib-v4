@@ -152,7 +152,7 @@ export function NetworkGraph() {
   }, []);
 
   return (
-    <div className="bg-ivory border border-div rounded p-4 relative">
+    <div className="bg-ivory border border-div rounded-none p-4 relative">
       <div
         className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-3 font-bold"
         style={{ color: C.gold }}
@@ -162,7 +162,7 @@ export function NetworkGraph() {
       <svg ref={svgRef} className="w-full" style={{ maxHeight: 500 }} />
       <div
         ref={tooltipRef}
-        className="absolute pointer-events-none bg-noir text-ivory px-3 py-2 rounded text-[9px] font-[family-name:var(--font-jetbrains)] leading-relaxed"
+        className="absolute pointer-events-none bg-noir text-ivory px-3 py-2 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] leading-relaxed"
         style={{ display: 'none', zIndex: 10 }}
       />
     </div>

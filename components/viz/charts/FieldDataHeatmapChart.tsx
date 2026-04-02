@@ -29,7 +29,7 @@ const CustomShape = (props: any) => {
       stroke="#918977" 
       strokeOpacity={0.5} 
       strokeWidth={1} 
-      rx={2}
+      rx={0}
     />
   );
 };

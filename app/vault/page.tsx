@@ -5,11 +5,11 @@ export default function VaultPage() {
     <div className="min-h-screen bg-[#F7F3EA]">
       <div className="flex items-center justify-between px-6 py-3 bg-[#FDFAF3] border-b border-[rgba(60,52,40,0.10)]">
         <div className="flex items-center gap-3">
-          <a href="/" className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#918977] hover:text-[#B8963E]">
+          <a href="/" className="font-[family-name:var(--font-playfair)] text-[14px] font-bold  text-[#918977] hover:text-[#B8963E]">
             Raqib
           </a>
           <span className="text-[#D4CCBA]">&rsaquo;</span>
-          <span className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#1C1814]">
+          <span className="font-[family-name:var(--font-playfair)] text-[14px] font-bold  text-[#1C1814]">
             Component Vault
           </span>
           <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] ml-2">

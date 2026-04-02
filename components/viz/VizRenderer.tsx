@@ -125,7 +125,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
     <div className="flex items-center gap-2 mb-3">
       <button
         onClick={() => setView('viz')}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] transition-colors ${
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] transition-colors ${
           view === 'viz'
             ? 'text-ivory'
             : 'bg-ivory border border-div text-tm hover:text-t1'
@@ -136,7 +136,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
       </button>
       <button
         onClick={() => setView('table')}
-        className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] transition-colors ${
+        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] transition-colors ${
           view === 'table'
             ? 'text-ivory'
             : 'bg-ivory border border-div text-tm hover:text-t1'
@@ -150,7 +150,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
           setEntry({ layer_id: layerId, data: entries[0]?.data || {} });
           setShowWormhole(true);
         }} 
-        className="ml-auto flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded font-['JetBrains_Mono'] text-[8px] hover:bg-[#7B5EA7] hover:text-white transition"
+        className="ml-auto flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded-none font-['JetBrains_Mono'] text-[8px] hover:bg-[#7B5EA7] hover:text-white transition"
       >
         <Link2 size={12} strokeWidth={1.5} /> CONNEXIONS
       </button>
@@ -165,7 +165,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
     return (
       <>
         {toggleBar}
-        <div className="bg-ivory border border-div rounded flex flex-col items-center justify-center py-16 px-6">
+        <div className="bg-ivory border border-div rounded-none flex flex-col items-center justify-center py-16 px-6">
           <div className="text-tm/20 mb-4">{vizIcon(vizType)}</div>
           <div className="text-[10px] font-[family-name:var(--font-jetbrains)] text-tm text-center max-w-md leading-relaxed">
             Couche en attente de peuplement — la visualisation apparaitra
@@ -211,7 +211,7 @@ export function VizRenderer({ layerId, layerName, platformName, categoryLabel, e
   return (
     <>
       {toggleBar}
-      <div className="bg-ivory border border-div rounded overflow-hidden" style={{ minHeight: 380 }}>
+      <div className="bg-ivory border border-div rounded-none overflow-hidden" style={{ minHeight: 380 }}>
         <VizComponent
           vizType={vizType}
           layerId={layerId}

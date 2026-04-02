@@ -50,7 +50,7 @@ export function GalleryCard({
           flexDirection: 'column',
           background: '#FDFAF3',
           border: '1px solid #D4CCBA',
-          borderRadius: 8,
+          borderRadius: 0,
           overflow: 'hidden',
           cursor: 'pointer',
           textAlign: 'left',
@@ -81,10 +81,10 @@ export function GalleryCard({
         {/* Content */}
         <div style={{ padding: '10px 12px', flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
           <div style={{
-            fontFamily: 'Cormorant Garamond, serif',
+            fontFamily: 'Playfair Display, serif',
             fontSize: 12,
             fontWeight: 700,
-            fontStyle: 'italic',
+            
             color: '#2C2925',
             lineHeight: 1.3,
           }}>
@@ -97,7 +97,7 @@ export function GalleryCard({
               fontSize: 8,
               color: '#FDFAF3',
               background: entityColor,
-              borderRadius: 2,
+              borderRadius: 0,
               padding: '1px 5px',
               letterSpacing: '0.5px',
             }}>
@@ -154,7 +154,7 @@ export function GalleryCard({
                 color: '#FDFAF3',
                 background: 'rgba(255,255,255,0.1)',
                 border: '1px solid rgba(255,255,255,0.2)',
-                borderRadius: 4,
+                borderRadius: 0,
                 padding: '4px 12px',
                 cursor: 'pointer',
               }}

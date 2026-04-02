@@ -30,7 +30,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
           return (
             <div
               key={t.id}
-              className="flex items-center gap-3 px-4 py-3 bg-ivory border rounded-lg shadow-lg min-w-[300px]"
+              className="flex items-center gap-3 px-4 py-3 bg-ivory border rounded-none-none shadow-lg min-w-[300px]"
               style={{ borderColor: colors[t.type] + '40', animation: 'fadeInUp 200ms ease-out' }}
             >
               <Icon size={16} style={{ color: colors[t.type] }} />

@@ -20,8 +20,8 @@ export default function NexusControls() {
 
   return (
     <div className="absolute top-4 left-4 z-20">
-      <div className="bg-[#252019]/90 backdrop-blur-md border border-[rgba(212,182,98,0.15)] rounded-lg p-4 w-[220px]">
-        <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic text-[#D4B662] mb-1">
+      <div className="bg-[#252019]/90 backdrop-blur-md border border-[rgba(212,182,98,0.15)] rounded-none-none p-4 w-[220px]">
+        <div className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  text-[#D4B662] mb-1">
           Nexus
         </div>
         <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] mb-4">
@@ -38,7 +38,7 @@ export default function NexusControls() {
                 className="accent-[#B8963E] w-3 h-3"
               />
               <span
-                className="w-2 h-2 rounded-full shrink-0"
+                className="w-2 h-2 rounded-none-none shrink-0"
                 style={{ backgroundColor: color }}
               />
               <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] group-hover:text-[#D4B662] transition-colors">

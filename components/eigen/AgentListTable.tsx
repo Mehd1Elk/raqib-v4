@@ -39,7 +39,7 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
           <span>Nom</span><ArrowUpDown size={12} />
         </button>
       ),
-      cell: info => <span className="font-semibold text-stone-800 font-['Cormorant_Garamond']">{info.getValue()}</span>,
+      cell: info => <span className="font-semibold text-stone-800 font-['Playfair_Display']">{info.getValue()}</span>,
     }),
     columnHelper.accessor('layer', {
       header: ({ column }) => (
@@ -47,7 +47,7 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
           <span>Couche</span><ArrowUpDown size={12} />
         </button>
       ),
-      cell: info => <span className="text-[10px] font-mono px-2 py-0.5 bg-stone-100 rounded text-[#D4AF37]">{info.getValue()}</span>,
+      cell: info => <span className="text-[10px] font-mono px-2 py-0.5 bg-stone-100 rounded-none text-[#D4AF37]">{info.getValue()}</span>,
     }),
     columnHelper.accessor('pole', {
       header: ({ column }) => (
@@ -85,7 +85,7 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
         if (status === 'Actif') color = 'bg-emerald-100 text-emerald-700';
         if (status === 'En attente') color = 'bg-amber-100 text-amber-700';
         if (status === 'Erreur') color = 'bg-red-100 text-red-700';
-        return <span className={`text-[10px] font-semibold px-2 py-1 rounded-full ${color}`}>{status}</span>;
+        return <span className={`text-[10px] font-semibold px-2 py-1 rounded-none-none ${color}`}>{status}</span>;
       },
     }),
     columnHelper.accessor('lastRunAt', {
@@ -143,12 +143,12 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
   };
 
   return (
-    <div className="w-full bg-white shadow-sm border border-stone-200 rounded overflow-hidden">
+    <div className="w-full bg-white shadow-sm border border-stone-200 rounded-none overflow-hidden">
       <div className="flex justify-between items-center p-3 border-b border-stone-200 bg-stone-50">
-        <h3 className="font-['Cormorant_Garamond'] font-bold text-stone-800">AFFICHAGE LISTE ({data.length})</h3>
+        <h3 className="font-['Playfair_Display'] font-bold text-stone-800">AFFICHAGE LISTE ({data.length})</h3>
         <button 
           onClick={handleExportCSV}
-          className="flex items-center space-x-2 px-3 py-1.5 bg-[#D4AF37] text-white text-xs font-semibold rounded hover:bg-[#C5A028] transition-colors"
+          className="flex items-center space-x-2 px-3 py-1.5 bg-[#D4AF37] text-white text-xs font-semibold rounded-none hover:bg-[#C5A028] transition-colors"
         >
           <Download size={14} />
           <span>Export CSV</span>
@@ -190,28 +190,28 @@ export const AgentListTable: React.FC<AgentListTableProps> = ({ data, onRowClick
           <button 
             onClick={() => table.setPageIndex(0)}
             disabled={!table.getCanPreviousPage()}
-            className="px-2 py-1 bg-white border border-stone-300 rounded disabled:opacity-50"
+            className="px-2 py-1 bg-white border border-stone-300 rounded-none disabled:opacity-50"
           >
             {'<<'}
           </button>
           <button 
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            className="px-2 py-1 bg-white border border-stone-300 rounded disabled:opacity-50"
+            className="px-2 py-1 bg-white border border-stone-300 rounded-none disabled:opacity-50"
           >
             {'<'}
           </button>
           <button 
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            className="px-2 py-1 bg-white border border-stone-300 rounded disabled:opacity-50"
+            className="px-2 py-1 bg-white border border-stone-300 rounded-none disabled:opacity-50"
           >
             {'>'}
           </button>
           <button 
             onClick={() => table.setPageIndex(table.getPageCount() - 1)}
             disabled={!table.getCanNextPage()}
-            className="px-2 py-1 bg-white border border-stone-300 rounded disabled:opacity-50"
+            className="px-2 py-1 bg-white border border-stone-300 rounded-none disabled:opacity-50"
           >
             {'>>'}
           </button>

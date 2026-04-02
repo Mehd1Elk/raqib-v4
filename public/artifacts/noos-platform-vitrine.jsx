@@ -1,6 +1,6 @@
 const { useState } = React;
 const C = { ivory:'#FDFAF3', cream:'#F7F3EA', gold:'#B8963E', noir:'#2C2925', t1:'#4A4640', t2:'#6B6560', t3:'#918977', div:'#D4CCBA', green:'#5B8C6E' };
-const HF = 'Cormorant Garamond, serif';
+const HF = 'Playfair Display, serif';
 const MF = 'JetBrains Mono, monospace';
 const features = [
   { icon:'\uD83C\uDFE5', name:'Teleconsultation', desc:'HD video consultations with AI-powered triage, multi-language support, and automatic medical note generation. Connect patients to specialists across Africa in real-time.',
@@ -33,11 +33,11 @@ function App() {
     ...TABS.map(t => h('button', { key:t, onClick:()=>setTab(t), onMouseEnter:()=>setHover('tab-'+t), onMouseLeave:()=>setHover(null),
       style:{ padding:'8px 20px', fontFamily:MF, fontSize:11, textTransform:'uppercase', letterSpacing:1.5,
         background: tab===t ? C.gold : hover==='tab-'+t ? C.cream : 'transparent',
-        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius:6, cursor:'pointer', transition:'all 0.2s' }
+        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius: 0, cursor:'pointer', transition:'all 0.2s' }
     }, t))
   );
 
-  const hero = h('div', { style:{ textAlign:'center', padding:'40px 20px', marginBottom:24, background:'linear-gradient(135deg, '+C.noir+' 0%, '+C.t1+' 100%)', borderRadius:16 } },
+  const hero = h('div', { style:{ textAlign:'center', padding:'40px 20px', marginBottom:24, background:'linear-gradient(135deg, '+C.noir+' 0%, '+C.t1+' 100%)', borderRadius: 0, } },
     h('div', { style:{ fontFamily:MF, fontSize:11, color:C.gold, textTransform:'uppercase', letterSpacing:3, marginBottom:8 } }, 'The Future of African Healthcare'),
     h('h2', { style:{ fontFamily:HF, fontSize:36, fontWeight:700, color:C.ivory, margin:'0 0 12px' } }, 'NOOS Health Platform'),
     h('div', { style:{ fontFamily:MF, fontSize:13, color:C.div, maxWidth:500, margin:'0 auto', lineHeight:1.6 } },
@@ -53,7 +53,7 @@ function App() {
   const featuresView = h('div', null, hero,
     h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:16 } },
       ...features.map((f,i) => h('div', { key:i, onMouseEnter:()=>setHover('f-'+i), onMouseLeave:()=>setHover(null),
-        style:{ background: hover==='f-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:12, padding:24,
+        style:{ background: hover==='f-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:24,
           transition:'all 0.25s', transform: hover==='f-'+i ? 'translateY(-4px)':'none',
           boxShadow: hover==='f-'+i ? '0 8px 24px rgba(0,0,0,0.08)':'none' }
       },
@@ -61,7 +61,7 @@ function App() {
         h('div', { style:{ fontFamily:HF, fontSize:22, fontWeight:700, color:C.noir, marginBottom:8 } }, f.name),
         h('div', { style:{ fontFamily:MF, fontSize:11, color:C.t2, lineHeight:1.6, marginBottom:12 } }, f.desc),
         h('div', { style:{ display:'flex', gap:8, flexWrap:'wrap' } },
-          ...f.stats.map((s,j) => h('span', { key:j, style:{ fontFamily:MF, fontSize:9, padding:'3px 8px', borderRadius:4, background:C.gold+'15', color:C.gold } }, s))
+          ...f.stats.map((s,j) => h('span', { key:j, style:{ fontFamily:MF, fontSize:9, padding:'3px 8px', borderRadius: 0, background:C.gold+'15', color:C.gold } }, s))
         )
       ))
     )
@@ -75,11 +75,11 @@ function App() {
     h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16, alignItems:'start' } },
       ...pricing.map((p,i) => h('div', { key:i, onMouseEnter:()=>setHover('pr-'+i), onMouseLeave:()=>setHover(null),
         style:{ background: hover==='pr-'+i ? C.cream : C.ivory, border: p.popular ? '2px solid '+C.gold : '1px solid '+C.div,
-          borderRadius:12, padding:24, transition:'all 0.25s', transform: hover==='pr-'+i ? 'translateY(-4px)':'none',
+          borderRadius: 0, padding:24, transition:'all 0.25s', transform: hover==='pr-'+i ? 'translateY(-4px)':'none',
           boxShadow: p.popular ? '0 8px 24px rgba(184,150,62,0.15)':'none', position:'relative' }
       },
         p.popular && h('div', { style:{ position:'absolute', top:-12, left:'50%', transform:'translateX(-50%)', fontFamily:MF, fontSize:9,
-          padding:'3px 12px', borderRadius:12, background:C.gold, color:C.ivory, textTransform:'uppercase', letterSpacing:1 } }, 'Most Popular'),
+          padding:'3px 12px', borderRadius: 0, background:C.gold, color:C.ivory, textTransform:'uppercase', letterSpacing:1 } }, 'Most Popular'),
         h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:p.color, marginBottom:4 } }, p.tier),
         h('div', { style:{ display:'flex', alignItems:'baseline', gap:4, marginBottom:4 } },
           h('span', { style:{ fontFamily:HF, fontSize:32, fontWeight:700, color:C.noir } }, p.price),
@@ -92,7 +92,7 @@ function App() {
           ))
         ),
         h('div', { onMouseEnter:()=>setHover('cta-'+i), onMouseLeave:()=>setHover(null),
-          style:{ marginTop:16, padding:'10px 0', textAlign:'center', borderRadius:8, fontFamily:MF, fontSize:11,
+          style:{ marginTop:16, padding:'10px 0', textAlign:'center', borderRadius: 0, fontFamily:MF, fontSize:11,
             textTransform:'uppercase', letterSpacing:1, cursor:'pointer', transition:'all 0.2s',
             background: p.popular ? C.gold : 'transparent', color: p.popular ? C.ivory : C.gold,
             border: p.popular ? 'none' : '1px solid '+C.gold } }, p.cta)
@@ -102,7 +102,7 @@ function App() {
 
   const numbers = [['10+','Partner Hospitals',C.gold],['3','African Markets',C.green],['50K+','Patients Served','#3B82F6'],['24/7','Support Available','#8B5CF6']];
   const aboutView = h('div', null,
-    h('div', { style:{ textAlign:'center', padding:'30px 20px', marginBottom:20, background:C.cream, borderRadius:12 } },
+    h('div', { style:{ textAlign:'center', padding:'30px 20px', marginBottom:20, background:C.cream, borderRadius: 0, } },
       h('h2', { style:{ fontFamily:HF, fontSize:28, fontWeight:700, color:C.noir, margin:'0 0 8px' } }, 'Built for Africa. By Africa.'),
       h('div', { style:{ fontFamily:MF, fontSize:12, color:C.t2, maxWidth:500, margin:'0 auto', lineHeight:1.6 } },
         'NOOS is a subsidiary of Eigen, building next-generation healthcare infrastructure for the continent that needs it most.')
@@ -110,7 +110,7 @@ function App() {
     h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 } },
       ...numbers.map(([v,l,c],i) => h('div', { key:i, onMouseEnter:()=>setHover('nb-'+i), onMouseLeave:()=>setHover(null),
         style:{ textAlign:'center', padding:14, background: hover==='nb-'+i ? C.cream : C.ivory, border:'1px solid '+C.div,
-          borderRadius:10, transition:'all 0.2s' }
+          borderRadius: 0, transition:'all 0.2s' }
       },
         h('div', { style:{ fontFamily:HF, fontSize:24, fontWeight:700, color:c } }, v),
         h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t3, textTransform:'uppercase', letterSpacing:1 } }, l)
@@ -119,12 +119,12 @@ function App() {
     h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:C.noir, marginBottom:12 } }, 'What Our Users Say'),
     h('div', { style:{ display:'flex', flexDirection:'column', gap:12 } },
       ...testimonials.map((t,i) => h('div', { key:i, onMouseEnter:()=>setHover('ts-'+i), onMouseLeave:()=>setHover(null),
-        style:{ background: hover==='ts-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:10, padding:20,
+        style:{ background: hover==='ts-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:20,
           borderLeft:'3px solid '+C.gold, transition:'all 0.2s' }
       },
-        h('div', { style:{ fontFamily:HF, fontSize:15, color:C.t1, fontStyle:'italic', lineHeight:1.6, marginBottom:10 } }, '"'+t.text+'"'),
+        h('div', { style:{ fontFamily:HF, fontSize:15, color:C.t1,  lineHeight:1.6, marginBottom:10 } }, '"'+t.text+'"'),
         h('div', { style:{ display:'flex', alignItems:'center', gap:8 } },
-          h('div', { style:{ width:32, height:32, borderRadius:'50%', background:C.gold+'22', display:'flex', alignItems:'center', justifyContent:'center',
+          h('div', { style:{ width:32, height:32, borderRadius: 0, background:C.gold+'22', display:'flex', alignItems:'center', justifyContent:'center',
             fontFamily:HF, fontSize:14, fontWeight:700, color:C.gold } }, t.name[0]),
           h('div', null,
             h('div', { style:{ fontFamily:MF, fontSize:11, color:C.noir, fontWeight:600 } }, t.name),
@@ -142,7 +142,7 @@ function App() {
           h('h1', { style:{ fontFamily:HF, fontSize:32, fontWeight:700, color:C.noir, margin:0 } }, 'NOOS Platform'),
           h('div', { style:{ fontFamily:MF, fontSize:11, color:C.t3 } }, 'Digital Health for Africa')
         ),
-        h('div', { style:{ fontFamily:MF, fontSize:10, padding:'6px 14px', borderRadius:20, background:C.green+'22', color:C.green } }, 'Live')
+        h('div', { style:{ fontFamily:MF, fontSize:10, padding:'6px 14px', borderRadius: 0, background:C.green+'22', color:C.green } }, 'Live')
       ),
       tabBar,
       tab==='features' && featuresView,

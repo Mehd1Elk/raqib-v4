@@ -56,7 +56,7 @@ export function MilestoneTimeline({ data, onNodeClick }: Props) {
               >
                 {/* Numéro Milestone */}
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full border border-[#B8963E] bg-[#1a1a1a] text-[#B8963E] font-bold text-xs group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(184,150,62,0.2)]">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-none-none border border-[#B8963E] bg-[#1a1a1a] text-[#B8963E] font-bold text-xs group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(184,150,62,0.2)]">
                     M{idx + 1}
                   </div>
                   {/* Flèche entre étapes */}
@@ -68,12 +68,12 @@ export function MilestoneTimeline({ data, onNodeClick }: Props) {
                 
                 {/* Contenu de l'étape */}
                 <div className="pr-12 pt-1 border-l border-dashed border-stone-800 ml-4 group-hover:border-[#B8963E]/50 transition-colors h-full min-h-[120px] relative pb-4">
-                  <div className="absolute -left-[5px] top-6 w-2 h-2 rounded-full bg-[#B8963E] shadow-[0_0_8px_rgba(184,150,62,0.8)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute -left-[5px] top-6 w-2 h-2 rounded-none-none bg-[#B8963E] shadow-[0_0_8px_rgba(184,150,62,0.8)] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                   
                   <div className="pl-6 pt-2">
                     <div className="text-[10px] flex items-center justify-between font-[family-name:var(--font-jetbrains)] mb-2">
                       <span className="text-[#B8963E]">{d.deadline || d.agenda || 'TBA'}</span>
-                      <span className="flex items-center gap-1 uppercase text-stone-500 bg-stone-900 border border-stone-800 px-1 py-0.5 rounded">
+                      <span className="flex items-center gap-1 uppercase text-stone-500 bg-stone-900 border border-stone-800 px-1 py-0.5 rounded-none">
                         {StatusIcon} {status}
                       </span>
                     </div>

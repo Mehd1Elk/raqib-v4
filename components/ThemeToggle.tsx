@@ -18,7 +18,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={() => setDark(!dark)}
-      className="p-1.5 rounded hover:bg-div transition"
+      className="p-1.5 rounded-none hover:bg-div transition"
       title={dark ? 'Mode clair' : 'Mode sombre'}
     >
       {dark ? <Sun size={14} className="text-gold-l" /> : <Moon size={14} className="text-stone" />}

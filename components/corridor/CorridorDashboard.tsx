@@ -8,8 +8,9 @@ import { AlertTicker } from './AlertTicker';
 import { MineralTable } from './MineralTable';
 import { CorridorSearch } from './CorridorSearch';
 import { useRouter } from 'next/navigation';
+import { MineralsView } from './minerals/MineralsView';
 
-type FilterType = 'all' | 'africa' | 'eu' | 'mineral' | 'industry';
+type FilterType = 'all' | 'africa' | 'eu' | 'mineral' | 'mineral-view';
 
 export function CorridorDashboard() {
   const router = useRouter();
@@ -82,7 +83,7 @@ export function CorridorDashboard() {
               { key: 'all', label: 'Tous' },
               { key: 'africa', label: 'Afrique' },
               { key: 'eu', label: 'Union Européenne' },
-              { key: 'mineral', label: 'Minéraux critiques' },
+              { key: 'mineral-view', label: 'Minéraux critiques' },
             ] as { key: FilterType; label: string }[]).map(f => (
               <button
                 key={f.key}
@@ -148,53 +149,59 @@ export function CorridorDashboard() {
             {/* Ticker */}
             <AlertTicker alerts={GLOBAL_DATA.alerts} />
 
-            {/* Top Minerals */}
-            <div className="section-header">
-              <h2>Minéraux Critiques — Top 10 Corridor</h2>
-            </div>
-            <MineralTable minerals={GLOBAL_DATA.topMinerals} onMineralClick={handleMineralClick} />
-
-            {/* Africa Countries */}
-            {africaFiltered.length > 0 && (
+            {filter === 'mineral-view' ? (
+              <MineralsView />
+            ) : (
               <>
+                {/* Top Minerals */}
                 <div className="section-header">
-                  <h2>Corridor Afrique</h2>
-                  <span className="section-count">
-                    {mineralFilter ? `${africaFiltered.length} producteurs de ${mineralFilter}` : `${africaFiltered.length} pays`}
-                  </span>
+                  <h2>Minéraux Critiques — Top 10 Corridor</h2>
                 </div>
-                <div className="countries-grid">
-                  {africaFiltered.map(c => (
-                    <CountryCard key={c.id} country={c} />
-                  ))}
+                <MineralTable minerals={GLOBAL_DATA.topMinerals} onMineralClick={handleMineralClick} />
+
+                {/* Africa Countries */}
+                {africaFiltered.length > 0 && (
+                  <>
+                    <div className="section-header">
+                      <h2>Corridor Afrique</h2>
+                      <span className="section-count">
+                        {mineralFilter ? `${africaFiltered.length} producteurs de ${mineralFilter}` : `${africaFiltered.length} pays`}
+                      </span>
+                    </div>
+                    <div className="countries-grid">
+                      {africaFiltered.map(c => (
+                        <CountryCard key={c.id} country={c} />
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {/* EU Countries */}
+                {euFiltered.length > 0 && (
+                  <>
+                    <div className="section-header">
+                      <h2>Union Européenne</h2>
+                      <span className="section-count">{euFiltered.length} pays</span>
+                    </div>
+                    <div className="countries-grid">
+                      {euFiltered.map(c => (
+                        <CountryCard key={c.id} country={c} />
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                {/* Comparator Link */}
+                <div style={{ textAlign: 'center', margin: '3rem 0' }}>
+                  <Link href="/corridor/compare" className="export-btn" style={{ fontSize: '0.8rem', padding: '0.6rem 1.5rem' }}>
+                    Comparateur de pays
+                  </Link>
+                  <Link href="/" className="export-btn" style={{ fontSize: '0.8rem', padding: '0.6rem 1.5rem', marginLeft: '1rem' }}>
+                    Retour RAQIB
+                  </Link>
                 </div>
               </>
             )}
-
-            {/* EU Countries */}
-            {euFiltered.length > 0 && (
-              <>
-                <div className="section-header">
-                  <h2>Union Européenne</h2>
-                  <span className="section-count">{euFiltered.length} pays</span>
-                </div>
-                <div className="countries-grid">
-                  {euFiltered.map(c => (
-                    <CountryCard key={c.id} country={c} />
-                  ))}
-                </div>
-              </>
-            )}
-
-            {/* Comparator Link */}
-            <div style={{ textAlign: 'center', margin: '3rem 0' }}>
-              <Link href="/corridor/compare" className="export-btn" style={{ fontSize: '0.8rem', padding: '0.6rem 1.5rem' }}>
-                Comparateur de pays
-              </Link>
-              <Link href="/" className="export-btn" style={{ fontSize: '0.8rem', padding: '0.6rem 1.5rem', marginLeft: '1rem' }}>
-                Retour RAQIB
-              </Link>
-            </div>
           </div>
         </div>
       </div>

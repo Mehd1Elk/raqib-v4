@@ -59,7 +59,7 @@ export function ExportButton({ entityIndex }: ExportButtonProps) {
     <button
       onClick={handleExport}
       data-testid="export-button"
-      className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold cursor-pointer bg-transparent border border-div rounded px-2 py-0.5 transition-colors"
+      className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm hover:text-gold cursor-pointer bg-transparent border border-div rounded-none px-2 py-0.5 transition-colors"
     >
       EXPORT CSV
     </button>

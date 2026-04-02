@@ -16,7 +16,7 @@ function CustomTooltip({ active, payload }: any) {
   if (!active || !payload?.length) return null;
   const d = payload[0].payload;
   return (
-    <div className="bg-noir/95 text-ivory px-3 py-2 rounded shadow-lg text-[10px] font-[family-name:var(--font-jetbrains)]">
+    <div className="bg-noir/95 text-ivory px-3 py-2 rounded-none shadow-lg text-[10px] font-[family-name:var(--font-jetbrains)]">
       <div className="font-bold">{d.name}</div>
       <div className="text-gold">{d.count} entries</div>
     </div>
@@ -55,7 +55,7 @@ export function PlatformPie({ data }: Props) {
       <div className="w-36 space-y-1.5">
         {chartData.map((d) => (
           <div key={d.platform_code} className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full shrink-0" style={{ background: d.color }} />
+            <div className="w-2 h-2 rounded-none-none shrink-0" style={{ background: d.color }} />
             <span className="text-[8px] font-[family-name:var(--font-jetbrains)] text-t2 truncate">{d.name}</span>
             <span className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm ml-auto">{d.count}</span>
           </div>

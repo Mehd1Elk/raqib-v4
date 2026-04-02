@@ -27,7 +27,7 @@ export function DocViewer({
     <div style={{
       background: '#FDFAF3',
       border: '1px solid #D4CCBA',
-      borderRadius: 8,
+      borderRadius: 0,
       overflow: 'hidden',
     }}>
       {/* Header */}
@@ -37,10 +37,10 @@ export function DocViewer({
         background: '#F7F3EA',
       }}>
         <div style={{
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Playfair Display, serif',
           fontSize: 18,
           fontWeight: 700,
-          fontStyle: 'italic',
+          
           color: '#2C2925',
           marginBottom: 8,
         }}>
@@ -108,7 +108,7 @@ export function DocViewer({
                     color: '#918977',
                     background: '#F7F3EA',
                     border: '1px solid #D4CCBA',
-                    borderRadius: 3,
+                    borderRadius: 0,
                     padding: '2px 8px',
                   }}
                 >
@@ -134,7 +134,7 @@ export function DocViewer({
             <div style={{
               background: '#F7F3EA',
               border: '1px solid #D4CCBA',
-              borderRadius: 4,
+              borderRadius: 0,
               padding: 12,
               fontFamily: 'system-ui, -apple-system, sans-serif',
               fontSize: 12,
@@ -162,7 +162,7 @@ export function DocViewer({
               fontSize: 9,
               color: entityColor,
               border: `1px solid ${entityColor}`,
-              borderRadius: 4,
+              borderRadius: 0,
               padding: '6px 12px',
               textDecoration: 'none',
               alignSelf: 'flex-start',

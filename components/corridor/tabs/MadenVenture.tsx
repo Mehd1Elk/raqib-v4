@@ -12,7 +12,7 @@ export default function MadenVenture() {
         <div style={{ fontSize: '3.5rem', fontWeight: 400, color: 'var(--gold)', lineHeight: 1 }}>{v.arabic}</div>
         <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.8rem', color: 'var(--gold-light)', letterSpacing: 6, marginTop: 8 }}>{v.name}</div>
         <div style={{ fontSize: '0.7rem', color: 'var(--text-faint)', marginTop: 6 }}>{v.meaning}</div>
-        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4, fontStyle: 'italic' }}>{v.tagline}</div>
+        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: 4,  }}>{v.tagline}</div>
       </div>
 
       {/* Thesis */}
@@ -22,7 +22,7 @@ export default function MadenVenture() {
         padding: '20px 24px',
         background: 'rgba(201,169,110,0.04)',
       }}>
-        <div style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '0.88rem', color: 'var(--gold-light)', lineHeight: 1.7 }}>
+        <div style={{ fontFamily: 'var(--font-display)',  fontSize: '0.88rem', color: 'var(--gold-light)', lineHeight: 1.7 }}>
           {v.thesis}
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function MadenVenture() {
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{
-                    width: 28, height: 28, borderRadius: '50%',
+                    width: 28, height: 28, borderRadius: 0,
                     background: b.color + '18', display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: b.color, fontWeight: 700, fontSize: '0.7rem',
                   }}>
@@ -72,7 +72,7 @@ export default function MadenVenture() {
                 <span style={{
                   fontSize: '0.56rem', padding: '2px 8px',
                   background: 'rgba(201,169,110,0.08)', border: '1px solid var(--border-gold)',
-                  borderRadius: 10, color: 'var(--gold-dim)',
+                  borderRadius: 0, color: 'var(--gold-dim)',
                 }}>{b.price}</span>
               </div>
               <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)', marginTop: 8, lineHeight: 1.6 }}>{b.role}</div>
@@ -102,7 +102,7 @@ export default function MadenVenture() {
               <div style={{ fontSize: '0.68rem', color: 'var(--gold)', marginTop: 8 }}>{h.focus}</div>
               <div style={{ fontSize: '0.62rem', color: 'var(--text-muted)', marginTop: 6, lineHeight: 1.5 }}>{h.rationale}</div>
               <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: 10 }}>
-                <span style={{ fontSize: '0.6rem', padding: '2px 8px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 10, color: 'var(--text-faint)' }}>{h.type}</span>
+                <span style={{ fontSize: '0.6rem', padding: '2px 8px', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 0, color: 'var(--text-faint)' }}>{h.type}</span>
                 <span style={{ fontSize: '0.68rem', color: 'var(--gold)', fontWeight: 600 }}>{h.capex}</span>
               </div>
             </div>

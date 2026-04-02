@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 @import "../styles/interactions.css";
 
@@ -44,7 +45,7 @@
   --color-div-l: rgba(60,52,40,0.05);
 
   /* Fonts */
-  --font-gr: var(--font-cormorant);
+  --font-gr: var(--font-playfair);
   --font-mn: var(--font-jetbrains);
   --font-sn: var(--font-noto);
 }
@@ -86,7 +87,7 @@ body {
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-thumb { background: #D4CCBA; border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: #D4CCBA; border-radius: 0; }
 ::-webkit-scrollbar-track { background: transparent; }
 
 /* Selection */
@@ -96,7 +97,7 @@ body {
 .leaflet-popup-content-wrapper {
   background: #FDFAF3;
   border: 1px solid rgba(60,52,40,0.10);
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 2px 8px rgba(28,24,20,0.08);
   padding: 0;
 }

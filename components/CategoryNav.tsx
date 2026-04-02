@@ -39,13 +39,13 @@ export function CategoryNav({
             data-active={activeCategoryIndex === mi}
             className="w-full border-none p-2 px-3.5 cursor-pointer text-left"
             style={{
-              background: activeCategoryIndex === mi ? `${entity.color}08` : 'transparent',
-              borderLeft: activeCategoryIndex === mi ? `3px solid ${entity.color}` : '3px solid transparent',
+              background: activeCategoryIndex === mi ? `rgba(0,0,0,0.04)` : 'transparent',
+              borderLeft: activeCategoryIndex === mi ? `2px solid ${entity.color}` : '2px solid transparent',
             }}
           >
             <div
-              className="text-[11px] font-[family-name:var(--font-cormorant)] font-bold italic tracking-wide"
-              style={{ color: activeCategoryIndex === mi ? entity.color : '#6B5E4C' }}
+              className="text-[12px] font-[family-name:var(--font-playfair)] font-normal uppercase tracking-[1px]"
+              style={{ color: activeCategoryIndex === mi ? entity.color : '#1C1814' }}
             >
               {cat.label}
             </div>
@@ -64,19 +64,20 @@ export function CategoryNav({
                 }}
               >
                 <span
-                  className="w-1 h-1 rounded-full shrink-0"
+                  className="w-1 h-1 rounded-none-none shrink-0"
                   style={{ background: PLATFORMS[l.platform]?.color || '#D4CCBA' }}
                 />
                 <span
-                  className="text-[10px] font-[family-name:var(--font-noto)] flex-1 whitespace-nowrap overflow-hidden text-ellipsis"
+                  className="text-[11px] font-[family-name:var(--font-geist)] flex-1 whitespace-nowrap overflow-hidden text-ellipsis"
                   style={{
                     color: activeLayerIndex === lii ? '#1C1814' : '#6B5E4C',
-                    fontWeight: activeLayerIndex === lii ? 600 : 400,
+                    fontWeight: 400,
                   }}
                 >
                   {l.name}
                 </span>
-                <span className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm shrink-0">
+                <span className="text-[10px] font-medium font-[family-name:var(--font-jetbrains)] shrink-0"
+                      style={{ color: 'rgba(0,0,0,0.40)' }}>
                   {fmtNum(l.rows)}
                 </span>
               </button>

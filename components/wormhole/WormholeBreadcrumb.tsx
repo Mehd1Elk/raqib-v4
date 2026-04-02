@@ -107,7 +107,7 @@ export default function WormholeBreadcrumb() {
             )}
             
             {/* The flow arrow */}
-            <span className="mx-2 text-violet font-bold flex items-center bg-violet/10 px-2 py-[2px] rounded border border-violet/20">
+            <span className="mx-2 text-violet font-bold flex items-center bg-violet/10 px-2 py-[2px] rounded-none border border-violet/20">
               <span className="text-[8px] mr-1">→</span>
               <Icon size={10} className="mr-1" />
               <span className="text-[8px] uppercase tracking-wider">{segment.metadata.type}</span>

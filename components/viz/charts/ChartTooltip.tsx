@@ -4,7 +4,7 @@ export function ChartTooltip({ active, payload }: any) {
     if (!data) return null;
 
     return (
-      <div className="bg-[#F7F3EA] border border-[#918977] p-3 text-[10px] font-[family-name:var(--font-jetbrains)] text-gray-800 shadow-xl max-w-xs rounded break-words">
+      <div className="bg-[#F7F3EA] border border-[#918977] p-3 text-[10px] font-[family-name:var(--font-jetbrains)] text-gray-800 shadow-xl max-w-xs rounded-none break-words">
         {Object.entries(data).map(([key, value]) => {
           if (key === 'originalData' || typeof value === 'object') return null;
           return (

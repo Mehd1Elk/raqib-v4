@@ -64,7 +64,7 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
             <div 
               key={cohort.id}
               onClick={() => setSelectedCohortId(cohort.id)}
-              className="bg-white border border-[#E5E0D8] rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-all hover:border-stone-300 group flex flex-col h-[200px]"
+              className="bg-white border border-[#E5E0D8] rounded-none-none overflow-hidden cursor-pointer hover:shadow-md transition-all hover:border-stone-300 group flex flex-col h-[200px]"
             >
               <div className="flex-1 p-5 relative flex flex-col">
                 {/* Side Color Bar */}
@@ -75,14 +75,14 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
                   <div>
                     <h3 className="font-serif text-lg font-bold text-stone-800 leading-tight mb-1">{cohort.name}</h3>
                     <div className="font-mono text-[9px] text-stone-500 uppercase flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 bg-stone-100 rounded text-stone-600 font-bold">{cohort.layer}</span>
+                      <span className="px-1.5 py-0.5 bg-stone-100 rounded-none text-stone-600 font-bold">{cohort.layer}</span>
                       <span>{agents.length} AGENTS · {activeCount} ACTIFS</span>
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <StatusDot status={hasError ? 'error' : activeCount > 0 ? 'active' : 'inactive'} />
                     {/* Unread badge simulation */}
-                    <div className="w-2 h-2 rounded-full bg-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)] animate-pulse mt-2" />
+                    <div className="w-2 h-2 rounded-none-none bg-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)] animate-pulse mt-2" />
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
 
                 <div className="mt-auto pl-2 flex gap-1 items-center flex-wrap pt-4">
                   {agents.slice(0, 10).map((a, i) => (
-                    <div key={i} className="w-2 h-2 rounded-full" style={{ backgroundColor: ['Actif', 'active'].includes(a.status) ? '#10B981' : ['Erreur', 'error'].includes(a.status) ? '#EF4444' : '#D6D3D1' }} />
+                    <div key={i} className="w-2 h-2 rounded-none-none" style={{ backgroundColor: ['Actif', 'active'].includes(a.status) ? '#10B981' : ['Erreur', 'error'].includes(a.status) ? '#EF4444' : '#D6D3D1' }} />
                   ))}
                   {agents.length > 10 && <span className="font-mono text-[8px] text-stone-400 ml-1">+{agents.length - 10}</span>}
                 </div>

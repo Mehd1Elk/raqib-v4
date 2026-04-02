@@ -105,7 +105,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
       onClick={() => setOpen(false)}
     >
       <div
-        className="w-full max-w-lg bg-ivory rounded-lg shadow-2xl border border-div overflow-hidden"
+        className="w-full max-w-lg bg-ivory rounded-none-none shadow-2xl border border-div overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center gap-3 px-4 py-3 border-b border-div">
@@ -120,7 +120,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
             placeholder="Rechercher parmi 1000 couches..."
             className="flex-1 bg-transparent border-none outline-none text-sm font-[family-name:var(--font-noto)] text-t1 placeholder:text-tm"
           />
-          <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div">
+          <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded-none border border-div">
             ESC
           </kbd>
         </div>
@@ -138,7 +138,7 @@ export function SearchOverlay({ onSelect }: SearchOverlayProps) {
                 }}
               >
                 <span
-                  className="w-1.5 h-1.5 rounded-full shrink-0"
+                  className="w-1.5 h-1.5 rounded-none-none shrink-0"
                   style={{ background: r.platformColor }}
                 />
                 <div className="flex-1 min-w-0">

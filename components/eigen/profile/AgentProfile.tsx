@@ -87,7 +87,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
     <div className="max-w-5xl mx-auto py-8 px-6 font-sans">
       
       {/* HEADER — comme un profil GitHub/HuggingFace */}
-      <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-6 mb-4 shadow-sm relative overflow-hidden">
+      <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-6 mb-4 shadow-sm relative overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-0 right-0 w-64 h-64 -translate-y-1/2 translate-x-1/2 pointer-events-none opacity-5">
            <Cpu size={256} />
@@ -95,19 +95,19 @@ export function AgentProfile({ agent }: { agent: Agent }) {
 
         <div className="flex items-start gap-5 relative z-10">
           {/* Avatar grand */}
-          <div className="w-20 h-20 rounded-xl flex items-center justify-center shrink-0" style={{ backgroundColor: layerColor + '15', border: `1.5px solid ${layerColor}30` }}>
+          <div className="w-20 h-20 rounded-none-none flex items-center justify-center shrink-0" style={{ backgroundColor: layerColor + '15', border: `1.5px solid ${layerColor}30` }}>
             <Cpu size={32} strokeWidth={1.5} style={{ color: layerColor }} />
           </div>
           <div className="flex-1 mt-1">
             <div className="flex items-center gap-3">
-              <h2 className="font-['Cormorant_Garamond'] text-[28px] font-bold italic tracking-tight text-[#1C1814]">{agent.name}</h2>
-              <span className="font-['JetBrains_Mono'] text-[9px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider" style={{ backgroundColor: layerColor + '20', color: layerColor }}>
+              <h2 className="font-['Playfair_Display'] text-[28px] font-bold  tracking-tight text-[#1C1814]">{agent.name}</h2>
+              <span className="font-['JetBrains_Mono'] text-[9px] px-2 py-0.5 rounded-none-none font-bold uppercase tracking-wider" style={{ backgroundColor: layerColor + '20', color: layerColor }}>
                 {agent.layer}
               </span>
               <StatusDot status={agent.status === 'Actif' ? 'active' : agent.status === 'Erreur' ? 'error' : agent.status === 'Inactif' ? 'inactive' : 'standby'} size={10} />
             </div>
             <div className="font-['JetBrains_Mono'] text-[11px] text-[#918977] mt-1.5 flex items-center gap-2">
-              <span className="bg-[rgba(60,52,40,0.05)] px-1.5 py-0.5 rounded text-[#6B5E4C]">{agent.id}</span>
+              <span className="bg-[rgba(60,52,40,0.05)] px-1.5 py-0.5 rounded-none text-[#6B5E4C]">{agent.id}</span>
               <span>·</span>
               <span>{agent.pole}</span>
               <span>·</span>
@@ -129,10 +129,10 @@ export function AgentProfile({ agent }: { agent: Agent }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
         {/* SPECS TECHNIQUES — comme un model card HuggingFace */}
-        <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-5 shadow-sm">
+        <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-5 shadow-sm">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-['JetBrains_Mono'] text-[10px] text-[#918977] tracking-[2px] font-bold">CONFIGURATION MODÈLE</h3>
-            <span className="w-2 h-2 rounded-full bg-[#B8963E]" />
+            <span className="w-2 h-2 rounded-none-none bg-[#B8963E]" />
           </div>
           <div className="space-y-2.5">
             <ConfigRow label="Modèle principal" value={agent.model} />
@@ -144,7 +144,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
           </div>
         </div>
 
-        <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-5 shadow-sm flex flex-col justify-between">
+        <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-5 shadow-sm flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-['JetBrains_Mono'] text-[10px] text-[#918977] tracking-[2px] font-bold">BASE DE CONNAISSANCES</h3>
@@ -152,7 +152,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
             </div>
             <div className="flex flex-wrap gap-1.5">
               {((agent.knowledge as any)?.split(',') || ['Base de données souveraine Raqib', 'Guides métier']).map((k: string, idx: number) => (
-                <span key={idx} className="font-['JetBrains_Mono'] text-[9px] px-2.5 py-1 bg-white border border-[#E5E0D8] text-[#6B5E4C] rounded-sm hover:border-[#B8963E] transition-colors cursor-default shadow-sm">{k.trim()}</span>
+                <span key={idx} className="font-['JetBrains_Mono'] text-[9px] px-2.5 py-1 bg-white border border-[#E5E0D8] text-[#6B5E4C] rounded-none-none hover:border-[#B8963E] transition-colors cursor-default shadow-sm">{k.trim()}</span>
               ))}
             </div>
           </div>
@@ -165,7 +165,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
                 <div className="mt-1 flex flex-col gap-1">
                   {getUpstreamAgents(agent.id).map(a => (
                     <Link key={a.id} href={`/eigen/agent/${a.id}`} className="font-['Noto_Sans'] text-[11px] text-[#3D7C5E] hover:underline flex items-center gap-1">
-                       <span className="w-1 h-1 bg-[#3D7C5E] rounded-full" /> {a.name}
+                       <span className="w-1 h-1 bg-[#3D7C5E] rounded-none-none" /> {a.name}
                     </Link>
                   ))}
                 </div>
@@ -175,7 +175,7 @@ export function AgentProfile({ agent }: { agent: Agent }) {
                  <div className="mt-1 flex flex-col gap-1">
                   {getDownstreamAgents(agent.id).map(a => (
                     <Link key={a.id} href={`/eigen/agent/${a.id}`} className="font-['Noto_Sans'] text-[11px] text-[#B87D3E] hover:underline flex items-center gap-1">
-                      <span className="w-1 h-1 bg-[#B87D3E] rounded-full" /> {a.name}
+                      <span className="w-1 h-1 bg-[#B87D3E] rounded-none-none" /> {a.name}
                     </Link>
                   ))}
                  </div>
@@ -186,29 +186,29 @@ export function AgentProfile({ agent }: { agent: Agent }) {
       </div>
 
       {/* ACTIVITÉ RÉCENTE — feed style GitHub contributions */}
-      <div className="relative bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-5 mb-6 shadow-sm overflow-hidden">
+      <div className="relative bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-5 mb-6 shadow-sm overflow-hidden">
         {/* Decorative corner lines */}
          <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none opacity-20" style={{ background: 'linear-gradient(135deg, transparent 50%, #B8963E 50%)' }} />
 
         <div className="flex justify-between items-end mb-5">
           <h3 className="font-['JetBrains_Mono'] text-[10px] text-[#918977] tracking-[2px] font-bold">CARTE D'ACTIVITÉ (30 DERNIERS JOURS)</h3>
-          <span className="font-['JetBrains_Mono'] text-[9px] text-[#6B5E4C] uppercase bg-white px-2 py-0.5 rounded border border-[#E5E0D8]">Intensité opérationnelle</span>
+          <span className="font-['JetBrains_Mono'] text-[9px] text-[#6B5E4C] uppercase bg-white px-2 py-0.5 rounded-none border border-[#E5E0D8]">Intensité opérationnelle</span>
         </div>
         
         {/* Heatmap style GitHub contributions */}
-        <div className="bg-white/50 p-4 rounded border border-[rgba(60,52,40,0.05)] inline-block mb-6 shadow-inner">
+        <div className="bg-white/50 p-4 rounded-none border border-[rgba(60,52,40,0.05)] inline-block mb-6 shadow-inner">
            <ActivityHeatmap agentId={agent.id} />
         </div>
         
         {/* Liste des dernières actions */}
         <h4 className="font-['JetBrains_Mono'] text-[9px] text-[#918977] tracking-wider mb-3">DERNIERS LIVRABLES SOUMIS</h4>
-        <div className="space-y-2 bg-white/30 rounded p-2">
+        <div className="space-y-2 bg-white/30 rounded-none p-2">
           {recentActivity.map(activity => (
-            <div key={activity.id} className="flex items-center gap-4 py-2 px-3 hover:bg-white rounded transition-colors group cursor-pointer border border-transparent hover:border-[rgba(60,52,40,0.10)]">
+            <div key={activity.id} className="flex items-center gap-4 py-2 px-3 hover:bg-white rounded-none transition-colors group cursor-pointer border border-transparent hover:border-[rgba(60,52,40,0.10)]">
               <StatusDot status={activity.success ? 'active' : 'error'} size={8} />
               <span className="font-['JetBrains_Mono'] text-[10px] text-[#918977] w-[90px]">{formatDate(activity.timestamp)}</span>
               <span className="font-['Noto_Sans'] text-[12px] text-[#1C1814] flex-1 group-hover:text-[#B8963E] transition-colors">{activity.description}</span>
-              <span className="font-['JetBrains_Mono'] text-[10px] text-[#3D7C5E] bg-[#3D7C5E15] px-2 py-0.5 rounded font-bold">+{activity.entriesCreated}</span>
+              <span className="font-['JetBrains_Mono'] text-[10px] text-[#3D7C5E] bg-[#3D7C5E15] px-2 py-0.5 rounded-none font-bold">+{activity.entriesCreated}</span>
               <span className="font-['Noto_Sans'] text-[11px] text-[#918977] w-[60px] text-right">Réf: #0{Math.floor(Math.random()*999)}</span>
             </div>
           ))}
@@ -223,18 +223,18 @@ export function AgentProfile({ agent }: { agent: Agent }) {
       {/* ACTIONS */}
       {showChat || showCompare ? null : (
         <div className="flex flex-wrap gap-4 mt-8">
-          <button className="flex items-center gap-2 px-5 py-2.5 bg-[#B8963E] text-white rounded font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider font-bold shadow-md hover:bg-[#a38435] transition-colors transform hover:-translate-y-0.5">
+          <button className="flex items-center gap-2 px-5 py-2.5 bg-[#B8963E] text-white rounded-none font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider font-bold shadow-md hover:bg-[#a38435] transition-colors transform hover:-translate-y-0.5">
             <Play size={14} fill="currentColor" /> Lancer maintenant
           </button>
           <button 
             onClick={() => setShowChat(true)}
-            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-[rgba(60,52,40,0.20)] rounded font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#1C1814] hover:border-[#B8963E] hover:text-[#B8963E] transition-all shadow-sm"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white border border-[rgba(60,52,40,0.20)] rounded-none font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#1C1814] hover:border-[#B8963E] hover:text-[#B8963E] transition-all shadow-sm"
           >
             <MessageCircle size={14} /> Parler à cet agent
           </button>
           <button
             onClick={() => setShowCompare(true)}
-            className="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-dashed border-[#918977] rounded font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#6B5E4C] hover:border-[#1C1814] hover:text-[#1C1814] transition-all ml-auto"
+            className="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-dashed border-[#918977] rounded-none font-['JetBrains_Mono'] text-[11px] uppercase tracking-wider text-[#6B5E4C] hover:border-[#1C1814] hover:text-[#1C1814] transition-all ml-auto"
           >
             Comparer
           </button>

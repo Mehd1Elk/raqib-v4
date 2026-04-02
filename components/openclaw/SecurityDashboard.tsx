@@ -95,7 +95,7 @@ export function SecurityDashboard() {
             </div>
             <div
               style={{
-                fontFamily: 'var(--font-cormorant)',
+                fontFamily: 'var(--font-playfair)',
                 fontSize: 22,
                 fontWeight: 700,
                 color: '#1C1814',
@@ -175,7 +175,7 @@ export function SecurityDashboard() {
             </div>
             <div
               style={{
-                fontFamily: 'var(--font-cormorant)',
+                fontFamily: 'var(--font-playfair)',
                 fontSize: 36,
                 fontWeight: 700,
                 color: '#9C3D3D',

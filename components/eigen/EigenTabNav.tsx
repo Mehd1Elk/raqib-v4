@@ -21,13 +21,13 @@ export function EigenTabNav({ activeTab, onTabSelect }: { activeTab: string; onT
         const isActive = activeTab === tab.id;
         const cls = `flex items-center gap-2 px-5 py-[14px] shrink-0 transition-colors border-b-2 no-underline ${
           isActive
-            ? 'border-[#B8963E] text-black font-bold'
-            : 'border-transparent text-[#918977] hover:bg-[#F2EFE8]'
+            ? 'border-[rgba(255,255,255,0.10)] bg-[rgba(255,255,255,0.08)] text-[#FFFFFF] font-normal'
+            : 'border-transparent text-[rgba(255,255,255,0.70)] hover:bg-[rgba(255,255,255,0.04)]'
         }`;
         const inner = (
           <>
             <svg
-              className={`w-3.5 h-3.5 ${isActive ? 'text-[#B8963E]' : 'text-[#918977]'}`}
+              className={`w-3.5 h-3.5 ${isActive ? 'text-[#FFFFFF]' : 'text-[rgba(255,255,255,0.70)]'}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ export function EigenTabNav({ activeTab, onTabSelect }: { activeTab: string; onT
               {tab.label}
             </span>
             {tab.badge !== undefined && (
-              <span className="ml-1 bg-[#B8963E] text-white text-[9px] font-[family-name:var(--font-jetbrains)] px-1.5 py-[2px] rounded-full">
+              <span className="ml-1 bg-[rgba(255,255,255,0.15)] text-[#FFFFFF] text-[9px] font-[family-name:var(--font-jetbrains)] px-1.5 py-[2px] rounded-none">
                 {tab.badge}
               </span>
             )}

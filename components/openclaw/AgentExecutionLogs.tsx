@@ -68,7 +68,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
   }
 
   return (
-    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-4">
+    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-4">
       {/* ── HEADER ── */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -76,7 +76,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
           <span className="font-['JetBrains_Mono'] text-[9px] tracking-wider text-[#918977]">
             HISTORIQUE D'EXÉCUTION
           </span>
-          <span className={`font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-full ${
+          <span className={`font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-none-none ${
             source === 'openclaw' ? 'bg-[#3D7C5E] text-white' : 'bg-[#918977] text-white'
           }`}>
             {source === 'openclaw' ? 'LOGS RÉELS' : 'SIMULÉ'}
@@ -103,14 +103,14 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
       <div className="flex gap-2 mb-3">
         {logs.length > 0 && (
           <button onClick={loadReplay} disabled={loadingReplay}
-            className="flex items-center gap-1 px-2 py-1 rounded font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] hover:border-[#B8963E] text-[#918977] disabled:opacity-50">
+            className="flex items-center gap-1 px-2 py-1 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] hover:border-[#B8963E] text-[#918977] disabled:opacity-50">
             <Play size={10} />
             {loadingReplay ? 'Chargement...' : 'Voir le replay complet'}
           </button>
         )}
         {hasDiff && (
           <button onClick={() => setShowDiff(!showDiff)}
-            className="flex items-center gap-1 px-2 py-1 rounded font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] hover:border-[#9C3D3D] text-[#918977]">
+            className="flex items-center gap-1 px-2 py-1 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] hover:border-[#9C3D3D] text-[#918977]">
             <GitCompare size={10} />
             {showDiff ? 'Masquer diff' : 'DIFF succès/erreur'}
           </button>
@@ -119,7 +119,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
 
       {/* ── PANNEAU REPLAY ── */}
       {showReplay && replay && (
-        <div className="mb-3 bg-[#1C1814] rounded-lg p-4 space-y-3">
+        <div className="mb-3 bg-[#1C1814] rounded-none-none p-4 space-y-3">
           <div className="flex items-center justify-between">
             <span className="font-['JetBrains_Mono'] text-[9px] text-[#B8963E] tracking-wider">
               REPLAY COMPLET — {replay.agentName}
@@ -160,7 +160,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
       {/* ── PANNEAU DIFF ── */}
       {showDiff && lastSuccess && lastError && (
         <div className="mb-3 grid grid-cols-2 gap-2">
-          <div className="bg-[#1C1814] rounded p-3">
+          <div className="bg-[#1C1814] rounded-none p-3">
             <div className="font-['JetBrains_Mono'] text-[7px] text-[#3D7C5E] mb-1">
               DERNIER SUCCÈS — {new Date(lastSuccess.timestamp).toLocaleDateString('fr-FR')}
             </div>
@@ -168,7 +168,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
               {lastSuccess.output}
             </pre>
           </div>
-          <div className="bg-[#1C1814] rounded p-3">
+          <div className="bg-[#1C1814] rounded-none p-3">
             <div className="font-['JetBrains_Mono'] text-[7px] text-[#9C3D3D] mb-1">
               DERNIÈRE ERREUR — {new Date(lastError.timestamp).toLocaleDateString('fr-FR')}
             </div>
@@ -183,7 +183,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
       <div className="space-y-0.5">
         {logs.map(log => (
           <div key={log.id}>
-            <div className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-[rgba(184,150,62,0.03)] cursor-pointer"
+            <div className="flex items-center gap-3 py-1.5 px-2 rounded-none hover:bg-[rgba(184,150,62,0.03)] cursor-pointer"
               onClick={() => setExpanded(expanded === log.id ? null : log.id)}>
               {expanded === log.id
                 ? <ChevronDown size={10} className="text-[#918977]" />
@@ -210,7 +210,7 @@ export default function AgentExecutionLogs({ agentId }: { agentId: string }) {
               </span>
             </div>
             {expanded === log.id && (
-              <div className="ml-8 mb-2 p-3 bg-[#1C1814] rounded">
+              <div className="ml-8 mb-2 p-3 bg-[#1C1814] rounded-none">
                 <div className="font-['JetBrains_Mono'] text-[7px] text-[#918977] mb-1">INPUT</div>
                 <pre className="font-['JetBrains_Mono'] text-[9px] text-[#D4B662] mb-3 whitespace-pre-wrap">
                   {log.input}

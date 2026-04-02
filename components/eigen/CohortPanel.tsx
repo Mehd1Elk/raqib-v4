@@ -119,7 +119,7 @@ export default function CohortPanel({ cohortId, cohortName, cohortColor, agents,
   }, [messages, discussing]);
 
   return (
-    <div className="bg-[#FDFAF3] border border-[#E5E0D8] rounded-lg overflow-hidden h-full flex flex-col shadow-xl">
+    <div className="bg-[#FDFAF3] border border-[#E5E0D8] rounded-none-none overflow-hidden h-full flex flex-col shadow-xl">
       {/* Header */}
       <div className="px-5 py-4 border-b border-[#E5E0D8] flex items-center justify-between bg-white" style={{ borderLeftColor: cohortColor, borderLeftWidth: 4 }}>
         <div>
@@ -143,7 +143,7 @@ export default function CohortPanel({ cohortId, cohortName, cohortColor, agents,
         {/* LEFT — Agents List */}
         <div className="w-[30%] border-r border-[#E5E0D8] overflow-y-auto bg-[#FDFCFB] p-3 space-y-1">
           {agents.map(agent => (
-            <div key={agent.id} className="flex items-center gap-3 py-2 px-3 rounded hover:bg-stone-100 transition-colors cursor-pointer border border-transparent hover:border-stone-200">
+            <div key={agent.id} className="flex items-center gap-3 py-2 px-3 rounded-none hover:bg-stone-100 transition-colors cursor-pointer border border-transparent hover:border-stone-200">
               <StatusDot status={agent.status === 'Actif' ? 'active' : agent.status === 'Erreur' ? 'error' : 'inactive'} size={6} />
               <div className="flex-1 min-w-0">
                 <div className="font-sans text-xs font-semibold text-stone-800 truncate">{agent.name}</div>
@@ -178,13 +178,13 @@ export default function CohortPanel({ cohortId, cohortName, cohortColor, agents,
                 value={topic}
                 onChange={e => setTopic(e.target.value)}
                 placeholder="Poser un sujet de réflexion au comité..."
-                className="flex-1 font-sans text-sm bg-white border border-[#E5E0D8] rounded px-4 py-2.5 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none shadow-sm transition-all text-stone-800"
+                className="flex-1 font-sans text-sm bg-white border border-[#E5E0D8] rounded-none px-4 py-2.5 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none shadow-sm transition-all text-stone-800"
                 onKeyDown={e => { if (e.key === 'Enter' && topic.trim()) launchDiscussion(topic); }}
               />
               <button 
                 onClick={() => topic.trim() && launchDiscussion(topic)}
                 disabled={discussing || !topic.trim()}
-                className="px-4 py-2.5 bg-[#1C1814] text-white rounded font-mono text-[10px] font-bold uppercase hover:bg-[#D4AF37] transition-colors disabled:opacity-40 disabled:hover:bg-[#1C1814] flex items-center gap-2"
+                className="px-4 py-2.5 bg-[#1C1814] text-white rounded-none font-mono text-[10px] font-bold uppercase hover:bg-[#D4AF37] transition-colors disabled:opacity-40 disabled:hover:bg-[#1C1814] flex items-center gap-2"
               >
                 Lancer <Play size={12} fill="currentColor" />
               </button>
@@ -196,7 +196,7 @@ export default function CohortPanel({ cohortId, cohortName, cohortColor, agents,
                 <button 
                   key={s} 
                   onClick={() => { setTopic(s); }} 
-                  className="font-mono text-[9px] px-3 py-1 bg-stone-100 border border-stone-200 text-stone-600 rounded-full hover:text-[#D4AF37] hover:border-[#D4AF37] hover:bg-white transition-all"
+                  className="font-mono text-[9px] px-3 py-1 bg-stone-100 border border-stone-200 text-stone-600 rounded-none-none hover:text-[#D4AF37] hover:border-[#D4AF37] hover:bg-white transition-all"
                 >
                   {s}
                 </button>
@@ -213,7 +213,7 @@ function AgentMessage({ message, cohortColor }: { message: Message; cohortColor:
   if (message.agentId === 'system') {
     return (
       <div className="text-center py-2 animate-in fade-in zoom-in duration-300">
-        <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-stone-500 bg-stone-100 border border-stone-200 px-4 py-1.5 rounded-full shadow-sm">
+        <span className="font-mono text-[10px] uppercase font-bold tracking-wider text-stone-500 bg-stone-100 border border-stone-200 px-4 py-1.5 rounded-none-none shadow-sm">
           {message.content}
         </span>
       </div>
@@ -222,10 +222,10 @@ function AgentMessage({ message, cohortColor }: { message: Message; cohortColor:
   
   return (
     <div className="flex gap-3 animate-in slide-in-from-bottom-2 fade-in duration-300">
-      <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 shadow-sm" style={{ backgroundColor: cohortColor + '15', border: `1px solid ${cohortColor}40` }}>
+      <div className="w-8 h-8 rounded-none-none flex items-center justify-center flex-shrink-0 mt-1 shadow-sm" style={{ backgroundColor: cohortColor + '15', border: `1px solid ${cohortColor}40` }}>
         <Cpu size={14} style={{ color: cohortColor }} />
       </div>
-      <div className="flex-1 min-w-0 bg-stone-50 border border-stone-100 rounded-lg rounded-tl-none p-3 shadow-sm">
+      <div className="flex-1 min-w-0 bg-stone-50 border border-stone-100 rounded-none-none rounded-none-none p-3 shadow-sm">
         <div className="flex items-center gap-2 mb-1.5">
           <span className="font-mono text-[10px] font-bold text-stone-800 uppercase tracking-wide">{message.agentName}</span>
           <span className="font-mono text-[8.5px] text-stone-400">
@@ -234,7 +234,7 @@ function AgentMessage({ message, cohortColor }: { message: Message; cohortColor:
         </div>
         <div className="font-sans text-sm text-stone-700 leading-relaxed">
           {message.content.split(/(@[\w-]+)/g).map((part, i) => {
-             if (part.startsWith('@')) return <span key={i} className="text-[#D4AF37] font-mono text-[11px] font-bold bg-[#D4AF37]/10 px-1 rounded">{part}</span>;
+             if (part.startsWith('@')) return <span key={i} className="text-[#D4AF37] font-mono text-[11px] font-bold bg-[#D4AF37]/10 px-1 rounded-none">{part}</span>;
              return part;
           })}
         </div>
@@ -246,11 +246,11 @@ function AgentMessage({ message, cohortColor }: { message: Message; cohortColor:
 function TypingIndicator() {
   return (
     <div className="flex items-center gap-3 py-2 animate-in fade-in duration-300">
-      <div className="w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center border border-stone-200">
+      <div className="w-8 h-8 rounded-none-none bg-stone-100 flex items-center justify-center border border-stone-200">
         <div className="flex gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: '0ms' }} />
-          <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: '150ms' }} />
-          <span className="w-1.5 h-1.5 rounded-full bg-stone-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+          <span className="w-1.5 h-1.5 rounded-none-none bg-stone-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+          <span className="w-1.5 h-1.5 rounded-none-none bg-stone-400 animate-bounce" style={{ animationDelay: '150ms' }} />
+          <span className="w-1.5 h-1.5 rounded-none-none bg-stone-400 animate-bounce" style={{ animationDelay: '300ms' }} />
         </div>
       </div>
       <span className="font-mono text-[10px] text-stone-400 uppercase tracking-widest animate-pulse">Synthèse en cours...</span>

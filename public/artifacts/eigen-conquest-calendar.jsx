@@ -1,6 +1,6 @@
 const { useState } = React;
 const C = { ivory:'#FDFAF3', cream:'#F7F3EA', gold:'#B8963E', noir:'#2C2925', t1:'#4A4640', t2:'#6B6560', t3:'#918977', div:'#D4CCBA', green:'#5B8C6E' };
-const HF = 'Cormorant Garamond, serif';
+const HF = 'Playfair Display, serif';
 const MF = 'JetBrains Mono, monospace';
 const events = [
   { month:0, day:20, label:'Paris HealthTech', type:'conference', color:C.gold, location:'Paris, France', priority:'high' },
@@ -84,7 +84,7 @@ function App() {
       ['Deadlines', deadlines.length, C.green],
       ['Countries', '7', '#8B5CF6']
     ].map(([l,v,c],i) => h('div', { key:i, onMouseEnter:()=>setHover('sum-'+i), onMouseLeave:()=>setHover(null),
-      style:{ background: hover==='sum-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:8,
+      style:{ background: hover==='sum-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0,
         padding:14, textAlign:'center', transition:'all 0.2s' }
     },
       h('div', { style:{ fontFamily:HF, fontSize:26, fontWeight:700, color:c } }, v),
@@ -97,7 +97,7 @@ function App() {
       onMouseEnter:()=>setHover('tab-'+t), onMouseLeave:()=>setHover(null),
       style:{ padding:'8px 20px', fontFamily:MF, fontSize:11, textTransform:'uppercase', letterSpacing:1.5,
         background: tab===t ? C.gold : hover==='tab-'+t ? C.cream : 'transparent',
-        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius:6, cursor:'pointer',
+        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius: 0, cursor:'pointer',
         transition:'all 0.2s' }
     }, t))
   );
@@ -110,7 +110,7 @@ function App() {
         return h('div', { key:m, onClick:()=>setSelectedMonth(isSelected ? null : i),
           onMouseEnter:()=>setHover('m-'+i), onMouseLeave:()=>setHover(null),
           style:{ background: isSelected ? C.cream : hover==='m-'+i ? C.cream : C.ivory,
-            border: isSelected ? '2px solid '+C.gold : '1px solid '+C.div, borderRadius:8,
+            border: isSelected ? '2px solid '+C.gold : '1px solid '+C.div, borderRadius: 0,
             padding:12, transition:'all 0.2s', cursor:'pointer',
             transform: hover==='m-'+i ? 'translateY(-2px)':'none',
             boxShadow: hover==='m-'+i ? '0 4px 12px rgba(0,0,0,0.08)':'none' }
@@ -118,20 +118,20 @@ function App() {
           h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:6,
             borderBottom:'1px solid '+C.div, paddingBottom:6 } },
             h('span', { style:{ fontFamily:HF, fontSize:17, fontWeight:700, color:C.noir } }, m + ' 2026'),
-            evts.length > 0 && h('span', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius:10,
+            evts.length > 0 && h('span', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius: 0,
               background:C.gold+'22', color:C.gold } }, evts.length)
           ),
           h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t3, marginBottom:6 } }, DAYS_IN[i]+' days'),
           evts.length === 0
-            ? h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3, fontStyle:'italic' } }, 'No events')
+            ? h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3,  } }, 'No events')
             : evts.map((ev, j) => h('div', { key:j, style:{ display:'flex', alignItems:'center', gap:6, marginBottom:4 } },
-                h('div', { style:{ width:7, height:7, borderRadius:'50%', background:ev.color, flexShrink:0 } }),
+                h('div', { style:{ width:7, height:7, borderRadius: 0, background:ev.color, flexShrink:0 } }),
                 h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t1, lineHeight:1.3 } }, ev.label)
               ))
         );
       })
     ),
-    selectedMonth !== null && h('div', { style:{ marginTop:16, background:C.cream, borderRadius:10, padding:16,
+    selectedMonth !== null && h('div', { style:{ marginTop:16, background:C.cream, borderRadius: 0, padding:16,
       border:'1px solid '+C.div } },
       h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:C.noir, marginBottom:12 } },
         MONTHS[selectedMonth]+' 2026 Details'),
@@ -140,12 +140,12 @@ function App() {
         : events.filter(e=>e.month===selectedMonth).map((ev,j) =>
           h('div', { key:j, style:{ display:'flex', alignItems:'center', gap:12, padding:'8px 0',
             borderBottom:'1px solid '+C.div+'66' } },
-            h('div', { style:{ width:10, height:10, borderRadius:'50%', background:ev.color, flexShrink:0 } }),
+            h('div', { style:{ width:10, height:10, borderRadius: 0, background:ev.color, flexShrink:0 } }),
             h('div', { style:{ flex:1 } },
               h('div', { style:{ fontFamily:MF, fontSize:12, color:C.noir, fontWeight:600 } }, ev.label),
               h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3 } }, ev.location+' | Day '+ev.day)
             ),
-            h('span', { style:{ fontFamily:MF, fontSize:9, padding:'2px 8px', borderRadius:10,
+            h('span', { style:{ fontFamily:MF, fontSize:9, padding:'2px 8px', borderRadius: 0,
               background:ev.color+'22', color:ev.color, textTransform:'uppercase' } }, typeLabels[ev.type]||ev.type)
           )
         )
@@ -156,18 +156,18 @@ function App() {
     ...milestones.map((ms, i) => {
       const doneCount = ms.items.filter(x=>x.done).length;
       return h('div', { key:i, onMouseEnter:()=>setHover('ms-'+i), onMouseLeave:()=>setHover(null),
-        style:{ background: hover==='ms-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:10, padding:20,
+        style:{ background: hover==='ms-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:20,
           borderLeft:'4px solid '+ms.color, transition:'all 0.2s' }
       },
         h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:12 } },
           h('span', { style:{ fontFamily:HF, fontSize:22, fontWeight:700, color:ms.color } }, ms.q + ' 2026'),
           h('span', { style:{ fontFamily:MF, fontSize:10, color:C.t3 } }, doneCount+'/'+ms.items.length+' done')
         ),
-        h('div', { style:{ height:4, background:C.div, borderRadius:2, marginBottom:12, overflow:'hidden' } },
-          h('div', { style:{ width:(doneCount/ms.items.length*100)+'%', height:'100%', background:ms.color, borderRadius:2 } })
+        h('div', { style:{ height:4, background:C.div, borderRadius: 0, marginBottom:12, overflow:'hidden' } },
+          h('div', { style:{ width:(doneCount/ms.items.length*100)+'%', height:'100%', background:ms.color, borderRadius: 0, } })
         ),
         ...ms.items.map((it, j) => h('div', { key:j, style:{ display:'flex', alignItems:'center', gap:8, marginBottom:8 } },
-          h('div', { style:{ width:16, height:16, borderRadius:4, border:'2px solid '+(it.done?C.green:C.div),
+          h('div', { style:{ width:16, height:16, borderRadius: 0, border:'2px solid '+(it.done?C.green:C.div),
             background: it.done ? C.green : 'transparent', display:'flex', alignItems:'center', justifyContent:'center',
             fontSize:10, color:'#fff', flexShrink:0 } }, it.done ? '\u2713' : ''),
           h('div', { style:{ fontFamily:MF, fontSize:11, color: it.done ? C.t3 : C.t1,
@@ -181,22 +181,22 @@ function App() {
   const prioColor = { critical:'#D4443B', high:C.gold, medium:C.t3 };
   const deadlinesView = h('div', { style:{ display:'flex', flexDirection:'column', gap:6 } },
     h('div', { style:{ display:'grid', gridTemplateColumns:'65px 1fr 80px 80px 70px', gap:8, padding:'8px 12px',
-      background:C.cream, borderRadius:6 } },
+      background:C.cream, borderRadius: 0, } },
       ...['Date','Task','Owner','Priority','Status'].map((l,i) =>
         h('div', { key:i, style:{ fontFamily:MF, fontSize:9, color:C.t3, textTransform:'uppercase', letterSpacing:1 } }, l))
     ),
     ...deadlines.map((d, i) => h('div', { key:i, onMouseEnter:()=>setHover('dl-'+i), onMouseLeave:()=>setHover(null),
       style:{ display:'grid', gridTemplateColumns:'65px 1fr 80px 80px 70px', gap:8, alignItems:'center',
         padding:'10px 12px', background: hover==='dl-'+i ? C.cream : C.ivory, border:'1px solid '+C.div,
-        borderRadius:6, transition:'all 0.2s' }
+        borderRadius: 0, transition:'all 0.2s' }
     },
       h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3 } }, d.date),
       h('div', { style:{ fontFamily:MF, fontSize:11, color:C.noir } }, d.task),
       h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t2 } }, d.owner),
-      h('div', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius:10, textAlign:'center',
+      h('div', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius: 0, textAlign:'center',
         background:(prioColor[d.priority]||C.t3)+'22', color:prioColor[d.priority]||C.t3,
         textTransform:'uppercase' } }, d.priority),
-      h('div', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius:10, textAlign:'center',
+      h('div', { style:{ fontFamily:MF, fontSize:9, padding:'2px 6px', borderRadius: 0, textAlign:'center',
         background:statusColor[d.status]+'22', color:statusColor[d.status],
         textTransform:'uppercase' } }, d.status)
     ))

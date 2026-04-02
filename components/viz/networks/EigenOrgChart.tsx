@@ -159,7 +159,7 @@ export function EigenOrgChart() {
   }, []);
 
   return (
-    <div className="w-full h-[500px] border border-div rounded overflow-hidden">
+    <div className="w-full h-[500px] border border-div rounded-none overflow-hidden">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   );

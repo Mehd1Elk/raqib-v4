@@ -14,7 +14,7 @@ export default function MineralsSupplyChain() {
             {/* Left: stage number + connector */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 48, flexShrink: 0 }}>
               <div style={{
-                width: 36, height: 36, borderRadius: '50%',
+                width: 36, height: 36, borderRadius: 0,
                 background: 'var(--bg-elevated)', border: '2px solid var(--gold)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontFamily: 'var(--font-display)', fontSize: '1rem', color: 'var(--gold)', fontWeight: 600,

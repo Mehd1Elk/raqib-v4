@@ -173,8 +173,8 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
       // Name text
       nodes.append('text')
         .attr('x', -68).attr('y', -6)
-        .attr('font-family', 'Cormorant Garamond')
-        .attr('font-size', 11).attr('font-weight', 700).attr('font-style', 'italic')
+        .attr('font-family', 'Playfair Display')
+        .attr('font-size', 11).attr('font-weight', 700)
         .attr('fill', '#1C1814')
         .text((d: any) => {
           const name = d.data.name;

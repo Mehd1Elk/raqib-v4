@@ -2,11 +2,11 @@ import { DollarSign, MapPin, Calendar } from 'lucide-react';
 
 export default function StartupCard({ data }: { data: Record<string, any> }) {
   return (
-    <div data-card className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-4">
+    <div data-card className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-4">
       <div className="flex items-center justify-between mb-2">
-        <div className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic">{data.nom || data.name || data.entreprise}</div>
+        <div className="font-[family-name:var(--font-playfair)] text-[14px] font-bold ">{data.nom || data.name || data.entreprise}</div>
         {data.valorisation && (
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] px-2 py-0.5 bg-[#B8963E15] text-[#B8963E] rounded">
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] px-2 py-0.5 bg-[#B8963E15] text-[#B8963E] rounded-none">
             {data.valorisation}
           </span>
         )}

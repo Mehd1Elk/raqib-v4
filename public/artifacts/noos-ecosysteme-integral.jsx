@@ -8,7 +8,7 @@ const C = {
   redLight: 'rgba(180,60,60,0.08)', red: '#B43C3C', blue: '#4A6FA5',
   blueLight: 'rgba(74,111,165,0.10)', purple: '#7B5EA7', purpleLight: 'rgba(123,94,167,0.10)',
 };
-const F = { heading: 'Cormorant Garamond, serif', mono: 'JetBrains Mono, monospace' };
+const F = { heading: 'Playfair Display, serif', mono: 'JetBrains Mono, monospace' };
 
 const BRIQUES = [
   {
@@ -149,7 +149,7 @@ function StatusBadge(status, color) {
     style: {
       fontFamily: F.mono, fontSize: 9, textTransform: 'uppercase',
       letterSpacing: '0.1em', color: c,
-      background: c + '18', padding: '2px 8px', borderRadius: 3,
+      background: c + '18', padding: '2px 8px', borderRadius: 0,
       display: 'inline-block',
     },
   }, status);
@@ -163,7 +163,7 @@ function FlowArrow(dir, color) {
       letterSpacing: '0.1em', width: 64, textAlign: 'center', flexShrink: 0,
       color: isIn ? C.green : C.gold,
       background: isIn ? C.greenLight : C.goldLight,
-      padding: '3px 8px', borderRadius: 3,
+      padding: '3px 8px', borderRadius: 0,
     },
   }, isIn ? 'NOOS \u2192' : '\u2190 NOOS');
 }
@@ -180,7 +180,7 @@ function EcosystemTab(props) {
     // NOOS center card
     el('div', {
       style: {
-        background: C.cream, border: '1px solid ' + C.div, borderRadius: 8,
+        background: C.cream, border: '1px solid ' + C.div, borderRadius: 0,
         padding: '28px 32px', marginBottom: 28, position: 'relative',
       },
     },
@@ -188,10 +188,10 @@ function EcosystemTab(props) {
         el('div', null,
           Label('Plateforme Centrale'),
           el('h2', {
-            style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 28, margin: '6px 0 4px', color: C.noir },
+            style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 28, margin: '6px 0 4px', color: C.noir },
           }, 'NOOS'),
           el('p', {
-            style: { fontFamily: F.heading, fontStyle: 'italic', color: C.t2, fontSize: 15, margin: 0, maxWidth: 520, lineHeight: 1.5 },
+            style: { fontFamily: F.heading,  color: C.t2, fontSize: 15, margin: 0, maxWidth: 520, lineHeight: 1.5 },
           }, 'Plateforme SaaS de sante mentale couvrant l\'ensemble du parcours de soins : telepsychiatrie, diagnostic assiste par IA, suivi patient longitudinal, et dossier medical partage interoperable.')
         ),
         el('div', { style: { textAlign: 'right' } },
@@ -238,7 +238,7 @@ function EcosystemTab(props) {
           style: {
             background: isSelected ? b.bg : (isHovered ? C.cream : '#fff'),
             border: '1px solid ' + (isSelected ? b.color : C.div),
-            borderRadius: 8, padding: '20px 22px', cursor: 'pointer',
+            borderRadius: 0, padding: '20px 22px', cursor: 'pointer',
             transition: 'all 0.25s ease',
             transform: isHovered && !isSelected ? 'translateY(-2px)' : 'none',
             boxShadow: isHovered ? '0 4px 16px rgba(0,0,0,0.06)' : 'none',
@@ -247,7 +247,7 @@ function EcosystemTab(props) {
           el('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 } },
             el('div', { style: { display: 'flex', alignItems: 'baseline', gap: 10 } },
               el('span', {
-                style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 20, color: b.color },
+                style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 20, color: b.color },
               }, b.name),
               el('span', {
                 style: { fontFamily: F.mono, fontSize: 9, color: C.t3, letterSpacing: '0.08em', textTransform: 'uppercase' },
@@ -256,7 +256,7 @@ function EcosystemTab(props) {
             StatusBadge(b.status, b.color)
           ),
           el('p', {
-            style: { fontFamily: F.heading, fontSize: 13, color: C.t2, fontStyle: 'italic', margin: '4px 0 0', lineHeight: 1.5 },
+            style: { fontFamily: F.heading, fontSize: 13, color: C.t2,  margin: '4px 0 0', lineHeight: 1.5 },
           }, b.description),
 
           // Expanded detail panel
@@ -273,7 +273,7 @@ function EcosystemTab(props) {
                     style: { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 },
                   },
                     FlowArrow(flow.direction),
-                    el('span', { style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 13, color: C.t1 } }, flow.label),
+                    el('span', { style: { fontFamily: F.heading,  fontSize: 13, color: C.t1 } }, flow.label),
                     el('span', { style: { fontFamily: F.mono, fontSize: 8, color: C.t3, marginLeft: 'auto', letterSpacing: '0.05em' } }, flow.freq)
                   );
                 })
@@ -288,7 +288,7 @@ function EcosystemTab(props) {
                   key: cap,
                   style: {
                     fontFamily: F.mono, fontSize: 9, textTransform: 'uppercase',
-                    letterSpacing: '0.08em', padding: '3px 10px', borderRadius: 3,
+                    letterSpacing: '0.08em', padding: '3px 10px', borderRadius: 0,
                     background: b.bg, color: b.color, border: '1px solid ' + b.color + '30',
                   },
                 }, cap);
@@ -334,7 +334,7 @@ function ConnexionsTab() {
   return el('div', null,
     Label('Flux de Donnees \u2014 NOOS vers Briques Eigen'),
     el('p', {
-      style: { fontFamily: F.heading, fontStyle: 'italic', color: C.t2, fontSize: 14, margin: '6px 0 20px', maxWidth: 600, lineHeight: 1.5 },
+      style: { fontFamily: F.heading,  color: C.t2, fontSize: 14, margin: '6px 0 20px', maxWidth: 600, lineHeight: 1.5 },
     }, 'Chaque brique echange des donnees avec NOOS selon des protocoles securises, conformes HDS et traces sur la blockchain BURHAN.'),
 
     BRIQUES.map(function (b) {
@@ -343,7 +343,7 @@ function ConnexionsTab() {
         key: b.id,
         style: {
           background: '#fff', border: '1px solid ' + (isExpanded ? b.color : C.div),
-          borderRadius: 8, marginBottom: 12, overflow: 'hidden', transition: 'all 0.2s',
+          borderRadius: 0, marginBottom: 12, overflow: 'hidden', transition: 'all 0.2s',
         },
       },
         // Header
@@ -358,10 +358,10 @@ function ConnexionsTab() {
         },
           el('div', { style: { display: 'flex', alignItems: 'center', gap: 14 } },
             el('div', {
-              style: { width: 8, height: 8, borderRadius: '50%', background: b.color, flexShrink: 0 },
+              style: { width: 8, height: 8, borderRadius: 0, background: b.color, flexShrink: 0 },
             }),
             el('span', {
-              style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 18, color: b.color },
+              style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 18, color: b.color },
             }, b.name),
             el('span', {
               style: { fontFamily: F.mono, fontSize: 9, color: C.t3, textTransform: 'uppercase', letterSpacing: '0.1em' },
@@ -395,7 +395,7 @@ function ConnexionsTab() {
               FlowArrow(flow.direction),
               el('div', { style: { flex: 1 } },
                 el('div', {
-                  style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 14, color: C.t1 },
+                  style: { fontFamily: F.heading,  fontSize: 14, color: C.t1 },
                 }, flow.label),
                 el('div', {
                   style: { fontFamily: F.mono, fontSize: 9, color: C.t3, marginTop: 2, letterSpacing: '0.05em' },
@@ -424,7 +424,7 @@ function ConnexionsTab() {
 
           el('div', { style: { marginTop: 14 } },
             el('p', {
-              style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 13, color: C.t2, lineHeight: 1.5, margin: 0 },
+              style: { fontFamily: F.heading,  fontSize: 13, color: C.t2, lineHeight: 1.5, margin: 0 },
             }, b.description)
           )
         )
@@ -434,11 +434,11 @@ function ConnexionsTab() {
     // Architecture note
     Divider(),
     el('div', {
-      style: { background: C.cream, borderRadius: 8, padding: '20px 24px', border: '1px solid ' + C.div },
+      style: { background: C.cream, borderRadius: 0, padding: '20px 24px', border: '1px solid ' + C.div },
     },
       Label('Architecture d\'Integration'),
       el('p', {
-        style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 13, color: C.t2, lineHeight: 1.6, margin: '8px 0 0', maxWidth: 600 },
+        style: { fontFamily: F.heading,  fontSize: 13, color: C.t2, lineHeight: 1.6, margin: '8px 0 0', maxWidth: 600 },
       }, 'Toutes les connexions passent par l\'API Gateway NOOS avec rate limiting, circuit breaker, et observabilite distribuee (OpenTelemetry). Les evenements critiques sont traces sur la blockchain BURHAN pour auditabilite.')
     )
   );
@@ -450,7 +450,7 @@ function MetricsTab() {
   return el('div', null,
     Label('Indicateurs Cles de Performance \u2014 NOOS Platform'),
     el('p', {
-      style: { fontFamily: F.heading, fontStyle: 'italic', color: C.t2, fontSize: 14, margin: '6px 0 24px', lineHeight: 1.5 },
+      style: { fontFamily: F.heading,  color: C.t2, fontSize: 14, margin: '6px 0 24px', lineHeight: 1.5 },
     }, 'Donnees consolidees sur les 12 derniers mois glissants, mises a jour en temps reel.'),
 
     // KPI grid
@@ -461,7 +461,7 @@ function MetricsTab() {
         return el('div', {
           key: i,
           style: {
-            background: '#fff', border: '1px solid ' + C.div, borderRadius: 8,
+            background: '#fff', border: '1px solid ' + C.div, borderRadius: 0,
             padding: '24px 20px', textAlign: 'center',
           },
         },
@@ -472,7 +472,7 @@ function MetricsTab() {
             style: { fontFamily: F.mono, fontSize: 9, textTransform: 'uppercase', letterSpacing: '0.1em', color: C.t1, marginTop: 10 },
           }, m.label),
           el('div', {
-            style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 12, color: C.t3, marginTop: 4 },
+            style: { fontFamily: F.heading,  fontSize: 12, color: C.t3, marginTop: 4 },
           }, m.sub)
         );
       })
@@ -496,13 +496,13 @@ function MetricsTab() {
         return el('div', {
           key: i,
           style: {
-            background: C.cream, border: '1px solid ' + C.div, borderRadius: 6,
+            background: C.cream, border: '1px solid ' + C.div, borderRadius: 0,
             padding: '18px 22px',
           },
         },
           Label(item.label),
           el('div', {
-            style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 17, color: C.noir, marginTop: 6 },
+            style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 17, color: C.noir, marginTop: 6 },
           }, item.value),
           el('div', {
             style: { fontFamily: F.mono, fontSize: 9, color: C.t3, marginTop: 6, letterSpacing: '0.03em', lineHeight: 1.5 },
@@ -527,7 +527,7 @@ function MetricsTab() {
         return el('div', {
           key: i,
           style: {
-            background: '#fff', border: '1px solid ' + C.div, borderRadius: 6,
+            background: '#fff', border: '1px solid ' + C.div, borderRadius: 0,
             padding: '14px 18px',
           },
         },
@@ -561,7 +561,7 @@ function ModulesTab() {
   return el('div', null,
     Label('Modules Internes \u2014 NOOS Platform'),
     el('p', {
-      style: { fontFamily: F.heading, fontStyle: 'italic', color: C.t2, fontSize: 14, margin: '6px 0 24px', lineHeight: 1.5 },
+      style: { fontFamily: F.heading,  color: C.t2, fontSize: 14, margin: '6px 0 24px', lineHeight: 1.5 },
     }, 'Les cinq modules proprietaires constituant le coeur fonctionnel de la plateforme NOOS de sante mentale.'),
 
     NOOS_MODULES.map(function (mod, i) {
@@ -572,7 +572,7 @@ function ModulesTab() {
         style: {
           background: isActive ? C.cream : '#fff',
           border: '1px solid ' + (isActive ? C.gold : C.div),
-          borderRadius: 8, padding: '20px 24px', marginBottom: 10,
+          borderRadius: 0, padding: '20px 24px', marginBottom: 10,
           cursor: 'pointer', transition: 'all 0.2s',
         },
       },
@@ -584,7 +584,7 @@ function ModulesTab() {
               style: { fontFamily: F.mono, fontSize: 14, color: C.gold, width: 20, textAlign: 'center' },
             }, mod.icon),
             el('span', {
-              style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 18, color: C.noir },
+              style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 18, color: C.noir },
             }, mod.name),
             StatusBadge(mod.status)
           ),
@@ -595,7 +595,7 @@ function ModulesTab() {
         isActive && el('div', { style: { marginTop: 14 } },
           Divider(),
           el('p', {
-            style: { fontFamily: F.heading, fontStyle: 'italic', fontSize: 14, color: C.t2, lineHeight: 1.6, margin: '0 0 12px' },
+            style: { fontFamily: F.heading,  fontSize: 14, color: C.t2, lineHeight: 1.6, margin: '0 0 12px' },
           }, mod.desc),
           el('div', { style: { display: 'flex', gap: 24, flexWrap: 'wrap', alignItems: 'flex-start' } },
             el('div', null,
@@ -630,7 +630,7 @@ function ModulesTab() {
           key: tech,
           style: {
             fontFamily: F.mono, fontSize: 9, textTransform: 'uppercase',
-            letterSpacing: '0.08em', padding: '4px 12px', borderRadius: 3,
+            letterSpacing: '0.08em', padding: '4px 12px', borderRadius: 0,
             background: C.cream, color: C.t1, border: '1px solid ' + C.div,
           },
         }, tech);
@@ -650,7 +650,7 @@ function ModulesTab() {
             style: { marginBottom: 14 },
           },
             el('div', {
-              style: { fontFamily: F.heading, fontWeight: 700, fontStyle: 'italic', fontSize: 15, color: C.gold, marginBottom: 6 },
+              style: { fontFamily: F.heading, fontWeight: 700,  fontSize: 15, color: C.gold, marginBottom: 6 },
             }, quarter.q + ' 2026'),
             quarter.items.map(function (item, ii) {
               return el('div', {
@@ -693,14 +693,14 @@ function App() {
       Label('Eigen Holding / Sante Mentale'),
       el('h1', {
         style: {
-          fontFamily: F.heading, fontStyle: 'italic', fontWeight: 700,
+          fontFamily: F.heading,  fontWeight: 700,
           fontSize: 36, margin: '8px 0 4px', color: C.noir, lineHeight: 1.15,
         },
       }, 'NOOS \u2014 Ecosysteme Integral'),
       el('p', {
         style: {
           fontFamily: F.heading, fontSize: 16, color: C.t2,
-          fontStyle: 'italic', margin: '4px 0 16px', maxWidth: 620, lineHeight: 1.5,
+           margin: '4px 0 16px', maxWidth: 620, lineHeight: 1.5,
         },
       }, 'Vue 360\u00b0 de la plateforme SaaS de sante mentale et de ses connexions aux cinq briques de l\'ecosysteme Eigen Holding.'),
 

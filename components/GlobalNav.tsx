@@ -18,16 +18,16 @@ export function GlobalNav() {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="font-[family-name:var(--font-jetbrains)] text-[9px] text-tm border border-div rounded px-3 py-1 hover:border-gold hover:text-gold transition"
+        className="font-[family-name:var(--font-jetbrains)] text-[9px] text-tm border border-div rounded-none px-3 py-1 hover:border-gold hover:text-gold transition"
       >
         MENU ▾
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-[280px] bg-ivory border border-div rounded-lg shadow-lg z-50 py-2">
+        <div className="absolute right-0 top-full mt-1 w-[280px] bg-ivory border border-div rounded-none-none shadow-lg z-50 py-2">
           <div className="px-3 py-1 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">COCKPIT</div>
-          <a href="/nexus" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-[#D4B662]">Nexus &mdash; Carte ecosysteme</a>
-          <a href="/eigen" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-noir">EIGEN Strategique</a>
+          <a href="/nexus" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-playfair)] text-[13px]  font-bold text-[#D4B662]">Nexus &mdash; Carte ecosysteme</a>
+          <a href="/eigen" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-playfair)] text-[13px]  font-bold text-noir">EIGEN Strategique</a>
           <a href="/eigen?tab=agents" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">255 Agents</a>
           <a href="/eigen?tab=board" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Board Meeting</a>
           <a href="/eigen?tab=gallery" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Galerie 59 docs</a>
@@ -43,10 +43,10 @@ export function GlobalNav() {
           <a href="/dashboards/london" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">London (ATS mai)</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">INTELLIGENCE</div>
-          <a href="/corridor" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#C9A96E' }}>Corridor Intelligence — 49 pays</a>
+          <a href="/corridor" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-playfair)] text-[13px]  font-bold" style={{ color: '#C9A96E' }}>Corridor Intelligence — 49 pays</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">OUTILS</div>
-          <a href="/data" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-noir">Data Viewer &mdash; 1100 couches</a>
+          <a href="/data" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-playfair)] text-[13px]  font-bold text-noir">Data Viewer &mdash; 1100 couches</a>
           <a href="/stats" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Stats & Qualité</a>
           <a href="/upload" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Importer datasets</a>
           <a href="/vault" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">Vault — 111 composants</a>

@@ -101,16 +101,16 @@ export function EntityDashboardClient({ entityId, entityColor, recentEntries, to
           </div>
           <EigenOrgChart />
           <div className="grid grid-cols-3 gap-4 mt-4">
-            <div className="bg-ivory border border-div rounded p-4 text-center">
-              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">44</div>
+            <div className="bg-ivory border border-div rounded-none p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-playfair)] font-bold  text-noir">44</div>
               <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">DOCUMENTS .DOCX</div>
             </div>
-            <div className="bg-ivory border border-div rounded p-4 text-center">
-              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">15</div>
+            <div className="bg-ivory border border-div rounded-none p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-playfair)] font-bold  text-noir">15</div>
               <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">INTERFACES .JSX</div>
             </div>
-            <div className="bg-ivory border border-div rounded p-4 text-center">
-              <div className="text-[22px] font-[family-name:var(--font-cormorant)] font-bold italic text-noir">100</div>
+            <div className="bg-ivory border border-div rounded-none p-4 text-center">
+              <div className="text-[22px] font-[family-name:var(--font-playfair)] font-bold  text-noir">100</div>
               <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px]">COUCHES STRATEGIQUES</div>
             </div>
           </div>
@@ -157,7 +157,7 @@ export function EntityDashboardClient({ entityId, entityColor, recentEntries, to
           <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] mb-2 font-bold">
             TOP 5 COUCHES LES PLUS PEUPLÉES
           </div>
-          <div className="bg-ivory border border-div rounded overflow-hidden">
+          <div className="bg-ivory border border-div rounded-none overflow-hidden">
             {topLayers.length === 0 ? (
               <div className="p-6 text-center text-[10px] font-[family-name:var(--font-noto)] text-tm">Aucune couche peuplée.</div>
             ) : (
@@ -170,8 +170,8 @@ export function EntityDashboardClient({ entityId, entityColor, recentEntries, to
                       <span className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3 w-12 shrink-0">{l.id}</span>
                       <div className="flex-1 min-w-0">
                         <div className="text-[10px] font-[family-name:var(--font-noto)] text-t1 truncate">{l.name}</div>
-                        <div className="mt-1 h-1 bg-parchment rounded-full overflow-hidden">
-                          <div className="h-full rounded-full" style={{ width: `${Math.min(pct, 100)}%`, background: barColor }} />
+                        <div className="mt-1 h-1 bg-parchment rounded-none-none overflow-hidden">
+                          <div className="h-full rounded-none-none" style={{ width: `${Math.min(pct, 100)}%`, background: barColor }} />
                         </div>
                       </div>
                       <span className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm shrink-0">

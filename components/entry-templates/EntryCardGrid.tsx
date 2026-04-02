@@ -47,7 +47,7 @@ export function EntryCardGrid({ layerId, entries }: EntryCardGridProps) {
                 setEntry({ id: entry.id, layer_id: layerId, data: entry.data });
                 setShowWormhole(true);
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#7B5EA7] text-[#7B5EA7] rounded font-['JetBrains_Mono'] text-[8px] hover:bg-[#7B5EA7] hover:text-white transition shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-[#7B5EA7] text-[#7B5EA7] rounded-none font-['JetBrains_Mono'] text-[8px] hover:bg-[#7B5EA7] hover:text-white transition shadow-sm"
             >
               <Link2 size={12} strokeWidth={1.5} /> CONNEXIONS
             </button>

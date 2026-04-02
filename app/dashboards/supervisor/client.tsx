@@ -51,7 +51,7 @@ export function SupervisorClient({ agentRunEntries, alerts }: SupervisorClientPr
       </section>
 
       {/* Rangée 5 — Alertes */}
-      <section className="bg-ivory border border-div rounded overflow-hidden">
+      <section className="bg-ivory border border-div rounded-none overflow-hidden">
         <div className="px-4 py-3 border-b border-div">
           <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-ruby tracking-[1px] font-bold">
             ALERTES EN COURS
@@ -65,8 +65,8 @@ export function SupervisorClient({ agentRunEntries, alerts }: SupervisorClientPr
           <div className="divide-y divide-div-l">
             {alerts.map((a, i) => (
               <div key={i} className="px-4 py-2.5 flex items-center gap-4 hover:bg-cream/50">
-                <span className="w-1.5 h-1.5 rounded-full bg-ruby shrink-0" />
-                <span className="text-[10px] font-[family-name:var(--font-cormorant)] font-bold italic text-t1 w-24">{a.entity}</span>
+                <span className="w-1.5 h-1.5 rounded-none-none bg-ruby shrink-0" />
+                <span className="text-[10px] font-[family-name:var(--font-playfair)] font-bold  text-t1 w-24">{a.entity}</span>
                 <span className="text-[10px] font-[family-name:var(--font-noto)] text-t2 flex-1 truncate">{a.layer}</span>
                 <span className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm">Q:{a.quality}</span>
                 <span className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm">F:{a.freshness}</span>

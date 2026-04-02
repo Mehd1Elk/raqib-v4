@@ -30,7 +30,7 @@ function EmptyQueue() {
   return (
     <div className="max-w-2xl mx-auto py-24 text-center">
       <Inbox size={32} className="mx-auto text-[#D4CCBA] mb-4" />
-      <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic text-[#918977]">
+      <div className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  text-[#918977]">
         Aucune décision en attente
       </div>
       <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mt-2">
@@ -101,19 +101,19 @@ export function DecisionQueue() {
       </div>
 
       {/* Decision Card */}
-      <div className={`${style.bg} border ${style.border} rounded-lg p-8`}>
+      <div className={`${style.bg} border ${style.border} rounded-none-none p-8`}>
         <div className="flex items-center justify-between mb-6">
           {current.entity && (
-            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 bg-[#918977] text-white rounded uppercase">
+            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 bg-[#918977] text-white rounded-none uppercase">
               {current.entity}
             </span>
           )}
-          <span className={`font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 ${style.badge} text-white rounded`}>
+          <span className={`font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 ${style.badge} text-white rounded-none`}>
             {current.urgency.toUpperCase()}
           </span>
         </div>
 
-        <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] mb-4">
+        <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-4">
           {current.question}
         </h2>
 
@@ -129,7 +129,7 @@ export function DecisionQueue() {
             <button
               key={i}
               onClick={() => decide(current.id, option.label)}
-              className={`flex-1 py-3 rounded-lg font-[family-name:var(--font-jetbrains)] text-[10px] transition ${
+              className={`flex-1 py-3 rounded-none-none font-[family-name:var(--font-jetbrains)] text-[10px] transition ${
                 i === 0
                   ? 'bg-[#B8963E] text-white hover:bg-[#9A7B32]'
                   : 'border border-[rgba(60,52,40,0.10)] text-[#918977] hover:border-[#B8963E] hover:text-[#B8963E]'

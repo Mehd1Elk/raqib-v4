@@ -24,19 +24,19 @@ export function FocusSelector({ onSelect, onClose }: { onSelect: (mode: FocusMod
         ref={ref}
         tabIndex={-1}
         onClick={e => e.stopPropagation()}
-        className="bg-[#FDFAF3] rounded-lg w-[400px] p-6 shadow-xl"
+        className="bg-[#FDFAF3] rounded-none-none w-[400px] p-6 shadow-xl"
       >
-        <h2 className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic mb-4 text-[#1C1814]">Mode Focus</h2>
+        <h2 className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  mb-4 text-[#1C1814]">Mode Focus</h2>
         <div className="space-y-2">
           {FOCUS_MODES.map(mode => (
             <button
               key={mode.id}
               onClick={() => onSelect(mode)}
-              className="w-full text-left p-3 rounded-lg border border-[rgba(60,52,40,0.10)] hover:border-[#B8963E] transition flex items-center gap-3"
+              className="w-full text-left p-3 rounded-none-none border border-[rgba(60,52,40,0.10)] hover:border-[#B8963E] transition flex items-center gap-3"
             >
-              <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: mode.color }} />
+              <div className="w-3 h-3 rounded-none-none shrink-0" style={{ backgroundColor: mode.color }} />
               <div className="flex-1 min-w-0">
-                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814]">{mode.label}</div>
+                <div className="font-[family-name:var(--font-playfair)] text-[13px] font-bold  text-[#1C1814]">{mode.label}</div>
                 <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{mode.description}</div>
               </div>
               {mode.deadline && (

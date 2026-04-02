@@ -26,11 +26,11 @@ function App() {
   return React.createElement('div', { style: { minHeight: '100vh', background: C.cream, fontFamily: 'system-ui, -apple-system, sans-serif' } },
     React.createElement('div', { style: { background: C.ivory, borderBottom: '1px solid ' + C.div, padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
       React.createElement('div', null,
-        React.createElement('div', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 24, fontWeight: 700, fontStyle: 'italic', color: C.noir } }, 'BURHAN'),
+        React.createElement('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: 24, fontWeight: 700,  color: C.noir } }, 'BURHAN'),
         React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.t3, letterSpacing: '2px', marginTop: 2 } }, 'BLOCKCHAIN VERIFICATION \u00B7 6 PORTAILS METIER')
       ),
       React.createElement('div', { style: { display: 'flex', gap: 8, alignItems: 'center' } },
-        React.createElement('div', { style: { width: 6, height: 6, borderRadius: '50%', background: C.green } }),
+        React.createElement('div', { style: { width: 6, height: 6, borderRadius: 0, background: C.green } }),
         React.createElement('span', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.green } }, 'ALL PORTALS ONLINE')
       )
     ),
@@ -39,11 +39,11 @@ function App() {
       React.createElement('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 } },
         PORTALS.map(function(portal) {
           var isSel = selId === portal.id;
-          return React.createElement('div', { key: portal.id, onClick: function() { setSelId(portal.id); setScreen(0); }, style: { background: C.ivory, border: '2px solid ' + (isSel ? portal.color : C.div), borderRadius: 12, padding: 16, cursor: 'pointer', transition: 'all 0.3s', boxShadow: isSel ? '0 4px 16px ' + portal.color + '22' : 'none', transform: isSel ? 'translateY(-2px)' : 'none' } },
+          return React.createElement('div', { key: portal.id, onClick: function() { setSelId(portal.id); setScreen(0); }, style: { background: C.ivory, border: '2px solid ' + (isSel ? portal.color : C.div), borderRadius: 0, padding: 16, cursor: 'pointer', transition: 'all 0.3s', boxShadow: isSel ? '0 4px 16px ' + portal.color + '22' : 'none', transform: isSel ? 'translateY(-2px)' : 'none' } },
             React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 } },
               React.createElement('span', { style: { fontSize: 28 } }, portal.icon),
               React.createElement('div', null,
-                React.createElement('div', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 14, fontWeight: 700, color: C.noir } }, portal.name),
+                React.createElement('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: 14, fontWeight: 700, color: C.noir } }, portal.name),
                 React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 8, color: portal.color, letterSpacing: '1px' } }, portal.id.toUpperCase())
               )
             ),
@@ -52,17 +52,17 @@ function App() {
         })
       ),
 
-      p && React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 12, overflow: 'hidden' } },
+      p && React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 0, overflow: 'hidden' } },
         React.createElement('div', { style: { background: p.color + '10', borderBottom: '1px solid ' + C.div, padding: '16px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
           React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 12 } },
             React.createElement('span', { style: { fontSize: 32 } }, p.icon),
             React.createElement('div', null,
-              React.createElement('div', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.noir } }, p.name),
+              React.createElement('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700,  color: C.noir } }, p.name),
               React.createElement('div', { style: { fontSize: 12, color: C.t2, marginTop: 2 } }, p.desc)
             )
           ),
           React.createElement('div', { style: { display: 'flex', gap: 4, alignItems: 'center' } },
-            React.createElement('div', { style: { width: 6, height: 6, borderRadius: '50%', background: C.green } }),
+            React.createElement('div', { style: { width: 6, height: 6, borderRadius: 0, background: C.green } }),
             React.createElement('span', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 8, color: C.green } }, 'ONLINE')
           )
         ),
@@ -80,12 +80,12 @@ function App() {
           })
         ),
         React.createElement('div', { style: { padding: 20 } },
-          React.createElement('div', { style: { background: C.cream, borderRadius: 8, border: '1px solid ' + C.div, padding: 16 } },
-            React.createElement('div', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 16, fontWeight: 700, color: C.noir, marginBottom: 12 } }, p.screens[screen]),
+          React.createElement('div', { style: { background: C.cream, borderRadius: 0, border: '1px solid ' + C.div, padding: 16 } },
+            React.createElement('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: 16, fontWeight: 700, color: C.noir, marginBottom: 12 } }, p.screens[screen]),
             React.createElement('div', { style: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 } },
               p.features.map(function(f) {
-                return React.createElement('div', { key: f, style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 6, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 6 } },
-                  React.createElement('div', { style: { width: 4, height: 4, borderRadius: '50%', background: p.color, flexShrink: 0 } }),
+                return React.createElement('div', { key: f, style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 0, padding: '8px 10px', display: 'flex', alignItems: 'center', gap: 6 } },
+                  React.createElement('div', { style: { width: 4, height: 4, borderRadius: 0, background: p.color, flexShrink: 0 } }),
                   React.createElement('span', { style: { fontSize: 10, color: C.t1 } }, f)
                 );
               })

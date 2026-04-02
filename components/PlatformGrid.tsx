@@ -9,7 +9,7 @@ interface PlatformGridProps {
 
 export function PlatformGrid({ entity, stats }: PlatformGridProps) {
   return (
-    <div className="bg-ivory border border-div rounded p-4">
+    <div className="bg-ivory border border-div rounded-none p-4">
       <div
         className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-3 font-bold"
         style={{ color: '#B8963E' }}
@@ -23,19 +23,19 @@ export function PlatformGrid({ entity, stats }: PlatformGridProps) {
           return (
             <div
               key={k}
-              className="p-2 px-3 rounded"
+              className="p-4 rounded-none"
               style={{
                 background: `${p.color}06`,
-                border: `1px solid ${p.color}15`,
+                border: `0.5px solid rgba(0,0,0,0.08)`,
               }}
             >
               <div
-                className="text-[10px] font-[family-name:var(--font-jetbrains)] font-bold"
+                className="text-[12px] font-[family-name:var(--font-jetbrains)] font-semibold"
                 style={{ color: p.color }}
               >
                 {p.name}
               </div>
-              <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3 mt-0.5">
+              <div className="text-[11px] font-[family-name:var(--font-geist)] text-t3 mt-0.5">
                 {v.count} couches · {fmtNum(v.rows)} entrées
               </div>
             </div>

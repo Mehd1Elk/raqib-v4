@@ -93,7 +93,7 @@ export function PinMap({
   }, [entries, externalData, titleField, subtitleField, latField, lngField, entityId]);
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[DEFAULT_CENTER.latitude, DEFAULT_CENTER.longitude]}
         zoom={DEFAULT_ZOOM + 1}
@@ -116,7 +116,7 @@ export function PinMap({
           >
             <Popup>
               <div className="min-w-[180px] max-w-[280px]">
-                <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-cormorant)]">
+                <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-playfair)]">
                   {pin.title}
                 </h4>
                 {pin.subtitle && (
@@ -145,7 +145,7 @@ export function PinMap({
       </MapContainer>
 
       {/* Counter */}
-      <div className="absolute top-3 right-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-2.5 py-1.5">
+      <div className="absolute top-3 right-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-2.5 py-1.5">
         <span className="text-[10px] text-t3 font-[family-name:var(--font-jetbrains)]">
           {pins.length} marqueur{pins.length !== 1 ? 's' : ''}
         </span>
@@ -153,7 +153,7 @@ export function PinMap({
 
       {loading && (
         <div className="absolute inset-0 z-[1000] bg-ivory/50 flex items-center justify-center">
-          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-none-none animate-spin" />
         </div>
       )}
     </div>

@@ -43,7 +43,7 @@ export function SynergyMatrix() {
 
     const tooltip = d3.select(containerRef.current)
       .append('div')
-      .attr('class', 'tooltip bg-[#F7F3EA] border border-[#918977] p-2 text-[10px] text-[#2d2d2d] font-[family-name:var(--font-jetbrains)] absolute opacity-0 pointer-events-none rounded shadow-md z-10');
+      .attr('class', 'tooltip bg-[#F7F3EA] border border-[#918977] p-2 text-[10px] text-[#2d2d2d] font-[family-name:var(--font-jetbrains)] absolute opacity-0 pointer-events-none rounded-none shadow-md z-10');
 
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -107,7 +107,7 @@ export function SynergyMatrix() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[600px] border border-div rounded overflow-hidden">
+    <div ref={containerRef} className="relative w-full h-[600px] border border-div rounded-none overflow-hidden">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   );

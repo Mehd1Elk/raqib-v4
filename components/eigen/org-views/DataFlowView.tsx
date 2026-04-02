@@ -171,8 +171,8 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
       ng.append('text')
         .attr('x', node.w / 2).attr('y', node.h / 2 - 4)
         .attr('text-anchor', 'middle')
-        .attr('font-family', 'Cormorant Garamond')
-        .attr('font-size', 12).attr('font-weight', 700).attr('font-style', 'italic')
+        .attr('font-family', 'Playfair Display')
+        .attr('font-size', 12).attr('font-weight', 700)
         .attr('fill', '#1C1814')
         .text(node.name.split('(')[0].trim());
 

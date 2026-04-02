@@ -1,6 +1,6 @@
 const { useState } = React;
 const C = { ivory:'#FDFAF3', cream:'#F7F3EA', gold:'#B8963E', noir:'#2C2925', t1:'#4A4640', t2:'#6B6560', t3:'#918977', div:'#D4CCBA', green:'#5B8C6E' };
-const HF = 'Cormorant Garamond, serif';
+const HF = 'Playfair Display, serif';
 const MF = 'JetBrains Mono, monospace';
 const overview = {
   booth:'36m\u00B2 Premium Stand - Hall 7, Position A12', budget:'120,000 EUR',
@@ -59,7 +59,7 @@ function App() {
     ...TABS.map(t => h('button', { key:t, onClick:()=>setTab(t), onMouseEnter:()=>setHover('tab-'+t), onMouseLeave:()=>setHover(null),
       style:{ padding:'8px 20px', fontFamily:MF, fontSize:11, textTransform:'uppercase', letterSpacing:1.5,
         background: tab===t ? C.gold : hover==='tab-'+t ? C.cream : 'transparent',
-        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius:6, cursor:'pointer', transition:'all 0.2s' }
+        color: tab===t ? C.ivory : C.t1, border:'1px solid '+C.div, borderRadius: 0, cursor:'pointer', transition:'all 0.2s' }
     }, t))
   );
 
@@ -67,26 +67,26 @@ function App() {
   const overviewView = h('div', null,
     h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:12, marginBottom:20 } },
       ...kpiCards.map(([l,v,c],i) => h('div', { key:i, onMouseEnter:()=>setHover('kpi-'+i), onMouseLeave:()=>setHover(null),
-        style:{ background: hover==='kpi-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:10, padding:16, textAlign:'center',
+        style:{ background: hover==='kpi-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:16, textAlign:'center',
           transition:'all 0.2s', transform: hover==='kpi-'+i ? 'translateY(-2px)':'none' }
       },
         h('div', { style:{ fontFamily:HF, fontSize:24, fontWeight:700, color:c } }, v),
         h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t3, textTransform:'uppercase', letterSpacing:1 } }, l)
       ))
     ),
-    h('div', { style:{ background:C.cream, borderRadius:10, padding:16, marginBottom:16 } },
+    h('div', { style:{ background:C.cream, borderRadius: 0, padding:16, marginBottom:16 } },
       h('div', { style:{ fontFamily:HF, fontSize:18, fontWeight:700, color:C.noir, marginBottom:12 } }, 'Meetings Breakdown'),
       ...meetings.map((m,i) => h('div', { key:i, style:{ display:'flex', alignItems:'center', gap:10, marginBottom:8 } },
         h('div', { style:{ fontFamily:MF, fontSize:11, color:C.t1, width:120 } }, m.category),
-        h('div', { style:{ flex:1, height:8, background:C.div, borderRadius:4, overflow:'hidden' } },
-          h('div', { style:{ width:(m.confirmed/m.count*100)+'%', height:'100%', background:C.green, borderRadius:4 } })
+        h('div', { style:{ flex:1, height:8, background:C.div, borderRadius: 0, overflow:'hidden' } },
+          h('div', { style:{ width:(m.confirmed/m.count*100)+'%', height:'100%', background:C.green, borderRadius: 0, } })
         ),
         h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3, width:60, textAlign:'right' } }, m.confirmed+'/'+m.count)
       ))
     ),
     h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:12 } },
       ...Object.entries(overview).map(([k,v],i) => h('div', { key:i, style:{ display:'flex', justifyContent:'space-between', padding:'10px 14px',
-        background:C.ivory, border:'1px solid '+C.div, borderRadius:6 } },
+        background:C.ivory, border:'1px solid '+C.div, borderRadius: 0, } },
         h('span', { style:{ fontFamily:MF, fontSize:11, color:C.t3, textTransform:'uppercase' } }, k.replace(/_/g,' ')),
         h('span', { style:{ fontFamily:MF, fontSize:11, color:C.noir, fontWeight:600 } }, String(v))
       ))
@@ -97,7 +97,7 @@ function App() {
   const demosView = h('div', { style:{ display:'flex', flexDirection:'column', gap:10 } },
     ...demos.map((d,i) => h('div', { key:i, onClick:()=>setExpandedDemo(expandedDemo===i?null:i),
       onMouseEnter:()=>setHover('d-'+i), onMouseLeave:()=>setHover(null),
-      style:{ background: hover==='d-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:10, padding:16,
+      style:{ background: hover==='d-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:16,
         cursor:'pointer', transition:'all 0.2s', borderLeft:'4px solid '+(statusC[d.status]||C.t3) }
     },
       h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center' } },
@@ -106,7 +106,7 @@ function App() {
           h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t3 } }, d.duration+' | '+d.tech+' | Lead: '+d.lead)
         ),
         h('div', { style:{ display:'flex', alignItems:'center', gap:8 } },
-          h('div', { style:{ fontFamily:MF, fontSize:9, padding:'3px 10px', borderRadius:12,
+          h('div', { style:{ fontFamily:MF, fontSize:9, padding:'3px 10px', borderRadius: 0,
             background:(statusC[d.status]||C.t3)+'22', color:statusC[d.status]||C.t3, textTransform:'uppercase' } }, d.status),
           h('span', { style:{ fontFamily:MF, fontSize:14, color:C.t3, transition:'transform 0.2s',
             transform: expandedDemo===i ? 'rotate(90deg)':'none' } }, '\u25B6')
@@ -119,14 +119,14 @@ function App() {
   const prioColor = { critical:'#D4443B', high:C.gold, medium:C.t3 };
   const teamView = h('div', { style:{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:10 } },
     ...team.map((t,i) => h('div', { key:i, onMouseEnter:()=>setHover('t-'+i), onMouseLeave:()=>setHover(null),
-      style:{ background: hover==='t-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:8, padding:14, transition:'all 0.2s',
+      style:{ background: hover==='t-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:14, transition:'all 0.2s',
         transform: hover==='t-'+i ? 'translateY(-2px)':'none', borderTop:'3px solid '+(prioColor[t.priority]||C.t3) }
     },
       h('div', { style:{ fontFamily:HF, fontSize:14, fontWeight:700, color:C.noir, marginBottom:4 } }, t.name),
       h('div', { style:{ fontFamily:MF, fontSize:10, color:C.t2, marginBottom:6, lineHeight:1.4 } }, t.role),
       h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center' } },
         h('span', { style:{ fontFamily:MF, fontSize:9, color:C.gold } }, t.days),
-        h('span', { style:{ fontFamily:MF, fontSize:8, padding:'2px 6px', borderRadius:8,
+        h('span', { style:{ fontFamily:MF, fontSize:8, padding:'2px 6px', borderRadius: 0,
           background:(prioColor[t.priority])+'22', color:prioColor[t.priority], textTransform:'uppercase' } }, t.priority)
       )
     ))
@@ -137,7 +137,7 @@ function App() {
   const logisticsView = h('div', null,
     h('div', { style:{ display:'flex', gap:12, marginBottom:16 } },
       ...[ ['Total Budget',totalBudget.toLocaleString()+' EUR',C.gold], ['Avg Readiness',avgStatus+'%',avgStatus>60?C.green:C.gold], ['Categories','5 tracks','#3B82F6'] ].map(([l,v,c],i) =>
-        h('div', { key:i, style:{ flex:1, background:C.cream, borderRadius:8, padding:12, textAlign:'center' } },
+        h('div', { key:i, style:{ flex:1, background:C.cream, borderRadius: 0, padding:12, textAlign:'center' } },
           h('div', { style:{ fontFamily:HF, fontSize:20, fontWeight:700, color:c } }, v),
           h('div', { style:{ fontFamily:MF, fontSize:9, color:C.t3, textTransform:'uppercase' } }, l)
         )
@@ -145,18 +145,18 @@ function App() {
     ),
     h('div', { style:{ display:'flex', flexDirection:'column', gap:14 } },
       ...logistics.map((l,i) => h('div', { key:i, onMouseEnter:()=>setHover('l-'+i), onMouseLeave:()=>setHover(null),
-        style:{ background: hover==='l-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius:10, padding:18, transition:'all 0.2s' }
+        style:{ background: hover==='l-'+i ? C.cream : C.ivory, border:'1px solid '+C.div, borderRadius: 0, padding:18, transition:'all 0.2s' }
       },
         h('div', { style:{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:10 } },
           h('div', { style:{ fontFamily:HF, fontSize:19, fontWeight:700, color:C.noir } }, l.category),
           h('div', { style:{ fontFamily:MF, fontSize:12, color:C.gold, fontWeight:600 } }, l.budget.toLocaleString()+' EUR')
         ),
         h('div', { style:{ display:'flex', flexWrap:'wrap', gap:6, marginBottom:10 } },
-          ...l.items.map((it,j) => h('span', { key:j, style:{ fontFamily:MF, fontSize:9, padding:'3px 8px', borderRadius:4, background:C.div+'88', color:C.t1 } }, it))
+          ...l.items.map((it,j) => h('span', { key:j, style:{ fontFamily:MF, fontSize:9, padding:'3px 8px', borderRadius: 0, background:C.div+'88', color:C.t1 } }, it))
         ),
         h('div', { style:{ display:'flex', alignItems:'center', gap:8 } },
-          h('div', { style:{ flex:1, height:6, background:C.div, borderRadius:3, overflow:'hidden' } },
-            h('div', { style:{ width:l.status+'%', height:'100%', background: l.status>=75 ? C.green : l.status>=50 ? C.gold : '#3B82F6', borderRadius:3 } })
+          h('div', { style:{ flex:1, height:6, background:C.div, borderRadius: 0, overflow:'hidden' } },
+            h('div', { style:{ width:l.status+'%', height:'100%', background: l.status>=75 ? C.green : l.status>=50 ? C.gold : '#3B82F6', borderRadius: 0, } })
           ),
           h('span', { style:{ fontFamily:MF, fontSize:10, color:C.t3, width:40, textAlign:'right' } }, l.status+'%')
         )

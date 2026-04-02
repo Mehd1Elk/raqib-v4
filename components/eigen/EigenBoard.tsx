@@ -384,7 +384,7 @@ export default function EigenBoard() {
         <div className="p-6 border-b border-white/5 no-print">
           <div className="flex justify-between items-start mb-2">
             <div>
-              <h1 className="text-xl font-bold italic text-[#B8963E] font-serif" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+              <h1 className="text-xl font-bold  text-[#B8963E] font-serif" style={{ fontFamily: 'Playfair Display, serif' }}>
                 COMITÉ EXÉCUTIF EIGEN
               </h1>
               <p className="text-xs text-slate-400 mt-1">
@@ -392,10 +392,10 @@ export default function EigenBoard() {
               </p>
             </div>
             <div className="flex gap-2">
-              <button onClick={() => setShowHistory(!showHistory)} className="p-2 bg-white/5 hover:bg-white/10 rounded-md transition-colors" title="Historique">
+              <button onClick={() => setShowHistory(!showHistory)} className="p-2 bg-white/5 hover:bg-white/10 rounded-none-none transition-colors" title="Historique">
                 <History size={16} className="text-[#B8963E]" />
               </button>
-              <button onClick={resetMeeting} className="p-2 bg-[#B8963E]/10 hover:bg-[#B8963E]/20 text-[#B8963E] rounded-md transition-colors" title="Nouvelle Réunion">
+              <button onClick={resetMeeting} className="p-2 bg-[#B8963E]/10 hover:bg-[#B8963E]/20 text-[#B8963E] rounded-none-none transition-colors" title="Nouvelle Réunion">
                 <Plus size={16} />
               </button>
             </div>
@@ -411,7 +411,7 @@ export default function EigenBoard() {
                 <div 
                   key={m.id} 
                   onClick={() => loadPastMeeting(m)}
-                  className="p-3 rounded bg-white/5 hover:bg-white/10 cursor-pointer border border-transparent hover:border-[#B8963E]/30 transition-all"
+                  className="p-3 rounded-none bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer border border-[rgba(255,255,255,0.10)] transition-all"
                 >
                   <p className="text-xs text-[#B8963E] mb-1">{new Date(m.date).toLocaleDateString()} {new Date(m.date).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
                   <p className="text-sm font-medium text-slate-200 line-clamp-2">{m.question}</p>
@@ -440,8 +440,8 @@ export default function EigenBoard() {
               })}
 
               <circle cx={svgCenter.x} cy={svgCenter.y} r={35} fill="#13141b" stroke="#333" strokeWidth="1" />
-              <text x={svgCenter.x} y={svgCenter.y} textAnchor="middle" fill={isMeetingActive ? "#B8963E" : "#666"} className="text-[10px] font-medium" dy="-4">STATUT</text>
-              <text x={svgCenter.x} y={svgCenter.y} textAnchor="middle" fill={isMeetingActive ? "#fff" : "#444"} className="text-xs font-serif italic" dy="12">
+              <text x={svgCenter.x} y={svgCenter.y} textAnchor="middle" fill={isMeetingActive ? "#FFFFFF" : "rgba(255,255,255,0.45)"} className="text-[9px] font-medium" style={{ fontFamily: 'JetBrains Mono, monospace' }} dy="-4">STATUT</text>
+              <text x={svgCenter.x} y={svgCenter.y} textAnchor="middle" fill={isMeetingActive ? "#FFFFFF" : "rgba(255,255,255,0.70)"} className="text-[9px] font-normal" style={{ fontFamily: 'JetBrains Mono, monospace' }} dy="12">
                 {isMeetingActive ? 'En réflexion' : (messages.length > 0 ? 'Conclu' : 'Prêt')}
               </text>
 
@@ -455,7 +455,7 @@ export default function EigenBoard() {
                     <circle 
                       cx={pos.x} cy={pos.y} r={24} 
                       fill={isActive ? pos.agent.color : '#0c0d12'} 
-                      stroke={isActive ? '#E5D396' : pos.agent.color}
+                      stroke={isActive ? '#FFFFFF' : 'rgba(255,255,255,0.20)'}
                       strokeWidth={isActive ? 2 : 1}
                       className={isActive ? 'drop-shadow-[0_0_15px_rgba(184,150,62,0.5)]' : 'opacity-70'}
                       style={{ transition: 'all 0.4s ease' }}
@@ -466,8 +466,9 @@ export default function EigenBoard() {
                     <text 
                       x={pos.x} y={pos.y + 38} 
                       textAnchor="middle" 
-                      fill={isActive ? '#fff' : '#666'} 
-                      className="text-[10px] uppercase font-bold tracking-wider"
+                      fill={isActive ? '#FFFFFF' : 'rgba(255,255,255,0.70)'} 
+                      className="text-[10px] uppercase font-[600] tracking-[2px]"
+                      style={{ fontFamily: 'JetBrains Mono, monospace' }}
                     >
                       {pos.agent.name.replace('Directeur ', '')}
                     </text>
@@ -479,7 +480,7 @@ export default function EigenBoard() {
             {messages.length > 0 && !isMeetingActive && !messages.some(m => m.isSynthesis) && (
               <button 
                 onClick={handleSynthesize}
-                className="mt-8 px-5 py-2.5 bg-[#B8963E]/10 border border-[#B8963E]/30 text-[#B8963E] rounded-full text-sm font-medium hover:bg-[#B8963E]/20 transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(184,150,62,0.1)]"
+                className="mt-8 px-5 py-2.5 bg-[#B8963E]/10 border border-[#B8963E]/30 text-[#B8963E] rounded-none-none text-sm font-medium hover:bg-[#B8963E]/20 transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(184,150,62,0.1)]"
               >
                 <FileText size={16} />
                 Synthèse du comité
@@ -508,7 +509,7 @@ export default function EigenBoard() {
             {messages.length === 0 && !isMeetingActive && (
               <div className="h-full flex flex-col items-center justify-center pt-32 opacity-30 text-center text-sm no-print">
                 <Users size={64} className="mb-6 opacity-40 text-[#B8963E]" />
-                <p className="font-serif italic text-xl mb-2 text-[#B8963E]">Le Comité Exécutif est réuni.</p>
+                <p className="font-serif  text-xl mb-2 text-[#B8963E]">Le Comité Exécutif est réuni.</p>
                 <p>Posez une question ci-dessous pour lancer le débat.</p>
               </div>
             )}
@@ -517,7 +518,7 @@ export default function EigenBoard() {
               if (msg.isSystem) {
                 return (
                   <div key={msg.id} className="text-center my-4 animate-bubble">
-                    <span className="bg-white/5 px-4 py-2 rounded-full text-xs text-[#B8963E] font-medium uppercase tracking-wider border border-white/5">
+                    <span className="bg-white/5 px-4 py-2 rounded-none-none text-xs text-[#B8963E] font-medium uppercase tracking-wider border border-white/5">
                       {msg.content}
                     </span>
                   </div>
@@ -527,8 +528,8 @@ export default function EigenBoard() {
               if (msg.isSynthesis) {
                 return (
                   <div key={msg.id} className="my-8 relative animate-synthesis print-break-inside-avoid shadow-2xl">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#12131A] to-[#0A0A0C] border border-[#B8963E]/30 rounded-lg transform -skew-x-[1deg]"></div>
-                    <div className="relative p-8 rounded-lg">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#12131A] to-[#0A0A0C] border border-[#B8963E]/30 rounded-none-none transform -skew-x-[1deg]"></div>
+                    <div className="relative p-8 rounded-none-none">
                       <div className="flex items-center gap-3 text-[#B8963E] font-bold mb-4 font-serif text-xl border-b border-[#B8963E]/20 pb-4">
                         <Sparkles size={20} /> Secrétaire du Comité — Synthèse
                       </div>
@@ -565,7 +566,7 @@ export default function EigenBoard() {
 
                   {/* Main Bubble */}
                   <div 
-                    className="relative p-5 rounded-r-lg rounded-bl-lg text-[#1a1a1a] text-[15px] leading-[1.6] shadow-lg"
+                    className="relative p-5 rounded-none-none rounded-none-none text-[#1a1a1a] text-[15px] leading-[1.6] shadow-lg"
                     style={{ 
                       backgroundColor: '#FFFFF0', // fond ivory requested
                       borderLeft: `4px solid ${agent.color}`
@@ -588,7 +589,7 @@ export default function EigenBoard() {
                          <button
                            key={`debate-${msg.id}-${otherAgent.id}`}
                            onClick={() => handleDebate(otherAgent.id, agent.id)}
-                           className="text-[10px] px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer flex gap-1 items-center border border-white/5"
+                           className="text-[10px] px-2 py-1 rounded-none bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white transition cursor-pointer flex gap-1 items-center border border-white/5"
                            title={`Demander à ${otherAgent.name} de répondre`}
                          >
                            {(() => { const Icon = AGENT_ICONS[otherAgent.icon]; return Icon ? <Icon size={10} strokeWidth={1.5} /> : null; })()} Rép.
@@ -613,7 +614,7 @@ export default function EigenBoard() {
                   })()}
                 </div>
                 <div 
-                  className="inline-block p-4 rounded-r-lg rounded-bl-lg bg-[#FFFFF0] opacity-80"
+                  className="inline-block p-4 rounded-none-none rounded-none-none bg-[#FFFFF0] opacity-80"
                   style={{ 
                     borderLeft: `4px solid ${BOARD_AGENTS.find(a => a.id === activeAgent)?.color || '#ccc'}`
                   }}
@@ -628,7 +629,7 @@ export default function EigenBoard() {
             )}
 
             {isMeetingActive && activeAgent === 'synthesis' && (
-               <div className="text-center my-6 text-[#B8963E]/80 text-sm font-serif italic animate-pulse">
+               <div className="text-center my-6 text-[#B8963E]/80 text-sm font-serif  animate-pulse">
                 Rédaction de la synthèse du secrétaire en cours...
                </div>
             )}
@@ -647,7 +648,7 @@ export default function EigenBoard() {
                   <button 
                     key={i}
                     onClick={() => { setQuestion(q); }}
-                    className="text-[11px] bg-white/5 border border-white/10 hover:border-[#B8963E]/50 text-slate-300 py-1.5 px-3 rounded-full transition-all whitespace-nowrap"
+                    className="text-[11px] bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.15)] hover:border-[rgba(255,255,255,0.30)] hover:bg-[rgba(255,255,255,0.08)] text-[rgba(255,255,255,0.70)] py-1.5 px-3 rounded-none transition-all whitespace-nowrap"
                   >
                     {q}
                   </button>
@@ -666,12 +667,12 @@ export default function EigenBoard() {
                 onChange={e => setQuestion(e.target.value)}
                 disabled={isMeetingActive || (messages.length > 0 && !currentMeetingId)}
                 placeholder={isMeetingActive ? "Débat en cours..." : "Quelle est votre question stratégique pour le comité ?"}
-                className="flex-1 bg-[#13141b] border border-white/10 rounded-lg px-5 py-4 text-white text-[15px] focus:outline-none focus:border-[#B8963E]/70 focus:ring-1 focus:ring-[#B8963E]/50 disabled:opacity-50 font-medium placeholder:text-slate-500 placeholder:font-normal shadow-inner"
+                className="flex-1 bg-[#13141b] border border-white/10 rounded-none-none px-5 py-4 text-white text-[15px] focus:outline-none focus:border-[#B8963E]/70 focus:ring-1 focus:ring-[#B8963E]/50 disabled:opacity-50 font-medium placeholder:text-slate-500 placeholder:font-normal shadow-inner"
               />
               <button
                 type="submit"
                 disabled={!question.trim() || isMeetingActive}
-                className="bg-[#B8963E] hover:bg-[#D4AF37] text-white rounded-lg px-6 py-4 flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed uppercase font-bold tracking-widest text-[10px] font-mono shadow-[0_0_20px_rgba(184,150,62,0.3)]"
+                className="bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.20)] hover:bg-[rgba(255,255,255,0.08)] text-[#FFFFFF] rounded-none px-6 py-4 flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed uppercase font-bold tracking-widest text-[10px] shadow-none"
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}
               >
                 {isMeetingActive ? <RefreshCw size={16} className="animate-spin" /> : <Send size={16} />}

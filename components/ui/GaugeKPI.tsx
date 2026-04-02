@@ -72,7 +72,7 @@ export function GaugeKPI({ value, target, label, color, unit = '' }: GaugeKPIPro
           y={size / 2 + 1}
           textAnchor="middle"
           dominantBaseline="central"
-          className="font-[family-name:var(--font-cormorant)]"
+          className="font-[family-name:var(--font-playfair)]"
           style={{ fontSize: '18px', fill: statusColor, fontWeight: 600 }}
         >
           {typeof value === 'number' && value >= 1000

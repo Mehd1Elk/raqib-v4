@@ -45,7 +45,7 @@ export default function MineralsExchange() {
                 <div>
                   <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text)' }}>{m.mineral}</div>
                   <span style={{
-                    fontSize: '0.54rem', padding: '1px 6px', borderRadius: 8, marginTop: 4, display: 'inline-block',
+                    fontSize: '0.54rem', padding: '1px 6px', borderRadius: 0, marginTop: 4, display: 'inline-block',
                     background: catColor + '15', color: catColor, border: `1px solid ${catColor}30`,
                   }}>{m.category}</span>
                 </div>
@@ -70,7 +70,7 @@ export default function MineralsExchange() {
                 borderRadius: 'var(--radius)',
               }}>
                 <span style={{
-                  fontSize: '0.54rem', padding: '1px 6px', borderRadius: 8,
+                  fontSize: '0.54rem', padding: '1px 6px', borderRadius: 0,
                   background: 'rgba(201,169,110,0.15)', color: 'var(--gold)', fontWeight: 600,
                   marginRight: 6,
                 }}>SOURCE CORRIDOR</span>
@@ -89,7 +89,7 @@ export default function MineralsExchange() {
         padding: 20,
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-          <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#E0785018', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E07850', fontWeight: 700, fontSize: '0.8rem' }}>M</div>
+          <div style={{ width: 32, height: 32, borderRadius: 0, background: '#E0785018', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E07850', fontWeight: 700, fontSize: '0.8rem' }}>M</div>
           <div>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '1rem', color: '#E07850' }}>MYNe — Marketplace Data</div>
             <div style={{ fontSize: '0.62rem', color: 'var(--text-faint)' }}>Architecture B2B2C donnees minerales</div>
@@ -100,7 +100,7 @@ export default function MineralsExchange() {
         </div>
         <div style={{ display: 'flex', gap: 8, marginTop: 12, flexWrap: 'wrap' }}>
           {['Cotations temps reel', 'Donnees geologiques', 'Certificats ESG', 'Due diligence', 'Passeport batterie'].map(f => (
-            <span key={f} style={{ fontSize: '0.6rem', padding: '3px 10px', border: '1px solid #E0785030', borderRadius: 12, color: '#E07850' }}>{f}</span>
+            <span key={f} style={{ fontSize: '0.6rem', padding: '3px 10px', border: '1px solid #E0785030', borderRadius: 0, color: '#E07850' }}>{f}</span>
           ))}
         </div>
       </div>

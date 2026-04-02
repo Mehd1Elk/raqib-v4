@@ -23,7 +23,7 @@ function createStopIcon(order: number, showNumber: boolean): L.DivIcon {
     iconSize: [28, 28],
     iconAnchor: [14, 14],
     popupAnchor: [0, -14],
-    html: `<div style="width:28px;height:28px;border-radius:50%;background:${STOP_BG};border:2px solid ${ROUTE_COLOR};display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)">
+    html: `<div style="width:28px;height:28px;border-radius: 0;background:${STOP_BG};border:2px solid ${ROUTE_COLOR};display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)">
       ${showNumber ? `<span style="color:#FDFAF3;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace">${order}</span>` : ''}
     </div>`,
   });
@@ -76,7 +76,7 @@ export function RouteMap({
   );
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[12, 0]}
         zoom={3.2}
@@ -111,7 +111,7 @@ export function RouteMap({
           >
             <Popup>
               <div className="min-w-[140px]">
-                <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-cormorant)]">
+                <h4 className="text-sm font-semibold text-t1 font-[family-name:var(--font-playfair)]">
                   Etape {stop.order} — {stop.city}
                 </h4>
                 {stop.tripLabel && (
@@ -129,8 +129,8 @@ export function RouteMap({
       </MapContainer>
 
       {/* Badge */}
-      <div className="absolute top-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-1.5">
-        <p className="text-[10px] text-t1 font-semibold font-[family-name:var(--font-cormorant)]">
+      <div className="absolute top-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-3 py-1.5">
+        <p className="text-[10px] text-t1 font-semibold font-[family-name:var(--font-playfair)]">
           Arc Conquete 2026
         </p>
         <p className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">

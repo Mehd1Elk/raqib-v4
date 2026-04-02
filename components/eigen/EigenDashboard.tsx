@@ -66,12 +66,12 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
     <div className="w-screen h-screen flex flex-col bg-[#1C1814] overflow-hidden">
       <div className="h-[52px] shrink-0 flex items-center justify-between px-6 border-b border-[#D4CCBA] bg-[#FDFAF3] z-20">
         <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#B8963E]" />
-          <span className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] tracking-[3px]">
+          <div className="w-1.5 h-1.5 rounded-none-none bg-[#B8963E]" />
+          <span className="font-[family-name:var(--font-playfair)] text-[20px] font-normal uppercase text-[#FFFFFF] tracking-[3px]">
             EIGEN
           </span>
-          <div className="w-px h-5 bg-[#D4CCBA]" />
-          <span className="text-[9px] text-[#918977] font-[family-name:var(--font-jetbrains)] tracking-[2px] uppercase">
+          <div className="w-px h-5 bg-[rgba(255,255,255,0.10)]" />
+          <span className="text-[9px] text-[rgba(255,255,255,0.45)] font-[family-name:var(--font-jetbrains)] tracking-[2px] uppercase">
             Sous-système Souverain
           </span>
         </div>

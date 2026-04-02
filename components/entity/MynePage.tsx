@@ -63,13 +63,13 @@ function GaugeKPI({ label, value, target, unit, icon, prefix }: typeof gaugeKPIs
         <span className="text-[#3D7C5E]">{icon}</span>
         <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-[1px] uppercase">{label}</span>
       </div>
-      <div className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold text-[#1C1814] leading-none">
+      <div className="font-[family-name:var(--font-playfair)] text-[22px] font-bold text-[#1C1814] leading-none">
         {displayValue}{!prefix && unit && <span className="text-[14px] text-[#918977] ml-0.5">{unit}</span>}
       </div>
       <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-[#918977] mt-0.5">/ {prefix ? `${unit}${displayTarget}` : `${displayTarget}${unit}`}</div>
-      <div className="mt-2 h-[3px] bg-[rgba(60,52,40,0.08)] rounded-full overflow-hidden">
+      <div className="mt-2 h-[3px] bg-[rgba(60,52,40,0.08)] rounded-none-none overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-none-none transition-all duration-700"
           style={{ width: `${pct}%`, backgroundColor: isComplete ? EMERALD : '#B8963E' }}
         />
       </div>
@@ -164,10 +164,10 @@ function PipelineViz() {
         ))}
       </div>
       <div className="flex justify-between mt-3 px-4">
-        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#3D5E8C] bg-[rgba(61,94,140,0.08)] px-2 py-0.5 rounded">
+        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#3D5E8C] bg-[rgba(61,94,140,0.08)] px-2 py-0.5 rounded-none">
           ÆLYA vérifie consentement à chaque transition
         </div>
-        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#8C6E2A] bg-[rgba(140,110,42,0.08)] px-2 py-0.5 rounded">
+        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#8C6E2A] bg-[rgba(140,110,42,0.08)] px-2 py-0.5 rounded-none">
           BURHAN hashe à chaque transition (Tx 504)
         </div>
       </div>
@@ -184,11 +184,11 @@ export default function MynePage() {
       <div className="bg-[#0A1F15] text-white px-8 py-10">
         <div className="max-w-6xl mx-auto">
           <div className="font-[family-name:var(--font-jetbrains)] text-[8px] tracking-[3px] text-[#3D7C5E] mb-3">SUBSIDIAIRE EIGEN · DONNÉES SOUVERAINES</div>
-          <h1 className="font-[family-name:var(--font-cormorant)] text-[48px] font-bold italic leading-none flex items-center gap-4">
+          <h1 className="font-[family-name:var(--font-playfair)] text-[48px] font-bold  leading-none flex items-center gap-4">
             <Database size={36} strokeWidth={1} className="text-[#3D7C5E]" />
             MYN&epsilon;
           </h1>
-          <p className="font-[family-name:var(--font-cormorant)] text-[20px] italic text-[#D4B662] mt-3">
+          <p className="font-[family-name:var(--font-playfair)] text-[20px]  text-[#D4B662] mt-3">
             My data, my price — Le Spotify des données
           </p>
           <p className="font-[family-name:var(--font-noto)] text-[14px] text-[rgba(255,255,255,0.7)] mt-2 max-w-3xl">
@@ -196,7 +196,7 @@ export default function MynePage() {
           </p>
 
           {/* Critical banner */}
-          <div className="mt-6 bg-[rgba(61,124,94,0.15)] border border-[rgba(61,124,94,0.3)] rounded-lg px-5 py-3 inline-flex items-center gap-3">
+          <div className="mt-6 bg-[rgba(61,124,94,0.15)] border border-[rgba(61,124,94,0.3)] rounded-none-none px-5 py-3 inline-flex items-center gap-3">
             <Scale size={16} className="text-[#3D7C5E] shrink-0" />
             <span className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#3D7C5E]">
               MYN&epsilon; &ne; anonymisation. &AElig;LYA anonymise. MYN&epsilon; est le march&eacute;.
@@ -215,23 +215,23 @@ export default function MynePage() {
 
         {/* Pipeline Architecture T1→T5 */}
         <div className="mt-10">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] mb-1">Pipeline d&apos;anonymisation T1 &rarr; T5</h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-1">Pipeline d&apos;anonymisation T1 &rarr; T5</h2>
           <p className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mb-4">Le c&oelig;ur de MYN&epsilon; — chaque transition est audit&eacute;e et consent&eacute;e</p>
-          <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-5">
+          <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-5">
             <PipelineViz />
           </div>
         </div>
 
         {/* Business Model */}
         <div className="mt-10">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] mb-1">Mod&egrave;le &eacute;conomique</h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-1">Mod&egrave;le &eacute;conomique</h2>
           <p className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mb-4">Le producteur de donn&eacute;es est r&eacute;mun&eacute;r&eacute; quand un dataset T5 est vendu</p>
           <div className="grid grid-cols-5 gap-3">
             {businessModel.map(bm => {
               const Icon = bm.icon;
               return (
-                <div key={bm.step} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-4 relative">
-                  <div className="absolute top-2 right-3 font-[family-name:var(--font-cormorant)] text-[28px] font-bold text-[rgba(61,124,94,0.1)]">{bm.step}</div>
+                <div key={bm.step} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-4 relative">
+                  <div className="absolute top-2 right-3 font-[family-name:var(--font-playfair)] text-[28px] font-bold text-[rgba(61,124,94,0.1)]">{bm.step}</div>
                   <Icon size={16} className="text-[#3D7C5E] mb-2" />
                   <div className="font-[family-name:var(--font-noto)] text-[12px] text-[#1C1814] font-semibold">{bm.label}</div>
                   <div className="font-[family-name:var(--font-noto)] text-[10px] text-[#918977] mt-1 leading-snug">{bm.desc}</div>
@@ -243,11 +243,11 @@ export default function MynePage() {
 
         {/* Data categories */}
         <div className="mt-10">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] mb-1">100 couches de donn&eacute;es</h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-1">100 couches de donn&eacute;es</h2>
           <p className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mb-4">Data brokers, technologies, r&eacute;glementation, march&eacute;</p>
           <div className="space-y-2">
             {dataVerticals.map(d => (
-              <div key={d.range} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-3 flex items-center gap-4">
+              <div key={d.range} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-3 flex items-center gap-4">
                 <span className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#3D7C5E] font-bold w-[50px] shrink-0">{d.range}</span>
                 <div>
                   <div className="font-[family-name:var(--font-noto)] text-[12px] text-[#1C1814] font-medium">{d.label}</div>
@@ -260,20 +260,20 @@ export default function MynePage() {
 
         {/* Bridges */}
         <div className="mt-10">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] mb-1">Ponts inter-entit&eacute;s</h2>
+          <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-1">Ponts inter-entit&eacute;s</h2>
           <p className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mb-4">MYN&epsilon; est au centre du flux de donn&eacute;es de l&apos;&eacute;cosyst&egrave;me</p>
           <div className="grid grid-cols-2 gap-3">
             {bridges.map(b => {
               const Icon = b.icon;
               return (
-                <div key={b.entity} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg p-4 flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: `${b.color}15` }}>
+                <div key={b.entity} className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none-none p-4 flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-none-none flex items-center justify-center shrink-0" style={{ backgroundColor: `${b.color}15` }}>
                     <Icon size={14} style={{ color: b.color }} />
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
                       <span className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#918977]">{b.direction}</span>
-                      <span className="font-[family-name:var(--font-cormorant)] text-[15px] font-bold italic" style={{ color: b.color }}>{b.entity}</span>
+                      <span className="font-[family-name:var(--font-playfair)] text-[15px] font-bold " style={{ color: b.color }}>{b.entity}</span>
                     </div>
                     <div className="font-[family-name:var(--font-noto)] text-[11px] text-[#918977] mt-0.5">{b.desc}</div>
                   </div>
@@ -285,13 +285,13 @@ export default function MynePage() {
 
         {/* Navigation */}
         <div className="mt-10 mb-8 flex gap-3">
-          <a href="/myne" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0A1F15] text-[#3D7C5E] rounded font-[family-name:var(--font-jetbrains)] text-[10px] hover:bg-[#152E21] transition">
+          <a href="/myne" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0A1F15] text-[#3D7C5E] rounded-none font-[family-name:var(--font-jetbrains)] text-[10px] hover:bg-[#152E21] transition">
             Viewer 100 couches <ArrowRight size={12} />
           </a>
-          <a href="https://myneps.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#3D7C5E] text-[#3D7C5E] rounded font-[family-name:var(--font-jetbrains)] text-[10px] hover:bg-[rgba(61,124,94,0.05)] transition">
+          <a href="https://myneps.ai" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#3D7C5E] text-[#3D7C5E] rounded-none font-[family-name:var(--font-jetbrains)] text-[10px] hover:bg-[rgba(61,124,94,0.05)] transition">
             myneps.ai <ArrowRight size={12} />
           </a>
-          <a href="/nexus" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#D4CCBA] text-[#918977] rounded font-[family-name:var(--font-jetbrains)] text-[10px] hover:border-[#B8963E] transition">
+          <a href="/nexus" className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#D4CCBA] text-[#918977] rounded-none font-[family-name:var(--font-jetbrains)] text-[10px] hover:border-[#B8963E] transition">
             Nexus
           </a>
         </div>

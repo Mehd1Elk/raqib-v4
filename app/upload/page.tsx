@@ -166,14 +166,14 @@ export default function UploadPage() {
       {/* Header */}
       <div className="h-[52px] flex items-center justify-between px-6 border-b border-div bg-ivory">
         <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+          <div className="w-1.5 h-1.5 rounded-none-none bg-gold" />
           <Link
             href="/"
-            className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
+            className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
           >
             Raqib
           </Link>
-          <span className="font-[family-name:var(--font-cormorant)] text-[15px] text-sand">رقيب</span>
+          <span className="font-[family-name:var(--font-playfair)] text-[15px] text-sand">رقيب</span>
           <div className="w-px h-5 bg-div" />
           <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)] tracking-[2px]">
             V4 · IMPORT DATASET
@@ -188,7 +188,7 @@ export default function UploadPage() {
       </div>
 
       <div className="max-w-3xl mx-auto py-8 px-6">
-        <h1 className="font-[family-name:var(--font-cormorant)] text-[28px] font-bold italic text-noir mb-1">
+        <h1 className="font-[family-name:var(--font-playfair)] text-[28px] font-bold  text-noir mb-1">
           Importer un dataset
         </h1>
         <p className="text-[10px] font-[family-name:var(--font-jetbrains)] text-tm mb-6">
@@ -201,7 +201,7 @@ export default function UploadPage() {
             onDrop={onDrop}
             onDragOver={(e) => e.preventDefault()}
             onClick={() => fileRef.current?.click()}
-            className="border-2 border-dashed border-div hover:border-gold rounded-lg p-16 flex flex-col items-center justify-center cursor-pointer transition-colors bg-ivory"
+            className="border-2 border-dashed border-div hover:border-gold rounded-none-none p-16 flex flex-col items-center justify-center cursor-pointer transition-colors bg-ivory"
           >
             <Upload size={32} className="text-sand mb-3" />
             <div className="text-[11px] font-[family-name:var(--font-noto)] text-t2 mb-1">
@@ -221,7 +221,7 @@ export default function UploadPage() {
         )}
 
         {error && (
-          <div className="mt-4 p-3 bg-ruby/10 border border-ruby/30 rounded flex items-center gap-2">
+          <div className="mt-4 p-3 bg-ruby/10 border border-ruby/30 rounded-none flex items-center gap-2">
             <AlertTriangle size={14} className="text-ruby" />
             <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-ruby">{error}</span>
           </div>
@@ -231,7 +231,7 @@ export default function UploadPage() {
         {(step === 'preview' || step === 'importing') && file && (
           <div className="space-y-5">
             {/* File info */}
-            <div className="bg-ivory border border-div rounded p-4 flex items-center gap-3">
+            <div className="bg-ivory border border-div rounded-none p-4 flex items-center gap-3">
               <FileSpreadsheet size={20} className="text-gold" />
               <div>
                 <div className="text-[11px] font-[family-name:var(--font-noto)] text-t1 font-medium">
@@ -246,7 +246,7 @@ export default function UploadPage() {
 
             {/* Auto-suggestion banner */}
             {suggestedLayer && (
-              <div className="bg-emerald/10 border border-emerald/30 rounded p-3 flex items-center gap-2">
+              <div className="bg-emerald/10 border border-emerald/30 rounded-none p-3 flex items-center gap-2">
                 <Check size={14} className="text-emerald" />
                 <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-emerald">
                   Suggestion automatique : couche{' '}
@@ -257,7 +257,7 @@ export default function UploadPage() {
             )}
 
             {/* Preview table */}
-            <div className="bg-ivory border border-div rounded overflow-hidden">
+            <div className="bg-ivory border border-div rounded-none overflow-hidden">
               <div className="px-3 py-2 border-b border-div bg-parchment">
                 <span className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3 tracking-[1px]">
                   APERCU — {Math.min(10, rows.length)} PREMIERES LIGNES
@@ -297,7 +297,7 @@ export default function UploadPage() {
             </div>
 
             {/* Layer selection */}
-            <div className="bg-ivory border border-div rounded p-4 space-y-3">
+            <div className="bg-ivory border border-div rounded-none p-4 space-y-3">
               <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-t3 tracking-[1px] mb-2">
                 ASSOCIER A UNE COUCHE
               </div>
@@ -314,7 +314,7 @@ export default function UploadPage() {
                       setSelectedEntity(e.target.value);
                       setSelectedLayer('');
                     }}
-                    className="w-full bg-cream border border-div rounded px-2 py-1.5 text-[10px] font-[family-name:var(--font-noto)] text-t1"
+                    className="w-full bg-cream border border-div rounded-none px-2 py-1.5 text-[10px] font-[family-name:var(--font-noto)] text-t1"
                   >
                     <option value="">Toutes les entites</option>
                     {ENTITIES.map((ent) => (
@@ -337,7 +337,7 @@ export default function UploadPage() {
                       placeholder="n01, psychiatre, pib..."
                       value={layerSearch}
                       onChange={(e) => setLayerSearch(e.target.value)}
-                      className="w-full bg-cream border border-div rounded pl-7 pr-2 py-1.5 text-[10px] font-[family-name:var(--font-noto)] text-t1 placeholder:text-sand"
+                      className="w-full bg-cream border border-div rounded-none pl-7 pr-2 py-1.5 text-[10px] font-[family-name:var(--font-noto)] text-t1 placeholder:text-sand"
                     />
                   </div>
                 </div>
@@ -348,7 +348,7 @@ export default function UploadPage() {
                 value={selectedLayer}
                 onChange={(e) => setSelectedLayer(e.target.value)}
                 size={6}
-                className="w-full bg-cream border border-div rounded px-2 py-1 text-[10px] font-[family-name:var(--font-jetbrains)] text-t1"
+                className="w-full bg-cream border border-div rounded-none px-2 py-1 text-[10px] font-[family-name:var(--font-jetbrains)] text-t1"
               >
                 {filteredLayers.map((l) => (
                   <option key={l.id} value={l.id}>
@@ -366,7 +366,7 @@ export default function UploadPage() {
             </div>
 
             {importError && (
-              <div className="p-3 bg-ruby/10 border border-ruby/30 rounded flex items-center gap-2">
+              <div className="p-3 bg-ruby/10 border border-ruby/30 rounded-none flex items-center gap-2">
                 <AlertTriangle size={14} className="text-ruby" />
                 <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-ruby">
                   {importError}
@@ -378,7 +378,7 @@ export default function UploadPage() {
             <button
               onClick={handleImport}
               disabled={!selectedLayer || step === 'importing'}
-              className="w-full py-3 rounded font-[family-name:var(--font-jetbrains)] text-[10px] tracking-[2px] text-ivory transition-opacity disabled:opacity-40"
+              className="w-full py-3 rounded-none font-[family-name:var(--font-jetbrains)] text-[10px] tracking-[2px] text-ivory transition-opacity disabled:opacity-40"
               style={{ background: '#2C1810' }}
             >
               {step === 'importing'
@@ -390,11 +390,11 @@ export default function UploadPage() {
 
         {/* ── STEP 3: Done ────────────────────────────────── */}
         {step === 'done' && (
-          <div className="bg-ivory border border-div rounded p-8 text-center space-y-4">
-            <div className="w-12 h-12 rounded-full bg-emerald/20 flex items-center justify-center mx-auto">
+          <div className="bg-ivory border border-div rounded-none p-8 text-center space-y-4">
+            <div className="w-12 h-12 rounded-none-none bg-emerald/20 flex items-center justify-center mx-auto">
               <Check size={24} className="text-emerald" />
             </div>
-            <div className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-noir">
+            <div className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-noir">
               Import termine
             </div>
             <div className="text-[10px] font-[family-name:var(--font-jetbrains)] text-tm">
@@ -403,7 +403,7 @@ export default function UploadPage() {
             <div className="flex justify-center gap-3 pt-2">
               <Link
                 href={`/${selectedLayerEntity}/${selectedLayer}`}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] text-ivory no-underline"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-none text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] text-ivory no-underline"
                 style={{ background: '#2C1810' }}
               >
                 VOIR LA COUCHE <ArrowRight size={12} />
@@ -417,7 +417,7 @@ export default function UploadPage() {
                   setSelectedLayer('');
                   setImportCount(0);
                 }}
-                className="px-4 py-2 rounded border border-div text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] text-tm hover:text-t1 transition-colors"
+                className="px-4 py-2 rounded-none border border-div text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[1px] text-tm hover:text-t1 transition-colors"
               >
                 NOUVEL IMPORT
               </button>

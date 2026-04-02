@@ -47,14 +47,14 @@ export default async function LayerPage({ params }: PageProps) {
       {/* Header */}
       <div className="h-[52px] flex items-center justify-between px-6 border-b border-div bg-ivory">
         <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+          <div className="w-1.5 h-1.5 rounded-none-none bg-gold" />
           <Link
             href="/"
-            className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
+            className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
           >
             Raqib
           </Link>
-          <span className="font-[family-name:var(--font-cormorant)] text-[15px] text-sand">
+          <span className="font-[family-name:var(--font-playfair)] text-[15px] text-sand">
             رقيب
           </span>
           <div className="w-px h-5 bg-div" />

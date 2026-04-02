@@ -53,7 +53,7 @@ export function OverviewTab({ country: c }: Props) {
                 return (
                   <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
                     <span style={{ fontSize: '0.65rem', color: 'var(--text)', fontWeight: 500 }}>{d.value}%</span>
-                    <div style={{ width: 32, height, background: color, borderRadius: '2px 2px 0 0' }} />
+                    <div style={{ width: 32, height, background: color, borderRadius: 0, 2px 0 0' }} />
                     <span style={{ fontSize: '0.55rem', color: 'var(--text-faint)' }}>{d.year}</span>
                   </div>
                 );

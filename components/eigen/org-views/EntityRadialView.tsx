@@ -89,8 +89,8 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
     g.append('text')
       .attr('x', 0).attr('y', -8)
       .attr('text-anchor', 'middle')
-      .attr('font-family', 'Cormorant Garamond')
-      .attr('font-size', 18).attr('font-weight', 700).attr('font-style', 'italic')
+      .attr('font-family', 'Playfair Display')
+      .attr('font-size', 18).attr('font-weight', 700)
       .attr('fill', '#B8963E')
       .text('EIGEN');
 
@@ -136,8 +136,8 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
       entityGroup.append('text')
         .attr('y', -arcRadius - 10)
         .attr('text-anchor', 'middle')
-        .attr('font-family', 'Cormorant Garamond')
-        .attr('font-size', 13).attr('font-weight', 700).attr('font-style', 'italic')
+        .attr('font-family', 'Playfair Display')
+        .attr('font-size', 13).attr('font-weight', 700)
         .attr('fill', entity.color)
         .text(entity.label);
 

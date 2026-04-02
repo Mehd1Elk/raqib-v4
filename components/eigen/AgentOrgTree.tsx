@@ -75,7 +75,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
         <OrgViewSelector activeView={activeView} onViewChange={handleViewChange} />
 
         {/* Layer filters */}
-        <div className="flex items-center gap-0.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-lg p-1">
+        <div className="flex items-center gap-0.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-none-none p-1">
           {LAYERS.map(layer => {
             const isActive = layerFilters.size === 0 || layerFilters.has(layer);
             return (
@@ -83,7 +83,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
                 key={layer}
                 onClick={() => toggleLayer(layer)}
                 className={`
-                  px-2 py-1 text-[9px] font-mono font-bold uppercase rounded-md transition-all duration-150
+                  px-2 py-1 text-[9px] font-mono font-bold uppercase rounded-none-none transition-all duration-150
                   ${isActive
                     ? 'bg-white text-[#1C1814] shadow-sm'
                     : 'text-[#918977]/40 hover:text-[#918977]'
@@ -112,7 +112,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
             placeholder="Chercher un agent..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="pl-7 pr-3 py-1.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-lg text-[10px] font-mono text-[#1C1814] placeholder:text-[#918977]/50 focus:outline-none focus:ring-1 focus:ring-[#B8963E] focus:border-[#B8963E] w-[160px] transition-all"
+            className="pl-7 pr-3 py-1.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-none-none text-[10px] font-mono text-[#1C1814] placeholder:text-[#918977]/50 focus:outline-none focus:ring-1 focus:ring-[#B8963E] focus:border-[#B8963E] w-[160px] transition-all"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               svg.call(d3.zoom().scaleBy as any, 1.3);
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
         >
           +
         </button>
@@ -155,7 +155,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               svg.call(d3.zoom().scaleBy as any, 0.7);
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
         >
           -
         </button>
@@ -172,7 +172,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               );
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-none flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
         >
           <Maximize2 size={12} />
         </button>

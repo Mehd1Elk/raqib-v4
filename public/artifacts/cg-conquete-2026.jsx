@@ -41,7 +41,7 @@ var KPIs = [
 function StatusDot({ status }) {
   var col = { completed: C.green, confirmed: C.gold, planned: C.t3, active: C.green, setup: C.gold };
   return React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 4 } },
-    React.createElement('div', { style: { width: 6, height: 6, borderRadius: '50%', background: col[status] || C.t3 } }),
+    React.createElement('div', { style: { width: 6, height: 6, borderRadius: 0, background: col[status] || C.t3 } }),
     React.createElement('span', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 8, color: col[status] || C.t3, textTransform: 'uppercase', letterSpacing: '0.5px' } }, status)
   );
 }
@@ -53,7 +53,7 @@ function App() {
   return React.createElement('div', { style: { minHeight: '100vh', background: C.cream, fontFamily: 'system-ui, -apple-system, sans-serif' } },
     React.createElement('div', { style: { background: C.ivory, borderBottom: '1px solid ' + C.div, padding: '16px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' } },
       React.createElement('div', null,
-        React.createElement('div', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 24, fontWeight: 700, fontStyle: 'italic', color: C.noir } }, 'Arc de Conquete 2026'),
+        React.createElement('div', { style: { fontFamily: 'Playfair Display, serif', fontSize: 24, fontWeight: 700,  color: C.noir } }, 'Arc de Conquete 2026'),
         React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.t3, letterSpacing: '2px', marginTop: 2 } }, 'CG SA \u00B7 7 TRIPS \u00B7 9 VILLES \u00B7 22 PAYS')
       ),
       React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.gold } }, '2/7 COMPLETED')
@@ -80,15 +80,15 @@ function App() {
     React.createElement('div', { style: { padding: 24, maxWidth: 1000, margin: '0 auto' } },
 
       tab === 'timeline' && React.createElement('div', null,
-        React.createElement('h2', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.noir, marginBottom: 20 } }, 'Timeline des 7 Trips'),
+        React.createElement('h2', { style: { fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700,  color: C.noir, marginBottom: 20 } }, 'Timeline des 7 Trips'),
         TRIPS.map(function(trip) {
           var isOpen = selTrip === trip.id;
           return React.createElement('div', { key: trip.id, style: { marginBottom: 12 } },
             React.createElement('div', { onClick: function() { setSelTrip(isOpen ? null : trip.id); }, style: { display: 'flex', alignItems: 'center', gap: 16, background: C.ivory, border: '1px solid ' + (isOpen ? trip.color : C.div), borderRadius: isOpen ? '8px 8px 0 0' : 8, padding: '14px 16px', cursor: 'pointer', transition: 'all 0.2s' } },
-              React.createElement('div', { style: { width: 40, height: 40, borderRadius: '50%', background: trip.color + '20', border: '2px solid ' + trip.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: 14, fontWeight: 700, color: trip.color, flexShrink: 0 } }, '#' + trip.id),
+              React.createElement('div', { style: { width: 40, height: 40, borderRadius: 0, background: trip.color + '20', border: '2px solid ' + trip.color, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: 14, fontWeight: 700, color: trip.color, flexShrink: 0 } }, '#' + trip.id),
               React.createElement('div', { style: { flex: 1 } },
                 React.createElement('div', { style: { display: 'flex', alignItems: 'center', gap: 8 } },
-                  React.createElement('span', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 16, fontWeight: 700, color: C.noir } }, trip.name),
+                  React.createElement('span', { style: { fontFamily: 'Playfair Display, serif', fontSize: 16, fontWeight: 700, color: C.noir } }, trip.name),
                   React.createElement(StatusDot, { status: trip.status })
                 ),
                 React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: C.t3, marginTop: 2 } }, trip.city + ', ' + trip.country + ' \u00B7 ' + trip.dates)
@@ -98,11 +98,11 @@ function App() {
                 React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.t3 } }, trip.budget)
               )
             ),
-            isOpen && React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + trip.color, borderTop: 'none', borderRadius: '0 0 8px 8px', padding: 16 } },
+            isOpen && React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + trip.color, borderTop: 'none', borderRadius: 0, 0 8px 8px', padding: 16 } },
               React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 8, color: C.gold, letterSpacing: '1px', marginBottom: 8 } }, 'OBJECTIFS'),
               trip.objectives.map(function(obj, i) {
                 return React.createElement('div', { key: i, style: { display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 } },
-                  React.createElement('div', { style: { width: 4, height: 4, borderRadius: '50%', background: trip.color, flexShrink: 0 } }),
+                  React.createElement('div', { style: { width: 4, height: 4, borderRadius: 0, background: trip.color, flexShrink: 0 } }),
                   React.createElement('span', { style: { fontSize: 12, color: C.t1 } }, obj)
                 );
               })
@@ -112,12 +112,12 @@ function App() {
       ),
 
       tab === 'cities' && React.createElement('div', null,
-        React.createElement('h2', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.noir, marginBottom: 16 } }, 'Les 9 Villes du Corridor'),
+        React.createElement('h2', { style: { fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700,  color: C.noir, marginBottom: 16 } }, 'Les 9 Villes du Corridor'),
         React.createElement('div', { style: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 } },
           CITIES.map(function(city) {
-            return React.createElement('div', { key: city.name, style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 8, padding: 16 } },
+            return React.createElement('div', { key: city.name, style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 0, padding: 16 } },
               React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 } },
-                React.createElement('span', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 16, fontWeight: 700, color: C.noir } }, city.name),
+                React.createElement('span', { style: { fontFamily: 'Playfair Display, serif', fontSize: 16, fontWeight: 700, color: C.noir } }, city.name),
                 React.createElement(StatusDot, { status: city.status })
               ),
               React.createElement('div', { style: { fontFamily: 'JetBrains Mono, monospace', fontSize: 9, color: C.gold, marginBottom: 8 } }, city.role),
@@ -137,16 +137,16 @@ function App() {
       ),
 
       tab === 'budget' && React.createElement('div', null,
-        React.createElement('h2', { style: { fontFamily: 'Cormorant Garamond, serif', fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.noir, marginBottom: 16 } }, 'Budget par Trip'),
-        React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 8, padding: 20 } },
+        React.createElement('h2', { style: { fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700,  color: C.noir, marginBottom: 16 } }, 'Budget par Trip'),
+        React.createElement('div', { style: { background: C.ivory, border: '1px solid ' + C.div, borderRadius: 0, padding: 20 } },
           TRIPS.map(function(trip) {
             var maxBudget = 120;
             var val = parseInt(trip.budget);
             var pct = (val / maxBudget * 100);
             return React.createElement('div', { key: trip.id, style: { display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 } },
               React.createElement('div', { style: { width: 140, fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: C.t1, flexShrink: 0 } }, trip.name),
-              React.createElement('div', { style: { flex: 1, height: 20, background: C.cream, borderRadius: 4, overflow: 'hidden' } },
-                React.createElement('div', { style: { width: pct + '%', height: '100%', background: trip.color, borderRadius: 4, transition: 'width 0.5s' } })
+              React.createElement('div', { style: { flex: 1, height: 20, background: C.cream, borderRadius: 0, overflow: 'hidden' } },
+                React.createElement('div', { style: { width: pct + '%', height: '100%', background: trip.color, borderRadius: 0, transition: 'width 0.5s' } })
               ),
               React.createElement('div', { style: { width: 60, fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: C.gold, textAlign: 'right', flexShrink: 0 } }, trip.budget)
             );

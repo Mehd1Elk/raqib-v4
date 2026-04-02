@@ -113,14 +113,16 @@ export function ExportableTable<TData extends RowData>({
   const toolbarActions = (
     <div className="flex flex-wrap items-center gap-2">
       <button
-        className="cursor-pointer rounded border border-div bg-transparent px-2.5 py-1 text-[8px] text-t2 transition-colors hover:border-gold hover:text-gold font-[family-name:var(--font-jetbrains)]"
+        className="cursor-pointer rounded-none bg-transparent px-2.5 py-1 text-[9px] font-semibold tracking-[1px] text-t2 transition-colors hover:border-gold hover:text-gold font-[family-name:var(--font-jetbrains)]"
+        style={{ border: '0.5px solid rgba(0,0,0,0.15)' }}
         onClick={handleCsvExport}
         type="button"
       >
         EXPORT CSV
       </button>
       <button
-        className="cursor-pointer rounded border border-div bg-transparent px-2.5 py-1 text-[8px] text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-40 font-[family-name:var(--font-jetbrains)]"
+        className="cursor-pointer rounded-none bg-transparent px-2.5 py-1 text-[9px] font-semibold tracking-[1px] text-t2 transition-colors hover:border-gold hover:text-gold disabled:cursor-default disabled:opacity-40 font-[family-name:var(--font-jetbrains)]"
+        style={{ border: '0.5px solid rgba(0,0,0,0.15)' }}
         disabled={isExportingExcel}
         onClick={() => void handleExcelExport()}
         type="button"

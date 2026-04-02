@@ -11,7 +11,7 @@ function Pill({
 }) {
   return (
     <span
-      className="inline-flex min-w-11 items-center justify-center rounded-full border px-2.5 py-1 text-[10px] font-semibold font-[family-name:var(--font-jetbrains)]"
+      className="inline-flex min-w-11 items-center justify-center rounded-none-none border px-2.5 py-1 text-[10px] font-semibold font-[family-name:var(--font-jetbrains)]"
       style={{ borderColor: `${color}33`, color, background: `${color}12` }}
     >
       {children}
@@ -38,9 +38,9 @@ export function ProgressBar({ value }: { value: number | null }) {
 
   return (
     <div className="flex items-center gap-2">
-      <div className="h-2.5 w-full overflow-hidden rounded-full bg-noir/8">
+      <div className="h-2.5 w-full overflow-hidden rounded-none-none bg-noir/8">
         <div
-          className="h-full rounded-full transition-[width]"
+          className="h-full rounded-none-none transition-[width]"
           style={{ width: `${value}%`, background: tone }}
         />
       </div>

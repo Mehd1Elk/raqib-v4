@@ -43,7 +43,7 @@ export default async function EntityDashboardPage({ params }: { params: Promise<
       <div className="flex-1 max-w-7xl mx-auto w-full py-6 px-6 space-y-6">
         {/* Rangée 1 — ProgressBar + StatCards */}
         <section>
-          <div className="bg-ivory border border-div rounded p-5 mb-4">
+          <div className="bg-ivory border border-div rounded-none p-5 mb-4">
             <ProgressBar pct={completionPct} color={entityDef.color} height="h-3" showPct />
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

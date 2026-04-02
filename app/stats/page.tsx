@@ -34,9 +34,9 @@ function CompletionBar({ pct, color }: { pct: number; color?: string }) {
   const barColor = color ?? (pct >= 75 ? '#3D7C5E' : pct >= 25 ? '#B87D3E' : pct > 0 ? '#9C3D3D' : '#D4CCBA');
   return (
     <div className="flex items-center gap-2">
-      <div className="flex-1 h-1.5 bg-parchment rounded-full overflow-hidden">
+      <div className="flex-1 h-1.5 bg-parchment rounded-none-none overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-500"
+          className="h-full rounded-none-none transition-all duration-500"
           style={{ width: `${Math.min(pct, 100)}%`, background: barColor }}
         />
       </div>
@@ -59,7 +59,7 @@ function ProgressDashboard({
   lastUpdate: Date | null;
 }) {
   return (
-    <div className="bg-ivory border border-div rounded overflow-hidden mb-8">
+    <div className="bg-ivory border border-div rounded-none overflow-hidden mb-8">
       <div className="px-4 py-3 border-b border-div flex items-center justify-between">
         <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[1px] font-bold">
           PROGRESSION PAR ENTITÉ — ACTUAL / TARGET ROWS
@@ -80,11 +80,11 @@ function ProgressDashboard({
               <div className="flex items-center justify-between mb-1">
                 <div className="flex items-center gap-2">
                   <span
-                    className="w-2 h-2 rounded-full shrink-0"
+                    className="w-2 h-2 rounded-none-none shrink-0"
                     style={{ background: entity?.color }}
                   />
                   <span
-                    className="text-[11px] font-[family-name:var(--font-cormorant)] font-bold italic"
+                    className="text-[11px] font-[family-name:var(--font-playfair)] font-bold "
                     style={{ color: entity?.color }}
                   >
                     {s.entity_name}
@@ -120,7 +120,7 @@ function QualityScore({
   confidenceData: { entity_id: string; high_confidence: number; total: number }[];
 }) {
   return (
-    <div className="bg-ivory border border-div rounded overflow-hidden mb-8">
+    <div className="bg-ivory border border-div rounded-none overflow-hidden mb-8">
       <div className="px-4 py-3 border-b border-div">
         <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[1px] font-bold">
           QUALITÉ — SCORES MISSIONS & CONFIANCE
@@ -129,22 +129,22 @@ function QualityScore({
 
       {/* Mission scores summary */}
       <div className="grid grid-cols-2 gap-4 p-4 border-b border-div">
-        <div className="bg-cream rounded p-3">
+        <div className="bg-cream rounded-none p-3">
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
             M1 TERMINOLOGIE (MOY.)
           </div>
-          <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold italic text-emerald">
+          <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-emerald">
             100/100
           </div>
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm">
             avant : {(Object.values(TERMINOLOGY_SCORES).reduce((a, v) => a + v.before, 0) / 10).toFixed(1)}
           </div>
         </div>
-        <div className="bg-cream rounded p-3">
+        <div className="bg-cream rounded-none p-3">
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
             M2 RÉGLEMENTAIRE
           </div>
-          <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold italic text-emerald">
+          <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-emerald">
             {REGULATORY_SCORE.after}/100
           </div>
           <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm">
@@ -174,7 +174,7 @@ function QualityScore({
               <tr key={s.entity_id} className="border-b border-div-l hover:bg-cream/50">
                 <td className="px-4 py-2.5">
                   <span
-                    className="font-[family-name:var(--font-cormorant)] font-bold italic text-[12px]"
+                    className="font-[family-name:var(--font-playfair)] font-bold  text-[12px]"
                     style={{ color: entity?.color }}
                   >
                     {s.entity_name}
@@ -264,14 +264,14 @@ export default function StatsPage() {
       {/* Header */}
       <div className="h-[52px] flex items-center justify-between px-6 border-b border-div bg-ivory">
         <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-gold" />
+          <div className="w-1.5 h-1.5 rounded-none-none bg-gold" />
           <Link
             href="/"
-            className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
+            className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-noir tracking-[3px] no-underline hover:text-gold transition-colors"
           >
             Raqib
           </Link>
-          <span className="font-[family-name:var(--font-cormorant)] text-[15px] text-sand">
+          <span className="font-[family-name:var(--font-playfair)] text-[15px] text-sand">
             رقيب
           </span>
           <div className="w-px h-5 bg-div" />
@@ -297,11 +297,11 @@ export default function StatsPage() {
             { label: 'COMPLETION', value: globalStats.totalTarget > 0 ? `${((globalStats.totalEntries / globalStats.totalTarget) * 100).toFixed(1)}%` : '0%' },
             { label: 'CONFIANCE ≥ 0.85', value: totalConf > 0 ? `${((totalHighConf / totalConf) * 100).toFixed(0)}%` : '—' },
           ].map((item) => (
-            <div key={item.label} className="bg-ivory border border-div rounded p-4">
+            <div key={item.label} className="bg-ivory border border-div rounded-none p-4">
               <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm tracking-[1px] mb-1">
                 {item.label}
               </div>
-              <div className="text-lg font-[family-name:var(--font-cormorant)] font-bold italic text-noir">
+              <div className="text-lg font-[family-name:var(--font-playfair)] font-bold  text-noir">
                 {item.value}
               </div>
             </div>
@@ -327,7 +327,7 @@ export default function StatsPage() {
         )}
 
         {/* Agent runs */}
-        <div className="bg-ivory border border-div rounded overflow-hidden">
+        <div className="bg-ivory border border-div rounded-none overflow-hidden">
           <div className="px-4 py-3 border-b border-div">
             <span className="text-[10px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[1px] font-bold">
               DERNIÈRES EXÉCUTIONS AGENTS
@@ -364,7 +364,7 @@ export default function StatsPage() {
                       </td>
                       <td className="px-4 py-2 text-center">
                         <span
-                          className="px-2 py-0.5 rounded text-[8px] font-[family-name:var(--font-jetbrains)] font-semibold"
+                          className="px-2 py-0.5 rounded-none text-[8px] font-[family-name:var(--font-jetbrains)] font-semibold"
                           style={{ color: statusColor, background: `${statusColor}0D`, border: `1px solid ${statusColor}22` }}
                         >
                           {run.status.toUpperCase()}

@@ -79,7 +79,7 @@ export function RegulatoryTimeline({ data, onNodeClick }: Props) {
               >
                 {/* Point sur la ligne */}
                 <div 
-                  className={`w-3 h-3 rounded-full border-2 transition-all duration-300 absolute top-1/2 -translate-y-1/2 ${
+                  className={`w-3 h-3 rounded-none-none border-2 transition-all duration-300 absolute top-1/2 -translate-y-1/2 ${
                     isPast ? 'bg-[#111111] border-stone-600' : 'bg-[#B8963E] border-[#111111] group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(184,150,62,0.5)]'
                   }`}
                 />

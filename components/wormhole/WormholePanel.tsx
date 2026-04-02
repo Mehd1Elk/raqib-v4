@@ -129,18 +129,18 @@ export default function WormholePanel({
         }}
       >
         <div className="flex items-center justify-between p-4 border-b border-div">
-          <h3 className="font-['Cormorant_Garamond'] text-title text-t1 font-bold italic tracking-tight flex items-center gap-2">
+          <h3 className="font-['Playfair_Display'] text-title text-t1 font-bold  tracking-tight flex items-center gap-2">
             <Zap className="text-violet" size={18} />
             Connexions
           </h3>
-          <button onClick={handleClose} className="p-1 hover:bg-divL rounded text-t2 transition">
+          <button onClick={handleClose} className="p-1 hover:bg-divL rounded-none text-t2 transition">
             <X size={18} />
           </button>
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
           {connections.length === 0 ? (
-            <div className="text-t3 text-sm italic py-8 text-center font-serif">
+            <div className="text-t3 text-sm  py-8 text-center font-serif">
               Aucune connexion identifiée
             </div>
           ) : (
@@ -150,15 +150,15 @@ export default function WormholePanel({
               const targetEntity = getEntityDetails(conn.entity);
 
               return (
-                <div key={i} className="bg-white border border-div rounded-sm overflow-hidden shadow-sm">
+                <div key={i} className="bg-white border border-div rounded-none-none overflow-hidden shadow-sm">
                   <div className="flex items-center justify-between p-3 border-b border-div bg-cream">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: conn.entityColor }} />
+                      <div className="w-2 h-2 rounded-none-none" style={{ backgroundColor: conn.entityColor }} />
                       <span className="font-mono text-micro font-bold tracking-widest text-[#1C1814] uppercase">
                         {targetEntity.name}
                       </span>
                     </div>
-                    <span className="font-mono text-[8px] px-1.5 py-0.5 rounded border border-div text-t2 uppercase flex items-center gap-1 bg-white">
+                    <span className="font-mono text-[8px] px-1.5 py-0.5 rounded-none border border-div text-t2 uppercase flex items-center gap-1 bg-white">
                       <Icon size={8} /> {conn.type}
                     </span>
                   </div>

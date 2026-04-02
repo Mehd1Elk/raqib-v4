@@ -22,7 +22,7 @@ export default function MineralsGeopolitics() {
           }}>
             {/* Severity circle */}
             <div style={{
-              width: 40, height: 40, borderRadius: '50%', flexShrink: 0,
+              width: 40, height: 40, borderRadius: 0, flexShrink: 0,
               background: getSeverityColor(r.severity) + '18',
               border: `2px solid ${getSeverityColor(r.severity)}`,
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -37,7 +37,7 @@ export default function MineralsGeopolitics() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <span style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text)' }}>{r.event}</span>
                 <span style={{
-                  fontSize: '0.56rem', padding: '2px 8px', borderRadius: 10,
+                  fontSize: '0.56rem', padding: '2px 8px', borderRadius: 0,
                   background: getCategoryColor(r.category) + '18',
                   color: getCategoryColor(r.category),
                   border: `1px solid ${getCategoryColor(r.category)}30`,
@@ -88,7 +88,7 @@ export default function MineralsGeopolitics() {
                 position: 'absolute',
                 left: Math.min(Math.max(x, 36), 228),
                 top: Math.min(Math.max(y, 10), 260),
-                width: 8, height: 8, borderRadius: '50%',
+                width: 8, height: 8, borderRadius: 0,
                 background: color, border: '1px solid var(--bg)',
                 cursor: 'default',
               }}>
