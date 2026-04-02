@@ -150,7 +150,7 @@ export default function CountryArtDetailPage() {
                     )}
                     {a.galleries && a.galleries.length > 0 && <div style={{ fontSize: '0.6rem', color: 'var(--text-faint)', marginTop: '0.2rem' }}>Galeries: {a.galleries.join(', ')}</div>}
                     {a.significance && <div style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '0.2rem', lineHeight: '1.3' }}>{a.significance}</div>}
-                    <div style={{ fontSize: '0.55rem', color: 'var(--text-faint)', marginTop: '0.2rem' }}>{a.born}{a.died ? ` \u2014 ${a.died}` : ''}</div>
+                    <div style={{ fontSize: '0.55rem', color: 'var(--text-faint)', marginTop: '0.2rem' }}>{a.born}{a.died ? ` — ${a.died}` : ''}</div>
                   </div>
                 ))}
               </div>
@@ -179,7 +179,7 @@ export default function CountryArtDetailPage() {
                 ))}
               </div>
             ) : (
-              <EmptyState label="artistes les plus cot\u00e9s" />
+              <EmptyState label="artistes les plus cotés" />
             )}
             {/* Fallback from static data */}
             {(!topArtists.data || topArtists.data.length === 0) && !topArtists.loading && country.artists && country.artists.length > 0 && (
@@ -216,7 +216,7 @@ export default function CountryArtDetailPage() {
                   </div>
                 ))}
               </div>
-            ) : <EmptyState label="artistes \u00e9mergents" />}
+            ) : <EmptyState label="artistes émergents" />}
           </>
         )}
 
@@ -230,8 +230,8 @@ export default function CountryArtDetailPage() {
                   {country.galleries.map((g, i) => (
                     <tr key={i}>
                       <td className="highlight">{g.website ? <a href={g.website.startsWith('http') ? g.website : `https://${g.website}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--hermes-orange, #E8600A)' }}>{g.name}</a> : g.name}</td>
-                      <td>{g.city}</td><td>{g.founded || '\u2014'}</td><td style={{ fontSize: '0.7rem' }}>{g.specialty || '\u2014'}</td>
-                      <td style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>{g.fairs?.join(', ') || '\u2014'}</td>
+                      <td>{g.city}</td><td>{g.founded || '—'}</td><td style={{ fontSize: '0.7rem' }}>{g.specialty || '—'}</td>
+                      <td style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>{g.fairs?.join(', ') || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -248,13 +248,13 @@ export default function CountryArtDetailPage() {
                 {country.museums.map((m, i) => (
                   <div key={i} className="info-card">
                     <div className="info-card-value" style={{ fontSize: '1rem' }}>{m.website ? <a href={m.website.startsWith('http') ? m.website : `https://${m.website}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--hermes-orange, #E8600A)' }}>{m.name}</a> : m.name}</div>
-                    <div className="info-card-sub">{m.city} &middot; {m.type || 'Mus\u00e9e'}</div>
+                    <div className="info-card-sub">{m.city} &middot; {m.type || 'Musée'}</div>
                     {m.collection && <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: '1.3' }}>{m.collection}</div>}
                     {m.visitors && <div style={{ fontSize: '0.6rem', color: 'var(--camel)', marginTop: '0.15rem' }}>{m.visitors}</div>}
                   </div>
                 ))}
               </div>
-            ) : <EmptyState label="mus\u00e9es" />}
+            ) : <EmptyState label="musées" />}
           </>
         )}
 
@@ -266,7 +266,7 @@ export default function CountryArtDetailPage() {
                 {country.auctionHouses.map((ah, i) => (
                   <div key={i} className="info-card">
                     <div className="info-card-value" style={{ fontSize: '1.1rem' }}>{ah.name}</div>
-                    <div className="info-card-sub">{ah.city}{ah.type ? ` \u00b7 ${ah.type}` : ''}</div>
+                    <div className="info-card-sub">{ah.city}{ah.type ? ` · ${ah.type}` : ''}</div>
                     {ah.specialty && <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{ah.specialty}</div>}
                     {ah.annualVolume && <div style={{ fontSize: '0.65rem', color: 'var(--camel)', marginTop: '0.15rem' }}>Volume: {ah.annualVolume}</div>}
                     {ah.majorSales && ah.majorSales.length > 0 && (
@@ -278,7 +278,7 @@ export default function CountryArtDetailPage() {
                   </div>
                 ))}
               </div>
-            ) : <EmptyState label="maisons d'ench\u00e8res" />}
+            ) : <EmptyState label="maisons d'enchères" />}
           </>
         )}
 
@@ -290,7 +290,7 @@ export default function CountryArtDetailPage() {
                 {country.collectors.map((col, i) => (
                   <div key={i} className="info-card">
                     <div className="info-card-value" style={{ fontSize: '1rem' }}>{col.name}</div>
-                    {col.type && <div className="info-card-sub">{col.type}{col.influenceLevel ? ` \u00b7 ${col.influenceLevel}` : ''}</div>}
+                    {col.type && <div className="info-card-sub">{col.type}{col.influenceLevel ? ` · ${col.influenceLevel}` : ''}</div>}
                     {col.focus && <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>{col.focus}</div>}
                     {col.collectionSize && <div style={{ fontSize: '0.65rem', color: 'var(--camel)', marginTop: '0.15rem' }}>{col.collectionSize}</div>}
                     {col.collectionValueEstimate && <div style={{ fontSize: '0.65rem', color: 'var(--hermes-orange, #E8600A)' }}>Valeur: {col.collectionValueEstimate}</div>}
@@ -302,7 +302,7 @@ export default function CountryArtDetailPage() {
                     )}
                     {col.publicAccess !== undefined && (
                       <div style={{ fontSize: '0.55rem', marginTop: '0.15rem', color: col.publicAccess ? '#5A8A3A' : 'var(--text-faint)' }}>
-                        {col.publicAccess ? 'Ouvert au public' : 'Collection priv\u00e9e'}
+                        {col.publicAccess ? 'Ouvert au public' : 'Collection privée'}
                       </div>
                     )}
                   </div>
@@ -320,7 +320,7 @@ export default function CountryArtDetailPage() {
                 {country.artFairs.map((f, i) => (
                   <div key={i} className="info-card">
                     <div className="info-card-value" style={{ fontSize: '1.1rem' }}>{f.name}</div>
-                    <div className="info-card-sub">{f.city}{f.frequency ? ` \u00b7 ${f.frequency}` : ''}</div>
+                    <div className="info-card-sub">{f.city}{f.frequency ? ` · ${f.frequency}` : ''}</div>
                     {f.significance && <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: '1.3' }}>{f.significance}</div>}
                   </div>
                 ))}
@@ -341,14 +341,14 @@ export default function CountryArtDetailPage() {
                       <td className="highlight">{ev.website ? <a href={ev.website} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--hermes-orange, #E8600A)' }}>{ev.name}</a> : ev.name}</td>
                       <td>{ev.city}</td>
                       <td><span className="eigen-badge">{ev.type || 'event'}</span></td>
-                      <td style={{ fontSize: '0.7rem' }}>{ev.date_start || ''}{ev.date_end ? ` \u2192 ${ev.date_end}` : ''}</td>
-                      <td>{ev.expected_visitors || '\u2014'}</td>
-                      <td style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>{ev.focus || '\u2014'}</td>
+                      <td style={{ fontSize: '0.7rem' }}>{ev.date_start || ''}{ev.date_end ? ` → ${ev.date_end}` : ''}</td>
+                      <td>{ev.expected_visitors || '—'}</td>
+                      <td style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>{ev.focus || '—'}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
-            ) : <EmptyState label="\u00e9v\u00e9nements 2026/2027" />}
+            ) : <EmptyState label="événements 2026/2027" />}
           </>
         )}
 
@@ -408,7 +408,7 @@ export default function CountryArtDetailPage() {
                   )}
                 </div>
               ))
-            ) : <EmptyState label="Cr\u00e9dit Lombard" />}
+            ) : <EmptyState label="Crédit Lombard" />}
           </>
         )}
 
@@ -447,7 +447,7 @@ export default function CountryArtDetailPage() {
                   )}
                 </div>
               ))
-            ) : <EmptyState label="March\u00e9 Gris" />}
+            ) : <EmptyState label="Marché Gris" />}
           </>
         )}
 
@@ -482,11 +482,11 @@ export default function CountryArtDetailPage() {
                   {magazines.data.map((mag: any, i: number) => (
                     <tr key={i}>
                       <td className="highlight">{mag.website ? <a href={mag.website} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--hermes-orange, #E8600A)' }}>{mag.name}</a> : mag.name}</td>
-                      <td>{mag.type || '\u2014'}</td>
-                      <td>{mag.frequency || '\u2014'}</td>
-                      <td>{mag.language || '\u2014'}</td>
-                      <td style={{ fontSize: '0.7rem' }}>{mag.focus || '\u2014'}</td>
-                      <td><span className="eigen-badge">{mag.influence_level || '\u2014'}</span></td>
+                      <td>{mag.type || '—'}</td>
+                      <td>{mag.frequency || '—'}</td>
+                      <td>{mag.language || '—'}</td>
+                      <td style={{ fontSize: '0.7rem' }}>{mag.focus || '—'}</td>
+                      <td><span className="eigen-badge">{mag.influence_level || '—'}</span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -508,7 +508,7 @@ export default function CountryArtDetailPage() {
                 {country.regulation.antiMoneyLaundering && <div className="info-card"><div className="info-card-label">Anti-blanchiment</div><div style={{ fontSize: '0.85rem', color: 'var(--hermes-text, #F5EDE3)' }}>{country.regulation.antiMoneyLaundering}</div></div>}
                 {country.regulation.culturalRestitution && <div className="info-card"><div className="info-card-label">Restitution culturelle</div><div style={{ fontSize: '0.85rem', color: 'var(--hermes-text, #F5EDE3)' }}>{country.regulation.culturalRestitution}</div></div>}
               </div>
-            ) : <EmptyState label="r\u00e9glementation" />}
+            ) : <EmptyState label="réglementation" />}
           </>
         )}
 
@@ -518,9 +518,9 @@ export default function CountryArtDetailPage() {
             {country.artEducation && country.artEducation.length > 0 ? (
               <table className="data-table">
                 <thead><tr><th>&Eacute;cole</th><th>Ville</th><th>Type</th></tr></thead>
-                <tbody>{country.artEducation.map((s, i) => (<tr key={i}><td className="highlight">{s.name}</td><td>{s.city}</td><td>{s.type || '\u2014'}</td></tr>))}</tbody>
+                <tbody>{country.artEducation.map((s, i) => (<tr key={i}><td className="highlight">{s.name}</td><td>{s.city}</td><td>{s.type || '—'}</td></tr>))}</tbody>
               </table>
-            ) : <EmptyState label="\u00e9coles d'art" />}
+            ) : <EmptyState label="écoles d'art" />}
           </>
         )}
 

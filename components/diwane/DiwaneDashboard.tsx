@@ -66,7 +66,7 @@ export function DiwaneDashboard() {
             {([
               { key: 'all', label: 'Tous' },
               { key: 'africa', label: 'Afrique' },
-              { key: 'eu', label: 'Union Europ\u00e9enne' },
+              { key: 'eu', label: 'Union Européenne' },
             ] as { key: FilterType; label: string }[]).map(f => (
               <button
                 key={f.key}
