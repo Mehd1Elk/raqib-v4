@@ -123,17 +123,17 @@ export default function CountryArtDetailPage() {
 
         {activeTab === 'artists' && (
           <>
-            {country.topArtists && country.topArtists.length > 0 ? (
+            {country.artists && country.artists.length > 0 ? (
               <div className="countries-grid">
-                {country.topArtists.map((a, i) => (
+                {country.artists.map((a, i) => (
                   <div key={i} className="artist-card">
                     <div className="artist-name">{a.name}</div>
                     <div className="artist-medium">{a.medium}</div>
                     {a.movement && <div className="artist-movement">{a.movement}</div>}
                     {a.auctionRecord && <div className="artist-record">Record: {a.auctionRecord}</div>}
-                    {a.auctionHouse && <div style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>{a.auctionHouse}</div>}
+                    {a.galleries && a.galleries.length > 0 && <div style={{ fontSize: '0.65rem', color: 'var(--text-faint)' }}>{a.galleries.join(', ')}</div>}
                     <div style={{ fontSize: '0.65rem', color: 'var(--text-faint)', marginTop: '0.25rem' }}>
-                      {a.birthYear}{a.deathYear ? ` — ${a.deathYear}` : ''}
+                      {a.born}{a.died ? ` — ${a.died}` : ''}
                     </div>
                   </div>
                 ))}
