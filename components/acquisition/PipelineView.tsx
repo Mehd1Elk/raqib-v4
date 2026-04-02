@@ -357,3 +357,5 @@ function CompanyDetail({
     </div>
   );
 }
+
+export default PipelineView;

@@ -1,11 +1,11 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createUntypedClient } from '@/lib/untyped-client';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const country = searchParams.get('country');
   const movement = searchParams.get('movement');
-  const supabase = await createClient();
+  const supabase = await createUntypedClient();
 
   let query = supabase.from('diwane_artists').select('*, diwane_countries(name, region)');
 

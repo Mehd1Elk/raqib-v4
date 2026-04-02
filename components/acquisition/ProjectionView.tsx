@@ -268,3 +268,5 @@ function yearColor(year: string): string {
   };
   return map[year] ?? '#918977';
 }
+
+export default ProjectionView;

@@ -507,3 +507,5 @@ function PropRow({ label, value, bold }: { label: string; value: string | number
     </div>
   );
 }
+
+export default CompaniesView;

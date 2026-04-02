@@ -190,3 +190,5 @@ function Top10Row({ company, rank }: { company: AcquisitionCompany; rank: number
     </div>
   );
 }
+
+export default DashboardView;

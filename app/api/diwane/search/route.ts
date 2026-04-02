@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createUntypedClient } from '@/lib/untyped-client';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ error: 'Query parameter "q" is required' }, { status: 400 });
   }
 
-  const supabase = await createClient();
+  const supabase = await createUntypedClient();
 
   // Search across artists, galleries, and museums
   const [artistsRes, galleriesRes, museumsRes] = await Promise.all([

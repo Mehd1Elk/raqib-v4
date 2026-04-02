@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createUntypedClient } from '@/lib/untyped-client';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const sort = searchParams.get('sort'); // e.g. 'price_desc'
-  const supabase = await createClient();
+  const supabase = await createUntypedClient();
 
   let query = supabase.from('diwane_auction_records').select('*');
 

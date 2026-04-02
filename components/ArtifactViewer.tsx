@@ -43,7 +43,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
   <script src="https://cdn.tailwindcss.com"><\/script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.15.0/Recharts.min.js"><\/script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#F7F3EA}*{box-sizing:border-box}</style>
 </head><body>
   <div id="root"></div>

@@ -12,10 +12,10 @@ import ConscienceBar from '@/components/ConscienceBar';
 const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');
 
 const playfair = Playfair_Display({
-  variable: '--font-playfair',
+  variable: '--font-cormorant',
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  style: ['normal', ''],
+  weight: ['400', '500', '700'],
+  style: ['normal', 'italic'],
 });
 
 const jetbrains = JetBrains_Mono({

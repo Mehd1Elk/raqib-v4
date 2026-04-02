@@ -240,3 +240,21 @@ export interface ArtCountry {
   authentication?: AuthenticationData;
   eigenBricks?: EigenBrick[];
 }
+
+// ---------------------------------------------------------------------------
+// Diwane-prefixed aliases for data.ts compatibility
+// ---------------------------------------------------------------------------
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type DiwaneGlobalData   = any;
+export type DiwaneCountryArt   = any;
+export type DiwaneArtist       = any;
+export type DiwaneGallery      = any;
+export type DiwaneMuseum       = any;
+export type DiwaneAuctionHouse = any;
+export type DiwaneArtFair      = any;
+export type DiwaneArtFinance   = any;
+export type DiwaneRegulation   = any;
+export type DiwaneCollector    = any;
+export type DiwaneArtEducation = any;
+export type DiwaneTabDef       = any;
+export type DiwaneSearchItem   = any;

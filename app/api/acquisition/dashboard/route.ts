@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createAcqClient } from '@/lib/acquisition/supabase';
 import type { AcquisitionCompany, AcquisitionStage, DashboardData } from '@/components/acquisition/types';
 import { STAGE_ORDER } from '@/components/acquisition/types';
 
 export async function GET() {
-  const supabase = await createClient();
+  const supabase = await createAcqClient();
 
   const { data: rows, error } = await supabase
     .from('acquisition_companies')

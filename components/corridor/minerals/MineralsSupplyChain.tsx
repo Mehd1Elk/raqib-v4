@@ -18,10 +18,10 @@ export function MineralsSupplyChain() {
               <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>{s.description}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--gold)', marginBottom: '0.4rem' }}>Capture de valeur : {s.valueCapture} — {s.value}</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-faint)', marginBottom: '0.5rem' }}>Acteurs : {s.actors}</div>
-              <div style={{ padding: '0.5rem 0.75rem', background: 'rgba(161,53,68,0.08)', borderLeft: '2px solid var(--red)', borderRadius: 0, 3px 3px 0', fontSize: '0.75rem', marginBottom: '0.4rem' }}>
+              <div style={{ padding: '0.5rem 0.75rem', background: 'rgba(161,53,68,0.08)', borderLeft: '2px solid var(--red)', borderRadius: 0, fontSize: '0.75rem', marginBottom: '0.4rem' }}>
                 <strong style={{ color: 'var(--red)' }}>Goulot :</strong> <span style={{ color: 'var(--text-muted)' }}>{s.bottleneck}</span>
               </div>
-              <div style={{ padding: '0.5rem 0.75rem', background: 'rgba(201,169,110,0.08)', borderLeft: '2px solid var(--gold)', borderRadius: 0, 3px 3px 0', fontSize: '0.75rem' }}>
+              <div style={{ padding: '0.5rem 0.75rem', background: 'rgba(201,169,110,0.08)', borderLeft: '2px solid var(--gold)', borderRadius: 0, fontSize: '0.75rem' }}>
                 <strong style={{ color: 'var(--gold)' }}>EIGEN :</strong> <span style={{ color: 'var(--text-muted)' }}>{s.eigenRole}</span>
               </div>
             </div>

@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createUntypedClient } from '@/lib/untyped-client';
 
 export async function GET(request: Request) {
-  const supabase = await createClient();
+  const supabase = await createUntypedClient();
 
   const { data, error } = await supabase
     .from('diwane_galleries')

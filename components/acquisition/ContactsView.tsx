@@ -460,3 +460,5 @@ function ActionItem({
     </div>
   );
 }
+
+export default ContactsView;

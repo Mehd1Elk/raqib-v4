@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
+import { createAcqClient } from '@/lib/acquisition/supabase';
 
 function getSuggestedPersonas(briques: string[]) {
   const personas = new Set<string>();
@@ -25,7 +25,7 @@ function getSuggestedPersonas(briques: string[]) {
 
 export async function GET(request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
-  const supabase = await createClient();
+  const supabase = await createAcqClient();
   
   const { data: company, error } = await supabase
     .from('acq_companies')
@@ -58,7 +58,7 @@ export async function GET(request: Request, context: { params: Promise<{ id: str
 
 export async function PATCH(request: Request, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
-  const supabase = await createClient();
+  const supabase = await createAcqClient();
   const body = await request.json();
   
   const { stage, priority, notes } = body;
