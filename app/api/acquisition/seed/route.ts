@@ -1,5 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
-import { createAcqClient } from '@/lib/acquisition/supabase';
+import { createAdminClient } from '@/lib/acquisition/supabase-admin';
 import { computeTier, computeScore, computePriority, computeRevenue } from '@/lib/acquisition/engine';
 import regulationsRaw from '@/src/data/acquisition/regulations-seed.json';
 import contactsRaw from '@/src/data/acquisition/contacts-seed.json';
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const supabase = await createAcqClient();
+  const supabase = createAdminClient();
   const results: Record<string, string> = {};
 
   // 1. Seed regulations (delete old + insert)
