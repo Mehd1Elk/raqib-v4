@@ -1574,3 +1574,7 @@ export const COMPARISON_INDICATORS = [
   { id: 'regulation', label: 'Régulation', icon: '⚖️' },
   { id: 'fairs', label: 'Foires', icon: '🎪' },
 ];
+
+// Aliases for compatibility with country page imports
+export const COUNTRY_TABS = DIWANE_TABS;
+export const EU_TABS = DIWANE_TABS;

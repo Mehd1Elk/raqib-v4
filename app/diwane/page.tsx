@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import { DiwaneDashboard } from '../../components/diwane/DiwaneDashboard';

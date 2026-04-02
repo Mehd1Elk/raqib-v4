@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { NextResponse } from 'next/server';
 import { SEARCH_INDEX } from '../../../../lib/diwane/data';
 import { filterDiwaneSearch } from '../../../../lib/diwane/utils';

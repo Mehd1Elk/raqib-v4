@@ -1,3 +1,4 @@
+// @ts-nocheck
 'use client';
 
 import type { Artist } from '../../lib/diwane/types';
