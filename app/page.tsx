@@ -261,6 +261,19 @@ export default function Dashboard() {
               Module MADEN
             </div>
           </a>
+
+          {/* Card DIWANE — Art Market Intelligence */}
+          <a href="/diwane" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(232,96,10,0.5)] transition no-underline" style={{ background: '#1A1410', border: '1px solid rgba(232,96,10,0.25)', color: '#F0EAE0' }}>
+            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#E8600A' }}>
+              <span style={{ fontSize: '1.1rem', marginRight: '0.4rem', color: '#C4956A' }}>ديوان</span> DIWANE
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#A09888', marginTop: '0.5rem' }}>
+              Art Market Intelligence — 49 pays · Artistes · Galeries · Enchères
+            </div>
+            <div style={{ fontSize: '0.65rem', color: '#8B6B4A', marginTop: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              Hermès Intelligence
+            </div>
+          </a>
         </div>
       </div>
 
