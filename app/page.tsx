@@ -20,6 +20,23 @@ import { GlobalNav } from '@/components/GlobalNav';
 import { subscribeToLayerUpdates, fetchCategoriesWithLayers } from '@/lib/supabase/client-queries';
 import type { Category } from '@/lib/types';
 
+// ── Design tokens ────────────────────────────────────────────────
+const P  = '#1E0A20';          // prune
+const P2 = '#2A1230';          // prune2
+const N  = '#FAF8FC';          // nacre
+const N2 = '#F5F2F8';          // nacre2
+const N3 = '#EEEBF4';          // nacre3
+const T2 = 'rgba(30,10,32,0.60)';
+const T3 = 'rgba(30,10,32,0.35)';
+const T4 = 'rgba(30,10,32,0.08)';
+const ST2 = '#E4D4EA';         // surface text on dark bg
+const ST3 = 'rgba(228,212,234,0.55)';
+const DIV = 'rgba(30,10,32,0.08)';
+const GR  = '"Playfair Display", "Didot", Georgia, serif';
+const MN  = '"JetBrains Mono", monospace';
+const SN  = '"Geist", "Helvetica Neue", Helvetica, sans-serif';
+// ─────────────────────────────────────────────────────────────────
+
 interface LayerLiveData {
   actual_rows: number;
   status: string | null;
@@ -62,7 +79,6 @@ export default function Dashboard() {
           })),
         }));
         setSbCategories(mapped);
-
         const live: Record<string, LayerLiveData> = {};
         for (const c of cats) {
           for (const l of c.layers) {
@@ -115,187 +131,211 @@ export default function Dashboard() {
   const currentLive = layer ? liveData[layer.id] : undefined;
 
   return (
-    <div className="w-screen h-screen flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
       <SearchOverlay onSelect={handleSearch} />
 
       {/* ═══ ZONE 1 — HERO HEADER ═══ */}
-      <div className="shrink-0 bg-ivory border-b border-div px-8 py-6">
-        <div className="flex items-center justify-between">
+      <div style={{ background: N, borderBottom: `0.5px solid ${DIV}`, padding: '20px 32px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 16 }}>
           <div>
-            <div className="flex items-center gap-3 mb-1.5">
-              <div className="w-3 h-3 rounded-none-none bg-gold" />
-              <h1 className="font-[family-name:var(--font-playfair)] text-[32px] font-normal uppercase tracking-[3px] text-noir">
-                Raqib <span className="font-normal text-[32px] text-gold tracking-[3px]">رقيب</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4 }}>
+              <div style={{ width: 10, height: 10, background: P, flexShrink: 0 }} />
+              <h1 style={{ fontFamily: GR, fontSize: 28, fontWeight: 400, color: P, margin: 0, letterSpacing: 2 }}>
+                Raqib <span style={{ fontWeight: 400, fontSize: 20, color: T2 }}>رقيب</span>
               </h1>
             </div>
-            <p className="font-[family-name:var(--font-jetbrains)] text-[10px] font-medium tracking-[2px] text-[rgba(255,255,255,0.50)]">
+            <p style={{ fontFamily: MN, fontSize: 9, color: T3, letterSpacing: 3, textTransform: 'uppercase', margin: 0 }}>
               V4 · 1100 COUCHES · 11 ENTITÉS · 16 384 ENTRIES · 255 AGENTS
             </p>
           </div>
-          <div className="flex items-center gap-3">
-            <a href="/eigen" className="px-4 py-2 bg-gold text-white font-[family-name:var(--font-jetbrains)] text-[10px] font-semibold uppercase tracking-[2px] rounded-none hover:bg-gold-d transition">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+            <a href="/eigen" style={{ padding: '7px 16px', background: P, color: N, fontFamily: MN, fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', textDecoration: 'none', display: 'inline-block' }}>
               COCKPIT EIGEN →
             </a>
-            <a href="/upload" className="px-4 py-2 border border-stone text-stone font-[family-name:var(--font-jetbrains)] text-[10px] font-semibold uppercase tracking-[2px] rounded-none hover:border-gold hover:text-gold transition">
+            <a href="/upload" style={{ padding: '7px 16px', border: `0.5px solid ${T3}`, color: T2, fontFamily: MN, fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', textDecoration: 'none', display: 'inline-block' }}>
               IMPORTER
             </a>
-            <a href="/vault" className="px-3 py-2 text-[10px] font-[family-name:var(--font-jetbrains)] font-semibold uppercase tracking-[2px] text-[#7B5EA7] border border-[#7B5EA7] rounded-none hover:bg-[#7B5EA7] hover:text-white transition">
+            <a href="/vault" style={{ padding: '7px 14px', border: `0.5px solid #8B5EB0`, color: '#8B5EB0', fontFamily: MN, fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', textDecoration: 'none', display: 'inline-block' }}>
               VAULT
             </a>
             <GlobalNav />
             <ExportButton entityIndex={entityIndex} />
-            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded-none border border-div cursor-pointer">
+            <kbd style={{ fontFamily: MN, fontSize: 8, color: T3, background: N3, padding: '2px 6px', border: `0.5px solid ${DIV}`, cursor: 'pointer' }}>
               ⌘K
             </kbd>
-            <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
-              {time}
-            </span>
+            <span style={{ fontFamily: MN, fontSize: 9, color: T3 }}>{time}</span>
           </div>
         </div>
       </div>
 
       {/* ═══ ZONE 2 — NAVIGATION CARDS ═══ */}
-      <div className="shrink-0 px-8 py-5 bg-cream border-b border-div">
-        <div className="grid grid-cols-3 gap-[16px]">
+      <div style={{ background: N2, borderBottom: `0.5px solid ${DIV}`, padding: '20px 32px', flexShrink: 0 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
 
-          {/* Card COCKPIT EIGEN */}
-          <a href="/eigen" className="col-span-1 row-span-2 bg-noir text-white p-6 hover:ring-2 hover:ring-gold transition group no-underline" style={{ border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 0 }}>
-            <div className="text-gold font-[family-name:var(--font-jetbrains)] text-[9px] font-semibold tracking-[3px] uppercase mb-3">COCKPIT</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  mb-2">EIGEN Stratégique</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-stone mb-4">
+          {/* Card COCKPIT EIGEN — prune dark, double height */}
+          <a href="/eigen" style={{ gridRow: 'span 2', background: P, color: N, padding: 24, textDecoration: 'none', border: `0.5px solid ${P2}`, display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST3, letterSpacing: 4, textTransform: 'uppercase', marginBottom: 10 }}>COCKPIT</div>
+            <div style={{ fontFamily: GR, fontSize: 22, fontWeight: 400, color: N, marginBottom: 6, letterSpacing: 1 }}>EIGEN Stratégique</div>
+            <div style={{ fontFamily: SN, fontSize: 11, color: ST3, marginBottom: 'auto' }}>
               6 sous-onglets · 255 agents · Board meeting · Galerie · Terminal
             </div>
-            <div className="grid grid-cols-3 gap-2 mt-4">
-              <div className="text-center">
-                <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal text-gold">255</div>
-                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">AGENTS</div>
-              </div>
-              <div className="text-center">
-                <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal text-gold">59</div>
-                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">DOCUMENTS</div>
-              </div>
-              <div className="text-center">
-                <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal text-gold">88</div>
-                <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-stone">SCORE</div>
-              </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8, marginTop: 24 }}>
+              {[['255', 'AGENTS'], ['59', 'DOCUMENTS'], ['88', 'SCORE']].map(([v, l]) => (
+                <div key={l} style={{ textAlign: 'center' }}>
+                  <div style={{ fontFamily: GR, fontSize: 24, fontWeight: 700, color: N }}>{v}</div>
+                  <div style={{ fontFamily: MN, fontSize: 7, color: ST3, letterSpacing: 2 }}>{l}</div>
+                </div>
+              ))}
             </div>
-            <div className="mt-4 font-[family-name:var(--font-jetbrains)] text-[8px] text-gold opacity-0 group-hover:opacity-100 transition">
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST2, letterSpacing: 2, marginTop: 16, opacity: 0.7 }}>
               OUVRIR LE COCKPIT →
             </div>
           </a>
 
           {/* Card NEXUS */}
-          <a href="/nexus" className="bg-noir text-gold-l p-5 hover:ring-1 hover:ring-gold transition no-underline group" style={{ border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] font-semibold tracking-[3px] uppercase mb-2 text-[#D4B662]">NEXUS</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  text-white mb-1">Carte ecosysteme</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-stone mb-3">11 entites &middot; 19 flux &middot; Force-directed</div>
-            <div className="flex gap-1.5">
-              <span className="w-2 h-2 rounded-none-none bg-[#B8963E]" />
-              <span className="w-2 h-2 rounded-none-none bg-[#7B5EA7]" />
-              <span className="w-2 h-2 rounded-none-none bg-[#3D7C5E]" />
-              <span className="w-2 h-2 rounded-none-none bg-[#B87D3E]" />
-              <span className="w-2 h-2 rounded-none-none bg-[#D4B662]" />
-            </div>
-            <div className="mt-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-gold opacity-0 group-hover:opacity-100 transition">
-              OUVRIR LE NEXUS &rarr;
+          <a href="/nexus" style={{ background: P2, color: N, padding: 20, textDecoration: 'none', border: `0.5px solid rgba(228,212,234,0.08)` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST3, letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>NEXUS</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Carte ecosysteme</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: ST3, marginBottom: 12 }}>11 entités · 19 flux · Force-directed</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              {['#5A6E9C','#8B5EB0','#5A8A6E','#A87D3E','#5A8A90'].map((c) => (
+                <span key={c} style={{ width: 8, height: 8, background: c, display: 'inline-block' }} />
+              ))}
             </div>
           </a>
 
           {/* Card DASHBOARDS */}
-          <a href="/dashboards/investor" className="bg-ivory p-5 hover:border-gold transition no-underline" style={{ border: "0.5px solid rgba(0,0,0,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-gold font-semibold tracking-[3px] uppercase mb-2">DASHBOARDS</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  text-noir mb-1">Tableaux de bord</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-t3 mb-3">Investor · Supervisor · GITEX · London</div>
-            <div className="flex gap-2">
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] font-semibold tracking-[1px] px-2 py-0.5 bg-[rgba(184,150,62,0.1)] text-gold rounded-none">INVESTOR</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] font-semibold tracking-[1px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">SUPERVISOR</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] font-semibold tracking-[1px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">GITEX</span>
+          <a href="/dashboards/investor" style={{ background: N, color: P, padding: 20, textDecoration: 'none', border: `0.5px solid ${DIV}` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: P, letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>DASHBOARDS</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: P, marginBottom: 6 }}>Tableaux de bord</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: T2, marginBottom: 12 }}>Investor · Supervisor · GITEX · London</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              {['INVESTOR','SUPERVISOR','GITEX'].map(l => (
+                <span key={l} style={{ fontFamily: MN, fontSize: 7, padding: '2px 6px', background: T4, color: T3, letterSpacing: 1 }}>{l}</span>
+              ))}
             </div>
           </a>
 
           {/* Card DATA VIEWER */}
-          <a href="/data" className="bg-ivory p-5 hover:border-gold transition no-underline" style={{ border: "0.5px solid rgba(0,0,0,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#B87D3E] font-semibold tracking-[3px] uppercase mb-2">DATA</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  text-noir mb-1">Data Viewer</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-t3 mb-3">11 entites &middot; 1100 couches &middot; Plein ecran</div>
-            <div className="flex gap-2">
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] font-semibold tracking-[1px] px-2 py-0.5 bg-[rgba(184,125,62,0.1)] text-[#B87D3E] rounded-none">FULL SCREEN</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] font-semibold tracking-[1px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">SEARCH</span>
+          <a href="/data" style={{ background: N, color: P, padding: 20, textDecoration: 'none', border: `0.5px solid ${DIV}` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#A87D3E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>DATA</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: P, marginBottom: 6 }}>Data Viewer</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: T2, marginBottom: 12 }}>11 entités · 1100 couches · Plein écran</div>
+            <div style={{ display: 'flex', gap: 6 }}>
+              {[['FULL SCREEN','#A87D3E'],['SEARCH', T3]].map(([l,c]) => (
+                <span key={l} style={{ fontFamily: MN, fontSize: 7, padding: '2px 6px', border: `0.5px solid ${c}`, color: c as string, letterSpacing: 1 }}>{l}</span>
+              ))}
             </div>
           </a>
 
           {/* Card STATS */}
-          <a href="/stats" className="bg-ivory p-5 hover:border-gold transition no-underline" style={{ border: "0.5px solid rgba(0,0,0,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-emerald font-semibold tracking-[3px] uppercase mb-2">PROGRESSION</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  text-noir mb-1">Stats & Qualité</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-t3 mb-3">100% completion &middot; 16 384 entries &middot; conf 0.85</div>
-            <div className="w-full h-2 bg-parchment rounded-none-none overflow-hidden">
-              <div className="h-full bg-emerald rounded-none-none" style={{width:'100%'}} />
+          <a href="/stats" style={{ background: N, color: P, padding: 20, textDecoration: 'none', border: `0.5px solid ${DIV}` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#5A8A6E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>PROGRESSION</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: P, marginBottom: 6 }}>Stats &amp; Qualité</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: T2, marginBottom: 12 }}>100% completion · 16 384 entries · conf 0.85</div>
+            <div style={{ width: '100%', height: 3, background: N3 }}>
+              <div style={{ width: '100%', height: 3, background: '#5A8A6E' }} />
             </div>
           </a>
 
           {/* Card BOARD MEETING */}
-          <a href="/eigen?tab=board" className="bg-ivory p-5 hover:border-gold transition no-underline" style={{ border: "0.5px solid rgba(0,0,0,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-violet font-semibold tracking-[3px] uppercase mb-2">COMITÉ</div>
-            <div className="font-[family-name:var(--font-playfair)] text-[20px] font-normal  text-noir mb-1">Board Meeting</div>
-            <div className="font-[family-name:var(--font-noto)] text-[12px] font-normal text-t3 mb-3">5 directeurs IA · Débat stratégique</div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">Stratégie · Finance · Juridique · Tech · Commercial</div>
+          <a href="/eigen?tab=board" style={{ background: N, color: P, padding: 20, textDecoration: 'none', border: `0.5px solid ${DIV}` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#8B5EB0', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>COMITÉ</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: P, marginBottom: 6 }}>Board Meeting</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: T2, marginBottom: 8 }}>5 directeurs IA · Débat stratégique</div>
+            <div style={{ fontFamily: MN, fontSize: 9, color: T3 }}>Stratégie · Finance · Juridique · Tech · Commercial</div>
           </a>
 
           {/* Card TERMINAL */}
-          <a href="/eigen?tab=terminal" className="bg-noir text-gold-l p-5 hover:ring-1 hover:ring-gold transition no-underline" style={{ border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 0 }}>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] font-semibold tracking-[3px] uppercase mb-2 text-stone">TERMINAL</div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[14px] mb-1">&gt; status</div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">8 commandes · Live feed · 255 agents</div>
+          <a href="/eigen?tab=terminal" style={{ background: P, color: N, padding: 20, textDecoration: 'none', border: `0.5px solid ${P2}` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST3, letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>TERMINAL</div>
+            <div style={{ fontFamily: MN, fontSize: 14, color: N, marginBottom: 6 }}>&gt; status</div>
+            <div style={{ fontFamily: MN, fontSize: 9, color: ST3 }}>8 commandes · Live feed · 255 agents</div>
           </a>
 
           {/* Card CORRIDOR INTELLIGENCE */}
-          <a href="/corridor" className="p-5 hover:ring-1 hover:ring-[rgba(201,169,110,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1918 100%)', border: "0.5px solid rgba(255,255,255,0.08)", borderRadius: 0, color: '#E8E5DE' }}>
-            <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '20px', fontWeight: 'normal', color: '#C9A96E' }}>
-              Corridor Intelligence
-            </div>
-            <div style={{ fontSize: '0.75rem', color: '#9A9790', marginTop: '0.5rem' }}>
+          <a href="/corridor" style={{ background: P, color: N, padding: 20, textDecoration: 'none', border: `0.5px solid rgba(90,110,156,0.3)` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#5A6E9C', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>CORRIDOR</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Corridor Intelligence</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: ST3, marginBottom: 10 }}>
               49 pays · 250+ entreprises · Minéraux critiques · Scoring RAQIB
             </div>
-            <div style={{ fontSize: '0.65rem', color: '#8B7355', marginTop: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-              Module MADEN
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST3, letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE MADEN
             </div>
           </a>
+
+          {/* Card DIWANE — Hermès mode, signature orange */}
+          <a href="/diwane" style={{ background: '#1A1410', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(232,96,10,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#E8600A', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>DIWANE ديوان</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Art Market Intelligence</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(240,234,224,0.55)', marginBottom: 10 }}>
+              49 pays · Artistes · Galeries · Enchères
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#C4956A', letterSpacing: 3, textTransform: 'uppercase' }}>
+              HERMÈS INTELLIGENCE
+            </div>
+          </a>
+
+          {/* Card ACQUISITION */}
+          <a href="/acquisition" style={{ background: P2, color: N, padding: 20, textDecoration: 'none', border: `0.5px solid rgba(168,125,62,0.25)` }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#A87D3E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>ACQUISITION</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence d&apos;Acquisition</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: ST3, marginBottom: 10 }}>
+              396 entreprises · 6 personas · 12 onglets · Supply Chain · Chevaux de Troie
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: ST3, letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE ACQUISITION
+            </div>
+          </a>
+
+          {/* Card SCIENCE — Quantum accent */}
+          <a href="/science" style={{ background: '#0A0A14', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(99,102,241,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#6366F1', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>SCIENCE</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence Scientifique</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,224,240,0.55)', marginBottom: 10 }}>
+              7 domaines · 50+ papers · 30 labs · Quantum Watch
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#6366F1', letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE SCIENCE
+            </div>
+          </a>
+
         </div>
       </div>
 
       {/* ═══ ZONE 2.5 — ACTIVITÉ RÉCENTE ═══ */}
-      <div className="shrink-0 px-8 py-5 bg-ivory border-b border-div">
-        <div className="flex items-center gap-3 mb-4">
-          <Activity size={16} className="text-gold" />
-          <h2 className="font-[family-name:var(--font-playfair)] text-[18px] font-normal uppercase tracking-[2px] text-noir">Activité Récente</h2>
-          <div className="flex-1 h-px bg-div" />
-          <a href="/eigen?tab=stream" className="font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 uppercase tracking-wider hover:text-gold transition">
+      <div style={{ background: N, borderBottom: `0.5px solid ${DIV}`, padding: '20px 32px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+          <Activity size={14} color={P} />
+          <span style={{ fontFamily: GR, fontSize: 18, fontWeight: 400, color: P }}>Activité Récente</span>
+          <div style={{ flex: 1, height: '0.5px', background: DIV }} />
+          <a href="/eigen?tab=stream" style={{ fontFamily: MN, fontSize: 8, color: T3, textDecoration: 'none', letterSpacing: 2, textTransform: 'uppercase' }}>
             Ouvrir le Stream Complet →
           </a>
         </div>
-        <div className="h-[250px] border border-div rounded-none-none overflow-hidden bg-cream shadow-inner">
-          <EigenStream maxHeight="250px" limit={10} />
+        <div style={{ maxHeight: 200, border: `0.5px solid ${DIV}`, overflow: 'hidden', background: N2 }}>
+          <EigenStream maxHeight="200px" limit={5} />
         </div>
       </div>
 
       {/* ═══ ZONE 3 — 11 ENTITÉS VIEWER ═══ */}
-      <div className="shrink-0 px-8 pt-4 pb-2 bg-cream">
-        <div className="flex items-center gap-3">
-          <div className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  text-noir">
+      <div style={{ background: N2, padding: '16px 32px 8px', flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <span style={{ fontFamily: GR, fontSize: 16, fontWeight: 400, color: P }}>
             11 Entités · 1100 Couches
-          </div>
-          <div className="flex-1 h-px bg-div" />
-          <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-t3">
+          </span>
+          <div style={{ flex: 1, height: '0.5px', background: DIV }} />
+          <span style={{ fontFamily: MN, fontSize: 8, color: T3, letterSpacing: 2 }}>
             NAVIGUER LES DONNÉES
-          </div>
+          </span>
         </div>
       </div>
 
       <EntityTabs activeIndex={entityIndex} onChange={handleEntityChange} />
       <StatsBar entity={entity} stats={stats} />
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex min-h-0 overflow-hidden">
         <CategoryNav
           entity={entity}
           categories={categories}
@@ -319,7 +359,7 @@ export default function Dashboard() {
               status={currentLive?.status}
               lastPopulatedAt={currentLive?.last_populated_at}
             />
-            <div className="px-7 pb-5 bg-cream">
+            <div style={{ padding: '0 28px 20px', background: N2 }}>
               <EntriesTable
                 layerId={layer.id}
                 layerName={layer.name}
@@ -331,12 +371,12 @@ export default function Dashboard() {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="h-[26px] shrink-0 flex items-center justify-between px-6 border-t border-div bg-ivory">
-        <span className="text-[9px] font-medium text-tm font-[family-name:var(--font-jetbrains)]">
+      <div style={{ height: 26, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', borderTop: `0.5px solid ${DIV}`, background: N }}>
+        <span style={{ fontFamily: MN, fontSize: 7, color: T3, letterSpacing: 2 }}>
           RAQIB V4 · 1100 COUCHES · 11 ENTITÉS · 255 AGENTS · EIGEN HOLDING SAS
         </span>
-        <span className="text-[9px] font-medium text-gold font-[family-name:var(--font-jetbrains)]">
-          MARS 2026 · SOUVERAINETÉ INTÉGRALE
+        <span style={{ fontFamily: MN, fontSize: 7, color: P, letterSpacing: 2 }}>
+          AVRIL 2026 · SOUVERAINETÉ INTÉGRALE
         </span>
       </div>
     </div>
