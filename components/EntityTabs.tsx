@@ -7,9 +7,15 @@ interface EntityTabsProps {
   onChange: (index: number) => void;
 }
 
+const N   = '#FAF8FC';
+const N2  = '#F5F2F8';
+const DIV = 'rgba(30,10,32,0.08)';
+const T3  = 'rgba(30,10,32,0.35)';
+const MN  = '"JetBrains Mono", monospace';
+
 export function EntityTabs({ activeIndex, onChange }: EntityTabsProps) {
   return (
-    <div className="h-[42px] shrink-0 flex items-stretch border-b border-div bg-ivory overflow-x-auto">
+    <div style={{ height: 42, flexShrink: 0, display: 'flex', alignItems: 'stretch', borderBottom: `0.5px solid ${DIV}`, background: N, overflowX: 'auto' }}>
       {ENTITIES.map((e, i) => {
         const active = activeIndex === i;
         return (
@@ -19,17 +25,23 @@ export function EntityTabs({ activeIndex, onChange }: EntityTabsProps) {
             data-testid={`entity-tab-${e.id}`}
             data-active={active}
             aria-pressed={active}
-            className="border-none px-4 cursor-pointer whitespace-nowrap tracking-[1px] font-[family-name:var(--font-jetbrains)]"
             style={{
-              background: active ? '#F7F3EA' : 'transparent',
+              border: 'none',
               borderBottom: active ? `2px solid ${e.color}` : '2px solid transparent',
-              color: active ? e.color : 'rgba(0,0,0,0.50)',
+              background: active ? N2 : 'transparent',
+              color: active ? e.color : T3,
+              padding: '0 16px',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              fontFamily: MN,
               fontSize: 10,
-              fontWeight: 500,
+              letterSpacing: 1,
+              fontWeight: active ? 600 : 400,
+              transition: 'all 150ms ease',
             }}
           >
             {e.name}
-            <span className="text-[7px] font-[family-name:var(--font-jetbrains)] not-italic ml-1.5 opacity-50">
+            <span style={{ fontFamily: MN, fontSize: 7, marginLeft: 6, opacity: 0.5, letterSpacing: 2 }}>
               {e.type}
             </span>
           </button>

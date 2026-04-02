@@ -13,6 +13,15 @@ interface CategoryNavProps {
   onLayerChange: (index: number) => void;
 }
 
+const N   = '#FAF8FC';
+const DIV = 'rgba(30,10,32,0.08)';
+const T2  = 'rgba(30,10,32,0.60)';
+const T3  = 'rgba(30,10,32,0.35)';
+const P   = '#1E0A20';
+const MN  = '"JetBrains Mono", monospace';
+const GR  = '"Playfair Display", "Didot", Georgia, serif';
+const SN  = '"Geist", "Helvetica Neue", Helvetica, sans-serif';
+
 export function CategoryNav({
   entity,
   categories,
@@ -27,8 +36,8 @@ export function CategoryNav({
     : '10 MACRO × 10 SUB = 100 COUCHES SPÉCIFIQUES';
 
   return (
-    <div className="w-[260px] shrink-0 border-r border-div bg-ivory overflow-auto">
-      <div className="px-3.5 py-2.5 text-[8px] font-[family-name:var(--font-jetbrains)] text-t3 tracking-[2px]">
+    <div style={{ width: 260, flexShrink: 0, borderRight: `0.5px solid ${DIV}`, background: N, overflowY: 'auto' }}>
+      <div style={{ padding: '10px 14px', fontFamily: MN, fontSize: 8, color: T3, letterSpacing: 2, textTransform: 'uppercase' }}>
         {label}
       </div>
       {categories.map((cat, mi) => (
@@ -37,16 +46,24 @@ export function CategoryNav({
             onClick={() => onCategoryChange(mi)}
             data-testid={`category-${mi}`}
             data-active={activeCategoryIndex === mi}
-            className="w-full border-none p-2 px-3.5 cursor-pointer text-left"
             style={{
-              background: activeCategoryIndex === mi ? `rgba(0,0,0,0.04)` : 'transparent',
+              width: '100%',
+              border: 'none',
+              padding: '8px 14px',
+              cursor: 'pointer',
+              textAlign: 'left',
+              background: activeCategoryIndex === mi ? 'rgba(30,10,32,0.04)' : 'transparent',
               borderLeft: activeCategoryIndex === mi ? `2px solid ${entity.color}` : '2px solid transparent',
             }}
           >
-            <div
-              className="text-[12px] font-[family-name:var(--font-playfair)] font-normal uppercase tracking-[1px]"
-              style={{ color: activeCategoryIndex === mi ? entity.color : '#1C1814' }}
-            >
+            <div style={{
+              fontFamily: GR,
+              fontSize: 11,
+              fontWeight: 400,
+              textTransform: 'uppercase',
+              letterSpacing: 1,
+              color: activeCategoryIndex === mi ? entity.color : P,
+            }}>
               {cat.label}
             </div>
           </button>
@@ -57,27 +74,33 @@ export function CategoryNav({
                 onClick={() => onLayerChange(lii)}
                 data-testid={`layer-${l.id}`}
                 data-active={activeLayerIndex === lii}
-                className="w-full border-none py-1.5 pl-7 pr-3.5 cursor-pointer text-left flex items-center gap-1.5"
                 style={{
-                  background: activeLayerIndex === lii ? `${entity.color}06` : 'transparent',
+                  width: '100%',
+                  border: 'none',
+                  padding: '6px 14px 6px 28px',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  background: activeLayerIndex === lii ? `${entity.color}08` : 'transparent',
                   borderLeft: activeLayerIndex === lii ? `2px solid ${entity.color}` : '2px solid transparent',
                 }}
               >
-                <span
-                  className="w-1 h-1 rounded-none-none shrink-0"
-                  style={{ background: PLATFORMS[l.platform]?.color || '#D4CCBA' }}
-                />
-                <span
-                  className="text-[11px] font-[family-name:var(--font-geist)] flex-1 whitespace-nowrap overflow-hidden text-ellipsis"
-                  style={{
-                    color: activeLayerIndex === lii ? '#1C1814' : '#6B5E4C',
-                    fontWeight: 400,
-                  }}
-                >
+                <span style={{ width: 4, height: 4, background: PLATFORMS[l.platform]?.color || DIV, flexShrink: 0 }} />
+                <span style={{
+                  fontFamily: SN,
+                  fontSize: 11,
+                  flex: 1,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  color: activeLayerIndex === lii ? P : T2,
+                  fontWeight: 400,
+                }}>
                   {l.name}
                 </span>
-                <span className="text-[10px] font-medium font-[family-name:var(--font-jetbrains)] shrink-0"
-                      style={{ color: 'rgba(0,0,0,0.40)' }}>
+                <span style={{ fontFamily: MN, fontSize: 10, color: T3, flexShrink: 0 }}>
                   {fmtNum(l.rows)}
                 </span>
               </button>

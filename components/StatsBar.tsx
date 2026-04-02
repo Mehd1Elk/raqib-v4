@@ -7,22 +7,34 @@ interface StatsBarProps {
   stats: EntityStats;
 }
 
+const P   = '#1E0A20';
+const DIV = 'rgba(30,10,32,0.08)';
+const T2  = 'rgba(30,10,32,0.60)';
+const T3  = 'rgba(30,10,32,0.35)';
+const GR  = '"Playfair Display", "Didot", Georgia, serif';
+const SN  = '"Geist", "Helvetica Neue", Helvetica, sans-serif';
+const MN  = '"JetBrains Mono", monospace';
+
 export function StatsBar({ entity, stats }: StatsBarProps) {
   return (
-    <div
-      className="shrink-0 px-6 py-2.5 border-b border-div flex items-center justify-between"
-      style={{ background: `${entity.color}04` }}
-    >
-      <div>
-        <span className="text-[28px] tracking-[2px] uppercase font-[family-name:var(--font-playfair)] font-normal text-noir">
+    <div style={{
+      flexShrink: 0,
+      padding: '10px 24px',
+      borderBottom: `0.5px solid ${DIV}`,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      background: `${entity.color}06`,
+    }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
+        <span style={{ fontFamily: GR, fontSize: 26, fontWeight: 400, color: P, letterSpacing: 2, textTransform: 'uppercase' }}>
           {entity.name}
         </span>
-        <span className="text-[13px] font-[family-name:var(--font-geist)] font-normal ml-3"
-              style={{ color: 'rgba(0,0,0,0.55)' }}>
+        <span style={{ fontFamily: SN, fontSize: 13, color: T2, fontWeight: 400 }}>
           {entity.description}
         </span>
       </div>
-      <div className="flex gap-3 items-center text-[10px] font-medium font-[family-name:var(--font-jetbrains)] text-t3">
+      <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontFamily: MN, fontSize: 10, color: T3 }}>
         <span>{stats.totalLayers} couches</span>
         <span>·</span>
         <span>{fmtNum(stats.totalRows)} entrées prévues</span>

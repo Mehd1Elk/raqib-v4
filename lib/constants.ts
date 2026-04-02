@@ -1,36 +1,42 @@
 import type { Platform, PlatformCode, Entity } from './types';
 
-// ═══════ COLORS ═══════
+// ═══════ COLORS — PRUNE/NACRE ═══════
 export const C = {
-  ivory: '#FDFAF3',
-  cream: '#F7F3EA',
-  parchment: '#F0EBDE',
-  linen: '#E8E2D2',
-  sand: '#D4CCBA',
-  taupe: '#B8AE9C',
-  stone: '#918977',
-  walnut: '#6B5E4C',
-  espresso: '#3D3428',
-  noir: '#1C1814',
-  gold: '#B8963E',
-  goldL: '#D4B662',
-  goldD: '#8C6E2A',
-  ruby: '#9C3D3D',
-  emerald: '#3D7C5E',
-  sapphire: '#3D5E8C',
-  amber: '#B87D3E',
-  bordeaux: '#6E2A3D',
-  olive: '#5E6E3D',
-  violet: '#7B5EA7',
-  teal: '#3D7C8C',
-  cgGreen: '#162B20',
-  cgGold: '#C9A96E',
-  div: 'rgba(60,52,40,0.10)',
-  divL: 'rgba(60,52,40,0.05)',
-  t1: '#2A2318',
-  t2: '#6B5E4C',
-  t3: '#918977',
-  tm: '#B8AE9C',
+  // Nacre (light backgrounds)
+  ivory:     '#FAF8FC',   // nacre
+  cream:     '#F5F2F8',   // nacre2
+  parchment: '#EEEBF4',   // nacre3
+  linen:     '#E4E0EE',   // nacreDark
+  // Legacy warm aliases → prune palette
+  sand:      'rgba(30,10,32,0.35)',
+  taupe:     'rgba(30,10,32,0.35)',
+  stone:     'rgba(30,10,32,0.60)',
+  walnut:    'rgba(30,10,32,0.60)',
+  espresso:  '#1E0A20',
+  noir:      '#1E0A20',
+  // Gold → prune (no gold in PRUNE/NACRE)
+  gold:      '#1E0A20',
+  goldL:     '#1E0A20',
+  goldD:     '#1E0A20',
+  // Brique accent colors
+  ruby:      '#8C3040',
+  emerald:   '#5A8A6E',
+  sapphire:  '#5A6E9C',
+  amber:     '#A87D3E',
+  bordeaux:  '#904A68',
+  olive:     '#5A8A6E',
+  violet:    '#8B5EB0',
+  teal:      '#5A8A90',
+  cgGreen:   '#1E0A20',
+  cgGold:    '#E4D4EA',
+  // Dividers
+  div:       'rgba(30,10,32,0.08)',
+  divL:      'rgba(30,10,32,0.04)',
+  // Text hierarchy
+  t1:        '#1E0A20',
+  t2:        'rgba(30,10,32,0.60)',
+  t3:        'rgba(30,10,32,0.35)',
+  tm:        'rgba(30,10,32,0.18)',
 } as const;
 
 // ═══════ 9 AI PLATFORMS ═══════
@@ -58,7 +64,7 @@ export const ENTITIES: Entity[] = [
   { id: 'amana', name: 'AMANA', color: C.olive, description: 'Charitable Trust Infrastructure', type: 'VENTURE' },
   { id: 'cg', name: 'CG SA', color: C.cgGreen, description: 'Corporate Governance & Group Strategy', type: 'HOLDING' },
   { id: 'cercle', name: 'Cercle du Gazoduc', color: C.cgGold, description: 'Ecosystem Orchestration & Sovereign Infrastructure', type: 'ECOSYSTEM' },
-  { id: 'eigen', name: 'EIGEN Stratégique', color: '#2C1810', description: 'Intelligence stratégique · Architecture · Acquisition · Conquête · Gouvernance', type: 'CERVEAU' },
+  { id: 'eigen', name: 'EIGEN Stratégique', color: '#4A2858', description: 'Intelligence stratégique · Architecture · Acquisition · Conquête · Gouvernance', type: 'CERVEAU' },
 ];
 
 export const PLATFORM_CODES = Object.keys(PLATFORMS) as PlatformCode[];

@@ -14,40 +14,48 @@ interface LayerDetailProps {
   lastPopulatedAt?: string | null;
 }
 
-function ProgressBar({ actual, target }: { actual: number; target: number }) {
+const N   = '#FAF8FC';
+const N2  = '#F5F2F8';
+const N3  = '#EEEBF4';
+const P   = '#1E0A20';
+const DIV = 'rgba(30,10,32,0.08)';
+const T1  = '#1E0A20';
+const T2  = 'rgba(30,10,32,0.60)';
+const T3  = 'rgba(30,10,32,0.35)';
+const GR  = '"Playfair Display", "Didot", Georgia, serif';
+const SN  = '"Geist", "Helvetica Neue", Helvetica, sans-serif';
+const MN  = '"JetBrains Mono", monospace';
+
+function ProgressBar({ actual, target, entityColor }: { actual: number; target: number; entityColor: string }) {
   const pct = target > 0 ? Math.min((actual / target) * 100, 100) : 0;
-  const color = pct >= 75 ? '#3D7C5E' : pct >= 25 ? '#B87D3E' : '#9C3D3D';
-  const label = pct >= 75 ? 'complete' : pct > 0 ? 'partial' : 'empty';
+  const color = pct >= 75 ? '#5A8A6E' : pct > 0 ? '#A87D3E' : '#8C3040';
+  const label = pct >= 75 ? 'COMPLET' : pct > 0 ? 'PARTIAL' : 'VIDE';
 
   return (
-    <div className="bg-ivory border border-div rounded-none p-4 mb-5">
-      <div className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[3px] uppercase mb-3 font-semibold text-gold">
+    <div style={{ background: N, border: `0.5px solid ${DIV}`, padding: 16, marginBottom: 16 }}>
+      <div style={{ fontFamily: MN, fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 12, color: T3 }}>
         PROGRESSION PEUPLEMENT
       </div>
-      <div className="flex items-center gap-4 mb-2">
-        <div className="flex-1 h-2 bg-parchment rounded-none-none overflow-hidden">
-          <div
-            className="h-full rounded-none-none transition-all duration-500"
-            style={{ width: `${pct}%`, background: color }}
-          />
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+        <div style={{ flex: 1, height: 3, background: N3 }}>
+          <div style={{ width: `${pct}%`, height: 3, background: color, transition: 'width 500ms ease' }} />
         </div>
-        <span
-          className="text-[11px] font-[family-name:var(--font-jetbrains)] font-bold"
-          style={{ color }}
-        >
-          {pct.toFixed(1)}%
-        </span>
+        <span style={{ fontFamily: MN, fontSize: 11, fontWeight: 700, color }}>{pct.toFixed(1)}%</span>
       </div>
-      <div className="flex gap-6 text-[10px] font-[family-name:var(--font-noto)] text-t3">
+      <div style={{ display: 'flex', gap: 16, fontFamily: SN, fontSize: 10, color: T3 }}>
         <span>
-          <span className="font-semibold text-t2">{fmtNum(actual)}</span> /{' '}
-          {fmtNum(target)} entrées
+          <span style={{ fontWeight: 600, color: T2 }}>{fmtNum(actual)}</span> / {fmtNum(target)} entrées
         </span>
-        <span
-          className="px-2 py-0.5 rounded-none text-[9px] font-[family-name:var(--font-jetbrains)] font-semibold"
-          style={{ color, background: `${color}0D`, border: `1px solid ${color}22` }}
-        >
-          {label.toUpperCase()}
+        <span style={{
+          padding: '1px 8px',
+          fontFamily: MN,
+          fontSize: 8,
+          letterSpacing: 1,
+          color,
+          background: `${color}12`,
+          border: `0.5px solid ${color}40`,
+        }}>
+          {label}
         </span>
       </div>
     </div>
@@ -66,36 +74,31 @@ export function LayerDetail({
   const platform = PLATFORMS[layer.platform];
 
   return (
-    <div data-testid="layer-detail" className="bg-cream p-5 px-7">
+    <div data-testid="layer-detail" style={{ background: N2, padding: '20px 28px' }}>
       {/* Breadcrumb */}
-      <div className="text-[9px] font-[family-name:var(--font-jetbrains)] tracking-[1px] mb-1"
-           style={{ color: 'rgba(0,0,0,0.40)' }}>
+      <div style={{ fontFamily: MN, fontSize: 9, letterSpacing: 1, marginBottom: 4, color: T3 }}>
         {entity.name} / {category.label} /{' '}
         <span style={{ color: entity.color }}>{layer.name}</span>
       </div>
 
       {/* Title */}
-      <div className="text-[22px] font-[family-name:var(--font-playfair)] font-normal text-noir mb-1">
+      <div style={{ fontFamily: GR, fontSize: 22, fontWeight: 400, color: P, marginBottom: 4 }}>
         {layer.name}
       </div>
 
-      {/* Separator */}
-      <div className="w-9 h-0.5 mb-4 opacity-50" style={{ background: entity.color }} />
+      {/* Accent line */}
+      <div style={{ width: 32, height: 2, background: entity.color, marginBottom: 16, opacity: 0.7 }} />
 
       {/* Platform badge row */}
-      <div className="flex gap-3 mb-5 items-center flex-wrap">
+      <div style={{ display: 'flex', gap: 12, marginBottom: 16, alignItems: 'center', flexWrap: 'wrap' }}>
         <PlatformBadge platform={layer.platform} />
-        <span className="text-[11px] font-[family-name:var(--font-geist)]">
-          Plateforme assignée
-        </span>
-        <div className="w-px h-3.5 bg-div" />
-        <span className="text-[11px] font-[family-name:var(--font-geist)]">
-          {fmtNum(layer.rows)} entrées prévues
-        </span>
+        <span style={{ fontFamily: SN, fontSize: 11, color: T2 }}>Plateforme assignée</span>
+        <div style={{ width: 1, height: 14, background: DIV }} />
+        <span style={{ fontFamily: SN, fontSize: 11, color: T2 }}>{fmtNum(layer.rows)} entrées prévues</span>
         {lastPopulatedAt && (
           <>
-            <div className="w-px h-3.5 bg-div" />
-            <span className="text-[9px] font-[family-name:var(--font-jetbrains)] text-tm">
+            <div style={{ width: 1, height: 14, background: DIV }} />
+            <span style={{ fontFamily: MN, fontSize: 9, color: T3 }}>
               MAJ {new Date(lastPopulatedAt).toLocaleDateString('fr-FR')}
             </span>
           </>
@@ -103,49 +106,32 @@ export function LayerDetail({
       </div>
 
       {/* Progression */}
-      <ProgressBar actual={actualRows} target={layer.rows} />
+      <ProgressBar actual={actualRows} target={layer.rows} entityColor={entity.color} />
 
       {/* Specification panel */}
-      <div className="bg-ivory border border-div rounded-none p-4 mb-5">
-        <div
-          className="text-[10px] font-[family-name:var(--font-jetbrains)] tracking-[3px] uppercase mb-2 font-semibold"
-          style={{ color: entity.color }}
-        >
+      <div style={{ background: N, border: `0.5px solid ${DIV}`, padding: 16, marginBottom: 16 }}>
+        <div style={{ fontFamily: MN, fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 10, color: entity.color }}>
           SPÉCIFICATION DE COUCHE
         </div>
-        <div className="grid grid-cols-3 gap-3 text-[11px] font-[family-name:var(--font-noto)] text-t2 leading-relaxed">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, fontFamily: SN, fontSize: 11, color: T2, lineHeight: 1.6 }}>
+          <div><span style={{ fontWeight: 600, color: T1 }}>Entité :</span> {entity.name} ({entity.type})</div>
+          <div><span style={{ fontWeight: 600, color: T1 }}>Macro :</span> {category.label}</div>
+          <div><span style={{ fontWeight: 600, color: T1 }}>Couche :</span> {layer.name}</div>
+          <div><span style={{ fontWeight: 600, color: T1 }}>Plateforme :</span> {platform?.name}</div>
+          <div><span style={{ fontWeight: 600, color: T1 }}>Volume cible :</span> {fmtNum(layer.rows)} entrées</div>
           <div>
-            <span className="font-semibold text-t1">Entité :</span> {entity.name} ({entity.type})
-          </div>
-          <div>
-            <span className="font-semibold text-t1">Macro :</span> {category.label}
-          </div>
-          <div>
-            <span className="font-semibold text-t1">Couche :</span> {layer.name}
-          </div>
-          <div>
-            <span className="font-semibold text-t1">Plateforme :</span> {platform?.name}
-          </div>
-          <div>
-            <span className="font-semibold text-t1">Volume cible :</span>{' '}
-            {fmtNum(layer.rows)} entrées
-          </div>
-          <div>
-            <span className="font-semibold text-t1">ID :</span>{' '}
-            <span className="font-[family-name:var(--font-jetbrains)] text-[10px]">{layer.id}</span>
+            <span style={{ fontWeight: 600, color: T1 }}>ID :</span>{' '}
+            <span style={{ fontFamily: MN, fontSize: 10 }}>{layer.id}</span>
           </div>
         </div>
-
-        {/* Routing */}
         {platform && (
-          <div
-            className="mt-3 p-2 px-3 rounded-none text-[10px] font-[family-name:var(--font-noto)] text-t2"
-            style={{ background: `${platform.color}08` }}
-          >
-            <span className="font-semibold" style={{ color: platform.color }}>
-              Routing :
-            </span>{' '}
-            {platform.description}
+          <div style={{
+            marginTop: 12, padding: '8px 12px',
+            background: `${platform.color}08`,
+            borderLeft: `2px solid ${platform.color}`,
+            fontFamily: SN, fontSize: 10, color: T2,
+          }}>
+            <span style={{ fontWeight: 600, color: platform.color }}>Routing :</span> {platform.description}
           </div>
         )}
       </div>
