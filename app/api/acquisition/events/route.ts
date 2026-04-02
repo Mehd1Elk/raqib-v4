@@ -1,5 +1,9 @@
 import { NextResponse } from 'next/server';
+import { createAcqClient } from '@/lib/acquisition/supabase';
 
 export async function GET() {
-  return NextResponse.json({ message: 'GET /api/acquisition/events — placeholder' });
+  const supabase = await createAcqClient();
+  const { data, error } = await supabase.from('acq_events').select('*').order('dates');
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  return NextResponse.json(data || []);
 }
