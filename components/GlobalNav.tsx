@@ -45,6 +45,7 @@ export function GlobalNav() {
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">INTELLIGENCE</div>
           <a href="/corridor" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#C9A96E' }}>Corridor Intelligence — 49 pays</a>
           <a href="/acquisition" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#B8963E' }}>Intelligence d&apos;Acquisition — 396 cibles</a>
+          <a href="/science" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#6366F1' }}>Intelligence Scientifique — 7 domaines</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">OUTILS</div>
           <a href="/data" className="block px-3 py-1.5 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold text-noir">Data Viewer &mdash; 1100 couches</a>
