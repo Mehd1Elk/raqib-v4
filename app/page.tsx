@@ -274,6 +274,32 @@ export default function Dashboard() {
               Hermès Intelligence
             </div>
           </a>
+
+          {/* Card ACQUISITION — Intelligence d'Acquisition */}
+          <a href="/acquisition" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(184,150,62,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1814 100%)', border: '1px solid rgba(184,150,62,0.25)', color: '#E8E5DE' }}>
+            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#B8963E' }}>
+              Intelligence d&apos;Acquisition
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#9A9790', marginTop: '0.5rem' }}>
+              396 entreprises · 6 personas · 12 onglets · Supply Chain · Chevaux de Troie
+            </div>
+            <div style={{ fontSize: '0.65rem', color: '#8B7355', marginTop: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              Module Acquisition
+            </div>
+          </a>
+
+          {/* Card SCIENCE — Intelligence Scientifique */}
+          <a href="/science" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(99,102,241,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A10 0%, #141420 100%)', border: '1px solid rgba(99,102,241,0.25)', color: '#E0E0F0' }}>
+            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#6366F1' }}>
+              Intelligence Scientifique
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#9090A0', marginTop: '0.5rem' }}>
+              7 domaines · 50+ papers · 30 labs · Quantum Watch
+            </div>
+            <div style={{ fontSize: '0.65rem', color: '#6B6B8A', marginTop: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              Module Science
+            </div>
+          </a>
         </div>
       </div>
 
