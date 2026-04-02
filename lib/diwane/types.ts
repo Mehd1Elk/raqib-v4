@@ -1,208 +1,243 @@
-// RAQIB DIWANE — Art Market Intelligence Module - TypeScript Interfaces
+// DIWANE Art Intelligence Module - TypeScript Interfaces
 // Covers 49 countries (22 Africa + 27 EU) with art market data
 
 // ---------------------------------------------------------------------------
 // Artists
 // ---------------------------------------------------------------------------
 
-export interface Artist {
+export interface DiwaneArtist {
   name: string;
-  country: string;
+  born?: string;
+  died?: string;
   medium: string;
-  birthYear?: string;
-  deathYear?: string;
   movement?: string;
   auctionRecord?: string;
-  auctionRecordYear?: string;
-  auctionHouse?: string;
-  notableWorks?: string[];
-  represented?: string[];
-  bio?: string;
+  galleries?: string[];
+  collections?: string[];
+  significance: string;
 }
 
 // ---------------------------------------------------------------------------
 // Galleries
 // ---------------------------------------------------------------------------
 
-export interface Gallery {
+export interface DiwaneGallery {
   name: string;
   city: string;
   founded?: string;
+  director?: string;
   specialty?: string;
   artists?: string[];
-  fairsAttended?: string[];
+  website?: string;
+  fairs?: string[];
+}
+
+// ---------------------------------------------------------------------------
+// Museums
+// ---------------------------------------------------------------------------
+
+export interface DiwaneMuseum {
+  name: string;
+  city: string;
+  type?: string;
+  collection?: string;
+  director?: string;
+  visitors?: string;
   website?: string;
 }
 
 // ---------------------------------------------------------------------------
-// Museums & Institutions
+// Auction Houses
 // ---------------------------------------------------------------------------
 
-export interface Museum {
+export interface DiwaneAuctionHouse {
   name: string;
   city: string;
+  specialty?: string;
+  majorSales?: string[];
+}
+
+// ---------------------------------------------------------------------------
+// Art Fairs
+// ---------------------------------------------------------------------------
+
+export interface DiwaneArtFair {
+  name: string;
+  city: string;
+  frequency?: string;
+  significance?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Art Finance
+// ---------------------------------------------------------------------------
+
+export interface DiwaneArtFinance {
+  institution: string;
   type: string;
-  collection?: string;
-  founded?: string;
-  annualVisitors?: string;
-  notableHoldings?: string[];
+  services?: string;
+  contact?: string;
 }
 
 // ---------------------------------------------------------------------------
-// Art Fairs & Biennales
+// Regulation
 // ---------------------------------------------------------------------------
 
-export interface ArtFair {
+export interface DiwaneRegulation {
+  vatRate?: string;
+  droitDeSuite?: string;
+  exportRules?: string;
+  importRules?: string;
+  heritageProtection?: string;
+  antiMoneyLaundering?: string;
+  culturalRestitution?: string;
+  taxOnSales?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Collectors
+// ---------------------------------------------------------------------------
+
+export interface DiwaneCollector {
   name: string;
-  city: string;
-  frequency: string;
-  founded?: string;
-  galleries?: number;
-  visitors?: string;
+  type?: string;
   focus?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Auction Data
-// ---------------------------------------------------------------------------
-
-export interface AuctionRecord {
-  artist: string;
-  title: string;
-  price: string;
-  year: string;
-  house: string;
-  medium?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Art Market Metrics
-// ---------------------------------------------------------------------------
-
-export interface ArtMarketMetrics {
-  marketSize?: string;
-  globalRank?: number;
-  auctionVolume?: string;
-  galleryCount?: number;
-  museumCount?: number;
-  artFairsCount?: number;
-  publicFunding?: string;
-  taxIncentives?: string;
-  exportRegulation?: string;
-  copyrightProtection?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Cultural Heritage
-// ---------------------------------------------------------------------------
-
-export interface CulturalHeritage {
-  unescoSites?: number;
-  intangibleHeritage?: string[];
-  traditionalArts?: string[];
-  artMovements?: string[];
-  culturalPolicy?: string;
+  collectionSize?: string;
+  publicAccess?: boolean;
 }
 
 // ---------------------------------------------------------------------------
 // Art Education
 // ---------------------------------------------------------------------------
 
-export interface ArtSchool {
+export interface DiwaneArtEducation {
   name: string;
   city: string;
-  type: string;
-  founded?: string;
-  programs?: string[];
-  notableAlumni?: string[];
+  type?: string;
 }
 
 // ---------------------------------------------------------------------------
-// Digital Art & NFT
+// Country Art Data (core entity)
 // ---------------------------------------------------------------------------
 
-export interface DigitalArtScene {
-  nftMarketSize?: string;
-  platforms?: string[];
-  notableArtists?: string[];
-  regulation?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Country (Art Market)
-// ---------------------------------------------------------------------------
-
-export interface DiwaneCountry {
+export interface DiwaneCountryArt {
   id: string;
   name: string;
-  nameAr?: string;
+  flag?: string;
   region: 'africa' | 'eu';
-  capital: string;
-  population?: string;
-  language?: string;
-  currency?: string;
-  artMarket: ArtMarketMetrics;
-  topArtists?: Artist[];
-  galleries?: Gallery[];
-  museums?: Museum[];
-  artFairs?: ArtFair[];
-  auctionRecords?: AuctionRecord[];
-  culturalHeritage?: CulturalHeritage;
-  artSchools?: ArtSchool[];
-  digitalArt?: DigitalArtScene;
-  recommendation?: string;
+  marketOverview?: string;
+  marketSize?: string;
+  artMovements?: string[];
+  artists: DiwaneArtist[];
+  galleries: DiwaneGallery[];
+  museums: DiwaneMuseum[];
+  auctionHouses?: DiwaneAuctionHouse[];
+  artFairs?: DiwaneArtFair[];
+  artFinance?: DiwaneArtFinance[];
+  regulation?: DiwaneRegulation;
+  collectors?: DiwaneCollector[];
+  artEducation?: DiwaneArtEducation[];
 }
 
 // ---------------------------------------------------------------------------
-// Search
+// Global / Dashboard Aggregates
 // ---------------------------------------------------------------------------
-
-export interface DiwaneSearchItem {
-  id: string;
-  name: string;
-  type: 'country' | 'artist' | 'gallery' | 'movement' | 'fair';
-  country?: string;
-}
-
-// ---------------------------------------------------------------------------
-// Global Data
-// ---------------------------------------------------------------------------
-
-export interface DiwaneStats {
-  totalCountries: number;
-  totalArtists: number;
-  totalGalleries: number;
-  totalMuseums: number;
-  totalFairs: number;
-  globalMarketSize: string;
-}
 
 export interface DiwaneAlert {
   text: string;
-  type: 'red' | 'orange' | 'green';
+  level: 'red' | 'orange' | 'green';
+}
+
+export interface DiwaneTopArtist {
+  name: string;
+  country: string;
+  medium: string;
+  auctionRecord: string;
+}
+
+export interface DiwaneTopAuction {
+  artist: string;
+  title: string;
+  price: string;
+  house: string;
+  date?: string;
+}
+
+export interface DiwaneMarketTrend {
+  label: string;
+  value: string;
+  trend: string;
+}
+
+export interface DiwaneStats {
+  totalCountries: number;
+  africaCountries: number;
+  euCountries: number;
+  totalArtists: string;
+  totalGalleries: string;
+  totalMuseums: string;
+  globalArtMarket: string;
+  africanArtMarket: string;
+  euArtMarket: string;
 }
 
 export interface DiwaneGlobalData {
   stats: DiwaneStats;
+  topArtists: DiwaneTopArtist[];
+  topAuctions: DiwaneTopAuction[];
   alerts: DiwaneAlert[];
-  topAuctions: AuctionRecord[];
+  marketTrends: DiwaneMarketTrend[];
 }
 
 // ---------------------------------------------------------------------------
-// Comparison
+// UI Helpers
 // ---------------------------------------------------------------------------
 
+export interface DiwaneTabDef {
+  id: string;
+  label: string;
+}
+
+export interface DiwaneSearchItem {
+  id: string;
+  name: string;
+  type: string;
+  country?: string;
+}
+
+// --- BACKWARD COMPATIBILITY TYPE ALIASES ---
+// Maps old type names to new Diwane-prefixed versions
+export type Artist = DiwaneArtist;
+export type Gallery = DiwaneGallery;
+export type Museum = DiwaneMuseum;
+export type ArtFair = DiwaneArtFair;
+export type AuctionRecord = DiwaneTopAuction;
+export type DiwaneCountry = DiwaneCountryArt;
+export type DiwaneTab = DiwaneTabDef;
 export interface ComparisonIndicator {
-  key: string;
+  id: string;
   label: string;
-  unit?: string;
+  icon: string;
 }
-
-// ---------------------------------------------------------------------------
-// Tabs
-// ---------------------------------------------------------------------------
-
-export interface DiwaneTab {
-  key: string;
-  label: string;
+export interface ArtMarketMetrics {
+  marketSize?: string;
+  globalRank?: number;
+  growth?: string;
+  mainAuctionHouses?: string[];
+}
+export interface CulturalHeritage {
+  unescoSites?: number;
+  intangibleHeritage?: string[];
+  restitutionStatus?: string;
+}
+export interface ArtSchool {
+  name: string;
+  city: string;
+  type?: string;
+  notable?: string;
+}
+export interface DigitalArtScene {
+  nftPresence?: string;
+  digitalPlatforms?: string[];
+  techHubs?: string[];
 }
