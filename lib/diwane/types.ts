@@ -2,7 +2,7 @@
 // Covers 49 countries (22 Africa + 27 EU) with art market data
 
 // ---------------------------------------------------------------------------
-// Artists
+// Artists (enriched with style, forgery risk, collection size)
 // ---------------------------------------------------------------------------
 
 export interface DiwaneArtist {
@@ -12,9 +12,26 @@ export interface DiwaneArtist {
   medium: string;
   movement?: string;
   auctionRecord?: string;
+  auctionRecordPriceUsd?: number;
   galleries?: string[];
   collections?: string[];
   significance: string;
+  // NEW — enriched fields
+  styleDescription?: string;
+  techniques?: string[];
+  forgeryRisk?: string;
+  forgeryNotes?: string;
+  estimatedCollectionSize?: string;
+  estimatedCollectionValue?: string;
+  isEmerging?: boolean;
+  isTopRated?: boolean;
+  emergingSince?: string;
+  marketTrend?: string;
+  priceRangeLow?: string;
+  priceRangeHigh?: string;
+  biography?: string;
+  website?: string;
+  instagram?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -47,14 +64,21 @@ export interface DiwaneMuseum {
 }
 
 // ---------------------------------------------------------------------------
-// Auction Houses
+// Auction Houses (enriched)
 // ---------------------------------------------------------------------------
 
 export interface DiwaneAuctionHouse {
   name: string;
   city: string;
+  type?: string;
   specialty?: string;
+  founded?: string;
+  annualVolume?: string;
   majorSales?: string[];
+  keyDepartments?: string[];
+  website?: string;
+  presenceCountries?: string[];
+  notableRecords?: string[];
 }
 
 // ---------------------------------------------------------------------------
@@ -95,7 +119,7 @@ export interface DiwaneRegulation {
 }
 
 // ---------------------------------------------------------------------------
-// Collectors
+// Collectors (enriched)
 // ---------------------------------------------------------------------------
 
 export interface DiwaneCollector {
@@ -103,7 +127,109 @@ export interface DiwaneCollector {
   type?: string;
   focus?: string;
   collectionSize?: string;
+  collectionValueEstimate?: string;
   publicAccess?: boolean;
+  foundationName?: string;
+  notableAcquisitions?: string[];
+  biography?: string;
+  influenceLevel?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Grey Market (NEW)
+// ---------------------------------------------------------------------------
+
+export interface DiwaneGreyMarket {
+  forgeryPrevalence?: string;
+  mainRisks?: string;
+  knownForgeryCases?: string[];
+  stolenArtIssues?: string;
+  illicitTrafficking?: string;
+  moneyLaunderingRisk?: string;
+  unregulatedSalesEstimate?: string;
+  certificationBodies?: string[];
+  scientificAnalysisLabs?: string[];
+  noosRelevance?: string;
+  restitutionIssues?: string;
+  dueDiligenceLevel?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Art Experts (NEW)
+// ---------------------------------------------------------------------------
+
+export interface DiwaneArtExpert {
+  name: string;
+  title?: string;
+  institution?: string;
+  specialty?: string;
+  expertiseType?: string;
+  credentials?: string[];
+  notableWork?: string;
+  publications?: string[];
+  contact?: string;
+  website?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Lombard Credit (NEW)
+// ---------------------------------------------------------------------------
+
+export interface DiwaneLombardCredit {
+  status?: string;
+  ltvRatio?: string;
+  typicalRate?: string;
+  minCollateral?: string;
+  eligibleArtTypes?: string[];
+  banks?: string[];
+  bankDetails?: { name: string; contact?: string; conditions?: string }[];
+  privateLenders?: string[];
+  freeports?: string[];
+  insuranceProviders?: string[];
+  artFunds?: string[];
+  taxIncentives?: string;
+  marketSizeEstimate?: string;
+  regulatoryFramework?: string;
+  diwaneOpportunity?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Art Magazines (NEW)
+// ---------------------------------------------------------------------------
+
+export interface DiwaneArtMagazine {
+  name: string;
+  type?: string;
+  frequency?: string;
+  language?: string;
+  focus?: string;
+  founded?: string;
+  circulation?: string;
+  website?: string;
+  editor?: string;
+  influenceLevel?: string;
+}
+
+// ---------------------------------------------------------------------------
+// Art Events 2026/2027 (NEW)
+// ---------------------------------------------------------------------------
+
+export interface DiwaneArtEvent {
+  name: string;
+  city: string;
+  type?: string;
+  dateStart?: string;
+  dateEnd?: string;
+  year?: number;
+  frequency?: string;
+  venue?: string;
+  expectedGalleries?: number;
+  expectedVisitors?: string;
+  focus?: string;
+  website?: string;
+  ticketPrice?: string;
+  significance?: string;
+  isConfirmed?: boolean;
 }
 
 // ---------------------------------------------------------------------------
@@ -117,7 +243,7 @@ export interface DiwaneArtEducation {
 }
 
 // ---------------------------------------------------------------------------
-// Country Art Data (core entity)
+// Country Art Data (core entity — enriched)
 // ---------------------------------------------------------------------------
 
 export interface DiwaneCountryArt {
@@ -137,6 +263,12 @@ export interface DiwaneCountryArt {
   regulation?: DiwaneRegulation;
   collectors?: DiwaneCollector[];
   artEducation?: DiwaneArtEducation[];
+  // NEW fields
+  greyMarket?: DiwaneGreyMarket;
+  artExperts?: DiwaneArtExpert[];
+  lombardCredit?: DiwaneLombardCredit;
+  artMagazines?: DiwaneArtMagazine[];
+  artEvents?: DiwaneArtEvent[];
 }
 
 // ---------------------------------------------------------------------------
@@ -206,7 +338,6 @@ export interface DiwaneSearchItem {
 }
 
 // --- BACKWARD COMPATIBILITY TYPE ALIASES ---
-// Maps old type names to new Diwane-prefixed versions
 export type Artist = DiwaneArtist;
 export type Gallery = DiwaneGallery;
 export type Museum = DiwaneMuseum;

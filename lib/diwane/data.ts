@@ -82,14 +82,22 @@ export const DIWANE_GLOBAL_DATA: DiwaneGlobalData = {
 export const DIWANE_TABS: DiwaneTabDef[] = [
   {id: "overview", label: "Vue d'ensemble"},
   {id: "artists", label: "Artistes"},
+  {id: "top-artists", label: "Top Cotés"},
+  {id: "emerging", label: "Émergents"},
   {id: "galleries", label: "Galeries"},
   {id: "museums", label: "Musées"},
   {id: "auctions", label: "Enchères"},
-  {id: "fairs", label: "Foires"},
-  {id: "finance", label: "Art Finance"},
-  {id: "regulation", label: "Régulation"},
   {id: "collectors", label: "Collectionneurs"},
-  {id: "education", label: "Éducation"}
+  {id: "fairs", label: "Foires"},
+  {id: "events", label: "Agenda 26/27"},
+  {id: "finance", label: "Art Finance"},
+  {id: "lombard", label: "Crédit Lombard"},
+  {id: "grey-market", label: "Marché Gris"},
+  {id: "experts", label: "Experts"},
+  {id: "magazines", label: "Magazines"},
+  {id: "regulation", label: "Régulation"},
+  {id: "education", label: "Éducation"},
+  {id: "eigen", label: "DIWANE × EIGEN"}
 ];
 
 // --- COUNTRY DATA ---
