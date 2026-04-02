@@ -15,24 +15,36 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(data || []);
   }
 
-  // Return all 5 chains grouped by parent company
+  // Fetch all supply chain rows
   const { data: rows, error } = await supabase
     .from('acq_supply_chain')
-    .select('*, acq_companies!parent_company_id(id, name)')
+    .select('*')
     .order('tier', { ascending: true });
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (!rows || rows.length === 0) return NextResponse.json([]);
+
+  // Get unique parent company IDs
+  const parentIds = [...new Set(rows.map((r: Record<string, unknown>) => r.parent_company_id as string))];
+
+  // Fetch company names
+  const { data: companies } = await supabase
+    .from('acq_companies')
+    .select('id, name')
+    .in('id', parentIds);
+
+  const nameMap = new Map<string, string>();
+  (companies || []).forEach((c: Record<string, unknown>) => nameMap.set(c.id as string, c.name as string));
 
   // Group by parent
   const chainsMap = new Map<string, { company_id: string; company_name: string; tiers: typeof rows; total_nodes: string; total_revenue: string }>();
 
-  for (const row of (rows || [])) {
-    const company = (row as Record<string, unknown>).acq_companies as { id: string; name: string } | null;
-    const cid = row.parent_company_id;
+  for (const row of rows) {
+    const cid = row.parent_company_id as string;
     if (!chainsMap.has(cid)) {
       chainsMap.set(cid, {
         company_id: cid,
-        company_name: company?.name || 'Inconnu',
+        company_name: nameMap.get(cid) || 'Inconnu',
         tiers: [],
         total_nodes: '0',
         total_revenue: '€0',
@@ -43,14 +55,13 @@ export async function GET(req: NextRequest) {
 
   // Compute totals
   const chains = Array.from(chainsMap.values()).map(chain => {
-    // Parse total nodes from last tier (biggest)
     const lastTier = chain.tiers[chain.tiers.length - 1];
-    const totalNodes = lastTier?.count_entities || '0';
+    const totalNodes = (lastTier as Record<string, unknown>)?.count_entities as string || '0';
 
-    // Sum revenue
     let totalRev = 0;
     for (const t of chain.tiers) {
-      const match = (t.eigen_revenue || '').match(/€([\d.]+)([MK])/);
+      const rev = (t as Record<string, unknown>).eigen_revenue as string || '';
+      const match = rev.match(/€([\d.]+)([MK])/);
       if (match) {
         const val = parseFloat(match[1]);
         totalRev += match[2] === 'M' ? val * 1_000_000 : val * 1_000;
