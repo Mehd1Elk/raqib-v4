@@ -1,0 +1,2522 @@
+[
+  {
+    "company": "Orange",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Laurent Leboucher",
+        "role": "Group CTO & EVP Networks",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/laurent-leboucher"
+      },
+      {
+        "name": "Bruno Zerbib",
+        "role": "Chief Technology & Innovation Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/brunozerbib"
+      },
+      {
+        "name": "Laurent Martinez",
+        "role": "EVP Finance, Performance & Development (CFO)",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Aliette Mousnier-Lompré",
+        "role": "EVP Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/aliette-mousnier-lompre"
+      },
+      {
+        "name": "Nicolas Guérin",
+        "role": "Secretary General & EVP Legal/CSR",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "BNP Paribas",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Lars Machenil",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/lars-machenil"
+      },
+      {
+        "name": "Marc Camus",
+        "role": "Chief Information Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Sofia Merlo (→ Sarah Roussel dès juil. 2026)",
+        "role": "Group Head of Human Resources",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Laurence Pessez",
+        "role": "Group Head of CSR",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/laurence-pessez"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "TotalEnergies",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Marie-Noëlle Semeria",
+        "role": "Senior VP & Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/marie-noelle-semeria"
+      },
+      {
+        "name": "Jean-Pierre Sbraire",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Catherine Remy",
+        "role": "President, People & Social Engagement (CHRO)",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Aurélien Hamelle",
+        "role": "President Strategy & Sustainability",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Attijariwafa Bank",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "Mohamed El Kettani",
+        "role": "Chairman & CEO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/mohamed-el-kettani"
+      },
+      {
+        "name": "Rachid Kettani",
+        "role": "Deputy CEO — IT & Transformation",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Deputy General Manager, Human Capital",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Deputy General Manager, Finance",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Ismaïl Douiri",
+        "role": "Deputy CEO — International Retail Banking",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Bank of Africa",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "Amine Bouabid",
+        "role": "Chairman & CEO",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "M'Hamed Skalli",
+        "role": "Directeur Organisation & IT (CTO)",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Abderrazzak Zebdani",
+        "role": "Deputy Chief Executive Officer",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Arnaud Bihannic",
+        "role": "General Secretary",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DRH",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "AXA",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Matthieu Caillat",
+        "role": "Group Chief Technology & AI Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/matthieu-caillat"
+      },
+      {
+        "name": "Alban de Mailly Nesle",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Karima Silvent",
+        "role": "Deputy General Secretary (HR, Compliance, Audit)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/karima-silvent"
+      },
+      {
+        "name": "Ulrike Decoene",
+        "role": "Group Chief Communications, Brand & Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Siemens",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "Peter Koerte",
+        "role": "Chief Technology Officer & Chief Strategy Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/peter-koerte"
+      },
+      {
+        "name": "Veronika Bienert",
+        "role": "Chief Financial Officer (eff. April 2026)",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Sabine Schneider",
+        "role": "Head of People & Organisation (CHRO, eff. Jan 2026)",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Sanofi",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Emmanuel Frenehard",
+        "role": "EVP, Chief Digital Officer (CDO/CTO)",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "François Roger",
+        "role": "EVP, Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/francois-roger-sanofi"
+      },
+      {
+        "name": "Natalie Bickford",
+        "role": "EVP, Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/natalie-bickford"
+      },
+      {
+        "name": "Audrey Duval",
+        "role": "EVP, Corporate Affairs (CSR scope)",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Brendan O'Callaghan",
+        "role": "EVP Manufacturing & Supply (CPO scope)",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "OCP Group",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "Mostafa Terrab",
+        "role": "Chairman & CEO",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Karim Senhadji",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/karim-senhadji"
+      },
+      {
+        "name": "Faris Derrij",
+        "role": "EVP Human Capital",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Hanane Mourchid",
+        "role": "Chief Sustainability & Innovation Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/hanane-mourchid"
+      },
+      {
+        "name": "Ibtissam Bensetti",
+        "role": "Chief Talent & Organizational Development Officer",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Holmarcom",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "Mohamed Hassan Bensalah",
+        "role": "PDG / Président du Groupe",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur Financier (CFO)",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur des Ressources Humaines",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur IT / CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur RSE",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Société Générale",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Alain Voiment",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/alain-voiment"
+      },
+      {
+        "name": "Leopoldo Alvear",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/leopoldo-alvear"
+      },
+      {
+        "name": "Anne-Sophie Chauveau-Galas",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/anne-sophie-chauveau-galas"
+      },
+      {
+        "name": "Hacina Py",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/hacina-py"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Allianz",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "Dr. Axel Schell",
+        "role": "CTO (Allianz Technology)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/axel-schell"
+      },
+      {
+        "name": "Claire-Marie Coste-Lepoutre",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/claire-marie-coste-lepoutre"
+      },
+      {
+        "name": "Bettina Dietsche",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/bettina-dietsche"
+      },
+      {
+        "name": "Emilia Macarie",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/emilia-macarie"
+      },
+      {
+        "name": "Dr. Philipp Raether",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "linkedin.com/in/philipp-raether"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Crédit Agricole",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Olivier Biton",
+        "role": "Group CTO / Head of IT",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/olivier-biton"
+      },
+      {
+        "name": "Clotilde L'Angevin",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/clotilde-langevin"
+      },
+      {
+        "name": "Anne-Catherine Ropers",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/anne-catherine-ropers"
+      },
+      {
+        "name": "Eric Campos",
+        "role": "Chief Sustainability Officer (Dir. Mécénat & RSE)",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/eric-campos"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "HSBC",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Mario Shamtani",
+        "role": "Group Chief Information Officer / CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/mario-shamtani"
+      },
+      {
+        "name": "Pam Kaur",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/pam-kaur"
+      },
+      {
+        "name": "Aileen Taylor",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/aileen-taylor-hsbc"
+      },
+      {
+        "name": "Julian Wentzel",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/julian-wentzel"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Ecobank",
+    "hq": "TG",
+    "contacts": [
+      {
+        "name": "Tomisin Fashina",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/tomisin-fashina"
+      },
+      {
+        "name": "Ayo Adepoju",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/ayo-adepoju-ecobank"
+      },
+      {
+        "name": "Simon Rey",
+        "role": "Acting Group CHRO",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Rachael A.O. Antwi",
+        "role": "Director Sustainability & CSR",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/rachael-antwi"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "MTN Group",
+    "hq": "ZA",
+    "contacts": [
+      {
+        "name": "Charles Molapisi",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/charles-molapisi"
+      },
+      {
+        "name": "Tsholofelo Molefe",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/tsholofelo-molefe"
+      },
+      {
+        "name": "Paul Norman",
+        "role": "Group CHRO",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/paul-norman-mtn"
+      },
+      {
+        "name": "Nompilo Morafo",
+        "role": "Chief Sustainability & Corporate Affairs Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/nompilo-morafo"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Vodafone",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Scott Petty",
+        "role": "Group Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/scott-petty-vodafone"
+      },
+      {
+        "name": "Pilar López",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/pilar-lopez-vodafone"
+      },
+      {
+        "name": "Ruth McGill",
+        "role": "Group Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/ruth-mcgill"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Airtel Africa",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Razvan Ungureanu",
+        "role": "Group Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/razvan-ungureanu"
+      },
+      {
+        "name": "Kamal Dua",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/kamal-dua-airtel"
+      },
+      {
+        "name": "Rogany Ramiah",
+        "role": "Group Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/rogany-ramiah"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Maroc Telecom",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "Hassan Rachad",
+        "role": "Directeur Technique & Systèmes d'Information (CTO)",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "François Vitte",
+        "role": "Directeur Financier (CFO)",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur des Ressources Humaines",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur RSE / Développement Durable",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Abdelkader Maamar",
+        "role": "Secrétaire Général (Achats scope)",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Deloitte",
+    "hq": "US",
+    "contacts": [
+      {
+        "name": "Bill Briggs",
+        "role": "Global CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/bill-briggs-deloitte"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CFO",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Jonathan Dunne",
+        "role": "Global Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/jonathan-dunne-deloitte"
+      },
+      {
+        "name": "Will Smith",
+        "role": "Global Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/will-smith-deloitte"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "PwC",
+    "hq": "US",
+    "contacts": [
+      {
+        "name": "James Shira",
+        "role": "Global Chief Information & Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/james-shira"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CFO",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global Chief People Officer",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CPO",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "EY",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Nicola Morini Bianzino",
+        "role": "Global Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/nicola-morini-bianzino"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CFO (vacant since Jun 2023)",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Ginnie Carlier",
+        "role": "Global Vice Chair — People (DRH)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/ginnie-carlier"
+      },
+      {
+        "name": "Velislava Ivanova",
+        "role": "Global Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/velislava-ivanova"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CPO",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "KPMG",
+    "hq": "NL",
+    "contacts": [
+      {
+        "name": "Lisa Heneghan",
+        "role": "Global Chief Digital Officer (CDO/CTO)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/lisa-heneghan-kpmg"
+      },
+      {
+        "name": "Michaela Peisger",
+        "role": "Global CFO / CAO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/michaela-peisger"
+      },
+      {
+        "name": "Sandy Torchia",
+        "role": "Global Vice Chair — People (DRH)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/sandy-torchia"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Global CPO",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Vinci",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Christian Labeyrie",
+        "role": "Executive VP & CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/christian-labeyrie"
+      },
+      {
+        "name": "Ludovic Demierre",
+        "role": "Group DRH (eff. Aug 2025)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/ludovic-demierre"
+      },
+      {
+        "name": "Isabelle Spiegel",
+        "role": "Director Corporate Social Responsibility",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/isabelle-spiegel"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group CPO",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Bouygues",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Marie-Luce Godinot",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/marie-luce-godinot"
+      },
+      {
+        "name": "Stéphane Stoll",
+        "role": "Group CFO (eff. Aug 2025)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/stephane-stoll"
+      },
+      {
+        "name": "Jean-Manuel Soussan",
+        "role": "Group DRH",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/jean-manuel-soussan"
+      },
+      {
+        "name": "Fabrice Bonnifet",
+        "role": "Director Sustainable Development & QSE",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/fabrice-bonnifet"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group CPO",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "LafargeHolcim",
+    "hq": "CH",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Steffen Kindler",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/steffen-kindler"
+      },
+      {
+        "name": "Carmen Diaz",
+        "role": "Chief People & Sustainability Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/carmen-diaz-holcim"
+      },
+      {
+        "name": "Carmen Diaz",
+        "role": "Chief Sustainability Officer (dual role)",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/carmen-diaz-holcim"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Schneider Electric",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Peter Weckesser",
+        "role": "Chief Digital Officer (CDO/CTO)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/peter-weckesser"
+      },
+      {
+        "name": "Nathan Fast",
+        "role": "Chief Financial Officer (eff. April 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/nathan-fast"
+      },
+      {
+        "name": "Charise Le",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/charise-le"
+      },
+      {
+        "name": "Esther Finidori",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/esther-finidori"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Mourad Tamoud",
+        "role": "EVP Global Supply Chain (CPO scope)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/mourad-tamoud"
+      }
+    ]
+  },
+  {
+    "company": "Shell",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Selda Gunsel",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/selda-gunsel"
+      },
+      {
+        "name": "Sinead Gorman",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/sinead-gorman"
+      },
+      {
+        "name": "Rachel Solway",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/rachel-solway"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "BP",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Kate Thomson",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/kate-thomson-bp"
+      },
+      {
+        "name": "Kerry Dryburgh",
+        "role": "Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/kerry-dryburgh"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer (role eliminated Jun 2025)",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "ENI",
+    "hq": "IT",
+    "contacts": [
+      {
+        "name": "Lorenzo Fiorillo",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/lorenzo-fiorillo"
+      },
+      {
+        "name": "Francesco Gattei",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/francesco-gattei"
+      },
+      {
+        "name": "Claudio Granata",
+        "role": "Chief HR & Organisation Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/claudio-granata-eni"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Engie",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Sébastien Arbola",
+        "role": "EVP Data, Digital & IT (CTO scope)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/sebastien-arbola"
+      },
+      {
+        "name": "Pierre-François Riolacci",
+        "role": "EVP Finance, ESG & Procurement (CFO/CSO/CPO)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/pierre-francois-riolacci"
+      },
+      {
+        "name": "Jean-Sébastien Blanc",
+        "role": "EVP Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/jean-sebastien-blanc-engie"
+      },
+      {
+        "name": "Pierre-François Riolacci",
+        "role": "EVP ESG (dual role with Finance)",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/pierre-francois-riolacci"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Pierre-François Riolacci",
+        "role": "EVP Procurement (dual role with Finance)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/pierre-francois-riolacci"
+      }
+    ]
+  },
+  {
+    "company": "Roche",
+    "hq": "CH",
+    "contacts": [
+      {
+        "name": "Wafaa Mamilli",
+        "role": "Chief Digital Technology Officer (eff. Feb 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/wafaa-mamilli"
+      },
+      {
+        "name": "Alan Hippe",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/alan-hippe"
+      },
+      {
+        "name": "Cristina A. Wilbur",
+        "role": "Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/cristina-wilbur"
+      },
+      {
+        "name": "Silke Hörnstein",
+        "role": "Head Strategy & Sustainability",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/silke-hornstein"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Novartis",
+    "hq": "CH",
+    "contacts": [
+      {
+        "name": "Steffen Lang",
+        "role": "President Operations & Technology (CTO scope)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/steffen-lang-novartis"
+      },
+      {
+        "name": "Mukul Mehta",
+        "role": "Chief Financial Officer (eff. Mar 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/mukul-mehta-novartis"
+      },
+      {
+        "name": "Rob Kowalski",
+        "role": "Chief People & Organization Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/rob-kowalski-novartis"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "AstraZeneca",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Pam Cheng",
+        "role": "EVP Global Operations & IT (CTO scope)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/pam-cheng-astrazeneca"
+      },
+      {
+        "name": "Aradhana Sarin",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/aradhana-sarin"
+      },
+      {
+        "name": "Jeffrey Pott",
+        "role": "CHRO, CCO & General Counsel",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/jeffrey-pott"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Bayer",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "Bijoy Sagar",
+        "role": "Chief Information & Technology Officer (CITO)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/bijoy-sagar"
+      },
+      {
+        "name": "Judith Hartmann",
+        "role": "Chief Financial Officer (eff. Jun 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/judith-hartmann-bayer"
+      },
+      {
+        "name": "Heike Prinz",
+        "role": "Chief Talent Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/heike-prinz-bayer"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Thomas Udesen",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/thomas-udesen"
+      }
+    ]
+  },
+  {
+    "company": "GSK",
+    "hq": "UK",
+    "contacts": [
+      {
+        "name": "Shobie Ramakrishnan",
+        "role": "Chief Digital & Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/shobie-ramakrishnan"
+      },
+      {
+        "name": "Julie Brown",
+        "role": "Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/julie-brown-gsk"
+      },
+      {
+        "name": "Diana Conrad",
+        "role": "Chief People Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/diana-conrad-gsk"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Regis Simard",
+        "role": "President Global Supply Chain (CPO scope)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/regis-simard-gsk"
+      }
+    ]
+  },
+  {
+    "company": "Generali",
+    "hq": "IT",
+    "contacts": [
+      {
+        "name": "David Cis",
+        "role": "Group COO / CIO (IT scope)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/david-cis"
+      },
+      {
+        "name": "Cristiano Borean",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/cristiano-borean"
+      },
+      {
+        "name": "Monica Alessandra Possa",
+        "role": "Group Chief People & Organization Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/monica-possa"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Munich Re",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "Robin Johnson",
+        "role": "Chief Technology Officer (eff. Aug 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/robin-johnson-munich-re"
+      },
+      {
+        "name": "Andrew Buchanan",
+        "role": "Chief Financial Officer (eff. Jan 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/andrew-buchanan-munich-re"
+      },
+      {
+        "name": "Stefan Golling",
+        "role": "Board Member, Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/stefan-golling"
+      },
+      {
+        "name": "Dr. Achim Kassow",
+        "role": "Board Member CTO & ESG (dual scope)",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/achim-kassow"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Dangote Cement",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Dr. Gbenga Fapohunda",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/gbenga-fapohunda"
+      },
+      {
+        "name": "Gloria Byamugisha",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/gloria-byamugisha"
+      },
+      {
+        "name": "Dr. Igazeuma Okoroba",
+        "role": "Head of Sustainability",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/igazeuma-okoroba"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Knut Ulvmoen",
+        "role": "Supply Chain Director (CPO scope)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/knut-ulvmoen"
+      }
+    ]
+  },
+  {
+    "company": "Safaricom",
+    "hq": "KE",
+    "contacts": [
+      {
+        "name": "James Maitai",
+        "role": "Group Chief Technology & Information Officer (eff. Oct 2024)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/james-maitai"
+      },
+      {
+        "name": "Dilip Pal",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/dilip-pal-safaricom"
+      },
+      {
+        "name": "Florence Nyokabi",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/florence-nyokabi"
+      },
+      {
+        "name": "Karen Basiye",
+        "role": "Director Sustainable Business & Social Impact",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/karen-basiye"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Capgemini",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Franck Greverie",
+        "role": "Group CTO (eff. Jan 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/franck-greverie"
+      },
+      {
+        "name": "Nive Bhagat",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/nive-bhagat"
+      },
+      {
+        "name": "Anne Lebel",
+        "role": "Group Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/anne-lebel-capgemini"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Accenture",
+    "hq": "IE",
+    "contacts": [
+      {
+        "name": "Rajendra Prasad",
+        "role": "Chief Technology Officer (eff. Sep 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/rajendra-prasad-accenture"
+      },
+      {
+        "name": "Angie Park",
+        "role": "Chief Financial Officer (eff. Dec 2024)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/angie-park-accenture"
+      },
+      {
+        "name": "Kate Clifford",
+        "role": "Chief Human Resources Officer (eff. Sep 2025)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/kate-clifford-accenture"
+      },
+      {
+        "name": "Peter Lacy",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/peter-lacy-accenture"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Binny Mathews",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/binny-mathews"
+      }
+    ]
+  },
+  {
+    "company": "LVMH",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Vincent Belrose",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/vincent-belrose"
+      },
+      {
+        "name": "Cécile Cabanis",
+        "role": "Group CFO (eff. Feb 2025)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/cecile-cabanis"
+      },
+      {
+        "name": "Maud Alvarez-Pereyre",
+        "role": "Group Chief Human Resources Officer (eff. Dec 2024)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/maud-alvarez-pereyre"
+      },
+      {
+        "name": "Antoine Arnault",
+        "role": "Director Image & Environment / Head of Sustainability",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/antoine-arnault"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Renault",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Philippe Brunet",
+        "role": "CTO (eff. Sep 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/philippe-brunet-renault"
+      },
+      {
+        "name": "Duncan Minto",
+        "role": "CFO (eff. Mar 2025)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/duncan-minto"
+      },
+      {
+        "name": "Claire Fanget",
+        "role": "Chief Human Resources Officer (eff. Sep 2025)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/claire-fanget"
+      },
+      {
+        "name": "Cléa Martinet",
+        "role": "VP Sustainability & CSR",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/clea-martinet"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Anthony Plouvier",
+        "role": "Chief Purchasing Officer (eff. Sep 2025)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/anthony-plouvier"
+      }
+    ]
+  },
+  {
+    "company": "Stellantis",
+    "hq": "NL",
+    "contacts": [
+      {
+        "name": "Ned Curic",
+        "role": "Chief Technology Officer (eff. Sep 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/ned-curic"
+      },
+      {
+        "name": "Joao Laranjo",
+        "role": "Chief Financial Officer (eff. Sep 2025)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/joao-laranjo"
+      },
+      {
+        "name": "Xavier Chéreau",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/xavier-chereau"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Monica Genovese",
+        "role": "Chief Purchasing Officer (eff. Jun 2025)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/monica-genovese-stellantis"
+      }
+    ]
+  },
+  {
+    "company": "DHL Group",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Melanie Kreis",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/melanie-kreis"
+      },
+      {
+        "name": "Dr. Thomas Ogilvie",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/thomas-ogilvie-dhl"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Anna Spinelli",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/anna-spinelli-dhl"
+      }
+    ]
+  },
+  {
+    "company": "CMA CGM",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "Marlène Dolveck",
+        "role": "EVP Digital & Technology (eff. Jul 2025)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/marlene-dolveck"
+      },
+      {
+        "name": "Ramon Fernandez",
+        "role": "Group CFO (eff. Apr 2023)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/ramon-fernandez-cma-cgm"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group CHRO (vacant)",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Bolloré",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Group CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Cédric de Bailliencourt",
+        "role": "Group CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/cedric-de-bailliencourt"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DRH",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Director RSE / Sustainability",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "BAD / AfDB",
+    "hq": "CI",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Hassatou Diop N'Sele",
+        "role": "Chief Financial Officer (EVP Finance)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/hassatou-diop-nsele"
+      },
+      {
+        "name": "À identifier",
+        "role": "VP Human Resources",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "IFC",
+    "hq": "US",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "John Gandolfo",
+        "role": "Chief Financial Officer (eff. Jan 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/john-gandolfo-ifc"
+      },
+      {
+        "name": "Elena Bourganskaia",
+        "role": "VP Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/elena-bourganskaia"
+      },
+      {
+        "name": "Emmanuel Nyirinkindi",
+        "role": "VP & Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/emmanuel-nyirinkindi"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Proparco",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Charles Boyer",
+        "role": "Directeur Administratif & Financier (CFO)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/charles-boyer-proparco"
+      },
+      {
+        "name": "Fouad El Assaad",
+        "role": "Responsable des Ressources Humaines (DRH)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/fouad-el-assaad"
+      },
+      {
+        "name": "Thomas Eloy",
+        "role": "Directeur A2D (RSE scope)",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Karine Verrière-Billard",
+        "role": "Directrice Juridique (DPO proche)",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur des Achats",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "UBA",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "Akeju Mayowa",
+        "role": "Group Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/akeju-mayowa"
+      },
+      {
+        "name": "Ugochukwu Nwaghodoh",
+        "role": "ED Finance & CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/ugochukwu-nwaghodoh"
+      },
+      {
+        "name": "Modupe Akindele",
+        "role": "Group Head Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/modupe-akindele-uba"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "GTBank",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "Olusina Ayegbusi",
+        "role": "GM & Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/olusina-ayegbusi"
+      },
+      {
+        "name": "Adebanji Adeniyi",
+        "role": "Group Chief Financial Officer",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/adebanji-adeniyi"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group Chief HR Officer",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Kofoworola Okochukwu",
+        "role": "Chief Risk & Compliance Officer (DPO scope)",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Zenith Bank",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Abiodun Durosinmi",
+        "role": "Chief Financial Officer (eff. Oct 2024)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/abiodun-durosinmi"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Human Resources Officer",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Access Bank",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Group Chief Technology Officer",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Emeka Ogbechie",
+        "role": "Group Chief Financial Officer (eff. Feb 2026)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/emeka-ogbechie"
+      },
+      {
+        "name": "Bolaji Agbede",
+        "role": "ED Human Resources (former Group HR)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/bolaji-agbede"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Group DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Flutterwave",
+    "hq": "NG",
+    "contacts": [
+      {
+        "name": "Gurbhej Dhillon",
+        "role": "Chief Technology Officer (2022–)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/gurbhej-dhillon"
+      },
+      {
+        "name": "Mitesh Popat",
+        "role": "Chief Financial Officer (eff. Sep 2024)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/mitesh-popat-flutterwave"
+      },
+      {
+        "name": "Mansi Babyloni",
+        "role": "Chief People & Culture Officer",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/mansi-babyloni"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Sustainability Officer",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Mobolaji Bammeke",
+        "role": "Chief Regulatory & Data Protection Officer (DPO, eff. Sep 2025)",
+        "persona": "dpo",
+        "linkedin": "linkedin.com/in/mobolaji-bammeke"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "CDG",
+    "hq": "MA",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "Directeur IT / CTO",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Hamid Tawfiki",
+        "role": "DGA Stratégie & Finance (CFO scope)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/hamid-tawfiki"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur des Ressources Humaines",
+        "persona": "drh",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur RSE / Développement Durable",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Directeur des Achats",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Kienbaum",
+    "hq": "DE",
+    "contacts": [
+      {
+        "name": "Walter Jochmann",
+        "role": "Managing Partner (DRH/HR Consulting scope)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/walter-jochmann"
+      },
+      {
+        "name": "À identifier",
+        "role": "Managing Partner / CFO",
+        "persona": "cfo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "CTO / Head of Digital",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Sustainability Director",
+        "persona": "rse",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "À identifier",
+        "role": "Chief Procurement Officer",
+        "persona": "achats",
+        "linkedin": "À identifier"
+      }
+    ]
+  },
+  {
+    "company": "Elaia Partners",
+    "hq": "FR",
+    "contacts": [
+      {
+        "name": "À identifier",
+        "role": "CTO (VC firm — no distinct CTO)",
+        "persona": "cto",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Emmanuel Perez-Duarte",
+        "role": "Partner & CFO",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/emmanuel-perez-duarte"
+      },
+      {
+        "name": "Sophie Digard",
+        "role": "Head of Human Resources",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/sophie-digard-elaia"
+      },
+      {
+        "name": "Louisa Mesnard",
+        "role": "Head of Sustainability",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/louisa-mesnard"
+      },
+      {
+        "name": "Pierre Besse",
+        "role": "Risk & Compliance (DPO scope)",
+        "persona": "dpo",
+        "linkedin": "linkedin.com/in/pierre-besse-elaia"
+      },
+      {
+        "name": "Xavier Lazarus",
+        "role": "Managing Partner (Achats / Investment scope)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/xavier-lazarus"
+      }
+    ]
+  },
+  {
+    "company": "Sonatel",
+    "hq": "SN",
+    "contacts": [
+      {
+        "name": "Makan Guissé",
+        "role": "Directeur IT & Plateformes (CTO)",
+        "persona": "cto",
+        "linkedin": "linkedin.com/in/makan-guisse"
+      },
+      {
+        "name": "Bineta Dior Beye Ndiaye",
+        "role": "Directrice Financière (CFO)",
+        "persona": "cfo",
+        "linkedin": "linkedin.com/in/bineta-dior-beye-ndiaye"
+      },
+      {
+        "name": "El Hadji Birahim Guèye",
+        "role": "Directeur Capital Humain (DRH)",
+        "persona": "drh",
+        "linkedin": "linkedin.com/in/el-hadji-birahim-gueye"
+      },
+      {
+        "name": "Awa Niang",
+        "role": "Directrice RSE",
+        "persona": "rse",
+        "linkedin": "linkedin.com/in/awa-niang-sonatel"
+      },
+      {
+        "name": "À identifier",
+        "role": "DPO",
+        "persona": "dpo",
+        "linkedin": "À identifier"
+      },
+      {
+        "name": "Sekou Amadou Bah",
+        "role": "Directeur Sourcing & Supply Chain (Achats)",
+        "persona": "achats",
+        "linkedin": "linkedin.com/in/sekou-amadou-bah"
+      }
+    ]
+  }
+]
