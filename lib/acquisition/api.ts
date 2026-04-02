@@ -1,4 +1,4 @@
-import type { AcqCompany, AcqContact, AcqRegulation, AcqEvent, AcqPlaybook, DashboardKPIs } from './types';
+import type { AcqCompany, AcqContact, AcqRegulation, AcqEvent, AcqPlaybook, DashboardKPIs, SupplyChain } from './types';
 
 const BASE = '/api/acquisition';
 
@@ -40,4 +40,8 @@ export function fetchPlaybook(): Promise<AcqPlaybook[]> {
 
 export function fetchProjection(): Promise<{ by_tier: Record<string, { count: number; revenue: number }>; total: number }> {
   return get('/projection');
+}
+
+export function fetchSupplyChain(): Promise<SupplyChain[]> {
+  return get<SupplyChain[]>('/supply-chain');
 }

@@ -14,6 +14,7 @@ const TABS = [
   { key: 'events', label: 'Événements', icon: '◎', subs: ['GITEX', 'ATS', 'VivaTech'] },
   { key: 'projection', label: 'Projection', icon: '↗', subs: ['Revenue'] },
   { key: 'playbook', label: 'Playbook', icon: '▤', subs: ['DRH', 'DPO', 'CTO', 'RSE', 'Achats', 'CFO'] },
+  { key: 'supply-chain', label: 'Supply Chain', icon: '⛓', subs: ['Cascade'] },
 ] as const;
 
 type TabKey = (typeof TABS)[number]['key'];
@@ -28,6 +29,7 @@ const ForcageLegalView = lazy(() => import('./ForcageLegalView'));
 const EventsView = lazy(() => import('./EventsView'));
 const ProjectionView = lazy(() => import('./ProjectionView'));
 const PlaybookView = lazy(() => import('./PlaybookView'));
+const SupplyChainView = lazy(() => import('./SupplyChainView'));
 
 function TabContent({ tab, subIdx }: { tab: TabKey; subIdx: number }) {
   switch (tab) {
@@ -41,6 +43,7 @@ function TabContent({ tab, subIdx }: { tab: TabKey; subIdx: number }) {
     case 'events': return <EventsView subIdx={subIdx} />;
     case 'projection': return <ProjectionView />;
     case 'playbook': return <PlaybookView subIdx={subIdx} />;
+    case 'supply-chain': return <SupplyChainView />;
   }
 }
 

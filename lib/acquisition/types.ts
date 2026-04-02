@@ -91,3 +91,26 @@ export interface DashboardKPIs {
   by_sector: Record<string, number>;
   by_priority: Record<string, number>;
 }
+
+export interface SupplyChainTier {
+  id: string;
+  parent_company_id: string;
+  tier: number;
+  tier_name: string;
+  tier_type: string;
+  count_entities: string;
+  examples: string | null;
+  eigen_briques: string;
+  contract: string | null;
+  legal_force: string | null;
+  eigen_revenue: string | null;
+  detail: string | null;
+}
+
+export interface SupplyChain {
+  company_id: string;
+  company_name: string;
+  tiers: SupplyChainTier[];
+  total_nodes: string;
+  total_revenue: string;
+}
