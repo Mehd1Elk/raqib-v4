@@ -44,7 +44,7 @@ export default function ProjectionView() {
 
       {/* Summary cards */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 32 }}>
-        <StatCard label="Revenue Total Pipeline" value={fmt(data.total)} color={C.gold} />
+        <StatCard label="Revenue Total Pipeline" value={fmt(data.total)} color={C.accent} />
         <StatCard label="EU Estimate (60%)" value={fmt(data.total * 0.6)} color={C.sapphire} />
         <StatCard label="Corridor Estimate (40%)" value={fmt(data.total * 0.4)} color={C.emerald} />
       </div>
@@ -67,10 +67,10 @@ export default function ProjectionView() {
             const perCompany = d.count > 0 ? d.revenue / d.count : 0;
             return (
               <tr key={tier}>
-                <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic' }}>{tier}</td>
+                <td style={{ ...tdS, fontFamily: GR, fontWeight: 400 }}>{tier}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{d.count}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{fmt(perCompany)}</td>
-                <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right', fontWeight: 700, color: C.gold }}>{fmt(d.revenue)}</td>
+                <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right', fontWeight: 700, color: C.accent }}>{fmt(d.revenue)}</td>
                 {years.map(y => (
                   <td key={y.label} style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{fmt(d.revenue * y.pct)}</td>
                 ))}
@@ -97,7 +97,7 @@ export default function ProjectionView() {
               <tr key={b.key}>
                 <td style={tdS}>
                   <span style={{ color: b.c, marginRight: 6 }}>{b.icon}</span>
-                  <span style={{ fontFamily: GR, fontWeight: 700, fontStyle: 'italic', color: b.c }}>{b.n}</span>
+                  <span style={{ fontFamily: GR, fontWeight: 400, color: b.c }}>{b.n}</span>
                 </td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{d.count}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right', fontWeight: 700, color: b.c }}>{fmt(d.revenue)}</td>
@@ -121,7 +121,7 @@ export default function ProjectionView() {
               <tr key={sec}>
                 <td style={tdS}>{SECTORS[sec] || sec}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{d.count}</td>
-                <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right', fontWeight: 700, color: C.gold }}>{fmt(d.revenue)}</td>
+                <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right', fontWeight: 700, color: C.accent }}>{fmt(d.revenue)}</td>
               </tr>
             ))}
         </tbody>

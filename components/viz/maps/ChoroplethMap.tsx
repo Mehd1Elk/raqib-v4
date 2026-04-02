@@ -79,7 +79,7 @@ export function ChoroplethMap({
       fillColor: datum ? getColor(datum.value, min, max) : 'transparent',
       fillOpacity: datum ? 0.75 : 0,
       weight: datum ? 0.5 : 0.2,
-      color: datum ? '#918977' : '#D4CCBA',
+      color: datum ? 'rgba(30,10,32,0.60)' : 'rgba(30,10,32,0.35)',
     };
   }, [dataLookup, min, max]);
 
@@ -103,7 +103,7 @@ export function ChoroplethMap({
   const loading = entriesLoading || geoLoading;
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[DEFAULT_CENTER.latitude, DEFAULT_CENTER.longitude]}
         zoom={DEFAULT_ZOOM}
@@ -127,7 +127,7 @@ export function ChoroplethMap({
 
       {/* Tooltip */}
       {hovered && (
-        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-md px-3 py-2 shadow-md">
+        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-none-none px-3 py-2 shadow-md">
           <p className="text-xs font-semibold text-t1">{hovered.countryName}</p>
           <p className="text-xs text-t2 font-[family-name:var(--font-jetbrains)]">
             {legendLabel} : {hovered.value.toLocaleString('fr-FR', { maximumFractionDigits: 2 })}
@@ -136,11 +136,11 @@ export function ChoroplethMap({
       )}
 
       {/* Legend */}
-      <div className="absolute bottom-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-2">
+      <div className="absolute bottom-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-3 py-2">
         <p className="text-[10px] text-t3 mb-1 font-[family-name:var(--font-jetbrains)]">{legendLabel}</p>
         <div className="flex gap-0.5">
           {CHOROPLETH_SCALE.map((color, i) => (
-            <div key={i} className="w-5 h-2.5 rounded-sm" style={{ background: color }} />
+            <div key={i} className="w-5 h-2.5 rounded-none-sm" style={{ background: color }} />
           ))}
         </div>
         <div className="flex justify-between text-[9px] text-t3 mt-0.5 font-[family-name:var(--font-jetbrains)]">
@@ -151,7 +151,7 @@ export function ChoroplethMap({
 
       {loading && (
         <div className="absolute inset-0 z-[1000] bg-ivory/50 flex items-center justify-center">
-          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-none-full animate-spin" />
         </div>
       )}
     </div>

@@ -40,7 +40,7 @@ function createPinIcon(color: string): L.DivIcon {
     iconSize: [24, 32],
     iconAnchor: [12, 32],
     popupAnchor: [0, -32],
-    html: `<svg width="24" height="32" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20c0-6.63-5.37-12-12-12z" fill="${color}"/><circle cx="12" cy="12" r="5" fill="#FDFAF3"/></svg>`,
+    html: `<svg width="24" height="32" viewBox="0 0 24 32" fill="none"><path d="M12 0C5.37 0 0 5.37 0 12c0 9 12 20 12 20s12-11 12-20c0-6.63-5.37-12-12-12z" fill="${color}"/><circle cx="12" cy="12" r="5" fill="#FAF8FC"/></svg>`,
   });
 }
 
@@ -59,7 +59,7 @@ export function PinMap({
   const { entries, loading } = useMapEntries(layerIds);
   const [selected, setSelected] = useState<PinDatum | null>(null);
 
-  const pinColor = entityId ? ENTITY_PIN_COLORS[entityId] ?? '#B8963E' : '#B8963E';
+  const pinColor = entityId ? ENTITY_PIN_COLORS[entityId] ?? '#1E0A20' : '#1E0A20';
   const icon = useMemo(() => createPinIcon(pinColor), [pinColor]);
 
   const pins = useMemo<PinDatum[]>(() => {
@@ -93,7 +93,7 @@ export function PinMap({
   }, [entries, externalData, titleField, subtitleField, latField, lngField, entityId]);
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[DEFAULT_CENTER.latitude, DEFAULT_CENTER.longitude]}
         zoom={DEFAULT_ZOOM + 1}
@@ -145,7 +145,7 @@ export function PinMap({
       </MapContainer>
 
       {/* Counter */}
-      <div className="absolute top-3 right-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-2.5 py-1.5">
+      <div className="absolute top-3 right-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-2.5 py-1.5">
         <span className="text-[10px] text-t3 font-[family-name:var(--font-jetbrains)]">
           {pins.length} marqueur{pins.length !== 1 ? 's' : ''}
         </span>
@@ -153,7 +153,7 @@ export function PinMap({
 
       {loading && (
         <div className="absolute inset-0 z-[1000] bg-ivory/50 flex items-center justify-center">
-          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-none-full animate-spin" />
         </div>
       )}
     </div>

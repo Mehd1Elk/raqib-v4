@@ -55,9 +55,9 @@ function densityColor(ratio: number): string {
   if (ratio >= 100) return '#162B20';   // very high (Paris)
   if (ratio >= 30) return '#3D5E8C';    // high
   if (ratio >= 20) return '#3D7C5E';    // above average
-  if (ratio >= 15) return '#B8963E';    // average
-  if (ratio >= 10) return '#D4B662';    // below average
-  return '#F0EBDE';                     // low
+  if (ratio >= 15) return '#1E0A20';    // average
+  if (ratio >= 10) return '#1E0A20';    // below average
+  return '#EEEBF4';                     // low
 }
 
 export function INSEEMap({ className, height = 500 }: { className?: string; height?: number }) {
@@ -137,7 +137,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
   };
 
   return (
-    <div className={`bg-ivory border border-div rounded overflow-hidden relative ${className ?? ''}`} style={{ height }}>
+    <div className={`bg-ivory border border-div rounded-none overflow-hidden relative ${className ?? ''}`} style={{ height }}>
       {/* Title */}
       <div className="absolute top-3 left-3 z-10">
         <div className="text-[9px] font-[family-name:var(--font-jetbrains)] text-gold tracking-[2px] font-bold">
@@ -159,7 +159,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
               key={item.code}
               d={item.d}
               fill={item.color}
-              stroke="#FDFAF3"
+              stroke="#FAF8FC"
               strokeWidth={0.5}
               className="transition-opacity hover:opacity-80 cursor-pointer"
               onMouseMove={e => handleMouseMove(e, item)}
@@ -172,7 +172,7 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
       {/* Tooltip */}
       {tooltip && (
         <div
-          className="absolute z-20 bg-noir/90 text-ivory px-3 py-2 rounded pointer-events-none"
+          className="absolute z-20 bg-noir/90 text-ivory px-3 py-2 rounded-none pointer-events-none"
           style={{ left: tooltip.x, top: tooltip.y, transform: 'translate(-50%, -100%)' }}
         >
           <div className="text-[10px] font-[family-name:var(--font-cormorant)] font-bold italic">
@@ -188,19 +188,19 @@ export function INSEEMap({ className, height = 500 }: { className?: string; heig
       )}
 
       {/* Legend */}
-      <div className="absolute bottom-3 right-3 bg-ivory/90 border border-div rounded p-2 z-10">
+      <div className="absolute bottom-3 right-3 bg-ivory/90 border border-div rounded-none p-2 z-10">
         <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-t3 mb-1">DENSITÉ / 100K</div>
         <div className="flex gap-1">
           {[
-            { color: '#F0EBDE', label: '<10' },
-            { color: '#D4B662', label: '10-15' },
-            { color: '#B8963E', label: '15-20' },
+            { color: '#EEEBF4', label: '<10' },
+            { color: '#1E0A20', label: '10-15' },
+            { color: '#1E0A20', label: '15-20' },
             { color: '#3D7C5E', label: '20-30' },
             { color: '#3D5E8C', label: '30-100' },
             { color: '#162B20', label: '>100' },
           ].map(s => (
             <div key={s.label} className="flex flex-col items-center gap-0.5">
-              <div className="w-4 h-3 rounded-sm" style={{ background: s.color }} />
+              <div className="w-4 h-3 rounded-none-sm" style={{ background: s.color }} />
               <span className="text-[6px] font-[family-name:var(--font-jetbrains)] text-tm">{s.label}</span>
             </div>
           ))}

@@ -118,11 +118,11 @@ export const EigenAgents: React.FC = () => {
       <header className={`shrink-0 relative z-10 ${view === 'org' ? 'bg-white/70 backdrop-blur-md' : 'bg-[#FDFCFB]'} border-b border-[#E5E0D8]/50 px-6 py-4 flex flex-col space-y-3`}>
         {/* Row 1 -- Title + Stats */}
         <div className="flex justify-between items-center">
-          <h1 className="font-mono text-[12px] text-[#D4AF37] font-bold tracking-widest uppercase">
+          <h1 className="font-mono text-[12px] text-[#1E0A20] font-bold tracking-widest uppercase">
             {count} AGENTS — Écosystème EIGEN
           </h1>
           <div className="flex space-x-4 text-[10px] font-mono font-medium text-stone-500 uppercase tracking-wide">
-            <span className="text-emerald-600 flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span><span>{activeCount} actifs</span></span>
+            <span className="text-emerald-600 flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-none-full bg-emerald-500 animate-pulse"></span><span>{activeCount} actifs</span></span>
             <span className={errorCount > 0 ? 'text-red-500' : ''}>{errorCount} erreurs</span>
             <span>~{Math.round(entriesTotal / 30)} livrables/jour</span>
           </div>
@@ -136,7 +136,7 @@ export const EigenAgents: React.FC = () => {
         {/* Row 3 -- Toggle 4 vues */}
         <div className="flex items-center gap-3 pt-2 border-t border-stone-200/50">
           <span className="font-mono text-[8px] text-stone-400 uppercase tracking-wider shrink-0">Vue</span>
-          <div className="flex border border-[#E5E0D8] rounded overflow-hidden bg-white">
+          <div className="flex border border-[#E5E0D8] rounded-none overflow-hidden bg-white">
             {[
               { id: 'org', label: 'ORGANIGRAMME', icon: GitBranch },
               { id: 'cohorts', label: 'COHORTES', icon: Users },
@@ -148,8 +148,8 @@ export const EigenAgents: React.FC = () => {
                 onClick={() => setView(v.id as any)}
                 className={`flex items-center gap-1.5 px-3 py-1.5 font-mono text-[9px] uppercase font-bold tracking-wider transition-colors ${
                   view === v.id
-                    ? 'bg-[#B8963E] text-white'
-                    : 'text-stone-500 hover:text-[#B8963E] hover:bg-stone-50'
+                    ? 'bg-[#1E0A20] text-white'
+                    : 'text-stone-500 hover:text-[#1E0A20] hover:bg-stone-50'
                 }`}
               >
                 <v.icon size={12} strokeWidth={2} />
@@ -168,18 +168,18 @@ export const EigenAgents: React.FC = () => {
                 type="text"
                 aria-label="Recherche agents"
                 placeholder="Rechercher par hash ou nom..."
-                className="w-full pl-9 pr-3 py-1.5 bg-stone-50 border border-stone-200 rounded text-xs focus:outline-none focus:ring-1 focus:ring-[#D4AF37] focus:border-[#D4AF37] text-stone-700 font-mono transition-all"
+                className="w-full pl-9 pr-3 py-1.5 bg-stone-50 border border-stone-200 rounded-none text-xs focus:outline-none focus:ring-1 focus:ring-[#1E0A20] focus:border-[#1E0A20] text-stone-700 font-mono transition-all"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
               />
             </div>
 
-            <div className="flex bg-stone-50 border border-stone-200 rounded p-0.5 space-x-0.5">
+            <div className="flex bg-stone-50 border border-stone-200 rounded-none p-0.5 space-x-0.5">
               {(['ALL', ...LAYER_ORDER]).map(l => (
                 <button
                   key={l}
                   onClick={() => setLayerFilter(l as any)}
-                  className={`px-3 py-1 text-[10px] uppercase font-bold rounded transition-colors ${layerFilter === l ? 'bg-[#D4AF37] text-white shadow-sm' : 'text-stone-500 hover:bg-stone-200'}`}
+                  className={`px-3 py-1 text-[10px] uppercase font-bold rounded-none transition-colors ${layerFilter === l ? 'bg-[#1E0A20] text-white shadow-sm' : 'text-stone-500 hover:bg-stone-200'}`}
                 >
                   {l}
                 </button>
@@ -188,7 +188,7 @@ export const EigenAgents: React.FC = () => {
 
             <select
               aria-label="Filtrer par pole"
-              className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[140px]"
+              className="bg-stone-50 border border-stone-200 rounded-none text-xs px-2 py-1.5 text-stone-600 outline-none w-[140px]"
               value={poleFilter}
               onChange={e => setPoleFilter(e.target.value as any)}
             >
@@ -198,7 +198,7 @@ export const EigenAgents: React.FC = () => {
 
             <select
               aria-label="Filtrer par plateforme"
-              className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
+              className="bg-stone-50 border border-stone-200 rounded-none text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
               value={platformFilter}
               onChange={e => setPlatformFilter(e.target.value as any)}
             >
@@ -208,7 +208,7 @@ export const EigenAgents: React.FC = () => {
 
             <select
               aria-label="Filtrer par statut"
-              className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
+              className="bg-stone-50 border border-stone-200 rounded-none text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
               value={statusFilter}
               onChange={e => setStatusFilter(e.target.value as any)}
             >
@@ -218,7 +218,7 @@ export const EigenAgents: React.FC = () => {
 
             <select
               aria-label="Filtrer par modele"
-              className="bg-stone-50 border border-stone-200 rounded text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
+              className="bg-stone-50 border border-stone-200 rounded-none text-xs px-2 py-1.5 text-stone-600 outline-none w-[120px]"
               value={modelFilter}
               onChange={e => setModelFilter(e.target.value)}
             >
@@ -239,7 +239,7 @@ export const EigenAgents: React.FC = () => {
           {!isLoaded ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {Array.from({ length: 12 }).map((_, i) => (
-                <div key={i} className="w-[280px] h-[180px] bg-stone-100 animate-pulse rounded border border-stone-200" />
+                <div key={i} className="w-[280px] h-[180px] bg-stone-100 animate-pulse rounded-none border border-stone-200" />
               ))}
             </div>
           ) : view === 'cohorts' ? (

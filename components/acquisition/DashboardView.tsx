@@ -39,8 +39,8 @@ export default function DashboardView() {
         <StatCard label="Total Entreprises" value={kpis.total_companies} />
         <StatCard label="Priorité P0" value={kpis.p0_count} color={C.ruby} />
         <StatCard label="Pipeline Actif" value={kpis.pipeline_active} color={C.emerald} />
-        <StatCard label="Signés" value={kpis.signed_count} color={C.gold} />
-        <StatCard label="Revenue Estimé" value={fmt(kpis.total_revenue_estimate)} color={C.goldD} />
+        <StatCard label="Signés" value={kpis.signed_count} color={C.accent} />
+        <StatCard label="Revenue Estimé" value={fmt(kpis.total_revenue_estimate)} color={C.accent} />
         <StatCard label="Secteurs Couverts" value={Object.keys(kpis.by_sector).length} color={C.sapphire} />
       </div>
 
@@ -55,10 +55,10 @@ export default function DashboardView() {
               <span style={{ fontFamily: MN, fontSize: 8, color: C.t3, width: 80, textTransform: 'uppercase', letterSpacing: 1, textAlign: 'right' }}>
                 {STAGE_LABELS[stage] || stage}
               </span>
-              <div style={{ flex: 1, background: C.divL, height: 16, borderRadius: 2 }}>
+              <div style={{ flex: 1, background: C.divL, height: 16, borderRadius: 0 }}>
                 <div style={{
-                  width: `${w}%`, height: '100%', borderRadius: 2, opacity: 0.7,
-                  background: stage === 'signed' ? C.emerald : stage === 'churned' ? C.ruby : C.gold,
+                  width: `${w}%`, height: '100%', borderRadius: 0, opacity: 0.7,
+                  background: stage === 'signed' ? C.emerald : stage === 'churned' ? C.ruby : C.accent,
                 }} />
               </div>
               <span style={{ fontFamily: MN, fontSize: 9, color: C.t2, width: 40, textAlign: 'right' }}>{count}</span>
@@ -85,9 +85,9 @@ export default function DashboardView() {
           <tbody>
             {top10.map(c => (
               <tr key={c.id}
-                onMouseEnter={e => (e.currentTarget.style.background = C.parchment)}
+                onMouseEnter={e => (e.currentTarget.style.background = C.nacre3)}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
-                <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 12 }}>{c.name}</td>
+                <td style={{ ...tdS, fontFamily: GR, fontWeight: 400, fontSize: 12 }}>{c.name}</td>
                 <td style={tdS}>{c.hq}</td>
                 <td style={tdS}><Pill label={SECTORS[c.sector] || c.sector} /></td>
                 {BRICKS.map(b => (
@@ -96,8 +96,8 @@ export default function DashboardView() {
                   </td>
                 ))}
                 <td style={{ ...tdS, textAlign: 'center' }}><ScoreBadge score={c.eigen_score} /></td>
-                <td style={tdS}><Pill label={c.tier} color={C.walnut} /></td>
-                <td style={tdS}><Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.gold : C.t3} /></td>
+                <td style={tdS}><Pill label={c.tier} color={C.t2} /></td>
+                <td style={tdS}><Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.accent : C.t3} /></td>
               </tr>
             ))}
           </tbody>

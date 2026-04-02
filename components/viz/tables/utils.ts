@@ -247,9 +247,9 @@ export function normalizeNotation(value: number | null): number | null {
 }
 
 export function getNotationTone(value: number | null): string {
-  if (value === null) return '#918977';
+  if (value === null) return 'rgba(30,10,32,0.60)';
   if (value >= 75) return '#3D7C5E';
-  if (value >= 50) return '#B8963E';
+  if (value >= 50) return '#1E0A20';
   return '#9C3D3D';
 }
 

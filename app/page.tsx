@@ -123,7 +123,7 @@ export default function Dashboard() {
         <div className="flex items-center justify-between flex-wrap gap-4">
           <div className="min-w-0">
             <div className="flex items-center gap-3 mb-1.5">
-              <div className="w-3 h-3 rounded-full bg-gold flex-shrink-0" />
+              <div className="w-3 h-3 rounded-none-full bg-gold flex-shrink-0" />
               <h1 className="font-[family-name:var(--font-cormorant)] text-[32px] font-bold italic text-noir">
                 Raqib <span className="font-normal text-[22px] text-gold">رقيب</span>
               </h1>
@@ -133,18 +133,18 @@ export default function Dashboard() {
             </p>
           </div>
           <div className="flex items-center gap-3 flex-wrap">
-            <a href="/eigen" className="px-4 py-2 bg-gold text-white font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:bg-gold-d transition">
+            <a href="/eigen" className="px-4 py-2 bg-gold text-white font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded-none hover:bg-gold-d transition">
               COCKPIT EIGEN →
             </a>
-            <a href="/upload" className="px-4 py-2 border border-stone text-stone font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:border-gold hover:text-gold transition">
+            <a href="/upload" className="px-4 py-2 border border-stone text-stone font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded-none hover:border-gold hover:text-gold transition">
               IMPORTER
             </a>
-            <a href="/vault" className="px-3 py-2 text-[10px] font-[family-name:var(--font-jetbrains)] tracking-wider text-[#7B5EA7] border border-[#7B5EA7] rounded hover:bg-[#7B5EA7] hover:text-white transition">
+            <a href="/vault" className="px-3 py-2 text-[10px] font-[family-name:var(--font-jetbrains)] tracking-wider text-[#7B5EA7] border border-[#7B5EA7] rounded-none hover:bg-[#7B5EA7] hover:text-white transition">
               VAULT
             </a>
             <GlobalNav />
             <ExportButton entityIndex={entityIndex} />
-            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded border border-div cursor-pointer">
+            <kbd className="text-[8px] font-[family-name:var(--font-jetbrains)] text-tm bg-cream px-1.5 py-0.5 rounded-none border border-div cursor-pointer">
               ⌘K
             </kbd>
             <span className="text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
@@ -159,7 +159,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {/* Card COCKPIT EIGEN */}
-          <a href="/eigen" className="col-span-1 row-span-1 lg:row-span-2 bg-noir text-white rounded-lg p-6 hover:ring-2 hover:ring-gold transition group no-underline">
+          <a href="/eigen" className="col-span-1 row-span-1 lg:row-span-2 bg-noir text-white rounded-none-none p-6 hover:ring-2 hover:ring-gold transition group no-underline">
             <div className="text-gold font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[3px] mb-3">COCKPIT</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[24px] font-bold italic mb-2">EIGEN Stratégique</div>
             <div className="font-[family-name:var(--font-noto)] text-[11px] text-stone mb-4">
@@ -185,16 +185,16 @@ export default function Dashboard() {
           </a>
 
           {/* Card NEXUS */}
-          <a href="/nexus" className="bg-noir text-gold-l rounded-lg p-5 hover:ring-1 hover:ring-gold transition no-underline group">
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[2px] mb-2 text-[#D4B662]">NEXUS</div>
+          <a href="/nexus" className="bg-noir text-gold-l rounded-none-none p-5 hover:ring-1 hover:ring-gold transition no-underline group">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[2px] mb-2 text-[#1E0A20]">NEXUS</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-white mb-1">Carte ecosysteme</div>
             <div className="font-[family-name:var(--font-noto)] text-[10px] text-stone mb-3">11 entites &middot; 19 flux &middot; Force-directed</div>
             <div className="flex gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-[#B8963E]" />
-              <span className="w-2 h-2 rounded-full bg-[#7B5EA7]" />
-              <span className="w-2 h-2 rounded-full bg-[#3D7C5E]" />
-              <span className="w-2 h-2 rounded-full bg-[#B87D3E]" />
-              <span className="w-2 h-2 rounded-full bg-[#D4B662]" />
+              <span className="w-2 h-2 rounded-none-full bg-[#1E0A20]" />
+              <span className="w-2 h-2 rounded-none-full bg-[#7B5EA7]" />
+              <span className="w-2 h-2 rounded-none-full bg-[#3D7C5E]" />
+              <span className="w-2 h-2 rounded-none-full bg-[#B87D3E]" />
+              <span className="w-2 h-2 rounded-none-full bg-[#1E0A20]" />
             </div>
             <div className="mt-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-gold opacity-0 group-hover:opacity-100 transition">
               OUVRIR LE NEXUS &rarr;
@@ -202,40 +202,40 @@ export default function Dashboard() {
           </a>
 
           {/* Card DASHBOARDS */}
-          <a href="/dashboards/investor" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+          <a href="/dashboards/investor" className="bg-ivory border border-div rounded-none-none p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-gold tracking-[2px] mb-2">DASHBOARDS</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Tableaux de bord</div>
             <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">Investor · Supervisor · GITEX · London</div>
             <div className="flex gap-2">
-              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(184,150,62,0.1)] text-gold rounded">INVESTOR</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">SUPERVISOR</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">GITEX</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(30,10,32,0.06)] text-gold rounded-none">INVESTOR</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">SUPERVISOR</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">GITEX</span>
             </div>
           </a>
 
           {/* Card DATA VIEWER */}
-          <a href="/data" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+          <a href="/data" className="bg-ivory border border-div rounded-none-none p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#B87D3E] tracking-[2px] mb-2">DATA</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Data Viewer</div>
             <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">11 entites &middot; 1100 couches &middot; Plein ecran</div>
             <div className="flex gap-2">
-              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(184,125,62,0.1)] text-[#B87D3E] rounded">FULL SCREEN</span>
-              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded">SEARCH</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(184,125,62,0.1)] text-[#B87D3E] rounded-none">FULL SCREEN</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-2 py-0.5 bg-[rgba(145,137,119,0.1)] text-t3 rounded-none">SEARCH</span>
             </div>
           </a>
 
           {/* Card STATS */}
-          <a href="/stats" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+          <a href="/stats" className="bg-ivory border border-div rounded-none-none p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-emerald tracking-[2px] mb-2">PROGRESSION</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Stats & Qualité</div>
             <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">100% completion &middot; 16 384 entries &middot; conf 0.85</div>
-            <div className="w-full h-2 bg-parchment rounded-full overflow-hidden">
-              <div className="h-full bg-emerald rounded-full" style={{width:'100%'}} />
+            <div className="w-full h-2 bg-parchment rounded-none-full overflow-hidden">
+              <div className="h-full bg-emerald rounded-none-full" style={{width:'100%'}} />
             </div>
           </a>
 
           {/* Card BOARD MEETING */}
-          <a href="/eigen?tab=board" className="bg-ivory border border-div rounded-lg p-5 hover:border-gold transition no-underline">
+          <a href="/eigen?tab=board" className="bg-ivory border border-div rounded-none-none p-5 hover:border-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-violet tracking-[2px] mb-2">COMITÉ</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-noir mb-1">Board Meeting</div>
             <div className="font-[family-name:var(--font-noto)] text-[10px] text-t3 mb-3">5 directeurs IA · Débat stratégique</div>
@@ -243,15 +243,15 @@ export default function Dashboard() {
           </a>
 
           {/* Card TERMINAL */}
-          <a href="/eigen?tab=terminal" className="bg-noir text-gold-l rounded-lg p-5 hover:ring-1 hover:ring-gold transition no-underline">
+          <a href="/eigen?tab=terminal" className="bg-noir text-gold-l rounded-none-none p-5 hover:ring-1 hover:ring-gold transition no-underline">
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[2px] mb-2 text-stone">TERMINAL</div>
             <div className="font-[family-name:var(--font-jetbrains)] text-[14px] mb-1">&gt; status</div>
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">8 commandes · Live feed · 255 agents</div>
           </a>
 
           {/* Card CORRIDOR INTELLIGENCE */}
-          <a href="/corridor" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(201,169,110,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1918 100%)', border: '1px solid rgba(201,169,110,0.25)', color: '#E8E5DE' }}>
-            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#C9A96E' }}>
+          <a href="/corridor" className="rounded-none-none p-5 hover:ring-1 hover:ring-[rgba(201,169,110,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1918 100%)', border: '1px solid rgba(201,169,110,0.25)', color: '#E8E5DE' }}>
+            <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '1.4rem', color: '#1E0A20' }}>
               Corridor Intelligence
             </div>
             <div style={{ fontSize: '0.75rem', color: '#9A9790', marginTop: '0.5rem' }}>
@@ -263,8 +263,8 @@ export default function Dashboard() {
           </a>
 
           {/* Card DIWANE — Art Market Intelligence */}
-          <a href="/diwane" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(232,96,10,0.5)] transition no-underline" style={{ background: '#1A1410', border: '1px solid rgba(232,96,10,0.25)', color: '#F0EAE0' }}>
-            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#E8600A' }}>
+          <a href="/diwane" className="rounded-none-none p-5 hover:ring-1 hover:ring-[rgba(232,96,10,0.5)] transition no-underline" style={{ background: '#1A1410', border: '1px solid rgba(232,96,10,0.25)', color: '#EEEBF4' }}>
+            <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '1.4rem', color: '#E8600A' }}>
               <span style={{ fontSize: '1.1rem', marginRight: '0.4rem', color: '#C4956A' }}>ديوان</span> DIWANE
             </div>
             <div style={{ fontSize: '0.75rem', color: '#A09888', marginTop: '0.5rem' }}>
@@ -276,8 +276,8 @@ export default function Dashboard() {
           </a>
 
           {/* Card ACQUISITION — Intelligence d'Acquisition */}
-          <a href="/acquisition" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(184,150,62,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1814 100%)', border: '1px solid rgba(184,150,62,0.25)', color: '#E8E5DE' }}>
-            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#B8963E' }}>
+          <a href="/acquisition" className="rounded-none-none p-5 hover:ring-1 hover:ring-[rgba(184,150,62,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1814 100%)', border: '1px solid rgba(184,150,62,0.25)', color: '#E8E5DE' }}>
+            <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '1.4rem', color: '#1E0A20' }}>
               Intelligence d&apos;Acquisition
             </div>
             <div style={{ fontSize: '0.75rem', color: '#9A9790', marginTop: '0.5rem' }}>
@@ -289,8 +289,8 @@ export default function Dashboard() {
           </a>
 
           {/* Card SCIENCE — Intelligence Scientifique */}
-          <a href="/science" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(99,102,241,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A10 0%, #141420 100%)', border: '1px solid rgba(99,102,241,0.25)', color: '#E0E0F0' }}>
-            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#6366F1' }}>
+          <a href="/science" className="rounded-none-none p-5 hover:ring-1 hover:ring-[rgba(99,102,241,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A10 0%, #141420 100%)', border: '1px solid rgba(99,102,241,0.25)', color: '#E0E0F0' }}>
+            <div style={{ fontFamily: 'Playfair Display, Georgia, serif', fontSize: '1.4rem', color: '#6366F1' }}>
               Intelligence Scientifique
             </div>
             <div style={{ fontSize: '0.75rem', color: '#9090A0', marginTop: '0.5rem' }}>
@@ -313,7 +313,7 @@ export default function Dashboard() {
             Ouvrir le Stream Complet →
           </a>
         </div>
-        <div className="max-h-[200px] border border-div rounded-lg overflow-hidden bg-cream shadow-inner">
+        <div className="max-h-[200px] border border-div rounded-none-none overflow-hidden bg-cream shadow-inner">
           <EigenStream maxHeight="200px" limit={5} />
         </div>
       </div>

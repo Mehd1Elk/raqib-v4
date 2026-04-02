@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, JetBrains_Mono, Noto_Sans } from 'next/font/google';
+import { Playfair_Display, JetBrains_Mono, Noto_Sans } from 'next/font/google';
 import 'leaflet/dist/leaflet.css';
 import './globals.css';
 import { Breadcrumb } from '@/components/Breadcrumb';
@@ -11,10 +11,10 @@ import ConscienceBar from '@/components/ConscienceBar';
 
 const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://raqib-v4.vercel.app');
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: '--font-cormorant',
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
+  weight: ['400', '700'],
   style: ['normal', 'italic'],
 });
 
@@ -62,9 +62,9 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${cormorant.variable} ${jetbrains.variable} ${noto.variable} h-full`}
+      className={`${playfair.variable} ${jetbrains.variable} ${noto.variable} h-full`}
     >
-      <body className="h-full font-[family-name:var(--font-noto)] text-t1 bg-cream antialiased pb-[22px]">
+      <body className="h-full font-[family-name:var(--font-noto)] text-t1 bg-nacre antialiased pb-[22px]">
         <LoadingBar />
         <Breadcrumb />
         <WormholeBreadcrumb />

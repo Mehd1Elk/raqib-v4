@@ -21,23 +21,23 @@ export function DocViewer({
   keywords,
   previewLines,
   coworkUrl,
-  entityColor = '#B8963E',
+  entityColor = '#1E0A20',
 }: DocViewerProps) {
   return (
     <div style={{
-      background: '#FDFAF3',
-      border: '1px solid #D4CCBA',
+      background: '#FAF8FC',
+      border: '1px solid rgba(30,10,32,0.35)',
       borderRadius: 8,
       overflow: 'hidden',
     }}>
       {/* Header */}
       <div style={{
         padding: '16px 20px',
-        borderBottom: '1px solid #D4CCBA',
-        background: '#F7F3EA',
+        borderBottom: '1px solid rgba(30,10,32,0.35)',
+        background: '#F5F2F8',
       }}>
         <div style={{
-          fontFamily: 'Cormorant Garamond, serif',
+          fontFamily: 'Playfair Display, serif',
           fontSize: 18,
           fontWeight: 700,
           fontStyle: 'italic',
@@ -52,7 +52,7 @@ export function DocViewer({
           flexWrap: 'wrap',
           fontFamily: 'JetBrains Mono, monospace',
           fontSize: 9,
-          color: '#918977',
+          color: 'rgba(30,10,32,0.60)',
           letterSpacing: '0.5px',
         }}>
           {author && <span>AUTEUR: {author}</span>}
@@ -105,9 +105,9 @@ export function DocViewer({
                   style={{
                     fontFamily: 'JetBrains Mono, monospace',
                     fontSize: 9,
-                    color: '#918977',
-                    background: '#F7F3EA',
-                    border: '1px solid #D4CCBA',
+                    color: 'rgba(30,10,32,0.60)',
+                    background: '#F5F2F8',
+                    border: '1px solid rgba(30,10,32,0.35)',
                     borderRadius: 3,
                     padding: '2px 8px',
                   }}
@@ -132,8 +132,8 @@ export function DocViewer({
               APERCU
             </div>
             <div style={{
-              background: '#F7F3EA',
-              border: '1px solid #D4CCBA',
+              background: '#F5F2F8',
+              border: '1px solid rgba(30,10,32,0.35)',
               borderRadius: 4,
               padding: 12,
               fontFamily: 'system-ui, -apple-system, sans-serif',

@@ -63,8 +63,8 @@ export default function TrojanHorseView() {
     <div style={{ display: 'flex', height: '100%', overflow: 'hidden' }}>
       {/* Left panel — list */}
       <div style={{
-        width: 280, minWidth: 280, borderRight: `1px solid ${C.div}`,
-        display: 'flex', flexDirection: 'column', background: C.ivory,
+        width: 280, minWidth: 280, borderRight: `0.5px solid ${C.div}`,
+        display: 'flex', flexDirection: 'column', background: C.nacre,
       }}>
         {/* Search + count */}
         <div style={{ padding: '12px 12px 8px' }}>
@@ -76,8 +76,8 @@ export default function TrojanHorseView() {
             value={search}
             onChange={e => { setSearch(e.target.value); setSelected(0); }}
             style={{
-              width: '100%', padding: '6px 10px', border: `1px solid ${C.div}`, borderRadius: 2,
-              fontFamily: SN, fontSize: 10, color: C.t1, background: C.cream, outline: 'none',
+              width: '100%', padding: '6px 10px', border: `0.5px solid ${C.div}`, borderRadius: 0,
+              fontFamily: SN, fontSize: 10, color: C.t1, background: C.nacre2, outline: 'none',
               boxSizing: 'border-box',
             }}
           />
@@ -86,15 +86,15 @@ export default function TrojanHorseView() {
         {/* Sector filter */}
         <div style={{ padding: '0 12px 8px', display: 'flex', flexWrap: 'wrap', gap: 4 }}>
           <button onClick={() => { setFilterSector(''); setSelected(0); }} style={{
-            padding: '2px 8px', borderRadius: 2, border: `1px solid ${!filterSector ? C.gold : C.div}`,
-            background: !filterSector ? `${C.gold}20` : 'transparent',
-            fontFamily: MN, fontSize: 7, color: !filterSector ? C.gold : C.t3, cursor: 'pointer',
+            padding: '2px 8px', borderRadius: 0, border: `0.5px solid ${!filterSector ? C.accent : C.div}`,
+            background: !filterSector ? `${C.accent}20` : 'transparent',
+            fontFamily: MN, fontSize: 7, color: !filterSector ? C.accent : C.t3, cursor: 'pointer',
           }}>Tous</button>
           {sectors.map(s => (
             <button key={s} onClick={() => { setFilterSector(filterSector === s ? '' : s); setSelected(0); }} style={{
-              padding: '2px 8px', borderRadius: 2, border: `1px solid ${filterSector === s ? C.gold : C.div}`,
-              background: filterSector === s ? `${C.gold}20` : 'transparent',
-              fontFamily: MN, fontSize: 7, color: filterSector === s ? C.gold : C.t3, cursor: 'pointer',
+              padding: '2px 8px', borderRadius: 0, border: `0.5px solid ${filterSector === s ? C.accent : C.div}`,
+              background: filterSector === s ? `${C.accent}20` : 'transparent',
+              fontFamily: MN, fontSize: 7, color: filterSector === s ? C.accent : C.t3, cursor: 'pointer',
               whiteSpace: 'nowrap',
             }}>{s}</button>
           ))}
@@ -146,7 +146,7 @@ export default function TrojanHorseView() {
         {/* Header */}
         <div style={{ marginBottom: 24 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 6 }}>
-            <span style={{ fontFamily: GR, fontSize: 22, fontWeight: 700, fontStyle: 'italic', color: C.t1 }}>
+            <span style={{ fontFamily: GR, fontSize: 22, fontWeight: 400, color: C.t1 }}>
               {h.group_name}
             </span>
             <span style={{ fontFamily: MN, fontSize: 9, color: C.t3 }}>{h.market} · {h.sector}</span>
@@ -166,8 +166,8 @@ export default function TrojanHorseView() {
 
         {/* One-liner */}
         <div style={{
-          padding: '16px 20px', borderRadius: 3, marginBottom: 24,
-          background: `${h.trojan_color}0A`, border: `1px solid ${h.trojan_color}33`,
+          padding: '16px 20px', borderRadius: 0, marginBottom: 24,
+          background: `${h.trojan_color}0A`, border: `0.5px solid ${h.trojan_color}33`,
           borderLeft: `4px solid ${h.trojan_color}`,
         }}>
           <div style={{ fontFamily: GR, fontSize: 14, fontStyle: 'italic', color: C.t1, lineHeight: 1.5 }}>
@@ -187,7 +187,7 @@ export default function TrojanHorseView() {
               <div style={{ fontFamily: MN, fontSize: 8, color: C.t3, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 8 }}>MÉCANISME</div>
               <div style={{ fontFamily: SN, fontSize: 11, color: C.t1, lineHeight: 1.7, whiteSpace: 'pre-line' }}>{h.trojan_mechanism}</div>
             </div>
-            <div style={{ padding: '14px 16px', borderRadius: 3, background: `${C.emerald}0A`, border: `1px solid ${C.emerald}25` }}>
+            <div style={{ padding: '14px 16px', borderRadius: 0, background: `${C.emerald}0A`, border: `0.5px solid ${C.emerald}25` }}>
               <div style={{ fontFamily: MN, fontSize: 8, color: C.emerald, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 8 }}>LIVRABLE GRATUIT</div>
               <div style={{ fontFamily: SN, fontSize: 11, color: C.t1, lineHeight: 1.7 }}>{h.free_deliverable}</div>
             </div>
@@ -229,8 +229,8 @@ export default function TrojanHorseView() {
             )}
 
             {/* Why irresistible */}
-            <div style={{ padding: '14px 16px', borderRadius: 3, background: `${C.gold}0A`, border: `1px solid ${C.gold}25` }}>
-              <div style={{ fontFamily: MN, fontSize: 8, color: C.gold, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 8 }}>POURQUOI C'EST IRRÉSISTIBLE</div>
+            <div style={{ padding: '14px 16px', borderRadius: 0, background: `${C.accent}0A`, border: `0.5px solid ${C.accent}25` }}>
+              <div style={{ fontFamily: MN, fontSize: 8, color: C.accent, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 8 }}>POURQUOI C'EST IRRÉSISTIBLE</div>
               <div style={{ fontFamily: GR, fontSize: 12, fontStyle: 'italic', color: C.t1, lineHeight: 1.6 }}>{h.why_irresistible}</div>
             </div>
           </div>
@@ -239,7 +239,7 @@ export default function TrojanHorseView() {
         {/* Entry brique */}
         <div style={{
           display: 'flex', alignItems: 'center', gap: 12, padding: '12px 16px',
-          background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 3,
+          background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0,
         }}>
           <span style={{ fontFamily: MN, fontSize: 8, color: C.t3, letterSpacing: 1.5, textTransform: 'uppercase' }}>BRIQUE D'ENTRÉE</span>
           <div style={{ display: 'flex', gap: 4 }}>

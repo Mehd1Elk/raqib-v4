@@ -12,16 +12,16 @@ const SECTOR_LABELS: Record<string, { label: string; color: string }> = {
   'Télécom':       { label: 'Telecom',        color: '#3D5E8C' },
   'Banque':        { label: 'Banque',          color: '#6E2A3D' },
   'Assurance':     { label: 'Assurance',       color: '#9C3D3D' },
-  'Énergie':       { label: 'Energie',         color: '#B8963E' },
+  'Énergie':       { label: 'Energie',         color: '#1E0A20' },
   'Pharma':        { label: 'Pharma',          color: '#3D7C5E' },
   'BTP':           { label: 'BTP/Infra',       color: '#B87D3E' },
-  'INDUSTRIE':     { label: 'Industrie',       color: '#918977' },
+  'INDUSTRIE':     { label: 'Industrie',       color: 'rgba(30,10,32,0.60)' },
   'TECH/FINTECH':  { label: 'Tech/Fintech',    color: '#7B5EA7' },
   'CONSEIL/AUDIT': { label: 'Conseil/Audit',   color: '#3D7C8C' },
   'LOGISTIQUE':    { label: 'Logistique',      color: '#5E6E3D' },
   'LUXE/RETAIL':   { label: 'Luxe/Retail',     color: '#9C3D5E' },
   'DFI':           { label: 'DFI/Institution', color: '#3D5E8C' },
-  'MINES':         { label: 'Mines',           color: '#6B5E4C' },
+  'MINES':         { label: 'Mines',           color: 'rgba(30,10,32,0.60)' },
 };
 
 const TIER_COLORS = ['#1E3A5F', '#2E5E8C', '#4A7AB5', '#7CA0D4', '#A8C4E8'];
@@ -29,7 +29,7 @@ const TIER_WIDTHS = ['15%', '35%', '55%', '75%', '100%'];
 
 function brickPillColor(name: string): string {
   const map: Record<string, string> = { NOOS: C.noos, AELYA: C.aelya, 'MYNe': C.myne, BURHAN: C.burhan, YrKnown: C.yrknown, MIZAN: C.mizan, RAQIB: C.raqib };
-  return map[name] || C.stone;
+  return map[name] || C.t2;
 }
 
 function parseBriques(str: string): string[] {
@@ -81,7 +81,7 @@ export default function SupplyChainView() {
   }, [sectorCompanies, selectedCompany]);
 
   const chain = sectorCompanies.find(c => c.company_id === selectedCompany) || null;
-  const sectorTheme = SECTOR_LABELS[selectedSector || ''] || { label: selectedSector || '', color: C.stone };
+  const sectorTheme = SECTOR_LABELS[selectedSector || ''] || { label: selectedSector || '', color: C.t2 };
 
   // Totals across ALL chains
   const totalChains = chains.length;
@@ -100,7 +100,7 @@ export default function SupplyChainView() {
     <div style={wrap}>
       {/* Global header */}
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 16 }}>
-        <span style={{ fontFamily: GR, fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.t1 }}>
+        <span style={{ fontFamily: GR, fontSize: 20, fontWeight: 400, color: C.t1 }}>
           Supply Chain Intelligence
         </span>
         <span style={{ fontFamily: MN, fontSize: 9, color: C.t3, letterSpacing: 1 }}>
@@ -111,7 +111,7 @@ export default function SupplyChainView() {
       {/* Sector tabs */}
       <div style={{ display: 'flex', gap: 4, marginBottom: 16, flexWrap: 'wrap' }}>
         {sectors.map(s => {
-          const theme = SECTOR_LABELS[s] || { label: s, color: C.stone };
+          const theme = SECTOR_LABELS[s] || { label: s, color: C.t2 };
           const active = selectedSector === s;
           const count = bySector.get(s)?.length || 0;
           return (
@@ -119,9 +119,9 @@ export default function SupplyChainView() {
               key={s}
               onClick={() => { setSelectedSector(s); setSelectedCompany(null); }}
               style={{
-                border: active ? `2px solid ${theme.color}` : `1px solid ${C.div}`,
-                background: active ? `${theme.color}18` : C.ivory,
-                borderRadius: 3,
+                border: active ? `2px solid ${theme.color}` : `0.5px solid ${C.div}`,
+                background: active ? `${theme.color}18` : C.nacre,
+                borderRadius: 0,
                 padding: '5px 10px',
                 cursor: 'pointer',
                 fontFamily: MN,
@@ -148,9 +148,9 @@ export default function SupplyChainView() {
                 key={ch.company_id}
                 onClick={() => setSelectedCompany(ch.company_id)}
                 style={{
-                  border: active ? `2px solid ${sectorTheme.color}` : `1px solid ${C.div}`,
-                  background: active ? `${sectorTheme.color}15` : C.ivory,
-                  borderRadius: 3,
+                  border: active ? `2px solid ${sectorTheme.color}` : `0.5px solid ${C.div}`,
+                  background: active ? `${sectorTheme.color}15` : C.nacre,
+                  borderRadius: 0,
                   padding: '6px 12px',
                   cursor: 'pointer',
                   fontFamily: GR,
@@ -174,7 +174,7 @@ export default function SupplyChainView() {
           {/* Header */}
           <div style={{ marginBottom: 20 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 12 }}>
-              <span style={{ fontFamily: GR, fontSize: 22, fontWeight: 700, fontStyle: 'italic', color: sectorTheme.color }}>
+              <span style={{ fontFamily: GR, fontSize: 22, fontWeight: 400, color: sectorTheme.color }}>
                 {chain.company_name}
               </span>
               <span style={{ fontFamily: MN, fontSize: 9, color: C.t3, letterSpacing: 1 }}>
@@ -185,7 +185,7 @@ export default function SupplyChainView() {
               <span style={{ fontFamily: MN, fontSize: 11, fontWeight: 700, color: C.t1 }}>
                 {chain.total_nodes} noeuds
               </span>
-              <span style={{ fontFamily: MN, fontSize: 11, fontWeight: 700, color: C.gold }}>
+              <span style={{ fontFamily: MN, fontSize: 11, fontWeight: 700, color: C.accent }}>
                 {chain.total_revenue}
               </span>
             </div>
@@ -204,14 +204,14 @@ export default function SupplyChainView() {
                   style={{
                     width,
                     background: `${tierColor}14`,
-                    border: `1px solid ${tierColor}4D`,
-                    borderRadius: 3,
+                    border: `0.5px solid ${tierColor}4D`,
+                    borderRadius: 0,
                     padding: '10px 14px',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 12, color: tierColor }}>
+                      <div style={{ fontFamily: GR, fontWeight: 400, fontSize: 12, color: tierColor }}>
                         Tier {tier.tier} — {tier.tier_name}
                       </div>
                       <div style={{ fontFamily: SN, fontSize: 8, color: C.t3, marginTop: 1 }}>
@@ -252,7 +252,7 @@ export default function SupplyChainView() {
           {/* Stat cards */}
           <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
             <StatCard label="Total noeuds" value={chain.total_nodes || '—'} color={sectorTheme.color} />
-            <StatCard label="Revenue Eigen" value={chain.total_revenue || '—'} color={C.gold} />
+            <StatCard label="Revenue Eigen" value={chain.total_revenue || '—'} color={C.accent} />
             <StatCard label="CAC par noeud" value="~0" sub="Forcage legal = 0 CAC" color={C.emerald} />
           </div>
 
@@ -260,8 +260,8 @@ export default function SupplyChainView() {
           {chain.prescriptor_effect && (
             <div style={{
               background: `${sectorTheme.color}0C`,
-              border: `1px solid ${sectorTheme.color}26`,
-              borderRadius: 3,
+              border: `0.5px solid ${sectorTheme.color}26`,
+              borderRadius: 0,
               padding: '10px 14px',
               marginBottom: 12,
             }}>
@@ -277,15 +277,15 @@ export default function SupplyChainView() {
           {/* Killer insight */}
           {chain.killer_insight && (
             <div style={{
-              background: `${C.gold}0F`,
-              border: `1px solid ${C.gold}33`,
-              borderRadius: 3,
+              background: `${C.accent}0F`,
+              border: `0.5px solid ${C.accent}33`,
+              borderRadius: 0,
               padding: '10px 14px',
             }}>
-              <div style={{ fontFamily: MN, fontSize: 7, letterSpacing: 1.5, textTransform: 'uppercase', color: C.gold, marginBottom: 4 }}>
+              <div style={{ fontFamily: MN, fontSize: 7, letterSpacing: 1.5, textTransform: 'uppercase', color: C.accent, marginBottom: 4 }}>
                 KILLER INSIGHT
               </div>
-              <div style={{ fontFamily: GR, fontStyle: 'italic', fontSize: 12, color: C.gold, lineHeight: 1.5 }}>
+              <div style={{ fontFamily: GR, fontStyle: 'italic', fontSize: 12, color: C.accent, lineHeight: 1.5 }}>
                 {chain.killer_insight}
               </div>
             </div>

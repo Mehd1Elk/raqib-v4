@@ -44,8 +44,8 @@ export default function PlaybookView({ subIdx = 0 }: { subIdx?: number }) {
 
       {/* Hook */}
       <div style={{
-        padding: '20px 24px', background: `${persona?.c || C.gold}08`, border: `1px solid ${persona?.c || C.gold}25`,
-        borderLeft: `4px solid ${persona?.c || C.gold}`, borderRadius: 3, marginBottom: 24,
+        padding: '20px 24px', background: `${persona?.c || C.accent}08`, border: `0.5px solid ${persona?.c || C.accent}25`,
+        borderLeft: `4px solid ${persona?.c || C.accent}`, borderRadius: 0, marginBottom: 24,
       }}>
         <div style={{ fontFamily: MN, fontSize: 8, color: C.t3, letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 6 }}>HOOK</div>
         <div style={{ fontFamily: GR, fontSize: 16, fontStyle: 'italic', color: C.t1, lineHeight: 1.4 }}>
@@ -67,7 +67,7 @@ export default function PlaybookView({ subIdx = 0 }: { subIdx?: number }) {
           <SectionTitle title="Objections & Réponses" count={objections.length} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {objections.map((o, i) => (
-              <div key={i} style={{ padding: '12px 16px', background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 3 }}>
+              <div key={i} style={{ padding: '12px 16px', background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0 }}>
                 <div style={{ fontFamily: SN, fontSize: 11, color: C.ruby, fontWeight: 600, marginBottom: 6 }}>
                   {o.objection}
                 </div>
@@ -85,8 +85,8 @@ export default function PlaybookView({ subIdx = 0 }: { subIdx?: number }) {
         <div style={{ marginBottom: 24 }}>
           <SectionTitle title="Template Email" />
           <pre style={{
-            fontFamily: MN, fontSize: 10, color: C.t1, background: C.ivory, border: `1px solid ${C.div}`,
-            borderRadius: 3, padding: 16, whiteSpace: 'pre-wrap', lineHeight: 1.6, overflowX: 'auto',
+            fontFamily: MN, fontSize: 10, color: C.t1, background: C.nacre, border: `0.5px solid ${C.div}`,
+            borderRadius: 0, padding: 16, whiteSpace: 'pre-wrap', lineHeight: 1.6, overflowX: 'auto',
           }}>
             {pb.email_template}
           </pre>
@@ -95,7 +95,7 @@ export default function PlaybookView({ subIdx = 0 }: { subIdx?: number }) {
 
       {/* CAC / LTV */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 16 }}>
-        <StatCard label="CAC" value={pb.cac || '—'} color={persona?.c || C.gold} />
+        <StatCard label="CAC" value={pb.cac || '—'} color={persona?.c || C.accent} />
         <StatCard label="LTV" value={pb.ltv || '—'} color={C.emerald} />
       </div>
     </div>

@@ -7,17 +7,17 @@ import type { NexusEntity, NexusFlow } from './nexus-store';
 
 /* ═══ DATA ═══ */
 const ENTITIES = [
-  { id: 'noos', name: 'NOOS', tagline: 'Psychiatrie de precision', color: '#B8963E', size: 80 },
+  { id: 'noos', name: 'NOOS', tagline: 'Psychiatrie de precision', color: '#1E0A20', size: 80 },
   { id: 'aelya', name: 'AELYA', tagline: 'Consentement fiduciaire', color: '#7B5EA7', size: 60 },
   { id: 'myne', name: 'MYNe', tagline: 'Marketplace donnees', color: '#3D7C5E', size: 60 },
   { id: 'burhan', name: 'BURHAN', tagline: 'Audit trail blockchain', color: '#B87D3E', size: 60 },
-  { id: 'yrknown', name: 'YrKnown', tagline: 'Savoir tacite', color: '#918977', size: 50 },
+  { id: 'yrknown', name: 'YrKnown', tagline: 'Savoir tacite', color: 'rgba(30,10,32,0.60)', size: 50 },
   { id: 'diwane', name: 'DIWANE', tagline: 'Art souverain', color: '#6E2A3D', size: 50 },
   { id: 'alguesov', name: 'AlgueSov', tagline: 'Tracabilite algues', color: '#3D7C8C', size: 45 },
   { id: 'amana', name: 'AMANA', tagline: 'Charitable trust', color: '#5E6E3D', size: 45 },
   { id: 'cg', name: 'CG SA', tagline: 'Investment club', color: '#162B20', size: 55 },
-  { id: 'cercle', name: 'Cercle', tagline: 'Ecosysteme', color: '#C9A96E', size: 50 },
-  { id: 'eigen', name: 'EIGEN', tagline: 'Holding strategique', color: '#D4B662', size: 90 },
+  { id: 'cercle', name: 'Cercle', tagline: 'Ecosysteme', color: '#1E0A20', size: 50 },
+  { id: 'eigen', name: 'EIGEN', tagline: 'Holding strategique', color: '#1E0A20', size: 90 },
 ];
 
 export const FLOWS = [
@@ -103,7 +103,7 @@ export default function NexusCanvas() {
         .attr('cx', Math.random() * W)
         .attr('cy', Math.random() * H)
         .attr('r', Math.random() * 1.2 + 0.3)
-        .attr('fill', '#918977')
+        .attr('fill', 'rgba(30,10,32,0.60)')
         .attr('opacity', Math.random() * 0.12 + 0.03)
         .attr('class', 'nexus-star');
     }
@@ -161,7 +161,7 @@ export default function NexusCanvas() {
       for (let i = 0; i < count; i++) {
         const p = g.append('circle')
           .attr('r', 1.5)
-          .attr('fill', '#D4B662')
+          .attr('fill', '#1E0A20')
           .attr('opacity', 0.6)
           .attr('class', 'nexus-particle');
         particles.push(p as unknown as d3.Selection<SVGCircleElement, number, SVGGElement, unknown>);
@@ -198,7 +198,7 @@ export default function NexusCanvas() {
     nodeGs.append('circle')
       .attr('class', 'node-core')
       .attr('r', d => d.size / 2)
-      .attr('fill', '#1C1814')
+      .attr('fill', '#1E0A20')
       .attr('stroke', d => d.color)
       .attr('stroke-width', 2);
 
@@ -213,7 +213,7 @@ export default function NexusCanvas() {
       .attr('text-anchor', 'middle')
       .attr('dy', -2)
       .attr('fill', '#FFFFFF')
-      .attr('font-family', 'Cormorant Garamond, serif')
+      .attr('font-family', 'Playfair Display, serif')
       .attr('font-weight', '700')
       .attr('font-style', 'italic')
       .attr('font-size', d => Math.max(10, d.size / 5))
@@ -232,7 +232,7 @@ export default function NexusCanvas() {
     /* ── tooltip (for flows) ── */
     const tooltip = svg.append('g').attr('class', 'nexus-tooltip').attr('opacity', 0);
     const tooltipBg = tooltip.append('rect').attr('rx', 4).attr('fill', '#252019').attr('stroke', 'rgba(212,182,98,0.2)').attr('stroke-width', 1);
-    const tooltipText = tooltip.append('text').attr('fill', '#D4B662').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 9).attr('dy', 14).attr('dx', 8);
+    const tooltipText = tooltip.append('text').attr('fill', '#1E0A20').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 9).attr('dy', 14).attr('dx', 8);
 
     /* ── interactions ── */
     nodeGs

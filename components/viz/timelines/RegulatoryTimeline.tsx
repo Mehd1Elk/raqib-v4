@@ -63,8 +63,8 @@ export function RegulatoryTimeline({ data, onNodeClick }: Props) {
 
         {/* Marqueur "Aujourd'hui" */}
         <div className="absolute top-0 bottom-0 z-10 flex flex-col items-center justify-center transition-all" style={{ left: 'clamp(10%, 50%, 90%)' }}>
-          <div className="text-[10px] font-bold text-[#B8963E] mb-2 uppercase tracking-widest bg-[#111111] px-2">Aujourd'hui</div>
-          <div className="w-px h-full bg-[#B8963E] opacity-50 border-l border-dashed border-[#B8963E]"></div>
+          <div className="text-[10px] font-bold text-[#1E0A20] mb-2 uppercase tracking-widest bg-[#111111] px-2">Aujourd'hui</div>
+          <div className="w-px h-full bg-[#1E0A20] opacity-50 border-l border-dashed border-[#1E0A20]"></div>
         </div>
 
         {/* Événements */}
@@ -79,14 +79,14 @@ export function RegulatoryTimeline({ data, onNodeClick }: Props) {
               >
                 {/* Point sur la ligne */}
                 <div 
-                  className={`w-3 h-3 rounded-full border-2 transition-all duration-300 absolute top-1/2 -translate-y-1/2 ${
-                    isPast ? 'bg-[#111111] border-stone-600' : 'bg-[#B8963E] border-[#111111] group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(184,150,62,0.5)]'
+                  className={`w-3 h-3 rounded-none-full border-2 transition-all duration-300 absolute top-1/2 -translate-y-1/2 ${
+                    isPast ? 'bg-[#111111] border-stone-600' : 'bg-[#1E0A20] border-[#111111] group-hover:scale-150 group-hover:shadow-[0_0_10px_rgba(184,150,62,0.5)]'
                   }`}
                 />
                 
                 {/* Contenu (alternance haut/bas) */}
                 <div className={`absolute w-full ${i % 2 === 0 ? 'bottom-full mb-6' : 'top-full mt-6'} text-center transition-transform group-hover:-translate-y-1`}>
-                  <div className="text-[10px] text-[#B8963E] font-[family-name:var(--font-jetbrains)] mb-1">
+                  <div className="text-[10px] text-[#1E0A20] font-[family-name:var(--font-jetbrains)] mb-1">
                     {ev.dateStr}
                   </div>
                   <div className="text-xs text-stone-200 font-bold leading-tight mb-1 group-hover:text-white">

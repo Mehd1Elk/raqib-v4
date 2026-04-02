@@ -39,11 +39,11 @@ export function SynergyMatrix() {
 
     const svg = d3.select(svgRef.current)
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('style', 'max-width: 100%; height: auto; background-color: #F7F3EA;');
+      .attr('style', 'max-width: 100%; height: auto; background-color: #F5F2F8;');
 
     const tooltip = d3.select(containerRef.current)
       .append('div')
-      .attr('class', 'tooltip bg-[#F7F3EA] border border-[#918977] p-2 text-[10px] text-[#2d2d2d] font-[family-name:var(--font-jetbrains)] absolute opacity-0 pointer-events-none rounded shadow-md z-10');
+      .attr('class', 'tooltip bg-[#F5F2F8] border border-[rgba(30,10,32,0.60)] p-2 text-[10px] text-[#2d2d2d] font-[family-name:var(--font-jetbrains)] absolute opacity-0 pointer-events-none rounded-none shadow-md z-10');
 
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
@@ -88,7 +88,7 @@ export function SynergyMatrix() {
       .attr('font-size', '11px')
       .attr('font-weight', '500')
       .attr('font-family', 'var(--font-jetbrains)')
-      .attr('fill', '#918977');
+      .attr('fill', 'rgba(30,10,32,0.60)');
 
     // Y Axis
     g.selectAll('.y-label')
@@ -102,12 +102,12 @@ export function SynergyMatrix() {
       .attr('font-size', '11px')
       .attr('font-weight', '500')
       .attr('font-family', 'var(--font-jetbrains)')
-      .attr('fill', '#918977');
+      .attr('fill', 'rgba(30,10,32,0.60)');
 
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[600px] border border-div rounded overflow-hidden">
+    <div ref={containerRef} className="relative w-full h-[600px] border border-div rounded-none overflow-hidden">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   );

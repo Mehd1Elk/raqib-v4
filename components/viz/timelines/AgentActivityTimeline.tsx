@@ -71,8 +71,8 @@ export function AgentActivityTimeline({ data, onNodeClick }: Props) {
   return (
     <div className="w-full bg-[#111111] border border-stone-800 p-6 overflow-hidden">
       <div className="flex items-center gap-2 mb-6">
-        <Activity className="w-4 h-4 text-[#B8963E]" />
-        <h3 className="text-[10px] font-bold text-[#B8963E] tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
+        <Activity className="w-4 h-4 text-[#1E0A20]" />
+        <h3 className="text-[10px] font-bold text-[#1E0A20] tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
           Diagramme de Gantt — Activité des Agents
         </h3>
       </div>
@@ -96,27 +96,27 @@ export function AgentActivityTimeline({ data, onNodeClick }: Props) {
             </div>
 
             {agents.map((agent, i) => (
-              <div key={agent} className="flex items-center group relative z-10 hover:bg-stone-900/50 rounded transition-colors pr-4">
+              <div key={agent} className="flex items-center group relative z-10 hover:bg-stone-900/50 rounded-none transition-colors pr-4">
                 {/* Agent Name column */}
                 <div className="w-48 shrink-0 text-xs text-stone-300 font-bold font-[family-name:var(--font-jetbrains)] truncate pr-4 text-right">
                   {agent}
                 </div>
                 
                 {/* Gantt Area */}
-                <div className="flex-1 relative h-8 bg-stone-900/30 rounded">
+                <div className="flex-1 relative h-8 bg-stone-900/30 rounded-none">
                   {((blocks as Record<string, any[]>)[agent] ?? []).map((block: any, j: number) => {
                     const leftPct = ((block.start - minDate) / totalRange) * 100;
                     const widthPct = Math.max(((block.durationMs) / totalRange) * 100, 1); // au moins 1% de largeur
 
                     // Couleurs par status
                     const isErr = block.status === 'error' || block.status === 'failed';
-                    const bgClass = isErr ? 'bg-red-900/80 border-red-500' : 'bg-[#B8963E]/80 border-[#B8963E]';
+                    const bgClass = isErr ? 'bg-red-900/80 border-red-500' : 'bg-[#1E0A20]/80 border-[#1E0A20]';
 
                     return (
                       <div
                         key={block.id || j}
                         onClick={() => onNodeClick && onNodeClick(block.entry)}
-                        className={`absolute top-1/2 -translate-y-1/2 h-5 rounded border shadow-sm cursor-pointer hover:brightness-125 transition-all text-[8px] flex items-center justify-center font-[family-name:var(--font-jetbrains)] text-white overflow-hidden whitespace-nowrap px-1 ${bgClass}`}
+                        className={`absolute top-1/2 -translate-y-1/2 h-5 rounded-none border shadow-sm cursor-pointer hover:brightness-125 transition-all text-[8px] flex items-center justify-center font-[family-name:var(--font-jetbrains)] text-white overflow-hidden whitespace-nowrap px-1 ${bgClass}`}
                         style={{
                           left: `${leftPct}%`,
                           width: `${widthPct}%`,

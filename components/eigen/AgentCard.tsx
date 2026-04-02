@@ -11,13 +11,13 @@ interface AgentCardProps {
 export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) => {
   const getLayerStyles = (layer: Agent['layer']) => {
     switch (layer) {
-      case 'L1': return 'bg-[#F7F3EA] border-l-[#D4AF37]';
+      case 'L1': return 'bg-[#F5F2F8] border-l-[#1E0A20]';
       case 'L1.5': return 'bg-[#FEF3F2] border-l-red-500';
       case 'L2': return 'bg-[#F0F4FE] border-l-blue-600';
       case 'L3': return 'bg-[#F0FEF4] border-l-emerald-500';
       case 'L4': return 'bg-[#FDF4FF] border-l-violet-600';
-      case 'OPS': return 'bg-[#F7F3EA] border-l-stone-500';
-      default: return 'bg-[#F7F3EA] border-l-gray-400';
+      case 'OPS': return 'bg-[#F5F2F8] border-l-stone-500';
+      default: return 'bg-[#F5F2F8] border-l-gray-400';
     }
   };
 
@@ -35,11 +35,11 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
 
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'Actif': return <span className="relative flex h-2 w-2 mr-1"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>;
-      case 'En attente': return <span className="h-2 w-2 rounded-full bg-amber-500 mr-1" />;
-      case 'Erreur': return <span className="h-2 w-2 rounded-full bg-red-600 animate-pulse mr-1" />;
-      case 'Inactif': return <span className="h-2 w-2 rounded-full bg-gray-400 mr-1" />;
-      default: return <span className="h-2 w-2 rounded-full bg-gray-400 mr-1" />;
+      case 'Actif': return <span className="relative flex h-2 w-2 mr-1"><span className="animate-ping absolute inline-flex h-full w-full rounded-none-full bg-green-400 opacity-75"></span><span className="relative inline-flex rounded-none-full h-2 w-2 bg-green-500"></span></span>;
+      case 'En attente': return <span className="h-2 w-2 rounded-none-full bg-amber-500 mr-1" />;
+      case 'Erreur': return <span className="h-2 w-2 rounded-none-full bg-red-600 animate-pulse mr-1" />;
+      case 'Inactif': return <span className="h-2 w-2 rounded-none-full bg-gray-400 mr-1" />;
+      default: return <span className="h-2 w-2 rounded-none-full bg-gray-400 mr-1" />;
     }
   };
 
@@ -64,7 +64,7 @@ export const AgentCard: React.FC<AgentCardProps> = ({ agent, onClick, style }) =
           <div className="flex items-center space-x-2">
             <Bot size={14} className="text-stone-600" />
             <span 
-              className="font-['Cormorant_Garamond'] text-[12px] font-bold truncate max-w-[180px] hover:text-[#D4AF37] hover:underline transition-colors"
+              className="font-['Playfair_Display'] text-[12px] font-bold truncate max-w-[180px] hover:text-[#1E0A20] hover:underline transition-colors"
               onClick={(e) => {
                 e.stopPropagation();
                 window.location.href = `/eigen/agent/${encodeURIComponent(agent.id)}`;

@@ -60,7 +60,7 @@ export function DataCard(props: DataCardProps) {
 
 function RegulationCard({ data }: { data: RegulationData }) {
   return (
-    <div className="relative bg-[#1C1814] border border-div rounded-lg p-4 pl-5 overflow-hidden">
+    <div className="relative bg-[#1E0A20] border border-div rounded-none-none p-4 pl-5 overflow-hidden">
       <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#4A7FB5]" />
       <div className="flex items-start gap-2">
         <Scale size={14} className="text-[#4A7FB5] mt-0.5 shrink-0" />
@@ -91,7 +91,7 @@ function RegulationCard({ data }: { data: RegulationData }) {
 
 function TechCard({ data }: { data: TechData }) {
   return (
-    <div className="relative bg-[#1C1814] border border-div rounded-lg p-4 pl-5 overflow-hidden">
+    <div className="relative bg-[#1E0A20] border border-div rounded-none-none p-4 pl-5 overflow-hidden">
       <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#7B5EA7]" />
       <div className="flex items-start gap-2">
         <Cpu size={14} className="text-[#7B5EA7] mt-0.5 shrink-0" />
@@ -122,9 +122,9 @@ function TechCard({ data }: { data: TechData }) {
 
 function ContactCard({ data }: { data: ContactData }) {
   return (
-    <div className="bg-[#1C1814] border border-div rounded-lg p-4">
+    <div className="bg-[#1E0A20] border border-div rounded-none-none p-4">
       <div className="flex items-center gap-3">
-        <div className="w-9 h-9 rounded-full bg-[#2A2520] flex items-center justify-center shrink-0">
+        <div className="w-9 h-9 rounded-none-full bg-[#2A2520] flex items-center justify-center shrink-0">
           <span className="font-[family-name:var(--font-cormorant)] text-xs font-bold text-ivory-50">
             {data.initials}
           </span>
@@ -157,7 +157,7 @@ function ContactCard({ data }: { data: ContactData }) {
 
 function StartupCard({ data }: { data: StartupData }) {
   return (
-    <div className="bg-[#1C1814] border border-div rounded-lg p-4">
+    <div className="bg-[#1E0A20] border border-div rounded-none-none p-4">
       <div className="flex items-start justify-between mb-2">
         <div>
           <h4 className="font-[family-name:var(--font-cormorant)] text-sm font-semibold text-ivory-50">
@@ -169,7 +169,7 @@ function StartupCard({ data }: { data: StartupData }) {
         </div>
         <div className="flex flex-col items-end gap-1">
           {data.valuation && (
-            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] bg-[#B8963E]/15 text-[#B8963E] px-1.5 py-0.5 rounded">
+            <span className="font-[family-name:var(--font-jetbrains)] text-[7px] bg-[#1E0A20]/15 text-[#1E0A20] px-1.5 py-0.5 rounded-none">
               {data.valuation}
             </span>
           )}

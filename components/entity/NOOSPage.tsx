@@ -10,7 +10,7 @@ import {
 
 /* ─────────────────── DATA ─────────────────── */
 
-const GOLD = '#B8963E';
+const GOLD = '#1E0A20';
 
 const gaugeKPIs = [
   { label: 'Kappa', value: 0.68, target: 0.75, unit: '', icon: <Activity size={14} /> },
@@ -84,7 +84,7 @@ const pfeSlots = [
 
 const bridges = [
   { entity: 'ÆLYA', color: '#3D5E8C', type: 'consent', desc: 'Consent patient RGPD', icon: Lock },
-  { entity: 'BURHAN', color: '#8C6E2A', type: 'audit', desc: 'Audit Tx 501', icon: FileCheck },
+  { entity: 'BURHAN', color: '#1E0A20', type: 'audit', desc: 'Audit Tx 501', icon: FileCheck },
   { entity: 'MYNε', color: '#3D7C5E', type: 'data', desc: 'Données anonymisées', icon: Database },
   { entity: 'YrKnown', color: '#7B5EA7', type: 'knowledge', desc: 'Savoir Pr. Bayle', icon: BookOpen },
 ];
@@ -95,18 +95,18 @@ function GaugeKPI({ label, value, target, unit, icon }: typeof gaugeKPIs[0]) {
   const pct = Math.min((value / target) * 100, 100);
   const isComplete = value >= target;
   return (
-    <div className="flex-1 min-w-[140px] bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] p-3 relative overflow-hidden">
+    <div className="flex-1 min-w-[140px] bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] p-3 relative overflow-hidden">
       <div className="flex items-center gap-1.5 mb-1">
-        <span className="text-[#B8963E]">{icon}</span>
-        <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-[1px] uppercase">{label}</span>
+        <span className="text-[#1E0A20]">{icon}</span>
+        <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] tracking-[1px] uppercase">{label}</span>
       </div>
-      <div className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold text-[#1C1814] leading-none">
-        {typeof value === 'number' && value >= 1000 ? value.toLocaleString('fr-FR') : value}{unit && <span className="text-[14px] text-[#918977] ml-0.5">{unit}</span>}
+      <div className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold text-[#1E0A20] leading-none">
+        {typeof value === 'number' && value >= 1000 ? value.toLocaleString('fr-FR') : value}{unit && <span className="text-[14px] text-[rgba(30,10,32,0.60)] ml-0.5">{unit}</span>}
       </div>
-      <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-[#918977] mt-0.5">/ {typeof target === 'number' && target >= 1000 ? target.toLocaleString('fr-FR') : target}{unit}</div>
-      <div className="mt-2 h-[3px] bg-[rgba(60,52,40,0.08)] rounded-full overflow-hidden">
+      <div className="text-[8px] font-[family-name:var(--font-jetbrains)] text-[rgba(30,10,32,0.60)] mt-0.5">/ {typeof target === 'number' && target >= 1000 ? target.toLocaleString('fr-FR') : target}{unit}</div>
+      <div className="mt-2 h-[3px] bg-[rgba(30,10,32,0.06)] rounded-none-full overflow-hidden">
         <div
-          className="h-full rounded-full transition-all duration-700"
+          className="h-full rounded-none-full transition-all duration-700"
           style={{ width: `${pct}%`, backgroundColor: isComplete ? '#3D7C5E' : GOLD }}
         />
       </div>
@@ -147,7 +147,7 @@ function NOOSArchitecture() {
     const animate = () => {
       ctx.clearRect(0, 0, W, H);
       // connection lines
-      ctx.strokeStyle = 'rgba(184,150,62,0.15)';
+      ctx.strokeStyle = 'rgba(30,10,32,0.08)';
       ctx.lineWidth = 1;
       for (let i = 0; i < pipelineNodes.length - 1; i++) {
         const x1 = nodeW * i + nodeW * 0.75;
@@ -180,12 +180,12 @@ function NOOSArchitecture() {
       <div className="flex items-center gap-0 relative z-10">
         {pipelineNodes.map((node, i) => (
           <React.Fragment key={node.id}>
-            <div className="flex-1 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] p-3 text-center hover:shadow-md transition-shadow" style={{ borderTop: `2px solid ${node.color}` }}>
-              <div className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold text-[#1C1814] tracking-wide">{node.id}</div>
-              <div className="font-[family-name:var(--font-noto)] text-[8px] text-[#918977] mt-1">{node.tech}</div>
+            <div className="flex-1 bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] p-3 text-center hover:shadow-md transition-shadow" style={{ borderTop: `2px solid ${node.color}` }}>
+              <div className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold text-[#1E0A20] tracking-wide">{node.id}</div>
+              <div className="font-[family-name:var(--font-noto)] text-[8px] text-[rgba(30,10,32,0.60)] mt-1">{node.tech}</div>
             </div>
             {i < pipelineNodes.length - 1 && (
-              <ArrowRight size={12} className="text-[#B8963E] flex-shrink-0 mx-1" />
+              <ArrowRight size={12} className="text-[#1E0A20] flex-shrink-0 mx-1" />
             )}
           </React.Fragment>
         ))}
@@ -201,7 +201,7 @@ function NOOSSprints() {
   const statusColors: Record<SprintStatus, string> = {
     done: '#3D7C5E',
     active: GOLD,
-    planned: '#918977',
+    planned: 'rgba(30,10,32,0.60)',
   };
 
   return (
@@ -216,10 +216,10 @@ function NOOSSprints() {
             onMouseEnter={() => setHovered(s.id)}
             onMouseLeave={() => setHovered(null)}
           >
-            <div className="w-[60px] font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] text-right flex-shrink-0">{s.id}</div>
-            <div className="flex-1 h-[28px] bg-[rgba(60,52,40,0.04)] rounded relative overflow-hidden">
+            <div className="w-[60px] font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] text-right flex-shrink-0">{s.id}</div>
+            <div className="flex-1 h-[28px] bg-[rgba(60,52,40,0.04)] rounded-none relative overflow-hidden">
               <div
-                className="absolute top-0 h-full rounded flex items-center px-2 transition-all duration-300"
+                className="absolute top-0 h-full rounded-none flex items-center px-2 transition-all duration-300"
                 style={{
                   left: `${left}%`,
                   width: `${width}%`,
@@ -233,15 +233,15 @@ function NOOSSprints() {
                 <div key={i} className="absolute top-0 h-full border-l border-[rgba(60,52,40,0.06)]" style={{ left: `${(i / totalWeeks) * 100}%` }} />
               ))}
             </div>
-            <div className="w-[80px] font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex-shrink-0">{s.agent}</div>
+            <div className="w-[80px] font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] flex-shrink-0">{s.agent}</div>
             {/* tooltip */}
             {hovered === s.id && (
-              <div className="absolute left-[80px] top-full z-20 mt-1 bg-[#1C1814] text-[#FDFAF3] p-3 rounded shadow-lg min-w-[200px]">
-                <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#D4B662] mb-2">{s.id} · Sem {s.weeks[0]}-{s.weeks[1]}</div>
+              <div className="absolute left-[80px] top-full z-20 mt-1 bg-[#1E0A20] text-[#FAF8FC] p-3 rounded-none shadow-lg min-w-[200px]">
+                <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1E0A20] mb-2">{s.id} · Sem {s.weeks[0]}-{s.weeks[1]}</div>
                 <ul className="space-y-1">
                   {s.tasks.map(t => (
                     <li key={t} className="font-[family-name:var(--font-noto)] text-[9px] flex items-center gap-1.5">
-                      <span className="w-1 h-1 rounded-full" style={{ backgroundColor: s.color }} />
+                      <span className="w-1 h-1 rounded-none-full" style={{ backgroundColor: s.color }} />
                       {t}
                     </li>
                   ))}
@@ -256,7 +256,7 @@ function NOOSSprints() {
         <div className="w-[60px]" />
         <div className="flex-1 flex">
           {Array.from({ length: totalWeeks }, (_, i) => (
-            <div key={i} className="flex-1 text-center font-[family-name:var(--font-jetbrains)] text-[7px] text-[#B8AE9C]">S{i + 1}</div>
+            <div key={i} className="flex-1 text-center font-[family-name:var(--font-jetbrains)] text-[7px] text-[rgba(30,10,32,0.35)]">S{i + 1}</div>
           ))}
         </div>
         <div className="w-[80px]" />
@@ -269,21 +269,21 @@ function DataCard({ range, label, desc }: { range: string; label: string; desc: 
   const [open, setOpen] = useState(false);
   return (
     <div
-      className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] p-3 cursor-pointer hover:shadow-sm transition-all"
+      className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] p-3 cursor-pointer hover:shadow-sm transition-all"
       onClick={() => setOpen(!open)}
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#B8963E] font-bold">{range}</span>
-          <span className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#1C1814]">{label}</span>
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1E0A20] font-bold">{range}</span>
+          <span className="font-[family-name:var(--font-cormorant)] text-[14px] font-bold italic text-[#1E0A20]">{label}</span>
         </div>
-        {open ? <ChevronDown size={12} className="text-[#918977]" /> : <ChevronRight size={12} className="text-[#918977]" />}
+        {open ? <ChevronDown size={12} className="text-[rgba(30,10,32,0.60)]" /> : <ChevronRight size={12} className="text-[rgba(30,10,32,0.60)]" />}
       </div>
       {open && (
-        <div className="mt-2 pt-2 border-t border-[rgba(60,52,40,0.06)] font-[family-name:var(--font-noto)] text-[10px] text-[#6B5E4C]">
+        <div className="mt-2 pt-2 border-t border-[rgba(60,52,40,0.06)] font-[family-name:var(--font-noto)] text-[10px] text-[rgba(30,10,32,0.60)]">
           {desc}
           <div className="mt-2 flex gap-2">
-            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[rgba(184,150,62,0.1)] text-[#B8963E] rounded">10 couches</span>
+            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[rgba(30,10,32,0.06)] text-[#1E0A20] rounded-none">10 couches</span>
             <a href={`/noos`} className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#3D5E8C] hover:underline flex items-center gap-0.5">
               Explorer <ArrowRight size={8} />
             </a>
@@ -303,15 +303,15 @@ function BridgeLinks() {
           <a
             key={b.entity}
             href={`/entity/${b.entity.toLowerCase().replace('ε', 'e')}`}
-            className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] p-3 hover:shadow-md hover:-translate-y-0.5 transition-all group"
+            className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] p-3 hover:shadow-md hover:-translate-y-0.5 transition-all group"
             style={{ borderLeft: `3px solid ${b.color}` }}
           >
             <div className="flex items-center gap-2 mb-1.5">
               <Icon size={12} style={{ color: b.color }} />
-              <span className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold tracking-wider text-[#1C1814] uppercase">{b.entity}</span>
+              <span className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold tracking-wider text-[#1E0A20] uppercase">{b.entity}</span>
             </div>
-            <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#6B5E4C]">{b.desc}</div>
-            <div className="flex items-center gap-1 mt-2 font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] group-hover:text-[#B8963E] transition-colors">
+            <div className="font-[family-name:var(--font-noto)] text-[9px] text-[rgba(30,10,32,0.60)]">{b.desc}</div>
+            <div className="flex items-center gap-1 mt-2 font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] group-hover:text-[#1E0A20] transition-colors">
               <span className="uppercase">{b.type}</span>
               <ArrowRight size={8} className="group-hover:translate-x-0.5 transition-transform" />
             </div>
@@ -328,8 +328,8 @@ function Section({ id, title, icon, children }: { id: string; title: string; ico
   return (
     <section id={id} className="mt-12">
       <div className="flex items-center gap-2 mb-5">
-        <span className="text-[#B8963E]">{icon}</span>
-        <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814]">{title}</h2>
+        <span className="text-[#1E0A20]">{icon}</span>
+        <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1E0A20]">{title}</h2>
       </div>
       {children}
     </section>
@@ -340,16 +340,16 @@ function Section({ id, title, icon, children }: { id: string; title: string; ico
 
 export default function NOOSPage() {
   return (
-    <div className="min-h-screen bg-[#F7F3EA]">
+    <div className="min-h-screen bg-[#F5F2F8]">
       {/* ── HERO ── */}
-      <div className="bg-gradient-to-br from-[#1C1814] to-[#2A3040] text-white px-8 py-12">
+      <div className="bg-gradient-to-br from-[#1E0A20] to-[#2A3040] text-white px-8 py-12">
         <div className="max-w-6xl mx-auto">
-          <div className="font-[family-name:var(--font-jetbrains)] text-[8px] tracking-[3px] text-[#B8963E] mb-3">SUBSIDIAIRE EIGEN</div>
+          <div className="font-[family-name:var(--font-jetbrains)] text-[8px] tracking-[3px] text-[#1E0A20] mb-3">SUBSIDIAIRE EIGEN</div>
           <h1 className="font-[family-name:var(--font-cormorant)] text-[42px] font-bold italic flex items-center gap-4">
-            <Brain size={32} strokeWidth={1} className="text-[#B8963E]" />
+            <Brain size={32} strokeWidth={1} className="text-[#1E0A20]" />
             NOOS
           </h1>
-          <p className="font-[family-name:var(--font-noto)] text-[14px] text-[#B8AE9C] mt-2 max-w-2xl">
+          <p className="font-[family-name:var(--font-noto)] text-[14px] text-[rgba(30,10,32,0.35)] mt-2 max-w-2xl">
             Psychiatrie de précision — Screening algorithmique SCID-5
           </p>
 
@@ -376,11 +376,11 @@ export default function NOOSPage() {
             {[
               { color: '#3D7C5E', label: 'Done' },
               { color: GOLD, label: 'En cours' },
-              { color: '#918977', label: 'Planifié' },
+              { color: 'rgba(30,10,32,0.60)', label: 'Planifié' },
             ].map(l => (
               <div key={l.label} className="flex items-center gap-1.5">
-                <span className="w-2.5 h-2.5 rounded-sm" style={{ backgroundColor: l.color }} />
-                <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{l.label}</span>
+                <span className="w-2.5 h-2.5 rounded-none-sm" style={{ backgroundColor: l.color }} />
+                <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{l.label}</span>
               </div>
             ))}
           </div>
@@ -402,23 +402,23 @@ export default function NOOSPage() {
             {teamMembers.map(m => (
               <div
                 key={m.id}
-                className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] p-3"
+                className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] p-3"
                 style={{ borderLeft: `3px solid ${m.layer === 'L2' ? '#3D5E8C' : GOLD}` }}
               >
-                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-wider mb-1">{m.id} · {m.layer}</div>
-                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814]">{m.name}</div>
-                <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#6B5E4C] mt-0.5">{m.role}</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] tracking-wider mb-1">{m.id} · {m.layer}</div>
+                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1E0A20]">{m.name}</div>
+                <div className="font-[family-name:var(--font-noto)] text-[9px] text-[rgba(30,10,32,0.60)] mt-0.5">{m.role}</div>
               </div>
             ))}
           </div>
           {/* PFE slots */}
           <div className="mt-4">
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-[2px] uppercase mb-2">Postes PFE à recruter</div>
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] tracking-[2px] uppercase mb-2">Postes PFE à recruter</div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
               {pfeSlots.map(p => (
-                <div key={p.title} className="bg-[rgba(184,150,62,0.06)] border border-dashed border-[rgba(184,150,62,0.3)] p-3">
-                  <div className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold italic text-[#1C1814]">{p.title}</div>
-                  <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#918977] mt-0.5">{p.focus}</div>
+                <div key={p.title} className="bg-[rgba(184,150,62,0.06)] border border-dashed border-[rgba(30,10,32,0.12)] p-3">
+                  <div className="font-[family-name:var(--font-cormorant)] text-[12px] font-bold italic text-[#1E0A20]">{p.title}</div>
+                  <div className="font-[family-name:var(--font-noto)] text-[9px] text-[rgba(30,10,32,0.60)] mt-0.5">{p.focus}</div>
                 </div>
               ))}
             </div>

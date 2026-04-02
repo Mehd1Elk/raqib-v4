@@ -144,7 +144,7 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
       .selectAll('line')
       .data(resolvedLinks)
       .join('line')
-      .attr('stroke', '#D4CCBA')
+      .attr('stroke', 'rgba(30,10,32,0.35)')
       .attr('stroke-opacity', 0.15)
       .attr('stroke-width', d => Math.max(0.5, d.strength * 1.5));
 
@@ -154,10 +154,10 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
       .data(nodes)
       .join('circle')
       .attr('r', d => d.radius)
-      .attr('fill', d => LAYER_COLORS[d.layer] || '#918977')
+      .attr('fill', d => LAYER_COLORS[d.layer] || 'rgba(30,10,32,0.60)')
       .attr('fill-opacity', d => d.status === 'Actif' ? 0.9 : 0.35)
       .attr('stroke', d => {
-        if (searchHighlight && d.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#B8963E';
+        if (searchHighlight && d.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#1E0A20';
         return LAYER_COLORS[d.layer] + '40';
       })
       .attr('stroke-width', d => searchHighlight && d.name.toLowerCase().includes(searchHighlight.toLowerCase()) ? 2.5 : 0.5)
@@ -185,9 +185,9 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
     // Tooltip
     const tooltip = g.append('g').attr('class', 'tooltip').style('display', 'none');
     const tooltipRect = tooltip.append('rect')
-      .attr('rx', 4).attr('fill', '#1C1814').attr('fill-opacity', 0.9);
+      .attr('rx', 4).attr('fill', '#1E0A20').attr('fill-opacity', 0.9);
     const tooltipText = tooltip.append('text')
-      .attr('fill', '#FDFAF3').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
+      .attr('fill', '#FAF8FC').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
       .attr('text-anchor', 'middle');
 
     // Hover: highlight connected
@@ -227,7 +227,7 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
 
     // Active agent highlight
     nodeElements.filter(d => d.status === 'Actif')
-      .attr('stroke', d => LAYER_COLORS[d.layer] || '#918977')
+      .attr('stroke', d => LAYER_COLORS[d.layer] || 'rgba(30,10,32,0.60)')
       .attr('stroke-width', 1.5);
 
     // Layer legend
@@ -236,7 +236,7 @@ export default function NetworkView({ agents, width, height, onSelectAgent, sear
       const lg = legend.append('g').attr('transform', `translate(0, ${i * 18})`);
       lg.append('circle').attr('r', 5).attr('fill', color);
       lg.append('text').attr('x', 12).attr('y', 4)
-        .attr('font-family', 'JetBrains Mono').attr('font-size', 9).attr('fill', '#918977')
+        .attr('font-family', 'JetBrains Mono').attr('font-size', 9).attr('fill', 'rgba(30,10,32,0.60)')
         .text(`${layer} (${nodes.filter(n => n.layer === layer).length})`);
     });
 

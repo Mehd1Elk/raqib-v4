@@ -34,12 +34,12 @@ export default function BriquesMatrixView() {
         {BRICKS.map(b => (
           <div key={b.key} style={{
             display: 'flex', alignItems: 'center', gap: 8, padding: '8px 14px',
-            background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 2,
+            background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0,
           }}>
             <span style={{ color: b.c, fontSize: 14 }}>{b.icon}</span>
             <div>
               <div style={{ fontFamily: MN, fontSize: 8, color: b.c, letterSpacing: 1, textTransform: 'uppercase' }}>{b.n}</div>
-              <div style={{ fontFamily: GR, fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: b.c }}>{brickCounts[b.key]}</div>
+              <div style={{ fontFamily: GR, fontSize: 18, fontWeight: 400, color: b.c }}>{brickCounts[b.key]}</div>
             </div>
           </div>
         ))}
@@ -65,11 +65,11 @@ export default function BriquesMatrixView() {
           <tbody>
             {companies.map(c => (
               <tr key={c.id}
-                onMouseEnter={e => (e.currentTarget.style.background = C.parchment)}
+                onMouseEnter={e => (e.currentTarget.style.background = C.nacre3)}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
-                <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 11, whiteSpace: 'nowrap' }}>{c.name}</td>
+                <td style={{ ...tdS, fontFamily: GR, fontWeight: 400, fontSize: 11, whiteSpace: 'nowrap' }}>{c.name}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 9 }}>{c.hq}</td>
-                <td style={{ ...tdS, textAlign: 'center', fontFamily: MN, fontSize: 10, fontWeight: 700, color: c.eigen_score >= 9 ? C.emerald : c.eigen_score >= 7 ? C.gold : C.t3 }}>
+                <td style={{ ...tdS, textAlign: 'center', fontFamily: MN, fontSize: 10, fontWeight: 700, color: c.eigen_score >= 9 ? C.emerald : c.eigen_score >= 7 ? C.accent : C.t3 }}>
                   {c.eigen_score}
                 </td>
                 {BRICKS.map(b => (

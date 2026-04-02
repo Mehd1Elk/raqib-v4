@@ -21,9 +21,9 @@ export function EntityTabs({ activeIndex, onChange }: EntityTabsProps) {
             aria-pressed={active}
             className="border-none px-4 cursor-pointer whitespace-nowrap tracking-wide font-[family-name:var(--font-cormorant)] italic"
             style={{
-              background: active ? '#F7F3EA' : 'transparent',
+              background: active ? '#F5F2F8' : 'transparent',
               borderBottom: active ? `2px solid ${e.color}` : '2px solid transparent',
-              color: active ? e.color : '#918977',
+              color: active ? e.color : 'rgba(30,10,32,0.60)',
               fontSize: 12,
               fontWeight: active ? 700 : 400,
             }}

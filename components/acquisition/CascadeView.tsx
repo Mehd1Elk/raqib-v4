@@ -37,9 +37,9 @@ export default function CascadeView() {
           value={selected}
           onChange={e => setSelected(e.target.value)}
           style={{
-            padding: '8px 12px', border: `1px solid ${C.div}`, borderRadius: 2,
+            padding: '8px 12px', border: `0.5px solid ${C.div}`, borderRadius: 0,
             fontFamily: GR, fontSize: 14, fontStyle: 'italic', fontWeight: 700, color: C.t1,
-            background: C.ivory, minWidth: 300,
+            background: C.nacre, minWidth: 300,
           }}
         >
           {companies.map(c => <option key={c.id} value={c.id}>{c.name} — {c.hq}</option>)}
@@ -50,10 +50,10 @@ export default function CascadeView() {
         <>
           {/* Progress bar */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-            <div style={{ flex: 1, height: 6, background: C.divL, borderRadius: 3 }}>
-              <div style={{ width: `${(applicableCount / 6) * 100}%`, height: '100%', background: C.gold, borderRadius: 3, transition: 'width 0.3s' }} />
+            <div style={{ flex: 1, height: 6, background: C.divL, borderRadius: 0 }}>
+              <div style={{ width: `${(applicableCount / 6) * 100}%`, height: '100%', background: C.accent, borderRadius: 0, transition: 'width 0.3s' }} />
             </div>
-            <span style={{ fontFamily: MN, fontSize: 10, color: C.gold, fontWeight: 700 }}>{applicableCount}/6 personas</span>
+            <span style={{ fontFamily: MN, fontSize: 10, color: C.accent, fontWeight: 700 }}>{applicableCount}/6 personas</span>
           </div>
 
           {/* 6 persona blocks */}
@@ -64,12 +64,12 @@ export default function CascadeView() {
 
               return (
                 <div key={p.id} style={{
-                  padding: '16px 20px', borderRadius: 3, border: `1px solid ${isApplicable ? p.c + '40' : C.div}`,
-                  background: isApplicable ? `${p.c}08` : C.linen, opacity: isApplicable ? 1 : 0.5,
+                  padding: '16px 20px', borderRadius: 0, border: `0.5px solid ${isApplicable ? p.c + '40' : C.div}`,
+                  background: isApplicable ? `${p.c}08` : C.nacreDark, opacity: isApplicable ? 1 : 0.5,
                   transition: 'opacity 0.2s',
                 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-                    <Pill label={p.n} color={isApplicable ? p.c : C.tm} />
+                    <Pill label={p.n} color={isApplicable ? p.c : C.t4} />
                     <span style={{ fontFamily: SN, fontSize: 11, color: isApplicable ? C.t1 : C.t3 }}>{p.full}</span>
                     {isApplicable && (
                       <div style={{ marginLeft: 'auto', display: 'flex', gap: 4 }}>

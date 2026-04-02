@@ -5,8 +5,8 @@ export const LAYER_COLORS: Record<string, string> = {
   L3: '#3D7C5E',
   L2: '#3D5E8C',
   'L1.5': '#9C3D3D',
-  L1: '#B8963E',
-  OPS: '#918977',
+  L1: '#1E0A20',
+  OPS: 'rgba(30,10,32,0.60)',
 };
 
 export const LAYERS: AgentLayer[] = ['L1', 'L1.5', 'L2', 'L3', 'L4', 'OPS'];

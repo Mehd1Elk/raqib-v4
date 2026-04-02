@@ -45,7 +45,7 @@ export function CategoryNav({
           >
             <div
               className="text-[11px] font-[family-name:var(--font-cormorant)] font-bold italic tracking-wide"
-              style={{ color: activeCategoryIndex === mi ? entity.color : '#6B5E4C' }}
+              style={{ color: activeCategoryIndex === mi ? entity.color : 'rgba(30,10,32,0.60)' }}
             >
               {cat.label}
             </div>
@@ -64,13 +64,13 @@ export function CategoryNav({
                 }}
               >
                 <span
-                  className="w-1 h-1 rounded-full shrink-0"
-                  style={{ background: PLATFORMS[l.platform]?.color || '#D4CCBA' }}
+                  className="w-1 h-1 rounded-none-full shrink-0"
+                  style={{ background: PLATFORMS[l.platform]?.color || 'rgba(30,10,32,0.35)' }}
                 />
                 <span
                   className="text-[10px] font-[family-name:var(--font-noto)] flex-1 whitespace-nowrap overflow-hidden text-ellipsis"
                   style={{
-                    color: activeLayerIndex === lii ? '#1C1814' : '#6B5E4C',
+                    color: activeLayerIndex === lii ? '#1E0A20' : 'rgba(30,10,32,0.60)',
                     fontWeight: activeLayerIndex === lii ? 600 : 400,
                   }}
                 >

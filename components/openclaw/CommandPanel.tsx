@@ -25,7 +25,7 @@ interface Command {
 type CommandAction = 'run' | 'pause' | 'resume' | 'stop';
 
 const STATUS_STYLES: Record<string, { bg: string; text: string; label: string }> = {
-  pending: { bg: '#B8963E', text: '#FFFFFF', label: 'EN QUEUE' },
+  pending: { bg: '#1E0A20', text: '#FFFFFF', label: 'EN QUEUE' },
   sent: { bg: '#3D5E8C', text: '#FFFFFF', label: 'ENVOYÉ' },
   ack: { bg: '#B87D3E', text: '#FFFFFF', label: 'REÇU' },
   completed: { bg: '#3D7C5E', text: '#FFFFFF', label: 'TERMINÉ' },
@@ -146,23 +146,23 @@ export default function CommandPanel() {
   }, []);
 
   return (
-    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg overflow-hidden">
+    <div className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none-none overflow-hidden">
       {/* Header */}
-      <div className="px-4 py-3 border-b border-[rgba(60,52,40,0.10)] flex items-center justify-between">
+      <div className="px-4 py-3 border-b border-[rgba(30,10,32,0.08)] flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Terminal size={14} className="text-[#B8963E]" />
-          <span className="font-['JetBrains_Mono'] text-[9px] tracking-wider text-[#918977]">
+          <Terminal size={14} className="text-[#1E0A20]" />
+          <span className="font-['JetBrains_Mono'] text-[9px] tracking-wider text-[rgba(30,10,32,0.60)]">
             COMMAND PANEL
           </span>
-          <span className={`font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-full ${
-            connectionMode === 'live' ? 'bg-[#3D7C5E] text-white' : 'bg-[#918977] text-white'
+          <span className={`font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-none-full ${
+            connectionMode === 'live' ? 'bg-[#3D7C5E] text-white' : 'bg-[rgba(30,10,32,0.60)] text-white'
           }`}>
             {connectionMode === 'live' ? 'LIVE — OpenClaw' : connectionMode === 'simulated' ? 'SIMULÉ' : '...'}
           </span>
         </div>
         <button onClick={refreshHistory}
-          className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)]">
-          <RefreshCw size={12} className="text-[#918977]" />
+          className="p-1 rounded-none hover:bg-[rgba(30,10,32,0.04)]">
+          <RefreshCw size={12} className="text-[rgba(30,10,32,0.60)]" />
         </button>
       </div>
 
@@ -173,7 +173,7 @@ export default function CommandPanel() {
             <select
               value={selectedAgent}
               onChange={e => setSelectedAgent(e.target.value)}
-              className="w-full appearance-none bg-[#F7F3EA] border border-[rgba(60,52,40,0.10)] rounded px-3 py-1.5 font-['JetBrains_Mono'] text-[10px] text-[#1C1814] pr-8 outline-none focus:border-[#B8963E]"
+              className="w-full appearance-none bg-[#F5F2F8] border border-[rgba(30,10,32,0.08)] rounded-none px-3 py-1.5 font-['JetBrains_Mono'] text-[10px] text-[#1E0A20] pr-8 outline-none focus:border-[#1E0A20]"
             >
               {agents.map(a => (
                 <option key={a.id} value={a.id}>
@@ -181,7 +181,7 @@ export default function CommandPanel() {
                 </option>
               ))}
             </select>
-            <ChevronDown size={10} className="absolute right-2 top-1/2 -translate-y-1/2 text-[#918977] pointer-events-none" />
+            <ChevronDown size={10} className="absolute right-2 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.60)] pointer-events-none" />
           </div>
         </div>
 
@@ -189,22 +189,22 @@ export default function CommandPanel() {
         <div className="flex gap-2">
           <button onClick={() => sendCommand('run')}
             disabled={!selectedAgent || !!pollingRef.current}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] bg-[#3D7C5E] text-white hover:bg-[#2D5C46] disabled:opacity-40 transition">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] bg-[#3D7C5E] text-white hover:bg-[#2D5C46] disabled:opacity-40 transition">
             <Zap size={10} /> LANCER
           </button>
           <button onClick={() => sendCommand('pause')}
             disabled={!selectedAgent || !!pollingRef.current}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] text-[#918977] hover:border-[#B8963E] disabled:opacity-40 transition">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[rgba(30,10,32,0.08)] text-[rgba(30,10,32,0.60)] hover:border-[#1E0A20] disabled:opacity-40 transition">
             <Pause size={10} /> PAUSE
           </button>
           <button onClick={() => sendCommand('resume')}
             disabled={!selectedAgent || !!pollingRef.current}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] text-[#918977] hover:border-[#B8963E] disabled:opacity-40 transition">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[rgba(30,10,32,0.08)] text-[rgba(30,10,32,0.60)] hover:border-[#1E0A20] disabled:opacity-40 transition">
             <Play size={10} /> REPRENDRE
           </button>
           <button onClick={() => sendCommand('stop')}
             disabled={!selectedAgent || !!pollingRef.current}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] border border-[#9C3D3D20] text-[#9C3D3D] hover:border-[#9C3D3D] disabled:opacity-40 transition">
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[#9C3D3D20] text-[#9C3D3D] hover:border-[#9C3D3D] disabled:opacity-40 transition">
             <Square size={10} /> STOP
           </button>
         </div>
@@ -213,43 +213,43 @@ export default function CommandPanel() {
       {/* Output panel */}
       <div className="px-4 py-3 border-b border-[rgba(60,52,40,0.04)]">
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[#918977]">SORTIE</span>
+          <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[rgba(30,10,32,0.60)]">SORTIE</span>
           {activeCommand && (
-            <span className="font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-full"
+            <span className="font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-none-full"
               style={{
-                backgroundColor: STATUS_STYLES[activeCommand.status]?.bg || '#918977',
+                backgroundColor: STATUS_STYLES[activeCommand.status]?.bg || 'rgba(30,10,32,0.60)',
                 color: STATUS_STYLES[activeCommand.status]?.text || '#FFFFFF',
               }}>
               {STATUS_STYLES[activeCommand.status]?.label || activeCommand.status}
             </span>
           )}
-          {pollingRef.current && <Loader2 size={10} className="text-[#B8963E] animate-spin" />}
+          {pollingRef.current && <Loader2 size={10} className="text-[#1E0A20] animate-spin" />}
         </div>
-        <pre className="font-['JetBrains_Mono'] text-[10px] text-[#D4B662] bg-[#1C1814] p-3 rounded whitespace-pre-wrap min-h-[60px] max-h-[120px] overflow-y-auto">
+        <pre className="font-['JetBrains_Mono'] text-[10px] text-[#1E0A20] bg-[#1E0A20] p-3 rounded-none whitespace-pre-wrap min-h-[60px] max-h-[120px] overflow-y-auto">
           {output}
         </pre>
       </div>
 
       {/* Command history */}
       <div className="px-4 py-3">
-        <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[#918977] mb-2 block">
+        <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[rgba(30,10,32,0.60)] mb-2 block">
           HISTORIQUE ({commands.length})
         </span>
         <div className="max-h-[200px] overflow-y-auto space-y-0.5">
           {commands.map(cmd => (
             <div key={cmd.id}
-              className="flex items-center gap-2 py-1 px-2 rounded hover:bg-[rgba(184,150,62,0.03)]">
+              className="flex items-center gap-2 py-1 px-2 rounded-none hover:bg-[rgba(184,150,62,0.03)]">
               {cmd.status === 'completed' ? <Check size={10} className="text-[#3D7C5E]" /> :
                cmd.status === 'failed' ? <X size={10} className="text-[#9C3D3D]" /> :
-               cmd.status === 'pending' ? <Clock size={10} className="text-[#B8963E]" /> :
+               cmd.status === 'pending' ? <Clock size={10} className="text-[#1E0A20]" /> :
                <Loader2 size={10} className="text-[#3D5E8C]" />}
-              <span className="font-['JetBrains_Mono'] text-[8px] text-[#918977] w-14">
+              <span className="font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.60)] w-14">
                 {cmd.command}
               </span>
-              <span className="font-['Noto_Sans'] text-[9px] text-[#6B5E4C] flex-1 truncate">
+              <span className="font-['Noto_Sans'] text-[9px] text-[rgba(30,10,32,0.60)] flex-1 truncate">
                 {cmd.agent_id}
               </span>
-              <span className="font-['JetBrains_Mono'] text-[8px] text-[#D4CCBA]">
+              <span className="font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.35)]">
                 {new Date(cmd.created_at).toLocaleString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
               </span>
             </div>
@@ -259,7 +259,7 @@ export default function CommandPanel() {
 
       {/* MCP Registry */}
       <div className="px-4 py-3 border-t border-[rgba(60,52,40,0.06)]">
-        <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[#918977] mb-2 block">
+        <span className="font-['JetBrains_Mono'] text-[7px] tracking-wider text-[rgba(30,10,32,0.60)] mb-2 block">
           MCP REGISTRY
         </span>
         <MCPRegistryPanel />

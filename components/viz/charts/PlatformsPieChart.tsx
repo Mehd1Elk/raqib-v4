@@ -5,8 +5,8 @@ import { ChartTooltip } from './ChartTooltip';
 
 const data = [
   { name: 'Perplexity', value: 518, code: 'PP', color: '#B87D3E', originalData: { Plateforme: 'Perplexity', Couches: 518 } },
-  { name: 'Claude Opus', value: 269, code: 'CW', color: '#D4AF37', originalData: { Plateforme: 'Claude Opus', Couches: 269 } },
-  { name: 'Cursor / Qwen', value: 206, code: 'CC', color: '#918977', originalData: { Plateforme: 'Cursor', Couches: 206 } },
+  { name: 'Claude Opus', value: 269, code: 'CW', color: '#1E0A20', originalData: { Plateforme: 'Claude Opus', Couches: 269 } },
+  { name: 'Cursor / Qwen', value: 206, code: 'CC', color: 'rgba(30,10,32,0.60)', originalData: { Plateforme: 'Cursor', Couches: 206 } },
   { name: 'AutoGPT', value: 7, code: 'AG', color: '#2d2d2d', originalData: { Plateforme: 'AutoGPT', Couches: 7 } },
 ];
 
@@ -25,7 +25,7 @@ export function PlatformsPieChart() {
             dataKey="value"
           >
             {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} stroke="#F7F3EA" strokeWidth={2} />
+              <Cell key={`cell-${index}`} fill={entry.color} stroke="#F5F2F8" strokeWidth={2} />
             ))}
           </Pie>
           <Tooltip content={<ChartTooltip />} />

@@ -26,13 +26,13 @@ const ENTITIES: EntityBranch[] = [
   { id: 'aelya', label: 'AELYA', color: '#7B5EA7', keywords: ['aelya', 'zkp', 'fertilite', 'lalla'] },
   { id: 'myne', label: 'MYNe', color: '#3D7C5E', keywords: ['myne', 'data engineer myne'] },
   { id: 'burhan', label: 'BURHAN', color: '#B87D3E', keywords: ['burhan', 'solidity', 'blockchain', 'mica', 'kyc'] },
-  { id: 'yrknown', label: 'YrKnown', color: '#918977', keywords: ['yrknown', 'corridor'] },
+  { id: 'yrknown', label: 'YrKnown', color: 'rgba(30,10,32,0.60)', keywords: ['yrknown', 'corridor'] },
   { id: 'diwane', label: 'DIWANE', color: '#6E2A3D', keywords: ['diwane', 'ohada'] },
   { id: 'alguesov', label: 'AlgueSov', color: '#3D7C8C', keywords: ['alguesov'] },
   { id: 'amana', label: 'AMANA', color: '#5E6E3D', keywords: ['amana'] },
   { id: 'cg', label: 'CG SA', color: '#162B20', keywords: ['cg'] },
-  { id: 'cercle', label: 'Cercle', color: '#C9A96E', keywords: ['cercle'] },
-  { id: 'eigen', label: 'EIGEN', color: '#B8963E', keywords: ['eigen', 'planific', 'reporter', 'optimis', 'raqib', 'super', 'fondateur', 'architecte'] },
+  { id: 'cercle', label: 'Cercle', color: '#1E0A20', keywords: ['cercle'] },
+  { id: 'eigen', label: 'EIGEN', color: '#1E0A20', keywords: ['eigen', 'planific', 'reporter', 'optimis', 'raqib', 'super', 'fondateur', 'architecte'] },
 ];
 
 function assignEntity(agent: Agent): string {
@@ -82,16 +82,16 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
     // Central node
     g.append('circle')
       .attr('cx', 0).attr('cy', 0).attr('r', innerRadius)
-      .attr('fill', '#B8963E10')
-      .attr('stroke', '#B8963E')
+      .attr('fill', '#1E0A2010')
+      .attr('stroke', '#1E0A20')
       .attr('stroke-width', 2);
 
     g.append('text')
       .attr('x', 0).attr('y', -8)
       .attr('text-anchor', 'middle')
-      .attr('font-family', 'Cormorant Garamond')
+      .attr('font-family', 'Playfair Display')
       .attr('font-size', 18).attr('font-weight', 700).attr('font-style', 'italic')
-      .attr('fill', '#B8963E')
+      .attr('fill', '#1E0A20')
       .text('EIGEN');
 
     g.append('text')
@@ -99,7 +99,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
       .attr('text-anchor', 'middle')
       .attr('font-family', 'JetBrains Mono')
       .attr('font-size', 9)
-      .attr('fill', '#918977')
+      .attr('fill', 'rgba(30,10,32,0.60)')
       .text(`${filtered.length} agents`);
 
     // Draw entity branches
@@ -136,7 +136,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
       entityGroup.append('text')
         .attr('y', -arcRadius - 10)
         .attr('text-anchor', 'middle')
-        .attr('font-family', 'Cormorant Garamond')
+        .attr('font-family', 'Playfair Display')
         .attr('font-size', 13).attr('font-weight', 700).attr('font-style', 'italic')
         .attr('fill', entity.color)
         .text(entity.label);
@@ -146,7 +146,7 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
         .attr('text-anchor', 'middle')
         .attr('font-family', 'JetBrains Mono')
         .attr('font-size', 8)
-        .attr('fill', '#918977')
+        .attr('fill', 'rgba(30,10,32,0.60)')
         .text(`${count} agents`);
 
       // Agent dots
@@ -159,12 +159,12 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
         const dot = entityGroup.append('circle')
           .attr('cx', dx).attr('cy', dy)
           .attr('r', agent.status === 'Actif' ? 4 : 3)
-          .attr('fill', LAYER_COLORS[agent.layer] || '#918977')
+          .attr('fill', LAYER_COLORS[agent.layer] || 'rgba(30,10,32,0.60)')
           .attr('fill-opacity', agent.status === 'Actif' ? 0.9 : 0.4)
           .style('cursor', 'pointer');
 
         if (searchHighlight && agent.name.toLowerCase().includes(searchHighlight.toLowerCase())) {
-          dot.attr('stroke', '#B8963E').attr('stroke-width', 2).attr('r', 6);
+          dot.attr('stroke', '#1E0A20').attr('stroke-width', 2).attr('r', 6);
         }
 
         dot.on('mouseenter', function () {
@@ -196,9 +196,9 @@ export default function EntityRadialView({ agents, width, height, onSelectAgent,
     // Tooltip
     const tooltip = g.append('g').attr('class', 'tooltip').style('display', 'none');
     const tooltipRect = tooltip.append('rect')
-      .attr('rx', 4).attr('fill', '#1C1814').attr('fill-opacity', 0.9);
+      .attr('rx', 4).attr('fill', '#1E0A20').attr('fill-opacity', 0.9);
     const tooltipText = tooltip.append('text')
-      .attr('fill', '#FDFAF3').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
+      .attr('fill', '#FAF8FC').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
       .attr('text-anchor', 'middle');
 
   }, [agents, width, height, onSelectAgent, searchHighlight, layerFilters]);

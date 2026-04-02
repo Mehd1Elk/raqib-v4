@@ -29,15 +29,15 @@ interface Agent {
 const CONDITIONS = [
   { value: 'always', label: 'Toujours', color: '#3D7C5E' },
   { value: 'if_success', label: 'Si succès', color: '#3D7C5E' },
-  { value: 'if_validated', label: 'Si validé', color: '#B8963E' },
+  { value: 'if_validated', label: 'Si validé', color: '#1E0A20' },
   { value: 'if_error', label: 'Si erreur', color: '#9C3D3D' },
 ];
 
 const STATUS_LABELS: Record<string, { label: string; bg: string }> = {
-  draft: { label: 'BROUILLON', bg: '#918977' },
+  draft: { label: 'BROUILLON', bg: 'rgba(30,10,32,0.60)' },
   deployed: { label: 'DÉPLOYÉ', bg: '#3D7C5E' },
   paused: { label: 'PAUSÉ', bg: '#B87D3E' },
-  archived: { label: 'ARCHIVÉ', bg: '#6B5E4C' },
+  archived: { label: 'ARCHIVÉ', bg: 'rgba(30,10,32,0.60)' },
 };
 
 export default function ChainEditor() {
@@ -156,37 +156,37 @@ export default function ChainEditor() {
   }
 
   return (
-    <div className="bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg overflow-hidden">
+    <div className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none-none overflow-hidden">
       {/* Header */}
-      <div className="px-4 py-3 border-b border-[rgba(60,52,40,0.10)] flex items-center justify-between">
+      <div className="px-4 py-3 border-b border-[rgba(30,10,32,0.08)] flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <GitBranch size={14} className="text-[#B8963E]" />
-          <span className="font-['JetBrains_Mono'] text-[9px] tracking-wider text-[#918977]">
+          <GitBranch size={14} className="text-[#1E0A20]" />
+          <span className="font-['JetBrains_Mono'] text-[9px] tracking-wider text-[rgba(30,10,32,0.60)]">
             CHAIN EDITOR
           </span>
         </div>
         <button onClick={newWorkflow}
-          className="flex items-center gap-1 px-2 py-1 rounded font-['JetBrains_Mono'] text-[8px] bg-[#B8963E] text-white hover:bg-[#9A7B32]">
+          className="flex items-center gap-1 px-2 py-1 rounded-none font-['JetBrains_Mono'] text-[8px] bg-[#1E0A20] text-white hover:bg-[#9A7B32]">
           <Plus size={10} /> NOUVELLE CHAÎNE
         </button>
       </div>
 
       <div className="flex" style={{ minHeight: '400px' }}>
         {/* Sidebar : liste des workflows */}
-        <div className="w-[200px] border-r border-[rgba(60,52,40,0.10)] overflow-y-auto">
+        <div className="w-[200px] border-r border-[rgba(30,10,32,0.08)] overflow-y-auto">
           {workflows.map(wf => (
             <div key={wf.id}
               onClick={() => setCurrent(wf)}
               className={`px-3 py-2 cursor-pointer border-b border-[rgba(60,52,40,0.04)] transition ${
-                current?.id === wf.id ? 'bg-[rgba(184,150,62,0.08)]' : 'hover:bg-[rgba(184,150,62,0.03)]'
+                current?.id === wf.id ? 'bg-[rgba(30,10,32,0.04)]' : 'hover:bg-[rgba(184,150,62,0.03)]'
               }`}>
-              <div className="font-['Noto_Sans'] text-[10px] text-[#1C1814] truncate">{wf.name}</div>
+              <div className="font-['Noto_Sans'] text-[10px] text-[#1E0A20] truncate">{wf.name}</div>
               <div className="flex items-center gap-2 mt-1">
-                <span className="font-['JetBrains_Mono'] text-[7px] px-1.5 py-0.5 rounded-full text-white"
-                  style={{ backgroundColor: STATUS_LABELS[wf.status]?.bg || '#918977' }}>
+                <span className="font-['JetBrains_Mono'] text-[7px] px-1.5 py-0.5 rounded-none-full text-white"
+                  style={{ backgroundColor: STATUS_LABELS[wf.status]?.bg || 'rgba(30,10,32,0.60)' }}>
                   {STATUS_LABELS[wf.status]?.label || wf.status}
                 </span>
-                <span className="font-['JetBrains_Mono'] text-[7px] text-[#D4CCBA]">
+                <span className="font-['JetBrains_Mono'] text-[7px] text-[rgba(30,10,32,0.35)]">
                   {wf.steps?.length || 0} étapes
                 </span>
               </div>
@@ -194,7 +194,7 @@ export default function ChainEditor() {
           ))}
           {workflows.length === 0 && (
             <div className="px-3 py-6 text-center">
-              <span className="font-['Noto_Sans'] text-[10px] text-[#918977]">
+              <span className="font-['Noto_Sans'] text-[10px] text-[rgba(30,10,32,0.60)]">
                 Aucune chaîne
               </span>
             </div>
@@ -205,7 +205,7 @@ export default function ChainEditor() {
         <div className="flex-1 p-4">
           {!current ? (
             <div className="flex items-center justify-center h-full">
-              <span className="font-['Noto_Sans'] text-[11px] text-[#918977]">
+              <span className="font-['Noto_Sans'] text-[11px] text-[rgba(30,10,32,0.60)]">
                 Sélectionner ou créer une chaîne
               </span>
             </div>
@@ -216,13 +216,13 @@ export default function ChainEditor() {
                 <input
                   value={current.name}
                   onChange={e => setCurrent({ ...current, name: e.target.value })}
-                  className="flex-1 bg-[#F7F3EA] border border-[rgba(60,52,40,0.10)] rounded px-3 py-1.5 font-['Noto_Sans'] text-[11px] text-[#1C1814] outline-none focus:border-[#B8963E]"
+                  className="flex-1 bg-[#F5F2F8] border border-[rgba(30,10,32,0.08)] rounded-none px-3 py-1.5 font-['Noto_Sans'] text-[11px] text-[#1E0A20] outline-none focus:border-[#1E0A20]"
                   placeholder="Nom de la chaîne"
                 />
                 <select
                   value={current.entity}
                   onChange={e => setCurrent({ ...current, entity: e.target.value })}
-                  className="w-[120px] bg-[#F7F3EA] border border-[rgba(60,52,40,0.10)] rounded px-2 py-1.5 font-['JetBrains_Mono'] text-[9px] text-[#1C1814] outline-none">
+                  className="w-[120px] bg-[#F5F2F8] border border-[rgba(30,10,32,0.08)] rounded-none px-2 py-1.5 font-['JetBrains_Mono'] text-[9px] text-[#1E0A20] outline-none">
                   {['EIGEN','NOOS','AELYA','MYNE','BURHAN','YRKNOWN','DIWANE','ALGUESOV','AMANA','CG','CERCLE'].map(e => (
                     <option key={e} value={e}>{e}</option>
                   ))}
@@ -232,9 +232,9 @@ export default function ChainEditor() {
               {/* Steps */}
               <div className="space-y-1 mb-4">
                 {current.steps.map((step, i) => (
-                  <div key={i} className="flex items-center gap-2 py-1.5 px-2 rounded bg-[#F7F3EA] border border-[rgba(60,52,40,0.06)]">
+                  <div key={i} className="flex items-center gap-2 py-1.5 px-2 rounded-none bg-[#F5F2F8] border border-[rgba(60,52,40,0.06)]">
                     {/* Order number */}
-                    <span className="font-['JetBrains_Mono'] text-[8px] text-[#D4CCBA] w-4 text-center">
+                    <span className="font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.35)] w-4 text-center">
                       {i + 1}
                     </span>
 
@@ -244,15 +244,15 @@ export default function ChainEditor() {
                         <select
                           value={step.condition}
                           onChange={e => updateStep(i, 'condition', e.target.value)}
-                          className="w-full appearance-none bg-transparent border border-[rgba(60,52,40,0.10)] rounded px-2 py-1 font-['JetBrains_Mono'] text-[8px] text-[#6B5E4C] outline-none pr-6">
+                          className="w-full appearance-none bg-transparent border border-[rgba(30,10,32,0.08)] rounded-none px-2 py-1 font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.60)] outline-none pr-6">
                           {CONDITIONS.map(c => (
                             <option key={c.value} value={c.value}>{c.label}</option>
                           ))}
                         </select>
-                        <ChevronDown size={8} className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[#918977] pointer-events-none" />
+                        <ChevronDown size={8} className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.60)] pointer-events-none" />
                       </div>
                     ) : (
-                      <span className="w-[100px] font-['JetBrains_Mono'] text-[8px] text-[#918977] px-2">
+                      <span className="w-[100px] font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.60)] px-2">
                         Départ
                       </span>
                     )}
@@ -262,29 +262,29 @@ export default function ChainEditor() {
                       <select
                         value={step.agentId}
                         onChange={e => updateStep(i, 'agentId', e.target.value)}
-                        className="w-full appearance-none bg-white border border-[rgba(60,52,40,0.10)] rounded px-2 py-1 font-['JetBrains_Mono'] text-[9px] text-[#1C1814] outline-none pr-6">
+                        className="w-full appearance-none bg-white border border-[rgba(30,10,32,0.08)] rounded-none px-2 py-1 font-['JetBrains_Mono'] text-[9px] text-[#1E0A20] outline-none pr-6">
                         {agents.map(a => (
                           <option key={a.id} value={a.id}>
                             [{a.layer}] {a.name}
                           </option>
                         ))}
                       </select>
-                      <ChevronDown size={8} className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[#918977] pointer-events-none" />
+                      <ChevronDown size={8} className="absolute right-1.5 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.60)] pointer-events-none" />
                     </div>
 
                     {/* Move buttons */}
                     <button onClick={() => moveStep(i, -1)} disabled={i === 0}
-                      className="p-0.5 rounded hover:bg-[rgba(184,150,62,0.1)] disabled:opacity-20">
-                      <ArrowUp size={10} className="text-[#918977]" />
+                      className="p-0.5 rounded-none hover:bg-[rgba(30,10,32,0.06)] disabled:opacity-20">
+                      <ArrowUp size={10} className="text-[rgba(30,10,32,0.60)]" />
                     </button>
                     <button onClick={() => moveStep(i, 1)} disabled={i === current.steps.length - 1}
-                      className="p-0.5 rounded hover:bg-[rgba(184,150,62,0.1)] disabled:opacity-20">
-                      <ArrowDown size={10} className="text-[#918977]" />
+                      className="p-0.5 rounded-none hover:bg-[rgba(30,10,32,0.06)] disabled:opacity-20">
+                      <ArrowDown size={10} className="text-[rgba(30,10,32,0.60)]" />
                     </button>
 
                     {/* Delete */}
                     <button onClick={() => removeStep(i)}
-                      className="p-0.5 rounded hover:bg-[rgba(156,61,61,0.1)]">
+                      className="p-0.5 rounded-none hover:bg-[rgba(156,61,61,0.1)]">
                       <Trash2 size={10} className="text-[#9C3D3D]" />
                     </button>
                   </div>
@@ -293,18 +293,18 @@ export default function ChainEditor() {
 
               {/* Add step */}
               <button onClick={addStep}
-                className="w-full py-2 border border-dashed border-[rgba(60,52,40,0.15)] rounded text-center font-['JetBrains_Mono'] text-[8px] text-[#918977] hover:border-[#B8963E] hover:text-[#B8963E] transition mb-4">
+                className="w-full py-2 border border-dashed border-[rgba(60,52,40,0.15)] rounded-none text-center font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.60)] hover:border-[#1E0A20] hover:text-[#1E0A20] transition mb-4">
                 + Ajouter une étape
               </button>
 
               {/* Action buttons */}
               <div className="flex gap-2">
                 <button onClick={save} disabled={saving}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] border border-[rgba(60,52,40,0.10)] text-[#918977] hover:border-[#B8963E] disabled:opacity-40">
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] border border-[rgba(30,10,32,0.08)] text-[rgba(30,10,32,0.60)] hover:border-[#1E0A20] disabled:opacity-40">
                   <Save size={10} /> {saving ? 'SAUVEGARDE...' : 'SAUVEGARDER'}
                 </button>
                 <button onClick={deploy} disabled={deploying || current.steps.length === 0}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded font-['JetBrains_Mono'] text-[8px] bg-[#B8963E] text-white hover:bg-[#9A7B32] disabled:opacity-40">
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-none font-['JetBrains_Mono'] text-[8px] bg-[#1E0A20] text-white hover:bg-[#9A7B32] disabled:opacity-40">
                   <Rocket size={10} /> {deploying ? 'DÉPLOIEMENT...' : 'DÉPLOYER'}
                 </button>
               </div>

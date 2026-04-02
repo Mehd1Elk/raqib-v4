@@ -11,7 +11,7 @@ const TABS = [
   { key: 'briques', label: 'Briques × Cibles', icon: '⬡', subs: ['Matrice'] },
   { key: 'cascade', label: 'Cascade', icon: '↯', subs: ['Parcours'] },
   { key: 'forcage', label: 'Forçage Légal', icon: '§', subs: ['Réglementations'] },
-  { key: 'trojan', label: 'Cheval de Troie', icon: '🐴', subs: ['11 Fiches'] },
+  { key: 'trojan', label: 'Cheval de Troie', icon: '🐴', subs: ['100 Fiches'] },
   { key: 'events', label: 'Événements', icon: '◎', subs: ['GITEX', 'ATS', 'VivaTech'] },
   { key: 'projection', label: 'Projection', icon: '↗', subs: ['Revenue'] },
   { key: 'playbook', label: 'Playbook', icon: '▤', subs: ['DRH', 'DPO', 'CTO', 'RSE', 'Achats', 'CFO'] },
@@ -58,7 +58,7 @@ function Clock() {
     const id = setInterval(tick, 1000);
     return () => clearInterval(id);
   }, []);
-  return <span style={{ fontFamily: MN, fontSize: 9, color: C.t3, letterSpacing: 1 }}>{t}</span>;
+  return <span style={{ fontFamily: MN, fontSize: 12, color: C.t3, letterSpacing: 1 }}>{t}</span>;
 }
 
 export default function AcquisitionShell() {
@@ -69,32 +69,31 @@ export default function AcquisitionShell() {
 
   const currentTab = TABS.find(t => t.key === mainTab)!;
 
-  const switchTab = (key: TabKey) => {
-    setMainTab(key);
-    setSubIdx(0);
-  };
+  const switchTab = (key: TabKey) => { setMainTab(key); setSubIdx(0); };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', background: C.ivory, fontFamily: SN, overflow: 'hidden' }}>
-      {/* Sidebar */}
+    <div style={{ display: 'flex', height: '100vh', background: C.nacre, fontFamily: SN, overflow: 'hidden' }}>
+      {/* Sidebar — PRUNE */}
       <aside style={{
-        width: sideW, minWidth: sideW, background: C.ivory,
-        borderRight: `1px solid ${C.div}`, display: 'flex', flexDirection: 'column',
+        width: sideW, minWidth: sideW, background: C.prune,
+        borderRight: 'none', display: 'flex', flexDirection: 'column',
         transition: 'width 0.2s, min-width 0.2s', overflow: 'hidden',
       }}>
         {/* Logo */}
         <div
           onClick={() => setCollapsed(!collapsed)}
           style={{
-            padding: collapsed ? '16px 12px' : '16px', borderBottom: `1px solid ${C.div}`,
-            display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', minHeight: 56,
+            padding: collapsed ? '20px 12px' : '20px 16px', borderBottom: `0.5px solid ${C.divSb}`,
+            display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer', minHeight: 64,
           }}
         >
-          <span style={{ width: 6, height: 6, borderRadius: '50%', background: C.gold, flexShrink: 0 }} />
+          <span style={{ width: 2, height: 16, background: C.st1, flexShrink: 0 }} />
           {!collapsed && (
             <>
-              <span style={{ fontFamily: GR, fontSize: 20, fontStyle: 'italic', fontWeight: 700, color: C.t1 }}>Raqib</span>
-              <span style={{ fontFamily: GR, fontSize: 13, color: C.sand }}>رقيب</span>
+              <span style={{ fontFamily: GR, fontSize: 24, fontWeight: 400, color: C.st1, textTransform: 'uppercase', letterSpacing: 4 }}>
+                Raqib
+              </span>
+              <span style={{ fontFamily: GR, fontSize: 16, color: C.st3 }}>رقيب</span>
             </>
           )}
         </div>
@@ -109,16 +108,18 @@ export default function AcquisitionShell() {
                 padding: collapsed ? '10px 0' : '10px 16px',
                 justifyContent: collapsed ? 'center' : 'flex-start',
                 border: 'none', cursor: 'pointer',
-                background: active ? 'rgba(184,150,62,0.15)' : 'transparent',
-                borderLeft: active ? `3px solid ${C.gold}` : '3px solid transparent',
-                fontFamily: active ? GR : SN,
-                fontStyle: active ? 'italic' : 'normal',
-                fontWeight: active ? 700 : 400,
-                fontSize: collapsed ? 14 : 12, color: active ? C.t1 : C.t2,
+                background: active ? 'rgba(255,255,255,0.06)' : 'transparent',
+                borderLeft: active ? `2px solid ${C.st1}` : '2px solid transparent',
+                fontFamily: SN,
+                fontWeight: active ? 600 : 400,
+                fontSize: 13, color: active ? C.st1 : C.st2,
                 letterSpacing: 0.3, textAlign: 'left',
                 transition: 'background 0.15s',
-              }}>
-                <span style={{ fontSize: collapsed ? 16 : 12, flexShrink: 0, opacity: active ? 1 : 0.6 }}>{tab.icon}</span>
+              }}
+              onMouseEnter={e => { if (!active) e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}
+              onMouseLeave={e => { if (!active) e.currentTarget.style.background = 'transparent'; }}
+              >
+                <span style={{ fontSize: collapsed ? 16 : 12, flexShrink: 0, opacity: active ? 1 : 0.5 }}>{tab.icon}</span>
                 {!collapsed && <span>{tab.label}</span>}
               </button>
             );
@@ -128,9 +129,9 @@ export default function AcquisitionShell() {
         {/* Back link */}
         {!collapsed && (
           <a href="/" style={{
-            display: 'block', padding: '12px 16px', borderTop: `1px solid ${C.div}`,
-            fontFamily: MN, fontSize: 8, color: C.t3, textDecoration: 'none',
-            letterSpacing: 1.5, textTransform: 'uppercase',
+            display: 'block', padding: '12px 16px', borderTop: `0.5px solid ${C.divSb}`,
+            fontFamily: MN, fontSize: 9, color: C.st3, textDecoration: 'none',
+            letterSpacing: 2, textTransform: 'uppercase', fontWeight: 600,
           }}>
             ← RAQIB V4
           </a>
@@ -141,15 +142,15 @@ export default function AcquisitionShell() {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
         {/* Header */}
         <header style={{
-          height: 48, padding: '0 24px', display: 'flex', alignItems: 'center',
-          justifyContent: 'space-between', borderBottom: `1px solid ${C.div}`, background: C.ivory,
+          height: 54, padding: '0 24px', display: 'flex', alignItems: 'center',
+          justifyContent: 'space-between', borderBottom: `0.5px solid ${C.div}`, background: C.nacre,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontFamily: GR, fontSize: 15, fontWeight: 700, fontStyle: 'italic', color: C.t1 }}>
+            <span style={{ fontFamily: GR, fontSize: 15, fontWeight: 400, color: C.t1, textTransform: 'uppercase', letterSpacing: 4 }}>
               {currentTab.label}
             </span>
-            <span style={{ width: 1, height: 16, background: C.div }} />
-            <span style={{ fontFamily: MN, fontSize: 8, color: C.t3, letterSpacing: 1.5, textTransform: 'uppercase' }}>
+            <span style={{ width: 0.5, height: 16, background: C.div }} />
+            <span style={{ fontFamily: MN, fontSize: 9, color: C.t3, letterSpacing: 3, textTransform: 'uppercase', fontWeight: 600 }}>
               {currentTab.subs.length} SECTIONS
             </span>
           </div>
@@ -159,15 +160,15 @@ export default function AcquisitionShell() {
         {/* Sub-tabs */}
         {currentTab.subs.length > 1 && (
           <div style={{
-            height: 38, padding: '0 24px', display: 'flex', alignItems: 'center', gap: 20,
-            borderBottom: `1px solid ${C.div}`, background: C.ivory,
+            height: 40, padding: '0 24px', display: 'flex', alignItems: 'center', gap: 24,
+            borderBottom: `0.5px solid ${C.div}`, background: C.nacre,
           }}>
             {currentTab.subs.map((sub, i) => (
               <button key={sub} onClick={() => setSubIdx(i)} style={{
                 border: 'none', background: 'none', cursor: 'pointer', padding: '8px 0',
-                fontFamily: GR, fontStyle: 'italic', fontSize: 10, fontWeight: subIdx === i ? 700 : 400,
+                fontFamily: SN, fontSize: 13, fontWeight: subIdx === i ? 600 : 400,
                 color: subIdx === i ? C.t1 : C.t3,
-                borderBottom: subIdx === i ? `2px solid ${C.gold}` : '2px solid transparent',
+                borderBottom: subIdx === i ? `2px solid ${C.prune}` : '2px solid transparent',
                 transition: 'all 0.15s',
               }}>
                 {sub}
@@ -177,9 +178,9 @@ export default function AcquisitionShell() {
         )}
 
         {/* Content */}
-        <main style={{ flex: 1, overflow: 'auto', background: C.cream }}>
+        <main style={{ flex: 1, overflow: 'auto', background: C.nacre }}>
           <Suspense fallback={
-            <div style={{ fontFamily: MN, fontSize: 10, color: C.t3, padding: 40 }}>Chargement...</div>
+            <div style={{ fontFamily: MN, fontSize: 10, color: C.t3, padding: 40, letterSpacing: 2, textTransform: 'uppercase' }}>Chargement...</div>
           }>
             <TabContent tab={mainTab} subIdx={subIdx} />
           </Suspense>
@@ -187,12 +188,12 @@ export default function AcquisitionShell() {
 
         {/* Footer */}
         <footer style={{
-          height: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '0 24px', background: C.ivory, borderTop: `1px solid ${C.div}`,
-          fontFamily: MN, fontSize: 7, letterSpacing: 2, textTransform: 'uppercase',
+          height: 30, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          padding: '0 24px', background: C.nacre, borderTop: `0.5px solid ${C.div}`,
+          fontFamily: MN, fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', fontWeight: 600,
         }}>
           <span style={{ color: C.t3 }}>RAQIB V4 · INTELLIGENCE D&apos;ACQUISITION · 7 BRIQUES × 396 CIBLES</span>
-          <span style={{ color: C.gold }}>AVRIL 2026 · CORRIDOR ATLANTIQUE</span>
+          <span style={{ color: C.t1 }}>AVRIL 2026 · CORRIDOR ATLANTIQUE</span>
         </footer>
       </div>
     </div>

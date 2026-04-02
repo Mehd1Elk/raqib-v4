@@ -23,22 +23,22 @@ export const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({ agent, onClo
         role="dialog"
         aria-modal="true"
         aria-label={`Détail agent ${agent.name}`}
-        className="fixed right-0 top-0 h-full w-[400px] bg-white border-l border-[#D4AF37] z-50 shadow-2xl overflow-y-auto transform transition-transform duration-300 translate-x-0"
+        className="fixed right-0 top-0 h-full w-[400px] bg-white border-l border-[#1E0A20] z-50 shadow-2xl overflow-y-auto transform transition-transform duration-300 translate-x-0"
       >
         <div className="p-6">
           {/* Header */}
           <div className="flex justify-between items-start mb-6 border-b border-stone-200 pb-4">
             <div>
-              <h2 className="text-xl font-['Cormorant_Garamond'] font-bold text-stone-900 mb-1">
+              <h2 className="text-xl font-['Playfair_Display'] font-bold text-stone-900 mb-1">
                 {agent.id} — {agent.name.toUpperCase()}
               </h2>
               <div className="flex items-center space-x-2 text-xs font-mono text-stone-600">
-                <span className="bg-stone-100 px-2 py-0.5 rounded text-[#D4AF37] font-semibold">{agent.layer}</span>
+                <span className="bg-stone-100 px-2 py-0.5 rounded-none text-[#1E0A20] font-semibold">{agent.layer}</span>
                 <span>·</span>
                 <span>Pôle {agent.pole}</span>
               </div>
             </div>
-            <button onClick={onClose} className="p-1 hover:bg-stone-100 rounded-full text-stone-500 transition-colors">
+            <button onClick={onClose} className="p-1 hover:bg-stone-100 rounded-none-full text-stone-500 transition-colors">
               <X size={20} />
             </button>
           </div>
@@ -62,7 +62,7 @@ export const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({ agent, onClo
           {/* Instructions */}
           <div className="mb-6">
             <span className="block text-xs font-mono text-stone-400 mb-2">INSTRUCTIONS</span>
-            <p className="text-sm text-stone-700 leading-relaxed bg-stone-50 p-3 rounded rounded-l-none border-l-2 border-[#D4AF37]">
+            <p className="text-sm text-stone-700 leading-relaxed bg-stone-50 p-3 rounded-none rounded-none-l-none border-l-2 border-[#1E0A20]">
               {agent.instructions}
             </p>
           </div>
@@ -110,15 +110,15 @@ export const AgentDetailPanel: React.FC<AgentDetailPanelProps> = ({ agent, onClo
 
           {/* Actions */}
           <div className="space-y-3">
-            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-[#D4AF37] hover:bg-[#C5A028] text-white font-semibold rounded transition-colors shadow-sm">
+            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-[#1E0A20] hover:bg-[#C5A028] text-white font-semibold rounded-none transition-colors shadow-sm">
               <PlayCircle size={18} />
               <span>Lancer maintenant</span>
             </button>
-            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded transition-colors shadow-sm">
+            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-none transition-colors shadow-sm">
               <Edit3 size={18} />
               <span>Modifier instructions</span>
             </button>
-            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded transition-colors shadow-sm">
+            <button className="w-full flex items-center justify-center space-x-2 py-3 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-none transition-colors shadow-sm">
               <Database size={18} />
               <span>Voir les entries produites</span>
             </button>

@@ -16,7 +16,7 @@ export function GaugeKPI({ value, target, label, color, unit = '' }: GaugeKPIPro
 
   const pct = target > 0 ? Math.min((value / target) * 100, 100) : 0;
   const statusColor =
-    color ?? (pct >= 90 ? '#3D7C5E' : pct >= 60 ? '#B8963E' : '#A0522D');
+    color ?? (pct >= 90 ? '#3D7C5E' : pct >= 60 ? '#1E0A20' : '#A0522D');
 
   const size = 96;
   const stroke = 6;

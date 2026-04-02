@@ -7,8 +7,8 @@ type SoulSource = 'openclaw' | 'generated' | 'supabase';
 
 const SOURCE_BADGE: Record<SoulSource, { label: string; color: string; bg: string }> = {
   openclaw:  { label: 'FICHIER RÉEL', color: '#3D7C5E', bg: '#3D7C5E18' },
-  generated: { label: 'GÉNÉRÉ',       color: '#918977', bg: '#91897718' },
-  supabase:  { label: 'SUPABASE',     color: '#B8963E', bg: '#B8963E18' },
+  generated: { label: 'GÉNÉRÉ',       color: 'rgba(30,10,32,0.60)', bg: 'rgba(30,10,32,0.60)18' },
+  supabase:  { label: 'SUPABASE',     color: '#1E0A20', bg: '#1E0A2018' },
 };
 
 export function SOULEditor({ agentId }: { agentId: string }) {
@@ -58,26 +58,26 @@ export function SOULEditor({ agentId }: { agentId: string }) {
       {/* Header row */}
       <div className="flex items-center gap-2 mb-2">
         <span
-          className="font-['JetBrains_Mono'] text-[8px] px-2 py-0.5 rounded-sm font-bold uppercase tracking-wider"
+          className="font-['JetBrains_Mono'] text-[8px] px-2 py-0.5 rounded-none-sm font-bold uppercase tracking-wider"
           style={{ color: badge.color, backgroundColor: badge.bg }}
         >
           {badge.label}
         </span>
-        <span className="font-['JetBrains_Mono'] text-[8px] text-[#918977] uppercase tracking-wider">
+        <span className="font-['JetBrains_Mono'] text-[8px] text-[rgba(30,10,32,0.60)] uppercase tracking-wider">
           SOUL.md
         </span>
         <div className="ml-auto flex items-center gap-1">
           <button
             onClick={() => setIsEditing(false)}
             title="Preview"
-            className={`p-1 rounded transition-colors ${!isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
+            className={`p-1 rounded-none transition-colors ${!isEditing ? 'text-[#1E0A20]' : 'text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20]'}`}
           >
             <Eye size={12} />
           </button>
           <button
             onClick={() => setIsEditing(true)}
             title="Éditer"
-            className={`p-1 rounded transition-colors ${isEditing ? 'text-[#B8963E]' : 'text-[#918977] hover:text-[#1C1814]'}`}
+            className={`p-1 rounded-none transition-colors ${isEditing ? 'text-[#1E0A20]' : 'text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20]'}`}
           >
             <Edit3 size={12} />
           </button>
@@ -86,7 +86,7 @@ export function SOULEditor({ agentId }: { agentId: string }) {
 
       {/* Body */}
       {isLoading ? (
-        <div className="flex items-center gap-2 text-[#918977] font-['JetBrains_Mono'] text-[10px] py-3">
+        <div className="flex items-center gap-2 text-[rgba(30,10,32,0.60)] font-['JetBrains_Mono'] text-[10px] py-3">
           <Loader2 size={12} className="animate-spin" />
           Chargement…
         </div>
@@ -97,10 +97,10 @@ export function SOULEditor({ agentId }: { agentId: string }) {
           <textarea
             value={soul}
             onChange={e => setSoul(e.target.value)}
-            className="w-full min-h-[200px] rounded border border-[rgba(60,52,40,0.25)] p-3 resize-y outline-none focus:border-[#B8963E] transition-colors"
+            className="w-full min-h-[200px] rounded-none border border-[rgba(60,52,40,0.25)] p-3 resize-y outline-none focus:border-[#1E0A20] transition-colors"
             style={{
-              backgroundColor: '#1C1814',
-              color: '#D4B662',
+              backgroundColor: '#1E0A20',
+              color: '#1E0A20',
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: '12px',
               lineHeight: '1.6',
@@ -111,7 +111,7 @@ export function SOULEditor({ agentId }: { agentId: string }) {
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className="flex items-center gap-1.5 px-4 py-1.5 bg-[#B8963E] text-white rounded font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider font-bold hover:bg-[#a38435] disabled:opacity-50 transition-colors"
+              className="flex items-center gap-1.5 px-4 py-1.5 bg-[#1E0A20] text-white rounded-none font-['JetBrains_Mono'] text-[10px] uppercase tracking-wider font-bold hover:bg-[#a38435] disabled:opacity-50 transition-colors"
             >
               {isSaving ? <Loader2 size={11} className="animate-spin" /> : <Save size={11} />}
               Sauvegarder
@@ -120,11 +120,11 @@ export function SOULEditor({ agentId }: { agentId: string }) {
         </div>
       ) : (
         <div
-          className="font-['Noto_Sans'] text-[12px] text-[#6B5E4C] leading-relaxed max-w-2xl bg-white/50 p-3 rounded border border-white whitespace-pre-wrap cursor-text"
+          className="font-['Noto_Sans'] text-[12px] text-[rgba(30,10,32,0.60)] leading-relaxed max-w-2xl bg-white/50 p-3 rounded-none border border-white whitespace-pre-wrap cursor-text"
           onClick={() => setIsEditing(true)}
           title="Cliquer pour éditer"
         >
-          {soul || <span className="italic text-[#918977]">Aucun contenu SOUL</span>}
+          {soul || <span className="italic text-[rgba(30,10,32,0.60)]">Aucun contenu SOUL</span>}
         </div>
       )}
     </div>

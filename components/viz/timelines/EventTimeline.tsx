@@ -31,13 +31,13 @@ export function EventTimeline({ data, onNodeClick }: Props) {
             >
               {/* Le fil connecteur (sauf dernier) */}
               {idx < data.length - 1 && (
-                <div className="absolute top-6 left-1/2 w-full h-px bg-stone-800 -z-10 group-hover:bg-[#B8963E] transition-colors duration-500"></div>
+                <div className="absolute top-6 left-1/2 w-full h-px bg-stone-800 -z-10 group-hover:bg-[#1E0A20] transition-colors duration-500"></div>
               )}
               
-              <div className="bg-[#1A1A1A] border border-stone-800 group-hover:border-[#B8963E]/50 rounded p-4 h-full flex flex-col transition-all group-hover:-translate-y-1 group-hover:shadow-[0_4px_20px_rgba(184,150,62,0.1)]">
+              <div className="bg-[#1A1A1A] border border-stone-800 group-hover:border-[#1E0A20]/50 rounded-none p-4 h-full flex flex-col transition-all group-hover:-translate-y-1 group-hover:shadow-[0_4px_20px_rgba(30,10,32,0.06)]">
                 {/* Header: Date + Marqueur Numérique */}
                 <div className="flex justify-between items-start mb-3">
-                  <div className="bg-stone-900 text-[#B8963E] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1 rounded">
+                  <div className="bg-stone-900 text-[#1E0A20] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1 rounded-none">
                     EE-{String(idx + 1).padStart(2, '0')}
                   </div>
                   <div className="text-xs text-stone-400 flex items-center gap-1 font-[family-name:var(--font-jetbrains)]">
@@ -66,7 +66,7 @@ export function EventTimeline({ data, onNodeClick }: Props) {
                 </div>
 
                 {/* Cercle indicateur en haut */}
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#111111] border-2 border-stone-700 group-hover:border-[#B8963E] transition-colors shadow"></div>
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-none-full bg-[#111111] border-2 border-stone-700 group-hover:border-[#1E0A20] transition-colors shadow"></div>
               </div>
             </div>
           );

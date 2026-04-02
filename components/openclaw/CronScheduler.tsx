@@ -15,13 +15,13 @@ interface CronJob {
 }
 
 const LAYER_COLORS: Record<string, { bg: string; text: string }> = {
-  L0:     { bg: '#1C1814', text: '#FDFAF3' },
-  L1:     { bg: '#B8963E', text: '#FDFAF3' },
-  'L1.5': { bg: '#D4AF60', text: '#1C1814' },
-  L2:     { bg: '#D4CCBA', text: '#1C1814' },
-  L3:     { bg: '#E8E4DC', text: '#1C1814' },
-  OPS:    { bg: '#918977', text: '#FDFAF3' },
-  CORE:   { bg: '#2C2418', text: '#B8963E' },
+  L0:     { bg: '#1E0A20', text: '#FAF8FC' },
+  L1:     { bg: '#1E0A20', text: '#FAF8FC' },
+  'L1.5': { bg: '#D4AF60', text: '#1E0A20' },
+  L2:     { bg: 'rgba(30,10,32,0.35)', text: '#1E0A20' },
+  L3:     { bg: '#E8E4DC', text: '#1E0A20' },
+  OPS:    { bg: 'rgba(30,10,32,0.60)', text: '#FAF8FC' },
+  CORE:   { bg: '#2C2418', text: '#1E0A20' },
 };
 
 const STATUS_DOT: Record<CronJob['status'], string> = {
@@ -89,26 +89,26 @@ export function CronScheduler() {
   const layers = ['ALL', ...Array.from(new Set(jobs.map(j => j.layer))).sort()];
   const filteredJobs = layerFilter === 'ALL' ? jobs : jobs.filter(j => j.layer === layerFilter);
   const layerColor = (layer: string) =>
-    LAYER_COLORS[layer] ?? { bg: '#D4CCBA', text: '#1C1814' };
+    LAYER_COLORS[layer] ?? { bg: 'rgba(30,10,32,0.35)', text: '#1E0A20' };
 
   return (
-    <div className="w-full h-full flex flex-col bg-[#FDFAF3] overflow-hidden">
+    <div className="w-full h-full flex flex-col bg-[#FAF8FC] overflow-hidden">
 
       {/* Header */}
-      <div className="flex items-center justify-between px-6 py-3 border-b border-[#D4CCBA] shrink-0">
+      <div className="flex items-center justify-between px-6 py-3 border-b border-[rgba(30,10,32,0.35)] shrink-0">
         <div className="flex items-center gap-3">
-          <Clock size={13} className="text-[#B8963E]" />
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] uppercase tracking-[2px] text-[#1C1814]">
+          <Clock size={13} className="text-[#1E0A20]" />
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] uppercase tracking-[2px] text-[#1E0A20]">
             CRON SCHEDULER
           </span>
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977]">
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)]">
             {filteredJobs.length} tache{filteredJobs.length !== 1 ? 's' : ''}
           </span>
           <span
-            className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-[2px] rounded-sm ${
+            className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-[2px] rounded-none-sm ${
               source === 'LIVE'
                 ? 'bg-emerald-100 text-emerald-700'
-                : 'bg-[#F2EFE8] text-[#918977]'
+                : 'bg-[#F2EFE8] text-[rgba(30,10,32,0.60)]'
             }`}
           >
             {source === 'LIVE' ? 'LIVE' : 'SIMULE'}
@@ -116,18 +116,18 @@ export function CronScheduler() {
         </div>
         <button
           onClick={() => { setLoading(true); fetchJobs(); }}
-          className="p-1 hover:bg-[#F2EFE8] rounded transition-colors"
+          className="p-1 hover:bg-[#F2EFE8] rounded-none transition-colors"
           aria-label="Actualiser"
         >
           <RefreshCw
             size={12}
-            className={loading ? 'animate-spin text-[#B8963E]' : 'text-[#918977]'}
+            className={loading ? 'animate-spin text-[#1E0A20]' : 'text-[rgba(30,10,32,0.60)]'}
           />
         </button>
       </div>
 
       {/* Layer filter pills */}
-      <div className="flex items-center gap-1.5 px-6 py-2.5 border-b border-[#D4CCBA] overflow-x-auto shrink-0">
+      <div className="flex items-center gap-1.5 px-6 py-2.5 border-b border-[rgba(30,10,32,0.35)] overflow-x-auto shrink-0">
         {layers.map(layer => {
           const isActive = layerFilter === layer;
           const lc = layer !== 'ALL' ? layerColor(layer) : null;
@@ -135,13 +135,13 @@ export function CronScheduler() {
             <button
               key={layer}
               onClick={() => setLayerFilter(layer)}
-              className="shrink-0 font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-sm transition-all"
+              className="shrink-0 font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-none-sm transition-all"
               style={
                 isActive && lc
                   ? { backgroundColor: lc.bg, color: lc.text }
                   : isActive
-                  ? { backgroundColor: '#1C1814', color: '#FDFAF3' }
-                  : { backgroundColor: '#F2EFE8', color: '#918977' }
+                  ? { backgroundColor: '#1E0A20', color: '#FAF8FC' }
+                  : { backgroundColor: '#F2EFE8', color: 'rgba(30,10,32,0.60)' }
               }
             >
               {layer}
@@ -156,29 +156,29 @@ export function CronScheduler() {
           <div className="p-4 space-y-2">
             {Array.from({ length: 6 }).map((_, i) => (
               <div key={i} className="flex items-center gap-4 px-4 py-3 animate-pulse">
-                <div className="w-2 h-2 rounded-full bg-[#D4CCBA]" />
-                <div className="h-3 w-12 rounded bg-[#D4CCBA]" />
-                <div className="h-3 flex-1 rounded bg-[#D4CCBA]" />
-                <div className="h-3 w-10 rounded bg-[#D4CCBA]" />
-                <div className="h-3 w-16 rounded bg-[#D4CCBA]" />
+                <div className="w-2 h-2 rounded-none-full bg-[rgba(30,10,32,0.35)]" />
+                <div className="h-3 w-12 rounded-none bg-[rgba(30,10,32,0.35)]" />
+                <div className="h-3 flex-1 rounded-none bg-[rgba(30,10,32,0.35)]" />
+                <div className="h-3 w-10 rounded-none bg-[rgba(30,10,32,0.35)]" />
+                <div className="h-3 w-16 rounded-none bg-[rgba(30,10,32,0.35)]" />
               </div>
             ))}
           </div>
         ) : filteredJobs.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-48 gap-3">
-            <Clock size={20} className="text-[#D4CCBA]" />
-            <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">
+            <Clock size={20} className="text-[rgba(30,10,32,0.35)]" />
+            <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] uppercase tracking-wider">
               Aucune tache planifiee
             </span>
           </div>
         ) : (
           <table className="w-full border-collapse">
             <thead>
-              <tr className="border-b border-[#D4CCBA]">
+              <tr className="border-b border-[rgba(30,10,32,0.35)]">
                 {['', 'Couche', 'Agent', 'Freq', 'Prochain run', 'Actions'].map((h, i) => (
                   <th
                     key={i}
-                    className="px-4 py-2 text-left font-[family-name:var(--font-jetbrains)] text-[8px] uppercase tracking-wider text-[#918977] font-normal"
+                    className="px-4 py-2 text-left font-[family-name:var(--font-jetbrains)] text-[8px] uppercase tracking-wider text-[rgba(30,10,32,0.60)] font-normal"
                   >
                     {h}
                   </th>
@@ -192,19 +192,19 @@ export function CronScheduler() {
                 return (
                   <tr
                     key={job.agentId}
-                    className="border-b border-[#D4CCBA]/40 hover:bg-[#F2EFE8] transition-colors"
+                    className="border-b border-[rgba(30,10,32,0.35)]/40 hover:bg-[#F2EFE8] transition-colors"
                   >
                     {/* Status dot */}
                     <td className="pl-4 pr-2 py-3 w-6">
                       <span
-                        className={`w-2 h-2 rounded-full inline-block ${STATUS_DOT[job.status] ?? 'bg-[#918977]'}`}
+                        className={`w-2 h-2 rounded-none-full inline-block ${STATUS_DOT[job.status] ?? 'bg-[rgba(30,10,32,0.60)]'}`}
                       />
                     </td>
 
                     {/* Layer badge */}
                     <td className="px-3 py-3 whitespace-nowrap">
                       <span
-                        className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-sm"
+                        className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-[3px] rounded-none-sm"
                         style={{ backgroundColor: lc.bg, color: lc.text }}
                       >
                         {job.layer}
@@ -213,24 +213,24 @@ export function CronScheduler() {
 
                     {/* Agent name + id */}
                     <td className="px-3 py-3 min-w-[160px]">
-                      <div className="text-[10px] text-[#1C1814] leading-tight" style={{ fontFamily: 'var(--font-noto-sans, sans-serif)' }}>
+                      <div className="text-[10px] text-[#1E0A20] leading-tight" style={{ fontFamily: 'var(--font-noto-sans, sans-serif)' }}>
                         {job.agentName}
                       </div>
-                      <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977] mt-0.5">
+                      <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[rgba(30,10,32,0.60)] mt-0.5">
                         {job.agentId}
                       </div>
                     </td>
 
                     {/* Frequency */}
                     <td className="px-3 py-3 whitespace-nowrap">
-                      <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977]">
+                      <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)]">
                         {job.frequency}
                       </span>
                     </td>
 
                     {/* Countdown */}
                     <td className="px-3 py-3 whitespace-nowrap">
-                      <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1C1814]">
+                      <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1E0A20]">
                         {getTimeUntil(job.nextRun)}
                       </span>
                     </td>
@@ -263,7 +263,7 @@ export function CronScheduler() {
                           aria-label="Declencher maintenant"
                           className="disabled:opacity-40 hover:opacity-70 transition-opacity"
                         >
-                          <Zap size={11} className="text-[#B8963E]" />
+                          <Zap size={11} className="text-[#1E0A20]" />
                         </button>
                       </div>
                     </td>

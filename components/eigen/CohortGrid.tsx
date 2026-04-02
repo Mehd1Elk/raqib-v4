@@ -10,9 +10,9 @@ const COHORTS_DEF = [
   { id: 'pole-neuro', name: 'Neurosciences & Santé', color: '#3D5E8C', layer: 'L1', description: 'Calibration SCID-5, NLP clinique, observance', filter: (a: any) => a.pole === 'Neurosciences & Santé' && a.layer === 'L1' },
   { id: 'pole-ia', name: 'IA & Ingénierie', color: '#7B5EA7', layer: 'L1', description: 'Rust, TypeScript, React, Solidity, ZKP', filter: (a: any) => a.pole === 'IA & Ingénierie' && a.layer === 'L1' },
   { id: 'pole-data', name: 'Données & Conformité', color: '#3D7C5E', layer: 'L1', description: 'RGPD, AI Act, MiCA, ISO 13485', filter: (a: any) => a.pole === 'Données & Conformité' && a.layer === 'L1' },
-  { id: 'pole-marche', name: 'Marché & Acquisition', color: '#B8963E', layer: 'L1', description: 'VC, GITEX, deal flow, pricing', filter: (a: any) => a.pole === 'Marché & Acquisition' && a.layer === 'L1' },
+  { id: 'pole-marche', name: 'Marché & Acquisition', color: '#1E0A20', layer: 'L1', description: 'VC, GITEX, deal flow, pricing', filter: (a: any) => a.pole === 'Marché & Acquisition' && a.layer === 'L1' },
   { id: 'pole-comm', name: 'Communication & Design', color: '#6E2A3D', layer: 'L1', description: 'Content, UI/UX, motion, PR', filter: (a: any) => a.pole === 'Communication & Design' && a.layer === 'L1' },
-  { id: 'pole-raqib', name: 'Raqib Collectors', color: '#918977', layer: 'OPS', description: '10 collectors — 1 par entité', filter: (a: any) => a.pole === 'Raqib' && a.layer === 'L1' },
+  { id: 'pole-raqib', name: 'Raqib Collectors', color: 'rgba(30,10,32,0.60)', layer: 'OPS', description: '10 collectors — 1 par entité', filter: (a: any) => a.pole === 'Raqib' && a.layer === 'L1' },
   { id: 'pole-viz', name: 'Visualisation', color: '#B87D3E', layer: 'OPS', description: 'Charts, maps, networks, timelines', filter: (a: any) => a.pole === 'Viz' && a.layer === 'L1' },
   { id: 'sa-termi', name: 'Vérification Terminologique', color: '#9C3D3D', layer: 'L1.5', description: 'FR, EN, AR, OHADA, UE, MA, Corridor', filter: (a: any) => a.name.includes('terminologique') },
   { id: 'sa-fact', name: 'Vérification Factuelle', color: '#9C3D3D', layer: 'L1.5', description: 'Santé, finance, juridique, tech, géo', filter: (a: any) => a.name.includes('factuel') },
@@ -64,7 +64,7 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
             <div 
               key={cohort.id}
               onClick={() => setSelectedCohortId(cohort.id)}
-              className="bg-white border border-[#E5E0D8] rounded-lg overflow-hidden cursor-pointer hover:shadow-md transition-all hover:border-stone-300 group flex flex-col h-[200px]"
+              className="bg-white border border-[#E5E0D8] rounded-none-none overflow-hidden cursor-pointer hover:shadow-md transition-all hover:border-stone-300 group flex flex-col h-[200px]"
             >
               <div className="flex-1 p-5 relative flex flex-col">
                 {/* Side Color Bar */}
@@ -75,14 +75,14 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
                   <div>
                     <h3 className="font-serif text-lg font-bold text-stone-800 leading-tight mb-1">{cohort.name}</h3>
                     <div className="font-mono text-[9px] text-stone-500 uppercase flex items-center gap-2">
-                      <span className="px-1.5 py-0.5 bg-stone-100 rounded text-stone-600 font-bold">{cohort.layer}</span>
+                      <span className="px-1.5 py-0.5 bg-stone-100 rounded-none text-stone-600 font-bold">{cohort.layer}</span>
                       <span>{agents.length} AGENTS · {activeCount} ACTIFS</span>
                     </div>
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     <StatusDot status={hasError ? 'error' : activeCount > 0 ? 'active' : 'inactive'} />
                     {/* Unread badge simulation */}
-                    <div className="w-2 h-2 rounded-full bg-[#D4AF37] shadow-[0_0_8px_rgba(212,175,55,0.6)] animate-pulse mt-2" />
+                    <div className="w-2 h-2 rounded-none-full bg-[#1E0A20] shadow-[0_0_8px_rgba(212,175,55,0.6)] animate-pulse mt-2" />
                   </div>
                 </div>
 
@@ -93,19 +93,19 @@ export default function CohortGrid({ agentsData }: { agentsData: Agent[] }) {
 
                 <div className="mt-auto pl-2 flex gap-1 items-center flex-wrap pt-4">
                   {agents.slice(0, 10).map((a, i) => (
-                    <div key={i} className="w-2 h-2 rounded-full" style={{ backgroundColor: ['Actif', 'active'].includes(a.status) ? '#10B981' : ['Erreur', 'error'].includes(a.status) ? '#EF4444' : '#D6D3D1' }} />
+                    <div key={i} className="w-2 h-2 rounded-none-full" style={{ backgroundColor: ['Actif', 'active'].includes(a.status) ? '#10B981' : ['Erreur', 'error'].includes(a.status) ? '#EF4444' : '#D6D3D1' }} />
                   ))}
                   {agents.length > 10 && <span className="font-mono text-[8px] text-stone-400 ml-1">+{agents.length - 10}</span>}
                 </div>
               </div>
 
               {/* Footer CTA */}
-              <div className="h-10 border-t border-stone-100 bg-stone-50/50 flex items-center justify-between px-5 group-hover:bg-[#D4AF37]/5 transition-colors">
-                <div className="flex items-center gap-2 font-mono text-[9px] text-stone-500 group-hover:text-[#D4AF37] transition-colors">
+              <div className="h-10 border-t border-stone-100 bg-stone-50/50 flex items-center justify-between px-5 group-hover:bg-[#1E0A20]/5 transition-colors">
+                <div className="flex items-center gap-2 font-mono text-[9px] text-stone-500 group-hover:text-[#1E0A20] transition-colors">
                   <MessageCircle size={10} />
                   <span>3 DISCUSSIONS · {Math.floor(Math.random() * 50) + 12} MESSAGES</span>
                 </div>
-                <span className="font-mono text-[9px] font-bold text-stone-400 group-hover:text-[#D4AF37] uppercase tracking-wider transition-colors">Ouvrir le comité →</span>
+                <span className="font-mono text-[9px] font-bold text-stone-400 group-hover:text-[#1E0A20] uppercase tracking-wider transition-colors">Ouvrir le comité →</span>
               </div>
             </div>
           );

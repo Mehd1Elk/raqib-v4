@@ -25,13 +25,13 @@ export default function ContactsView() {
       {/* Persona filters */}
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <button onClick={() => { setLoading(true); setFilterPersona(''); }} style={{
-          padding: '4px 10px', border: `1px solid ${!filterPersona ? C.gold : C.div}`, borderRadius: 2,
-          fontFamily: MN, fontSize: 9, cursor: 'pointer', background: !filterPersona ? `${C.gold}20` : C.ivory, color: !filterPersona ? C.gold : C.t3,
+          padding: '4px 10px', border: `0.5px solid ${!filterPersona ? C.accent : C.div}`, borderRadius: 0,
+          fontFamily: MN, fontSize: 9, cursor: 'pointer', background: !filterPersona ? `${C.accent}20` : C.nacre, color: !filterPersona ? C.accent : C.t3,
         }}>Tous</button>
         {P_LIST.map(p => (
           <button key={p.id} onClick={() => { setLoading(true); setFilterPersona(filterPersona === p.id ? '' : p.id); }} style={{
-            padding: '4px 10px', border: `1px solid ${filterPersona === p.id ? p.c : C.div}`, borderRadius: 2,
-            fontFamily: MN, fontSize: 9, cursor: 'pointer', background: filterPersona === p.id ? `${p.c}20` : C.ivory, color: filterPersona === p.id ? p.c : C.t3,
+            padding: '4px 10px', border: `0.5px solid ${filterPersona === p.id ? p.c : C.div}`, borderRadius: 0,
+            fontFamily: MN, fontSize: 9, cursor: 'pointer', background: filterPersona === p.id ? `${p.c}20` : C.nacre, color: filterPersona === p.id ? p.c : C.t3,
           }}>{p.n}</button>
         ))}
       </div>
@@ -66,16 +66,16 @@ export default function ContactsView() {
                 const persona = P_LIST.find(p => p.id === ct.persona);
                 return (
                   <tr key={ct.id}
-                    onMouseEnter={e => (e.currentTarget.style.background = C.parchment)}
+                    onMouseEnter={e => (e.currentTarget.style.background = C.nacre3)}
                     onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
-                    <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 12 }}>{ct.name}</td>
+                    <td style={{ ...tdS, fontFamily: GR, fontWeight: 400, fontSize: 12 }}>{ct.name}</td>
                     <td style={tdS}>{ct.role}</td>
                     <td style={tdS}><Pill label={persona?.n || ct.persona} color={persona?.c || C.t3} /></td>
                     <td style={tdS}>{(ct as unknown as Record<string, Record<string, string>>).acq_companies?.name ?? '—'}</td>
                     <td style={tdS}>
                       {ct.linkedin ? <a href={ct.linkedin} target="_blank" rel="noreferrer" style={{ color: C.sapphire, fontFamily: MN, fontSize: 9 }}>Profil</a> : '—'}
                     </td>
-                    <td style={tdS}><Pill label={ct.priority} color={ct.priority === 'P0' ? C.ruby : ct.priority === 'P1' ? C.gold : C.t3} /></td>
+                    <td style={tdS}><Pill label={ct.priority} color={ct.priority === 'P0' ? C.ruby : ct.priority === 'P1' ? C.accent : C.t3} /></td>
                     <td style={{ ...tdS, fontSize: 10, color: C.t2 }}>{ct.next_action || '—'}</td>
                   </tr>
                 );

@@ -34,7 +34,7 @@ export function BridgeLinks({ bridges, title = 'Ponts Inter-Entites' }: BridgeLi
           return (
             <div
               key={i}
-              className="group bg-[#1C1814] border border-div rounded-lg p-4 hover:border-opacity-40 transition-all duration-300"
+              className="group bg-[#1E0A20] border border-div rounded-none-none p-4 hover:border-opacity-40 transition-all duration-300"
               style={{ borderColor: `${b.color}30` }}
             >
               <div className="flex items-center gap-2 mb-2">
@@ -57,7 +57,7 @@ export function BridgeLinks({ bridges, title = 'Ponts Inter-Entites' }: BridgeLi
                   {b.txCodes.map((code) => (
                     <span
                       key={code}
-                      className="font-[family-name:var(--font-jetbrains)] text-[6px] px-1.5 py-0.5 rounded bg-[#2A2520] text-t3"
+                      className="font-[family-name:var(--font-jetbrains)] text-[6px] px-1.5 py-0.5 rounded-none bg-[#2A2520] text-t3"
                     >
                       {code}
                     </span>
@@ -65,7 +65,7 @@ export function BridgeLinks({ bridges, title = 'Ponts Inter-Entites' }: BridgeLi
                 </div>
               )}
               <button
-                className="font-[family-name:var(--font-jetbrains)] text-[7px] uppercase tracking-[1.5px] px-3 py-1.5 rounded border transition-all duration-300 group-hover:opacity-100 opacity-70"
+                className="font-[family-name:var(--font-jetbrains)] text-[7px] uppercase tracking-[1.5px] px-3 py-1.5 rounded-none border transition-all duration-300 group-hover:opacity-100 opacity-70"
                 style={{
                   borderColor: `${b.color}40`,
                   color: b.color,

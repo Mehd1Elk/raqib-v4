@@ -22,14 +22,14 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
   }, [artifactName]);
 
   if (loading) return (
-    <div style={{ height, background: '#F7F3EA', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      <span style={{ color: '#B8963E', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Chargement de l&apos;interface...</span>
+    <div style={{ height, background: '#F5F2F8', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#1E0A20', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Chargement de l&apos;interface...</span>
     </div>
   );
 
   if (!content) return (
-    <div style={{ height: 200, background: '#F7F3EA', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #D4CCBA' }}>
-      <span style={{ color: '#918977', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Interface non trouvée : {artifactName}</span>
+    <div style={{ height: 200, background: '#F5F2F8', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(30,10,32,0.35)' }}>
+      <span style={{ color: 'rgba(30,10,32,0.60)', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>Interface non trouvée : {artifactName}</span>
     </div>
   );
 
@@ -44,7 +44,7 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
   <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.15.0/Recharts.min.js"><\/script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#F7F3EA}*{box-sizing:border-box}</style>
+  <style>body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#F5F2F8}*{box-sizing:border-box}</style>
 </head><body>
   <div id="root"></div>
   <script type="text/babel">${content}<\/script>
@@ -55,10 +55,10 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
       position: fullscreen ? 'fixed' : 'relative',
       inset: fullscreen ? 0 : 'auto',
       zIndex: fullscreen ? 9999 : 'auto',
-      background: '#F7F3EA',
+      background: '#F5F2F8',
       borderRadius: fullscreen ? 0 : 8,
       overflow: 'hidden',
-      border: fullscreen ? 'none' : '1px solid #D4CCBA',
+      border: fullscreen ? 'none' : '1px solid rgba(30,10,32,0.35)',
     }}>
       {/* Toolbar */}
       <div style={{
@@ -66,10 +66,10 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
         justifyContent: 'space-between',
         alignItems: 'center',
         padding: '8px 16px',
-        background: '#FDFAF3',
-        borderBottom: '1px solid #D4CCBA',
+        background: '#FAF8FC',
+        borderBottom: '1px solid rgba(30,10,32,0.35)',
       }}>
-        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: '#918977', letterSpacing: '0.5px' }}>
+        <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, color: 'rgba(30,10,32,0.60)', letterSpacing: '0.5px' }}>
           {artifactName}
         </span>
         <div style={{ display: 'flex', gap: 8 }}>
@@ -79,9 +79,9 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
             style={{
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: 9,
-              color: '#B8963E',
+              color: '#1E0A20',
               background: 'none',
-              border: '1px solid #B8963E',
+              border: '1px solid #1E0A20',
               borderRadius: 3,
               padding: '2px 8px',
               cursor: 'pointer',
@@ -96,9 +96,9 @@ export function ArtifactViewer({ artifactName, height = 700 }: ArtifactViewerPro
             style={{
               fontFamily: 'JetBrains Mono, monospace',
               fontSize: 9,
-              color: '#918977',
+              color: 'rgba(30,10,32,0.60)',
               background: 'none',
-              border: '1px solid #918977',
+              border: '1px solid rgba(30,10,32,0.60)',
               borderRadius: 3,
               padding: '2px 8px',
               cursor: 'pointer',

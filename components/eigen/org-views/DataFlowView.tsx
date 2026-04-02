@@ -64,7 +64,7 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
     const nodeH = (count: number) => Math.max(40, (count / l1Count) * maxHeight);
 
     const nodes: FlowNode[] = [
-      { id: 'l1', name: `L1 Production (${l1Count})`, value: l1Count, color: '#B8963E', x: positions[0], y: height * 0.15, w: layerW, h: nodeH(l1Count) },
+      { id: 'l1', name: `L1 Production (${l1Count})`, value: l1Count, color: '#1E0A20', x: positions[0], y: height * 0.15, w: layerW, h: nodeH(l1Count) },
       { id: 'l15', name: `L1.5 Verification (${l15Count})`, value: l15Count, color: '#9C3D3D', x: positions[1], y: height * 0.2, w: layerW, h: nodeH(l15Count) },
       { id: 'l2', name: `L2 Supervision (${l2Count})`, value: l2Count, color: '#3D5E8C', x: positions[2], y: height * 0.35, w: layerW, h: nodeH(l2Count) },
       { id: 'l3', name: `L3 Reporting (${l3Count})`, value: l3Count, color: '#3D7C5E', x: positions[3], y: height * 0.38, w: layerW, h: nodeH(l3Count) },
@@ -72,7 +72,7 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
     ];
 
     const links: FlowLink[] = [
-      { source: 'l1', target: 'l15', value: 2000, label: '~2000 livrables/jour', color: '#B8963E' },
+      { source: 'l1', target: 'l15', value: 2000, label: '~2000 livrables/jour', color: '#1E0A20' },
       { source: 'l15', target: 'l1', value: 200, label: '~200 rejets/jour', color: '#9C3D3D' },
       { source: 'l15', target: 'l2', value: 200, label: '~200 escalades/jour', color: '#9C3D3D' },
       { source: 'l2', target: 'l3', value: 50, label: '~50 validations critiques', color: '#3D5E8C' },
@@ -171,9 +171,9 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
       ng.append('text')
         .attr('x', node.w / 2).attr('y', node.h / 2 - 4)
         .attr('text-anchor', 'middle')
-        .attr('font-family', 'Cormorant Garamond')
+        .attr('font-family', 'Playfair Display')
         .attr('font-size', 12).attr('font-weight', 700).attr('font-style', 'italic')
-        .attr('fill', '#1C1814')
+        .attr('fill', '#1E0A20')
         .text(node.name.split('(')[0].trim());
 
       // Count
@@ -181,16 +181,16 @@ export default function DataFlowView({ agents, width, height }: DataFlowViewProp
         .attr('x', node.w / 2).attr('y', node.h / 2 + 12)
         .attr('text-anchor', 'middle')
         .attr('font-family', 'JetBrains Mono')
-        .attr('font-size', 9).attr('fill', '#918977')
+        .attr('font-size', 9).attr('fill', 'rgba(30,10,32,0.60)')
         .text(`${node.value} agents`);
     });
 
     // Tooltip
     const tooltip = g.append('g').attr('class', 'tooltip').style('display', 'none');
     const tooltipRect = tooltip.append('rect')
-      .attr('rx', 4).attr('fill', '#1C1814').attr('fill-opacity', 0.9);
+      .attr('rx', 4).attr('fill', '#1E0A20').attr('fill-opacity', 0.9);
     const tooltipText = tooltip.append('text')
-      .attr('fill', '#FDFAF3').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
+      .attr('fill', '#FAF8FC').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
       .attr('text-anchor', 'middle');
 
     return () => {};

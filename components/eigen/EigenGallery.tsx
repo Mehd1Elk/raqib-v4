@@ -92,33 +92,33 @@ function UploadModal({ file, onClose, onConfirm }: { file: File; onClose: () => 
 
   return (
     <div className="fixed inset-0 z-50 bg-black/30 flex items-center justify-center p-4" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="bg-[#FDFAF3] rounded-lg w-[480px] max-h-[80vh] overflow-auto shadow-xl">
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(60,52,40,0.10)]">
+      <div className="bg-[#FAF8FC] rounded-none-none w-[480px] max-h-[80vh] overflow-auto shadow-xl">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(30,10,32,0.08)]">
           <span className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic">Ajouter à la galerie</span>
-          <button onClick={onClose}><X size={16} className="text-[#918977]" /></button>
+          <button onClick={onClose}><X size={16} className="text-[rgba(30,10,32,0.60)]" /></button>
         </div>
         <div className="p-5 space-y-4">
-          <div className="flex items-center gap-3 p-3 bg-[#F7F3EA] rounded-lg">
-            <FileText size={20} className="text-[#B8963E]" />
+          <div className="flex items-center gap-3 p-3 bg-[#F5F2F8] rounded-none-none">
+            <FileText size={20} className="text-[#1E0A20]" />
             <div>
-              <div className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#1C1814]">{file.name}</div>
-              <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{(file.size / 1024).toFixed(1)} KB</div>
+              <div className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#1E0A20]">{file.name}</div>
+              <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{(file.size / 1024).toFixed(1)} KB</div>
             </div>
           </div>
           <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Titre"
-            className="w-full font-[family-name:var(--font-cormorant)] text-[14px] italic border-b border-[#D4CCBA] pb-1 bg-transparent focus:border-[#B8963E] outline-none" />
+            className="w-full font-[family-name:var(--font-cormorant)] text-[14px] italic border-b border-[rgba(30,10,32,0.35)] pb-1 bg-transparent focus:border-[#1E0A20] outline-none" />
           <select value={category} onChange={e => setCategory(e.target.value)}
-            className="w-full font-[family-name:var(--font-jetbrains)] text-[10px] text-[#918977] border border-[#D4CCBA] rounded px-2 py-1.5 bg-transparent focus:border-[#B8963E] outline-none">
+            className="w-full font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(30,10,32,0.60)] border border-[rgba(30,10,32,0.35)] rounded-none px-2 py-1.5 bg-transparent focus:border-[#1E0A20] outline-none">
             <option value="">Catégorie...</option>
             {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
           <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Description..."
-            className="w-full font-[family-name:var(--font-noto)] text-[11px] border border-[#D4CCBA] rounded px-2 py-1.5 bg-transparent h-16 resize-none focus:border-[#B8963E] outline-none" />
+            className="w-full font-[family-name:var(--font-noto)] text-[11px] border border-[rgba(30,10,32,0.35)] rounded-none px-2 py-1.5 bg-transparent h-16 resize-none focus:border-[#1E0A20] outline-none" />
         </div>
-        <div className="flex justify-end gap-2 px-5 py-3 border-t border-[rgba(60,52,40,0.10)]">
-          <button onClick={onClose} className="px-4 py-2 font-[family-name:var(--font-jetbrains)] text-[10px] text-[#918977]">Annuler</button>
+        <div className="flex justify-end gap-2 px-5 py-3 border-t border-[rgba(30,10,32,0.08)]">
+          <button onClick={onClose} className="px-4 py-2 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(30,10,32,0.60)]">Annuler</button>
           <button onClick={() => onConfirm({ title, category, description })}
-            className="px-4 py-2 bg-[#B8963E] text-white font-[family-name:var(--font-jetbrains)] text-[10px] rounded hover:bg-[#9A7B32] transition">
+            className="px-4 py-2 bg-[#1E0A20] text-white font-[family-name:var(--font-jetbrains)] text-[10px] rounded-none hover:bg-[#9A7B32] transition">
             Ajouter
           </button>
         </div>
@@ -136,26 +136,26 @@ function EditModal({ item, onClose, onSave }: { item: GalleryItem; onClose: () =
 
   return (
     <div className="fixed inset-0 z-50 bg-black/30 flex items-center justify-center p-4" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="bg-[#FDFAF3] rounded-lg w-[480px] max-h-[80vh] overflow-auto shadow-xl">
-        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(60,52,40,0.10)]">
+      <div className="bg-[#FAF8FC] rounded-none-none w-[480px] max-h-[80vh] overflow-auto shadow-xl">
+        <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(30,10,32,0.08)]">
           <span className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic">Modifier le document</span>
-          <button onClick={onClose}><X size={16} className="text-[#918977]" /></button>
+          <button onClick={onClose}><X size={16} className="text-[rgba(30,10,32,0.60)]" /></button>
         </div>
         <div className="p-5 space-y-4">
           <input value={title} onChange={e => setTitle(e.target.value)} placeholder="Titre"
-            className="w-full font-[family-name:var(--font-cormorant)] text-[14px] italic border-b border-[#D4CCBA] pb-1 bg-transparent focus:border-[#B8963E] outline-none" />
+            className="w-full font-[family-name:var(--font-cormorant)] text-[14px] italic border-b border-[rgba(30,10,32,0.35)] pb-1 bg-transparent focus:border-[#1E0A20] outline-none" />
           <select value={category} onChange={e => setCategory(e.target.value)}
-            className="w-full font-[family-name:var(--font-jetbrains)] text-[10px] text-[#918977] border border-[#D4CCBA] rounded px-2 py-1.5 bg-transparent focus:border-[#B8963E] outline-none">
+            className="w-full font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(30,10,32,0.60)] border border-[rgba(30,10,32,0.35)] rounded-none px-2 py-1.5 bg-transparent focus:border-[#1E0A20] outline-none">
             <option value="">Catégorie...</option>
             {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
           <textarea value={description} onChange={e => setDescription(e.target.value)} placeholder="Description..."
-            className="w-full font-[family-name:var(--font-noto)] text-[11px] border border-[#D4CCBA] rounded px-2 py-1.5 bg-transparent h-16 resize-none focus:border-[#B8963E] outline-none" />
+            className="w-full font-[family-name:var(--font-noto)] text-[11px] border border-[rgba(30,10,32,0.35)] rounded-none px-2 py-1.5 bg-transparent h-16 resize-none focus:border-[#1E0A20] outline-none" />
         </div>
-        <div className="flex justify-end gap-2 px-5 py-3 border-t border-[rgba(60,52,40,0.10)]">
-          <button onClick={onClose} className="px-4 py-2 font-[family-name:var(--font-jetbrains)] text-[10px] text-[#918977]">Annuler</button>
+        <div className="flex justify-end gap-2 px-5 py-3 border-t border-[rgba(30,10,32,0.08)]">
+          <button onClick={onClose} className="px-4 py-2 font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(30,10,32,0.60)]">Annuler</button>
           <button onClick={() => onSave({ title, category, description })}
-            className="px-4 py-2 bg-[#B8963E] text-white font-[family-name:var(--font-jetbrains)] text-[10px] rounded hover:bg-[#9A7B32] transition">
+            className="px-4 py-2 bg-[#1E0A20] text-white font-[family-name:var(--font-jetbrains)] text-[10px] rounded-none hover:bg-[#9A7B32] transition">
             Enregistrer
           </button>
         </div>
@@ -170,16 +170,16 @@ function CardContextMenu({ onEdit, onDuplicate, onDelete }: { onEdit: () => void
   const [open, setOpen] = useState(false);
   return (
     <div className="relative">
-      <button onClick={e => { e.stopPropagation(); setOpen(!open); }} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)]">
-        <MoreVertical size={14} className="text-[#918977]" />
+      <button onClick={e => { e.stopPropagation(); setOpen(!open); }} className="p-1 rounded-none hover:bg-[rgba(30,10,32,0.04)]">
+        <MoreVertical size={14} className="text-[rgba(30,10,32,0.60)]" />
       </button>
       {open && (
         <>
           <div className="fixed inset-0 z-20" onClick={() => setOpen(false)} />
-          <div className="absolute right-0 top-full mt-1 w-[160px] bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded-lg shadow-lg z-30 py-1">
-            <button onClick={e => { e.stopPropagation(); onEdit(); setOpen(false); }} className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[10px] text-[#6B5E4C]"><Pencil size={11} /> Modifier</button>
-            <button onClick={e => { e.stopPropagation(); onDuplicate(); setOpen(false); }} className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-noto)] text-[10px] text-[#6B5E4C]"><Copy size={11} /> Dupliquer</button>
-            <div className="border-t border-[rgba(60,52,40,0.10)] my-1" />
+          <div className="absolute right-0 top-full mt-1 w-[160px] bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none-none shadow-lg z-30 py-1">
+            <button onClick={e => { e.stopPropagation(); onEdit(); setOpen(false); }} className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[rgba(30,10,32,0.04)] font-[family-name:var(--font-noto)] text-[10px] text-[rgba(30,10,32,0.60)]"><Pencil size={11} /> Modifier</button>
+            <button onClick={e => { e.stopPropagation(); onDuplicate(); setOpen(false); }} className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[rgba(30,10,32,0.04)] font-[family-name:var(--font-noto)] text-[10px] text-[rgba(30,10,32,0.60)]"><Copy size={11} /> Dupliquer</button>
+            <div className="border-t border-[rgba(30,10,32,0.08)] my-1" />
             <button onClick={e => { e.stopPropagation(); onDelete(); setOpen(false); }} className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[rgba(156,61,61,0.05)] text-[#9C3D3D] font-[family-name:var(--font-noto)] text-[10px]"><Trash2 size={11} /> Supprimer</button>
           </div>
         </>
@@ -192,15 +192,15 @@ function CardContextMenu({ onEdit, onDuplicate, onDelete }: { onEdit: () => void
 
 function VersionHistory({ files }: { files: string[] }) {
   return (
-    <div className="mt-3 pt-3 border-t border-[rgba(60,52,40,0.10)]">
-      <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] tracking-wider mb-2">HISTORIQUE DES VERSIONS</div>
+    <div className="mt-3 pt-3 border-t border-[rgba(30,10,32,0.08)]">
+      <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] tracking-wider mb-2">HISTORIQUE DES VERSIONS</div>
       {files.map((filename, i) => (
         <div key={filename} className="flex items-center justify-between py-1.5">
           <div className="flex items-center gap-2">
-            <span className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold text-[#B8963E]">V{files.length - i}</span>
-            <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1C1814]">{filename}</span>
+            <span className="font-[family-name:var(--font-jetbrains)] text-[9px] font-bold text-[#1E0A20]">V{files.length - i}</span>
+            <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1E0A20]">{filename}</span>
           </div>
-          <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{i === 0 ? 'Actuelle' : 'Archivée'}</span>
+          <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{i === 0 ? 'Actuelle' : 'Archivée'}</span>
         </div>
       ))}
     </div>
@@ -214,7 +214,7 @@ function ArtifactThumbnail({ item }: { item: GalleryItem }) {
 
   if ((item.type === 'jsx' || item.type === 'html') && item.filename) {
     return (
-      <div className="w-full h-[140px] overflow-hidden bg-[#F7F3EA] relative">
+      <div className="w-full h-[140px] overflow-hidden bg-[#F5F2F8] relative">
         <iframe
           src={`/artifacts/${item.filename}`}
           sandbox="allow-scripts"
@@ -223,7 +223,7 @@ function ArtifactThumbnail({ item }: { item: GalleryItem }) {
           title={item.title}
           loading="lazy"
         />
-        <div className={`absolute top-2 right-2 px-2 py-0.5 ${style.bg} ${style.text} font-[family-name:var(--font-jetbrains)] text-[7px] rounded border ${style.border}`}>
+        <div className={`absolute top-2 right-2 px-2 py-0.5 ${style.bg} ${style.text} font-[family-name:var(--font-jetbrains)] text-[7px] rounded-none border ${style.border}`}>
           {item.type.toUpperCase()}
         </div>
       </div>
@@ -233,8 +233,8 @@ function ArtifactThumbnail({ item }: { item: GalleryItem }) {
   return (
     <div className={`w-full h-[140px] ${style.bg} flex flex-col items-center justify-center relative`}>
       <TypeIcon type={item.type} size={28} />
-      <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] mt-2">{item.type.toUpperCase()}</div>
-      <div className={`absolute top-2 right-2 px-2 py-0.5 ${style.bg} ${style.text} font-[family-name:var(--font-jetbrains)] text-[7px] rounded border ${style.border}`}>
+      <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] mt-2">{item.type.toUpperCase()}</div>
+      <div className={`absolute top-2 right-2 px-2 py-0.5 ${style.bg} ${style.text} font-[family-name:var(--font-jetbrains)] text-[7px] rounded-none border ${style.border}`}>
         {item.type.toUpperCase()}
       </div>
     </div>
@@ -330,46 +330,46 @@ export function EigenGallery() {
   const uniqueCategories = Array.from(new Set(items.map(i => i.category)));
 
   return (
-    <div className="flex flex-col h-full bg-[#FDFAF3]" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
+    <div className="flex flex-col h-full bg-[#FAF8FC]" onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop}>
       {/* Drag overlay */}
       {dragging && (
-        <div className="fixed inset-0 z-40 bg-[#B8963E10] border-2 border-dashed border-[#B8963E] flex items-center justify-center pointer-events-none">
-          <div className="bg-[#FDFAF3] px-8 py-4 rounded-lg shadow-lg">
-            <span className="font-[family-name:var(--font-jetbrains)] text-[12px] text-[#B8963E]">Déposer le fichier ici</span>
+        <div className="fixed inset-0 z-40 bg-[#1E0A2010] border-2 border-dashed border-[#1E0A20] flex items-center justify-center pointer-events-none">
+          <div className="bg-[#FAF8FC] px-8 py-4 rounded-none-none shadow-lg">
+            <span className="font-[family-name:var(--font-jetbrains)] text-[12px] text-[#1E0A20]">Déposer le fichier ici</span>
           </div>
         </div>
       )}
 
       {/* Top Bar */}
-      <div className="flex flex-wrap items-center justify-between px-6 py-3 border-b border-[#D4CCBA] bg-[#FDFAF3] gap-3 sticky top-0 z-10">
+      <div className="flex flex-wrap items-center justify-between px-6 py-3 border-b border-[rgba(30,10,32,0.35)] bg-[#FAF8FC] gap-3 sticky top-0 z-10">
         <div className="flex items-center gap-3 flex-1">
           {/* Upload button */}
           <button onClick={() => fileRef.current?.click()}
-            className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-[#B8963E] rounded text-[#B8963E] hover:bg-[rgba(184,150,62,0.05)] transition font-[family-name:var(--font-jetbrains)] text-[9px]">
+            className="flex items-center gap-1.5 px-3 py-1.5 border border-dashed border-[#1E0A20] rounded-none text-[#1E0A20] hover:bg-[rgba(184,150,62,0.05)] transition font-[family-name:var(--font-jetbrains)] text-[9px]">
             <Upload size={12} strokeWidth={1.5} />
             AJOUTER
           </button>
           <input ref={fileRef} type="file" hidden accept=".jsx,.html,.docx,.pdf,.png,.svg,.pptx"
             onChange={e => { if (e.target.files?.[0]) handleFileSelect(e.target.files[0]); e.target.value = ''; }} />
 
-          <a href="/vault" className="flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded font-[family-name:var(--font-jetbrains)] text-[9px] hover:bg-[#7B5EA7] hover:text-white transition">
+          <a href="/vault" className="flex items-center gap-1.5 px-3 py-1.5 border border-[#7B5EA7] text-[#7B5EA7] rounded-none font-[family-name:var(--font-jetbrains)] text-[9px] hover:bg-[#7B5EA7] hover:text-white transition">
             <Archive size={12} /> VAULT — 111
           </a>
 
           <div className="relative flex-1 max-w-[220px]">
-            <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#918977]" />
+            <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.60)]" />
             <input type="text" placeholder="Rechercher..." value={search} onChange={e => setSearch(e.target.value)}
-              className="w-full bg-[#F7F3EA] border border-[#D4CCBA] text-[10px] font-[family-name:var(--font-jetbrains)] pl-8 pr-2 py-1.5 outline-none rounded focus:border-[#B8963E] placeholder-[#918977]" />
+              className="w-full bg-[#F5F2F8] border border-[rgba(30,10,32,0.35)] text-[10px] font-[family-name:var(--font-jetbrains)] pl-8 pr-2 py-1.5 outline-none rounded-none focus:border-[#1E0A20] placeholder-[rgba(30,10,32,0.60)]" />
           </div>
 
           <select value={filterCat} onChange={e => setFilterCat(e.target.value)}
-            className="bg-[#F7F3EA] border border-[#D4CCBA] text-[#1C1814] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1.5 outline-none rounded">
+            className="bg-[#F5F2F8] border border-[rgba(30,10,32,0.35)] text-[#1E0A20] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1.5 outline-none rounded-none">
             <option value="ALL">Catégorie</option>
             {uniqueCategories.map(c => <option key={c} value={c}>{c}</option>)}
           </select>
 
           <select value={filterType} onChange={e => setFilterType(e.target.value)}
-            className="bg-[#F7F3EA] border border-[#D4CCBA] text-[#1C1814] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1.5 outline-none rounded">
+            className="bg-[#F5F2F8] border border-[rgba(30,10,32,0.35)] text-[#1E0A20] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1.5 outline-none rounded-none">
             <option value="ALL">Type</option>
             <option value="docx">DOCX</option>
             <option value="jsx">JSX</option>
@@ -378,14 +378,14 @@ export function EigenGallery() {
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977]">{filtered.length} doc{filtered.length > 1 ? 's' : ''}</span>
-          <div className="flex border border-[#D4CCBA] rounded overflow-hidden">
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)]">{filtered.length} doc{filtered.length > 1 ? 's' : ''}</span>
+          <div className="flex border border-[rgba(30,10,32,0.35)] rounded-none overflow-hidden">
             <button onClick={() => setViewMode('grid')}
-              className={`p-1.5 transition-colors ${viewMode === 'grid' ? 'bg-[#B8963E] text-white' : 'text-[#918977] hover:bg-[#F7F3EA]'}`}>
+              className={`p-1.5 transition-colors ${viewMode === 'grid' ? 'bg-[#1E0A20] text-white' : 'text-[rgba(30,10,32,0.60)] hover:bg-[#F5F2F8]'}`}>
               <LayoutGrid size={14} />
             </button>
             <button onClick={() => setViewMode('list')}
-              className={`p-1.5 transition-colors ${viewMode === 'list' ? 'bg-[#B8963E] text-white' : 'text-[#918977] hover:bg-[#F7F3EA]'}`}>
+              className={`p-1.5 transition-colors ${viewMode === 'list' ? 'bg-[#1E0A20] text-white' : 'text-[rgba(30,10,32,0.60)] hover:bg-[#F5F2F8]'}`}>
               <Rows3 size={14} />
             </button>
           </div>
@@ -400,27 +400,27 @@ export function EigenGallery() {
               const vg = getVersionGroup(item.filename);
               return (
                 <div key={item.id}
-                  className="bg-white border border-[#D4CCBA] rounded-lg overflow-hidden flex flex-col transition-all duration-200 hover:shadow-md hover:border-[#B8963E] group">
+                  className="bg-white border border-[rgba(30,10,32,0.35)] rounded-none-none overflow-hidden flex flex-col transition-all duration-200 hover:shadow-md hover:border-[#1E0A20] group">
                   <div className="cursor-pointer" onClick={() => handleCardClick(item)}>
                     <ArtifactThumbnail item={item} />
                   </div>
                   <div className="p-3">
                     <div className="flex items-start justify-between gap-1 mb-2">
-                      <h4 className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814] leading-snug cursor-pointer hover:text-[#B8963E] transition-colors flex-1"
+                      <h4 className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1E0A20] leading-snug cursor-pointer hover:text-[#1E0A20] transition-colors flex-1"
                         onClick={() => handleCardClick(item)}>
                         {item.title}
                       </h4>
                       <CardContextMenu onEdit={() => setEditItem(item)} onDuplicate={() => handleDuplicate(item)} onDelete={() => handleDelete(item)} />
                     </div>
                     <div className="flex items-center gap-2 flex-wrap mb-2">
-                      <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[#F2EFE8] text-[#918977] rounded">{item.category}</span>
+                      <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-1.5 py-0.5 bg-[#F2EFE8] text-[rgba(30,10,32,0.60)] rounded-none">{item.category}</span>
                       {vg && (
-                        <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded">
+                        <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded-none">
                           V{vg.files.length} · {vg.files.length} versions
                         </span>
                       )}
                     </div>
-                    <div className="flex items-center justify-between text-[#918977] text-[8px] font-[family-name:var(--font-jetbrains)]">
+                    <div className="flex items-center justify-between text-[rgba(30,10,32,0.60)] text-[8px] font-[family-name:var(--font-jetbrains)]">
                       <span>{item.date}</span>
                       <span>{item.size}</span>
                     </div>
@@ -437,20 +437,20 @@ export function EigenGallery() {
               return (
                 <div key={item.id}
                   onClick={() => handleCardClick(item)}
-                  className="flex items-center gap-4 px-4 py-3 bg-white border border-[#D4CCBA] rounded-lg hover:border-[#B8963E] transition cursor-pointer">
-                  <div className={`w-8 h-8 rounded flex items-center justify-center ${style.bg} ${style.text}`}>
+                  className="flex items-center gap-4 px-4 py-3 bg-white border border-[rgba(30,10,32,0.35)] rounded-none-none hover:border-[#1E0A20] transition cursor-pointer">
+                  <div className={`w-8 h-8 rounded-none flex items-center justify-center ${style.bg} ${style.text}`}>
                     <TypeIcon type={item.type} size={16} />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814] truncate">{item.title}</span>
-                      {vg && <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded shrink-0">V{vg.files.length}</span>}
+                      <span className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1E0A20] truncate">{item.title}</span>
+                      {vg && <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded-none shrink-0">V{vg.files.length}</span>}
                     </div>
-                    <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{item.category}</div>
+                    <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{item.category}</div>
                   </div>
-                  <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{item.date}</div>
-                  <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{item.size}</div>
-                  <span className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded border ${style.bg} ${style.text} ${style.border}`}>
+                  <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{item.date}</div>
+                  <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{item.size}</div>
+                  <span className={`font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none border ${style.bg} ${style.text} ${style.border}`}>
                     {item.type.toUpperCase()}
                   </span>
                   <div onClick={e => e.stopPropagation()}>
@@ -462,7 +462,7 @@ export function EigenGallery() {
           </div>
         )}
         {filtered.length === 0 && (
-          <div className="py-12 text-center text-[#918977] text-[11px] font-[family-name:var(--font-noto)]">Aucun document trouvé.</div>
+          <div className="py-12 text-center text-[rgba(30,10,32,0.60)] text-[11px] font-[family-name:var(--font-noto)]">Aucun document trouvé.</div>
         )}
       </div>
 
@@ -479,36 +479,36 @@ export function EigenGallery() {
       {/* Fullscreen Viewer */}
       {viewer && (viewer.type === 'jsx' || viewer.type === 'html') && (
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8" onClick={() => setViewer(null)}>
-          <div className="bg-[#FDFAF3] rounded-lg w-full max-w-[900px] h-[80vh] flex flex-col overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between px-5 py-3 border-b border-[#D4CCBA]">
+          <div className="bg-[#FAF8FC] rounded-none-none w-full max-w-[900px] h-[80vh] flex flex-col overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(30,10,32,0.35)]">
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-[#1C1814]">{viewer.title}</h3>
-                  {(() => { const vg = getVersionGroup(viewer.filename); return vg ? <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded">V{vg.files.length}</span> : null; })()}
+                  <h3 className="font-[family-name:var(--font-cormorant)] text-[16px] font-bold italic text-[#1E0A20]">{viewer.title}</h3>
+                  {(() => { const vg = getVersionGroup(viewer.filename); return vg ? <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 bg-[#3D5E8C15] text-[#3D5E8C] rounded-none">V{vg.files.length}</span> : null; })()}
                 </div>
-                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{viewer.category} · {viewer.date} · {viewer.size}</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{viewer.category} · {viewer.date} · {viewer.size}</div>
               </div>
               <div className="flex items-center gap-2">
                 <button onClick={() => window.open(`/artifacts/${viewer.filename}`, '_blank')}
-                  className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] hover:text-[#B8963E] px-2 py-1 border border-[#D4CCBA] rounded transition-colors">
+                  className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] px-2 py-1 border border-[rgba(30,10,32,0.35)] rounded-none transition-colors">
                   OUVRIR SÉPARÉMENT
                 </button>
-                <button onClick={() => setViewer(null)} className="p-1 hover:bg-[#F2EFE8] rounded text-[#918977]">
+                <button onClick={() => setViewer(null)} className="p-1 hover:bg-[#F2EFE8] rounded-none text-[rgba(30,10,32,0.60)]">
                   <X size={16} />
                 </button>
               </div>
             </div>
-            <div className="flex-1 overflow-auto bg-[#F7F3EA]">
+            <div className="flex-1 overflow-auto bg-[#F5F2F8]">
               {viewer.filename ? (
                 <ArtifactViewer artifactName={viewer.filename} height={typeof window !== 'undefined' ? window.innerHeight * 0.65 : 500} />
               ) : (
-                <div className="flex items-center justify-center h-full text-[#918977] font-[family-name:var(--font-jetbrains)] text-[11px]">
+                <div className="flex items-center justify-center h-full text-[rgba(30,10,32,0.60)] font-[family-name:var(--font-jetbrains)] text-[11px]">
                   Aperçu non disponible pour ce type de document
                 </div>
               )}
             </div>
             {/* Version History in viewer */}
-            {(() => { const vg = getVersionGroup(viewer.filename); return vg ? <div className="px-5 py-3 border-t border-[#D4CCBA]"><VersionHistory files={vg.files} /></div> : null; })()}
+            {(() => { const vg = getVersionGroup(viewer.filename); return vg ? <div className="px-5 py-3 border-t border-[rgba(30,10,32,0.35)]"><VersionHistory files={vg.files} /></div> : null; })()}
           </div>
         </div>
       )}

@@ -28,7 +28,7 @@ export function MCPRegistryPanel() {
 
   return (
     <div
-      className="bg-[#FDFAF3] border border-[#D4CCBA] p-4"
+      className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] p-4"
       style={{ fontFamily: 'var(--font-noto)' }}
     >
       {/* Header */}
@@ -37,7 +37,7 @@ export function MCPRegistryPanel() {
           style={{
             fontFamily: 'var(--font-jetbrains)',
             fontSize: 9,
-            color: '#918977',
+            color: 'rgba(30,10,32,0.60)',
             letterSpacing: '2px',
             textTransform: 'uppercase',
           }}
@@ -49,8 +49,8 @@ export function MCPRegistryPanel() {
             style={{
               fontFamily: 'var(--font-jetbrains)',
               fontSize: 8,
-              color: data.source === 'openclaw' ? '#3D7C5E' : '#918977',
-              border: `1px solid ${data.source === 'openclaw' ? '#3D7C5E' : '#918977'}`,
+              color: data.source === 'openclaw' ? '#3D7C5E' : 'rgba(30,10,32,0.60)',
+              border: `1px solid ${data.source === 'openclaw' ? '#3D7C5E' : 'rgba(30,10,32,0.60)'}`,
               padding: '1px 5px',
               letterSpacing: '1px',
             }}
@@ -64,7 +64,7 @@ export function MCPRegistryPanel() {
       {loading && (
         <div className="flex flex-col gap-2">
           {[0, 1, 2, 3].map(i => (
-            <div key={i} className="bg-[#F2EFE8] animate-pulse h-4 rounded-none" />
+            <div key={i} className="bg-[#F2EFE8] animate-pulse h-4 rounded-none-none" />
           ))}
         </div>
       )}
@@ -84,14 +84,14 @@ export function MCPRegistryPanel() {
                   flexShrink: 0,
                 }}
               />
-              <span style={{ fontSize: 12, color: '#1C1814', flexShrink: 0 }}>
+              <span style={{ fontSize: 12, color: '#1E0A20', flexShrink: 0 }}>
                 {server.name}
               </span>
               <span
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
                   fontSize: 9,
-                  color: '#918977',
+                  color: 'rgba(30,10,32,0.60)',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap',
@@ -105,7 +105,7 @@ export function MCPRegistryPanel() {
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
                   fontSize: 8,
-                  color: '#B8963E',
+                  color: '#1E0A20',
                   marginLeft: 'auto',
                   flexShrink: 0,
                   whiteSpace: 'nowrap',
@@ -124,7 +124,7 @@ export function MCPRegistryPanel() {
           style={{
             fontFamily: 'var(--font-jetbrains)',
             fontSize: 9,
-            color: '#918977',
+            color: 'rgba(30,10,32,0.60)',
             padding: '8px 0',
           }}
         >

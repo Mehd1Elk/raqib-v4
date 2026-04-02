@@ -1,11 +1,11 @@
 import React from 'react';
 
 function getHeatColor(activity: number): string {
-  if (activity === 0) return '#F7F3EA';
-  if (activity <= 2) return '#B8963E20';
-  if (activity <= 5) return '#B8963E50';
-  if (activity <= 8) return '#B8963E80';
-  return '#B8963E';
+  if (activity === 0) return '#F5F2F8';
+  if (activity <= 2) return '#1E0A2020';
+  if (activity <= 5) return '#1E0A2050';
+  if (activity <= 8) return '#1E0A2080';
+  return '#1E0A20';
 }
 
 function getActivityForDay(agentId: string, date: Date): number {
@@ -29,7 +29,7 @@ export function ActivityHeatmap({ agentId }: { agentId: string }) {
       {days.map((day, i) => (
         <div
           key={i}
-          className="w-3 h-3 rounded-sm transition-colors cursor-help hover:ring-1 hover:ring-[#B8963E]"
+          className="w-3 h-3 rounded-none-sm transition-colors cursor-help hover:ring-1 hover:ring-[#1E0A20]"
           style={{ backgroundColor: getHeatColor(day.activity) }}
           title={`${day.date.toLocaleDateString('fr-FR')} — ${day.activity} actions`}
         />

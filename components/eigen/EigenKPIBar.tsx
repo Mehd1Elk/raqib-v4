@@ -18,7 +18,7 @@ export function EigenKPIBar({
   onClick?: () => void;
 }) {
   const colorMap = {
-    gold: '#B8963E',
+    gold: '#1E0A20',
     emerald: '#3D7C5E',
     red: '#C64F4F',
   };
@@ -26,7 +26,7 @@ export function EigenKPIBar({
   const trendColorMap = {
     up: '#3D7C5E',
     down: '#C64F4F',
-    neutral: '#918977',
+    neutral: 'rgba(30,10,32,0.60)',
   };
 
   const trendIconMap = {
@@ -40,7 +40,7 @@ export function EigenKPIBar({
   return (
     <div
       onClick={onClick}
-      className={`h-[80px] flex-1 bg-[#FDFAF3] border border-[#D4CCBA] flex flex-col justify-center px-4 relative overflow-hidden transition-all duration-200 ${
+      className={`h-[80px] flex-1 bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] flex flex-col justify-center px-4 relative overflow-hidden transition-all duration-200 ${
         onClick ? 'cursor-pointer hover:bg-[#F2EFE8] hover:shadow-sm hover:-translate-y-[1px]' : ''
       }`}
       style={{ borderLeft: `3px solid ${borderColor}` }}
@@ -53,7 +53,7 @@ export function EigenKPIBar({
       </div>
       
       <div className="flex items-center justify-between">
-        <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">
+        <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] uppercase tracking-wider">
           {label}
         </span>
         

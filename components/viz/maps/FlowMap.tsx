@@ -21,7 +21,7 @@ interface FlowMapProps extends BaseMapProps {
   legendLabel?: string;
 }
 
-const FLOW_COLOR = '#B8963E';
+const FLOW_COLOR = '#1E0A20';
 const DOT_COLOR = '#162B20';
 
 function arcBetween(from: [number, number], to: [number, number], steps = 40): LatLngExpression[] {
@@ -89,7 +89,7 @@ export function FlowMap({
   const hoveredFlow = flows.find((f) => f.id === hoveredId);
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[10, -5]}
         zoom={2.8}
@@ -144,7 +144,7 @@ export function FlowMap({
 
       {/* Tooltip */}
       {hoveredFlow && (
-        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-md px-3 py-2 shadow-md">
+        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-none-none px-3 py-2 shadow-md">
           <p className="text-xs font-semibold text-t1">
             {hoveredFlow.from.name} &rarr; {hoveredFlow.to.name}
           </p>
@@ -155,7 +155,7 @@ export function FlowMap({
       )}
 
       {/* Legend */}
-      <div className="absolute bottom-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-2">
+      <div className="absolute bottom-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-3 py-2">
         <p className="text-[10px] text-t3 mb-1 font-[family-name:var(--font-jetbrains)]">Flux</p>
         <div className="flex items-center gap-2 text-[9px] text-t3 font-[family-name:var(--font-jetbrains)]">
           <div className="flex items-center gap-1">
@@ -163,14 +163,14 @@ export function FlowMap({
             <span>Faible</span>
           </div>
           <div className="flex items-center gap-1">
-            <div className="w-6 h-[4px] rounded-sm" style={{ background: FLOW_COLOR }} />
+            <div className="w-6 h-[4px] rounded-none-sm" style={{ background: FLOW_COLOR }} />
             <span>Fort</span>
           </div>
         </div>
       </div>
 
       {/* Counter */}
-      <div className="absolute top-3 right-3 z-[999] bg-ivory/90 backdrop-blur border border-div rounded-md px-2.5 py-1.5">
+      <div className="absolute top-3 right-3 z-[999] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-2.5 py-1.5">
         <span className="text-[10px] text-t3 font-[family-name:var(--font-jetbrains)]">
           {flows.length} flux
         </span>
@@ -178,7 +178,7 @@ export function FlowMap({
 
       {loading && (
         <div className="absolute inset-0 z-[1000] bg-ivory/50 flex items-center justify-center">
-          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-none-full animate-spin" />
         </div>
       )}
     </div>

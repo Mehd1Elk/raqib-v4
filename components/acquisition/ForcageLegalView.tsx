@@ -31,10 +31,10 @@ export default function ForcageLegalView() {
       <SectionTitle title="Forçage Légal" count={regs.length} />
       <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
         {regs.map(r => (
-          <div key={r.id} style={{ padding: '16px 20px', background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 3 }}>
+          <div key={r.id} style={{ padding: '16px 20px', background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-              <span style={{ fontFamily: GR, fontSize: 15, fontWeight: 700, fontStyle: 'italic', color: C.t1 }}>{r.name}</span>
-              <Pill label={r.status} color={r.status === 'En vigueur' ? C.emerald : r.status === 'Adopté' ? C.gold : C.yrknown} />
+              <span style={{ fontFamily: GR, fontSize: 15, fontWeight: 400, color: C.t1 }}>{r.name}</span>
+              <Pill label={r.status} color={r.status === 'En vigueur' ? C.emerald : r.status === 'Adopté' ? C.accent : C.yrknown} />
             </div>
             <div style={{ fontFamily: SN, fontSize: 11, color: C.t2, marginBottom: 8, lineHeight: 1.5 }}>{r.description}</div>
             <div style={{ display: 'flex', gap: 6, marginBottom: 8 }}>

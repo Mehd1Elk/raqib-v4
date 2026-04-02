@@ -75,7 +75,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
         <OrgViewSelector activeView={activeView} onViewChange={handleViewChange} />
 
         {/* Layer filters */}
-        <div className="flex items-center gap-0.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-lg p-1">
+        <div className="flex items-center gap-0.5 bg-[#F5F2F8] border border-[#E5E0D8] rounded-none-none p-1">
           {LAYERS.map(layer => {
             const isActive = layerFilters.size === 0 || layerFilters.has(layer);
             return (
@@ -83,10 +83,10 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
                 key={layer}
                 onClick={() => toggleLayer(layer)}
                 className={`
-                  px-2 py-1 text-[9px] font-mono font-bold uppercase rounded-md transition-all duration-150
+                  px-2 py-1 text-[9px] font-mono font-bold uppercase rounded-none-none transition-all duration-150
                   ${isActive
-                    ? 'bg-white text-[#1C1814] shadow-sm'
-                    : 'text-[#918977]/40 hover:text-[#918977]'
+                    ? 'bg-white text-[#1E0A20] shadow-sm'
+                    : 'text-[rgba(30,10,32,0.60)]/40 hover:text-[rgba(30,10,32,0.60)]'
                   }
                 `}
               >
@@ -106,13 +106,13 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
 
         {/* Search */}
         <div className="relative ml-auto">
-          <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-[#918977]" size={12} />
+          <Search className="absolute left-2 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.60)]" size={12} />
           <input
             type="text"
             placeholder="Chercher un agent..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="pl-7 pr-3 py-1.5 bg-[#F7F3EA] border border-[#E5E0D8] rounded-lg text-[10px] font-mono text-[#1C1814] placeholder:text-[#918977]/50 focus:outline-none focus:ring-1 focus:ring-[#B8963E] focus:border-[#B8963E] w-[160px] transition-all"
+            className="pl-7 pr-3 py-1.5 bg-[#F5F2F8] border border-[#E5E0D8] rounded-none-none text-[10px] font-mono text-[#1E0A20] placeholder:text-[rgba(30,10,32,0.60)]/50 focus:outline-none focus:ring-1 focus:ring-[#1E0A20] focus:border-[#1E0A20] w-[160px] transition-all"
           />
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               svg.call(d3.zoom().scaleBy as any, 1.3);
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none flex items-center justify-center hover:border-[#1E0A20] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] transition-colors"
         >
           +
         </button>
@@ -155,7 +155,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               svg.call(d3.zoom().scaleBy as any, 0.7);
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none flex items-center justify-center hover:border-[#1E0A20] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] transition-colors"
         >
           -
         </button>
@@ -172,7 +172,7 @@ export default function AgentOrgTree({ onSelectAgent }: { onSelectAgent?: (id: s
               );
             }
           }}
-          className="w-8 h-8 bg-[#FDFAF3] border border-[rgba(60,52,40,0.10)] rounded flex items-center justify-center hover:border-[#B8963E] text-[#918977] hover:text-[#B8963E] transition-colors"
+          className="w-8 h-8 bg-[#FAF8FC] border border-[rgba(30,10,32,0.08)] rounded-none flex items-center justify-center hover:border-[#1E0A20] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] transition-colors"
         >
           <Maximize2 size={12} />
         </button>

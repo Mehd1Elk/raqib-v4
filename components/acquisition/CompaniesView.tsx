@@ -40,14 +40,14 @@ export default function CompaniesView() {
           value={search}
           onChange={e => { setLoading(true); setSearch(e.target.value); }}
           style={{
-            padding: '6px 12px', border: `1px solid ${C.div}`, borderRadius: 2,
-            fontFamily: SN, fontSize: 11, color: C.t1, background: C.ivory, outline: 'none', width: 180,
+            padding: '6px 12px', border: `0.5px solid ${C.div}`, borderRadius: 0,
+            fontFamily: SN, fontSize: 11, color: C.t1, background: C.nacre, outline: 'none', width: 180,
           }}
         />
         <select
           value={filterSector}
           onChange={e => { setLoading(true); setFilterSector(e.target.value); }}
-          style={{ padding: '6px 8px', border: `1px solid ${C.div}`, borderRadius: 2, fontFamily: MN, fontSize: 9, color: C.t2, background: C.ivory }}
+          style={{ padding: '6px 8px', border: `0.5px solid ${C.div}`, borderRadius: 0, fontFamily: MN, fontSize: 9, color: C.t2, background: C.nacre }}
         >
           <option value="">Tous secteurs</option>
           {sectors.map(s => <option key={s} value={s}>{SECTORS[s]}</option>)}
@@ -55,10 +55,10 @@ export default function CompaniesView() {
         {PRIORITIES.map(p => (
           <button key={p} onClick={() => { setLoading(true); setFilterPriority(filterPriority === p ? '' : p); }}
             style={{
-              padding: '4px 10px', border: `1px solid ${filterPriority === p ? C.gold : C.div}`,
-              borderRadius: 2, fontFamily: MN, fontSize: 9, cursor: 'pointer',
-              background: filterPriority === p ? `${C.gold}20` : C.ivory,
-              color: filterPriority === p ? C.gold : C.t3,
+              padding: '4px 10px', border: `0.5px solid ${filterPriority === p ? C.accent : C.div}`,
+              borderRadius: 0, fontFamily: MN, fontSize: 9, cursor: 'pointer',
+              background: filterPriority === p ? `${C.accent}20` : C.nacre,
+              color: filterPriority === p ? C.accent : C.t3,
             }}>
             {p}
           </button>
@@ -89,10 +89,10 @@ export default function CompaniesView() {
             <tbody>
               {companies.map(c => (
                 <tr key={c.id} onClick={() => setSelected(selected?.id === c.id ? null : c)}
-                  style={{ cursor: 'pointer', background: selected?.id === c.id ? C.parchment : 'transparent', transition: 'background 0.1s' }}
-                  onMouseEnter={e => { if (selected?.id !== c.id) e.currentTarget.style.background = `${C.parchment}80`; }}
+                  style={{ cursor: 'pointer', background: selected?.id === c.id ? C.nacre3 : 'transparent', transition: 'background 0.1s' }}
+                  onMouseEnter={e => { if (selected?.id !== c.id) e.currentTarget.style.background = `${C.nacre3}80`; }}
                   onMouseLeave={e => { if (selected?.id !== c.id) e.currentTarget.style.background = 'transparent'; }}>
-                  <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 12, whiteSpace: 'nowrap' }}>{c.name}</td>
+                  <td style={{ ...tdS, fontFamily: GR, fontWeight: 400, fontSize: 12, whiteSpace: 'nowrap' }}>{c.name}</td>
                   <td style={tdS}>{c.hq}</td>
                   <td style={tdS}><Pill label={SECTORS[c.sector] || c.sector} /></td>
                   <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'right' }}>{c.revenue_b}</td>
@@ -104,8 +104,8 @@ export default function CompaniesView() {
                   ))}
                   <td style={{ ...tdS, fontFamily: MN, fontSize: 10, textAlign: 'center' }}>{c.corridor_countries?.length || 0}</td>
                   <td style={{ ...tdS, textAlign: 'center' }}><ScoreBadge score={c.eigen_score} /></td>
-                  <td style={tdS}><Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.gold : C.t3} /></td>
-                  <td style={tdS}><Pill label={c.pipeline_stage} color={c.pipeline_stage === 'signed' ? C.emerald : C.walnut} /></td>
+                  <td style={tdS}><Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.accent : C.t3} /></td>
+                  <td style={tdS}><Pill label={c.pipeline_stage} color={c.pipeline_stage === 'signed' ? C.emerald : C.t2} /></td>
                 </tr>
               ))}
             </tbody>
@@ -126,21 +126,21 @@ function CompanyDetail({ company: c }: { company: AcqCompany }) {
   const PERSONA_COLORS: Record<string, string> = { drh: C.drh, dpo: C.dpo, cto: C.cto, rse: C.rse, achats: C.achats, cfo: C.cfo };
 
   return (
-    <div style={{ marginTop: 24, padding: 20, background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 3 }}>
-      <div style={{ fontFamily: GR, fontSize: 20, fontWeight: 700, fontStyle: 'italic', color: C.t1, marginBottom: 12 }}>
+    <div style={{ marginTop: 24, padding: 20, background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0 }}>
+      <div style={{ fontFamily: GR, fontSize: 20, fontWeight: 400, color: C.t1, marginBottom: 12 }}>
         {c.name}
       </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 12, marginBottom: 16 }}>
         <div><span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>HQ</span><br /><span style={{ fontFamily: SN, fontSize: 12, color: C.t1 }}>{c.hq}</span></div>
         <div><span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>SECTEUR</span><br /><span style={{ fontFamily: SN, fontSize: 12, color: C.t1 }}>{SECTORS[c.sector] || c.sector}</span></div>
         <div><span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>TIER</span><br /><span style={{ fontFamily: SN, fontSize: 12, color: C.t1 }}>{c.tier}</span></div>
-        <div><span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>REVENUE ESTIMÉ</span><br /><span style={{ fontFamily: GR, fontSize: 18, fontWeight: 700, fontStyle: 'italic', color: C.gold }}>€{(rev / 1000).toFixed(0)}K</span></div>
+        <div><span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>REVENUE ESTIMÉ</span><br /><span style={{ fontFamily: GR, fontSize: 18, fontWeight: 400, color: C.accent }}>€{(rev / 1000).toFixed(0)}K</span></div>
       </div>
       <div style={{ marginBottom: 12 }}>
         <span style={{ fontFamily: MN, fontSize: 8, color: C.t3, textTransform: 'uppercase', letterSpacing: 1 }}>BRIQUES</span>
         <div style={{ display: 'flex', gap: 6, marginTop: 4 }}>
           {BRICKS.map(b => (
-            <Pill key={b.key} label={b.n} color={c.eigen_briques?.includes(b.key) ? b.c : C.tm} />
+            <Pill key={b.key} label={b.n} color={c.eigen_briques?.includes(b.key) ? b.c : C.t4} />
           ))}
         </div>
       </div>

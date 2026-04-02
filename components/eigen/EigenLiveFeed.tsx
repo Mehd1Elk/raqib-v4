@@ -81,8 +81,8 @@ export function EigenLiveFeed({ mode = 'compact', limit }: EigenLiveFeedProps) {
     return (
       <div className="flex flex-col gap-0.5 font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6]">
         {events.map(evt => (
-          <div key={evt.id} className="flex gap-2 items-center text-[#D4B662]">
-            <span className="text-[#918977] shrink-0">[{formatTimeFull(evt.timestamp)}]</span>
+          <div key={evt.id} className="flex gap-2 items-center text-[#1E0A20]">
+            <span className="text-[rgba(30,10,32,0.60)] shrink-0">[{formatTimeFull(evt.timestamp)}]</span>
             <span className="shrink-0 flex items-center w-3 h-3">{eventIcon(evt.type)}</span>
             <span className="text-white font-bold shrink-0 w-[52px]">{eventLabel(evt.type)}</span>
             <span className="truncate">{evt.message}</span>
@@ -94,9 +94,9 @@ export function EigenLiveFeed({ mode = 'compact', limit }: EigenLiveFeedProps) {
 
   // Compact mode for sidebar
   return (
-    <div className="flex flex-col h-full bg-[#FDFAF3] border border-[#D4CCBA]">
-      <div className="px-4 py-2 border-b border-[#D4CCBA] bg-[#F2EFE8]">
-        <h3 className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase text-[#918977] font-bold tracking-wider">
+    <div className="flex flex-col h-full bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)]">
+      <div className="px-4 py-2 border-b border-[rgba(30,10,32,0.35)] bg-[#F2EFE8]">
+        <h3 className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase text-[rgba(30,10,32,0.60)] font-bold tracking-wider">
           Live Feed
         </h3>
       </div>
@@ -104,10 +104,10 @@ export function EigenLiveFeed({ mode = 'compact', limit }: EigenLiveFeedProps) {
         {events.map(evt => (
           <div key={evt.id} className="flex items-center gap-2 font-[family-name:var(--font-jetbrains)] text-[10px] leading-tight">
             <span className="shrink-0 flex items-center justify-center w-3 h-3 text-[11px]">{eventIcon(evt.type)}</span>
-            <span className="text-[#1C1814] truncate flex-1">
+            <span className="text-[#1E0A20] truncate flex-1">
               {evt.message}
             </span>
-            <span className="text-[#918977] shrink-0 tabular-nums text-[9px]">
+            <span className="text-[rgba(30,10,32,0.60)] shrink-0 tabular-nums text-[9px]">
               {formatTime(evt.timestamp)}
             </span>
           </div>

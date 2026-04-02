@@ -40,7 +40,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
         id: a.id,
         name: a.name,
         layer: a.layer,
-        color: LAYER_COLORS[a.layer] || '#918977',
+        color: LAYER_COLORS[a.layer] || 'rgba(30,10,32,0.60)',
         status: a.status === 'Actif' ? 'active' : a.status === 'Erreur' ? 'error' : 'idle',
       }));
 
@@ -49,7 +49,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
       name,
       layer,
       count: items.length,
-      color: LAYER_COLORS[layer] || '#918977',
+      color: LAYER_COLORS[layer] || 'rgba(30,10,32,0.60)',
       children: undefined,
       _children: makeLeaves(items),
     });
@@ -75,7 +75,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
       id: 'root',
       name: 'EIGEN',
       layer: 'Holding',
-      color: '#B8963E',
+      color: '#1E0A20',
       children: [
         ...(l4.length ? [{ id: 'l4', name: 'Fondateur + Architectes', layer: 'L4', count: l4.length, color: LAYER_COLORS.L4, children: makeLeaves(l4) }] : []),
         ...(l3.length ? [{ id: 'l3', name: 'Reporting & Strategie', layer: 'L3', count: l3.length, color: LAYER_COLORS.L3, children: makeLeaves(l3) }] : []),
@@ -123,7 +123,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
         .join('path')
         .attr('class', 'h-link')
         .attr('fill', 'none')
-        .attr('stroke', '#D4CCBA')
+        .attr('stroke', 'rgba(30,10,32,0.35)')
         .attr('stroke-width', 1)
         .attr('stroke-opacity', 0.6)
         .attr('d', d3.linkVertical<any, any>().x((d: any) => d.x).y((d: any) => d.y));
@@ -142,9 +142,9 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
         .attr('x', -80).attr('y', -28)
         .attr('width', 160).attr('height', 56)
         .attr('rx', 6)
-        .attr('fill', '#FDFAF3')
+        .attr('fill', '#FAF8FC')
         .attr('stroke', (d: any) => {
-          if (searchHighlight && d.data.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#B8963E';
+          if (searchHighlight && d.data.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#1E0A20';
           return d.data.color + '40';
         })
         .attr('stroke-width', (d: any) => {
@@ -167,15 +167,15 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
         .attr('text-anchor', 'middle')
         .attr('font-family', 'JetBrains Mono')
         .attr('font-size', 10)
-        .attr('fill', '#918977')
+        .attr('fill', 'rgba(30,10,32,0.60)')
         .text((d: any) => d.data._children ? '+' : d.data.children?.length > 0 ? '-' : '');
 
       // Name text
       nodes.append('text')
         .attr('x', -68).attr('y', -6)
-        .attr('font-family', 'Cormorant Garamond')
+        .attr('font-family', 'Playfair Display')
         .attr('font-size', 11).attr('font-weight', 700).attr('font-style', 'italic')
-        .attr('fill', '#1C1814')
+        .attr('fill', '#1E0A20')
         .text((d: any) => {
           const name = d.data.name;
           return name.length > 22 ? name.slice(0, 22) + '...' : name;
@@ -185,7 +185,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
       nodes.append('text')
         .attr('x', -68).attr('y', 10)
         .attr('font-family', 'JetBrains Mono')
-        .attr('font-size', 8).attr('fill', '#918977')
+        .attr('font-size', 8).attr('fill', 'rgba(30,10,32,0.60)')
         .text((d: any) => {
           const count = d.data.count || (d.data.children?.length) || (d.data._children?.length) || '';
           return count ? `${d.data.layer} · ${count} agents` : d.data.layer;
@@ -197,7 +197,7 @@ export default function HierarchyView({ agents, width, height, onSelectAgent, se
         .attr('cx', 68).attr('cy', -10).attr('r', 3)
         .attr('fill', (d: any) => {
           const s = d.data.status;
-          return s === 'active' ? '#3D7C5E' : s === 'error' ? '#9C3D3D' : '#918977';
+          return s === 'active' ? '#3D7C5E' : s === 'error' ? '#9C3D3D' : 'rgba(30,10,32,0.60)';
         });
 
       // Click to toggle collapse or select

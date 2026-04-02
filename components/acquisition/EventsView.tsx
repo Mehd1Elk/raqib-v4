@@ -7,7 +7,7 @@ import { Pill } from './shared/Pill';
 import { fetchEvents } from '@/lib/acquisition/api';
 import type { AcqEvent } from '@/lib/acquisition/types';
 
-const EVENT_COLORS = [C.gold, C.emerald, C.yrknown];
+const EVENT_COLORS = [C.accent, C.emerald, C.yrknown];
 
 export default function EventsView({ subIdx = 0 }: { subIdx?: number }) {
   const [events, setEvents] = useState<AcqEvent[]>([]);
@@ -36,10 +36,10 @@ export default function EventsView({ subIdx = 0 }: { subIdx?: number }) {
     <div style={wrap}>
       {/* Event header */}
       <div style={{
-        padding: '20px 24px', background: `${color}10`, border: `1px solid ${color}30`,
-        borderRadius: 3, marginBottom: 24, borderLeft: `4px solid ${color}`,
+        padding: '20px 24px', background: `${color}10`, border: `0.5px solid ${color}30`,
+        borderRadius: 0, marginBottom: 24, borderLeft: `4px solid ${color}`,
       }}>
-        <div style={{ fontFamily: GR, fontSize: 22, fontWeight: 700, fontStyle: 'italic', color }}>{event.name}</div>
+        <div style={{ fontFamily: GR, fontSize: 22, fontWeight: 400, color }}>{event.name}</div>
         <div style={{ display: 'flex', gap: 20, marginTop: 8, fontFamily: MN, fontSize: 9, color: C.t2 }}>
           <span>{event.city}</span>
           <span>{event.dates}</span>
@@ -65,12 +65,12 @@ export default function EventsView({ subIdx = 0 }: { subIdx?: number }) {
           <tbody>
             {targets.map((t, i) => (
               <tr key={i}
-                onMouseEnter={e => (e.currentTarget.style.background = C.parchment)}
+                onMouseEnter={e => (e.currentTarget.style.background = C.nacre3)}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
-                <td style={{ ...tdS, fontFamily: GR, fontWeight: 700, fontStyle: 'italic', fontSize: 12 }}>{t.company_name}</td>
+                <td style={{ ...tdS, fontFamily: GR, fontWeight: 400, fontSize: 12 }}>{t.company_name}</td>
                 <td style={tdS}>{t.contact_name}</td>
                 <td style={{ ...tdS, fontSize: 10 }}>{t.approach}</td>
-                <td style={tdS}><Pill label={t.priority} color={t.priority === 'P0' ? C.ruby : t.priority === 'P1' ? C.gold : C.t3} /></td>
+                <td style={tdS}><Pill label={t.priority} color={t.priority === 'P0' ? C.ruby : t.priority === 'P1' ? C.accent : C.t3} /></td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 9 }}>{t.zone}</td>
                 <td style={{ ...tdS, fontFamily: MN, fontSize: 9 }}>{t.day}</td>
               </tr>

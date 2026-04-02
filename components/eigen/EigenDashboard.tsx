@@ -63,15 +63,15 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
   const TabComponent = TABS[activeTab] || EigenOverview;
 
   return (
-    <div className="w-screen h-screen flex flex-col bg-[#1C1814] overflow-hidden">
-      <div className="h-[52px] shrink-0 flex items-center justify-between px-6 border-b border-[#D4CCBA] bg-[#FDFAF3] z-20">
+    <div className="w-screen h-screen flex flex-col bg-[#1E0A20] overflow-hidden">
+      <div className="h-[52px] shrink-0 flex items-center justify-between px-6 border-b border-[rgba(30,10,32,0.35)] bg-[#FAF8FC] z-20">
         <div className="flex items-center gap-3.5">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#B8963E]" />
-          <span className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1C1814] tracking-[3px]">
+          <div className="w-1.5 h-1.5 rounded-none-full bg-[#1E0A20]" />
+          <span className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold italic text-[#1E0A20] tracking-[3px]">
             EIGEN
           </span>
-          <div className="w-px h-5 bg-[#D4CCBA]" />
-          <span className="text-[9px] text-[#918977] font-[family-name:var(--font-jetbrains)] tracking-[2px] uppercase">
+          <div className="w-px h-5 bg-[rgba(30,10,32,0.35)]" />
+          <span className="text-[9px] text-[rgba(30,10,32,0.60)] font-[family-name:var(--font-jetbrains)] tracking-[2px] uppercase">
             Sous-système Souverain
           </span>
         </div>
@@ -84,7 +84,7 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
             data-testid="eigen-mobile-select"
             value={activeTab}
             onChange={(e) => handleTabChange(e.target.value)}
-            className="w-full bg-[#F2EFE8] border border-[#D4CCBA] text-[#1C1814] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1 outline-none"
+            className="w-full bg-[#F2EFE8] border border-[rgba(30,10,32,0.35)] text-[#1E0A20] text-[10px] font-[family-name:var(--font-jetbrains)] px-2 py-1 outline-none"
           >
             <option value="overview">Vue d&apos;ensemble</option>
             <option value="agents">Agents</option>
@@ -106,7 +106,7 @@ export function EigenDashboard({ initialTab }: { initialTab: string }) {
         <EigenTabNav activeTab={activeTab} onTabSelect={handleTabChange} />
       </div>
 
-      <div id="eigen-content" className="flex-1 overflow-hidden relative bg-[#FDFAF3]">
+      <div id="eigen-content" className="flex-1 overflow-hidden relative bg-[#FAF8FC]">
         <div
           className={`absolute inset-0 w-full h-full transition-opacity duration-150 ease-in-out ${
             isTransitioning ? 'opacity-0' : 'opacity-100'

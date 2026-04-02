@@ -19,13 +19,13 @@ export interface StreamEvent {
 }
 
 const TYPE_COLORS: Record<string, string> = {
-  data: '#3D7C5E', agent: '#3D5E8C', decision: '#B8963E', alert: '#9C3D3D', conquest: '#7B5EA7', deploy: '#B87D3E'
+  data: '#3D7C5E', agent: '#3D5E8C', decision: '#1E0A20', alert: '#9C3D3D', conquest: '#7B5EA7', deploy: '#B87D3E'
 };
 
 const ENTITIES = ['NOOS','ÆLYA','MYNε','BURHAN','YrKnown','DIWANE','AlgueSov','AMANA','CG SA','Cercle','EIGEN'];
 const ENTITY_COLORS: Record<string, string> = {
-  'NOOS': '#B8963E', 'ÆLYA': '#7B5EA7', 'MYNε': '#3D7C5E', 'BURHAN': '#B87D3E', 'YrKnown': '#918977',
-  'DIWANE': '#6E2A3D', 'AlgueSov': '#3D7C8C', 'AMANA': '#5E6E3D', 'CG SA': '#162B20', 'Cercle': '#C9A96E', 'EIGEN': '#D4B662'
+  'NOOS': '#1E0A20', 'ÆLYA': '#7B5EA7', 'MYNε': '#3D7C5E', 'BURHAN': '#B87D3E', 'YrKnown': 'rgba(30,10,32,0.60)',
+  'DIWANE': '#6E2A3D', 'AlgueSov': '#3D7C8C', 'AMANA': '#5E6E3D', 'CG SA': '#162B20', 'Cercle': '#1E0A20', 'EIGEN': '#1E0A20'
 };
 
 const EVENT_TYPES = ['data', 'agent', 'decision', 'alert', 'conquest', 'deploy'] as const;
@@ -158,12 +158,12 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
   const displayed = limit ? filtered.slice(0, limit) : filtered;
 
   return (
-    <div className="flex flex-col h-full bg-[#FDFAF3]">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-[rgba(60,52,40,0.10)] bg-[#FDFAF3] flex-wrap gap-2">
+    <div className="flex flex-col h-full bg-[#FAF8FC]">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-[rgba(30,10,32,0.08)] bg-[#FAF8FC] flex-wrap gap-2">
         <div className="flex items-center gap-3">
-          <Activity size={14} className="text-[#B8963E]" />
-          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] uppercase tracking-wider">STREAM</span>
-          <span className={`inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-full font-[family-name:var(--font-jetbrains)] text-[7px] tracking-wider uppercase text-white ${connectionMode === 'live' ? 'bg-[#3D7C5E]' : 'bg-[#918977]'}`}>
+          <Activity size={14} className="text-[#1E0A20]" />
+          <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] uppercase tracking-wider">STREAM</span>
+          <span className={`inline-flex items-center gap-1.5 ml-2 px-2 py-0.5 rounded-none-full font-[family-name:var(--font-jetbrains)] text-[7px] tracking-wider uppercase text-white ${connectionMode === 'live' ? 'bg-[#3D7C5E]' : 'bg-[rgba(30,10,32,0.60)]'}`}>
             {connectionMode === 'live' ? 'LIVE \u2014 OpenClaw' : connectionMode === 'simulated' ? 'SIMUL\u00c9' : '...'}
           </span>
         </div>
@@ -172,7 +172,7 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
           <div className="flex gap-1">
             {ENTITIES.map(e => (
               <button key={e} onClick={() => toggleEntityFilter(e)} className="relative group" title={e}>
-                <div className="w-2.5 h-2.5 rounded-full transition" style={{
+                <div className="w-2.5 h-2.5 rounded-none-full transition" style={{
                   backgroundColor: ENTITY_COLORS[e],
                   opacity: filters.entities.size === 0 || filters.entities.has(e) ? 1 : 0.2
                 }} />
@@ -182,9 +182,9 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
           
           <div className="flex gap-1">
             {Object.entries(TYPE_COLORS).map(([type, color]) => (
-              <button key={type} onClick={() => toggleTypeFilter(type)} className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded transition uppercase border" style={{
+              <button key={type} onClick={() => toggleTypeFilter(type)} className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none transition uppercase border" style={{
                 backgroundColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '20' : 'transparent',
-                color: (filters.types.size === 0 || filters.types.has(type)) ? color : '#D4CCBA',
+                color: (filters.types.size === 0 || filters.types.has(type)) ? color : 'rgba(30,10,32,0.35)',
                 borderColor: (filters.types.size === 0 || filters.types.has(type)) ? color + '40' : 'transparent'
               }}>
                 {type}
@@ -194,12 +194,12 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
         </div>
         
         <div className="flex items-center gap-2">
-          <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977]">{filtered.length} events</span>
-          <button onClick={() => setPaused(!paused)} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title={paused ? "Reprendre" : "Pause"}>
-            {paused ? <Play size={12} className="text-[#3D7C5E]" /> : <Pause size={12} className="text-[#918977]" />}
+          <span className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[rgba(30,10,32,0.60)]">{filtered.length} events</span>
+          <button onClick={() => setPaused(!paused)} className="p-1 rounded-none hover:bg-[rgba(30,10,32,0.04)] transition" title={paused ? "Reprendre" : "Pause"}>
+            {paused ? <Play size={12} className="text-[#3D7C5E]" /> : <Pause size={12} className="text-[rgba(30,10,32,0.60)]" />}
           </button>
-          <button onClick={downloadDayExport} className="p-1 rounded hover:bg-[rgba(184,150,62,0.08)] transition" title="Export de la journée">
-            <Download size={12} className="text-[#918977]" />
+          <button onClick={downloadDayExport} className="p-1 rounded-none hover:bg-[rgba(30,10,32,0.04)] transition" title="Export de la journée">
+            <Download size={12} className="text-[rgba(30,10,32,0.60)]" />
           </button>
         </div>
       </div>
@@ -210,30 +210,30 @@ export default function EigenStream({ maxHeight = '100%', limit }: { maxHeight?:
             onClick={() => event.link ? (window.location.href = event.link) : undefined}>
 
             {event.isA2A && <ArrowRightLeft size={10} className="text-[#7B5EA7] flex-shrink-0 mt-1.5" />}
-            <div className="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || '#918977' }} />
+            <div className="w-1.5 h-1.5 rounded-none-full mt-2 flex-shrink-0" style={{ backgroundColor: event.entity_color || 'rgba(30,10,32,0.60)' }} />
             
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] w-10 flex-shrink-0 mt-1">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] w-10 flex-shrink-0 mt-1">
               {new Date(event.created_at).toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}
             </div>
             
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-0.5">
-                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded uppercase" style={{ backgroundColor: (event.entity_color || '#918977') + '12', color: event.entity_color }}>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1.5 py-0.5 rounded-none uppercase" style={{ backgroundColor: (event.entity_color || 'rgba(30,10,32,0.60)') + '12', color: event.entity_color }}>
                   {event.entity}
                 </span>
-                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 rounded uppercase" style={{ color: TYPE_COLORS[event.event_type] }}>
+                <span className="font-[family-name:var(--font-jetbrains)] text-[7px] px-1 py-0.5 rounded-none uppercase" style={{ color: TYPE_COLORS[event.event_type] }}>
                   {event.event_type}
                 </span>
-                <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1C1814] truncate font-medium">{event.title}</span>
+                <span className="font-[family-name:var(--font-noto)] text-[10px] text-[#1E0A20] truncate font-medium">{event.title}</span>
               </div>
-              {event.detail && <div className="font-[family-name:var(--font-noto)] text-[9px] text-[#918977] truncate">{event.detail}</div>}
+              {event.detail && <div className="font-[family-name:var(--font-noto)] text-[9px] text-[rgba(30,10,32,0.60)] truncate">{event.detail}</div>}
             </div>
             
             {event.urgency === 'critical' && <StatusDot status="error" size={6} />}
           </div>
         ))}
         {displayed.length === 0 && (
-          <div className="flex items-center justify-center p-8 text-[#918977] font-[family-name:var(--font-jetbrains)] text-[10px]">
+          <div className="flex items-center justify-center p-8 text-[rgba(30,10,32,0.60)] font-[family-name:var(--font-jetbrains)] text-[10px]">
             Aucun événement correspondant.
           </div>
         )}

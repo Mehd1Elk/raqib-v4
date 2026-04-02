@@ -27,7 +27,7 @@ export default function PipelineView() {
 
   const stageColors: Record<string, string> = {
     identified: C.t3, qualified: C.sapphire, approached: C.yrknown,
-    demo: C.gold, negotiation: C.myne, signed: C.emerald, churned: C.ruby,
+    demo: C.accent, negotiation: C.myne, signed: C.emerald, churned: C.ruby,
   };
 
   return (
@@ -45,21 +45,21 @@ export default function PipelineView() {
                 borderRadius: '3px 3px 0 0', marginBottom: 8,
               }}>
                 <div style={{ fontFamily: MN, fontSize: 8, letterSpacing: 1.5, textTransform: 'uppercase', color }}>{STAGE_LABELS[stage]}</div>
-                <div style={{ fontFamily: GR, fontSize: 20, fontWeight: 700, fontStyle: 'italic', color }}>{items.length}</div>
+                <div style={{ fontFamily: GR, fontSize: 20, fontWeight: 400, color }}>{items.length}</div>
               </div>
               {/* Cards */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {items.slice(0, 20).map(c => (
                   <div key={c.id} style={{
-                    padding: '8px 10px', background: C.ivory, border: `1px solid ${C.div}`, borderRadius: 2,
+                    padding: '8px 10px', background: C.nacre, border: `0.5px solid ${C.div}`, borderRadius: 0,
                   }}>
-                    <div style={{ fontFamily: GR, fontSize: 11, fontWeight: 700, fontStyle: 'italic', color: C.t1, marginBottom: 4, lineHeight: 1.2 }}>
+                    <div style={{ fontFamily: GR, fontSize: 11, fontWeight: 400, color: C.t1, marginBottom: 4, lineHeight: 1.2 }}>
                       {c.name}
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
                       <Pill label={SECTORS[c.sector] || c.sector} />
                       <ScoreBadge score={c.eigen_score} />
-                      <Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.gold : C.t3} />
+                      <Pill label={c.priority} color={c.priority === 'P0' ? C.ruby : c.priority === 'P1' ? C.accent : C.t3} />
                     </div>
                   </div>
                 ))}

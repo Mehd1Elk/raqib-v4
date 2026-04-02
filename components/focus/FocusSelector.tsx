@@ -24,20 +24,20 @@ export function FocusSelector({ onSelect, onClose }: { onSelect: (mode: FocusMod
         ref={ref}
         tabIndex={-1}
         onClick={e => e.stopPropagation()}
-        className="bg-[#FDFAF3] rounded-lg w-[400px] p-6 shadow-xl"
+        className="bg-[#FAF8FC] rounded-none-none w-[400px] p-6 shadow-xl"
       >
-        <h2 className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic mb-4 text-[#1C1814]">Mode Focus</h2>
+        <h2 className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold italic mb-4 text-[#1E0A20]">Mode Focus</h2>
         <div className="space-y-2">
           {FOCUS_MODES.map(mode => (
             <button
               key={mode.id}
               onClick={() => onSelect(mode)}
-              className="w-full text-left p-3 rounded-lg border border-[rgba(60,52,40,0.10)] hover:border-[#B8963E] transition flex items-center gap-3"
+              className="w-full text-left p-3 rounded-none-none border border-[rgba(30,10,32,0.08)] hover:border-[#1E0A20] transition flex items-center gap-3"
             >
-              <div className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: mode.color }} />
+              <div className="w-3 h-3 rounded-none-full shrink-0" style={{ backgroundColor: mode.color }} />
               <div className="flex-1 min-w-0">
-                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1C1814]">{mode.label}</div>
-                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977]">{mode.description}</div>
+                <div className="font-[family-name:var(--font-cormorant)] text-[13px] font-bold italic text-[#1E0A20]">{mode.label}</div>
+                <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)]">{mode.description}</div>
               </div>
               {mode.deadline && (
                 <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#9C3D3D] shrink-0">{mode.deadline}</span>
@@ -45,7 +45,7 @@ export function FocusSelector({ onSelect, onClose }: { onSelect: (mode: FocusMod
             </button>
           ))}
         </div>
-        <button onClick={onClose} className="mt-4 w-full py-2 text-center font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] hover:text-[#1C1814] transition" data-close>
+        <button onClick={onClose} className="mt-4 w-full py-2 text-center font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] transition" data-close>
           Annuler
         </button>
       </div>

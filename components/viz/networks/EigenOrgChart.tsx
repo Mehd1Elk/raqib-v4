@@ -43,7 +43,7 @@ export function EigenOrgChart() {
 
     const svg = d3.select(svgRef.current)
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('style', 'max-width: 100%; height: 100%; background-color: #F7F3EA;');
+      .attr('style', 'max-width: 100%; height: 100%; background-color: #F5F2F8;');
       
     // Defs for arrow markers
     svg.append("defs").append("marker")
@@ -57,7 +57,7 @@ export function EigenOrgChart() {
         .attr("xoverflow", "visible")
         .append("svg:path")
         .attr("d", "M 0,-5 L 10 ,0 L 0,5")
-        .attr("fill", "#918977");
+        .attr("fill", "rgba(30,10,32,0.60)");
 
     // Copy data to avoid mutating static arrays
     const nodes = NODES.map(d => ({...d}));
@@ -70,7 +70,7 @@ export function EigenOrgChart() {
       .force('collide', d3.forceCollide<GraphNode>().radius(d => d.radius + 15));
 
     const link = svg.append('g')
-      .attr('stroke', '#918977')
+      .attr('stroke', 'rgba(30,10,32,0.60)')
       .attr('stroke-opacity', 0.6)
       .selectAll('line')
       .data(links)
@@ -113,7 +113,7 @@ export function EigenOrgChart() {
          if (d.group === 3) return '#b83b3b'; // CG SA
          return '#B87D3E'; // Subsidiaries
       })
-      .attr('stroke', '#F7F3EA')
+      .attr('stroke', '#F5F2F8')
       .attr('stroke-width', 3);
 
     node.append('text')
@@ -159,7 +159,7 @@ export function EigenOrgChart() {
   }, []);
 
   return (
-    <div className="w-full h-[500px] border border-div rounded overflow-hidden">
+    <div className="w-full h-[500px] border border-div rounded-none overflow-hidden">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   );

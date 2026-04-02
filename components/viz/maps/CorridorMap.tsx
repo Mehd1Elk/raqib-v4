@@ -22,8 +22,8 @@ interface CorridorMapProps extends BaseMapProps {
   metricLabel?: string;
 }
 
-const CORRIDOR_COLOR = '#B8963E';
-const CORRIDOR_STROKE = '#8C6E2A';
+const CORRIDOR_COLOR = '#1E0A20';
+const CORRIDOR_STROKE = '#1E0A20';
 
 export function CorridorMap({
   layerIds = [],
@@ -59,7 +59,7 @@ export function CorridorMap({
       fillColor: isHighlighted ? CORRIDOR_COLOR : 'transparent',
       fillOpacity: isHighlighted ? 0.45 : 0,
       weight: isHighlighted ? 1.5 : 0.2,
-      color: isHighlighted ? CORRIDOR_STROKE : '#D4CCBA',
+      color: isHighlighted ? CORRIDOR_STROKE : 'rgba(30,10,32,0.35)',
     };
   }, [countries]);
 
@@ -85,7 +85,7 @@ export function CorridorMap({
   const loading = entriesLoading || geoLoading;
 
   return (
-    <div className={`relative rounded-lg overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
+    <div className={`relative rounded-none-none overflow-hidden border border-div ${className ?? ''}`} style={{ height }}>
       <MapContainer
         center={[10, -5]}
         zoom={2.8}
@@ -109,7 +109,7 @@ export function CorridorMap({
 
       {/* Tooltip */}
       {hovered && (
-        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-md px-3 py-2 shadow-md">
+        <div className="absolute top-3 right-3 z-[1000] pointer-events-none bg-ivory/95 backdrop-blur border border-div rounded-none-none px-3 py-2 shadow-md">
           <p className="text-xs font-semibold text-t1">{hovered.name}</p>
           {hovered.metric && (
             <p className="text-xs text-t2 font-[family-name:var(--font-jetbrains)]">
@@ -120,7 +120,7 @@ export function CorridorMap({
       )}
 
       {/* Badge corridor */}
-      <div className="absolute top-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-md px-3 py-1.5">
+      <div className="absolute top-3 left-3 z-[1000] bg-ivory/90 backdrop-blur border border-div rounded-none-none px-3 py-1.5">
         <p className="text-[10px] text-t1 font-semibold font-[family-name:var(--font-cormorant)]">
           Corridor Atlantique
         </p>
@@ -131,7 +131,7 @@ export function CorridorMap({
 
       {loading && (
         <div className="absolute inset-0 z-[1000] bg-ivory/50 flex items-center justify-center">
-          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-full animate-spin" />
+          <div className="h-5 w-5 border-2 border-gold border-t-transparent rounded-none-full animate-spin" />
         </div>
       )}
     </div>

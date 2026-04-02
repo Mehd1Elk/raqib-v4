@@ -49,8 +49,8 @@ export function PublicationTimeline({ data }: Props) {
     if (active && payload && payload.length) {
       const rawData = payload[0].payload;
       return (
-        <div className="bg-[#1A1A1A] border border-stone-700 p-3 rounded shadow-xl font-[family-name:var(--font-jetbrains)] text-xs text-stone-300 z-50">
-          <p className="text-[#B8963E] font-bold mb-2">Année {label}</p>
+        <div className="bg-[#1A1A1A] border border-stone-700 p-3 rounded-none shadow-xl font-[family-name:var(--font-jetbrains)] text-xs text-stone-300 z-50">
+          <p className="text-[#1E0A20] font-bold mb-2">Année {label}</p>
           <p className="mb-2">Total : {payload[0].value} publications</p>
           <ul className="space-y-1 list-disc list-inside opacity-80 line-clamp-3">
             {rawData.publications.slice(0, 3).map((pub: string, i: number) => (
@@ -68,7 +68,7 @@ export function PublicationTimeline({ data }: Props) {
 
   return (
     <div className="w-full bg-[#111111] p-6 border border-stone-800">
-      <div className="text-[10px] font-bold text-[#B8963E] mb-6 tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
+      <div className="text-[10px] font-bold text-[#1E0A20] mb-6 tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
         Évolution des publications (SCID / Diag Numérique)
       </div>
       <div className="h-64 cursor-crosshair">
@@ -92,7 +92,7 @@ export function PublicationTimeline({ data }: Props) {
             <Tooltip content={<CustomTooltip />} cursor={{ fill: '#2a2a2a', opacity: 0.4 }} />
             <Bar 
               dataKey="count" 
-              fill="#B8963E" 
+              fill="#1E0A20" 
               radius={[4, 4, 0, 0]}
               animationDuration={1500}
             />
