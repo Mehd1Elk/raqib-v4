@@ -14,7 +14,7 @@ interface GalleryCardProps {
 }
 
 const TYPE_CONFIG = {
-  jsx: { icon: '\u269B\uFE0F', label: 'JSX', gradient: 'linear-gradient(135deg, #B8963E22, #D4A84422)' },
+  jsx: { icon: '\u269B\uFE0F', label: 'JSX', gradient: 'linear-gradient(135deg, rgba(30,10,32,0.06), rgba(30,10,32,0.10))' },
   html: { icon: '\uD83C\uDF10', label: 'HTML', gradient: 'linear-gradient(135deg, #5B8C6E22, #7BAF8E22)' },
   docx: { icon: '\uD83D\uDCC4', label: 'DOCX', gradient: 'linear-gradient(135deg, #6B7B9E22, #8B9BB822)' },
   antigravity: { icon: '\uD83C\uDFA8', label: 'ANTI', gradient: 'linear-gradient(135deg, #9B6B8E22, #BB8BAE22)' },
@@ -27,7 +27,7 @@ export function GalleryCard({
   category,
   date,
   size,
-  entityColor = '#B8963E',
+  entityColor = '#1E0A20',
   onClick,
 }: GalleryCardProps) {
   const [showModal, setShowModal] = useState(false);
@@ -48,8 +48,8 @@ export function GalleryCard({
         style={{
           display: 'flex',
           flexDirection: 'column',
-          background: '#FDFAF3',
-          border: '1px solid #D4CCBA',
+          background: '#FAF8FC',
+          border: '1px solid rgba(30,10,32,0.08)',
           borderRadius: 0,
           overflow: 'hidden',
           cursor: 'pointer',
@@ -62,7 +62,7 @@ export function GalleryCard({
           e.currentTarget.style.boxShadow = `0 2px 8px ${entityColor}22`;
         }}
         onMouseLeave={e => {
-          e.currentTarget.style.borderColor = '#D4CCBA';
+          e.currentTarget.style.borderColor = 'rgba(30,10,32,0.08)';
           e.currentTarget.style.boxShadow = 'none';
         }}
       >
@@ -107,7 +107,7 @@ export function GalleryCard({
               <span style={{
                 fontFamily: 'JetBrains Mono, monospace',
                 fontSize: 7,
-                color: '#918977',
+                color: 'rgba(30,10,32,0.45)',
                 letterSpacing: '0.5px',
               }}>
                 {category}
@@ -118,7 +118,7 @@ export function GalleryCard({
           <div style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: 7,
-            color: '#B5AD9E',
+            color: 'rgba(30,10,32,0.35)',
             display: 'flex',
             gap: 8,
           }}>
@@ -135,7 +135,7 @@ export function GalleryCard({
             position: 'fixed',
             inset: 0,
             zIndex: 10000,
-            background: 'rgba(44,41,37,0.85)',
+            background: 'rgba(30,10,32,0.85)',
             display: 'flex',
             flexDirection: 'column',
           }}
