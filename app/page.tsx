@@ -115,15 +115,15 @@ export default function Dashboard() {
   const currentLive = layer ? liveData[layer.id] : undefined;
 
   return (
-    <div className="w-screen h-screen flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen flex flex-col overflow-x-hidden">
       <SearchOverlay onSelect={handleSearch} />
 
       {/* ═══ ZONE 1 — HERO HEADER ═══ */}
       <div className="shrink-0 bg-ivory border-b border-div px-8 py-6">
-        <div className="flex items-center justify-between">
-          <div>
+        <div className="flex items-center justify-between flex-wrap gap-4">
+          <div className="min-w-0">
             <div className="flex items-center gap-3 mb-1.5">
-              <div className="w-3 h-3 rounded-full bg-gold" />
+              <div className="w-3 h-3 rounded-full bg-gold flex-shrink-0" />
               <h1 className="font-[family-name:var(--font-cormorant)] text-[32px] font-bold italic text-noir">
                 Raqib <span className="font-normal text-[22px] text-gold">رقيب</span>
               </h1>
@@ -132,7 +132,7 @@ export default function Dashboard() {
               V4 · 1100 COUCHES · 11 ENTITÉS · 16 384 ENTRIES · 255 AGENTS
             </p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
             <a href="/eigen" className="px-4 py-2 bg-gold text-white font-[family-name:var(--font-jetbrains)] text-[10px] tracking-wider rounded hover:bg-gold-d transition">
               COCKPIT EIGEN →
             </a>
@@ -156,10 +156,10 @@ export default function Dashboard() {
 
       {/* ═══ ZONE 2 — NAVIGATION CARDS ═══ */}
       <div className="shrink-0 px-8 py-5 bg-cream border-b border-div">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
           {/* Card COCKPIT EIGEN */}
-          <a href="/eigen" className="col-span-1 row-span-2 bg-noir text-white rounded-lg p-6 hover:ring-2 hover:ring-gold transition group no-underline">
+          <a href="/eigen" className="col-span-1 row-span-1 lg:row-span-2 bg-noir text-white rounded-lg p-6 hover:ring-2 hover:ring-gold transition group no-underline">
             <div className="text-gold font-[family-name:var(--font-jetbrains)] text-[9px] tracking-[3px] mb-3">COCKPIT</div>
             <div className="font-[family-name:var(--font-cormorant)] text-[24px] font-bold italic mb-2">EIGEN Stratégique</div>
             <div className="font-[family-name:var(--font-noto)] text-[11px] text-stone mb-4">
@@ -313,8 +313,8 @@ export default function Dashboard() {
             Ouvrir le Stream Complet →
           </a>
         </div>
-        <div className="h-[250px] border border-div rounded-lg overflow-hidden bg-cream shadow-inner">
-          <EigenStream maxHeight="250px" limit={10} />
+        <div className="max-h-[200px] border border-div rounded-lg overflow-hidden bg-cream shadow-inner">
+          <EigenStream maxHeight="200px" limit={5} />
         </div>
       </div>
 
@@ -334,7 +334,7 @@ export default function Dashboard() {
       <EntityTabs activeIndex={entityIndex} onChange={handleEntityChange} />
       <StatsBar entity={entity} stats={stats} />
 
-      <div className="flex-1 flex overflow-hidden">
+      <div className="flex-1 flex min-h-0 overflow-hidden">
         <CategoryNav
           entity={entity}
           categories={categories}
