@@ -2998,13 +2998,22 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     contacts: {
       chambers: ["Chambre de Commerce, d'Industrie et d'Artisanat de Guinée (CCIAG)"],
       afd: "AFD Guinée — Bureau Conakry",
-      lawFirms: ["Geni & Kebe (cabinet régional)", "Cabinet local Conakry"],
-      patronat: "CPGCI — Confédération Patronale et des Groupements Professionnels de Guinée"
+      lawFirms: ["Geni & Kebe (cabinet régional West Africa)", "KPMG Guinée (Conakry)"],
+      patronat: "CPGCI — Confédération Patronale et des Groupements Professionnels de Guinée",
+      investmentAgency: "APIP-Guinée (Agence de Promotion des Investissements Privés) — www.apip.gov.gn",
+      miningRegulator: "Direction Nationale des Mines (DNM) — Code minier 2011 révisé 2013",
+      stateCompany: "SOGUIPAMI — Société Guinéenne du Patrimoine Minier",
+      embassies: [
+        {country: "France", city: "Conakry", website: "gn.ambafrance.org"},
+        {country: "UE", city: "Conakry", website: "eeas.europa.eu/delegations/guinea"}
+      ]
     },
 
     universities: [
-      {name: "Université Gamal Abdel Nasser de Conakry (UGANC)", city: "Conakry", students: "~40 000", specialties: "Sciences, Médecine, Droit"},
-      {name: "Université Julius Nyerere de Kankan", city: "Kankan", students: "~15 000", specialties: "Lettres, Sciences sociales"}
+      {name: "Université Gamal Abdel Nasser de Conakry (UGANC)", city: "Conakry", students: "~40 000", specialties: "Sciences, Médecine, Droit, Géologie appliquée", ranking: "#1 Guinée"},
+      {name: "Institut Supérieur des Mines et Géologie de Boké (ISMGB)", city: "Boké", students: "~2 000", specialties: "Géologie, Mines, Ingénierie métallurgique, Sécurité minière — fondé 1962. Seule école mines dédiée de Guinée.", ranking: "#1 formation minière Guinée"},
+      {name: "Institut Polytechnique de Conakry (IPC)", city: "Conakry", students: "~8 000", specialties: "Ingénierie civile, Électricité, Mines, Sciences appliquées"},
+      {name: "Université Julius Nyerere de Kankan", city: "Kankan", students: "~15 000", specialties: "Lettres, Sciences sociales, Sciences de l'éducation"}
     ],
     literacyRate: "45%",
 
@@ -3012,10 +3021,16 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       totalPopulation: "14 millions (2025)",
       growthRate: "2.7%/an",
       urbanPopulation: "37%",
-      unemployment: "6.5% (officiel — sous-emploi élevé)",
+      unemployment: "6.5% (officiel — sous-emploi élevé, économie informelle dominante)",
       hdi: "0.465 — Rang 182/191",
       lifeExpectancy: "59 ans",
-      languages: "Français, Pular (40%), Malinké (30%), Soussou (20%)"
+      languages: "Français (officiel), Pular 40%, Malinké 30%, Soussou 20%",
+      ageStructure: "43% de 0-14 ans, 54% de 15-64 ans, 3% de 65+ ans. Âge médian: 18 ans.",
+      laborForce: "~5 millions",
+      literacy: "45% (hommes 58%, femmes 33%)",
+      povertyRate: "43% sous le seuil de pauvreté",
+      miningEmployment: "~150 000 emplois directs mines industrielles + artisanat",
+      diaspora: "~2.5 millions (France, Sénégal, Côte d'Ivoire, USA)"
     },
 
     risks: {
@@ -4091,14 +4106,24 @@ export const DATA_REMAINING_AFRICA: Country[] = [
 
     contacts: {
       chambers: ["Chambre de Commerce, d'Agriculture, d'Industrie, des Mines et de l'Artisanat du Gabon (CCAIMAG)"],
-      afd: "AFD Gabon — Bureau Libreville",
+      afd: "AFD Gabon — Bureau Libreville — financement réhabilitation Transgabonais (CFA 85 Mds 2025)",
       lawFirms: ["Cabinet Fabrice Sawegnon (Libreville)", "Gide Loyrette Nouel Libreville"],
-      patronat: "CGECI — Confédération Générale des Entreprises du Congo/Gabon (PATRONAT Gabon)"
+      patronat: "CGECI — Confédération Générale des Entreprises du Gabon",
+      investmentAgency: "ANPI-Gabon (Agence Nationale pour la Promotion des Investissements) — DG: Ghislain Moandza Mboma — www.investingabon.ga",
+      miningMinister: "Sosthène Nguema Nguema (nommé 1er jan. 2026) — agenda pro-investissement, accélération permis miniers",
+      stateCompany: "SEM (Société Équatoriale des Mines) — cible $1 Md revenus/2030",
+      euRelations: "Forum Gabon-Chine sept. 2024: $4.3 Mds mobilisés. Interdiction exports manganèse brut 2029.",
+      embassies: [
+        {country: "France", city: "Libreville", website: "ga.ambafrance.org"},
+        {country: "UE", city: "Libreville", website: "eeas.europa.eu/delegations/gabon"}
+      ]
     },
 
     universities: [
-      {name: "Université Omar Bongo (UOB)", city: "Libreville", students: "~25 000", specialties: "Droit, Lettres, Sciences sociales"},
-      {name: "Université des Sciences et Techniques de Masuku (USTM)", city: "Franceville", students: "~5 000", specialties: "Sciences, Géologie, Mines"}
+      {name: "Université Omar Bongo (UOB)", city: "Libreville", students: "~25 000", specialties: "Droit, Lettres, Sciences sociales, Sciences de la terre", ranking: "#1 Gabon"},
+      {name: "Université des Sciences et Techniques de Masuku (USTM)", city: "Franceville", students: "~5 000", specialties: "Sciences, Géologie, Mines, Chimie, Mathématiques — seule université sci-tech Gabon, proche mines COMILOG (Moanda)", ranking: "#1 Gabon formation géologie/mines"},
+      {name: "Institut Polytechnique de Masuku (IPM)", city: "Franceville", students: "~2 000", specialties: "Ingénierie minière, Génie civil, Hydrocarbures, Électromécanique"},
+      {name: "Institut National Polytechnique (INP-Gabon)", city: "Libreville", students: "~3 000", specialties: "Génie industriel, Management, Ingénierie appliquée"}
     ],
     literacyRate: "84%",
 
@@ -4106,9 +4131,15 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       totalPopulation: "2.4 millions (2025)",
       growthRate: "2.4%/an",
       urbanPopulation: "90% (l'un des plus urbanisés d'Afrique)",
-      unemployment: "20% (officiel)",
+      unemployment: "20% (officiel) — chômage jeunes élevé",
       hdi: "0.706 — Rang 119/191 (revenu intermédiaire supérieur)",
-      lifeExpectancy: "67 ans"
+      lifeExpectancy: "67 ans",
+      ageStructure: "36% de 0-14 ans, 60% de 15-64 ans, 4% de 65+ ans. Âge médian: 21 ans.",
+      laborForce: "~750 000 (dont ~50 000 dans le secteur minier/pétrolier)",
+      literacy: "84% (hommes 87%, femmes 81%)",
+      gdpPerCapitaNominal: "~$8 500 (2024) — parmi les plus élevés d'Afrique subsaharienne",
+      middleClass: "~35% de la population",
+      transitPolitique: "Coup d'État août 2023 — CTRI au pouvoir (Gén. Oligui Nguema). Stabilité maintenue. COMILOG continue production."
     },
 
     risks: {
@@ -4631,15 +4662,25 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       afd: "AFD RDC — Bureau Kinshasa",
       lawFirms: ["Gide Loyrette Nouel Kinshasa", "CMS Francis Lefebvre (partenaire local)", "Peter & Kim (Kinshasa)"],
       big4: ["Deloitte RDC", "PwC RDC (Kinshasa)", "EY RDC", "KPMG RDC"],
-      patronat: "FEC — Fédération des Entreprises du Congo"
+      patronat: "FEC — Fédération des Entreprises du Congo",
+      investmentAgency: "ANAPI (Agence Nationale pour la Promotion des Investissements) — www.anapi.cd",
+      miningRegulator: "Direction des Mines — Code minier 2018. Royalties 10% cobalt, 3.5% cuivre.",
+      stateCompany: "Gécamines (La Générale des Carrières et des Mines) — partenaire KCC, joint-ventures",
+      miningMinister: "Kizito Pakabomba — Ministère des Mines",
+      embassies: [
+        {country: "France", city: "Kinshasa", website: "cd.ambafrance.org"},
+        {country: "UE", city: "Kinshasa", website: "eeas.europa.eu/delegations/democratic-republic-congo"}
+      ]
     },
 
     universities: [
-      {name: "Université de Kinshasa (UNIKIN)", city: "Kinshasa", students: "~30 000", specialties: "Médecine, Droit, Sciences"},
-      {name: "Université de Lubumbashi (UNILU)", city: "Lubumbashi", students: "~25 000", specialties: "Mines, Géologie, Polytechnique"},
-      {name: "ISTA — Institut Supérieur des Techniques Appliquées", city: "Kinshasa", students: "~10 000", specialties: "Ingénierie, Informatique"}
+      {name: "Université de Kinshasa (UNIKIN)", city: "Kinshasa", students: "~30 000", specialties: "Médecine, Droit, Sciences", ranking: "#1 DRC (EduRank 2026)"},
+      {name: "Université de Lubumbashi (UNILU)", city: "Lubumbashi", students: "~25 000", specialties: "Mines, Géologie, Polytechnique", ranking: "#2 DRC, #775 Mining Eng. monde (EduRank 2026)"},
+      {name: "ISTA — Institut Supérieur des Techniques Appliquées", city: "Kinshasa", students: "~10 000", specialties: "Ingénierie, Informatique"},
+      {name: "Université de Kolwezi (UNIKOL)", city: "Kolwezi", students: "~2 400", specialties: "Mines, Géologie, Géotechnique — situé au cœur du Copperbelt", ranking: "N/A"},
+      {name: "ISTA-Lubumbashi (Institut Supérieur des Techniques Appliquées)", city: "Lubumbashi", students: "~5 000", specialties: "Ingénierie minière, Électromécanique, Informatique industrielle"}
     ],
-    literacyRate: "80%",
+    literacyRate: "77%",
 
     demographics: {
       totalPopulation: "105 millions (2025)",
@@ -4648,7 +4689,14 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       unemployment: "Non disponible (informel massif)",
       hdi: "0.481 — Rang 179/191",
       lifeExpectancy: "61 ans",
-      languages: "Français (officiel), Lingala, Kikongo, Swahili, Tshiluba"
+      languages: "Français (officiel), Lingala, Kikongo, Swahili, Tshiluba",
+      ageStructure: "46% de 0-14 ans, 51% de 15-64 ans, 3% de 65+ ans. Âge médian: 17 ans.",
+      laborForce: "~32 millions (taux activité ~70%)",
+      literacy: "77% (hommes 88%, femmes 66%)",
+      miningEmployment: "~12.5 millions dans l'artisanat minier (dont ASM cobalt)",
+      middleClass: "~5% de la population",
+      millionaires: "~400",
+      diaspora: "~3.5 millions (Belgique, France, USA, Afrique du Sud)"
     },
 
     risks: {
@@ -5004,12 +5052,24 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       chambers: ["Câmara de Comércio e Indústria de Angola (CCIA)"],
       afd: "AFD Angola — Bureau Luanda",
       lawFirms: ["Miranda & Associados Angola", "Gómez-Acebo & Pombo Angola", "Garrigues Angola"],
-      patronat: "Confederação das Associações Económicas de Angola (CAEA)"
+      patronat: "Confederação das Associações Económicas de Angola (CAEA)",
+      investmentAgency: "AIPEX (Agência de Investimento Privado e Promoção das Exportações de Angola) — www.aipex.gov.ao",
+      miningRegulator: "Instituto Geológico de Angola (IGEO) — Code minier 2011, réforme 2021",
+      stateCompanies: ["Sonangol (pétrole)", "ENDIAMA (diamants)", "Sodiam (marketing diamants)"],
+      secretaryState: "Janio Correa Victor (secrétaire d’État ressources minérales)",
+      euRelations: "UE 2e partenaire commercial. SIFA UE-Angola signé nov. 2023. 1er partenaire investissement.",
+      embassies: [
+        {country: "France", city: "Luanda", website: "ao.ambafrance.org"},
+        {country: "Portugal", city: "Luanda", website: "www.embaixada-portugal-angola.ao"},
+        {country: "UE", city: "Luanda", website: "eeas.europa.eu/delegations/angola"}
+      ]
     },
 
     universities: [
-      {name: "Universidade Agostinho Neto (UAN)", city: "Luanda", students: "~80 000", specialties: "Droit, Médecine, Sciences"},
-      {name: "Universidade Católica de Angola (UCAN)", city: "Luanda", students: "~15 000", specialties: "Économie, Droit, Ingénierie"}
+      {name: "Universidade Agostinho Neto (UAN)", city: "Luanda", students: "~80 000", specialties: "Mining Engineering, Géologie, Géophysique, Pétrole, Droit, Médecine, Sciences", ranking: "#1 Angola"},
+      {name: "Universidade Católica de Angola (UCAN)", city: "Luanda", students: "~15 000", specialties: "Économie, Droit, Ingénierie"},
+      {name: "Universidade Técnica de Angola (UTANGA)", city: "Luanda", students: "~5 000", specialties: "Ingénierie minière, Géologie, Génie civil, Sciences de la terre", ranking: "#7 Angola (EduRank 2026)"},
+      {name: "Universidade Lusíada de Angola", city: "Luanda", students: "~10 000", specialties: "Ingénierie, Droit, Économie, Sciences appliquées"}
     ],
     literacyRate: "71%",
 
@@ -5019,7 +5079,13 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       urbanPopulation: "68%",
       unemployment: "30% (réel)",
       hdi: "0.586 — Rang 148/191",
-      lifeExpectancy: "62 ans"
+      lifeExpectancy: "62 ans",
+      ageStructure: "45% de 0-14 ans, 52% de 15-64 ans, 3% de 65+ ans. Âge médian: 17 ans.",
+      laborForce: "~12 millions",
+      literacy: "71% (hommes 82%, femmes 60%)",
+      miningEmployment: "~200 000 emplois directs pétrole/diamants/mines",
+      lobitoCorridorRole: "Angola contrôle port Lobito — hub export cuivre/cobalt RDC vers Atlantique",
+      euTrade2024: "EU imports from AO: 6 155 M EUR (88.8% combustibles), exports to AO: 3 343 M EUR"
     },
 
     risks: {
@@ -5698,13 +5764,17 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       afd: "AFD Rwanda — Bureau Kigali",
       lawFirms: ["MKM Advocates Rwanda", "K Solutions Rwanda"],
       big4: ["Deloitte Rwanda", "PwC Rwanda", "EY Rwanda", "KPMG Rwanda"],
-      patronat: "Private Sector Federation Rwanda (PSF)"
+      patronat: "Private Sector Federation Rwanda (PSF)",
+      investmentAgency: "Rwanda Development Board (RDB) — www.rdb.rw — guichet unique investisseurs",
+      miningRegulator: "Rwanda Mines, Petroleum and Gas Board (RMB) — www.rmb.gov.rw — Code minier 2018, OECD DDG compliance",
+      euPartnership: "MoU UE-Rwanda minéraux 3T signé 2024 — Parlement européen vote suspension fév. 2025 (contr. DRC-M23)"
     },
 
     universities: [
-      {name: "Université du Rwanda (UR)", city: "Kigali", students: "25 000", specialties: "Sciences, Médecine, Ingénierie, Agriculture", ranking: "1ère au Rwanda"},
+      {name: "Université du Rwanda (UR)", city: "Kigali", students: "25 000", specialties: "Sciences, Médecine, Ingénierie, Agriculture, School of Mining & Geology inauguré déc. 2025", ranking: "1ère au Rwanda"},
       {name: "African Leadership University (ALU)", city: "Kigali", students: "2 000", specialties: "Business, Leadership, Tech", ranking: "Top école innovation Afrique"},
-      {name: "Carnegie Mellon University Africa (CMU-Africa)", city: "Kigali", students: "400", specialties: "Computer Science, AI, Engineering", ranking: "Campus Amérique en Afrique"}
+      {name: "Carnegie Mellon University Africa (CMU-Africa)", city: "Kigali", students: "400", specialties: "Computer Science, AI, Engineering", ranking: "Campus Amérique en Afrique"},
+      {name: "IPRC Kigali — Mining Engineering Program", city: "Kigali", students: "~3 000", specialties: "Ingénierie minière, Géologie appliquée — formation technique pour secteur 3T"}
     ],
     sciPublications: "~2 500/an",
     patents: "~50/an",
@@ -5757,7 +5827,9 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       millionaires: "~800",
       diaspora: "Diaspora en Europe et USA",
       languages: "Kinyarwanda, Anglais, Français, Swahili",
-      literacy: "73.2%"
+      literacy: "73.2%",
+      laborForce: "~5 millions",
+      miningEmployment: "92 000 emplois dans le secteur minier (2025)"
     },
 
     risks: {

@@ -223,6 +223,13 @@ export interface Demographics {
   diaspora?: string;
   languages?: string;
   literacy?: string;
+  laborForce?: string;
+  miningEmployment?: string;
+  lobitoCorridorRole?: string;
+  euTrade2024?: string;
+  povertyRate?: string;
+  gdpPerCapitaNominal?: string;
+  transitPolitique?: string;
 }
 
 // ---------------------------------------------------------------------------
