@@ -248,6 +248,19 @@ export default function Dashboard() {
             <div className="font-[family-name:var(--font-jetbrains)] text-[14px] mb-1">&gt; status</div>
             <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-stone">8 commandes · Live feed · 255 agents</div>
           </a>
+
+          {/* Card CORRIDOR INTELLIGENCE */}
+          <a href="/corridor" className="rounded-lg p-5 hover:ring-1 hover:ring-[rgba(201,169,110,0.5)] transition no-underline" style={{ background: 'linear-gradient(135deg, #0A0A08 0%, #1A1918 100%)', border: '1px solid rgba(201,169,110,0.25)', color: '#E8E5DE' }}>
+            <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', color: '#C9A96E' }}>
+              Corridor Intelligence
+            </div>
+            <div style={{ fontSize: '0.75rem', color: '#9A9790', marginTop: '0.5rem' }}>
+              49 pays · 250+ entreprises · Minéraux critiques · Scoring RAQIB
+            </div>
+            <div style={{ fontSize: '0.65rem', color: '#8B7355', marginTop: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              Module MADEN
+            </div>
+          </a>
         </div>
       </div>
 
