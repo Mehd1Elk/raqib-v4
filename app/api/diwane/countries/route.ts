@@ -13,15 +13,12 @@ export async function GET(request: Request) {
   const data = countries.map(c => ({
     id: c.id,
     name: c.name,
-    nameAr: (c as any).nameAr,
     region: c.region,
-    capital: (c as any).capital,
-    marketSize: (c as any).artMarket.marketSize,
-    globalRank: (c as any).artMarket.globalRank,
-    galleryCount: (c as any).artMarket.galleryCount,
-    museumCount: (c as any).artMarket.museumCount,
+    marketSize: c.marketSize || null,
+    artistCount: c.artists?.length || 0,
+    galleryCount: c.galleries?.length || 0,
+    museumCount: c.museums?.length || 0,
     topArtist: c.artists?.[0]?.name || null,
-    recommendation: c.recommendation,
   }));
 
   return NextResponse.json({ data, total: data.length });
