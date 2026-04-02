@@ -7,17 +7,17 @@ import type { NexusEntity, NexusFlow } from './nexus-store';
 
 /* ═══ DATA ═══ */
 const ENTITIES = [
-  { id: 'noos', name: 'NOOS', tagline: 'Psychiatrie de precision', color: '#B8963E', size: 80 },
-  { id: 'aelya', name: 'AELYA', tagline: 'Consentement fiduciaire', color: '#7B5EA7', size: 60 },
-  { id: 'myne', name: 'MYNe', tagline: 'Marketplace donnees', color: '#3D7C5E', size: 60 },
-  { id: 'burhan', name: 'BURHAN', tagline: 'Audit trail blockchain', color: '#B87D3E', size: 60 },
-  { id: 'yrknown', name: 'YrKnown', tagline: 'Savoir tacite', color: '#918977', size: 50 },
-  { id: 'diwane', name: 'DIWANE', tagline: 'Art souverain', color: '#6E2A3D', size: 50 },
-  { id: 'alguesov', name: 'AlgueSov', tagline: 'Tracabilite algues', color: '#3D7C8C', size: 45 },
-  { id: 'amana', name: 'AMANA', tagline: 'Charitable trust', color: '#5E6E3D', size: 45 },
-  { id: 'cg', name: 'CG SA', tagline: 'Investment club', color: '#162B20', size: 55 },
-  { id: 'cercle', name: 'Cercle', tagline: 'Ecosysteme', color: '#C9A96E', size: 50 },
-  { id: 'eigen', name: 'EIGEN', tagline: 'Holding strategique', color: '#D4B662', size: 90 },
+  { id: 'noos', name: 'NOOS', tagline: 'Psychiatrie de precision', color: '#5A6E9C', size: 80 },
+  { id: 'aelya', name: 'AELYA', tagline: 'Consentement fiduciaire', color: '#8B5EB0', size: 60 },
+  { id: 'myne', name: 'MYNe', tagline: 'Marketplace donnees', color: '#5A8A6E', size: 60 },
+  { id: 'burhan', name: 'BURHAN', tagline: 'Audit trail blockchain', color: '#A87D3E', size: 60 },
+  { id: 'yrknown', name: 'YrKnown', tagline: 'Savoir tacite', color: '#A87D3E', size: 50 },
+  { id: 'diwane', name: 'DIWANE', tagline: 'Art souverain', color: '#904A68', size: 50 },
+  { id: 'alguesov', name: 'AlgueSov', tagline: 'Tracabilite algues', color: '#5A8A90', size: 45 },
+  { id: 'amana', name: 'AMANA', tagline: 'Charitable trust', color: '#5A8A6E', size: 45 },
+  { id: 'cg', name: 'CG SA', tagline: 'Investment club', color: '#C4B0D8', size: 55 },
+  { id: 'cercle', name: 'Cercle', tagline: 'Ecosysteme', color: '#E4D4EA', size: 50 },
+  { id: 'eigen', name: 'EIGEN', tagline: 'Holding strategique', color: '#FAF8FC', size: 90 },
 ];
 
 export const FLOWS = [
@@ -103,7 +103,7 @@ export default function NexusCanvas() {
         .attr('cx', Math.random() * W)
         .attr('cy', Math.random() * H)
         .attr('r', Math.random() * 1.2 + 0.3)
-        .attr('fill', '#918977')
+        .attr('fill', 'rgba(250,248,252,0.50)')
         .attr('opacity', Math.random() * 0.12 + 0.03)
         .attr('class', 'nexus-star');
     }
@@ -161,7 +161,7 @@ export default function NexusCanvas() {
       for (let i = 0; i < count; i++) {
         const p = g.append('circle')
           .attr('r', 1.5)
-          .attr('fill', '#D4B662')
+          .attr('fill', '#FAF8FC')
           .attr('opacity', 0.6)
           .attr('class', 'nexus-particle');
         particles.push(p as unknown as d3.Selection<SVGCircleElement, number, SVGGElement, unknown>);
@@ -198,7 +198,7 @@ export default function NexusCanvas() {
     nodeGs.append('circle')
       .attr('class', 'node-core')
       .attr('r', d => d.size / 2)
-      .attr('fill', '#1C1814')
+      .attr('fill', '#1E0A20')
       .attr('stroke', d => d.color)
       .attr('stroke-width', 2);
 
@@ -230,8 +230,8 @@ export default function NexusCanvas() {
 
     /* ── tooltip (for flows) ── */
     const tooltip = svg.append('g').attr('class', 'nexus-tooltip').attr('opacity', 0);
-    const tooltipBg = tooltip.append('rect').attr('rx', 4).attr('fill', '#252019').attr('stroke', 'rgba(212,182,98,0.2)').attr('stroke-width', 1);
-    const tooltipText = tooltip.append('text').attr('fill', '#D4B662').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 9).attr('dy', 14).attr('dx', 8);
+    const tooltipBg = tooltip.append('rect').attr('rx', 4).attr('fill', '#1E0A20').attr('stroke', 'rgba(250,248,252,0.15)').attr('stroke-width', 1);
+    const tooltipText = tooltip.append('text').attr('fill', '#FAF8FC').attr('font-family', 'JetBrains Mono, monospace').attr('font-size', 9).attr('dy', 14).attr('dx', 8);
 
     /* ── interactions ── */
     nodeGs
