@@ -22,18 +22,18 @@ interface Decision {
 const urgencyStyles = {
   critical: { bg: 'bg-[rgba(156,61,61,0.05)]', border: 'border-[#9C3D3D]', badge: 'bg-[#9C3D3D]' },
   high: { bg: 'bg-[rgba(184,125,62,0.05)]', border: 'border-[#B87D3E]', badge: 'bg-[#B87D3E]' },
-  medium: { bg: 'bg-[rgba(184,150,62,0.05)]', border: 'border-[#B8963E]', badge: 'bg-[#B8963E]' },
-  low: { bg: '', border: 'border-[rgba(60,52,40,0.10)]', badge: 'bg-[#918977]' },
+  medium: { bg: 'bg-[rgba(30,10,32,0.04)]', border: 'border-[rgba(30,10,32,0.40)]', badge: 'bg-[#1E0A20]' },
+  low: { bg: '', border: 'border-[rgba(30,10,32,0.08)]', badge: 'bg-[rgba(30,10,32,0.35)]' },
 };
 
 function EmptyQueue() {
   return (
     <div className="max-w-2xl mx-auto py-24 text-center">
-      <Inbox size={32} className="mx-auto text-[#D4CCBA] mb-4" />
-      <div className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  text-[#918977]">
+      <Inbox size={32} className="mx-auto text-[rgba(30,10,32,0.18)] mb-4" />
+      <div className="font-[family-name:var(--font-cormorant)] text-[18px] font-bold  text-[rgba(30,10,32,0.45)]">
         Aucune décision en attente
       </div>
-      <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] mt-2">
+      <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] mt-2">
         Les nouvelles décisions apparaîtront ici automatiquement
       </div>
     </div>
@@ -59,7 +59,7 @@ export function DecisionQueue() {
   if (loading) {
     return (
       <div className="max-w-2xl mx-auto py-24 text-center">
-        <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] animate-pulse">
+        <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] animate-pulse">
           Chargement...
         </div>
       </div>
@@ -96,7 +96,7 @@ export function DecisionQueue() {
   return (
     <div className="max-w-2xl mx-auto py-12 px-4">
       {/* Counter */}
-      <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] text-center mb-6">
+      <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] text-center mb-6">
         DÉCISION {currentIndex + 1} / {decisions.length}
       </div>
 
@@ -104,7 +104,7 @@ export function DecisionQueue() {
       <div className={`${style.bg} border ${style.border} rounded-none-none p-8`}>
         <div className="flex items-center justify-between mb-6">
           {current.entity && (
-            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 bg-[#918977] text-white rounded-none uppercase">
+            <span className="font-[family-name:var(--font-jetbrains)] text-[8px] px-2 py-0.5 bg-[rgba(30,10,32,0.35)] text-white rounded-none uppercase">
               {current.entity}
             </span>
           )}
@@ -113,7 +113,7 @@ export function DecisionQueue() {
           </span>
         </div>
 
-        <h2 className="font-[family-name:var(--font-playfair)] text-[22px] font-bold  text-[#1C1814] mb-4">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-[22px] font-bold  text-[#1E0A20] mb-4">
           {current.question}
         </h2>
 
@@ -131,8 +131,8 @@ export function DecisionQueue() {
               onClick={() => decide(current.id, option.label)}
               className={`flex-1 py-3 rounded-none-none font-[family-name:var(--font-jetbrains)] text-[10px] transition ${
                 i === 0
-                  ? 'bg-[#B8963E] text-white hover:bg-[#9A7B32]'
-                  : 'border border-[rgba(60,52,40,0.10)] text-[#918977] hover:border-[#B8963E] hover:text-[#B8963E]'
+                  ? 'bg-[#1E0A20] text-white hover:bg-[rgba(30,10,32,0.80)]'
+                  : 'border border-[rgba(30,10,32,0.08)] text-[rgba(30,10,32,0.45)] hover:border-[#1E0A20] hover:text-[#1E0A20]'
               }`}
             >
               {option.label}
@@ -140,7 +140,7 @@ export function DecisionQueue() {
           ))}
         </div>
 
-        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[#918977] text-center mt-6">
+        <div className="font-[family-name:var(--font-jetbrains)] text-[7px] text-[rgba(30,10,32,0.45)] text-center mt-6">
           Source : {current.source ?? 'system'} {current.deadline ? `· Deadline : ${current.deadline}` : ''}
         </div>
       </div>
@@ -150,20 +150,20 @@ export function DecisionQueue() {
         <button
           onClick={() => setCurrentIndex(i => Math.max(0, i - 1))}
           disabled={currentIndex === 0}
-          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] disabled:opacity-30 transition"
+          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] disabled:opacity-30 transition"
         >
           ← Précédente
         </button>
         <button
           onClick={() => skip(current.id)}
-          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] hover:text-[#B8963E] transition"
+          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] hover:text-[#1E0A20] transition"
         >
           Passer
         </button>
         <button
           onClick={() => setCurrentIndex(i => Math.min(decisions.length - 1, i + 1))}
           disabled={currentIndex >= decisions.length - 1}
-          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] disabled:opacity-30 transition"
+          className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.45)] disabled:opacity-30 transition"
         >
           Suivante →
         </button>

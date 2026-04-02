@@ -71,7 +71,7 @@ export function SecurityDashboard() {
       {loading && (
         <div className="grid grid-cols-2 gap-4">
           {[0, 1, 2, 3].map(i => (
-            <div key={i} className="border border-[rgba(30,10,32,0.35)] p-3 bg-[#F2EFE8] animate-pulse h-24" />
+            <div key={i} className="border border-[rgba(30,10,32,0.08)] p-3 bg-[#EEEBF4] animate-pulse h-24" />
           ))}
         </div>
       )}
@@ -95,7 +95,7 @@ export function SecurityDashboard() {
             </div>
             <div
               style={{
-                fontFamily: 'var(--font-playfair)',
+                fontFamily: 'var(--font-cormorant)',
                 fontSize: 22,
                 fontWeight: 700,
                 color: '#1E0A20',
@@ -175,7 +175,7 @@ export function SecurityDashboard() {
             </div>
             <div
               style={{
-                fontFamily: 'var(--font-playfair)',
+                fontFamily: 'var(--font-cormorant)',
                 fontSize: 36,
                 fontWeight: 700,
                 color: '#9C3D3D',
