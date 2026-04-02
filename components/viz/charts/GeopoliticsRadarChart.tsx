@@ -28,21 +28,21 @@ export function GeopoliticsRadarChart({ layerId }: { layerId: string }) {
     return row;
   });
 
-  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[#918977]">Chargement...</div>;
+  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[rgba(30,10,32,0.60)]">Chargement...</div>;
 
   return (
     <div className="w-full h-[350px]">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart outerRadius="70%" data={chartData}>
-          <PolarGrid stroke="#918977" opacity={0.3} />
+          <PolarGrid stroke="rgba(30,10,32,0.60)" opacity={0.3} />
           <PolarAngleAxis 
             dataKey="subject" 
             tick={{ fill: '#2d2d2d', fontSize: 10, fontFamily: 'var(--font-jetbrains)' }} 
           />
-          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: '#918977', fontSize: 8 }} />
+          <PolarRadiusAxis angle={30} domain={[0, 100]} tick={{ fill: 'rgba(30,10,32,0.60)', fontSize: 8 }} />
           
           <Tooltip 
-             contentStyle={{ backgroundColor: '#F7F3EA', border: '1px solid #918977', fontFamily: 'var(--font-jetbrains)', fontSize: 10 }}
+             contentStyle={{ backgroundColor: '#F5F2F8', border: '1px solid rgba(30,10,32,0.60)', fontFamily: 'var(--font-jetbrains)', fontSize: 10 }}
              itemStyle={{ color: '#2d2d2d' }} 
           />
           {countries.map((c, idx) => (

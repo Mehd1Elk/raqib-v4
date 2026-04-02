@@ -27,7 +27,7 @@ export function DataFlowDiagram() {
 
     const svg = d3.select(svgRef.current)
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('style', 'max-width: 100%; height: 100%; background-color: #F7F3EA;');
+      .attr('style', 'max-width: 100%; height: 100%; background-color: #F5F2F8;');
 
     // Background static line
     svg.append('g')
@@ -82,7 +82,7 @@ export function DataFlowDiagram() {
     nodeG.append('circle')
       .attr('r', 45)
       .attr('fill', 'none')
-      .attr('stroke', '#918977')
+      .attr('stroke', 'rgba(30,10,32,0.60)')
       .attr('stroke-width', 1)
       .attr('stroke-dasharray', '4, 4');
 
@@ -90,7 +90,7 @@ export function DataFlowDiagram() {
     nodeG.append('circle')
       .attr('r', 35)
       .attr('fill', '#2d2d2d') // Inverted dark color for the tech components
-      .attr('stroke', '#F7F3EA')
+      .attr('stroke', '#F5F2F8')
       .attr('stroke-width', 3);
 
     // Identifiers
@@ -111,7 +111,7 @@ export function DataFlowDiagram() {
       .attr('text-anchor', 'middle')
       .attr('font-size', '11px')
       .attr('font-family', 'var(--font-jetbrains)')
-      .attr('fill', '#918977');
+      .attr('fill', 'rgba(30,10,32,0.60)');
 
   }, []);
 

@@ -2694,6 +2694,208 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     riskScore: 7,
     riskLabel: "Élevé — Transition militaire",
     recommendation: "Opportunités minières majeures avec gestion risque politique",
+
+    industries: {
+      gdpBySector: {
+        agriculture: 24,
+        industry: 32,
+        services: 44,
+        mining: 22,
+      },
+      keyIndustries: [
+        {
+          name: "Bauxite — #2 mondial",
+          description: "La Guinée produit plus de 100 Mt/an de bauxite (2024), soit environ 25% de la production mondiale. Principaux opérateurs : SMB-Winning (Chine/Singapour), CBG (Alcoa/Rio Tinto), EGA. Exportations quasi-exclusivement vers la Chine. Royalties et fiscalité minière révisées par la junte CNRD.",
+          share: "~22% PIB, ~65% revenus export",
+        },
+        {
+          name: "Fer — Simandou (méga-projet mondial)",
+          description: "Simandou est le plus grand gisement de minerai de fer inexploité au monde (2.4 Mds t, teneur 65% Fe — qualité exceptionnelle). Deux blocs : Simandou Nord (SMB-Winning/Chine) et Simandou Sud (Rio Tinto/Chalco/IFC). Infrastructure ferroviaire (670 km) et port transguinéen en construction. Production cible : 120 Mt/an. Début production novembre 2025 (phase 1). Investissement total >$20 Mds.",
+          share: "Impact GDP +4–6% estimé 2026–2030",
+        },
+        {
+          name: "Or & Diamants",
+          description: "Production aurifère ~30 t/an via AngloGold Ashanti (Siguiri, 85%). Diamants : ~600 000 carats/an. Potentiel de croissance avec nouvelles explorations.",
+          share: "~20% revenus export (or) + ~5% (diamants)",
+        },
+        {
+          name: "Hydroélectricité",
+          description: "Capacité hydroélectrique majeure. Barrage Kaléta (240 MW, opérationnel 2015, CMEC Chine). Barrage Souapiti (450 MW, opérationnel 2021, CMEC). Nouveaux projets : Koukoutamba (294 MW), Amaria (300 MW). Potentiel total estimé 6 000 MW.",
+          share: "Secteur énergie ~3% PIB",
+        },
+        {
+          name: "Alumine & Transformation bauxite",
+          description: "Raffinerie de Fria (Friguia, UC Rusal, ~750 000 t/an d'alumine — intermittente). Projets SPIC Alumine (2027, 2 Mt/an) et 6 nouvelles raffineries planifiées (7 Mt de capacité totale à 2030). Objectif : valorisation locale de la bauxite avant export.",
+          share: "~10% revenus export actuels, cible 30% à 2030",
+        },
+      ],
+      sez: [
+        {
+          name: "ZES de Kaloum",
+          location: "Presqu'île de Kaloum, Conakry",
+          advantages: "Zone économique spéciale dans le quartier d'affaires de Conakry. Facilités administratives, guichet unique investisseur. Développement services financiers et logistique portuaire.",
+        },
+        {
+          name: "Zone Industrielle de Kagbélen",
+          location: "Coyah / Kagbélen (30 km de Conakry)",
+          advantages: "Zone industrielle dédiée à l'agro-industrie, transformation alumine, industries légères. Exonérations fiscales. Connexion route Conakry-Mamou.",
+        },
+      ],
+      majorProjects: [
+        "Simandou Sud (Rio Tinto/Chalco/IFC) — Phase 1 production démarrée novembre 2025, cible 120 Mt/an de minerai de fer haute qualité",
+        "Simandou Nord (SMB-Winning/Xinfa) — Construction infrastructure rail-port transguinéen (670 km + port Matakong)",
+        "Raffinerie d'alumine SPIC (Boké, 2 Mt alumine/an, mise en service prévue 2027, investissement ~$2 Mds)",
+        "Plan 6 raffineries alumine (gouvernement CNRD, objectif 7 Mt capacité totale à 2030)",
+        "Fonds Souverain de Guinée ($1 Mds, création prévue T2 2026 — revenus Simandou)",
+        "Koukoutamba Hydropower (294 MW, Tinkisso River, financement BID/BAfD)",
+        "Amaria Hydropower (300 MW — études AFD/BAfD)",
+      ],
+      banking: {
+        mainBanks: [
+          "BCRG — Banque Centrale de la République de Guinée (régulateur)",
+          "Ecobank Guinée (Ecobank Transnational — groupe panafricain)",
+          "Société Générale Guinée",
+          "BICIGUI (Banque Internationale pour le Commerce et l'Industrie de Guinée)",
+          "Orabank Guinée",
+          "UBA Guinée (United Bank for Africa)",
+        ],
+        totalAssets: "~3 Mds USD (système bancaire consolidé 2024)",
+        bancarisation: "~10% de la population adulte (accès services financiers formels)",
+      },
+      telecom: {
+        operators: [
+          "Orange Guinée (filiale Orange SA France, leader marché)",
+          "MTN Guinée (MTN Group)",
+          "Cellcom Guinée",
+        ],
+        mobilePenetration: "95% (taux de pénétration mobile, 2024)",
+        internetPenetration: "30% (2024)",
+      },
+      energy: {
+        mix: "Hydroélectrique 60%, Thermique (fuel/diesel) 40%",
+        installedCapacity: "~1 100 MW (2024 — Kaléta 240 MW + Souapiti 450 MW opérationnels)",
+        renewableProjects: "Koukoutamba (294 MW — financement BID), Amaria (300 MW — études), extension Souapiti, solaire rural en développement",
+      },
+    } ,
+
+    logistics: {
+      ports: [
+        {
+          name: "Port Autonome de Conakry",
+          capacity: "~500 000 TEU/an (capacité conteneurs), 30 Mt marchandises diverses",
+          operator: "Bollore Africa Logistics / Guinée Manutention Terminaux (GMT) — concession",
+          draft: "11m",
+          note: "Principal port Guinée. Hub d'exportation bauxite partiel. Modernisation en cours. Congestion chronique.",
+        },
+        {
+          name: "Port de Kamsar (CBK)",
+          capacity: "~100 Mt/an de bauxite (terminal spécialisé)",
+          operator: "Compagnie des Bauxites de Kamsar / CBG + SMB-Winning (terminaux dédiés)",
+          draft: "14m (accès Capesize partiels)",
+          note: "Terminal bauxite majeur, Boké. Deuxième port mondial d'exportation de bauxite. Transit 182.8 Mt de bauxite en 2025.",
+        },
+        {
+          name: "Port de Matakong (en construction — Simandou)",
+          capacity: "150 Mt/an de minerai de fer (prévision pleine capacité)",
+          operator: "Infrastructure Simandou — TransGuinéen",
+          draft: "20m+ (eau profonde — Capesize complets)",
+          note: "Nouveau port en eau profonde dédié au minerai de fer Simandou. En construction, livraison 2026.",
+        },
+      ],
+      airports: [
+        {
+          name: "Aéroport International de Conakry-Gbessia",
+          traffic: "~600 000 passagers/an (2024)",
+          freight: "~8 000 t fret/an",
+        },
+        {
+          name: "Aéroport de Simandou (sous construction)",
+          traffic: "Usage minier / personnel (prévision 2026)",
+          freight: "Non disponible",
+        },
+      ],
+      railway: "Réseau ferroviaire limité et spécialisé : CBG Railway (Sangarédi–Kamsar, 136 km, bauxite). Chemin de Fer Transgabonais (non applicable Guinée). GRAND PROJET : Simandou Railway (670 km — mine vers côte, en construction — terminé partiellement 2025–2026). Aucun réseau ferroviaire voyageurs.",
+      roads: "~44 000 km dont ~4 000 km bitumés. Route Conakry–Coyah–Mamou bitumée. Accès intérieur difficile en saison des pluies. Projets BAfD d'amélioration routes régionales.",
+      corridors: "Corridor Simandou (Mine–Port Matakong, 670 km rail + route). Corridor Transgambien (Conakry–Dakar via Gambie). Liaison transfrontalière Sierra Leone et Libéria (commerces régionaux).",
+      containerCost: "~2 800 USD/conteneur 20' import CIF Conakry (2024)",
+      customsDelay: "12–20 jours (port Conakry — délais douaniers importants)",
+      logisticZones: [
+        "Port Autonome de Conakry — zone logistique portuaire",
+        "Zone Industrielle Kagbélen",
+        "Zone Franche de Kamsar (bauxite)",
+      ],
+      maritimeConnectivity: "Accès direct Atlantique via Conakry et Kamsar. Liaisons régulières vers Chine (bauxite), Europe (Anvers, Hambourg), Asie. Routes maritimes Kamsar–Qingdao (Chine) = principale destination bauxite.",
+    } ,
+
+    trade: {
+      topExports: [
+        { product: "Bauxite (minerai brut)", value: "~4.5 Mds USD (2025)", destination: "Chine (85%), Russie, Ukraine" },
+        { product: "Or (AngloGold Ashanti Siguiri)", value: "~1.5 Mds USD", destination: "Suisse, Dubaï, Afrique du Sud" },
+        { product: "Alumine (Friguia/Rusal)", value: "~200 M USD", destination: "Russie, Chine, Europe de l'Est" },
+        { product: "Diamants", value: "~150 M USD", destination: "Belgique (Anvers), Dubaï" },
+        { product: "Minerai de fer Simandou (démarrage 2025)", value: "~500 M USD (2025 — phase 1)", destination: "Chine, Corée, Japon" },
+      ],
+      topImports: [
+        { product: "Produits pétroliers raffinés", value: "~800 M USD", origin: "Nigeria, Sénégal, importation" },
+        { product: "Machines et équipements miniers", value: "~700 M USD", origin: "Chine, UE" },
+        { product: "Produits alimentaires", value: "~600 M USD", origin: "Maroc, Sénégal, Thaïlande (riz)" },
+        { product: "Véhicules", value: "~300 M USD", origin: "Chine, Japon, UE" },
+        { product: "Ciment et matériaux construction", value: "~250 M USD", origin: "Maroc, Chine" },
+      ],
+      tradeBalance: "+3.2 Mds USD (surplus minier, 2024) — réserves FX triplées à $4.1 Mds fin 2025",
+      fdiInward: {
+        stock: "~15 Mds USD (dont ~11 Mds investissements Simandou)",
+        flow: "~3 Mds USD/an (2023–2025, majoritairement Simandou)",
+        topInvestors: ["Chine (SMB-Winning, Chalco, Xinfa)", "Australie/UK (Rio Tinto)", "UAE (EGA)", "Russie (UC Rusal)", "Afrique du Sud (AngloGold)"],
+      },
+      fdiOutward: "Très faible — moins de $50 M USD/an",
+      tradeAgreements: [
+        "ZLECAF (signataire)",
+        "CEDEAO (suspendue participation institutions depuis coup 2021, commerce maintenu)",
+        "ACP-UE (Accord de Partenariat Économique — APE Afrique de l'Ouest)",
+        "OCI (Organisation de la Coopération Islamique)",
+      ],
+      taxRegime: {
+        is: "IS 35% (standard). Taux réduits et exonérations négociées dans les conventions minières (10–15 ans exonération IS).",
+        tva: "TVA 18%",
+        conventions: "Conventions de double imposition limitées : France, Maroc. Révision conventions minières par CNRD depuis 2022.",
+      },
+      freeZones: "ZES Kaloum (Conakry) — facilités fiscales et administratives. Zone Franche de Kamsar (exportations bauxite). Régime minier spécifique par convention individuelle.",
+      profitRepatriation: "Autorisée via BCRG. Contrôle des changes modéré. GNF instable — transactions minières souvent en USD. Difficultés pratiques de transfert.",
+      bit: "Traités bilatéraux d'investissement avec : France, USA, Suisse, Allemagne, Chine, Belgique (ICSID arbitration disponible).",
+    } ,
+
+    billionaires: [
+      {
+        name: "Kerfalla Camara",
+        fortune: "~$500 M USD (estimation)",
+        source: "Mines (diamants, or), logistique, immobilier — KPC Group",
+        companies: "KPC Group (Kerfalla Personal Corporation), participations minières diverses",
+        age: "Non disponible",
+        education: "Non disponible",
+        bio: "Homme d'affaires guinéen influent, proche des cercles politiques successifs. KPC Group actif dans les mines, la logistique portuaire et l'immobilier à Conakry. Figures emblématiques du secteur privé guinéen lié aux ressources naturelles.",
+      },
+      {
+        name: "Ibrahima Kassory Fofana",
+        fortune: "Non disponible",
+        source: "Politique et réseaux d'affaires — ex-Premier Ministre de Guinée (2018–2021)",
+        companies: "Participations diverses (non publiques)",
+        age: "Non disponible",
+        education: "Sciences économiques, formation en Europe",
+        bio: "Economiste et homme politique, ex-Premier Ministre sous Alpha Condé. Arrêté par la junte CNRD en 2022, placé en détention pour malversations. Illustre les réseaux politico-économiques liés aux ressources minières guinéennes.",
+      },
+      {
+        name: "Saloum Nimaga",
+        fortune: "Non disponible",
+        source: "Bauxite et import-export — Foutah Group",
+        companies: "Foutah Mining & Trading, négoce Conakry",
+        age: "Non disponible",
+        education: "Non disponible",
+        bio: "Homme d'affaires actif dans le négoce de bauxite et l'import-export en Guinée. Représentatif de la classe d'entrepreneurs locaux dans le secteur des ressources.",
+      },
+    ],
+
+
     timezone: "UTC+0",
     languages: "Français (officiel), Pular, Malinké, Soussou",
     religions: "Islam (89%), Christianisme (7%), Animisme (4%)",
@@ -2796,13 +2998,22 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     contacts: {
       chambers: ["Chambre de Commerce, d'Industrie et d'Artisanat de Guinée (CCIAG)"],
       afd: "AFD Guinée — Bureau Conakry",
-      lawFirms: ["Geni & Kebe (cabinet régional)", "Cabinet local Conakry"],
-      patronat: "CPGCI — Confédération Patronale et des Groupements Professionnels de Guinée"
+      lawFirms: ["Geni & Kebe (cabinet régional West Africa)", "KPMG Guinée (Conakry)"],
+      patronat: "CPGCI — Confédération Patronale et des Groupements Professionnels de Guinée",
+      investmentAgency: "APIP-Guinée (Agence de Promotion des Investissements Privés) — www.apip.gov.gn",
+      miningRegulator: "Direction Nationale des Mines (DNM) — Code minier 2011 révisé 2013",
+      stateCompany: "SOGUIPAMI — Société Guinéenne du Patrimoine Minier",
+      embassies: [
+        {country: "France", city: "Conakry", website: "gn.ambafrance.org"},
+        {country: "UE", city: "Conakry", website: "eeas.europa.eu/delegations/guinea"}
+      ]
     },
 
     universities: [
-      {name: "Université Gamal Abdel Nasser de Conakry (UGANC)", city: "Conakry", students: "~40 000", specialties: "Sciences, Médecine, Droit"},
-      {name: "Université Julius Nyerere de Kankan", city: "Kankan", students: "~15 000", specialties: "Lettres, Sciences sociales"}
+      {name: "Université Gamal Abdel Nasser de Conakry (UGANC)", city: "Conakry", students: "~40 000", specialties: "Sciences, Médecine, Droit, Géologie appliquée", ranking: "#1 Guinée"},
+      {name: "Institut Supérieur des Mines et Géologie de Boké (ISMGB)", city: "Boké", students: "~2 000", specialties: "Géologie, Mines, Ingénierie métallurgique, Sécurité minière — fondé 1962. Seule école mines dédiée de Guinée.", ranking: "#1 formation minière Guinée"},
+      {name: "Institut Polytechnique de Conakry (IPC)", city: "Conakry", students: "~8 000", specialties: "Ingénierie civile, Électricité, Mines, Sciences appliquées"},
+      {name: "Université Julius Nyerere de Kankan", city: "Kankan", students: "~15 000", specialties: "Lettres, Sciences sociales, Sciences de l'éducation"}
     ],
     literacyRate: "45%",
 
@@ -2810,10 +3021,16 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       totalPopulation: "14 millions (2025)",
       growthRate: "2.7%/an",
       urbanPopulation: "37%",
-      unemployment: "6.5% (officiel — sous-emploi élevé)",
+      unemployment: "6.5% (officiel — sous-emploi élevé, économie informelle dominante)",
       hdi: "0.465 — Rang 182/191",
       lifeExpectancy: "59 ans",
-      languages: "Français, Pular (40%), Malinké (30%), Soussou (20%)"
+      languages: "Français (officiel), Pular 40%, Malinké 30%, Soussou 20%",
+      ageStructure: "43% de 0-14 ans, 54% de 15-64 ans, 3% de 65+ ans. Âge médian: 18 ans.",
+      laborForce: "~5 millions",
+      literacy: "45% (hommes 58%, femmes 33%)",
+      povertyRate: "43% sous le seuil de pauvreté",
+      miningEmployment: "~150 000 emplois directs mines industrielles + artisanat",
+      diaspora: "~2.5 millions (France, Sénégal, Côte d'Ivoire, USA)"
     },
 
     risks: {
@@ -3602,6 +3819,211 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     riskScore: 5,
     riskLabel: "Modéré (transition en cours)",
     recommendation: "Manganèse et pétrole — stabilité post-coup à confirmer",
+
+    industries: {
+      gdpBySector: {
+        agriculture: 6.5,
+        industry: 53.5,
+        services: 38.2,
+        mining: 35,
+      },
+      keyIndustries: [
+        {
+          name: "Pétrole — secteur historique dominant",
+          description: "Production actuelle ~200 000 b/j (2024, en déclin depuis le pic des années 1990). Principaux opérateurs : TotalEnergies (opérateur Block 17 offshore), Perenco (onshore + offshore), Maurel & Prom (Pertamina 72%), BW Offshore, Vaalco Energy, CNOOC. Gabon Oil Company (GOC) = bras de l'État. Membre OPEP jusqu'en 2023 (suspension). Réserves ~2 Mds barils.",
+          share: "~35% PIB, ~60% revenus fiscaux",
+        },
+        {
+          name: "Manganèse — COMILOG/Eramet (#3 mondial)",
+          description: "Mine de Moanda (#1 producteur mondial hors Australie, ~4 Mt/an). COMILOG (filiale Eramet France, 63.7%) = leader mondial production manganèse. Transport via Transgabonais (648 km Moanda–Owendo). Export vers UE (Dunkerque, Norway Eramet) et Asie. Manganèse critique pour batteries EV et acier inoxydable (liste CRM UE).",
+          share: "~5% PIB (impact plus élevé sur exports)",
+        },
+        {
+          name: "Bois & Industrie forestière",
+          description: "88% du territoire gabonais couvert de forêt tropicale (22 M ha). Interdiction d'exportation de grumes brutes depuis 2010 (transformation locale obligatoire). Zone Économique Spéciale de Nkok (Olam International) = hub de transformation bois. Espèces nobles : okoumé, ozigo, padouk. Opérateurs : Rougier Gabon, CEB (Compagnie Équatoriale des Bois), Precious Wood.",
+          share: "~3% PIB",
+        },
+        {
+          name: "Fer — Baniaka & Bélinga (projets en développement)",
+          description: "Gisement de Baniaka (projet Genmin/Sinohydro, 5–10 Mt/an, EIS approuvé). Bélinga (~1 Mds t réserves, Fortescue Metals — en exploration). Potentiel majeur mais développement ralenti par manque d'infrastructure ferroviaire vers côte.",
+          share: "0 production actuelle",
+        },
+        {
+          name: "Huile de palme & Agro-industrie",
+          description: "Olam International (Singapour) = opérateur leader via ZES Nkok. Plantations palm oil (~50 000 ha), caoutchouc, cacao. SOSUHO (sucre). Ambition de Gabon d'être hub agro-industrie CEMAC.",
+          share: "~4% PIB agri total",
+        },
+      ],
+      sez: [
+        {
+          name: "ZES de Nkok",
+          location: "Nkok (30 km de Libreville), Province de l'Estuaire",
+          advantages: "Zone économique spéciale gérée par Arise IIP (ex-Olam Gabon). Transformation bois, agro-industrie, services industriels. Exonérations fiscales 25 ans, guichet unique, infrastructure clé en main. 70+ entreprises installées. Zone la plus développée d'Afrique centrale.",
+        },
+        {
+          name: "ZES de Port-Gentil",
+          location: "Port-Gentil, Province de l'Ogooué-Maritime",
+          advantages: "Hub pétrolier et gazier. Base opérationnelle TotalEnergies, Perenco. Services parapétroliers. Accès offshore direct. Zone franche hydrocarbures.",
+        },
+      ],
+      majorProjects: [
+        "Baniaka Iron Ore (Genmin + Sinohydro — 5–10 Mt/an minerai de fer, financement en cours, production visée 2027–2028)",
+        "Belinga Iron Ore (Fortescue Metals/FMG — exploration avancée, ~1 Mds t réserves)",
+        "Expansion manganèse Eramet/COMILOG (augmentation capacité Moanda à 7 Mt/an)",
+        "Grand Poubara Hydropower (160 MW sur Ogooué, financement BAfD)",
+        "Millennial Potash — Projet Banio (potasse marine, Mayumba)",
+        "Olam Agri expansion (Palm oil ZES Nkok, augmentation capacité)",
+        "Modernisation port d'Owendo (Arise Ports — terminal conteneurs + vrac minéralier)",
+      ],
+      banking: {
+        mainBanks: [
+          "BGFI Bank Gabon (#1 CEMAC zone par actifs, filiale de BGFI Holding)",
+          "UGB — Union Gabonaise de Banque (filiale Attijariwafa Bank Maroc)",
+          "BICIG — Banque Internationale pour le Commerce et l'Industrie du Gabon",
+          "Société Générale Gabon",
+          "Orabank Gabon",
+        ],
+        totalAssets: "~6 Mds USD (système bancaire consolidé 2024)",
+        bancarisation: "25% de la population adulte",
+      },
+      telecom: {
+        operators: [
+          "Airtel Gabon (Airtel Africa)",
+          "Moov Africa Gabon (ex-Gabon Telecom — Maroc Telecom 51%)",
+        ],
+        mobilePenetration: "140% (multi-SIM, taux de pénétration des lignes)",
+        internetPenetration: "65% (2024 — l'un des meilleurs d'Afrique centrale)",
+      },
+      energy: {
+        mix: "Hydroélectrique 40%, Gaz naturel 35%, Pétrole/Fuel 25%",
+        installedCapacity: "~800 MW (2024)",
+        renewableProjects: "Grand Poubara (160 MW — BAfD financement), extension Centrale de Kinguélé, solaire rural UNDP",
+      },
+    } ,
+
+    logistics: {
+      ports: [
+        {
+          name: "Port d'Owendo",
+          capacity: "~350 000 TEU/an (conteneurs), 5 Mt vrac",
+          operator: "Arise Ports & Logistics (ex-Bolloré Gabon, concession 30 ans)",
+          draft: "13m",
+          note: "Principal port commercial Gabon. Terminus du Transgabonais pour manganèse et bois. Modernisation en cours par Arise IIP.",
+        },
+        {
+          name: "Port de Port-Gentil",
+          capacity: "Base pétrolière offshore — trafic hydrocarbures et vrac sec",
+          operator: "Société du Port Môle et des Terminaux de Port-Gentil (SPMTPG)",
+          draft: "10m",
+          note: "Hub opérations pétrolières offshore. Services support TotalEnergies, Perenco, Maurel & Prom.",
+        },
+        {
+          name: "Port de Mayumba",
+          capacity: "Développement planifié — exportation minerai de fer Baniaka/Bélinga",
+          operator: "Non attribué — projet d'infrastructure en cours",
+          draft: "20m+ (eau profonde — cible Capesize)",
+          note: "Port en eau profonde projeté pour les futurs exports de minerai de fer (Baniaka, Bélinga). Financement à confirmer.",
+        },
+      ],
+      airports: [
+        {
+          name: "Aéroport International Léon-Mba de Libreville",
+          traffic: "~700 000 passagers/an (2024)",
+          freight: "~15 000 t fret/an",
+        },
+        {
+          name: "Aéroport de Port-Gentil",
+          traffic: "~150 000 passagers/an",
+          freight: "~3 000 t fret/an",
+        },
+        {
+          name: "Aéroport de Franceville-Mvengue",
+          traffic: "~50 000 passagers/an",
+          freight: "~500 t fret/an",
+        },
+      ],
+      railway: "Transgabonais : 648 km (Libreville/Owendo – Franceville). Géré par SETRAG (filiale Eramet/Arise). Principal usage : transport manganèse (COMILOG) et bois. Passagers en déclin. Réhabilitation progressive sous Arise.",
+      roads: "~9 400 km dont ~3 600 km bitumés. Réseau en amélioration mais lacunes en forêt dense. Route Libreville–Lambaréné–Mouila en réhabilitation (BAfD).",
+      corridors: "Corridor Transgabonais (Owendo–Franceville, manganèse + bois). Corridor Libreville–Douala (route + maritime). Corridor futur Baniaka/Bélinga vers port Mayumba (fer).",
+      containerCost: "~2 500 USD/conteneur 20' import CIF Owendo (2024)",
+      customsDelay: "7–12 jours (douanes Owendo — amélioration post-Arise)",
+      logisticZones: [
+        "ZES de Nkok — hub agro-industrie et bois (Arise IIP)",
+        "Zone portuaire Owendo (Arise Ports)",
+        "Zone pétrolière Port-Gentil",
+      ],
+      maritimeConnectivity: "Accès direct Atlantique via Owendo et Port-Gentil. Liaisons régulières vers Europe (Anvers, Le Havre — manganèse), Asie (Chine — manganèse), Amérique. Compagnies : MSC, CMA-CGM, Maersk.",
+    } ,
+
+    trade: {
+      topExports: [
+        { product: "Pétrole brut", value: "~4 Mds USD", destination: "Chine (50%), USA, Inde, Europe" },
+        { product: "Manganèse (COMILOG/Eramet)", value: "~900 M USD", destination: "UE (Dunkerque/Norvège), Chine, Japon" },
+        { product: "Bois transformé (sciages, placages)", value: "~300 M USD", destination: "Chine, UE, Moyen-Orient" },
+        { product: "Huile de palme (Olam)", value: "~150 M USD", destination: "Asie, régional" },
+        { product: "Minerai de fer (Baniaka — démarrage)", value: "Non disponible (production 2027+)", destination: "Chine (cible)" },
+      ],
+      topImports: [
+        { product: "Machines et équipements", value: "~700 M USD", origin: "UE (France), Chine" },
+        { product: "Produits alimentaires", value: "~500 M USD", origin: "France, Cameroun, Maroc" },
+        { product: "Produits pétroliers raffinés", value: "~400 M USD", origin: "Nigeria, Congo, importation" },
+        { product: "Véhicules", value: "~200 M USD", origin: "France, Japon, Chine" },
+        { product: "Médicaments et équipements médicaux", value: "~150 M USD", origin: "France, UE" },
+      ],
+      tradeBalance: "+5.2 Mds USD (surplus hydrocarbures + manganèse, 2024)",
+      fdiInward: {
+        stock: "~8 Mds USD (2024)",
+        flow: "~800 M USD/an",
+        topInvestors: ["France (TotalEnergies, Perenco, Eramet)", "UK (Perenco — famille Perrodo)", "Singapour (Olam/Arise)", "Chine (CNOOC, Sinohydro)", "USA (Vaalco)"],
+      },
+      fdiOutward: "Très faible — moins de $100 M USD/an",
+      tradeAgreements: [
+        "ZLECAF (signataire)",
+        "CEMAC (Union douanière Afrique Centrale)",
+        "ACP-UE (Accord de Partenariat Économique Afrique centrale — APE en discussion)",
+        "OCI",
+      ],
+      taxRegime: {
+        is: "IS 30% (standard). Régimes préférentiels ZES Nkok (exonération 25 ans) et conventions minières/pétrolières individuelles.",
+        tva: "TVA 18%",
+        conventions: "Conventions de double imposition : France, Belgique, Canada, Maroc, Maurice. BEAC régule devises zone CEMAC.",
+      },
+      freeZones: "ZES de Nkok (Arise IIP) — zone franche industrielle. ZES Port-Gentil (hydrocarbures). Régimes contractuels pétrole et mines.",
+      profitRepatriation: "Réglementée par BEAC (Banque des États Afrique Centrale). XAF = monnaie CFA garantie parité EUR — stabilité de change. Rapatriement possible via comptes en devises BEAC.",
+      bit: "Traités bilatéraux d'investissement avec : France, USA, Chine, Allemagne, Belgique, Suisse, Italie (ICSID disponible).",
+    } ,
+
+    billionaires: [
+      {
+        name: "Famille Bongo (Ali Bongo Ondimba)",
+        fortune: "Estimée $1–2 Mds USD (biens saisis post-coup 2023)",
+        source: "Rentes pétrolières, immobilier (France, Gabon, international), fonds politiques",
+        companies: "Participations diverses (non publiques), immobilier Paris 16e, villas Côte d'Azur",
+        age: "Ali Bongo : 65 ans (né 1959) — renversé août 2023",
+        education: "Droit Paris II, Sciences Po",
+        bio: "Président du Gabon de 2009 à août 2023 (renversé par coup d'État CTRI). Fils d'Omar Bongo (43 ans au pouvoir). Fortune familiale liée aux rentes pétrolières de l'État gabonais. Biens gelés par la junte CTRI depuis septembre 2023. Enquête 'biens mal acquis' en France.",
+      },
+      {
+        name: "Samuel Dossou-Aworet",
+        fortune: "~200 M USD (estimation)",
+        source: "Services pétroliers — Petrolin Group",
+        companies: "Petrolin Group (trading pétrole, services parapétroliers), actif Afrique de l'Ouest et Centrale",
+        age: "Non disponible",
+        education: "Ingénieur, formation internationale",
+        bio: "Entrepreneur béno-gabonais fondateur du Petrolin Group (services et négoce pétrole). Actif dans plusieurs pays d'Afrique sub-saharienne. Figure de l'entrepreneuriat africain dans le secteur énergétique.",
+      },
+      {
+        name: "Frédéric Abikou Remanda",
+        fortune: "Non disponible",
+        source: "Industrie du bois et immobilier — Groupe Rougier Gabon",
+        companies: "Rougier Gabon (filiale Rougier SA France), concessions forestières",
+        age: "Non disponible",
+        education: "Non disponible",
+        bio: "Représentatif de l'industrie forestière gabonaise. Rougier Gabon = acteur majeur de la transformation du bois depuis l'interdiction d'export de grumes (2010). Secteur en restructuration sous la junte CTRI.",
+      },
+    ],
+
+
     timezone: "UTC+1",
     languages: "Français (officiel), Fang, Myènè, Bapounou",
     religions: "Christianisme (80%), Islam (10%), Animisme (10%)",
@@ -3684,14 +4106,24 @@ export const DATA_REMAINING_AFRICA: Country[] = [
 
     contacts: {
       chambers: ["Chambre de Commerce, d'Agriculture, d'Industrie, des Mines et de l'Artisanat du Gabon (CCAIMAG)"],
-      afd: "AFD Gabon — Bureau Libreville",
+      afd: "AFD Gabon — Bureau Libreville — financement réhabilitation Transgabonais (CFA 85 Mds 2025)",
       lawFirms: ["Cabinet Fabrice Sawegnon (Libreville)", "Gide Loyrette Nouel Libreville"],
-      patronat: "CGECI — Confédération Générale des Entreprises du Congo/Gabon (PATRONAT Gabon)"
+      patronat: "CGECI — Confédération Générale des Entreprises du Gabon",
+      investmentAgency: "ANPI-Gabon (Agence Nationale pour la Promotion des Investissements) — DG: Ghislain Moandza Mboma — www.investingabon.ga",
+      miningMinister: "Sosthène Nguema Nguema (nommé 1er jan. 2026) — agenda pro-investissement, accélération permis miniers",
+      stateCompany: "SEM (Société Équatoriale des Mines) — cible $1 Md revenus/2030",
+      euRelations: "Forum Gabon-Chine sept. 2024: $4.3 Mds mobilisés. Interdiction exports manganèse brut 2029.",
+      embassies: [
+        {country: "France", city: "Libreville", website: "ga.ambafrance.org"},
+        {country: "UE", city: "Libreville", website: "eeas.europa.eu/delegations/gabon"}
+      ]
     },
 
     universities: [
-      {name: "Université Omar Bongo (UOB)", city: "Libreville", students: "~25 000", specialties: "Droit, Lettres, Sciences sociales"},
-      {name: "Université des Sciences et Techniques de Masuku (USTM)", city: "Franceville", students: "~5 000", specialties: "Sciences, Géologie, Mines"}
+      {name: "Université Omar Bongo (UOB)", city: "Libreville", students: "~25 000", specialties: "Droit, Lettres, Sciences sociales, Sciences de la terre", ranking: "#1 Gabon"},
+      {name: "Université des Sciences et Techniques de Masuku (USTM)", city: "Franceville", students: "~5 000", specialties: "Sciences, Géologie, Mines, Chimie, Mathématiques — seule université sci-tech Gabon, proche mines COMILOG (Moanda)", ranking: "#1 Gabon formation géologie/mines"},
+      {name: "Institut Polytechnique de Masuku (IPM)", city: "Franceville", students: "~2 000", specialties: "Ingénierie minière, Génie civil, Hydrocarbures, Électromécanique"},
+      {name: "Institut National Polytechnique (INP-Gabon)", city: "Libreville", students: "~3 000", specialties: "Génie industriel, Management, Ingénierie appliquée"}
     ],
     literacyRate: "84%",
 
@@ -3699,9 +4131,15 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       totalPopulation: "2.4 millions (2025)",
       growthRate: "2.4%/an",
       urbanPopulation: "90% (l'un des plus urbanisés d'Afrique)",
-      unemployment: "20% (officiel)",
+      unemployment: "20% (officiel) — chômage jeunes élevé",
       hdi: "0.706 — Rang 119/191 (revenu intermédiaire supérieur)",
-      lifeExpectancy: "67 ans"
+      lifeExpectancy: "67 ans",
+      ageStructure: "36% de 0-14 ans, 60% de 15-64 ans, 4% de 65+ ans. Âge médian: 21 ans.",
+      laborForce: "~750 000 (dont ~50 000 dans le secteur minier/pétrolier)",
+      literacy: "84% (hommes 87%, femmes 81%)",
+      gdpPerCapitaNominal: "~$8 500 (2024) — parmi les plus élevés d'Afrique subsaharienne",
+      middleClass: "~35% de la population",
+      transitPolitique: "Coup d'État août 2023 — CTRI au pouvoir (Gén. Oligui Nguema). Stabilité maintenue. COMILOG continue production."
     },
 
     risks: {
@@ -3900,6 +4338,224 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     riskScore: 9,
     riskLabel: "Très élevé",
     recommendation: "Secteur minier critique mondial — engagement avec gestion risque extrême",
+
+    industries: {
+      gdpBySector: {
+        agriculture: 20,
+        industry: 33,
+        services: 38,
+        mining: 13.8,
+      },
+      keyIndustries: [
+        {
+          name: "Mines — Cobalt & Cuivre",
+          description: "RDC = 75% de la production mondiale de cobalt et ~2.5 Mt/an de cuivre. Glencore, CMOC, Ivanhoe Mines opèrent à Kolwezi/Katanga. Cobalt critique pour batteries VE (chaîne d'approvisionnement UE).",
+          share: "~30% PIB minier",
+        },
+        {
+          name: "Hydroélectricité — Potentiel Inga",
+          description: "Potentiel hydroélectrique estimé à 100 000 MW (le plus grand du monde). Inga I (351 MW) et Inga II (1 424 MW) opérationnels mais dégradés. Grand Inga III (4 800 MW) en projet. Fournirait de l'énergie à toute l'Afrique subsaharienne.",
+          share: "Capacité installée actuelle : 2 800 MW",
+        },
+        {
+          name: "Télécommunications",
+          description: "Marché de 105 millions d'habitants. Mobile Money (M-Pesa via Vodacom) en forte croissance. 4G déployée dans les grandes villes. Fibre optique backbone en construction.",
+          share: "~3% PIB",
+        },
+        {
+          name: "Agriculture & Agro-industrie",
+          description: "Café, huile de palme, caoutchouc, cacao. Potentiel agricole immense (80 M ha de terres arables dont 10% exploitées). Principalement subsistance. Agro-industrie émergente (FERONIA, plantations Kinshasa).",
+          share: "20% PIB",
+        },
+        {
+          name: "Coltan (Tantale-Niobium)",
+          description: "RDC possède 64% des réserves mondiales de coltan. Extraction principalement artisanale au Kivu. Mineral critique pour l'électronique (condensateurs, smartphones, défense). Problématique des minerais de conflit.",
+          share: "~2% PIB (sous-déclaré)",
+        },
+      ],
+      sez: [
+        {
+          name: "ZES de Maluku",
+          location: "Maluku, province de Kinshasa",
+          advantages: "Zone Économique Spéciale dédiée à l'agro-industrie et à la transformation industrielle. Exonérations fiscales 10 ans, guichet unique investisseur. Accès fleuve Congo pour transport.",
+        },
+        {
+          name: "ZES de Musoshi-Kasumbalesa",
+          location: "Kasumbalesa, Haut-Katanga (frontière Zambie)",
+          advantages: "Zone industrielle minière au cœur de la Copper Belt. Accès direct au corridor de Lobito. Transformation des minerais cuivre/cobalt sur place. Régime douanier préférentiel.",
+        },
+      ],
+      majorProjects: [
+        "Port en eau profonde de Banana (DP World, 2025–2028, investissement $350 M — premier port maritime RDC sur Atlantique)",
+        "Corridor ferroviaire de Lobito (réhabilitation Kolwezi–Lobito, financement UE/USA $5 Mds, transport minerais Katanga vers Atlantique)",
+        "Grand Inga III hydroélectrique (4 800 MW, études ADB/World Bank, partenariat TotalEnergies envisagé)",
+        "Réhabilitation Route Nationale 1 Kinshasa–Matadi (Banque Mondiale, désenclavement Bas-Congo)",
+        "Backbone fibre optique national (projet gouvernemental, liaison provinces, 5G préparation Kinshasa)",
+        "Manono Lithium (AVZ Minerals, développement en suspens — litige ownership avec Dathomir/CATH en cours)",
+        "Busanga Hydropower (240 MW, Lualaba — financement Sinohydro, mise en service 2025)",
+      ],
+      banking: {
+        mainBanks: [
+          "Rawbank (plus grande banque privée RDC, actionnaire Rawji Group)",
+          "Equity BCDC (Equity Group Kenya 66.3%, fusion Ex-BCDC)",
+          "TMB — Trust Merchant Bank (privé congolais, réseau national)",
+          "FBN Bank RDC (FBN Holdings Nigeria)",
+          "Bank of Africa RDC (BOA Group / BMCE)",
+          "Sofibanque (privé congolais, Kinshasa)",
+        ],
+        totalAssets: "~8 Mds USD (système bancaire consolidé 2024)",
+        bancarisation: "~8% de la population adulte (accès services bancaires formels)",
+      },
+      telecom: {
+        operators: [
+          "Vodacom Congo (M-Pesa mobile money, ~15M abonnés)",
+          "Airtel RDC (Airtel Africa plc, ~12M abonnés)",
+          "Orange RDC (~9M abonnés)",
+          "Africell RDC (~6M abonnés)",
+        ],
+        mobilePenetration: "45% (2024)",
+        internetPenetration: "23% (2024, principalement mobile)",
+      },
+      energy: {
+        mix: "Hydroélectrique 96%, Thermique (diesel/gaz) 4%",
+        installedCapacity: "2 800 MW (principalement Inga I 351 MW + Inga II 1 424 MW — vétustes, production effective ~1 200 MW)",
+        renewableProjects: "Grand Inga III (4 800 MW — études en cours), Busanga (240 MW — mise en service 2025), Ruzizi III (147 MW partagé RDC/Rwanda/Burundi), Zongo II (150 MW)",
+      },
+    } ,
+
+    logistics: {
+      ports: [
+        {
+          name: "Port de Matadi",
+          capacity: "~1 Mt/an marchandises générales, ~100 000 TEU/an",
+          operator: "SCTP — Société Commerciale des Transports et des Ports (État RDC)",
+          draft: "7m (accès limité grands navires — port fluvial Fleuve Congo)",
+          note: "Principal port fluvial RDC, à 150 km de l'embouchure. Accès maritime limité par la profondeur.",
+        },
+        {
+          name: "Port de Banana (Deep Sea — en construction)",
+          capacity: "Capacité prévue : 350 000 TEU/an à terme",
+          operator: "DP World (Dubai Ports World) — concession 30 ans",
+          draft: "15m (eau profonde, accès directs navires Panamax)",
+          note: "Premier port en eau profonde de RDC sur l'Atlantique. Investissement $350 M. Début construction 2025, livraison estimée 2028.",
+        },
+        {
+          name: "Port de Boma",
+          capacity: "~50 000 t/an marchandises diverses",
+          operator: "SCTP / privé partiel",
+          draft: "6m",
+          note: "Port secondaire fluvial, Bas-Congo. Rôle de transit régional.",
+        },
+      ],
+      airports: [
+        {
+          name: "Aéroport International de N'Djili (Kinshasa)",
+          traffic: "~1.5 M passagers/an (2024)",
+          freight: "~25 000 t fret/an",
+        },
+        {
+          name: "Aéroport International de Luano (Lubumbashi)",
+          traffic: "~500 000 passagers/an",
+          freight: "~5 000 t fret/an",
+        },
+        {
+          name: "Aéroport de Goma",
+          traffic: "~300 000 passagers/an",
+          freight: "~2 000 t fret/an",
+        },
+      ],
+      railway: "Réseau SNCC (Société Nationale des Chemins de fer du Congo) : ~5 000 km mais majoritairement dégradé et inopérationnel. CFM (Chemin de Fer Matadi-Kinshasa) : 366 km — principal lien rail Kinshasa-Matadi. Extension Lobito corridor vers Kolwezi en cours (financé UE/USA).",
+      roads: "~153 000 km dont seulement ~3% bitumés. Route Nationale 1 (Kinshasa-Matadi) réhabilitée partiellement. Accès à l'Est quasi-impossible en saison des pluies. Fleuve Congo = principale voie de transport intérieure (14 000 km navigables).",
+      corridors: "Corridor de Lobito (Lobito Angola — Kolwezi RDC — Dar es Salaam, financement G7 $5 Mds). Northern Corridor (transit via Rwanda et Kenya). BEIRA Corridor (via Zimbabwe-Mozambique pour le Sud).",
+      containerCost: "~3 800 USD/conteneur 20' import CIF Matadi (2024)",
+      customsDelay: "15–30 jours (délais douaniers et congestion port Matadi — parmi les plus longs d'Afrique)",
+      logisticZones: [
+        "ZES Maluku (Kinshasa — agro-industrie)",
+        "Kasumbalesa Free Trade Zone (Katanga — minerais)",
+        "Zone Industrielle de Kinshasa (ZIK)",
+      ],
+      maritimeConnectivity: "Accès Atlantique via Matadi (fluvial, limité) ou en transit par Dar es Salaam (Tanzanie) et Durban (Afrique du Sud) pour minerais Katanga. Port Banana (DP World) changera la donne 2028.",
+    } ,
+
+    trade: {
+      topExports: [
+        { product: "Cuivre (cathodes et concentrés)", value: "~8 Mds USD", destination: "Chine (70%), UE, Inde" },
+        { product: "Cobalt (minerai et raffiné)", value: "~10 Mds USD", destination: "Chine (90%), Corée du Sud, UE" },
+        { product: "Or (officiel + transit)", value: "~2.5 Mds USD", destination: "Dubaï, Suisse, Afrique du Sud" },
+        { product: "Diamants", value: "~300 M USD", destination: "Belgique (Anvers), Dubaï" },
+        { product: "Coltan/Tantale", value: "~350 M USD", destination: "Chine, UE, USA" },
+      ],
+      topImports: [
+        { product: "Machines et équipements miniers", value: "~3 Mds USD", origin: "Chine, UE, USA" },
+        { product: "Produits alimentaires et denrées", value: "~2.5 Mds USD", origin: "Afrique du Sud, Kenya, UE" },
+        { product: "Carburants et produits pétroliers", value: "~2 Mds USD", origin: "Angola, Nigeria, importation" },
+        { product: "Véhicules et transport", value: "~1 Mds USD", origin: "Chine, Japon, UE" },
+        { product: "Médicaments et équipements médicaux", value: "~500 M USD", origin: "UE, Inde" },
+      ],
+      tradeBalance: "+4.5 Mds USD (surplus minier, 2024)",
+      fdiInward: {
+        stock: "~19 Mds USD (2024)",
+        flow: "~2.5 Mds USD/an",
+        topInvestors: ["Chine", "Suisse (Glencore)", "Canada (Ivanhoe)", "Afrique du Sud", "Belgique", "USA"],
+      },
+      fdiOutward: "Très faible — moins de $100 M USD/an",
+      tradeAgreements: [
+        "ZLECAF (Zone de Libre-Échange Continentale Africaine — signataire)",
+        "SADC (Protocole commercial SADC)",
+        "COMESA (membre actif)",
+        "EAC (adhésion 2022)",
+        "ACP-UE (Accord de Cotonou / APE SADC)",
+      ],
+      taxRegime: {
+        is: "IS 35% (taux standard entreprises — réductions secteur minier contractuelles)",
+        tva: "TVA 16%",
+        conventions: "Convention de double imposition avec : Belgique, Afrique du Sud, France (en négociation), Mauritius",
+      },
+      freeZones: "ZES Maluku (Kinshasa) — fiscalité réduite 10 ans. ZES Kasumbalesa (Katanga). Régime Code Minier 2018 avec royalties spécifiques (10% cobalt, 3.5% cuivre).",
+      profitRepatriation: "Autorisée via Banque Centrale du Congo (BCC). Délais importants en pratique (30–60 jours). Contrôle des changes strict. USD = monnaie de facto pour grands contrats.",
+      bit: "Traités bilatéraux d'investissement avec : USA, Belgique, France, Chine, Afrique du Sud, Corée du Sud, Allemagne (liste non exhaustive — ICSID arbitration disponible).",
+    } ,
+
+    billionaires: [
+      {
+        name: "Dan Gertler",
+        fortune: "~1.5 Mds USD",
+        source: "Mining — droits miniers cobalt/cuivre via DGI (Fleurette Group)",
+        companies: "Fleurette Group, DGI (Dan Gertler International), participations Glencore (ex)",
+        age: "51 ans (né 1973)",
+        education: "Diplomé Tel Aviv — Business",
+        bio: "Homme d'affaires israélo-congolais, proche de l'ex-président Kabila. A acquis des droits miniers majeurs (Katanga, Mutanda). Sous sanctions OFAC USA depuis 2017 (corruption présumée). Partiellement levées 2021 sous administration Trump.",
+      },
+      {
+        name: "Moïse Katumbi",
+        fortune: "~500 M USD (estimation)",
+        source: "Mines (participations Katanga), immobilier, football (TP Mazembe)",
+        companies: "Katanga Mining (participations), TP Mazembe FC, Hyppolite Mining, Immobilier Lubumbashi",
+        age: "59 ans (né 1964)",
+        education: "Business management, Afrique du Sud",
+        bio: "Ancien gouverneur du Katanga (2007–2015). Leader politique d'opposition (Ensemble pour la République). Richesse construite dans le secteur minier du Katanga et la gestion du club de football continental TP Mazembe. En opposition à Tshisekedi.",
+      },
+      {
+        name: "Albert Yuma Mulimbi",
+        fortune: "Non disponible (influence économique majeure)",
+        source: "Réseau minier — Gécamines (Président du CA), affiliations industrielles",
+        companies: "Gécamines (Président Conseil Administration), Fédération des Entreprises du Congo (FEC)",
+        age: "Non disponible",
+        education: "Ingénieur et juriste",
+        bio: "Figure clé de l'économie congolaise. Président du Conseil d'Administration de Gécamines (compagnie minière d'État), position permettant participation aux grandes décisions d'attribution minière. Président de la FEC (patronat RDC). Réseau complexe liant État et secteur privé minier.",
+      },
+      {
+        name: "Sindika Dokolo",
+        fortune: "~800 M USD (au décès en 2020)",
+        source: "Collection d'art africain, investissements miniers Angola/RDC, réseau familial",
+        companies: "Fondation Sindika Dokolo (art), participations diverses Angola/RDC",
+        age: "Décédé en 2020 (48 ans)",
+        education: "École de commerce, Danemark",
+        bio: "Collecteur d'art africain de renommée internationale et homme d'affaires. Marié à Isabel dos Santos (Angola). Réseau d'affaires spanning RDC-Angola. Décédé lors d'un accident de plongée à Dubaï en 2020.",
+      },
+    ],
+
+
     timezone: "UTC+1 (Kinshasa) / UTC+2 (Est)",
     languages: "Français (officiel), Lingala, Kikongo, Swahili, Tshiluba",
     religions: "Christianisme (95.8%), Islam (1.5%)",
@@ -4006,15 +4662,25 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       afd: "AFD RDC — Bureau Kinshasa",
       lawFirms: ["Gide Loyrette Nouel Kinshasa", "CMS Francis Lefebvre (partenaire local)", "Peter & Kim (Kinshasa)"],
       big4: ["Deloitte RDC", "PwC RDC (Kinshasa)", "EY RDC", "KPMG RDC"],
-      patronat: "FEC — Fédération des Entreprises du Congo"
+      patronat: "FEC — Fédération des Entreprises du Congo",
+      investmentAgency: "ANAPI (Agence Nationale pour la Promotion des Investissements) — www.anapi.cd",
+      miningRegulator: "Direction des Mines — Code minier 2018. Royalties 10% cobalt, 3.5% cuivre.",
+      stateCompany: "Gécamines (La Générale des Carrières et des Mines) — partenaire KCC, joint-ventures",
+      miningMinister: "Kizito Pakabomba — Ministère des Mines",
+      embassies: [
+        {country: "France", city: "Kinshasa", website: "cd.ambafrance.org"},
+        {country: "UE", city: "Kinshasa", website: "eeas.europa.eu/delegations/democratic-republic-congo"}
+      ]
     },
 
     universities: [
-      {name: "Université de Kinshasa (UNIKIN)", city: "Kinshasa", students: "~30 000", specialties: "Médecine, Droit, Sciences"},
-      {name: "Université de Lubumbashi (UNILU)", city: "Lubumbashi", students: "~25 000", specialties: "Mines, Géologie, Polytechnique"},
-      {name: "ISTA — Institut Supérieur des Techniques Appliquées", city: "Kinshasa", students: "~10 000", specialties: "Ingénierie, Informatique"}
+      {name: "Université de Kinshasa (UNIKIN)", city: "Kinshasa", students: "~30 000", specialties: "Médecine, Droit, Sciences", ranking: "#1 DRC (EduRank 2026)"},
+      {name: "Université de Lubumbashi (UNILU)", city: "Lubumbashi", students: "~25 000", specialties: "Mines, Géologie, Polytechnique", ranking: "#2 DRC, #775 Mining Eng. monde (EduRank 2026)"},
+      {name: "ISTA — Institut Supérieur des Techniques Appliquées", city: "Kinshasa", students: "~10 000", specialties: "Ingénierie, Informatique"},
+      {name: "Université de Kolwezi (UNIKOL)", city: "Kolwezi", students: "~2 400", specialties: "Mines, Géologie, Géotechnique — situé au cœur du Copperbelt", ranking: "N/A"},
+      {name: "ISTA-Lubumbashi (Institut Supérieur des Techniques Appliquées)", city: "Lubumbashi", students: "~5 000", specialties: "Ingénierie minière, Électromécanique, Informatique industrielle"}
     ],
-    literacyRate: "80%",
+    literacyRate: "77%",
 
     demographics: {
       totalPopulation: "105 millions (2025)",
@@ -4023,7 +4689,14 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       unemployment: "Non disponible (informel massif)",
       hdi: "0.481 — Rang 179/191",
       lifeExpectancy: "61 ans",
-      languages: "Français (officiel), Lingala, Kikongo, Swahili, Tshiluba"
+      languages: "Français (officiel), Lingala, Kikongo, Swahili, Tshiluba",
+      ageStructure: "46% de 0-14 ans, 51% de 15-64 ans, 3% de 65+ ans. Âge médian: 17 ans.",
+      laborForce: "~32 millions (taux activité ~70%)",
+      literacy: "77% (hommes 88%, femmes 66%)",
+      miningEmployment: "~12.5 millions dans l'artisanat minier (dont ASM cobalt)",
+      middleClass: "~5% de la population",
+      millionaires: "~400",
+      diaspora: "~3.5 millions (Belgique, France, USA, Afrique du Sud)"
     },
 
     risks: {
@@ -4074,6 +4747,234 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     riskScore: 5,
     riskLabel: "Modéré",
     recommendation: "Hub pétrolier majeur — diversification à suivre sous Lourenço",
+
+    industries: {
+      gdpBySector: {
+        agriculture: 8,
+        industry: 55,
+        services: 37,
+        mining: 30,
+      },
+      keyIndustries: [
+        {
+          name: "Pétrole — #2 Afrique subsaharienne",
+          description: "Angola = 2e producteur africain de pétrole (~1.1 M bpd en 2024). Principaux opérateurs : TotalEnergies (Block 17, Girassol, Dalia, Pazflor), Chevron (Block 0 Cabinda), BP (Block 18), Eni, ExxonMobil, CNOOC. Sonangol = compagnie nationale (participation obligatoire). Réserves ~8.5 Mds barils. Déclin progressif de la production sans nouvelles découvertes majeures.",
+          share: "~30% PIB, ~95% revenus export",
+        },
+        {
+          name: "Diamants — #4 mondial",
+          description: "Angola = 4e producteur mondial de diamants (~8 M carats/an, revenus ~$2.1 Mds 2025). Principaux gisements : Catoca (Lunda Sul, ENDIAMA 41% + Alrosa 41%), Luele (Lunda Norte, Lucapa Diamond). ENDIAMA = compagnie nationale. Diamants angolais réputés pour haute qualité (gem quality élevé). Nouveau code minier 2022 sous Lourenço.",
+          share: "~5% PIB, ~3% revenus export",
+        },
+        {
+          name: "Terres Rares — Longonjo (Pensana PLC)",
+          description: "Gisement de Longonjo (Huambo Province) = l'un des plus importants gisements de terres rares hors Chine. Pensana PLC (UK) = opérateur. Oxyde de néodyme-praséodyme (NdPr) pour aimants permanents VE. Production démarrée 2024–2025. Chaîne de valeur planifiée jusqu'à Humber Refinery (UK). Hautement stratégique pour UE (liste CRM).",
+          share: "Émergent — <1% PIB actuel",
+        },
+        {
+          name: "Hydroélectricité — Laúca & Caculo Cabaça",
+          description: "Angola = potentiel hydroélectrique majeur (~150 GW estimé). Laúca Dam (2 070 MW, opérationnel 2017–2024) = plus grand barrage d'Afrique sub-saharienne. Caculo Cabaça (2 172 MW, construction en cours — China Three Gorges/CCCC). Capanda (520 MW), Cambambe (960 MW). Objectif d'exporter électricité vers pays voisins.",
+          share: "Secteur énergie ~3% PIB (en expansion)",
+        },
+        {
+          name: "Pêche & Économie maritime",
+          description: "Angola possède 1 600 km de côtes Atlantique. Industrie de la pêche importante (sardines, thon, crustacés). Exportations poissons ~$300 M/an. Pêche artisanale et industrielle. Potentiel transformé insuffisamment exploité.",
+          share: "~2% PIB",
+        },
+      ],
+      sez: [
+        {
+          name: "ZEE de Luanda-Bengo",
+          location: "Province de Bengo, 30 km nord de Luanda",
+          advantages: "Zona Económica Especial Luanda-Bengo. Créée 2006. Industries manufacturières, agro-industrie, textile, montage auto. Exonérations IS 10–15 ans, droits douane 0% importations équipement. Infrastructure dédiée. ~160 entreprises installées.",
+        },
+        {
+          name: "ZEE de Viana",
+          location: "Viana (banlieue industrielle de Luanda)",
+          advantages: "Zone industrielle de Viana — industries légères, montage, logistique. Proximité port de Luanda. Infrastructure routière. Préférentiel pour industries de substitution aux importations.",
+        },
+        {
+          name: "Lobito Free Trade Zone (en planification)",
+          location: "Lobito, Province de Benguela",
+          advantages: "Zone franche en développement autour du hub du Corridor de Lobito. Terminus du Benguela Railway (CFB). Transformation minerais, logistique, industries légères. Financement UE/USA dans le cadre du Lobito Atlantic Railway Partnership.",
+        },
+      ],
+      majorProjects: [
+        "Corridor de Lobito — Benguela Railway (CFB 1 344 km Lobito–frontière RDC/Zambie, financement USA+UE $5 Mds, extension vers Kolwezi 2026–2028)",
+        "Caculo Cabaça Hydroelectric (2 172 MW sur Kwanza — China Three Gorges Corp, mise en service prévue 2027)",
+        "NAIL — Novo Aeroporto Internacional de Luanda (15 M pax capacité, construction avancée, livraison partielle 2025–2026)",
+        "Longonjo REE Mine — Phase 2 (Pensana PLC, terres rares NdPr, production en cours 2025, export UK Humber Refinery)",
+        "Soyo LNG Expansion (Angola LNG — TotalEnergies/Chevron/BP/Eni/Sonangol, augmentation capacité)",
+        "Luanda Bay Deep Sea Port (projet modernisation/extension port Luanda — appel d'offres DP World)",
+        "Namibe New City Project (développement industriel côte sud)",
+      ],
+      banking: {
+        mainBanks: [
+          "BAI — Banco Angolano de Investimentos (#1 banque Angola par actifs, privé)",
+          "BFA — Banco de Fomento Angola (BPI Portugal 48.1% + UNITEL/privé angolais)",
+          "BPC — Banco de Poupança e Crédito (État Angola 100%)",
+          "BIC — Banco BIC Angola (actionnaires privés angolais + Isabel dos Santos ex)",
+          "Standard Bank Angola (Standard Bank Afrique du Sud 70%)",
+        ],
+        totalAssets: "~40 Mds USD (système bancaire consolidé 2024 — le plus important d'Afrique centrale-australe hors Afrique du Sud)",
+        bancarisation: "35% de la population adulte (accès services bancaires formels)",
+      },
+      telecom: {
+        operators: [
+          "Unitel (#1 marché Angola, fondé Isabel dos Santos, nationalisé partiellement — actionnariat: Sonangol 25%, Portugal Telecom 25%, CTH 25%, Geni 25%)",
+          "Movicel (Angola Telecom/État — #2 marché)",
+          "Africell Angola (Africell Group, nouveau entrant)",
+        ],
+        mobilePenetration: "45% (2024)",
+        internetPenetration: "30% (2024 — en croissance via 4G Luanda)",
+      },
+      energy: {
+        mix: "Hydroélectrique 65%, Gaz naturel 25%, Pétrole/Thermique 10%",
+        installedCapacity: "~6 500 MW (2024 — dont Laúca 2 070 MW, Capanda 520 MW, Cambambe 960 MW)",
+        renewableProjects: "Caculo Cabaça (2 172 MW — Three Gorges, 2027), Soyo Gas-to-Power (gaz naturel 750 MW), solaire Benguela (50 MW), éolien côtier (études)",
+      },
+    } ,
+
+    logistics: {
+      ports: [
+        {
+          name: "Port de Luanda",
+          capacity: "~800 000 TEU/an, 15 Mt marchandises diverses",
+          operator: "ANGT — Angola National Grains Terminal + Sonils (conteneurs), Port Administration Luanda",
+          draft: "12m",
+          note: "Principal port Angola. Très congestionné historiquement. Modernisation en cours. Hub import national et hub pétrolier offshore.",
+        },
+        {
+          name: "Port de Lobito",
+          capacity: "~500 000 TEU/an (capacité après modernisation)",
+          operator: "Gestão do Porto do Lobito — concession partielle Arise IIP",
+          draft: "12m",
+          note: "2e port Angola. Terminus du Benguela Railway (Corridor de Lobito vers RDC/Zambie). Hub stratégique pour minerais Copper Belt. Investissements USA+UE massifs.",
+        },
+        {
+          name: "Port de Namibe (Moçâmedes)",
+          capacity: "~3 Mt vrac sec, 30 000 TEU",
+          operator: "Administration Port de Namibe (État)",
+          draft: "10m",
+          note: "Port sud Angola. Exportation minerai de fer (Cassinga). Développement futur pour pêche industrielle et export mineral.",
+        },
+        {
+          name: "Terminal pétrolier de Cabinda",
+          capacity: "~600 000 b/j capacité terminal (pétrole brut offshore)",
+          operator: "Chevron (CABGOC) + Sonangol",
+          draft: "SPM (Single Point Mooring — terminal offshore)",
+          note: "Terminal export pétrole brut Block 0 (Cabinda). Enclave politique.",
+        },
+      ],
+      airports: [
+        {
+          name: "Aéroport International Quatro de Fevereiro de Luanda (LAD)",
+          traffic: "~3 M passagers/an (2024)",
+          freight: "~50 000 t fret/an",
+        },
+        {
+          name: "NAIL — Novo Aeroporto Internacional de Luanda (en construction)",
+          traffic: "Capacité prévue : 15 M passagers/an — livraison partielle 2025–2026",
+          freight: "~150 000 t fret/an (prévision)",
+        },
+        {
+          name: "Aéroport International du Lubango",
+          traffic: "~100 000 passagers/an",
+          freight: "~1 000 t fret/an",
+        },
+      ],
+      railway: "Benguela Railway (CFB) : 1 344 km (Lobito–Luau frontière RDC) — réhabilité par China Rail (2015). Corridor de Lobito = extension vers Kolwezi RDC + Kitwe Zambie (en cours, financé USA+UE). CFL (Caminho de Ferro de Luanda) : 440 km (Luanda–Malanje). Réhabilitation partielle en cours.",
+      roads: "~76 000 km dont ~25 000 km bitumés. Amélioration post-guerre civile (fin 2002). Routes nationales principales en bon état (Luanda–Lobito–Namibe). Intérieur encore difficile.",
+      corridors: "Corridor de Lobito (Lobito Angola–Kolwezi RDC–Dar es Salaam Tanzanie, G7/UE/USA financement $5 Mds). Corridor Luanda–Malanje (CFL, développement). Liaison Cabinda (enclave — maritime).",
+      containerCost: "~2 200 USD/conteneur 20' import CIF Luanda (2024)",
+      customsDelay: "10–15 jours (Luanda — amélioration Alfândegas Angola)",
+      logisticZones: [
+        "ZEE Luanda-Bengo (zone industrielle)",
+        "Port de Lobito — Lobito Corridor Hub",
+        "Soyo Industrial Zone (LNG + pétrochimie)",
+      ],
+      maritimeConnectivity: "Accès direct Atlantique Sud — 1 600 km côtes. Hub pétrolier offshore (blocs 0, 15, 17, 18). Liaisons régulières vers Europe (Rotterdam, Anvers), Chine (Qingdao), USA (Houston). MSC, CMA-CGM, Maersk desservent Luanda et Lobito.",
+    } ,
+
+    trade: {
+      topExports: [
+        { product: "Pétrole brut", value: "~30 Mds USD", destination: "Chine (60%), Inde, USA, Europe" },
+        { product: "Diamants (gem quality)", value: "~2.1 Mds USD (2025)", destination: "Belgique (Anvers), Dubaï, USA" },
+        { product: "Produits pétroliers raffinés (Soyo LNG)", value: "~2 Mds USD", destination: "Asie, Europe, Amériques" },
+        { product: "Terres rares NdPr (Longonjo démarrage)", value: "~100 M USD (2025)", destination: "UK (Humber Refinery), UE, Asie" },
+        { product: "Poissons et produits de la mer", value: "~300 M USD", destination: "UE, Chine, régional" },
+      ],
+      topImports: [
+        { product: "Machines et équipements industriels", value: "~3 Mds USD", origin: "Chine, UE (Portugal, France), USA" },
+        { product: "Produits alimentaires et boissons", value: "~2.5 Mds USD", origin: "Portugal, Brésil, Afrique du Sud" },
+        { product: "Produits pétroliers raffinés", value: "~2 Mds USD", origin: "Nigeria, importation internationale" },
+        { product: "Véhicules et transport", value: "~1.5 Mds USD", origin: "Portugal, Chine, Japon, USA" },
+        { product: "Médicaments et équipements médicaux", value: "~500 M USD", origin: "Portugal, Brésil, UE" },
+      ],
+      tradeBalance: "+18 Mds USD (surplus pétrolier massif, 2024)",
+      fdiInward: {
+        stock: "~30 Mds USD (2024)",
+        flow: "~6 Mds USD/an (dont ~5 Mds secteur pétrolier)",
+        topInvestors: ["USA (Chevron, ExxonMobil)", "France (TotalEnergies)", "UK (BP)", "Chine (CNOOC, China Three Gorges)", "Italie (Eni)", "Portugal (BFA, BCP)"],
+      },
+      fdiOutward: "~$200 M USD/an (Sonangol participations Afrique, investissements Lourenço en cours)",
+      tradeAgreements: [
+        "ZLECAF (signataire, implémentation en cours)",
+        "SADC (Protocole commercial — membre actif)",
+        "CEEAC (Communauté Économique des États de l'Afrique Centrale)",
+        "OPEP (membre actif)",
+        "ACP-UE (Accord de Cotonou — APE SADC en discussion)",
+      ],
+      taxRegime: {
+        is: "IS 25% (standard). IS 15% pour ZEE. Petroleum Income Tax 65.75% (pétrolier, inclus royalties et participations Sonangol). Impôt industriel 35% (secteur minier non pétrolier).",
+        tva: "TVA 14% (IVA — Imposto sobre o Valor Acrescentado)",
+        conventions: "Conventions de double imposition : Portugal, Italie, Chine, France, Russie, Brésil, Allemagne, Afrique du Sud, Namibie, Botswana.",
+      },
+      freeZones: "ZEE Luanda-Bengo (zone franche industrielle). ZEE Viana. Lobito Free Trade Zone (en développement). Régimes contractuels pétroliers (Production Sharing Agreements — PSA — standard industrie).",
+      profitRepatriation: "Autorisée via Banco Nacional de Angola (BNA). Kwanza (AOA) inconvertible — transactions pétrolières en USD. Difficultés pratiques de rapatriement kwanza-USD hors secteur pétrolier. BNA contrôle change.",
+      bit: "Traités bilatéraux d'investissement avec : Portugal, UK, Allemagne, Italie, Espagne, France, Russie, Chine, Cuba, Brésil (ICSID disponible). Lei do Investimento Privado 2018 (Lourenço) = cadre libéralisé.",
+    } ,
+
+    billionaires: [
+      {
+        name: "Isabel dos Santos",
+        fortune: "~1.5–3 Mds USD (estimations variables, actifs en grande partie gelés)",
+        source: "Télécoms (Unitel), banque (BIC/Efacec), diamants, pétrole — ancienne DG Sonangol",
+        companies: "Unitel (ex-fondatrice), BIC Angola, Efacec Portugal (ex), Zahara (retail), participations diverses Angola/Portugal/UK",
+        age: "51 ans (née 1973)",
+        education: "King's College London (Ingénierie électrique)",
+        bio: "Fille aînée de José Eduardo dos Santos (président 1979–2017). Longtemps présentée comme la femme la plus riche d'Afrique. DG de Sonangol brièvement (2016–2017). Mandat d'arrêt angolais pour détournement de fonds (Luanda Leaks, ICIJ 2020). Actifs gelés Angola et Portugal. Résidant actuellement à Dubaï.",
+      },
+      {
+        name: "Leopoldino 'Dino' do Nascimento",
+        fortune: "~3 Mds USD (estimation — fortune opaque)",
+        source: "Réseaux militaires/pétroliers, télécoms, immobilier — général et homme d'affaires",
+        companies: "Jovitelecomunicações (télécoms), Videotex (services), participations Unitel (indirect), immobilier Luanda",
+        age: "Non disponible",
+        education: "Militaire — Académie Militaire Angola",
+        bio: "Général de l'armée angolaise (retraité), ministre des Communications sous dos Santos. Considéré comme l'un des hommes les plus riches d'Angola via des réseaux opaques liant militaire, pétrole et télécoms. Dans le viseur des réformes anti-corruption de Lourenço.",
+      },
+      {
+        name: "Manuel Vicente",
+        fortune: "Non disponible (réseaux politiques pétroliers)",
+        source: "Pétrole — ex-PDG Sonangol (2000–2012), ex-Vice-Président Angola (2012–2017)",
+        companies: "Sonangol (ex-PDG), participations pétrolières diverses Angola et international",
+        age: "69 ans (né 1957)",
+        education: "Ingénierie pétrolière, formation Portugal",
+        bio: "Architecte de la Sonangol moderne. PDG Sonangol 2000–2012, Vice-Président Angola 2012–2017. Mis en cause dans affaire de corruption au Portugal (liée à Operação Fizz — 2017). Illustre les liens entre pouvoir politique angolais et compagnie pétrolière nationale.",
+      },
+      {
+        name: "Carlos São Vicente",
+        fortune: "~1 Mds USD (actifs partiellement gelés)",
+        source: "Assurance (ENSA — Empresa Nacional de Seguros), investissements divers",
+        companies: "ENSA — Empresa Nacional de Seguros de Angola, participations Unitel, immobilier",
+        age: "Non disponible",
+        education: "Non disponible",
+        bio: "Homme d'affaires angolais lié au régime dos Santos via le secteur des assurances. ENSA = principale compagnie d'assurance Angola. Actifs partiellement gelés dans le cadre des réformes anti-corruption Lourenço depuis 2017.",
+      },
+    ],
+
+
     timezone: "UTC+1",
     languages: "Portugais (officiel), Umbundu, Kimbundu, Kikongo",
     religions: "Christianisme (90%), Islam (1.5%), Animisme (8.5%)",
@@ -4151,12 +5052,24 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       chambers: ["Câmara de Comércio e Indústria de Angola (CCIA)"],
       afd: "AFD Angola — Bureau Luanda",
       lawFirms: ["Miranda & Associados Angola", "Gómez-Acebo & Pombo Angola", "Garrigues Angola"],
-      patronat: "Confederação das Associações Económicas de Angola (CAEA)"
+      patronat: "Confederação das Associações Económicas de Angola (CAEA)",
+      investmentAgency: "AIPEX (Agência de Investimento Privado e Promoção das Exportações de Angola) — www.aipex.gov.ao",
+      miningRegulator: "Instituto Geológico de Angola (IGEO) — Code minier 2011, réforme 2021",
+      stateCompanies: ["Sonangol (pétrole)", "ENDIAMA (diamants)", "Sodiam (marketing diamants)"],
+      secretaryState: "Janio Correa Victor (secrétaire d’État ressources minérales)",
+      euRelations: "UE 2e partenaire commercial. SIFA UE-Angola signé nov. 2023. 1er partenaire investissement.",
+      embassies: [
+        {country: "France", city: "Luanda", website: "ao.ambafrance.org"},
+        {country: "Portugal", city: "Luanda", website: "www.embaixada-portugal-angola.ao"},
+        {country: "UE", city: "Luanda", website: "eeas.europa.eu/delegations/angola"}
+      ]
     },
 
     universities: [
-      {name: "Universidade Agostinho Neto (UAN)", city: "Luanda", students: "~80 000", specialties: "Droit, Médecine, Sciences"},
-      {name: "Universidade Católica de Angola (UCAN)", city: "Luanda", students: "~15 000", specialties: "Économie, Droit, Ingénierie"}
+      {name: "Universidade Agostinho Neto (UAN)", city: "Luanda", students: "~80 000", specialties: "Mining Engineering, Géologie, Géophysique, Pétrole, Droit, Médecine, Sciences", ranking: "#1 Angola"},
+      {name: "Universidade Católica de Angola (UCAN)", city: "Luanda", students: "~15 000", specialties: "Économie, Droit, Ingénierie"},
+      {name: "Universidade Técnica de Angola (UTANGA)", city: "Luanda", students: "~5 000", specialties: "Ingénierie minière, Géologie, Génie civil, Sciences de la terre", ranking: "#7 Angola (EduRank 2026)"},
+      {name: "Universidade Lusíada de Angola", city: "Luanda", students: "~10 000", specialties: "Ingénierie, Droit, Économie, Sciences appliquées"}
     ],
     literacyRate: "71%",
 
@@ -4166,7 +5079,13 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       urbanPopulation: "68%",
       unemployment: "30% (réel)",
       hdi: "0.586 — Rang 148/191",
-      lifeExpectancy: "62 ans"
+      lifeExpectancy: "62 ans",
+      ageStructure: "45% de 0-14 ans, 52% de 15-64 ans, 3% de 65+ ans. Âge médian: 17 ans.",
+      laborForce: "~12 millions",
+      literacy: "71% (hommes 82%, femmes 60%)",
+      miningEmployment: "~200 000 emplois directs pétrole/diamants/mines",
+      lobitoCorridorRole: "Angola contrôle port Lobito — hub export cuivre/cobalt RDC vers Atlantique",
+      euTrade2024: "EU imports from AO: 6 155 M EUR (88.8% combustibles), exports to AO: 3 343 M EUR"
     },
 
     risks: {
@@ -4628,6 +5547,127 @@ export const DATA_REMAINING_AFRICA: Country[] = [
     riskScore: 4,
     riskLabel: "Modéré-Faible",
     recommendation: "Investir — hub tech et minéraux critiques",
+
+    industries: {
+      gdpBySector: {
+        agriculture: 20,
+        industry: 22,
+        services: 52,
+        mining: 4,
+      },
+      keyIndustries: [
+        {
+          name: "ICT & Services numériques — hub tech africain",
+          description: "Secteur ICT = 19% de croissance annuelle, 2e contributeur au PIB. Kigali = hub tech reconnu mondialement. Partenariats avec Google DeepMind, IBM, NVIDIA, Carnegie Mellon Africa (CMU-Africa). Rwanda Coding Academy. Kigali Innovation City (smart hub). Ambition AI hub continental. Startups tech en forte croissance.",
+          share: "~10% PIB (ICT+services numériques)",
+        },
+        {
+          name: "Mines — 3TG (Étain, Tantale, Tungstène, Or)",
+          description: "Rwanda = hub régional de traçabilité des minéraux 3T (tin/tantalum/tungsten). Production propre + transit RDC controversé. Étain (cassitérite) ~5 000 t Sn/an. Tantale (coltan) ~3 000 t/an. Tungstène (wolframite) ~1 500 t WO₃/an. Or ~10 t officielles (+ transit RDC). Rwanda Mining Board = régulateur reconnu pour traçabilité (ITSCI, OECD Due Diligence).",
+          share: "~4% PIB minier direct",
+        },
+        {
+          name: "Tourisme — haut de gamme gorilles & MICE",
+          description: "Tourisme = pilier économique. Gorilles de montagne (Parc des Volcans) = principale attraction mondiale haut de gamme. Kigali = destination MICE (Meetings, Incentives, Conferences, Exhibitions) continental — Kigali Convention Centre. Revenus touristiques ~$500 M en 2024. Rwanda = destination 'Africa's Singapore' image.",
+          share: "~8% PIB",
+        },
+        {
+          name: "Agriculture — café et thé d'excellence",
+          description: "Café Rwanda = standard international de qualité (specialty coffee). Exportations café +32% en 2025. Thé rwandais exportations +100% en 2025. OCIR-Café et OCIR-Thé = régulateurs. Base ~80% de la population rurale (pays très rural malgré urbanisation rapide).",
+          share: "20% PIB",
+        },
+        {
+          name: "Construction & BTP",
+          description: "Boom immobilier Kigali (Green City Kigali, zones résidentielles). Infrastructure publique (routes, Bugesera Airport). Forte croissance portée par investissements publics et IDE.",
+          share: "~8% PIB (industrie BTP)",
+        },
+      ],
+      sez: [
+        {
+          name: "Kigali Special Economic Zone (KSEZ)",
+          location: "Masoro, Kigali",
+          advantages: "Zone économique spéciale opérationnelle depuis 2011. Exonérations IS jusqu'à 7 ans, TVA 0% sur imports d'équipement, guichet unique. Parcs industriels, entrepôts, bureaux. Hub logistique et manufacturing pour East Africa. 120+ entreprises installées.",
+        },
+        {
+          name: "Kigali Innovation City (KIC)",
+          location: "Kigali (Kicukiro District)",
+          advantages: "Smart tech hub dédié à l'innovation numérique et à la R&D. CMU-Africa sur site. Partenariats NVIDIA, IBM. Incubateurs startups. Visas rapides pour tech entrepreneurs. Zone franche fiscale pour entreprises tech.",
+        },
+        {
+          name: "Bugesera Industrial Park",
+          location: "District de Bugesera (30 km de Kigali)",
+          advantages: "Parc industriel dédié agro-industrie et industries légères. Proximité nouvel aéroport international Bugesera (en construction). Terrains industriels à tarifs préférentiels.",
+        },
+      ],
+      majorProjects: [
+        "Bugesera International Airport (7 M pax capacité, financement Qatar Airways/GovRW, livraison partielle 2026)",
+        "Kigali Innovation City — Phase 2 (CMU-Africa expansion, NVIDIA AI Lab, smart campus 2027)",
+        "Green City Kigali (développement urbain durable 30 000 logements — Groupe CDG Maroc + GovRW)",
+        "Standard Gauge Railway (SGR Dar es Salaam–Isaka–Kigali, 1 400 km — faisabilité EAC en cours)",
+        "Ruzizi III Hydroelectric Project (147 MW — partagé RDC/Rwanda/Burundi, financement NELSAP-CU/BAfD)",
+        "Lake Kivu Methane Extraction (KivuWatt Phase 2 — ContourGlobal, +25 MW)",
+        "Hakan Peat Power Plant (80 MW — Hakan Mining, Bugesera peat-to-power)",
+      ],
+      banking: {
+        mainBanks: [
+          "BK Group / Bank of Kigali (#1 banque Rwanda, cotée RSE, CEO Diane Karusisi)",
+          "I&M Bank Rwanda (I&M Holdings Kenya)",
+          "Equity Bank Rwanda (Equity Group Kenya)",
+          "COGEBANQUE — Compagnie Générale de Banque",
+          "Access Bank Rwanda (Access Bank Nigeria)",
+        ],
+        totalAssets: "~5 Mds USD (système bancaire consolidé 2024)",
+        bancarisation: "93% inclusion financière (mobile money MoMo MTN + Airtel Money comptés — accès services financiers formels ou mobiles)",
+      },
+      telecom: {
+        operators: [
+          "MTN Rwanda (MTN Group 80%) — leader marché",
+          "Airtel Rwanda (Airtel Africa)",
+          "Telcom Rwanda / kT Rwanda Networks (Korea Telecom 51%)",
+        ],
+        mobilePenetration: "85% (2024)",
+        internetPenetration: "62% (2024 — l'un des plus élevés d'Afrique subsaharienne)",
+      },
+      energy: {
+        mix: "Hydroélectrique 45%, Méthane (Lake Kivu) 15%, Solaire 7%, Diesel/Thermique 33%",
+        installedCapacity: "~280 MW (2024 — en expansion rapide)",
+        renewableProjects: "Ruzizi III (147 MW partagé, financement NELSAP), Hakan Peat (80 MW), KivuWatt Phase 2 (25 MW méthane), solaire Akagera (30 MW), solaire résidentiel expansion",
+      },
+    } ,
+
+
+
+    billionaires: [
+      {
+        name: "Tribert Rujugiro Ayabatwa",
+        fortune: "~500 M USD (estimation)",
+        source: "Tabac (Pan African Tobacco Group), mines, immobilier",
+        companies: "Pan African Tobacco Group (PAT — 15 pays africains), Trans-Century Ltd, participations diverses",
+        age: "~75 ans",
+        education: "Économie/Commerce, formation internationale",
+        bio: "L'un des plus riches hommes d'affaires rwandais en diaspora. Fondateur du Pan African Tobacco Group, leader du tabac en Afrique de l'Est et centrale. Basé à Kampala (Ouganda). Relations complexes avec le régime Kagame — exil forcé puis réconciliation partielle. Actif également dans l'immobilier et l'industrie minière.",
+      },
+      {
+        name: "Hatari Sekoko",
+        fortune: "Non disponible",
+        source: "Investissements liés Crystal Ventures Ltd (bras économique FPR)",
+        companies: "Crystal Ventures Ltd (holding FPR — agro-industrie, construction, tech), Inyange Industries",
+        age: "Non disponible",
+        education: "Non disponible",
+        bio: "Crystal Ventures Ltd = holding d'investissement lié au Front Patriotique Rwandais (parti au pouvoir). Gère un portefeuille diversifié : Inyange Industries (agroalimentaire), Ruliba Clays (matériaux), constructions. Revenus estimés >$500 M USD. Opère sous supervision du parti/État.",
+      },
+      {
+        name: "Paul Kagame",
+        fortune: "Personnelle non disponible (pouvoir politique, non fortune personnelle déclarée)",
+        source: "Président de la République Rwanda — pouvoir politique et économique",
+        companies: "Aucune participation directe déclarée — contrôle indirect Crystal Ventures/FPR",
+        age: "67 ans (né 1957)",
+        education: "Command and Staff College Uganda, Fort Leavenworth (USA)",
+        bio: "Président du Rwanda depuis 2000 (vice-président de facto dès 1994). Artisan de la reconstruction post-génocide. Politique économique libérale (Doing Business #38). Rwanda = modèle de gouvernance africaine reconnu (WEF, FMI). Relations tendues avec RDC sur la question M23.",
+      },
+    ],
+
+
     timezone: "UTC+2",
     languages: "Kinyarwanda, Anglais, Français (officiels), Swahili",
     religions: "Christianisme (93.4%), Islam (4.6%), Autres (2%)",
@@ -4724,13 +5764,17 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       afd: "AFD Rwanda — Bureau Kigali",
       lawFirms: ["MKM Advocates Rwanda", "K Solutions Rwanda"],
       big4: ["Deloitte Rwanda", "PwC Rwanda", "EY Rwanda", "KPMG Rwanda"],
-      patronat: "Private Sector Federation Rwanda (PSF)"
+      patronat: "Private Sector Federation Rwanda (PSF)",
+      investmentAgency: "Rwanda Development Board (RDB) — www.rdb.rw — guichet unique investisseurs",
+      miningRegulator: "Rwanda Mines, Petroleum and Gas Board (RMB) — www.rmb.gov.rw — Code minier 2018, OECD DDG compliance",
+      euPartnership: "MoU UE-Rwanda minéraux 3T signé 2024 — Parlement européen vote suspension fév. 2025 (contr. DRC-M23)"
     },
 
     universities: [
-      {name: "Université du Rwanda (UR)", city: "Kigali", students: "25 000", specialties: "Sciences, Médecine, Ingénierie, Agriculture", ranking: "1ère au Rwanda"},
+      {name: "Université du Rwanda (UR)", city: "Kigali", students: "25 000", specialties: "Sciences, Médecine, Ingénierie, Agriculture, School of Mining & Geology inauguré déc. 2025", ranking: "1ère au Rwanda"},
       {name: "African Leadership University (ALU)", city: "Kigali", students: "2 000", specialties: "Business, Leadership, Tech", ranking: "Top école innovation Afrique"},
-      {name: "Carnegie Mellon University Africa (CMU-Africa)", city: "Kigali", students: "400", specialties: "Computer Science, AI, Engineering", ranking: "Campus Amérique en Afrique"}
+      {name: "Carnegie Mellon University Africa (CMU-Africa)", city: "Kigali", students: "400", specialties: "Computer Science, AI, Engineering", ranking: "Campus Amérique en Afrique"},
+      {name: "IPRC Kigali — Mining Engineering Program", city: "Kigali", students: "~3 000", specialties: "Ingénierie minière, Géologie appliquée — formation technique pour secteur 3T"}
     ],
     sciPublications: "~2 500/an",
     patents: "~50/an",
@@ -4783,7 +5827,9 @@ export const DATA_REMAINING_AFRICA: Country[] = [
       millionaires: "~800",
       diaspora: "Diaspora en Europe et USA",
       languages: "Kinyarwanda, Anglais, Français, Swahili",
-      literacy: "73.2%"
+      literacy: "73.2%",
+      laborForce: "~5 millions",
+      miningEmployment: "92 000 emplois dans le secteur minier (2025)"
     },
 
     risks: {
@@ -4829,6 +5875,81 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "45 763 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "3 870 Mds USD (2025)",
+    inflation: "2.0% (2025)",
+    debtToGDP: "112%",
+    area: "643 801 km²",
+    density: "106 hab/km²",
+    tradeBalance: "-100 Mds EUR (2024)",
+    corruptionIndex: "Score 71/100 — Rang 26/180 (TI 2024)",
+    easeBusiness: "Rang 32/190 (World Bank 2020)",
+    politicalStability: "0.24 (World Bank 2023)",
+    timezone: "UTC+1 (CET) / UTC+2 (CEST été)",
+    languages: "Français",
+    religions: "Catholicisme (47%), Sans religion (40%), Islam (8%)",
+    memberships: ["UE", "OTAN", "G7", "G20", "OCDE", "ONU (P5)", "Zone Euro"],
+    exchangeRateEUR: "Monnaie nationale",
+    exchangeRateUSD: "1 EUR = ~1.08 USD",
+
+    // --- EU Enrichment Bloomberg ---
+    gigafactories: [
+      {
+        name: "ACC — Automotive Cells Company",
+        location: "Billy-Berclau / Douvrin, Pas-de-Calais",
+        capacity: "40 GWh (Phase 1) — extensible 120 GWh",
+        status: "Production série depuis 2024. Ligne pilote opérationnelle 2023.",
+        operator: "ACC (joint-venture Stellantis 33% / TotalEnergies 33% / Mercedes-Benz 33%)"
+      },
+      {
+        name: "Verkor",
+        location: "Dunkerque, Nord",
+        capacity: "16 GWh (Phase 1), extensible à 50 GWh d'ici 2030",
+        status: "Construction Phase 1 achevée. Production série prévue 2025. Client ancré : Renault Group.",
+        operator: "Verkor SAS (Schneider Electric, EIT InnoEnergy, Renault, BPI France)"
+      },
+      {
+        name: "AESC Envision",
+        location: "Douai, Nord",
+        capacity: "9 GWh Phase 1 — 24 GWh Phase 2",
+        status: "Phase 1 opérationnelle 2025 pour Renault ElectriCity (Douai). Cellules NMC.",
+        operator: "AESC Group (Envision — China) pour Renault"
+      },
+      {
+        name: "Saft / TotalEnergies — Usine cellules LFP",
+        location: "Nersac, Charente (étude avancée)",
+        capacity: "Étude pour 8-12 GWh LFP",
+        status: "Étude de faisabilité 2024-2025 — décision investissement attendue 2026.",
+        operator: "Saft (filiale TotalEnergies)"
+      }
+    ],
+
+    crmaInstitutions: [
+      {
+        name: "BRGM — Bureau de Recherches Géologiques et Minières",
+        role: "Établissement public référent pour la géologie, les ressources minérales et les risques géologiques. Point focal national CRMA pour l'inventaire des ressources minérales stratégiques françaises. Pilote le projet Emili (lithium Beauvoir) en partenariat Imerys.",
+        contact: "3 avenue Claude-Guillemin, 45060 Orléans Cedex 2 | www.brgm.fr | contact@brgm.fr | Tél : +33 2 38 64 34 34"
+      },
+      {
+        name: "DGE — Direction Générale des Entreprises",
+        role: "Sous l'autorité du Ministère de l'Économie et des Finances. Pilote la politique industrielle française et la mise en œuvre nationale du CRMA. Coordonne les accords de partenariat stratégique avec pays producteurs (Maroc phosphates, Namibie lithium, Guinée bauxite). Gère le programme France 2030 — volet minéraux critiques (200 M€).",
+        contact: "12 rue Villiot, 75012 Paris | www.entreprises.gouv.fr | Responsable CRMA : Bureau Ressources Stratégiques"
+      },
+      {
+        name: "France Minéraux",
+        role: "Groupement d'intérêt public (GIP) créé 2023, dédié à la sécurisation des approvisionnements en minéraux critiques pour l'industrie française. Anime la Task Force Minéraux Critiques du Plan France 2030. Coordonne avec BRGM, Eramet, Imerys, ACC, Renault, Safran les feuilles de route d'approvisionnement.",
+        contact: "www.france-mineraux.fr | Secrétariat : c/o Ministère de l'Économie, 139 rue de Bercy, 75012 Paris"
+      },
+      {
+        name: "Bpifrance International",
+        role: "Banque publique d'investissement. Finance les projets d'exploration et d'acquisition minérale français à l'étranger. Cofinance avec AFD les projets corridor Afrique-France. Gérant de fonds : Fonds Avenir Minier (FAM) 150 M€ pour exploration.",
+        contact: "www.bpifrance.fr | Direction International : 27-31 avenue du Général Leclerc, 94710 Maisons-Alfort"
+      },
+      {
+        name: "AFD — Agence Française de Développement",
+        role: "Banque de développement publique. Financement projets infrastructure minière durable en Afrique (4 Mds€/an Afrique). Instrument clé du corridor France-Afrique CRMA. Finance projets routiers, ferroviaires et portuaires associés à l'extraction minérale responsable.",
+        contact: "5 rue Roland Barthes, 75598 Paris Cedex 12 | www.afd.fr | Tél : +33 1 53 44 31 31"
+      }
+    ],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries VE — Renault, Stellantis)",
@@ -4880,6 +6001,95 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "53 549 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "5 370 Mds USD (2025)",
+    inflation: "2.2% (2025)",
+    debtToGDP: "64%",
+    area: "357 592 km²",
+    density: "236 hab/km²",
+    tradeBalance: "+210 Mds EUR (2024, excédent commercial)",
+    corruptionIndex: "Score 78/100 — Rang 9/180 (TI 2024)",
+    easeBusiness: "Rang 22/190 (World Bank 2020)",
+    politicalStability: "0.52 (World Bank 2023)",
+    timezone: "UTC+1 (CET) / UTC+2 (CEST été)",
+    languages: "Allemand",
+    religions: "Catholicisme (27%), Protestantisme (25%), Sans religion (38%), Islam (5%)",
+    memberships: ["UE", "OTAN", "G7", "G20", "OCDE", "Zone Euro"],
+    exchangeRateEUR: "Monnaie nationale",
+    exchangeRateUSD: "1 EUR = ~1.08 USD",
+
+    // --- EU Enrichment Bloomberg ---
+    gigafactories: [
+      {
+        name: "CATL — Erfurt Gigafactory",
+        location: "Arnstadt (Thuringe)",
+        capacity: "14 GWh Phase 1 — extensible à 100 GWh",
+        status: "Opérationnelle depuis 2022. 1ère gigafactory CATL hors Chine. Clients : BMW, Stellantis, Volkswagen.",
+        operator: "CATL (Contemporary Amperex Technology Co., Limited)"
+      },
+      {
+        name: "PowerCo / Volkswagen — Salzgitter",
+        location: "Salzgitter, Basse-Saxe",
+        capacity: "40 GWh Phase 1 — 240 GWh total prévu sur 6 sites EU",
+        status: "Construction Phase 1 2022-2025. Production prévue 2025. Cellule prismatique unifiée VW. Investissement : 2 Mds€ Phase 1.",
+        operator: "PowerCo SE (filiale Volkswagen AG)"
+      },
+      {
+        name: "Tesla Gigafactory Berlin-Brandenburg",
+        location: "Grünheide, Brandebourg",
+        capacity: "50 GWh (objectif 2025) — 100 GWh long terme",
+        status: "Opérationnelle depuis mars 2022. Production ~500 000 véhicules/an en montée. Cellule 4680 en cours de déploiement sur site.",
+        operator: "Tesla Inc."
+      },
+      {
+        name: "Northvolt — Heide (Northvolt Drei)",
+        location: "Heide, Schleswig-Holstein",
+        capacity: "60 GWh planifié",
+        status: "Projet retardé (difficultés financières Northvolt 2024, dépôt de bilan Ch.11 USA nov. 2024). Permis obtenus, terrain acquis. Futur incertain — reprise par acquéreur potentiel en cours (Volkswagen, Scania intéressés).",
+        operator: "Northvolt AB (en restructuration)"
+      },
+      {
+        name: "SVOLT — Überherrn",
+        location: "Überherrn, Sarre",
+        capacity: "24 GWh Phase finale",
+        status: "Phase 1 (7 GWh) opérationnelle 2023. Phase 2 en cours. Cellule LFP et NMC. Client : Stellantis (Opel Rüsselsheim).",
+        operator: "SVOLT Energy Technology (filiale Great Wall Motor)"
+      },
+      {
+        name: "ACC — Kaiserslautern",
+        location: "Kaiserslautern, Rhénanie-Palatinat",
+        capacity: "40 GWh planifié",
+        status: "Planification avancée. Terrain sélectionné. Décision finale investissement (FID) attendue 2025 — dépend santé financière JV ACC post-difficultés 2024.",
+        operator: "ACC (Stellantis / TotalEnergies / Mercedes-Benz)"
+      }
+    ],
+
+    crmaInstitutions: [
+      {
+        name: "BGR — Bundesanstalt für Geowissenschaften und Rohstoffe",
+        role: "Autorité fédérale géosciences. Inventaire ressources minérales Allemagne et mondiales. Cartographie géologique et évaluation gisements. Expert technique gouvernement fédéral pour politiques minières. Coordonne avec DERA la surveillance des approvisionnements critiques.",
+        contact: "Stilleweg 2, 30655 Hannover | www.bgr.bund.de | Tél : +49 511 643-0 | bgr@bgr.de"
+      },
+      {
+        name: "DERA — Deutsche Rohstoffagentur",
+        role: "Agence des matières premières brutes, rattachée à BGR. Publie l'Indicateur de Risque d'Approvisionnement (DERA-Rohstoffliste) pour 31 matières critiques. Fournit analyses marché et alertes précoces à l'industrie allemande. Soutient les démarches de sourcing diversifié des PME.",
+        contact: "Wilhelmstraße 25-30, 13593 Berlin | www.bgr.bund.de/DERA | dera@bgr.de | Tél : +49 30 36993-0"
+      },
+      {
+        name: "BMWK — Bundesministerium für Wirtschaft und Klimaschutz",
+        role: "Ministère fédéral de l'Économie et de la Protection du Climat. Pilote la Rohstoffstrategie Deutschland (2024). Coordonne les accords bilatéraux de partenariat matières premières (Namibie, DRC, Chili, Canada). Anime le Rohstoffbeirat (conseil consultatif matières premières industrie).",
+        contact: "Scharnhorststraße 34-37, 10115 Berlin | www.bmwk.de | poststelle@bmwk.bund.de | Tél : +49 30 18615-0"
+      },
+      {
+        name: "KfW DEG — Deutsche Investitions- und Entwicklungsgesellschaft",
+        role: "Filiale KfW dédiée au financement secteur privé pays émergents. Instrument de mise en œuvre des accords bilatéraux minéraux critiques DE-Afrique. Finance projets miniers responsables, infrastructure logistique, énergies renouvelables. Initiative Global Gateway EU partenaire.",
+        contact: "Kämmergasse 22, 50676 Köln | www.deginvest.de | info@deginvest.de | Tél : +49 221 4986-0"
+      },
+      {
+        name: "BDI / AG Rohstoffe — Fédération industrie allemande",
+        role: "Bundesverband der Deutschen Industrie. Groupe de travail AG Rohstoffe représente les intérêts des industriels allemands dans les négociations CRMA. Publie annuellement l'indice de sécurité d'approvisionnement. Interlocuteur Commission Européenne pour la mise en œuvre des Strategic Projects CRMA.",
+        contact: "Breite Straße 29, 10178 Berlin | www.bdi.eu | info@bdi.eu | Tél : +49 30 2028-0"
+      }
+    ],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries VE — Volkswagen, BMW, Mercedes, BASF Cathode)",
@@ -4930,6 +6140,74 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "40 168 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "3 120 Mds USD (2025)",
+    inflation: "1.8% (2025)",
+    debtToGDP: "140%",
+    area: "301 340 km²",
+    density: "196 hab/km²",
+    tradeBalance: "+50 Mds EUR (2024)",
+    corruptionIndex: "Score 56/100 — Rang 41/180 (TI 2024)",
+    easeBusiness: "Rang 58/190 (World Bank 2020)",
+    politicalStability: "0.40 (World Bank 2023)",
+    timezone: "UTC+1 (CET) / UTC+2 (CEST été)",
+    languages: "Italien",
+    religions: "Catholicisme (74%), Sans religion (20%), Islam (3%)",
+    memberships: ["UE", "OTAN", "G7", "G20", "OCDE", "Zone Euro"],
+    exchangeRateEUR: "Monnaie nationale",
+    exchangeRateUSD: "1 EUR = ~1.08 USD",
+
+    // --- EU Enrichment Bloomberg ---
+    gigafactories: [
+      {
+        name: "ACC — Termoli Gigafactory",
+        location: "Termoli, Molise (site ex-Fiat moteurs thermiques)",
+        capacity: "40 GWh planifié (Phase 1)",
+        status: "Faisabilité confirmée 2023. Construction prévue 2024-2026. Financements UE : 169 M€ IPCEI Hydrogène + fonds PNRR italiens. Retards possibles liés à restructuration ACC 2024.",
+        operator: "ACC — Automotive Cells Company (Stellantis 33% / TotalEnergies 33% / Mercedes-Benz 33%)"
+      },
+      {
+        name: "Stellantis — Mirafiori Battery Hub",
+        location: "Turin, Piémont",
+        capacity: "~5 GWh (batteries hybrides et BEV compactes)",
+        status: "Opérationnel depuis 2023 pour Fiat 500e et hybrides Jeep. Reconversion partielle usine historique Mirafiori. Expansion 2025 prévue.",
+        operator: "Stellantis N.V."
+      },
+      {
+        name: "FAAM / Saft — Batterie stockage",
+        location: "Montecchio Maggiore, Vicenza",
+        capacity: "2-4 GWh (batteries industrielles, stockage réseau)",
+        status: "Opérationnel. Expansion 2025-2026 avec investissements Saft (TotalEnergies). Cellules LFP pour storage réseau et mobilité lourde.",
+        operator: "FAAM SpA (filiale Saft/TotalEnergies depuis 2023)"
+      }
+    ],
+
+    crmaInstitutions: [
+      {
+        name: "MIMIT — Ministero delle Imprese e del Made in Italy",
+        role: "Ministère de l'Économie productive. Pilote l'Unità Materie Prime Critiche (UMPC) pour la mise en œuvre nationale du CRMA EU. Coordonne les Strategic Partnerships matières premières avec pays tiers (Afrique, Amérique du Sud). Anime la Cabina di Regia pour la Transizione 5.0.",
+        contact: "Via Molise 2, 00187 Roma | www.mimit.gov.it | Tél : +39 06 4705-1 | urp@mise.gov.it"
+      },
+      {
+        name: "ISPRA — Istituto Superiore per la Protezione e la Ricerca Ambientale",
+        role: "Institut supérieur protection et recherche environnementale. Département géologie et suivi ressources minérales italiennes. Inventaire des occurrences minérales nationales (Li, Co, REE, Ni) dans le cadre du CRMA. Expertise pour autorisations minières et études d'impact.",
+        contact: "Via Vitaliano Brancati 48, 00144 Roma | www.isprambiente.gov.it | ispra@pec.isprambiente.it | Tél : +39 06 50071"
+      },
+      {
+        name: "ICE Agenzia — Agenzia per la promozione all'estero",
+        role: "Agence italienne pour la promotion des échanges et des investissements à l'étranger. Réseau dans 70 pays (dont 35 en Afrique). Facilite les partenariats miniers et industriels Italia-Afrique dans le cadre CRMA. Identifie opportunités sourcing pour industriels italiens.",
+        contact: "Via Liszt 21, 00144 Roma EUR | www.ice.it | Tél : +39 06 59921 | info@ice.it"
+      },
+      {
+        name: "SACE — Servizi Assicurativi del Commercio Estero",
+        role: "Assurance-crédit export italienne (CDP Group). Couvre et garantit les investissements italiens en Afrique, notamment projets miniers, infrastructure, énergie. Plan Mattei : SACE mandatée pour garanties 4 Mds€ sur 4 ans pour projets Afrique. Instrument direct du corridor Italie-Afrique CRMA.",
+        contact: "Piazza Poli 37-42, 00187 Roma | www.sace.it | info@sace.it | Tél : +39 06 6736-1"
+      },
+      {
+        name: "Confindustria — Commissione Materie Prime",
+        role: "Fédération patronale italienne. Commission Matières Premières critique représente 150 000 entreprises membres. Interlocuteur gouvernement pour CRMA et Strategic Partnerships. Anime le groupe de travail CRMA avec MIMIT. Publications annuelles : indices criticité approvisionnement pour industrie IT.",
+        contact: "Viale dell'Astronomia 30, 00144 Roma | www.confindustria.it | Tél : +39 06 59031"
+      }
+    ],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries VE — Stellantis, FIAT, Enel X)",
@@ -4977,6 +6255,81 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "36 100 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "2 400 Mds USD (2025)",
+    inflation: "2.9% (2025)",
+    debtToGDP: "107%",
+    area: "505 990 km²",
+    density: "94 hab/km²",
+    tradeBalance: "-40 Mds EUR (2024)",
+    corruptionIndex: "Score 60/100 — Rang 36/180 (TI 2024)",
+    easeBusiness: "Rang 30/190 (World Bank 2020)",
+    politicalStability: "0.30 (World Bank 2023)",
+    timezone: "UTC+1 (CET) / UTC+2 (CEST été)",
+    languages: "Espagnol (castillan), Catalan, Basque, Galicien",
+    religions: "Catholicisme (56%), Sans religion (37%)",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
+    exchangeRateEUR: "Monnaie nationale",
+    exchangeRateUSD: "1 EUR = ~1.08 USD",
+
+    // --- EU Enrichment Bloomberg ---
+    gigafactories: [
+      {
+        name: "Envision AESC — Navalmoral de la Mata",
+        location: "Navalmoral de la Mata, Estrémadure",
+        capacity: "30 GWh Phase 1 — extensible à 50 GWh",
+        status: "Construction en cours 2023-2025. Production prévue fin 2025-début 2026. Cellules NMC pour Renault. Investissement : 900 M€. Financement PERTE + fonds EU.",
+        operator: "AESC Group (Envision) pour Renault Espagne"
+      },
+      {
+        name: "PowerCo / Volkswagen — Sagunto",
+        location: "Sagunto, Communauté Valencienne",
+        capacity: "40 GWh Phase 1 — extensible à 80 GWh",
+        status: "Construction 2023-2026. Production cible : 2026. Investissement : 3 Mds€ (PowerCo + aides État espagnol 350 M€ + EU IPCEI). Alimentera usines Seat, Skoda, VW Espagne.",
+        operator: "PowerCo SE (filiale Volkswagen AG)"
+      },
+      {
+        name: "Basquevolt",
+        location: "Pays Basque (site en sélection — Vitoria-Gasteiz ou Bilbao)",
+        capacity: "10 GWh pilote — extension 30 GWh",
+        status: "Démonstrateur batteries solides 2024-2025. Technologie SSB (solid-state battery) avec électrolyte céramique. Partenariat Ikerbasque, CIC energiGUNE, IK4 Research Alliance. Financement : Gouvernement Pays Basque + H2020 EU.",
+        operator: "Basquevolt SL (spin-out CIC energiGUNE / Basque Research & Technology Alliance)"
+      },
+      {
+        name: "Stellantis — Figueruelas (Saragosse)",
+        location: "Figueruelas, Saragosse, Aragon",
+        capacity: "~10 GWh (batteries hybrides Opel/Peugeot)",
+        status: "Reconversion partielle usine Figueruelas pour assemblage batteries hybrides. Opérationnel 2024. Extension BEV en étude (dépend FID ACC Kaiserslautern ou accord CATL ES).",
+        operator: "Stellantis N.V. — Opel/Citroën Espagne"
+      }
+    ],
+
+    crmaInstitutions: [
+      {
+        name: "IGME-CSIC — Instituto Geológico y Minero de España",
+        role: "Institut géologique national, rattaché au CSIC (Conseil Supérieur de la Recherche Scientifique). Inventaire des ressources minérales stratégiques espagnoles. Évalue les gisements lithium (Extremadura, Estrémadure/Galice), REE (Galice, Castille-León), cobalt (Huelva), potasse (Catalogne). Point focal CRMA pour les Strategic Projects nationaux.",
+        contact: "Ríos Rosas 23, 28003 Madrid | www.igme.es | igme@igme.es | Tél : +34 91 349 57 00"
+      },
+      {
+        name: "MITECO — Ministerio para la Transición Ecológica",
+        role: "Ministère pour la Transition Écologique et le Défi Démographique. Pilote le Plan Nacional de Materias Primas Críticas (PNMPC, 2024). Coordonne les accords de partenariat stratégiques CRMA : Maroc (phosphates, cobalt), Namibie (lithium), Chili (cuivre). Autorité nationale CRMA vis-à-vis de la Commission Européenne.",
+        contact: "Plaza de San Juan de la Cruz s/n, 28071 Madrid | www.miteco.gob.es | Tél : +34 91 597 60 00"
+      },
+      {
+        name: "ICEX España Exportación e Inversiones",
+        role: "Agence nationale pour l'export et les investissements étrangers. Réseau 30 pays africains. Facilite les partenariats mines et minéraux entre entreprises espagnoles et africaines. Publie études marché mines/minerais. Cofinancement par Fond Europeo de Desarrollo Regional (FEDER).",
+        contact: "Paseo de la Castellana 278, 28046 Madrid | www.icex.es | info@icex.es | Tél : +34 91 349 61 00"
+      },
+      {
+        name: "ICO — Instituto de Crédito Oficial",
+        role: "Banque publique de développement espagnole. Finance les investissements espagnols à l'étranger dans les secteurs critiques. Fonds ICO Internacional : lignes de crédit pour projets mines/minerais en Afrique et Amérique Latine. Partenaire EU Global Gateway pour financement corridor Espagne-Afrique.",
+        contact: "Paseo del Prado 4, 28014 Madrid | www.ico.es | info@ico.es | Tél : +34 91 592 16 00"
+      },
+      {
+        name: "Cluster de Automoción de la Comunitat Valenciana (AVIA)",
+        role: "Cluster automobile valencien regroupant fournisseurs de Sagunto (PowerCo) et usines Stellantis/Ford (Vale). Coordonne la chaîne d'approvisionnement minéraux critiques locaux (Li Extremadura → Sagunto). Interface entre IGME, MITECO et industriels pour les projets CRMA régionaux. Modèle de gouvernance multi-acteurs CRMA.",
+        contact: "Carrer de Colom 15, 46004 Valencia | www.avia.es | info@avia.es | Tél : +34 96 353 05 05"
+      }
+    ],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries — SEAT/VW, Stellantis usines espagnoles)",
@@ -5022,6 +6375,74 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "62 346 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "1 230 Mds USD (2025)",
+    inflation: "2.5% (2025)",
+    debtToGDP: "48%",
+    area: "41 543 km²",
+    density: "425 hab/km²",
+    tradeBalance: "+85 Mds EUR (2024, hub commercial)",
+    corruptionIndex: "Score 79/100 — Rang 8/180 (TI 2024)",
+    easeBusiness: "Rang 42/190 (World Bank 2020)",
+    politicalStability: "0.75 (World Bank 2023)",
+    timezone: "UTC+1 (CET) / UTC+2 (CEST été)",
+    languages: "Néerlandais, Frison (Frise)",
+    religions: "Sans religion (55%), Catholicisme (20%), Protestantisme (15%), Islam (5%)",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro", "Benelux"],
+    exchangeRateEUR: "Monnaie nationale",
+    exchangeRateUSD: "1 EUR = ~1.08 USD",
+
+    // --- EU Enrichment Bloomberg ---
+    gigafactories: [
+      {
+        name: "Envision AESC — Rotterdam (étude)",
+        location: "Port de Rotterdam / Moerdijk Industrial Area",
+        capacity: "20-40 GWh (en étude de faisabilité)",
+        status: "Études préliminaires 2024. Pas encore de FID (Final Investment Decision). Rotterdam positionné comme hub batteries grâce à infrastructure logistique minerais. Décision attendue 2025-2026.",
+        operator: "Envision AESC Group (en partenariat potentiel avec Port of Rotterdam Authority)"
+      },
+      {
+        name: "Umicore — Breda Battery Materials",
+        location: "Breda, Brabant-Septentrional",
+        capacity: "Usine de précurseurs cathodes (pCAM) — 150 000 t/an capacité EU cumulée (Breda + Nysa PL)",
+        status: "Opérationnel 2024. Produit pCAM NMC 9-1/2-1 pour CATL, ACC, Northvolt. Consomme ~6 000 t Co/an + nickel sulfate + lithium. Umicore Breda = nœud critique chaîne batteries EU.",
+        operator: "Umicore NV (coté Euronext Bruxelles)"
+      },
+      {
+        name: "Nouryon — Lithium Battery Chemicals",
+        location: "Deventer, Overijssel",
+        capacity: "Production électrolytes et sels lithium pour batteries — ~5 000 t/an LiPF6",
+        status: "Opérationnel et expansion 2024. Fournisseur électrolyte à Northvolt, ACC, Morrow (Norvège). Nouryon = 1er producteur EU LiPF6 (sel électrolyte batteries Li-ion).",
+        operator: "Nouryon (ex-AkzoNobel Specialty Chemicals, propriété Carlyle Group)"
+      }
+    ],
+
+    crmaInstitutions: [
+      {
+        name: "TNO — Netherlands Organisation for Applied Scientific Research",
+        role: "Organisation de recherche appliquée nationale. Unité Critical Raw Materials : analyse chaînes d'approvisionnement, économie circulaire, substitution matériaux critiques. Fournit expertise technique gouvernement néerlandais pour implémentation CRMA. Projets : recyclage REE moteurs électriques, récupération In/Ge des déchets électroniques.",
+        contact: "Anna van Buerenplein 1, 2595 DA La Haye | www.tno.nl | info@tno.nl | Tél : +31 88 866 00 00"
+      },
+      {
+        name: "RVO — Rijksdienst voor Ondernemend Nederland",
+        role: "Agence gouvernementale pour l'entreprise (Ministère Affaires Économiques EZK). Financement et soutien projets CRMA pour PME néerlandaises. Gère les instruments de financement export Pays-Bas vers Afrique (ATI, DGGF). Coordonne les candidatures Strategic Projects CRMA EU pour les projets néerlandais.",
+        contact: "Prinses Beatrixlaan 2, 2595 AL La Haye | www.rvo.nl | info@rvo.nl | Tél : +31 88 042 42 42"
+      },
+      {
+        name: "EZK — Ministerie van Economische Zaken en Klimaat",
+        role: "Ministère de l'Économie et du Climat. Pilote la Stratégie Nationale Matières Premières Critiques (Grondstoffenstrategie 2024). Coordonne les accords de partenariat CRMA bilatéraux (Namibie, DRC, Zambie, Chili). Ministre : Dirk Beljaarts (depuis 2024). Supervise TNO, RVO, Port Authority Rotterdam dans le cadre CRMA.",
+        contact: "Bezuidenhoutseweg 73, 2594 AC La Haye | www.government.nl/ministries/ministry-of-economic-affairs | Tél : +31 70 379 89 11"
+      },
+      {
+        name: "Port of Rotterdam Authority",
+        role: "Autorité portuaire de Rotterdam (N.V. Havenbedrijf Rotterdam). Co-propriété Ville de Rotterdam (70%) et État néerlandais (30%). Développe le Rotterdam Mineral Hub : infrastructure de stockage et traçabilité pour minéraux critiques CRMA. Interlocuteur direct Commission Européenne pour Strategic Stockpiles EU. Investissement : 200 M€ hub minéraux 2025-2028.",
+        contact: "Wilhelminakade 909, 3072 AP Rotterdam | www.portofrotterdam.com | info@portofrotterdam.com | Tél : +31 10 252 10 10"
+      },
+      {
+        name: "Holland Minerals (initiative sectorielle)",
+        role: "Initiative industrie néerlandaise regroupant Trafigura, Shell, ING, ABN AMRO, ASML, Umicore NL pour coordonner la sécurisation des approvisionnements en minéraux critiques. Publie annuellement le Dutch Critical Minerals Monitor. Interface avec Commission Européenne pour Strategic Partnerships CRMA. Lien avec Port of Rotterdam Mineral Hub.",
+        contact: "c/o FME (secteur industrie technologique NL) | Boerhaavelaan 40, 2713 HX Zoetermeer | www.fme.nl | Tél : +31 79 353 11 00"
+      }
+    ],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Cuivre (port Rotterdam — hub trading mondial)",
@@ -5066,6 +6487,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "54 103 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "770 Mds USD (2025)",
+    inflation: "2.3% (2025)",
+    debtToGDP: "106%",
+    area: "30 528 km²",
+    density: "383 hab/km²",
+    tradeBalance: "-10 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Néerlandais, Français, Allemand",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro", "Benelux"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Cobalt (Umicore — 1er recycleur cobalt mondial, batteries UE)",
@@ -5109,6 +6539,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "57 253 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "620 Mds USD (2025)",
+    inflation: "3.0% (2025)",
+    debtToGDP: "77%",
+    area: "83 871 km²",
+    density: "109 hab/km²",
+    tradeBalance: "+5 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Allemand",
+    memberships: ["UE", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Tungstène (Plansee Group — 1er EU producteur tungstène)",
@@ -5151,6 +6590,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "21 542 USD",
     currency: "Złoty (PLN)",
     riskScore: 1,
+    gdpPPP: "1 660 Mds USD (2025)",
+    inflation: "4.5% (2025)",
+    debtToGDP: "49%",
+    area: "312 696 km²",
+    density: "120 hab/km²",
+    tradeBalance: "-15 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Polonais",
+    memberships: ["UE", "OTAN", "OCDE"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Cuivre (KGHM — producteur propre, 3e EU)",
@@ -5194,6 +6642,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "56 857 USD",
     currency: "Couronne suédoise (SEK)",
     riskScore: 1,
+    gdpPPP: "700 Mds USD (2025)",
+    inflation: "1.5% (2025)",
+    debtToGDP: "33%",
+    area: "450 295 km²",
+    density: "23 hab/km²",
+    tradeBalance: "+15 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Suédois",
+    memberships: ["UE", "OTAN", "OCDE"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (Northvolt — batteries VE, giga Skellefteå)",
@@ -5238,6 +6695,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "53 571 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "325 Mds USD (2025)",
+    inflation: "1.8% (2025)",
+    debtToGDP: "73%",
+    area: "338 455 km²",
+    density: "17 hab/km²",
+    tradeBalance: "-5 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Finnois, Suédois",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (Keliber — production propre Finlande 2025)",
@@ -5281,6 +6747,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "27 961 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "440 Mds USD (2025)",
+    inflation: "2.6% (2025)",
+    debtToGDP: "100%",
+    area: "92 212 km²",
+    density: "112 hab/km²",
+    tradeBalance: "-20 Mds EUR",
+    timezone: "UTC+0 (WET)",
+    languages: "Portugais",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro", "CPLP"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (2e réserves EU après Tchéquie — mines Barroso, Mina do Barroso Savannah Resources)",
@@ -5324,6 +6799,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "114 038 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "680 Mds USD (2025)",
+    inflation: "2.0% (2025)",
+    debtToGDP: "44%",
+    area: "70 273 km²",
+    density: "74 hab/km²",
+    tradeBalance: "+100 Mds EUR (multinationales)",
+    timezone: "UTC+0 (GMT)",
+    languages: "Anglais, Irlandais (gaélique)",
+    memberships: ["UE", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Zinc (mine Tara — 1ère EU zinc historique, Boliden)",
@@ -5365,6 +6849,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "23 558 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "395 Mds USD (2025)",
+    inflation: "2.8% (2025)",
+    debtToGDP: "160%",
+    area: "131 957 km²",
+    density: "79 hab/km²",
+    tradeBalance: "-30 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Grec",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Nickel (Larco GMMSA — 1er producteur EU nickel latéritique)",
@@ -5406,6 +6899,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "30 184 USD",
     currency: "Couronne tchèque (CZK)",
     riskScore: 1,
+    gdpPPP: "520 Mds USD (2025)",
+    inflation: "2.5% (2025)",
+    debtToGDP: "44%",
+    area: "78 871 km²",
+    density: "138 hab/km²",
+    tradeBalance: "+10 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Tchèque",
+    memberships: ["UE", "OTAN", "OCDE"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (1ères réserves EU — Cínovec/Zinnwald, European Lithium, Geomet)",
@@ -5447,6 +6949,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "17 857 USD",
     currency: "Leu roumain (RON)",
     riskScore: 1,
+    gdpPPP: "730 Mds USD (2025)",
+    inflation: "5.5% (2025)",
+    debtToGDP: "49%",
+    area: "238 397 km²",
+    density: "82 hab/km²",
+    tradeBalance: "-25 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Roumain",
+    memberships: ["UE", "OTAN"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Or & Argent (Roşia Montană — gisement majeur, controversé)",
@@ -5487,6 +6998,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "21 959 USD",
     currency: "Forint (HUF)",
     riskScore: 1,
+    gdpPPP: "410 Mds USD (2025)",
+    inflation: "4.0% (2025)",
+    debtToGDP: "73%",
+    area: "93 028 km²",
+    density: "105 hab/km²",
+    tradeBalance: "+5 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Hongrois",
+    memberships: ["UE", "OTAN", "OCDE"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (Samsung SDI, SK Innovation, CATL Gigafactories — hub batteries EU Est)",
@@ -5527,6 +7047,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "68 475 USD",
     currency: "Couronne danoise (DKK)",
     riskScore: 1,
+    gdpPPP: "420 Mds USD (2025)",
+    inflation: "1.5% (2025)",
+    debtToGDP: "29%",
+    area: "43 094 km²",
+    density: "137 hab/km²",
+    tradeBalance: "+20 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Danois",
+    memberships: ["UE", "OTAN", "OCDE"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Terres rares (Groenland — ressources propres considérables, non exploitées)",
@@ -5567,6 +7096,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "23 091 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "220 Mds USD (2025)",
+    inflation: "3.5% (2025)",
+    debtToGDP: "58%",
+    area: "49 035 km²",
+    density: "111 hab/km²",
+    tradeBalance: "+2 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Slovaque",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries — Volkswagen, Stellantis usines Slovaquie)",
@@ -5607,6 +7145,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "15 846 USD",
     currency: "Lev bulgare (BGN, pegged EUR)",
     riskScore: 1,
+    gdpPPP: "210 Mds USD (2025)",
+    inflation: "3.0% (2025)",
+    debtToGDP: "23%",
+    area: "110 879 km²",
+    density: "62 hab/km²",
+    tradeBalance: "-5 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Bulgare",
+    memberships: ["UE", "OTAN"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Cuivre (mines Asarel-Medet, Chelopech — 1er producteur cuivre EU après Portugal)",
@@ -5649,6 +7196,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "21 538 USD",
     currency: "Euro (EUR, depuis 2023)",
     riskScore: 1,
+    gdpPPP: "150 Mds USD (2025)",
+    inflation: "3.2% (2025)",
+    debtToGDP: "62%",
+    area: "56 594 km²",
+    density: "68 hab/km²",
+    tradeBalance: "-10 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Croate",
+    memberships: ["UE", "OTAN", "Zone Euro (depuis 2023)"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries — Rimac Technologies — Bugatti électrique)",
@@ -5690,6 +7246,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "25 862 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "130 Mds USD (2025)",
+    inflation: "2.8% (2025)",
+    debtToGDP: "38%",
+    area: "65 300 km²",
+    density: "43 hab/km²",
+    tradeBalance: "-5 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Lituanien",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Ambre (Lituanie = 1er producteur EU ambre — minéral particulier)",
@@ -5731,6 +7296,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "31 429 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "105 Mds USD (2025)",
+    inflation: "2.5% (2025)",
+    debtToGDP: "69%",
+    area: "20 273 km²",
+    density: "104 hab/km²",
+    tradeBalance: "+2 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Slovène",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Lithium (batteries — Domel, Kolektor — composants VE)",
@@ -5771,6 +7345,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "23 158 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "75 Mds USD (2025)",
+    inflation: "3.0% (2025)",
+    debtToGDP: "44%",
+    area: "64 589 km²",
+    density: "29 hab/km²",
+    tradeBalance: "-4 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Letton",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Bois & Biomasse (forêts lettones — export pellets, papier)",
@@ -5811,6 +7394,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "26 429 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "65 Mds USD (2025)",
+    inflation: "3.5% (2025)",
+    debtToGDP: "19%",
+    area: "45 339 km²",
+    density: "30 hab/km²",
+    tradeBalance: "-3 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Estonien",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Schistes bitumineux (énergie propre — Eesti Energia — 70% électricité, en transition)",
@@ -5852,6 +7444,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "23 077 USD",
     currency: "Euro (EUR)",
     riskScore: 2,
+    gdpPPP: "45 Mds USD (2025)",
+    inflation: "2.2% (2025)",
+    debtToGDP: "77%",
+    area: "9 251 km²",
+    density: "141 hab/km²",
+    tradeBalance: "-8 Mds EUR",
+    timezone: "UTC+2 (EET)",
+    languages: "Grec, Turc",
+    memberships: ["UE", "Zone Euro"],
     riskLabel: "Faible-Modéré",
     criticalMineralsDemand: [
       "Cuivre (mines Skouriotissa — 1ère mine cuivre EU historique, actuelle)",
@@ -5893,6 +7494,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "126 866 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "90 Mds USD (2025)",
+    inflation: "2.0% (2025)",
+    debtToGDP: "25%",
+    area: "2 586 km²",
+    density: "260 hab/km²",
+    tradeBalance: "-5 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Luxembourgeois, Français, Allemand",
+    memberships: ["UE", "OTAN", "OCDE", "Zone Euro", "Benelux"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Acier spécial (ArcelorMittal — siège mondial Luxembourg)",
@@ -5933,6 +7543,15 @@ export const DATA_EU_COUNTRIES: Country[] = [
     gdpPerCapita: "40 741 USD",
     currency: "Euro (EUR)",
     riskScore: 1,
+    gdpPPP: "30 Mds USD (2025)",
+    inflation: "2.8% (2025)",
+    debtToGDP: "55%",
+    area: "316 km²",
+    density: "1 680 hab/km²",
+    tradeBalance: "-3 Mds EUR",
+    timezone: "UTC+1 (CET)",
+    languages: "Maltais, Anglais",
+    memberships: ["UE", "Zone Euro", "Commonwealth"],
     riskLabel: "Très faible",
     criticalMineralsDemand: [
       "Pierre calcaire (Coralline — construction propre)",

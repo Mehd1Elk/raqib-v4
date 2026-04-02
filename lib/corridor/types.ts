@@ -223,6 +223,13 @@ export interface Demographics {
   diaspora?: string;
   languages?: string;
   literacy?: string;
+  laborForce?: string;
+  miningEmployment?: string;
+  lobitoCorridorRole?: string;
+  euTrade2024?: string;
+  povertyRate?: string;
+  gdpPerCapitaNominal?: string;
+  transitPolitique?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -306,6 +313,20 @@ export interface CriticalMineralDemand {
   detail?: string;
 }
 
+export interface Gigafactory {
+  name: string;
+  location: string;
+  capacity: string;
+  status: string;
+  operator: string;
+}
+
+export interface CRMAInstitution {
+  name: string;
+  role: string;
+  contact: string;
+}
+
 export interface Country {
   id: string;
   name: string;
@@ -354,6 +375,8 @@ export interface Country {
   keyEnterprisesForCorridor?: (string | EUEnterprise)[];
   crmaContact?: string;
   tradeAfricaHighlights?: string;
+  gigafactories?: Gigafactory[];
+  crmaInstitutions?: CRMAInstitution[];
   // Extra education fields
   sciPublications?: string;
   patents?: string;

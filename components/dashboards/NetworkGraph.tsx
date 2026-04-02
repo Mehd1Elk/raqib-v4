@@ -20,12 +20,12 @@ interface Props {
 }
 
 const GROUP_COLORS: Record<string, string> = {
-  eigen: '#B8963E',
+  eigen: '#1E0A20',
   investor: '#3D5E8C',
   partner: '#3D7C5E',
   advisor: '#7B5EA7',
   institution: '#B87D3E',
-  default: '#918977',
+  default: 'rgba(30,10,32,0.60)',
 };
 
 export function NetworkGraph({ nodes, edges, centerLabel }: Props) {
@@ -65,7 +65,7 @@ export function NetworkGraph({ nodes, edges, centerLabel }: Props) {
               y1={fromPos.y}
               x2={toPos.x}
               y2={toPos.y}
-              stroke="#D4CCBA"
+              stroke="rgba(30,10,32,0.35)"
               strokeWidth={0.8}
               opacity={0.6}
             />
@@ -75,8 +75,8 @@ export function NetworkGraph({ nodes, edges, centerLabel }: Props) {
         {/* Center node */}
         {centerLabel && (
           <>
-            <circle cx={cx} cy={cy} r={24} fill="#B8963E" opacity={0.9} />
-            <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="central" fill="#FDFAF3" fontSize={7} fontFamily="var(--font-jetbrains)" fontWeight={700}>
+            <circle cx={cx} cy={cy} r={24} fill="#1E0A20" opacity={0.9} />
+            <text x={cx} y={cy + 1} textAnchor="middle" dominantBaseline="central" fill="#FAF8FC" fontSize={7} fontFamily="var(--font-jetbrains)" fontWeight={700}>
               {centerLabel}
             </text>
           </>
@@ -95,7 +95,7 @@ export function NetworkGraph({ nodes, edges, centerLabel }: Props) {
                 x={pos.x}
                 y={pos.y + r + 10}
                 textAnchor="middle"
-                fill="#6B5E4C"
+                fill="rgba(30,10,32,0.60)"
                 fontSize={7}
                 fontFamily="var(--font-jetbrains)"
               >

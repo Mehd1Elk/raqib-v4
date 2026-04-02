@@ -45,34 +45,34 @@ export function TimelineLineChart() {
     load();
   }, []);
 
-  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[#918977]">Chargement...</div>;
+  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[rgba(30,10,32,0.60)]">Chargement...</div>;
 
   return (
     <div className="w-full h-[350px]">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 20, right: 30, left: 10, bottom: 20 }}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#918977" opacity={0.2} vertical={false} />
+          <CartesianGrid strokeDasharray="3 3" stroke="rgba(30,10,32,0.60)" opacity={0.2} vertical={false} />
           <XAxis 
              dataKey="date" 
-             stroke="#918977" 
+             stroke="rgba(30,10,32,0.60)" 
              tick={{ fontSize: 10, fontFamily: 'var(--font-jetbrains)' }} 
              tickMargin={10}
              axisLine={{ strokeWidth: 1 }}
           />
           <YAxis 
-             stroke="#918977" 
+             stroke="rgba(30,10,32,0.60)" 
              tick={{ fontSize: 10, fontFamily: 'var(--font-jetbrains)' }} 
              axisLine={false}
              tickLine={false}
           />
-          <Tooltip content={<ChartTooltip />} cursor={{ stroke: '#918977', strokeWidth: 1, strokeDasharray: '3 3' }} />
+          <Tooltip content={<ChartTooltip />} cursor={{ stroke: 'rgba(30,10,32,0.60)', strokeWidth: 1, strokeDasharray: '3 3' }} />
           <Line 
              type="monotone" 
              dataKey="entries" 
              stroke="#B87D3E" 
              strokeWidth={3} 
-             dot={{ fill: '#F7F3EA', stroke: '#B87D3E', strokeWidth: 2, r: 4 }} 
-             activeDot={{ r: 6, fill: '#D4AF37' }} 
+             dot={{ fill: '#F5F2F8', stroke: '#B87D3E', strokeWidth: 2, r: 4 }} 
+             activeDot={{ r: 6, fill: '#1E0A20' }} 
              animationDuration={1500}
           />
         </LineChart>

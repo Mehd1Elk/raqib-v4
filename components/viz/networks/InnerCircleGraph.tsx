@@ -41,7 +41,7 @@ export function InnerCircleGraph() {
 
     const svg = d3.select(svgRef.current)
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('style', 'max-width: 100%; height: 100%; background-color: #F7F3EA;');
+      .attr('style', 'max-width: 100%; height: 100%; background-color: #F5F2F8;');
 
     const nodes = NODES.map(d => ({...d}));
     const links = LINKS.map(d => ({...d}));
@@ -97,14 +97,14 @@ export function InnerCircleGraph() {
           .attr('x', -30)
           .attr('y', -20)
           .attr('rx', 4)
-          .attr('fill', '#918977')
-          .attr('stroke', '#F7F3EA')
+          .attr('fill', 'rgba(30,10,32,0.60)')
+          .attr('stroke', '#F5F2F8')
           .attr('stroke-width', 2);
       } else {
         el.append('circle')
           .attr('r', 24)
           .attr('fill', '#B87D3E')
-          .attr('stroke', '#F7F3EA')
+          .attr('stroke', '#F5F2F8')
           .attr('stroke-width', 2);
       }
     });
@@ -114,7 +114,7 @@ export function InnerCircleGraph() {
       .attr('x', 0)
       .attr('y', d => d.type === 'org' ? 5 : 4) // Center alignment difference for shapes
       .attr('text-anchor', 'middle')
-      .attr('fill', '#F7F3EA')
+      .attr('fill', '#F5F2F8')
       .attr('font-size', '10px')
       .attr('font-family', 'var(--font-jetbrains)')
       .attr('font-weight', 'bold');

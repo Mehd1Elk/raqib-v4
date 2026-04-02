@@ -98,9 +98,9 @@ export function AgentStatusGrid() {
   }, [fetchAgents]);
 
   return (
-    <div className="bg-[#FDFAF3] border border-[#D4CCBA]">
-      <div className="px-4 py-2 border-b border-[#D4CCBA] bg-[#F2EFE8]">
-        <h3 className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase text-[#918977] font-bold tracking-wider">
+    <div className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)]">
+      <div className="px-4 py-2 border-b border-[rgba(30,10,32,0.35)] bg-[#F2EFE8]">
+        <h3 className="font-[family-name:var(--font-jetbrains)] text-[10px] uppercase text-[rgba(30,10,32,0.60)] font-bold tracking-wider">
           Agents Ops ({agents.length})
         </h3>
       </div>
@@ -108,20 +108,20 @@ export function AgentStatusGrid() {
         {agents.map(agent => (
           <div
             key={agent.id}
-            className="border border-[#D4CCBA] bg-[#FDFAF3] hover:bg-[#F2EFE8] transition-colors p-2 flex flex-col gap-0.5 min-w-0"
+            className="border border-[rgba(30,10,32,0.35)] bg-[#FAF8FC] hover:bg-[#F2EFE8] transition-colors p-2 flex flex-col gap-0.5 min-w-0"
             title={agent.id}
           >
-            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1C1814] font-bold truncate">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#1E0A20] font-bold truncate">
               {agent.name}
             </div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex items-center gap-1">
-              <span className="text-[#1C1814]">{'\u25CF'}</span> {agent.model}
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] flex items-center gap-1">
+              <span className="text-[#1E0A20]">{'\u25CF'}</span> {agent.model}
             </div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] flex items-center gap-1">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] flex items-center gap-1">
               {statusIcon(agent.status)} 
               <span>{agent.lastActivity}</span>
             </div>
-            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#B8963E]">
+            <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#1E0A20]">
               {agent.entriesProduced > 0 ? `${agent.entriesProduced} entries` : '-'}
             </div>
           </div>

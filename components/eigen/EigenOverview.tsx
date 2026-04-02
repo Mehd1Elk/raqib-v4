@@ -9,13 +9,13 @@ import { AgentStatusGrid } from './AgentStatusGrid';
 
 // Mocks for components imported from viz-dynamic
 const EigenOrgChart = dynamic(() => Promise.resolve(() => (
-  <div className="w-full h-full flex items-center justify-center bg-[#FDFAF3] border border-[#D4CCBA] text-[#918977] font-[family-name:var(--font-jetbrains)] text-xs">
+  <div className="w-full h-full flex items-center justify-center bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] text-[rgba(30,10,32,0.60)] font-[family-name:var(--font-jetbrains)] text-xs">
     [EigenOrgChart Viz Component]
   </div>
 )), { ssr: false });
 
 const MilestoneTimeline = dynamic(() => Promise.resolve(() => (
-  <div className="w-full h-full flex items-center justify-center bg-[#FDFAF3] border border-[#D4CCBA] text-[#918977] font-[family-name:var(--font-jetbrains)] text-xs min-h-[200px]">
+  <div className="w-full h-full flex items-center justify-center bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] text-[rgba(30,10,32,0.60)] font-[family-name:var(--font-jetbrains)] text-xs min-h-[200px]">
     [MilestoneTimeline Viz Component]
   </div>
 )), { ssr: false });

@@ -70,7 +70,7 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
       return {
         id: p,
         label: p,
-        color: PLATFORM_COLORS[p] || '#918977',
+        color: PLATFORM_COLORS[p] || 'rgba(30,10,32,0.60)',
         cx: Math.cos(angle) * clusterRadius,
         cy: Math.sin(angle) * clusterRadius,
       };
@@ -144,7 +144,7 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
         .attr('text-anchor', 'middle')
         .attr('font-family', 'JetBrains Mono')
         .attr('font-size', 9)
-        .attr('fill', '#918977')
+        .attr('fill', 'rgba(30,10,32,0.60)')
         .text(`${count} agents`);
     });
 
@@ -154,10 +154,10 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
       .join('circle')
       .attr('class', 'agent')
       .attr('r', d => d.radius)
-      .attr('fill', d => PLATFORM_COLORS[d.platform] || '#918977')
+      .attr('fill', d => PLATFORM_COLORS[d.platform] || 'rgba(30,10,32,0.60)')
       .attr('fill-opacity', d => d.status === 'Actif' ? 0.9 : 0.4)
       .attr('stroke', d => {
-        if (searchHighlight && d.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#B8963E';
+        if (searchHighlight && d.name.toLowerCase().includes(searchHighlight.toLowerCase())) return '#1E0A20';
         return 'none';
       })
       .attr('stroke-width', 2)
@@ -166,9 +166,9 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
     // Tooltip
     const tooltip = g.append('g').attr('class', 'tooltip').style('display', 'none');
     const tooltipRect = tooltip.append('rect')
-      .attr('rx', 4).attr('fill', '#1C1814').attr('fill-opacity', 0.9);
+      .attr('rx', 4).attr('fill', '#1E0A20').attr('fill-opacity', 0.9);
     const tooltipText = tooltip.append('text')
-      .attr('fill', '#FDFAF3').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
+      .attr('fill', '#FAF8FC').attr('font-family', 'JetBrains Mono').attr('font-size', 9)
       .attr('text-anchor', 'middle');
 
     circles
@@ -191,7 +191,7 @@ export default function PlatformClusterView({ agents, width, height, onSelectAge
       });
 
     // Active agent highlight
-    circles.filter(d => d.status === 'Actif').attr('stroke', d => PLATFORM_COLORS[d.platform] || '#918977').attr('stroke-width', 1);
+    circles.filter(d => d.status === 'Actif').attr('stroke', d => PLATFORM_COLORS[d.platform] || 'rgba(30,10,32,0.60)').attr('stroke-width', 1);
 
     // Tick
     simulation.on('tick', () => {

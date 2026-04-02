@@ -6,9 +6,9 @@ import { nexusPositions } from './nexus-store';
 
 /* ═══ Entity colors — same map as bridge & rest of Raqib ═══ */
 const ENTITY_COLORS: Record<string, string> = {
-  noos: '#B8963E', aelya: '#7B5EA7', myne: '#3D7C5E', burhan: '#B87D3E',
-  yrknown: '#918977', diwane: '#6E2A3D', alguesov: '#3D7C8C', amana: '#5E6E3D',
-  cg: '#162B20', cercle: '#C9A96E', eigen: '#D4B662',
+  noos: '#1E0A20', aelya: '#7B5EA7', myne: '#3D7C5E', burhan: '#B87D3E',
+  yrknown: 'rgba(30,10,32,0.60)', diwane: '#6E2A3D', alguesov: '#3D7C8C', amana: '#5E6E3D',
+  cg: '#162B20', cercle: '#1E0A20', eigen: '#1E0A20',
 };
 
 /* ═══ Agent prefix → entity mapping ═══ */
@@ -82,7 +82,7 @@ export default function A2AOverlay() {
             id: row.id || `a2a-${Date.now()}-${Math.random()}`,
             fromEntity,
             toEntity,
-            color: ENTITY_COLORS[fromEntity] || '#D4B662',
+            color: ENTITY_COLORS[fromEntity] || '#1E0A20',
             startTime: Date.now(),
             duration: 1500,
             label: text.split(':')[1]?.trim().slice(0, 20) || '',

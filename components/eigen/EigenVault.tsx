@@ -4,9 +4,9 @@ import { ExternalLink } from 'lucide-react';
 
 export function EigenVault() {
   return (
-    <div className="w-full h-full flex flex-col bg-[#FDFAF3]">
-      <div className="flex items-center justify-between px-6 py-2 border-b border-[rgba(60,52,40,0.10)]">
-        <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[#918977] tracking-wider">
+    <div className="w-full h-full flex flex-col bg-[#FAF8FC]">
+      <div className="flex items-center justify-between px-6 py-2 border-b border-[rgba(30,10,32,0.08)]">
+        <span className="font-[family-name:var(--font-jetbrains)] text-[9px] text-[rgba(30,10,32,0.60)] tracking-wider">
           111 COMPOSANTS &middot; EIGEN CARTIER WORKSPACE
         </span>
         <div className="flex items-center gap-4">
@@ -14,7 +14,7 @@ export function EigenVault() {
             href="https://component-vault-ashy.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] hover:text-[#B8963E] flex items-center gap-1"
+            className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] flex items-center gap-1"
           >
             Ouvrir dans un nouvel onglet <ExternalLink size={10} />
           </a>

@@ -65,7 +65,7 @@ export function EigenTerminal() {
               `| ${e.entity_name.padEnd(15)} | ${String(e.total_layers).padStart(6)} | ${String(e.populated_layers).padStart(6)} | ${String(Math.round(e.avg_quality)).padStart(5)}% | ${String(e.total_entries).padStart(7)} |`
             );
             addLine(
-              <pre className="text-[#D4B662] whitespace-pre text-[10px] leading-[1.5]">
+              <pre className="text-[#1E0A20] whitespace-pre text-[10px] leading-[1.5]">
                 {[header, title, header, ...rows, header].join('\n')}
               </pre>
             );
@@ -93,7 +93,7 @@ export function EigenTerminal() {
               `| ${a.name.padEnd(16)} | ${(a.model ?? '-').padEnd(8)} | ${(a.status ?? '-').padEnd(8)} | ${String(a.entries_produced ?? 0).padStart(7)} |`
             );
             addLine(
-              <pre className="text-[#D4B662] whitespace-pre text-[10px] leading-[1.5]">
+              <pre className="text-[#1E0A20] whitespace-pre text-[10px] leading-[1.5]">
                 {[header, title, header, ...rows, header].join('\n')}
               </pre>
             );
@@ -153,7 +153,7 @@ export function EigenTerminal() {
               `  \u2192 ${r.name} (${r.entity_name}) \u00B7 ${r.actual_rows} rows \u00B7 sim: ${(r.similarity * 100).toFixed(0)}%`
             );
             addLine(
-              <pre className="text-[#D4B662] whitespace-pre text-[10px] leading-[1.5]">
+              <pre className="text-[#1E0A20] whitespace-pre text-[10px] leading-[1.5]">
                 {`R\u00E9sultats pour "${args}" (${data.length}):\n${results.join('\n')}`}
               </pre>
             );
@@ -191,7 +191,7 @@ export function EigenTerminal() {
 
       case 'help':
         addLine(
-          <pre className="text-[#D4B662] whitespace-pre text-[10px] leading-[1.8]">
+          <pre className="text-[#1E0A20] whitespace-pre text-[10px] leading-[1.8]">
 {`Commandes disponibles :
   status          Tableau des 11 entit\u00E9s (stats)
   agents          Liste des agents avec statut
@@ -215,7 +215,7 @@ export function EigenTerminal() {
   }, [addLine]);
 
   return (
-    <div data-testid="eigen-terminal" className="w-full h-full bg-[#1C1814] text-[#D4B662] font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6] flex flex-col overflow-hidden">
+    <div data-testid="eigen-terminal" className="w-full h-full bg-[#1E0A20] text-[#1E0A20] font-[family-name:var(--font-jetbrains)] text-[11px] leading-[1.6] flex flex-col overflow-hidden">
       {/* Header */}
       <div className="flex justify-between items-center px-6 pt-4 pb-2 shrink-0">
         <div className="font-bold tracking-widest text-[12px]">
@@ -225,15 +225,15 @@ export function EigenTerminal() {
           onClick={() => setIsPaused(!isPaused)}
           className={`px-3 py-1 border text-[10px] uppercase font-bold transition-colors cursor-pointer ${
             isPaused
-              ? 'bg-[#D4B662] text-[#1C1814] border-[#D4B662]'
-              : 'text-[#918977] border-[#918977] hover:text-[#D4B662] hover:border-[#D4B662]'
+              ? 'bg-[#1E0A20] text-[#1E0A20] border-[#1E0A20]'
+              : 'text-[rgba(30,10,32,0.60)] border-[rgba(30,10,32,0.60)] hover:text-[#1E0A20] hover:border-[#1E0A20]'
           }`}
         >
           {isPaused ? 'Resume' : 'Pause'}
         </button>
       </div>
 
-      <div className="text-[#918977] px-6 tracking-[3px] opacity-70 mb-2 shrink-0 overflow-hidden whitespace-nowrap text-[10px]">
+      <div className="text-[rgba(30,10,32,0.60)] px-6 tracking-[3px] opacity-70 mb-2 shrink-0 overflow-hidden whitespace-nowrap text-[10px]">
         {'═'.repeat(120)}
       </div>
 
@@ -246,16 +246,16 @@ export function EigenTerminal() {
         ))}
 
         {/* Live feed stream */}
-        <div className="mt-4 border-t border-[#918977] border-opacity-30 pt-3">
-          <div className="text-[#918977] text-[9px] uppercase tracking-widest mb-2">
+        <div className="mt-4 border-t border-[rgba(30,10,32,0.60)] border-opacity-30 pt-3">
+          <div className="text-[rgba(30,10,32,0.60)] text-[9px] uppercase tracking-widest mb-2">
             ── Live Stream ──
           </div>
           <EigenLiveFeed mode="full" limit={30} />
         </div>
 
         {/* MCP Registry */}
-        <div className="mt-4 border-t border-[#918977] border-opacity-30 pt-3">
-          <div className="text-[#918977] text-[9px] uppercase tracking-widest mb-2">
+        <div className="mt-4 border-t border-[rgba(30,10,32,0.60)] border-opacity-30 pt-3">
+          <div className="text-[rgba(30,10,32,0.60)] text-[9px] uppercase tracking-widest mb-2">
             ── MCP Registry ──
           </div>
           <MCPRegistryPanel />
@@ -265,7 +265,7 @@ export function EigenTerminal() {
       </div>
 
       {/* Input */}
-      <div className="border-t border-[#918977] border-opacity-30 px-6 py-3 shrink-0">
+      <div className="border-t border-[rgba(30,10,32,0.60)] border-opacity-30 px-6 py-3 shrink-0">
         <CommandInput onCommand={handleCommand} />
       </div>
     </div>

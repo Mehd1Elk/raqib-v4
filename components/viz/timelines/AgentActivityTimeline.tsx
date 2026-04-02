@@ -71,8 +71,8 @@ export function AgentActivityTimeline({ data, onNodeClick }: Props) {
   return (
     <div className="w-full bg-[#111111] border border-stone-800 p-6 overflow-hidden">
       <div className="flex items-center gap-2 mb-6">
-        <Activity className="w-4 h-4 text-[#B8963E]" />
-        <h3 className="text-[10px] font-bold text-[#B8963E] tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
+        <Activity className="w-4 h-4 text-[#1E0A20]" />
+        <h3 className="text-[10px] font-bold text-[#1E0A20] tracking-widest uppercase font-[family-name:var(--font-jetbrains)]">
           Diagramme de Gantt — Activité des Agents
         </h3>
       </div>
@@ -110,7 +110,7 @@ export function AgentActivityTimeline({ data, onNodeClick }: Props) {
 
                     // Couleurs par status
                     const isErr = block.status === 'error' || block.status === 'failed';
-                    const bgClass = isErr ? 'bg-red-900/80 border-red-500' : 'bg-[#B8963E]/80 border-[#B8963E]';
+                    const bgClass = isErr ? 'bg-red-900/80 border-red-500' : 'bg-[#1E0A20]/80 border-[#1E0A20]';
 
                     return (
                       <div

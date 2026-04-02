@@ -1,0 +1,167 @@
+[
+  {
+    "id": "reg-001",
+    "name": "AI Act (Reg. 2024/1689)",
+    "status": "En vigueur — Hauts risques applicables août 2026",
+    "applies_to_sectors": ["PHR", "INS", "BNK", "TEC", "DEF", "AUT", "LOG"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NAMBY",
+    "description": "Tout système IA à haut risque (santé, recrutement, scoring crédit, biométrie, infrastructure critique) doit documenter consentement, traçabilité, droit de contestation et registre de conformité. Les pratiques IA interdites sont applicables depuis février 2025 ; les obligations haut risque entrent en vigueur le 2 août 2026.",
+    "deadline": "2 août 2026 (haut risque)",
+    "penalty": "Jusqu'à €35M ou 7% CA mondial (pratiques interdites) ; €15M ou 3% CA (autres obligations)"
+  },
+  {
+    "id": "reg-002",
+    "name": "EHDS — European Health Data Space (Reg. 2025/327)",
+    "status": "En vigueur depuis mars 2025 — Application progressive 2027–2031",
+    "applies_to_sectors": ["PHR", "TEC", "INS"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMR",
+    "description": "Règlement européen établissant un espace commun des données de santé pour favoriser la portabilité des dossiers médicaux électroniques (usage primaire) et la réutilisation sécurisée des données de santé à des fins de recherche et d'intérêt public (usage secondaire). Les échanges prioritaires (patient summary, ePrescription) s'appliquent dans tous les États membres à partir de mars 2029.",
+    "deadline": "Mars 2027 (actes d'exécution) — Mars 2029 (usage primaire phase 1) — Mars 2031 (phase 2)",
+    "penalty": "Sanctions nationales — amendes proportionnelles au chiffre d'affaires selon droit national"
+  },
+  {
+    "id": "reg-003",
+    "name": "CS3D / CSDDD — Corporate Sustainability Due Diligence Directive",
+    "status": "En vigueur (Dir. 2024/1760 amendée par Dir. 2025/794) — Application juillet 2029",
+    "applies_to_sectors": ["ENR", "MIN", "LOG", "TEC", "PHR", "BTP", "CNS", "LUX", "AUT"],
+    "applies_to_min_employees": 5000,
+    "eigen_briques": "BRZ",
+    "description": "Oblige les grandes entreprises à identifier, prévenir et atténuer les impacts négatifs sur les droits humains et l'environnement dans leurs propres opérations, filiales et chaîne de valeur. Seuil révisé (Omnibus I) à 5 000 employés et CA net mondial >€1,5 Md ; transposition nationale due juillet 2028, conformité entreprises due juillet 2029.",
+    "deadline": "26 juillet 2029 (conformité) — 26 juillet 2028 (transposition nationale)",
+    "penalty": "Jusqu'à 3% du CA net mondial"
+  },
+  {
+    "id": "reg-004",
+    "name": "DORA — Digital Operational Resilience Act (Reg. 2022/2554)",
+    "status": "En application depuis 17 janvier 2025",
+    "applies_to_sectors": ["BNK", "INS", "DFI"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMR",
+    "description": "Impose aux entités financières (banques, assurances, gestionnaires d'actifs, prestataires crypto) et à leurs fournisseurs TIC critiques un cadre unifié de résilience numérique : gestion des risques ICT, tests de pénétration TLPT, registre des contrats ICT tiers, notification d'incidents sous 24h/72h. Les prestataires TIC critiques sont soumis à la supervision directe des AES.",
+    "deadline": "En application (17 janvier 2025)",
+    "penalty": "Jusqu'à 2% CA mondial annuel (entités financières) ; jusqu'à €5M (prestataires TIC critiques) ; €500K (personnes physiques)"
+  },
+  {
+    "id": "reg-005",
+    "name": "PSD3 / PSR — Payment Services Regulation",
+    "status": "En négociation — Accord provisoire novembre 2025 — Application H2 2027",
+    "applies_to_sectors": ["BNK", "DFI", "TEC"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NBR",
+    "description": "Révision du cadre européen des services de paiement : authentification renforcée SCA, open banking étendu au FIDA (données financières), renforcement des droits consommateurs, règles de responsabilité fraude renforcées. Les établissements de paiement et monnaie électronique existants devront re-candidater sous 30 mois après entrée en vigueur.",
+    "deadline": "H2 2027 (application minimale) — Début 2028 (selon période transitoire)",
+    "penalty": "Sanctions nationales — Pénalités alignées sur NCA compétente"
+  },
+  {
+    "id": "reg-006",
+    "name": "CSRD — Corporate Sustainability Reporting Directive",
+    "status": "En application — Reporting 2027 (EU >1000 emp. + €450M CA) — 2028 (non-EU)",
+    "applies_to_sectors": ["BNK", "INS", "ENR", "TEC", "LOG", "PHR", "BTP", "CNS", "LUX", "MIN", "AUT", "DEF"],
+    "applies_to_min_employees": 1000,
+    "eigen_briques": "BRZ",
+    "description": "Impose aux grandes entreprises un rapport de durabilité selon les normes ESRS (European Sustainability Reporting Standards) couvrant climat, droits sociaux, gouvernance. Seuil révisé Omnibus : >1 000 employés ET CA net >€450M ; premiers rapports EU pour exercices débutant 1er janvier 2027, non-EU à partir de janvier 2028.",
+    "deadline": "1er janvier 2027 (EU) — 1er janvier 2028 (non-EU)",
+    "penalty": "Sanctions nationales — Pénalités financières et publication de la violation"
+  },
+  {
+    "id": "reg-007",
+    "name": "EU FMD — Falsified Medicines Directive (Dir. 2011/62/EU + Reg. 2016/161/EU)",
+    "status": "En application depuis février 2019",
+    "applies_to_sectors": ["PHR", "LOG"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMR",
+    "description": "Impose à l'ensemble de la chaîne pharmaceutique (fabricants, grossistes, pharmacies) la sérialisation des médicaments sur ordonnance avec identifiant unique (datamatrix 2D) et dispositif anti-effraction. Chaque pack doit être vérifié au point de délivrance via le système EMVS (European Medicines Verification System). Pleinement applicable en France depuis 2019 ; Italie et Grèce ont bénéficié d'une exemption jusqu'en 2025.",
+    "deadline": "En application (9 février 2019) — Italie/Grèce : 2025",
+    "penalty": "Sanctions nationales — Interdiction de mise sur le marché, amendes administratives"
+  },
+  {
+    "id": "reg-008",
+    "name": "LkSG — Lieferkettensorgfaltspflichtengesetz (Loi allemande sur les chaînes d'approvisionnement)",
+    "status": "En application depuis 1er janvier 2024 (seuil 1 000 employés)",
+    "applies_to_sectors": ["TEC", "LOG", "AUT", "MIN", "PHR", "LUX", "BTP", "CNS"],
+    "applies_to_min_employees": 1000,
+    "eigen_briques": "BR",
+    "description": "Loi allemande obligeant les entreprises sises en Allemagne (ou branches enregistrées) à mettre en place un système de diligence raisonnable sur les droits humains et l'environnement dans leur chaîne d'approvisionnement mondiale. Applicable depuis 2023 (>3 000 emp.) et étendu en 2024 à >1 000 employés ; rapport public annuel obligatoire sur site web pendant 7 ans.",
+    "deadline": "En application depuis le 1er janvier 2024",
+    "penalty": "Jusqu'à €8M ou 2% du CA annuel moyen (si CA >€400M) ; paiements périodiques jusqu'à €50K"
+  },
+  {
+    "id": "reg-009",
+    "name": "IDD / DDA — Insurance Distribution Directive (Dir. 2016/97/EU)",
+    "status": "En application depuis octobre 2018",
+    "applies_to_sectors": ["INS"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NBR",
+    "description": "Directive encadrant la distribution de produits d'assurance et de réassurance par tous les intermédiaires, assureurs en vente directe et plateformes agrégateurs. Impose des obligations de gouvernance produits (POG), de transparence sur la rémunération, de formation continue (15h/an), de traitement des réclamations, et de protection renforcée pour les IBIPs (Insurance-Based Investment Products).",
+    "deadline": "En application depuis le 1er octobre 2018",
+    "penalty": "Au moins €5M ou 5% du CA annuel (personnes morales) ; €700K (personnes physiques) ; interdiction d'exercer"
+  },
+  {
+    "id": "reg-010",
+    "name": "NIS2 — Network and Information Security Directive 2 (Dir. 2022/2555)",
+    "status": "En application (transposition nationale due 17 octobre 2024)",
+    "applies_to_sectors": ["TEL", "ENR", "BNK", "DFI", "PHR", "TEC", "LOG", "BTP", "AUT", "DEF"],
+    "applies_to_min_employees": 50,
+    "eigen_briques": "NMR",
+    "description": "Directive élargissant le cadre de cybersécurité à 18 secteurs critiques et importants, imposant mesures de gestion des risques, notification d'incident sous 24h (early warning) puis 72h, audit de sécurité et responsabilité personnelle des dirigeants. Entités essentielles (>250 emp.) et importantes (50-250 emp.) soumises à des régimes de supervision distincts.",
+    "deadline": "En application (transposition octobre 2024)",
+    "penalty": "Jusqu'à €10M ou 2% CA mondial (entités essentielles) ; €7M ou 1,4% CA (entités importantes)"
+  },
+  {
+    "id": "reg-011",
+    "name": "eIDAS 2.0 — European Digital Identity Regulation (Reg. 2024/1183)",
+    "status": "En vigueur depuis mai 2024 — Wallets EUDI déploiement 2025–2026",
+    "applies_to_sectors": ["BNK", "TEC", "TEL", "DFI", "PHR", "LOG", "ENR"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMY",
+    "description": "Règlement établissant un portefeuille européen d'identité numérique (EUDI Wallet) que tous les États membres doivent fournir à leurs citoyens d'ici fin 2026. Les grandes plateformes en ligne (services financiers, e-commerce, cloud, santé, télécoms) devront obligatoirement accepter le Wallet pour la vérification d'identité. Introduit de nouveaux services de confiance qualifiés (archivage, registres, signature à distance).",
+    "deadline": "Décembre 2026 (disponibilité Wallets dans 27 États membres)",
+    "penalty": "Sanctions nationales selon niveaux de violation — pertes de certification qualifiée"
+  },
+  {
+    "id": "reg-012",
+    "name": "Convention de Malabo — Convention de l'UA sur la Cybersécurité et la Protection des Données",
+    "status": "En vigueur depuis 8 juin 2023 (15 ratifications atteintes)",
+    "applies_to_sectors": ["TEL", "BNK", "TEC", "PHR", "LOG", "CNS", "DFI"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMR",
+    "description": "Traité continental africain créant un cadre juridique harmonisé sur la cybersécurité, les transactions électroniques et la protection des données personnelles pour les 55 États membres de l'UA. Ratifiée par 15 pays (Bénin, Cap-Vert, Côte d'Ivoire, Congo, Ghana, Guinée, Mozambique, Maurice, Namibie, Niger, Rwanda, Sénégal, Togo, Zambie, Mauritanie) ; pousse à la domestication législative nationale.",
+    "deadline": "En vigueur — mise en conformité nationale progressive",
+    "penalty": "Sanctions définies par les législations nationales de transposition"
+  },
+  {
+    "id": "reg-013",
+    "name": "Stratégie IA de l'Union Africaine — Continental AI Strategy",
+    "status": "Adoptée juillet 2024 — Plan d'implémentation 5 ans en cours",
+    "applies_to_sectors": ["TEC", "PHR", "ENR", "BNK", "LOG", "AUT"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NAB",
+    "description": "Stratégie non contraignante mais structurante adoptée par le Conseil exécutif de l'UA en juillet 2024, articulée autour de 5 axes (bénéfices IA, gouvernance, talents, données, infrastructure) et 15 recommandations politiques. Demande aux États membres de développer des stratégies IA nationales, des mécanismes de gouvernance éthique et de participer activement à la gouvernance mondiale de l'IA ; vise l'alignement avec Agenda 2063.",
+    "deadline": "Plan d'implémentation 5 ans à adopter (2025–2030)",
+    "penalty": "Pas de sanctions directes — levier d'alignement politique et d'accès aux financements UA/ADB"
+  },
+  {
+    "id": "reg-014",
+    "name": "AfCFTA Protocole Digital — Protocol on Digital Trade (AfCFTA DTP)",
+    "status": "Adopté février 2024 — Annexes en négociation — Ratification requise",
+    "applies_to_sectors": ["TEL", "TEC", "BNK", "DFI", "LOG", "CNS"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NBY",
+    "description": "Protocole digital de la Zone de Libre-Échange Continentale Africaine couvrant accès aux marchés numériques, gouvernance des données, flux transfrontaliers de données, paiements digitaux, cybersécurité et technologies émergentes (IA). Entrera en vigueur après ratification par 22 États parties ; une période de transition de 5 ans est prévue pour aligner les législations nationales. Huit annexes spécifiques (identité digitale, fintech, IA, etc.) encore en négociation.",
+    "deadline": "Entrée en vigueur post-ratification (22 États) + 5 ans transition nationale",
+    "penalty": "Mécanisme de règlement des différends AfCFTA — pas de sanctions pécuniaires directes"
+  },
+  {
+    "id": "reg-015",
+    "name": "Loi 09-08 Maroc — Protection des Données Personnelles (CNDP)",
+    "status": "En vigueur depuis 2009 — Enforcement actif depuis février 2025",
+    "applies_to_sectors": ["PHR", "BNK", "INS", "TEC", "TEL", "CNS", "DFI"],
+    "applies_to_min_employees": 0,
+    "eigen_briques": "NMR",
+    "description": "Loi marocaine relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, supervisée par la CNDP. Après 15 ans de phase pédagogique, la CNDP a lancé en février 2025 des campagnes d'enforcement sectorielles (pharmaceutique en premier, puis banques, e-commerce, santé) avec des délais stricts de mise en conformité et des décisions de sanction publiées pour effet dissuasif.",
+    "deadline": "En application — campagnes sectorielles CNDP actives depuis février 2025",
+    "penalty": "De 10 000 à 300 000 MAD selon gravité ; emprisonnement 3 mois à 1 an pour infractions intentionnelles"
+  }
+]

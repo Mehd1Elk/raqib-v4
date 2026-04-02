@@ -33,12 +33,12 @@ const LAYERS = ['L1', 'L1.5', 'L2', 'L3', 'L4', 'OPS'];
 const PLATFORMS = ['Claude', 'Codex', 'Antigravity', 'Perplexity', 'Ollama'];
 
 const LAYER_COLORS: Record<string, string> = {
-  'L1': '#B8963E',
+  'L1': '#1E0A20',
   'L1.5': '#9C3D3D',
   'L2': '#3D5E8C',
   'L3': '#3D7C5E',
   'L4': '#7B5EA7',
-  'OPS': '#918977',
+  'OPS': 'rgba(30,10,32,0.60)',
 };
 
 const LAYER_H = 50;
@@ -174,14 +174,14 @@ export function RoutingTableSankey() {
   const activePlatforms = bands.length > 0 ? [...new Set(bands.map(b => b.platform))] : [];
 
   return (
-    <div className="bg-[#FDFAF3] border border-[#D4CCBA] p-4">
+    <div className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] p-4">
       {/* Header */}
       <div className="flex items-center justify-between mb-2">
         <span
           style={{
             fontFamily: 'var(--font-jetbrains)',
             fontSize: 9,
-            color: '#918977',
+            color: 'rgba(30,10,32,0.60)',
             letterSpacing: '2px',
             textTransform: 'uppercase',
           }}
@@ -193,8 +193,8 @@ export function RoutingTableSankey() {
             style={{
               fontFamily: 'var(--font-jetbrains)',
               fontSize: 8,
-              color: data.source === 'openclaw' ? '#3D7C5E' : '#918977',
-              border: `1px solid ${data.source === 'openclaw' ? '#3D7C5E' : '#918977'}`,
+              color: data.source === 'openclaw' ? '#3D7C5E' : 'rgba(30,10,32,0.60)',
+              border: `1px solid ${data.source === 'openclaw' ? '#3D7C5E' : 'rgba(30,10,32,0.60)'}`,
               padding: '1px 5px',
               letterSpacing: '1px',
             }}
@@ -257,7 +257,7 @@ export function RoutingTableSankey() {
                 y={platformY(j)}
                 width={NODE_W}
                 height={PLAT_H}
-                fill="#D4CCBA"
+                fill="rgba(30,10,32,0.35)"
                 opacity={active ? 1 : 0.2}
               />
             );
@@ -292,7 +292,7 @@ export function RoutingTableSankey() {
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 9,
-                fill: '#918977',
+                fill: 'rgba(30,10,32,0.60)',
               }}
             >
               {platform}
@@ -309,7 +309,7 @@ export function RoutingTableSankey() {
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 9,
-                fill: '#918977',
+                fill: 'rgba(30,10,32,0.60)',
               }}
             >
               Aucune donnée de routing disponible.
@@ -328,7 +328,7 @@ export function RoutingTableSankey() {
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
                   fontSize: 8,
-                  fill: '#918977',
+                  fill: 'rgba(30,10,32,0.60)',
                 }}
               >
                 {b.layer} → {b.platform} · {b.count} agents

@@ -1,0 +1,1569 @@
+[
+  {
+    "id": "b34cff18-89dc-41f7-bc71-e492218a69f6",
+    "title": "The PHQ-9: Validity of a Brief Depression Severity Measure",
+    "authors": [
+      "Kroenke",
+      "Spitzer",
+      "Williams"
+    ],
+    "abstract": "",
+    "journal": "Journal of General Internal Medicine",
+    "year": 2001,
+    "doi": "10.1046/j.1525-1497.2001.016009606.x",
+    "url": "https://doi.org/10.1046/j.1525-1497.2001.016009606.x",
+    "domain": "1",
+    "subdomain": "PHQ-9 validity / clinical screening",
+    "brique": "noos",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Foundational for NOOS adaptive mental health screening — validates gold-standard depression measure that NOOS must outperform.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "PHQ-9 validity / clinical screening"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "b81e2ffb-b9f0-4f74-98f3-e446bdaad494",
+    "title": "Without Wasting a Word: Extreme Improvements in Efficiency and Accuracy Using Computerized Adaptive Testing for Mental Health Disorders (CAT-MH)",
+    "authors": [
+      "Gibbons",
+      "deGruy"
+    ],
+    "abstract": "",
+    "journal": "Current Psychiatry Reports",
+    "year": 2019,
+    "doi": "10.1007/s11920-019-1053-9",
+    "url": "https://doi.org/10.1007/s11920-019-1053-9",
+    "domain": "1",
+    "subdomain": "computerized adaptive testing / IRT",
+    "brique": "noos",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Core methodology for NOOS computerized adaptive testing engine — enables precision item selection.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "computerized adaptive testing / IRT"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "46faf24c-8174-408d-831d-4a656fa0ac61",
+    "title": "Ecological Momentary Assessment",
+    "authors": [
+      "Shiffman",
+      "Stone",
+      "Hufford"
+    ],
+    "abstract": "",
+    "journal": "Annual Review of Clinical Psychology",
+    "year": 2008,
+    "doi": "10.1146/annurev.clinpsy.3.022806.091415",
+    "url": "https://doi.org/10.1146/annurev.clinpsy.3.022806.091415",
+    "domain": "1",
+    "subdomain": "ecological momentary assessment (EMA)",
+    "brique": "noos",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Defines EMA framework central to NOOS real-time mood tracking and ecological data collection.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "ecological momentary assessment (EMA)"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "18a387d6-b16f-4445-9c7b-46ba628c80c4",
+    "title": "Harnessing Smartphone-Based Digital Phenotyping to Enhance Behavioral and Mental Health",
+    "authors": [
+      "Onnela",
+      "Rauch"
+    ],
+    "abstract": "",
+    "journal": "Neuropsychopharmacology",
+    "year": 2016,
+    "doi": "10.1038/npp.2016.7",
+    "url": "https://doi.org/10.1038/npp.2016.7",
+    "domain": "1",
+    "subdomain": "digital phenotyping",
+    "brique": "noos",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Pioneering digital phenotyping approach that NOOS integrates for passive behavioral monitoring.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "digital phenotyping"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "ba4c5925-b43e-4c7a-a692-9b956e717e4c",
+    "title": "Relapse Prediction in Schizophrenia Through Digital Phenotyping: A Pilot Study",
+    "authors": [
+      "Barnett",
+      "Torous",
+      "Staples",
+      "Sandoval",
+      "Keshavan",
+      "Onnela"
+    ],
+    "abstract": "",
+    "journal": "Neuropsychopharmacology",
+    "year": 2018,
+    "doi": "10.1038/s41386-018-0030-z",
+    "url": "https://doi.org/10.1038/s41386-018-0030-z",
+    "domain": "1",
+    "subdomain": "digital phenotyping / real-world evidence",
+    "brique": "noos",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Validates smartphone-based digital phenotyping for predicting psychiatric relapse — core NOOS feature.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "digital phenotyping / real-world evidence"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "7bf45952-aa9d-47c8-b99e-3c9cf1bfd8f2",
+    "title": "Modern Views of Machine Learning for Precision Psychiatry",
+    "authors": [
+      "Chen",
+      "Kulkarni",
+      "Galatzer-Levy",
+      "Bigio",
+      "Nasca",
+      "Zhang"
+    ],
+    "abstract": "",
+    "journal": "Patterns",
+    "year": 2022,
+    "doi": "10.1016/j.patter.2022.100602",
+    "url": "https://doi.org/10.1016/j.patter.2022.100602",
+    "domain": "1",
+    "subdomain": "precision psychiatry / AI in psychiatry",
+    "brique": "noos",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Maps precision psychiatry landscape that NOOS embodies — ML-driven personalized treatment.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "precision psychiatry / AI in psychiatry"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "95956d1d-b550-4a90-b145-31b7cc79a83d",
+    "title": "The Need for a System View to Regulate Artificial Intelligence/Machine Learning-Based Software as Medical Device",
+    "authors": [
+      "Gerke",
+      "Babic",
+      "Evgeniou",
+      "Cohen"
+    ],
+    "abstract": "",
+    "journal": "npj Digital Medicine",
+    "year": 2020,
+    "doi": "10.1038/s41746-020-0262-2",
+    "url": "https://doi.org/10.1038/s41746-020-0262-2",
+    "domain": "1",
+    "subdomain": "Software as Medical Device (SaMD / FDA)",
+    "brique": "noos",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Establishes SaMD regulatory framework that NOOS must comply with for CE/FDA certification.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "Software as Medical Device (SaMD / FDA)"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "d030211d-fd9c-4975-9b0b-20aec8d19bdb",
+    "title": "Natural Language Processing Applied to Mental Illness Detection: A Narrative Review",
+    "authors": [
+      "Schoene",
+      "Ananiadou",
+      "Ji",
+      "Zhang"
+    ],
+    "abstract": "",
+    "journal": "npj Digital Medicine",
+    "year": 2022,
+    "doi": "10.1038/s41746-022-00589-7",
+    "url": "https://doi.org/10.1038/s41746-022-00589-7",
+    "domain": "1",
+    "subdomain": "NLP in clinical psychology",
+    "brique": "noos",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Demonstrates NLP for mental illness detection from text — core capability of NOOS clinical NLP engine.",
+    "status": "to_read",
+    "tags": [
+      "noos",
+      "NLP in clinical psychology"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "dea4e089-4dfa-4ebe-9458-a1701d92f2e6",
+    "title": "Calibrating Noise to Sensitivity in Private Data Analysis",
+    "authors": [
+      "Dwork",
+      "McSherry",
+      "Nissim",
+      "Smith"
+    ],
+    "abstract": "",
+    "journal": "Journal of Privacy and Confidentiality",
+    "year": 2006,
+    "doi": "10.29012/JPC.V7I3.405",
+    "url": "https://doi.org/10.29012/JPC.V7I3.405",
+    "domain": "2",
+    "subdomain": "differential privacy",
+    "brique": "aelya",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Foundational differential privacy mechanism that ÆLYA implements for consent-preserving analytics.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "differential privacy"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "dbd2b44e-e84a-496e-ab73-e167a254d71d",
+    "title": "Communication-Efficient Learning of Deep Networks from Decentralized Data",
+    "authors": [
+      "McMahan",
+      "Moore",
+      "Ramage",
+      "Hampson",
+      "Arcas"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the 20th International Conference on Artificial Intelligence and Statistics (AISTATS)",
+    "year": 2017,
+    "doi": "10.48550/arXiv.1602.05629",
+    "url": "https://doi.org/10.48550/arXiv.1602.05629",
+    "domain": "2",
+    "subdomain": "federated learning",
+    "brique": "aelya",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Defines federated learning protocol that ÆLYA uses for distributed model training without data centralization.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "federated learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "8e4848e3-ae53-4e8a-8a1d-52dd2e082e44",
+    "title": "Advances and Open Problems in Federated Learning",
+    "authors": [
+      "Kairouz",
+      "McMahan",
+      "Avent",
+      "Bellet",
+      "Bennis",
+      "Bhagoji"
+    ],
+    "abstract": "",
+    "journal": "Foundations and Trends in Machine Learning",
+    "year": 2019,
+    "doi": "10.1561/2200000083",
+    "url": "https://doi.org/10.1561/2200000083",
+    "domain": "2",
+    "subdomain": "federated learning / privacy-preserving machine learning",
+    "brique": "aelya",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Comprehensive survey of federated learning challenges — directly informs ÆLYA architecture decisions.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "federated learning / privacy-preserving machine learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "228a4418-e19a-417c-9c89-d759c1d29e2f",
+    "title": "Fully Homomorphic Encryption Using Ideal Lattices",
+    "authors": [
+      "Gentry"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the 41st Annual ACM Symposium on Theory of Computing (STOC)",
+    "year": 2009,
+    "doi": "10.1145/1536414.1536440",
+    "url": "https://doi.org/10.1145/1536414.1536440",
+    "domain": "2",
+    "subdomain": "fully homomorphic encryption (FHE)",
+    "brique": "aelya",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Breakthrough enabling computation on encrypted data — future ÆLYA feature for zero-exposure analytics.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "fully homomorphic encryption (FHE)"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "0861bf4e-5670-4518-82c9-6d92c23ff599",
+    "title": "The Knowledge Complexity of Interactive Proof Systems",
+    "authors": [
+      "Goldwasser",
+      "Micali",
+      "Rackoff"
+    ],
+    "abstract": "",
+    "journal": "SIAM Journal on Computing",
+    "year": 1989,
+    "doi": "10.1137/0218012",
+    "url": "https://doi.org/10.1137/0218012",
+    "domain": "2",
+    "subdomain": "zero-knowledge proofs",
+    "brique": "aelya",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Theoretical foundation for zero-knowledge proofs — enables ÆLYA consent verification without data exposure.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "zero-knowledge proofs"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "8f7fc312-2e14-4f5c-af35-bb77fbeefe5c",
+    "title": "k-Anonymity: A Model for Protecting Privacy",
+    "authors": [
+      "Sweeney"
+    ],
+    "abstract": "",
+    "journal": "International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems",
+    "year": 2002,
+    "doi": "10.1142/S0218488502001648",
+    "url": "https://doi.org/10.1142/S0218488502001648",
+    "domain": "2",
+    "subdomain": "k-anonymity",
+    "brique": "aelya",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "k-anonymity model that ÆLYA implements for GDPR-compliant data anonymization.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "k-anonymity"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "20bc61e9-c30a-4f41-9f11-8697a4ade981",
+    "title": "Practical Secure Aggregation for Privacy-Preserving Machine Learning",
+    "authors": [
+      "Bonawitz",
+      "Ivanov",
+      "Kreuter",
+      "Marcedone",
+      "McMahan",
+      "Patel",
+      "Ramage",
+      "Segal",
+      "Seth"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the ACM SIGSAC Conference on Computer and Communications Security (CCS)",
+    "year": 2017,
+    "doi": "10.1145/3133956.3133982",
+    "url": "https://doi.org/10.1145/3133956.3133982",
+    "domain": "2",
+    "subdomain": "privacy-preserving machine learning / federated learning",
+    "brique": "aelya",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Practical secure aggregation for ML — enables ÆLYA privacy-preserving model training at scale.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "privacy-preserving machine learning / federated learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "50530836-c5ed-4bd8-87eb-4ba0ac457c13",
+    "title": "Deep Learning with Differential Privacy",
+    "authors": [
+      "Abadi",
+      "Chu",
+      "Goodfellow",
+      "McMahan",
+      "Mironov",
+      "Talwar",
+      "Zhang"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS)",
+    "year": 2016,
+    "doi": "10.1145/2976749.2978318",
+    "url": "https://doi.org/10.1145/2976749.2978318",
+    "domain": "2",
+    "subdomain": "differential privacy / privacy-preserving machine learning",
+    "brique": "aelya",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Bridges deep learning and differential privacy — core technical foundation for ÆLYA ML pipeline.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "differential privacy / privacy-preserving machine learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "1d5901f5-f678-414b-a780-e09752e4dff4",
+    "title": "Nudging Privacy: The Behavioral Economics of Personal Information",
+    "authors": [
+      "Acquisti"
+    ],
+    "abstract": "",
+    "journal": "IEEE Security & Privacy",
+    "year": 2009,
+    "doi": "10.1109/MSP.2009.163",
+    "url": "https://doi.org/10.1109/MSP.2009.163",
+    "domain": "2",
+    "subdomain": "GDPR compliance tech / privacy engineering",
+    "brique": "aelya",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Behavioral economics of privacy decisions — informs ÆLYA consent UX design.",
+    "status": "to_read",
+    "tags": [
+      "aelya",
+      "GDPR compliance tech / privacy engineering"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "f4b34a4e-8343-42d7-be0f-e326d2fbff4c",
+    "title": "The Economics of Social Data",
+    "authors": [
+      "Bergemann",
+      "Bonatti",
+      "Gan"
+    ],
+    "abstract": "",
+    "journal": "RAND Journal of Economics",
+    "year": 2022,
+    "doi": "10.1111/1756-2171.12407",
+    "url": "https://doi.org/10.1111/1756-2171.12407",
+    "domain": "3",
+    "subdomain": "data economics / social data markets",
+    "brique": "myne",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Economic theory of social data markets — foundational for MYNε data marketplace design.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "data economics / social data markets"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "3f307817-7789-489a-9ff1-3af660babe54",
+    "title": "Data Shapley: Equitable Valuation of Data for Machine Learning",
+    "authors": [
+      "Ghorbani",
+      "Zou"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the 36th International Conference on Machine Learning (ICML)",
+    "year": 2019,
+    "doi": "10.48550/arXiv.1904.02868",
+    "url": "https://doi.org/10.48550/arXiv.1904.02868",
+    "domain": "3",
+    "subdomain": "data valuation / mechanism design for data markets",
+    "brique": "myne",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Data Shapley valuation method — core algorithm for MYNε fair data contributor compensation.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "data valuation / mechanism design for data markets"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "35f2b558-b95a-4544-a8d5-9b15f7c35224",
+    "title": "What Is Privacy Worth?",
+    "authors": [
+      "Acquisti",
+      "John",
+      "Loewenstein"
+    ],
+    "abstract": "",
+    "journal": "Journal of Legal Studies",
+    "year": 2013,
+    "doi": "10.1086/671754",
+    "url": "https://doi.org/10.1086/671754",
+    "domain": "3",
+    "subdomain": "personal data valuation / behavioral economics of data sharing",
+    "brique": "myne",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Empirical data pricing research — directly informs MYNε personal data valuation engine.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "personal data valuation / behavioral economics of data sharing"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "8108047a-1e42-4c57-8f54-48f90ab049c4",
+    "title": "The Economics of Privacy",
+    "authors": [
+      "Acquisti",
+      "Taylor",
+      "Wagman"
+    ],
+    "abstract": "",
+    "journal": "Journal of Economic Literature",
+    "year": 2016,
+    "doi": "10.1257/jel.54.2.442",
+    "url": "https://doi.org/10.1257/jel.54.2.442",
+    "domain": "3",
+    "subdomain": "economics of privacy / data markets",
+    "brique": "myne",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Comprehensive privacy economics review — shapes MYNε market mechanism design.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "economics of privacy / data markets"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "ce988583-e88e-4a3a-abd5-0d20956677e0",
+    "title": "Valuing Personal Data with Privacy Consideration",
+    "authors": [
+      "Li",
+      "Liu",
+      "Motiwalla"
+    ],
+    "abstract": "",
+    "journal": "Decision Sciences",
+    "year": 2020,
+    "doi": "10.1111/deci.12442",
+    "url": "https://doi.org/10.1111/deci.12442",
+    "domain": "3",
+    "subdomain": "personal data valuation",
+    "brique": "myne",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Valuation framework with privacy consideration — MYNε integrates this for privacy-aware pricing.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "personal data valuation"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "46c1eff6-f8e2-49bb-bee2-32ab0e63bdd3",
+    "title": "Money Walks: A Human-Centric Study on the Economics of Personal Mobile Data",
+    "authors": [
+      "Staiano",
+      "Oliver",
+      "Lepri",
+      "de Oliveira",
+      "Caraviello",
+      "Sebe"
+    ],
+    "abstract": "",
+    "journal": "Proceedings of the ACM International Joint Conference on Pervasive and Ubiquitous Computing (UbiComp)",
+    "year": 2014,
+    "doi": "10.1145/2632048.2632074",
+    "url": "https://doi.org/10.1145/2632048.2632074",
+    "domain": "3",
+    "subdomain": "personal data valuation / attention economy",
+    "brique": "myne",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Human-centric data economics study — validates MYNε personal data monetization approach.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "personal data valuation / attention economy"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "3109d8cb-0dfd-42a5-8901-7ce8d4fdb1af",
+    "title": "Data Cooperatives as Catalysts for Collaboration, Data Sharing, and the (Trans)Formation of the Digital Commons",
+    "authors": [
+      "Kapoor",
+      "Pentland",
+      "Vaitla",
+      "Siddarth",
+      "Cane",
+      "Calzada",
+      "Mannan",
+      "Scholz"
+    ],
+    "abstract": "",
+    "journal": "SSRN / Preprints",
+    "year": 2023,
+    "doi": "10.2139/ssrn.4413371",
+    "url": "https://doi.org/10.2139/ssrn.4413371",
+    "domain": "3",
+    "subdomain": "data cooperatives / sovereign data markets",
+    "brique": "myne",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Data cooperative model — architectural blueprint for MYNε sovereign data unions.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "data cooperatives / sovereign data markets"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "93613eb7-e055-4a2a-a613-a14d537c5afe",
+    "title": "An Economic Analysis of Privacy Protection and Statistical Accuracy as Social Choices",
+    "authors": [
+      "Abowd",
+      "Schmutte"
+    ],
+    "abstract": "",
+    "journal": "American Economic Review",
+    "year": 2019,
+    "doi": "10.1257/aer.20170627",
+    "url": "https://doi.org/10.1257/aer.20170627",
+    "domain": "3",
+    "subdomain": "mechanism design / data economics / privacy",
+    "brique": "myne",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Statistical accuracy vs privacy tradeoff — informs MYNε differential privacy parameter tuning.",
+    "status": "to_read",
+    "tags": [
+      "myne",
+      "mechanism design / data economics / privacy"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "7c838db4-55e6-4aec-92dc-0ad6fa07382d",
+    "title": "CRYSTALS-Kyber Algorithm Specifications and Supporting Documentation",
+    "authors": [
+      "Avanzi",
+      "Bos",
+      "Ducas",
+      "Kiltz",
+      "Lepoint",
+      "Lyubashevsky",
+      "Schanck",
+      "Schwabe",
+      "Seiler",
+      "Stehle"
+    ],
+    "abstract": "",
+    "journal": "NIST PQC Round 3 Submission (NIST FIPS 203)",
+    "year": 2021,
+    "doi": "10.6028/NIST.FIPS.203",
+    "url": "https://doi.org/10.6028/NIST.FIPS.203",
+    "domain": "4",
+    "subdomain": "post-quantum cryptography / ML-KEM",
+    "brique": "burhan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "NIST post-quantum standard — BURHAN must implement ML-KEM for quantum-resistant key exchange.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "post-quantum cryptography / ML-KEM"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "60c27bc4-5724-49f7-9424-b32f7ab6e4ed",
+    "title": "On the Size of Pairing-based Non-interactive Arguments",
+    "authors": [
+      "Groth"
+    ],
+    "abstract": "",
+    "journal": "EUROCRYPT 2016, Lecture Notes in Computer Science, Springer",
+    "year": 2016,
+    "doi": "10.1007/978-3-662-49896-5_11",
+    "url": "https://doi.org/10.1007/978-3-662-49896-5_11",
+    "domain": "4",
+    "subdomain": "zk-SNARKs / zero-knowledge proofs",
+    "brique": "burhan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Compact zk-SNARK construction — foundational for BURHAN zero-knowledge proof system.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "zk-SNARKs / zero-knowledge proofs"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "a144eda6-2c0e-456d-9f14-206b8b6701ad",
+    "title": "PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge",
+    "authors": [
+      "Gabizon",
+      "Williamson",
+      "Ciobotaru"
+    ],
+    "abstract": "",
+    "journal": "IACR Cryptology ePrint Archive",
+    "year": 2019,
+    "doi": "iacr:2019/953",
+    "url": "https://eprint.iacr.org/2019/953",
+    "domain": "4",
+    "subdomain": "zk-SNARKs / PLONK",
+    "brique": "burhan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "PLONK universal ZK proof system — candidate protocol for BURHAN verifiable computation.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "zk-SNARKs / PLONK"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "ae0ea120-efea-4b5d-8ed8-e457ff03cf56",
+    "title": "Pinocchio: Nearly Practical Verifiable Computation",
+    "authors": [
+      "Parno",
+      "Howell",
+      "Gentry",
+      "Raykova"
+    ],
+    "abstract": "",
+    "journal": "IEEE Symposium on Security and Privacy (IEEE S&P)",
+    "year": 2013,
+    "doi": "10.1109/SP.2013.47",
+    "url": "https://doi.org/10.1109/SP.2013.47",
+    "domain": "4",
+    "subdomain": "verifiable computation",
+    "brique": "burhan",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Pinocchio verifiable computation — theoretical basis for BURHAN decision receipt generation.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "verifiable computation"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "eda828a5-05ab-4bf7-9c07-cb3c14829fad",
+    "title": "A Formal Verification Framework for Security Issues of Blockchain Smart Contracts",
+    "authors": [
+      "Sun",
+      "Yu"
+    ],
+    "abstract": "",
+    "journal": "Electronics (MDPI)",
+    "year": 2020,
+    "doi": "10.3390/electronics9020255",
+    "url": "https://doi.org/10.3390/electronics9020255",
+    "domain": "4",
+    "subdomain": "formal verification / smart contracts",
+    "brique": "burhan",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Blockchain formal verification framework — methodology for BURHAN smart contract auditing.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "formal verification / smart contracts"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "2b844d31-cf4c-4bb1-9d4c-44b28b1073b3",
+    "title": "Ligetron: Lightweight Scalable End-to-End Zero-Knowledge Proofs Post-Quantum ZK-SNARKs on a Browser",
+    "authors": [
+      "Wang",
+      "Hazay",
+      "Venkitasubramaniam"
+    ],
+    "abstract": "",
+    "journal": "IEEE Symposium on Security and Privacy (IEEE S&P 2024)",
+    "year": 2024,
+    "doi": "10.1109/SP54263.2024.00086",
+    "url": "https://doi.org/10.1109/SP54263.2024.00086",
+    "domain": "4",
+    "subdomain": "zk-SNARKs / post-quantum",
+    "brique": "burhan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Scalable ZK proof system — potential BURHAN scaling solution for high-throughput verification.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "zk-SNARKs / post-quantum"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "12c8e632-f5b6-4ed7-92b4-8cdc582aa653",
+    "title": "A Survey on Decentralized Identifiers and Verifiable Credentials",
+    "authors": [
+      "Mazzocca",
+      "Acar",
+      "Uluagac",
+      "Montanari",
+      "Bellavista",
+      "Conti"
+    ],
+    "abstract": "",
+    "journal": "IEEE Communications Surveys & Tutorials",
+    "year": 2024,
+    "doi": "10.1109/COMST.2025.3543197",
+    "url": "https://doi.org/10.1109/COMST.2025.3543197",
+    "domain": "4",
+    "subdomain": "decentralized identity / DIDs W3C",
+    "brique": "burhan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "DID/VC survey — comprehensive guide for BURHAN decentralized identity implementation.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "decentralized identity / DIDs W3C"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "b3a434f4-b38d-4b80-ae70-36257375e0fa",
+    "title": "Identifying Appropriate Intellectual Property Protection Mechanisms for Machine Learning Models: A Systematization of Watermarking, Fingerprinting, Model Access, and Attacks",
+    "authors": [
+      "Lederer",
+      "Mayer",
+      "Rauber"
+    ],
+    "abstract": "",
+    "journal": "IEEE Transactions on Neural Networks and Learning Systems",
+    "year": 2023,
+    "doi": "10.1109/TNNLS.2023.3270135",
+    "url": "https://doi.org/10.1109/TNNLS.2023.3270135",
+    "domain": "4",
+    "subdomain": "AI model fingerprinting / IP protection",
+    "brique": "burhan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "AI model fingerprinting — enables BURHAN to provide tamper-proof AI authentication.",
+    "status": "to_read",
+    "tags": [
+      "burhan",
+      "AI model fingerprinting / IP protection"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "c20e8ad5-c034-4988-b414-ffe57e6a5c17",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": [
+      "Lewis",
+      "Perez",
+      "Piktus",
+      "Petroni",
+      "Karpukhin",
+      "Goyal",
+      "Küttler",
+      "Lewis",
+      "Yih",
+      "Rocktäschel",
+      "Riedel",
+      "Kiela"
+    ],
+    "abstract": "",
+    "journal": "Advances in Neural Information Processing Systems (NeurIPS 2020)",
+    "year": 2020,
+    "doi": "10.48550/arXiv.2005.11401",
+    "url": "https://doi.org/10.48550/arXiv.2005.11401",
+    "domain": "5",
+    "subdomain": "retrieval-augmented generation (RAG)",
+    "brique": "yrknown",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "RAG foundational paper — core architecture for YrKnown knowledge retrieval system.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "retrieval-augmented generation (RAG)"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "b8bdf301-b933-4d64-a585-917104d70932",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "authors": [
+      "Hu",
+      "Shen",
+      "Wallis",
+      "Allen-Zhu",
+      "Li",
+      "Wang",
+      "Wang",
+      "Chen"
+    ],
+    "abstract": "",
+    "journal": "International Conference on Learning Representations (ICLR 2022)",
+    "year": 2022,
+    "doi": "10.48550/arXiv.2106.09685",
+    "url": "https://doi.org/10.48550/arXiv.2106.09685",
+    "domain": "5",
+    "subdomain": "parameter-efficient fine-tuning / LoRA",
+    "brique": "yrknown",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "LoRA fine-tuning — enables YrKnown efficient expert model adaptation without full retraining.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "parameter-efficient fine-tuning / LoRA"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "3878c933-2461-49eb-b797-918f77445d27",
+    "title": "QLoRA: Efficient Finetuning of Quantized LLMs",
+    "authors": [
+      "Dettmers",
+      "Pagnoni",
+      "Holtzman",
+      "Zettlemoyer"
+    ],
+    "abstract": "",
+    "journal": "Advances in Neural Information Processing Systems (NeurIPS 2023)",
+    "year": 2023,
+    "doi": "10.48550/arXiv.2305.14314",
+    "url": "https://doi.org/10.48550/arXiv.2305.14314",
+    "domain": "5",
+    "subdomain": "parameter-efficient fine-tuning / QLoRA",
+    "brique": "yrknown",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "QLoRA quantized fine-tuning — allows YrKnown to run on edge devices with limited memory.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "parameter-efficient fine-tuning / QLoRA"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "51c98392-40e3-4d2a-918d-ea1d320a4dee",
+    "title": "Knowledge Distillation: A Survey",
+    "authors": [
+      "Gou",
+      "Yu",
+      "Maybank",
+      "Tao"
+    ],
+    "abstract": "",
+    "journal": "International Journal of Computer Vision",
+    "year": 2021,
+    "doi": "10.1007/s11263-021-01453-z",
+    "url": "https://doi.org/10.1007/s11263-021-01453-z",
+    "domain": "5",
+    "subdomain": "knowledge distillation",
+    "brique": "yrknown",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Knowledge distillation survey — informs YrKnown expert-to-model knowledge transfer pipeline.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "knowledge distillation"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "20c2cf2f-8484-4eb0-9c88-59f3065e875d",
+    "title": "Simple Is Effective: The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation",
+    "authors": [
+      "Li",
+      "Miao",
+      "Li"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2410.20724",
+    "url": "https://doi.org/10.48550/arXiv.2410.20724",
+    "domain": "5",
+    "subdomain": "knowledge graphs + LLM fusion",
+    "brique": "yrknown",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "KG+LLM integration — directly relevant to YrKnown hybrid knowledge graph architecture.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "knowledge graphs + LLM fusion"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "8126282c-83e6-4f92-a439-9ec3e1e274a0",
+    "title": "The Role of Deliberate Practice in the Acquisition of Expert Performance",
+    "authors": [
+      "Ericsson",
+      "Krampe",
+      "Tesch-Römer"
+    ],
+    "abstract": "",
+    "journal": "Psychological Review",
+    "year": 1993,
+    "doi": "10.1037/0033-295X.100.3.363",
+    "url": "https://doi.org/10.1037/0033-295X.100.3.363",
+    "domain": "5",
+    "subdomain": "deliberate practice / expert performance",
+    "brique": "yrknown",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Deliberate practice theory — psychological foundation for YrKnown expertise digitization.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "deliberate practice / expert performance"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "1ffd158e-e90e-4454-a8d1-8bda48c48542",
+    "title": "Distilling the Knowledge in a Neural Network",
+    "authors": [
+      "Hinton",
+      "Vinyals",
+      "Dean"
+    ],
+    "abstract": "",
+    "journal": "NIPS Deep Learning Workshop 2014 (arXiv)",
+    "year": 2015,
+    "doi": "10.48550/arXiv.1503.02531",
+    "url": "https://doi.org/10.48550/arXiv.1503.02531",
+    "domain": "5",
+    "subdomain": "knowledge distillation",
+    "brique": "yrknown",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Neural network distillation — foundational technique for YrKnown lightweight model deployment.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "knowledge distillation"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "30eae6c7-d479-4c5a-b8b3-92b9640ad12d",
+    "title": "Cognitive Load During Problem Solving: Effects on Learning",
+    "authors": [
+      "Sweller"
+    ],
+    "abstract": "",
+    "journal": "Cognitive Science",
+    "year": 1988,
+    "doi": "10.1207/s15516709cog1202_4",
+    "url": "https://doi.org/10.1207/s15516709cog1202_4",
+    "domain": "5",
+    "subdomain": "cognitive load theory",
+    "brique": "yrknown",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Cognitive load theory — informs YrKnown UI/UX for knowledge presentation and learning.",
+    "status": "to_read",
+    "tags": [
+      "yrknown",
+      "cognitive load theory"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "792599b8-837f-4677-8386-d02b9e4e53dc",
+    "title": "Multi-Agent Reinforcement Learning: A Selective Overview of Theories and Algorithms",
+    "authors": [
+      "Zhang",
+      "Yang",
+      "Basar"
+    ],
+    "abstract": "",
+    "journal": "Handbook of Reinforcement Learning and Control, Springer",
+    "year": 2021,
+    "doi": "10.1007/978-3-030-60990-0_12",
+    "url": "https://doi.org/10.1007/978-3-030-60990-0_12",
+    "domain": "6",
+    "subdomain": "multi-agent reinforcement learning (MARL)",
+    "brique": "raqib",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "MARL overview — theoretical foundation for RAQIB multi-agent coordination system.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "multi-agent reinforcement learning (MARL)"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "46e141eb-9030-43e6-b8b3-09a283ec7372",
+    "title": "Large Language Model based Multi-Agents: A Survey of Progress and Challenges",
+    "authors": [
+      "Guo",
+      "Chen",
+      "Wang",
+      "Chang",
+      "Pei",
+      "Chawla",
+      "Wiest",
+      "Zhang"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint (IJCAI 2024)",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2402.01680",
+    "url": "https://doi.org/10.48550/arXiv.2402.01680",
+    "domain": "6",
+    "subdomain": "LLM-based autonomous agents / multi-agent",
+    "brique": "raqib",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "LLM multi-agent survey — maps the landscape RAQIB operates in for autonomous agent orchestration.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "LLM-based autonomous agents / multi-agent"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "a834d17e-af5d-4fe6-9703-c6df4f79d9bd",
+    "title": "QTRAN: Learning to Factorize with Transformation for Cooperative Multi-Agent Reinforcement Learning",
+    "authors": [
+      "Son",
+      "Kim",
+      "Kang",
+      "Hostallero",
+      "Yi"
+    ],
+    "abstract": "",
+    "journal": "International Conference on Machine Learning (ICML 2019)",
+    "year": 2019,
+    "doi": "10.48550/arXiv.1905.05408",
+    "url": "https://doi.org/10.48550/arXiv.1905.05408",
+    "domain": "6",
+    "subdomain": "cooperative MARL / value decomposition",
+    "brique": "raqib",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "QTRAN cooperative MARL — potential algorithm for RAQIB agent coalition formation.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "cooperative MARL / value decomposition"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "8208779e-e1aa-4776-bed0-1ee041eb1e1e",
+    "title": "Causality for Machine Learning",
+    "authors": [
+      "Scholkopf"
+    ],
+    "abstract": "",
+    "journal": "ACM Turing Award Lecture / Probabilistic and Causal Inference",
+    "year": 2022,
+    "doi": "10.1145/3501714.3501755",
+    "url": "https://doi.org/10.1145/3501714.3501755",
+    "domain": "6",
+    "subdomain": "causal inference / machine learning",
+    "brique": "raqib",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Causal inference for ML — enables RAQIB policy impact analysis and counterfactual reasoning.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "causal inference / machine learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "ddbc3643-834b-4fd7-916d-354ebc5fe08c",
+    "title": "Artificial Intelligence and Human Geography",
+    "authors": [
+      "Gao"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2023,
+    "doi": "10.48550/arXiv.2312.08827",
+    "url": "https://doi.org/10.48550/arXiv.2312.08827",
+    "domain": "6",
+    "subdomain": "geospatial AI / territorial intelligence",
+    "brique": "raqib",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "AI + human geography intersection — informs RAQIB geospatial intelligence capabilities.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "geospatial AI / territorial intelligence"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "a359015b-6fba-42e4-b785-b26c389766c2",
+    "title": "Open source intelligence and AI: a systematic review of the GELSI literature",
+    "authors": [
+      "Floridi",
+      "Taddeo",
+      "Ghioni"
+    ],
+    "abstract": "",
+    "journal": "AI & Society",
+    "year": 2023,
+    "doi": "10.1007/s00146-023-01628-x",
+    "url": "https://doi.org/10.1007/s00146-023-01628-x",
+    "domain": "6",
+    "subdomain": "OSINT / competitive intelligence",
+    "brique": "raqib",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "OSINT + AI review — directly relevant to RAQIB open-source intelligence automation.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "OSINT / competitive intelligence"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "368e3d19-eb5b-466e-bf08-d1732fb95634",
+    "title": "Changing Priorities for Strategic Planning from National to Territorial Levels",
+    "authors": [
+      "Juillet",
+      "Dou",
+      "Clerc"
+    ],
+    "abstract": "",
+    "journal": "Foresight and STI Governance (Higher School of Economics)",
+    "year": 2020,
+    "doi": "10.17323/2500-2597.2020.3.88.99",
+    "url": "https://doi.org/10.17323/2500-2597.2020.3.88.99",
+    "domain": "6",
+    "subdomain": "competitive intelligence / territorial intelligence",
+    "brique": "raqib",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Territorial intelligence framework — strategic planning methodology that RAQIB implements.",
+    "status": "to_read",
+    "tags": [
+      "raqib",
+      "competitive intelligence / territorial intelligence"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "a3ae0559-eb27-4859-9cbb-2f48e9115de8",
+    "title": "Enterprise Payments with Central Bank Digital Currency",
+    "authors": [
+      "Fleming",
+      "King",
+      "Parr"
+    ],
+    "abstract": "",
+    "journal": "SSRN Working Paper",
+    "year": 2021,
+    "doi": "10.2139/ssrn.3858778",
+    "url": "https://doi.org/10.2139/ssrn.3858778",
+    "domain": "7",
+    "subdomain": "CBDC architecture",
+    "brique": "mizan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "CBDC enterprise architecture — blueprint for MIZAN central bank digital currency integration.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "CBDC architecture"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "76c987ed-10ef-401f-ab7c-8d8f8d2e50b3",
+    "title": "Illustrative Industry Architecture to Mitigate Potential Fragmentation across a Central Bank Digital Currency and Commercial Bank Money",
+    "authors": [
+      "Braine",
+      "Shukla"
+    ],
+    "abstract": "",
+    "journal": "Journal of Financial Market Infrastructures",
+    "year": 2023,
+    "doi": "10.21314/JFMI.2023.003",
+    "url": "https://doi.org/10.21314/JFMI.2023.003",
+    "domain": "7",
+    "subdomain": "CBDC architecture / settlement",
+    "brique": "mizan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Fraud mitigation in CBDC payments — security framework for MIZAN cross-border settlement.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "CBDC architecture / settlement"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "e2c99fba-e15b-4f25-b87c-318dd70cdb43",
+    "title": "Cross-border Exchange of CBDCs using Layer-2 Blockchain",
+    "authors": [
+      "Gogol",
+      "Messias",
+      "Schlosser",
+      "Kraner",
+      "Tessone"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2312.16193",
+    "url": "https://doi.org/10.48550/arXiv.2312.16193",
+    "domain": "7",
+    "subdomain": "cross-border payments / CBDC interoperability",
+    "brique": "mizan",
+    "relevance_score": 9,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Layer-2 CBDC cross-border exchange — technical architecture for MIZAN settlement rails.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "cross-border payments / CBDC interoperability"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "6fd4544d-95ec-4f45-bced-c2a73d6d0340",
+    "title": "Decentralized Finance (DeFi): A Survey",
+    "authors": [
+      "Jiang",
+      "Qin",
+      "Wang",
+      "Wang",
+      "Wu",
+      "Weng",
+      "Li",
+      "Wang",
+      "Ding",
+      "Zhang"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2023,
+    "doi": "10.48550/arXiv.2308.05282",
+    "url": "https://doi.org/10.48550/arXiv.2308.05282",
+    "domain": "7",
+    "subdomain": "DeFi protocols",
+    "brique": "mizan",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "DeFi comprehensive survey — maps the protocols MIZAN interfaces with for decentralized finance.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "DeFi protocols"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "a60115ad-976e-458b-bb81-38d12cd2fdb5",
+    "title": "The impact of the Blockchain technology on the global Sukuk industry: smart contracts and asset tokenisation",
+    "authors": [
+      "Delle Foglie",
+      "Panetta",
+      "Boukrami",
+      "Vento"
+    ],
+    "abstract": "",
+    "journal": "Technology Analysis & Strategic Management (Taylor & Francis)",
+    "year": 2021,
+    "doi": "10.1080/09537325.2021.1939000",
+    "url": "https://doi.org/10.1080/09537325.2021.1939000",
+    "domain": "7",
+    "subdomain": "Islamic finance / blockchain",
+    "brique": "mizan",
+    "relevance_score": 8,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Blockchain + sukuk integration — foundational for MIZAN Islamic DeFi hybrid instruments.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "Islamic finance / blockchain"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "6625e230-e6a6-446c-9cea-7ef9f17e3ec1",
+    "title": "Privacy-Preserving Graph-Based Machine Learning with Fully Homomorphic Encryption for Collaborative Anti-Money Laundering",
+    "authors": [
+      "Effendi",
+      "Chattopadhyay"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2411.02926",
+    "url": "https://doi.org/10.48550/arXiv.2411.02926",
+    "domain": "7",
+    "subdomain": "AML/CFT machine learning",
+    "brique": "mizan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Privacy-preserving ML for finance — enables MIZAN AML/CFT compliance without data exposure.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "AML/CFT machine learning"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "b62a6d20-bfd6-4789-a3af-cf1ea0d6543a",
+    "title": "A Discussion about Computational Challenges of Programmable Money in Blockchain-based CBDCs",
+    "authors": [
+      "da Conceicao",
+      "Vitenberg"
+    ],
+    "abstract": "",
+    "journal": "arXiv preprint",
+    "year": 2024,
+    "doi": "10.48550/arXiv.2402.12467",
+    "url": "https://doi.org/10.48550/arXiv.2402.12467",
+    "domain": "7",
+    "subdomain": "programmable money / CBDC",
+    "brique": "mizan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Programmable money challenges — informs MIZAN smart contract settlement design.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "programmable money / CBDC"
+    ],
+    "added_by": "system"
+  },
+  {
+    "id": "9756355c-e8d3-46e0-91cb-f25fcb13c698",
+    "title": "Fintech in Islamic Finance Literature: A Review",
+    "authors": [
+      "Saba",
+      "Supriani",
+      "Alshater",
+      "Rabbani"
+    ],
+    "abstract": "",
+    "journal": "Heliyon (Elsevier)",
+    "year": 2022,
+    "doi": "10.1016/j.heliyon.2022.e10385",
+    "url": "https://doi.org/10.1016/j.heliyon.2022.e10385",
+    "domain": "7",
+    "subdomain": "Islamic finance / fintech",
+    "brique": "mizan",
+    "relevance_score": 7,
+    "impact_factor": 0,
+    "citations": 0,
+    "eigen_application": "Fintech + Islamic finance review — landscape analysis for MIZAN Shariah-compliant products.",
+    "status": "to_read",
+    "tags": [
+      "mizan",
+      "Islamic finance / fintech"
+    ],
+    "added_by": "system"
+  }
+]

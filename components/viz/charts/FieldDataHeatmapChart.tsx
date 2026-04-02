@@ -4,7 +4,7 @@ import { useChartEntries } from './hooks';
 import { ResponsiveContainer, ScatterChart, XAxis, YAxis, Tooltip, Scatter, Cell, ZAxis, CartesianGrid } from 'recharts';
 import { ChartTooltip } from './ChartTooltip';
 
-const COLORS = ['#F7F3EA', '#EADDBF', '#D4AF37', '#B87D3E', '#9C3D3D'];
+const COLORS = ['#F5F2F8', '#EADDBF', '#1E0A20', '#B87D3E', '#9C3D3D'];
 
 const getColor = (value: number, max: number) => {
   if (max === 0) return COLORS[0];
@@ -26,7 +26,7 @@ const CustomShape = (props: any) => {
       width={30} 
       height={24} 
       fill={fill} 
-      stroke="#918977" 
+      stroke="rgba(30,10,32,0.60)" 
       strokeOpacity={0.5} 
       strokeWidth={1} 
       rx={0}
@@ -50,13 +50,13 @@ export function FieldDataHeatmapChart({ layerId }: { layerId: string }) {
 
   const maxVal = Math.max(...data.map(d => d.z), 1);
 
-  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[#918977]">Chargement...</div>;
+  if (loading) return <div className="h-[300px] flex items-center justify-center text-sm font-[family-name:var(--font-jetbrains)] text-[rgba(30,10,32,0.60)]">Chargement...</div>;
 
   return (
     <div className="w-full h-[350px]">
       <ResponsiveContainer width="100%" height="100%">
         <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 80 }}>
-           <CartesianGrid strokeDasharray="3 3" opacity={0.1} stroke="#918977" />
+           <CartesianGrid strokeDasharray="3 3" opacity={0.1} stroke="rgba(30,10,32,0.60)" />
            <XAxis 
              type="category" 
              dataKey="x" 

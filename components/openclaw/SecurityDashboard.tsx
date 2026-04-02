@@ -32,18 +32,18 @@ export function SecurityDashboard() {
 
   return (
     <div
-      className="bg-[#FDFAF3] border border-[#D4CCBA] p-5"
+      className="bg-[#FAF8FC] border border-[rgba(30,10,32,0.35)] p-5"
       style={{ fontFamily: 'var(--font-noto)' }}
     >
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Shield size={14} style={{ color: '#B8963E' }} />
+          <Shield size={14} style={{ color: '#1E0A20' }} />
           <span
             style={{
               fontFamily: 'var(--font-jetbrains)',
               fontSize: 9,
-              color: '#918977',
+              color: 'rgba(30,10,32,0.60)',
               letterSpacing: '2px',
               textTransform: 'uppercase',
             }}
@@ -56,8 +56,8 @@ export function SecurityDashboard() {
             style={{
               fontFamily: 'var(--font-jetbrains)',
               fontSize: 8,
-              color: data.mode === 'LIVE' ? '#3D7C5E' : '#918977',
-              border: `1px solid ${data.mode === 'LIVE' ? '#3D7C5E' : '#918977'}`,
+              color: data.mode === 'LIVE' ? '#3D7C5E' : 'rgba(30,10,32,0.60)',
+              border: `1px solid ${data.mode === 'LIVE' ? '#3D7C5E' : 'rgba(30,10,32,0.60)'}`,
               padding: '1px 5px',
               letterSpacing: '1px',
             }}
@@ -71,7 +71,7 @@ export function SecurityDashboard() {
       {loading && (
         <div className="grid grid-cols-2 gap-4">
           {[0, 1, 2, 3].map(i => (
-            <div key={i} className="border border-[#D4CCBA] p-3 bg-[#F2EFE8] animate-pulse h-24" />
+            <div key={i} className="border border-[rgba(30,10,32,0.35)] p-3 bg-[#F2EFE8] animate-pulse h-24" />
           ))}
         </div>
       )}
@@ -80,12 +80,12 @@ export function SecurityDashboard() {
       {!loading && (
         <div className="grid grid-cols-2 gap-4">
           {/* Block 1: NemoClaw version */}
-          <div className="border border-[#D4CCBA] p-3">
+          <div className="border border-[rgba(30,10,32,0.35)] p-3">
             <div
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 8,
-                color: '#918977',
+                color: 'rgba(30,10,32,0.60)',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
                 marginBottom: 6,
@@ -98,7 +98,7 @@ export function SecurityDashboard() {
                 fontFamily: 'var(--font-playfair)',
                 fontSize: 22,
                 fontWeight: 700,
-                color: '#1C1814',
+                color: '#1E0A20',
                 lineHeight: 1,
               }}
             >
@@ -120,7 +120,7 @@ export function SecurityDashboard() {
                 style={{
                   fontFamily: 'var(--font-jetbrains)',
                   fontSize: 7,
-                  color: '#B8963E',
+                  color: '#1E0A20',
                   marginTop: 3,
                   letterSpacing: '1px',
                 }}
@@ -131,12 +131,12 @@ export function SecurityDashboard() {
           </div>
 
           {/* Block 2: Guardrails */}
-          <div className="border border-[#D4CCBA] p-3">
+          <div className="border border-[rgba(30,10,32,0.35)] p-3">
             <div
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 8,
-                color: '#918977',
+                color: 'rgba(30,10,32,0.60)',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
                 marginBottom: 6,
@@ -149,7 +149,7 @@ export function SecurityDashboard() {
                 key={g}
                 style={{
                   fontSize: 10,
-                  color: '#1C1814',
+                  color: '#1E0A20',
                   lineHeight: 1.7,
                 }}
               >
@@ -160,12 +160,12 @@ export function SecurityDashboard() {
           </div>
 
           {/* Block 3: Blocked attempts */}
-          <div className="border border-[#D4CCBA] p-3">
+          <div className="border border-[rgba(30,10,32,0.35)] p-3">
             <div
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 8,
-                color: '#918977',
+                color: 'rgba(30,10,32,0.60)',
                 letterSpacing: '2px',
                 textTransform: 'uppercase',
                 marginBottom: 6,
@@ -188,7 +188,7 @@ export function SecurityDashboard() {
               style={{
                 fontFamily: 'var(--font-jetbrains)',
                 fontSize: 8,
-                color: '#918977',
+                color: 'rgba(30,10,32,0.60)',
                 marginTop: 4,
               }}
             >
@@ -197,8 +197,8 @@ export function SecurityDashboard() {
           </div>
 
           {/* Block 4: Gauge */}
-          <div className="border border-[#D4CCBA] p-3 flex items-center justify-center">
-            <GaugeKPI value={94} target={100} label="Score sécurité" color="#B8963E" />
+          <div className="border border-[rgba(30,10,32,0.35)] p-3 flex items-center justify-center">
+            <GaugeKPI value={94} target={100} label="Score sécurité" color="#1E0A20" />
           </div>
         </div>
       )}

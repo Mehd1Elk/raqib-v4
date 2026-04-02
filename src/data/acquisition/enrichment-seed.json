@@ -1,0 +1,902 @@
+[
+  {
+    "company": "Orange",
+    "website": "orange.com",
+    "description": "Premier opérateur télécom EU avec présence dans 18 pays africains via Orange MEA. Orange Money dépasse 30M de wallets actifs, faisant d'Orange une infrastructure financière autant que télécom sur le corridor.",
+    "trojan_horse": "AMANA × Orange Money Zakat — don digital traçable et certifié halal sur Orange Money pendant le Ramadan, pilote au Maroc/Sénégal/Côte d'Ivoire",
+    "key_decision_maker": "Yasser Shaker, CEO Orange MEA (depuis juillet 2025)",
+    "annual_value_estimate": 2500000,
+    "key_insight": "Shaker arrive avec un mandat de transformation — fenêtre dorée pour 1 signature group = 18 filiales pays + 30M clients B2B2C activables via MYNε + BURHAN."
+  },
+  {
+    "company": "BNP Paribas",
+    "website": "group.bnpparibas.com",
+    "description": "Première banque européenne par actifs, présente en Afrique via des filiales au Maroc, Sénégal, Tunisie et Côte d'Ivoire. Contrairement à SocGen, BNP a choisi la stabilité sur le continent et renforce son offre grande clientèle corporate.",
+    "trojan_horse": "NOOS × Jeune Banquier du Corridor — programme de due diligence gratuit pour les 50 meilleurs dossiers de financement PME corridor soumis par les filiales africaines BNP",
+    "key_decision_maker": "Jean-Laurent Bonnafé, CEO groupe; Nicolas Villet, CEO EMEA BNP Paribas Cardif",
+    "annual_value_estimate": 1800000,
+    "key_insight": "BNP est l'une des rares banques EU à maintenir une stratégie africaine long-terme — BURHAN (traçabilité CRMA) et MIZAN (ESG scoring) s'intègrent directement dans leur compliance réglementaire EU."
+  },
+  {
+    "company": "TotalEnergies",
+    "website": "totalenergies.com",
+    "description": "Major pétrolier et gazier opérant dans +30 pays africains, avec des projets structurants au Mozambique, Nigeria, Angola, Congo et Sénégal. TotalEnergies est aussi le premier producteur d'énergie solaire décentralisée en Afrique subsaharienne via ses filiales.",
+    "trojan_horse": "YrKnown × Les Gardiens du Mozambique LNG — capturer en vidéo le savoir des ingénieurs seniors TotalEnergies sur la reprise du chantier $20Mds post-force-majeure, patrimoine industriel rare",
+    "key_decision_maker": "Mike Sangster, SVP Africa E&P TotalEnergies (levée force majeure Mozambique LNG fin 2025)",
+    "annual_value_estimate": 3200000,
+    "key_insight": "Sangster relance le plus grand projet africain du monde — son besoin de preuves d'exécution et de narration institutionnelle est exact là où YrKnown + RAQIB créent de la valeur immédiate."
+  },
+  {
+    "company": "Attijariwafa Bank",
+    "website": "attijariwafabank.com",
+    "description": "Première banque du Maghreb et 7e d'Afrique, présente dans 25 pays africains avec +11M de clients. Principal vecteur de l'intégration financière africaine portée par le Maroc.",
+    "trojan_horse": "MIZAN × Indice Équité Attijariwafa — scoring ESG et inclusion financière gratuit pour les 500 PME africaines financées par Attijariwafa, co-brandé avec El Kettani pour le Sommet UA 2027",
+    "key_decision_maker": "Mohamed El Kettani, PDG (depuis 2007); Rachid Kettani promu Deputy CEO sept. 2025",
+    "annual_value_estimate": 2200000,
+    "key_insight": "El Kettani est la voix de la finance africaine — son engagement pour 'l'Afrique au service des Africains' fait d'Attijariwafa le partenaire naturel pour déployer ÆLYA + MIZAN sur 25 marchés en 1 accord cadre."
+  },
+  {
+    "company": "Bank of Africa (BMCE)",
+    "website": "bankofafrica.net",
+    "description": "Groupe bancaire panafricain filiale de FinanceCom (Othman Benjelloun), présent dans 20+ pays africains. Acteur de référence du financement des PME et du commerce intra-africain.",
+    "trojan_horse": "ÆLYA × Medersat.com Digital — extension du programme d'écoles rurales de Benjelloun vers une plateforme de consentement et d'identité numérique pour les élèves des zones non couvertes",
+    "key_decision_maker": "Othman Benjelloun, Chairman (93 ans, +25% market cap 2025); lauréat David Rockefeller Bridging Leadership Award",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Benjelloun est un philanthrope structurel — l'angle Medersat.com (éducation rurale) est le cheval de troie parfait pour introduire ÆLYA (consentement/identité) sur 20 marchés africains d'un coup."
+  },
+  {
+    "company": "AXA",
+    "website": "axa.com",
+    "description": "Premier assureur mondial opérant dans 14 pays africains via AXA Africa & Türkiye, avec une stratégie d'inclusion financière portée par la microassurance SAWA en Egypte et un focus affiché sur la santé mentale au travail.",
+    "trojan_horse": "NOOS × Check-Up Mental Assuré — outil de due diligence bien-être collaborateurs co-développé avec AXA, gratuit pour les 10 000 PME assurées AXA en Afrique, intégré au rapport Mind Health",
+    "key_decision_maker": "Nuria Fernández París, CEO AXA Africa & Türkiye; Thomas Buberl CEO global (mandat renouvelé 2026, défenseur santé mentale #1 priorité)",
+    "annual_value_estimate": 2800000,
+    "key_insight": "Buberl a fait de la santé mentale sa signature CEO — NOOS s'intègre naturellement dans le rapport Mind Health AXA et ouvre l'accès aux 14 pays et +3M d'assurés africains en B2B2C."
+  },
+  {
+    "company": "Siemens Energy",
+    "website": "siemens-energy.com",
+    "description": "Leader mondial des équipements et solutions d'énergie, présent dans 29 bureaux MEA avec +4000 employés dédiés. Acteur central de la transition énergétique en Afrique (éolien, solaire, réseau, hydrogène).",
+    "trojan_horse": "YrKnown × Mémoire des Bâtisseurs du Réseau — capturer le savoir des ingénieurs Siemens ayant construit les infrastructures énergétiques africaines avant les retraites massives 2025-2028",
+    "key_decision_maker": "Hussein Shoukry, MD MEA (arrivée déc. 2025, ex-AUC Cairo, 9 Mds EUR commandes FY2025)",
+    "annual_value_estimate": 1900000,
+    "key_insight": "Shoukry est un nouvel arrivant qui veut marquer son territoire — la fenêtre d'un début de mandat est idéale pour placer RAQIB (intelligence corridor) + YrKnown (mémoire institutionnelle) comme outils stratégiques de son règne."
+  },
+  {
+    "company": "Sanofi",
+    "website": "sanofi.com",
+    "description": "Géant pharmaceutique français classé 3e mondial à l'Access to Medicine Index 2024, avec des partenariats de transfert technologique vaccins en Afrique (BioVac Afrique du Sud, UNICEF). Présent dans +30 pays africains.",
+    "trojan_horse": "ÆLYA × Consentement Patient Zéro — protocole de consentement éclairé digital pour les essais cliniques et campagnes de vaccination en Afrique, co-signé Sanofi/UNICEF",
+    "key_decision_maker": "Adrien Delamare-Deboutteville, GM Pharma Africa & MD Egypt (depuis nov. 2024)",
+    "annual_value_estimate": 1600000,
+    "key_insight": "La conformité GDPR et le consentement des données patients sont un angle réglementaire que Sanofi doit adresser en Afrique — ÆLYA résout un problème concret tout en ouvrant la porte sur 30 marchés."
+  },
+  {
+    "company": "OCP Group",
+    "website": "ocpgroup.ma",
+    "description": "Groupe minier marocain, 1er exportateur mondial de phosphates et engrais, présent dans 40+ pays africains via ses programmes AgriFertilizer et UM6P. Pilier du corridor EU-Afrique pour la sécurité alimentaire.",
+    "trojan_horse": "YrKnown × Les Derniers Maîtres de Khouribga — capturer en vidéo et audio le savoir des ingénieurs mines OCP avant départ à la retraite, patrimoine industriel irremplaçable du Maroc",
+    "key_decision_maker": "Mostafa Terrab, PDG (depuis 2006); déclaration sept. 2025 : 'L'Afrique est notre maison, pas un marché'",
+    "annual_value_estimate": 3500000,
+    "key_insight": "Terrab est convaincu que le capital humain est la vraie ressource d'OCP — YrKnown touche directement sa philosophie, et 1 accord OCP = accès à UM6P + 40 pays africains partenaires + pipeline ingénieurs corridor."
+  },
+  {
+    "company": "Holmarcom",
+    "website": "holmarcom.ma",
+    "description": "Conglomérat marocain diversifié (assurance, banque, agroalimentaire, distribution), fondé par la famille Bensalah. Actionnaire de référence de Wafa Assurance et Crédit du Maroc, en phase d'internationalisation après investissement IFC de 135M USD fin 2024.",
+    "trojan_horse": "AMANA × Association Yza — projet d'accès à l'eau potable dans les douars autour de Khouribga co-porté avec l'amie de la mère du fondateur, narratif familial et territorial puissant",
+    "key_decision_maker": "Mohamed Hassan Bensalah, PDG; sa sœur Miriem Bensalah-Chaqroun ex-présidente CGEM",
+    "annual_value_estimate": 1200000,
+    "key_insight": "L'investissement IFC de 135M USD signale qu'Holmarcom entre dans une phase d'internationalisation formelle — le réseau familial Bensalah est le trojan horse naturel pour placer MIZAN + NOOS avant tout concurrent."
+  },
+  {
+    "company": "Société Générale",
+    "website": "societegenerale.com",
+    "description": "Banque française en retrait stratégique d'Afrique subsaharienne (cessions Congo, Guinée, Mauritanie, Tchad 2023-2024) mais maintenant une présence stratégique forte au Maroc via SG Maroc.",
+    "trojan_horse": "BURHAN × SG Maroc Green Trace — protocole de traçabilité CRMA pour le financement des projets d'infrastructures vertes au Maroc, vitrine de la stratégie post-retrait subsaharien de SocGen",
+    "key_decision_maker": "Slawomir Krupa, CEO global (depuis mai 2023); direction Maroc via SG Maroc",
+    "annual_value_estimate": 900000,
+    "key_insight": "SocGen cherche un narratif positif après ses retraits africains — BURHAN (traçabilité verte) positionne SG Maroc comme pionnier de la finance durable corridor, retournant la perception de désengagement en leadership."
+  },
+  {
+    "company": "Allianz",
+    "website": "allianz.com",
+    "description": "Assureur mondial opérant dans 14 pays africains via Allianz Africa, avec 732M EUR de primes brutes. Leader de l'assurance des grandes entreprises et projets d'infrastructure sur le continent.",
+    "trojan_horse": "RAQIB × Allianz Risk Radar Africa — tableau de bord en temps réel des risques géopolitiques, climatiques et infrastructurels pour le portefeuille Allianz Africa, co-brandé avec Delphine Traoré",
+    "key_decision_maker": "Delphine Traoré, CEO Allianz Africa (première femme à ce poste, depuis nov. 2021)",
+    "annual_value_estimate": 1700000,
+    "key_insight": "Traoré est une figure d'inclusion et de diversité dans un secteur en pleine consolidation — RAQIB répond exactement à son besoin de différenciation stratégique face à AXA qui installe son hub à Casablanca."
+  },
+  {
+    "company": "Crédit Agricole",
+    "website": "credit-agricole.com",
+    "description": "Deuxième banque européenne opérant en Afrique via le Crédit du Maroc (filiale), CIB Afrique et des participations régionales. Acteur croissant du financement de l'agri-business et des PME africaines.",
+    "trojan_horse": "MIZAN × Crédit Vert Agricole Afrique — scoring ESG gratuit pour les 200 projets agri-business financés par le Crédit du Maroc + CA CIB en 2025, aligné avec la taxonomie EU",
+    "key_decision_maker": "Philippe Brassac, CEO groupe; direction Maroc via Crédit du Maroc (ex-Holmarcom avant cession partielle)",
+    "annual_value_estimate": 1400000,
+    "key_insight": "L'acquisition du Crédit du Maroc et le focus agri-business en Afrique créent un alignement naturel avec MIZAN + BURHAN pour la traçabilité des chaînes alimentaires corridor EU-Afrique sous CRMA/CS3D."
+  },
+  {
+    "company": "HSBC",
+    "website": "hsbc.com",
+    "description": "Banque britannique opérant principalement en Afrique du Nord et du Sub-Sahara via ses bureaux corporate et investment banking à Casablanca, Le Caire, Lagos et Johannesburg.",
+    "trojan_horse": "NOOS × HSBC Africa Deal Scorecard — outil de due diligence gratuit pour qualifier les 100 meilleurs dossiers M&A corridors soumis à HSBC CIB, intégrant scoring RAQIB géopolitique",
+    "key_decision_maker": "Georges Elhedery, CEO global (depuis sept. 2024); direction MEA via hub Dubai",
+    "annual_value_estimate": 1100000,
+    "key_insight": "HSBC cherche à repositionner son CIB en Afrique après années de sous-investissement — NOOS + RAQIB créent un différenciateur immédiat pour son offre advisory corridor vs Goldman et Lazard."
+  },
+  {
+    "company": "Ecobank",
+    "website": "ecobank.com",
+    "description": "Banque panafricaine présente dans 35 pays d'Afrique subsaharienne, seul acteur avec une couverture aussi large du corridor. Spécialisée dans le commerce intra-africain et les transferts de fonds.",
+    "trojan_horse": "AMANA × Ecobank Ramadan Impact Wallet — intégration d'un module de don traçable et certifié sur l'app Ecobank Mobile pendant le Ramadan, pilote en Afrique de l'Ouest et Centrale",
+    "key_decision_maker": "Jeremy Awori, CEO (depuis 2023); keynote AFIS Casablanca nov. 2025 sur 'banque sans frontières'",
+    "annual_value_estimate": 2000000,
+    "key_insight": "Awori a un mandat explicite de transformation digitale — 1 accord Ecobank = 35 pays + 30M clients + infrastructure unique pour déployer MYNε (marketplace) + ÆLYA (identité) sur le continent entier."
+  },
+  {
+    "company": "MTN Group",
+    "website": "mtn.com",
+    "description": "Premier opérateur télécom africain présent dans 19 pays avec +280M de clients. MTN Fintech (MoMo) dépasse 60M de wallets actifs, faisant de MTN le plus grand réseau de mobile money d'Afrique.",
+    "trojan_horse": "BURHAN × MTN MoMo Minerals Track — protocole de traçabilité des paiements miniers sur MoMo pour les artisans mineurs du corridor (DRC, Ghana, Guinée), conformité EU CRMA intégrée",
+    "key_decision_maker": "Ralph Mupita, CEO (depuis 2020); MTN Fintech valorisé 5.2 Mds USD en 2025",
+    "annual_value_estimate": 2800000,
+    "key_insight": "MTN MoMo est le réseau de paiement le plus capillaire du corridor — BURHAN utilise MoMo comme rail de traçabilité, transformant 60M de wallets en infrastructure de conformité CRMA à l'échelle du continent."
+  },
+  {
+    "company": "Vodafone / Vodacom",
+    "website": "vodacom.com",
+    "description": "Opérateur télécom sud-africain (filiale Vodafone) présent dans 7 pays africains dont Tanzanie, RDC, Mozambique, Lesotho, Éthiopie. M-Pesa (via Safaricom) est le rail de paiement dominant en Afrique de l'Est.",
+    "trojan_horse": "MYNε × Vodacom M-Pesa Minerals Exchange — marketplace B2B des minéraux critiques tracés sur l'infrastructure M-Pesa pour les coopératives minières d'Afrique de l'Est",
+    "key_decision_maker": "Shameel Joosub, CEO Vodacom Group (depuis 2012); détient 35% de Safaricom",
+    "annual_value_estimate": 2200000,
+    "key_insight": "M-Pesa + Vodacom = l'infrastructure de confiance de l'Afrique de l'Est — MYNε s'intègre sur ce rail pour créer la première marketplace minéraux critiques certifiée CRMA avec +30M d'utilisateurs dès le lancement."
+  },
+  {
+    "company": "Maroc Telecom",
+    "website": "iam.ma",
+    "description": "Opérateur télécom marocain filiale d'Etisalat (UAE), présent dans 9 pays africains (Mali, Burkina Faso, Mauritanie, Gabon, Côte d'Ivoire...). Infrastructure télécom et internet du Maghreb et Afrique de l'Ouest francophone.",
+    "trojan_horse": "RAQIB × IAM Corridor Intelligence Alert — flux d'alertes géopolitiques temps réel pour les 9 filiales IAM africaines, co-brandé avec Benchaaboun pour son agenda de redressement stratégique",
+    "key_decision_maker": "Mohamed Benchaaboun, PDG (depuis mars 2025, ex-ministre des Finances du Maroc)",
+    "annual_value_estimate": 1300000,
+    "key_insight": "Benchaaboun arrive avec un profil politique et stratégique — son réseau gouvernemental marocain et son accès direct au Palais royal en font le décideur le plus influent pour tout partenariat d'État marocain."
+  },
+  {
+    "company": "Deloitte",
+    "website": "deloitte.com",
+    "description": "Premier cabinet d'audit et conseil mondial avec une présence dans 40+ pays africains via Deloitte Africa (hub Johannesburg). Leader des missions de transformation digitale et de conformité ESG pour les grandes entreprises du corridor.",
+    "trojan_horse": "NOOS × Deloitte Corridor Readiness Index — outil d'évaluation gratuit de la maturité CRMA des 50 plus grands industriels africains, co-publié avec Deloitte Africa et présenté à l'AfDB Annual Meeting",
+    "key_decision_maker": "Lwazi Bam, CEO Deloitte Africa (hub Johannesburg); Joe Ucuzoglu CEO Deloitte Global",
+    "annual_value_estimate": 3800000,
+    "key_insight": "Deloitte est le prescripteur #1 de solutions de conformité ESG en Afrique — un accord co-branding NOOS avec Deloitte crée un canal de distribution vers les 40 pays africains et des milliers de clients corporate."
+  },
+  {
+    "company": "PwC",
+    "website": "pwc.com",
+    "description": "Deuxième cabinet mondial d'audit et conseil, avec des bureaux dans 35 pays africains via PwC Africa. Leader de l'accompagnement des transactions M&A et de la structuration fiscale pour les investissements corridor.",
+    "trojan_horse": "MIZAN × PwC Africa ESG Benchmark — rapport annuel gratuit sur la performance ESG des 100 plus grandes entreprises africaines cotées, co-signé PwC / Eigen, distribué à Davos et AU Summit",
+    "key_decision_maker": "Mohamed Kande, CEO PwC Global (premier non-américain élu, juin 2024); Nick Bradshaw CEO PwC Africa",
+    "annual_value_estimate": 3200000,
+    "key_insight": "Kande est le premier africain (originaire de Guinée) à diriger PwC global — angle identitaire fort pour positionner Eigen comme partenaire naturel de la stratégie africaine du nouveau CEO."
+  },
+  {
+    "company": "EY",
+    "website": "ey.com",
+    "description": "Troisième cabinet mondial présent dans 34 pays africains avec un hub à Casablanca et Johannesburg. Spécialisé dans les transactions M&A, la structuration de fonds et l'accompagnement des IPO sur les marchés africains.",
+    "trojan_horse": "BURHAN × EY Africa Minerals Traceability Lab — laboratoire de recherche appliquée sur la traçabilité des minéraux critiques co-animé EY / Eigen, produisant le premier standard africain de conformité CRMA",
+    "key_decision_maker": "Janet Truncale, CEO EY Global (depuis juillet 2024); Ajen Sita ex-CEO EY Africa (départ 2024)",
+    "annual_value_estimate": 2900000,
+    "key_insight": "EY est en pleine transition de leadership Afrique — une nouvelle direction cherche ses marqueurs stratégiques, et BURHAN leur offre un positionnement différenciateur sur le marché de la conformité CRMA vs Deloitte et PwC."
+  },
+  {
+    "company": "KPMG",
+    "website": "kpmg.com",
+    "description": "Cabinet d'audit et conseil présent dans 33 pays africains sous la structure KPMG One Africa. Acteur de référence pour l'audit des institutions financières et des entreprises d'État africaines.",
+    "trojan_horse": "RAQIB × KPMG Africa Risk Intelligence Report — rapport semestriel gratuit sur les risques pays du corridor, co-signé KPMG / Eigen, distribué aux CFOs et trésoriers du Fortune 500 investis en Afrique",
+    "key_decision_maker": "Tola Adeyemi, Chair KPMG One Africa (depuis fév. 2026, premier nigérian à ce poste)",
+    "annual_value_estimate": 2600000,
+    "key_insight": "Adeyemi vient de prendre ses fonctions et cherche une signature forte — RAQIB co-brandé avec KPMG positionne le cabinet comme leader de l'intelligence risque Afrique, different des offres audit classiques."
+  },
+  {
+    "company": "Vinci",
+    "website": "vinci.com",
+    "description": "Premier groupe mondial de construction et concessions, opérant en Afrique via Vinci Construction (Sogea-Satom) et Vinci Energies dans +25 pays africains. Acteur majeur des grandes infrastructures corridor (autoroutes, aéroports, barrages).",
+    "trojan_horse": "YrKnown × Les Bâtisseurs de l'Afrique — série documentaire capturant le savoir des ingénieurs Sogea-Satom après 50 ans de construction africaine, avant la vague de retraites 2026-2029",
+    "key_decision_maker": "Xavier Huillard, CEO Vinci (depuis 2010); direction Afrique via Sogea-Satom",
+    "annual_value_estimate": 2100000,
+    "key_insight": "Sogea-Satom a construit une partie de l'infrastructure de l'Afrique francophone sur 5 décennies — YrKnown est le seul outil capable de capturer ce patrimoine avant que les bâtisseurs partent à la retraite."
+  },
+  {
+    "company": "Bouygues",
+    "website": "bouygues.com",
+    "description": "Conglomérat français (construction, télécom, médias) opérant en Afrique via Bouygues Construction dans +20 pays subsahariens et le Maghreb. Principal concurrent de Vinci sur les grands projets d'infrastructure africains.",
+    "trojan_horse": "NOOS × Bouygues Africa Project Compass — plateforme de screening gratuit des projets d'infrastructure africains pour les équipes Bouygues, intégrant scoring géopolitique RAQIB en temps réel",
+    "key_decision_maker": "Olivier Roussat, CEO Bouygues SA (depuis 2021); direction construction Afrique via Bouygues Construction International",
+    "annual_value_estimate": 1800000,
+    "key_insight": "Bouygues est en concurrence directe avec Vinci en Afrique — NOOS comme outil de pré-qualification projets crée un avantage compétitif immédiat sur les appels d'offres corridor que Bouygues cherche à remporter."
+  },
+  {
+    "company": "Shell",
+    "website": "shell.com",
+    "description": "Major pétrolier présent en Afrique au Nigeria (SPDC, barge pétrolière), Gabon, Afrique du Sud et Egypte. Shell a cédé ses actifs onshore nigérians controversés à Renaissance Africa en 2024.",
+    "trojan_horse": "BURHAN × Shell Clean Energy Trace Nigeria — protocole de traçabilité carbone et conformité pour les projets Shell transition énergétique au Nigeria, réponse aux critiques ONG sur les onshore abandonnés",
+    "key_decision_maker": "Wael Sawan, CEO Shell (depuis 2023, né au Liban, a grandi en Afrique); direction Nigeria via SPDC",
+    "annual_value_estimate": 2400000,
+    "key_insight": "Shell est sous pression ESG extrême en Afrique après ses cessions controversées — BURHAN offre une rédemption narrative crédible et une conformité CRMA qui répond aux exigences des actionnaires institutionnels EU."
+  },
+  {
+    "company": "BP",
+    "website": "bp.com",
+    "description": "Major pétrolier britannique avec des actifs significatifs en Egypte (Abu Qir, West Nile Delta), Algérie, Angola et Sénégal/Mauritanie (GTA LNG). BP est le co-développeur du plus grand projet LNG d'Afrique de l'Ouest.",
+    "trojan_horse": "YrKnown × Grands Témoins du GTA — capturer le savoir des géologues et ingénieurs BP ayant découvert et développé le champ GTA (gaz Sénégal/Mauritanie), patrimoine scientifique continental",
+    "key_decision_maker": "Murray Auchincloss, CEO BP (depuis janv. 2024); VP Africa via London HQ",
+    "annual_value_estimate": 1900000,
+    "key_insight": "GTA LNG est le projet gazier phare de l'Afrique de l'Ouest — YrKnown capturant le récit de sa genèse donne à BP une narration institutionnelle puissante au moment où le projet entre en production."
+  },
+  {
+    "company": "ENI",
+    "website": "eni.com",
+    "description": "Major pétrolier et gazier italien, acteur le plus engagé en Afrique subsaharienne avec des opérations au Congo, Nigeria, Angola, Mozambique, Egypte, Kenya, Ghana et Côte d'Ivoire. ENI est aussi pionnier des biocarburants africains via sa stratégie Agri-Feedstocks.",
+    "trojan_horse": "RAQIB × ENI Africa Geopolitical Cockpit — tableau de bord d'intelligence géopolitique temps réel pour les 12 pays africains ENI, intégrant signaux CRMA, risques sanctions et corridors logistiques",
+    "key_decision_maker": "Claudio Descalzi, CEO ENI (depuis 2014); FID Coral North $7.2Mds signé oct. 2025 — réunion Tinubu mars 2026",
+    "annual_value_estimate": 3800000,
+    "key_insight": "Descalzi est l'homme qui a maintenu ENI en Afrique quand tous les autres partaient — son engagement existentiel pour le continent fait d'Eigen le partenaire naturel pour scaler son impact via RAQIB + BURHAN sur 12 pays."
+  },
+  {
+    "company": "Roche",
+    "website": "roche.com",
+    "description": "Leader mondial de la diagnostique et de la pharmacie, avec des partenariats de diagnostique au point d'accès en Afrique (programme Roche for Africa) et des accords avec l'Union Africaine sur la capacité de test en Afrique.",
+    "trojan_horse": "ÆLYA × Roche Diagnostics Consent Africa — protocole de consentement patient pour les programmes de dépistage en Afrique, aligné RGPD et standards AU, co-développé avec Africa CDC",
+    "key_decision_maker": "Thomas Schinecker, CEO Roche (depuis 2023); Magda Roodt, Head Roche Africa",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Roche est en train de construire une infrastructure de diagnostique africaine — ÆLYA résout son problème de consentement et traçabilité données patients, un prérequis réglementaire EU pour ses programmes continent."
+  },
+  {
+    "company": "Novartis",
+    "website": "novartis.com",
+    "description": "Géant pharmaceutique suisse présent en Afrique via ses programmes de maladies tropicales (paludisme, lèpre, drepanocytose) et ses partenariats avec les systèmes de santé africains.",
+    "trojan_horse": "NOOS × Novartis Health System Scan Africa — outil d'évaluation gratuit de la capacité des systèmes de santé africains à absorber les innovations Novartis, co-produit avec WHO Africa",
+    "key_decision_maker": "Vas Narasimhan, CEO Novartis (depuis 2018); Bashir Salifou, Head Novartis West & Central Africa",
+    "annual_value_estimate": 1400000,
+    "key_insight": "Novartis doit documenter l'impact de ses programmes africains pour ses rapports ESG investisseurs — NOOS + MIZAN lui fournissent le scoring d'impact prêt-à-l'emploi qui manque à sa communication extra-financière."
+  },
+  {
+    "company": "AstraZeneca",
+    "website": "astrazeneca.com",
+    "description": "Géant pharmaceutique anglo-suédois, devenu acteur central de la santé africaine après son rôle dans les vaccins COVID-19 via le Serum Institute. Partenariats avec l'UA et Africa CDC pour la capacité de fabrication locale.",
+    "trojan_horse": "BURHAN × AZ Vaccine Supply Chain Trace Africa — protocole de traçabilité de la chaîne d'approvisionnement vaccins pour l'Afrique, de l'usine au dernier kilomètre, conformité EU Falsified Medicines Directive",
+    "key_decision_maker": "Pascal Soriot, CEO (depuis 2012); Yaw Ofori-Acheampong, VP MEA AstraZeneca",
+    "annual_value_estimate": 1700000,
+    "key_insight": "AstraZeneca est sous microscope sur sa supply chain vaccins africaine — BURHAN transforme ce risque en actif de réputation tout en créant une infrastructure de données dont Africa CDC a besoin."
+  },
+  {
+    "company": "Bayer",
+    "website": "bayer.com",
+    "description": "Conglomérat pharmaceutique et agrochimique allemand, présent en Afrique via Bayer Crop Science (intrants agricoles, semences) dans 35 pays et Bayer Pharma pour les maladies tropicales.",
+    "trojan_horse": "MYNε × Bayer Crop Marketplace Africa — marketplace B2B des intrants agricoles traçables pour les 500 000 petits agriculteurs africains dans le programme Bayer Better Life Farming",
+    "key_decision_maker": "Bill Anderson, CEO Bayer (depuis juin 2023); direction Africa via Regional HQ South Africa",
+    "annual_value_estimate": 1600000,
+    "key_insight": "Bayer touche 500 000 petits agriculteurs africains via Better Life Farming — MYNε est le rail de marketplace qui transforme ces agriculteurs en clients B2B2C d'Eigen, avec BURHAN pour la traçabilité des intrants."
+  },
+  {
+    "company": "GSK",
+    "website": "gsk.com",
+    "description": "Groupe pharmaceutique britannique avec des actifs manufacturiers en Afrique du Sud et Kenya, et un pipeline de vaccins pour maladies africaines (paludisme RTS,S, RSV). Partenaire historique de l'UNICEF pour la vaccination du continent.",
+    "trojan_horse": "ÆLYA × GSK Vaccine Consent Chain Africa — infrastructure de consentement et traçabilité pour les campagnes de vaccination de masse en Afrique subsaharienne, intégrant les 54 pays de l'UA",
+    "key_decision_maker": "Emma Walmsley, CEO GSK (depuis 2017); Bhavna Karia, VP Global Health & Emerging Markets",
+    "annual_value_estimate": 1500000,
+    "key_insight": "GSK a le vaccin anti-paludéen — manque l'infrastructure de traçabilité et consentement pour le déployer à échelle africaine. ÆLYA est exactement la brique manquante pour sa stratégie accès universel."
+  },
+  {
+    "company": "Schneider Electric",
+    "website": "se.com",
+    "description": "Leader mondial de la gestion de l'énergie et de l'automatisation, présent dans 40+ pays africains avec des solutions d'électrification rurale, de gestion de réseaux et de datacenters. Hub panafricain basé à Casablanca.",
+    "trojan_horse": "RAQIB × Schneider Africa Energy Intelligence — dashboard de monitoring énergétique du corridor intégré au hub Casablanca de Schneider, couvrant 40 pays africains en temps réel",
+    "key_decision_maker": "Charaf Eljabiri, Président Schneider Electric Afrique (depuis 2021, basé Casablanca, ex-VP Maroc Telecom)",
+    "annual_value_estimate": 2300000,
+    "key_insight": "Eljabiri est une figure marocaine influente au carrefour de l'énergie et du digital — son hub Casablanca est le point d'entrée idéal pour déployer RAQIB + BURHAN sur l'ensemble de l'Afrique."
+  },
+  {
+    "company": "Capgemini",
+    "website": "capgemini.com",
+    "description": "Géant français du conseil en transformation digitale et IT, avec des centres de delivery au Maroc (Casablanca, Rabat), en Tunisie, Egypte et Afrique du Sud. Principal prestataire IT des grandes entreprises multinationales opérant en Afrique.",
+    "trojan_horse": "MYNε × Capgemini Africa Digital Marketplace — intégration des briques Eigen comme modules de marketplace dans les projets de transformation digitale Capgemini pour ses clients africains (banques, assurances, telcos)",
+    "key_decision_maker": "Aiman Ezzat, CEO Capgemini (depuis 2020); direction Afrique du Nord via Capgemini Maroc",
+    "annual_value_estimate": 2800000,
+    "key_insight": "Capgemini est intégrateur pour les 10 plus grandes banques et telcos d'Afrique — un accord partenariat Capgemini distribue les briques Eigen dans tous ses projets client en Afrique du Nord et subsaharienne."
+  },
+  {
+    "company": "Accenture",
+    "website": "accenture.com",
+    "description": "Premier cabinet mondial de conseil et services numériques, avec une présence en Afrique via des hubs à Johannesburg, Lagos, Nairobi, Casablanca et Le Caire. Acteur dominant de la transformation des grandes entreprises africaines.",
+    "trojan_horse": "NOOS × Accenture Africa Venture Due Diligence Lab — service gratuit de première analyse due diligence pour les 100 meilleurs startups africaines des portefeuilles des fonds partenaires Accenture Ventures Africa",
+    "key_decision_maker": "Julie Sweet, CEO Accenture (depuis 2019); Laks Krishnamurthy, MD Accenture Africa",
+    "annual_value_estimate": 3500000,
+    "key_insight": "Accenture est le prescripteur dominant de solutions digitales africaines — un accord de partenariat Ventures crée une distribution vers tous les clients Fortune 500 Accenture Africa avec besoin de due diligence CRMA."
+  },
+  {
+    "company": "LVMH",
+    "website": "lvmh.com",
+    "description": "Premier groupe mondial du luxe, avec un sourcing en Afrique (diamants, cuir, coton) et un réseau de retail en expansion (Afrique du Sud, Maroc, Egypte, Nigeria, Kenya). Cible la clientèle africaine aisée en croissance.",
+    "trojan_horse": "YrKnown × Les Artisans Invisibles — série sur les maîtres artisans africains qui fournissent le cuir, la soie et les matières premières de LVMH sans jamais être connus, narration sur le sourcing équitable",
+    "key_decision_maker": "Bernard Arnault, PDG (depuis 1989); Jean-Baptiste Voisin, directeur stratégie LVMH",
+    "annual_value_estimate": 1800000,
+    "key_insight": "LVMH a un problème de traçabilité de son sourcing africain sous CS3D (entrée en vigueur 2027) — BURHAN résout exactement ce problème tout en créant une narration de sourcing responsable que Arnault peut valoriser."
+  },
+  {
+    "company": "Renault",
+    "website": "renault.com",
+    "description": "Constructeur automobile français avec une présence industrielle forte au Maroc (usine Somaca à Casablanca, usine Melloussa à Tanger), produisant +400 000 véhicules par an pour le marché africain et l'export EU.",
+    "trojan_horse": "BURHAN × Renault Maroc Battery Trace — protocole de traçabilité des matières premières batterie (lithium, cobalt, graphite) de l'usine Tanger, conformité EU Battery Regulation 2027 dès 2026",
+    "key_decision_maker": "Luca de Meo, CEO Renault Group (depuis 2020); direction Maroc via SOMACA",
+    "annual_value_estimate": 2400000,
+    "key_insight": "Renault Maroc est le plus grand employeur industriel marocain et doit se conformer au Battery Regulation EU d'ici 2027 — BURHAN est le raccourci opérationnel pour sa compliance, et le Maroc est un pilote EU corridor exemplaire."
+  },
+  {
+    "company": "Stellantis",
+    "website": "stellantis.com",
+    "description": "Quatrième constructeur automobile mondial avec une usine à Kenitra (Maroc) produisant Citroën et Peugeot pour le marché africain, et une présence africaine via PSA (Egypte, Ethiopie, Afrique du Sud, Nigeria).",
+    "trojan_horse": "MYNε × Stellantis Africa Spare Parts Marketplace — marketplace B2B des pièces détachées pour les 300+ concessionnaires africains Stellantis, intégrant BURHAN pour la traçabilité anti-contrefaçon",
+    "key_decision_maker": "Carlos Tavares, ex-CEO (démission déc. 2024); John Elkann Chairman par interim — direction Maroc via Stellantis Maroc",
+    "annual_value_estimate": 2000000,
+    "key_insight": "Stellantis est en crise de direction globale — la vacuum leadership crée une opportunité pour Eigen de s'installer via les filiales locales (Maroc, Egypte) avec des solutions opérationnelles immédiates."
+  },
+  {
+    "company": "DHL Express",
+    "website": "dhl.com",
+    "description": "Leader mondial de la logistique et express, avec une couverture de 54 pays africains et des hubs régionaux à Casablanca, Lagos, Nairobi et Johannesburg. Infrastructure logistique critique pour le commerce intra-africain.",
+    "trojan_horse": "BURHAN × DHL Africa Corridor Track — solution de traçabilité des colis de minéraux critiques et matières premières sur le réseau DHL Afrique, conformité douanière CRMA intégrée",
+    "key_decision_maker": "Tobias Maier, SVP MEA DHL Express (nomination nov. 2025); Orkun Saruhanoglu, VP Operations MEA (nomination déc. 2025)",
+    "annual_value_estimate": 2600000,
+    "key_insight": "DHL touche les 54 pays africains avec une infrastructure physique — BURHAN intégré dans le système tracking DHL crée l'infrastructure de conformité CRMA la plus capillaire du continent à coût marginal."
+  },
+  {
+    "company": "CMA CGM",
+    "website": "cma-cgm.com",
+    "description": "Troisième armateur mondial avec une présence dominante sur les routes africaines, opérant des lignes régulières sur les façades atlantique, méditerranéenne et de l'Océan Indien. Terminal Leader en Afrique via sa filiale portuaire.",
+    "trojan_horse": "RAQIB × CMA CGM Africa Corridor Shipping Intelligence — dashboard de monitoring des flux de minéraux critiques sur les routes maritimes africaines pour les équipes trading de Rodolphe Saadé",
+    "key_decision_maker": "Rodolphe Saadé, PDG (depuis 2017, troisième fortune de France); acquisition de Bolloré Logistics en cours d'intégration",
+    "annual_value_estimate": 2200000,
+    "key_insight": "CMA CGM + Bolloré Logistics = contrôle de fait des routes maritimes et terrestres africaines — RAQIB leur donne l'intelligence géopolitique pour protéger ce monopole logistique dans un contexte CRMA tendu."
+  },
+  {
+    "company": "Bolloré Africa Logistics",
+    "website": "bollore-logistics.com",
+    "description": "Ex-leader de la logistique africaine (ports, rails, routes) en cours de cession à MSC Mediterranean Shipping Company. Présent dans 40+ pays africains avec une infrastructure portuaire irremplaçable.",
+    "trojan_horse": "NOOS × Bolloré Port Transition Due Diligence — analyse due diligence gratuite des 15 concessions portuaires africaines en transition vers MSC, outil de continuité pour les clients Bolloré inquiets du changement",
+    "key_decision_maker": "Vincent Bolloré (retraité, en proc. judiciaire); cession à MSC en cours 2024-2025",
+    "annual_value_estimate": 1200000,
+    "key_insight": "La transition Bolloré→MSC est la plus grande opération de M&A logistique africaine de la décennie — NOOS et RAQIB sont les outils de due diligence et de continuité que les 40 pays concernés attendent."
+  },
+  {
+    "company": "Dangote Group",
+    "website": "dangote.com",
+    "description": "Premier conglomérat africain privé (ciment, pétrole, gaz, alimentation) présent dans 17 pays africains. La raffinerie Dangote au Nigeria (650 000 barils/jour) est la plus grande d'Afrique et en passe de devenir la plus grande du monde.",
+    "trojan_horse": "YrKnown × Aliko Dangote — The Making of the Largest Refinery in Africa — série documentaire capturant le récit de construction de la mégaraffinerie, narration qui sert les banques de développement et les investisseurs institutionnels",
+    "key_decision_maker": "Aliko Dangote, fondateur et CEO (1er milliardaire africain, $13.5 Mds 2025); plan $5Mds pour doubler la raffinerie",
+    "annual_value_estimate": 3200000,
+    "key_insight": "Dangote construit la plus grande raffinerie du monde en Afrique — YrKnown capturant ce récit crée le patrimoine institutionnel qui justifie les $5Mds d'investissement supplémentaire et ouvre Eigen à tous ses partenaires financiers."
+  },
+  {
+    "company": "Safaricom",
+    "website": "safaricom.co.ke",
+    "description": "Opérateur télécom leader au Kenya et en Ethiopie, créateur de M-Pesa (plus de 32 millions d'utilisateurs), l'infrastructure de paiement mobile la plus avancée d'Afrique de l'Est.",
+    "trojan_horse": "MYNε × Safaricom M-Pesa Minerals Micro-Market — marketplace de minéraux critiques tracés pour les artisans mineurs kenyans et éthiopiens, intégrée nativement à M-Pesa",
+    "key_decision_maker": "Peter Ndegwa, CEO Safaricom (depuis 2020); Safaricom Ethiopia lancé 2022, 5M abonnés déjà",
+    "annual_value_estimate": 2500000,
+    "key_insight": "Safaricom/M-Pesa est l'infrastructure de confiance de l'Afrique de l'Est avec 32M utilisateurs — MYNε s'y intègre comme couche de valeur ajoutée minéraux critiques sans reconstruction d'infrastructure."
+  },
+  {
+    "company": "African Development Bank (AfDB)",
+    "website": "afdb.org",
+    "description": "Principale institution de financement du développement africain avec +100 Mds USD d'actifs, finançant les infrastructures, l'agriculture et la transition énergétique dans 54 pays membres africains.",
+    "trojan_horse": "MIZAN × AfDB Corridor ESG Compass — outil de scoring ESG gratuit pour pré-qualifier les 200 projets annuels soumis à l'AfDB dans le corridor EU-Afrique, co-signé avec le nouveau président",
+    "key_decision_maker": "Sidi Ould Tah, Président AfDB (depuis sept. 2025, ex-PM Mauritanie, remplace Adesina après deux mandats)",
+    "annual_value_estimate": 4500000,
+    "key_insight": "Sidi Ould Tah arrive avec un agenda de transformation — son mandat de relancer l'AfDB vers les standards ESG EU crée un alignement parfait avec MIZAN + BURHAN comme outils d'évaluation et certification des projets corridor."
+  },
+  {
+    "company": "IFC (International Finance Corporation)",
+    "website": "ifc.org",
+    "description": "Bras investissement privé de la Banque Mondiale, premier investisseur institutionnel en Afrique subsaharienne avec +10 Mds USD déployés annuellement dans les secteurs privés africains.",
+    "trojan_horse": "NOOS × IFC Africa Investability Score — outil de due diligence et scoring d'investissabilité pour les PME africaines cherchant un financement IFC, intégré dans le pipeline IFC Africa",
+    "key_decision_maker": "Ethiopis Tafara, VP IFC Africa (depuis mai 2025, basé Nairobi — première VP IFC basée sur le continent)",
+    "annual_value_estimate": 3800000,
+    "key_insight": "Tafara est le premier VP IFC basé en Afrique — signal fort d'un engagement nouveau. NOOS comme outil d'évaluation des PME africaines s'aligne sur sa mission de réduire le coût de la due diligence pour les petits tickets."
+  },
+  {
+    "company": "Proparco",
+    "website": "proparco.fr",
+    "description": "Institution de financement du développement française (filiale AFD) déployant +2 Mds EUR annuels en Afrique pour le secteur privé. Acteur de référence du financement des PME et des infrastructures vertes africaines.",
+    "trojan_horse": "BURHAN × Proparco Green Impact Trace — protocole de traçabilité de l'impact des financements verts Proparco en Afrique, conforme taxonomie EU, co-publié dans le rapport annuel AFD",
+    "key_decision_maker": "Grégoire Chauvière Le Drian, DG Proparco; Claude Périou ex-DG (mandat terminé 2024)",
+    "annual_value_estimate": 2200000,
+    "key_insight": "Proparco a un mandat explicite d'impact mesurable — BURHAN + MIZAN lui donnent le cadre de reporting EU Taxonomy-compatible qui renforce sa crédibilité auprès des co-financeurs EU et du Parlement français."
+  },
+  {
+    "company": "UBA (United Bank for Africa)",
+    "website": "ubagroup.com",
+    "description": "Banque panafricaine présente dans 20 pays africains plus USA, UK, France et UAE. Créée par Tony Elumelu, UBA est un acteur de référence du financement des entrepreneurs africains via la Fondation Tony Elumelu.",
+    "trojan_horse": "AMANA × UBA Tony Elumelu Foundation — intégration d'un module de don traçable AMANA dans le programme de 10 000 entrepreneurs africains de la Fondation Tony Elumelu, permettant aux diaspora de financer directement",
+    "key_decision_maker": "Tony Elumelu, Chairman (fondateur, philanthrope, $700M+ net worth); Oliver Alawuba, Group CEO UBA",
+    "annual_value_estimate": 1800000,
+    "key_insight": "La Fondation Tony Elumelu touche 10 000 entrepreneurs africains par an — AMANA intégré dans le flux de dons de la fondation crée le plus grand réseau de micro-financement diaspora-Afrique traçable au monde."
+  },
+  {
+    "company": "GTBank / GTCO",
+    "website": "gtbank.com",
+    "description": "Holding financière panafricaine présente dans 9 pays africains plus UK, parmi les plus rentables de l'Afrique de l'Ouest. Réputée pour son excellence opérationnelle et sa culture d'intégrité institutionnelle.",
+    "trojan_horse": "NOOS × GTCO Transparency Lab — outil de due diligence pour les PME high-growth du corridor (Nigeria, Ghana, Cóte d'Ivoire), co-brandé avec GTCO qui se présente comme la banque la plus intègre d'Afrique",
+    "key_decision_maker": "Segun Agbaje, CEO GTCO (détient 0.088% du capital qu'il a construit — angle authenticité et sacrifice); ancienneté depuis 1991",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Agbaje a construit GTCO de l'intérieur sans actionnariat significatif — son angle d'authenticité et d'intégrité institutionnelle est le miroir exact des valeurs NOOS et ÆLYA qui résonnent avec lui personnellement."
+  },
+  {
+    "company": "Zenith Bank",
+    "website": "zenithbank.com",
+    "description": "Deuxième plus grande banque nigériane par actifs, présente au Nigeria, Ghana, Côte d'Ivoire, Gambie, Sierra Leone et Royaume-Uni. Leader du financement corporatif et de la gestion de trésorerie en Afrique de l'Ouest.",
+    "trojan_horse": "RAQIB × Zenith West Africa Business Intelligence — service d'intelligence économique et géopolitique pour les 500 plus grands clients corporate Zenith, co-brandé avec la direction",
+    "key_decision_maker": "Adaora Umeoji, CEO Zenith Bank (depuis juin 2023, première femme CEO d'une grande banque nigériane)",
+    "annual_value_estimate": 1400000,
+    "key_insight": "Umeoji est la première femme à diriger Zenith — angle diversité ET performance (résultats record 2024). RAQIB lui donne un avantage concurrentiel réel pour les mandats de grandes entreprises qui veulent une intelligence risque intégrée."
+  },
+  {
+    "company": "Access Bank",
+    "website": "accessbankplc.com",
+    "description": "Plus grande banque africaine par actifs clients, présente dans 18 pays africains plus UK, USA, India. Stratégie agressive de pan-africanisation par acquisitions sous Herbert Wigwe (décédé fév. 2024).",
+    "trojan_horse": "MIZAN × Access Bank Pan-Africa ESG Flagship — rapport de développement durable le plus complet d'Afrique, co-développé avec Eigen comme hommage à Herbert Wigwe qui avait fait de l'ESG un pilier de son mandat",
+    "key_decision_maker": "Innocent Ike, CEO (depuis août 2024, successeur après le crash d'hélicoptère ayant coûté la vie à Wigwe); Aigboje Aig-Imoukhuede, Chairman",
+    "annual_value_estimate": 1800000,
+    "key_insight": "La mort de Wigwe et l'arrivée d'Ike créent un momentum de continuité-réinvention — MIZAN co-brandé comme hommage à la vision ESG de Wigwe est un trojan horse émotionnel exceptionnel."
+  },
+  {
+    "company": "Flutterwave",
+    "website": "flutterwave.com",
+    "description": "Infrastructure de paiement fintech africaine présente dans 34 pays, traitant +300 millions de transactions annuelles. Connecte les commerçants africains au système de paiement mondial avec des produits comme Flutterwave Store et Send.",
+    "trojan_horse": "MYNε × Flutterwave Corridor Minerals Payment Rail — intégration de MYNε marketplace sur l'infrastructure de paiement Flutterwave pour les transactions de minéraux critiques B2B dans le corridor",
+    "key_decision_maker": "Olugbenga Agboola, CEO co-fondateur; levée de fonds $250M Série D en 2022 — statut licences 2025 à vérifier pays par pays",
+    "annual_value_estimate": 2000000,
+    "key_insight": "Flutterwave a le réseau de paiement le plus large du corridor — MYNε utilisé Flutterwave comme rail de paiement crée immédiatement la marketplace de minéraux critiques la plus connectée d'Afrique."
+  },
+  {
+    "company": "CDG (Caisse de Dépôt et de Gestion du Maroc)",
+    "website": "cdg.ma",
+    "description": "Institution financière publique marocaine gérant l'épargne nationale (>200 Mds MAD), actionnaire de référence de grandes entreprises marocaines et investisseur stratégique en Afrique via CDG Invest.",
+    "trojan_horse": "MIZAN × CDG Maroc Invest for Africa — outil de scoring ESG et d'impact développement pour les projets d'investissement CDG en Afrique subsaharienne, aligné avec les ODD et la Vision Royale 2030",
+    "key_decision_maker": "Khalid Safir, DG CDG (depuis 2019, ex-wali); filiale CDG Invest Afrique active",
+    "annual_value_estimate": 2500000,
+    "key_insight": "CDG est le véhicule d'investissement public marocain en Afrique — un partenariat CDG × Eigen donne accès à toute la stratégie d'investissement africain du Maroc, alignée avec l'agenda Royal de coopération Sud-Sud."
+  },
+  {
+    "company": "Sonatel",
+    "website": "sonatel.sn",
+    "description": "Opérateur télécom sénégalais leader en Afrique de l'Ouest francophone (Sénégal, Mali, Guinée, Guinée-Bissau, Sierra Leone), filiale du groupe Orange. Mobile money Orange Money dominant dans la zone UEMOA.",
+    "trojan_horse": "AMANA × Sonatel Orange Sunu Jëf — application de dons traçables et solidarité communautaire intégrée à Orange Money Sénégal, ancré dans la valeur de 'jëf' (action collective) de la culture sénégalaise",
+    "key_decision_maker": "Brelotte Bâ, DG Sonatel (depuis juillet 2025, remplace Sékou Dramé)",
+    "annual_value_estimate": 1200000,
+    "key_insight": "Sonatel est le coeur télécoms de l'Afrique de l'Ouest francophone — Bâ arrive avec un agenda de renouvellement, et AMANA ancrée dans les valeurs culturelles sénégalaises est le projet à charge émotionnelle maximale."
+  },
+  {
+    "company": "Airtel Africa",
+    "website": "airtelafrica.com",
+    "description": "Opérateur télécom panafricain présent dans 14 pays africains avec +150 millions de clients. Airtel Money est le 3e mobile money africain après MTN MoMo et M-Pesa.",
+    "trojan_horse": "BURHAN × Airtel Africa Agri-Minerals Trace — protocole de traçabilité des coopératives agricoles et minières via Airtel Money dans les 14 pays, créant un registre de conformité CRMA capillaire",
+    "key_decision_maker": "Sunil Taldar, CEO Airtel Africa (depuis juillet 2024, remplace Segun Ogunsanya)",
+    "annual_value_estimate": 1700000,
+    "key_insight": "Taldar est en poste depuis moins d'un an avec un mandat de redressement financier — la proposition de valeur BURHAN/CRMA lui donne un angle de monétisation des données Airtel Money peu exploré."
+  },
+  {
+    "company": "Generali",
+    "website": "generali.com",
+    "description": "Troisième assureur mondial présent en Afrique via Generali Africa (Maroc, Tunisie, Egypte, Mozambique, Kenya) et des partenariats de réassurance. Acteur croissant du marché de l'assurance vie africaine.",
+    "trojan_horse": "NOOS × Generali Africa Life Risk Scanner — outil de screening du risque vie pour les clients HNW africains de Generali, co-brandé avec le département Vie, permettant une tarification plus fine sur le corridor",
+    "key_decision_maker": "Philippe Donnet, CEO Generali (depuis 2016); direction Afrique via hub Casablanca",
+    "annual_value_estimate": 1100000,
+    "key_insight": "Generali développe discrètement le marché de l'assurance vie africaine — NOOS leur fournit une capacité de risk assessment que leurs concurrents locaux n'ont pas, créant un avantage tarifaire mesurable."
+  },
+  {
+    "company": "Munich Re",
+    "website": "munichre.com",
+    "description": "Premier réassureur mondial avec une présence croissante en Afrique pour la réassurance des risques climatiques, agricoles et infrastructurels. Acteur clé du financement des risques catastrophes naturelles en Afrique.",
+    "trojan_horse": "RAQIB × Munich Re Africa Climate Risk Intelligence — intégration des données géoclimatiques du corridor africain dans les modèles actuariels Munich Re, co-développé avec leur équipe Climate Risk Solutions",
+    "key_decision_maker": "Joachim Wenning, CEO Munich Re (depuis 2017); Dirk Reinhard, VP Munich Re Foundation Afrique",
+    "annual_value_estimate": 2000000,
+    "key_insight": "Munich Re est le seul acteur pouvant tarifer les risques climatiques africains à grande échelle — RAQIB leur fournit la couche de données géopolitiques et climatiques du corridor qui manque à leurs modèles actuariels."
+  },
+  {
+    "company": "Holcim (ex-LafargeHolcim)",
+    "website": "holcim.com",
+    "description": "Leader mondial des matériaux de construction présent dans 8 pays africains (Maroc via Holcim Maroc, Egypte, Nigeria, Tanzanie, Zambie, Afrique du Sud, Zimbabwe). Principal producteur de ciment pour les infrastructures du corridor.",
+    "trojan_horse": "YrKnown × Les Constructeurs du Corridor — série de témoignages des ingénieurs béton Holcim qui ont bâti les autoroutes, barrages et ports africains depuis 30 ans, avant la vague de retraites",
+    "key_decision_maker": "Martin Kriegner, Head Holcim MEA (Regional Head); Jan Jenisch CEO dirige désormais le spin-off Amrize (marchés développés)",
+    "annual_value_estimate": 1600000,
+    "key_insight": "Holcim est en cours de restructuration en deux entités (Amrize pour EU/US, Holcim pour marchés émergents Afrique) — cette transition crée une nouvelle direction MEA avec besoin de légitimation de sa stratégie africaine."
+  },
+  {
+    "company": "Veolia",
+    "website": "veolia.com",
+    "description": "Leader mondial de la gestion de l'eau et des déchets, opérant en Afrique dans la gestion de l'eau potable (Maroc, Gabon, Tanzanie), le traitement des déchets et la dépollution industrielle.",
+    "trojan_horse": "BURHAN × Veolia Africa Water Trace — système de traçabilité de la qualité de l'eau et de la chaîne de traitement pour les 3 millions d'abonnés africains Veolia, intégrant conformité EU Water Framework",
+    "key_decision_maker": "Estelle Brachlianoff, CEO Veolia (depuis 2022); direction Afrique via Veolia Africa Middle East",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Veolia a le contrat de gestion de l'eau de Casablanca jusqu'en 2027 — la renégociation crée une fenêtre pour positionner BURHAN comme infrastructure de traçabilité et conformité EU dans le nouveau contrat."
+  },
+  {
+    "company": "ArcelorMittal",
+    "website": "arcelormittal.com",
+    "description": "Premier aciériste mondial présent en Afrique au Liberia (mines de fer), Afrique du Sud et Algérie. ArcelorMittal Liberia est l'un des plus grands extracteurs de minerai de fer d'Afrique de l'Ouest.",
+    "trojan_horse": "BURHAN × ArcelorMittal Liberia Iron Trace — protocole de traçabilité mine-to-port pour le minerai de fer libérien, conformité CRMA EU (fer est minéral critique strategic) et réponse aux ONG de transparence",
+    "key_decision_maker": "Aditya Mittal, CEO ArcelorMittal (depuis 2021); Jeff Toly, CEO ArcelorMittal Liberia",
+    "annual_value_estimate": 2100000,
+    "key_insight": "Le minerai de fer du Liberia est sous pression de traçabilité EU — BURHAN crée la conformité CRMA tout en réduisant le risque de réputation que ArcelorMittal traîne depuis les controverses extractivistes en Afrique."
+  },
+  {
+    "company": "Glencore",
+    "website": "glencore.com",
+    "description": "Premier négociant mondial de matières premières avec des mines de cobalt (RDC, Zambie), cuivre (RDC, Zambie) et charbon (Afrique du Sud) en Afrique. Glencore contrôle ~20% de la production mondiale de cobalt.",
+    "trojan_horse": "BURHAN × Glencore Cobalt DRC Responsible Trace — protocole de traçabilité blockchain du cobalt extrait par Glencore en RDC, conformité EU Battery Regulation 2027 et réponse aux accusations de travail des enfants",
+    "key_decision_maker": "Gary Nagle, CEO Glencore (depuis 2021); direction DRC via Kamoto Copper Company et MUMI",
+    "annual_value_estimate": 4200000,
+    "key_insight": "Glencore contrôle 20% du cobalt mondial — BURHAN est leur seul outil crédible pour répondre à la pression EU Battery Regulation 2027 tout en transformant cette contrainte en avantage compétitif sur les mineurs chinois non-tracés."
+  },
+  {
+    "company": "Managem",
+    "website": "managemgroup.com",
+    "description": "Groupe minier marocain (filiale ONA/SNI) opérant dans 9 pays africains (Maroc, Côte d'Ivoire, Soudan, Ethiopie, Gabon, RDC, Guinée). Acteur majeur de l'extraction du cobalt, cuivre, argent et or en Afrique.",
+    "trojan_horse": "BURHAN × Managem Cobalt Corridor Trace — système de traçabilité CRMA pour le cobalt marocain et africain de Managem, premier acteur africain à obtenir la certification EU Battery Regulation",
+    "key_decision_maker": "Imad Toumi, PDG Managem (depuis 2018); filiale de SNI (holding Royal)",
+    "annual_value_estimate": 2800000,
+    "key_insight": "Managem est le seul minier marocain coté avec une présence cobalt significative — BURHAN leur donne la certification EU Battery Regulation 2027 avant leurs concurrents chinois, créant un premium de prix sur le marché EU."
+  },
+  {
+    "company": "Thales",
+    "website": "thalesgroup.com",
+    "description": "Groupe français de défense, sécurité et transport opérant dans 30+ pays africains. Acteur clé des systèmes de surveillance des frontières, contrôle du trafic aérien, et identité numérique souveraine en Afrique.",
+    "trojan_horse": "ÆLYA × Thales African Digital ID Sovereignty — protocole de consentement et souveraineté des données biométriques pour les programmes d'identité nationale africains équipés par Thales (Maroc, Sénégal, Côte d'Ivoire...)",
+    "key_decision_maker": "Patrice Caine, PDG Thales (depuis 2014); direction Afrique via Thales Digital Security",
+    "annual_value_estimate": 3200000,
+    "key_insight": "Thales équipe les systèmes d'identité nationale de +15 pays africains — ÆLYA comme couche de consentement-souveraineté est le complément naturel qui répond à la pression croissante des gouvernements africains sur la souveraineté des données."
+  },
+  {
+    "company": "Airbus",
+    "website": "airbus.com",
+    "description": "Leader mondial de l'aéronautique civil et défense, avec une clientèle africaine comprenant Ethiopian Airlines, Royal Air Maroc, Air Algérie, Kenya Airways et EgyptAir. Airbus forme des pilotes et techniciens africains via des programmes de partenariat.",
+    "trojan_horse": "YrKnown × Les Pionniers de l'Aviation Africaine — série de témoignages des premiers pilotes et ingénieurs aéronautiques africains formés par Airbus, patrimoine de l'aviation continentale",
+    "key_decision_maker": "Guillaume Faury, CEO Airbus (depuis 2019); direction clients Afrique via Airbus Commercial Aircraft",
+    "annual_value_estimate": 1700000,
+    "key_insight": "Airbus vend des appareils mais pas de narratif — YrKnown capturant les récits des pionniers de l'aviation africaine crée un actif de marque puissant qui renforce la fidélité client des compagnies africaines."
+  },
+  {
+    "company": "Safran",
+    "website": "safran-group.com",
+    "description": "Équipementier aéronautique français présent en Afrique via des centres de maintenance MRO (Maroc, Kenya, Afrique du Sud) et la fourniture de moteurs et trains d'atterrissage pour les compagnies africaines.",
+    "trojan_horse": "YrKnown × Safran MRO Africa Expertise Archive — capturer le savoir technique des ingénieurs MRO africains formés par Safran avant la prochaine vague de retraites, patrimoine technique continental",
+    "key_decision_maker": "Olivier Andriès, CEO Safran (depuis 2021); direction Afrique via Safran Aircraft Engines et Safran MRO Africa",
+    "annual_value_estimate": 1400000,
+    "key_insight": "Safran développe la maintenance aéronautique locale en Afrique pour réduire la dépendance aux MRO européens — YrKnown est le partenaire naturel pour documenter et transmettre ce savoir technique rare."
+  },
+  {
+    "company": "Canal+",
+    "website": "canalplusafrique.com",
+    "description": "Leader de la télévision payante en Afrique avec une présence dans 47 pays africains et +10 millions d'abonnés. Acteur dominant du divertissement, du sport et de la production audiovisuelle africaine.",
+    "trojan_horse": "YrKnown × Canal+ Africa Heritage Series — collection documentaire de 50 épisodes sur les figures culturelles, artisans et entrepreneurs africains méconnus, co-produite avec Canal+ comme label de qualité narratif",
+    "key_decision_maker": "Maxime Saada, CEO Canal+ Group (depuis 2018); +47 pays africains couverts, acquisition MultiChoice en cours",
+    "annual_value_estimate": 3000000,
+    "key_insight": "Canal+ + MultiChoice = monopole du divertissement africain avec 30M d'abonnés — YrKnown co-produit avec Canal+ crée le premier label documentaire panafricain et un canal de distribution unique pour toutes les narratives Eigen."
+  },
+  {
+    "company": "Air France-KLM",
+    "website": "airfranceklm.com",
+    "description": "Alliance aérienne franco-néerlandaise opérant le réseau de liaisons Europe-Afrique le plus dense avec +100 destinations africaines. Infrastructure de mobilité critique pour les entrepreneurs et investisseurs du corridor.",
+    "trojan_horse": "RAQIB × Air France-KLM Africa Corridor Mobility Intelligence — rapport annuel sur les flux de mobilité des entrepreneurs et investisseurs du corridor EU-Afrique, co-publié avec Air France Business",
+    "key_decision_maker": "Benjamin Smith, CEO Air France-KLM (depuis 2018, canadien); forte pression ESG sur l'empreinte carbone des vols Afrique",
+    "annual_value_estimate": 1600000,
+    "key_insight": "Air France opère le plus grand réseau EU-Afrique — RAQIB mesurant les flux de mobilité business du corridor crée une intelligence propriétaire que Smith peut utiliser pour justifier les routes et attirer les partenariats gouvernementaux."
+  },
+  {
+    "company": "Royal Air Maroc",
+    "website": "royalairmaroc.com",
+    "description": "Compagnie nationale marocaine opérant 100+ destinations dont +40 en Afrique subsaharienne. Principal hub africain de Casablanca, positionnant le Maroc comme porte d'entrée de l'Afrique pour l'Europe.",
+    "trojan_horse": "RAQIB × RAM Atlas Africa Routing Intelligence — outil d'optimisation des routes africaines basé sur les données géopolitiques et économiques du corridor, co-développé avec l'équipe stratégie de RAM",
+    "key_decision_maker": "Hamid Addou, PDG Royal Air Maroc (depuis 2016); adhésion Oneworld 2020, +40 destinations africaines",
+    "annual_value_estimate": 1800000,
+    "key_insight": "RAM est le hub physique du corridor EU-Afrique — un partenariat Eigen/RAM positionne Casablanca comme hub d'intelligence ET de mobilité du corridor, aligné avec l'agenda stratégique du Royaume."
+  },
+  {
+    "company": "McKinsey & Company",
+    "website": "mckinsey.com",
+    "description": "Premier cabinet de conseil en stratégie mondial avec un hub Afrique à Johannesburg, Lagos, Nairobi et Casablanca. Acteur dominant du conseil aux gouvernements et grandes entreprises africaines.",
+    "trojan_horse": "NOOS × McKinsey Africa Startup Screening Lab — outil de première analyse stratégique gratuit pour les 100 startups africaines les plus prometteuses, co-publié dans le rapport annuel McKinsey Africa",
+    "key_decision_maker": "Bob Sternfels, Global Managing Partner McKinsey; bureau Casablanca en expansion 2025",
+    "annual_value_estimate": 4000000,
+    "key_insight": "McKinsey vend des diagnostics à 2M EUR/projet mais n'a pas d'outil de screening scalable pour les PME/startups africaines — NOOS leur donne ce produit d'entrée de gamme qui crée un funnel vers leurs offres conseil haut de gamme."
+  },
+  {
+    "company": "BCG (Boston Consulting Group)",
+    "website": "bcg.com",
+    "description": "Deuxième cabinet de conseil en stratégie mondial avec des bureaux à Casablanca, Lagos, Johannesburg et Nairobi. Spécialisé dans la transformation digitale et la stratégie des entreprises africaines et des investisseurs corridor.",
+    "trojan_horse": "MIZAN × BCG Africa Sustainability Score — scoring ESG et impact développement co-développé BCG / Eigen pour les portefeuilles des fonds de développement et PE africains, distribué via la BCG Henderson Institute",
+    "key_decision_maker": "Christoph Schweizer, CEO BCG Global; bureau Casablanca en croissance forte depuis 2023",
+    "annual_value_estimate": 3500000,
+    "key_insight": "BCG Casablanca est le QG du conseil stratégique marocain et corridor — un co-développement MIZAN avec BCG crée un standard de scoring ESG qui s'impose à tous leurs clients corporate et fonds d'investissement africains."
+  },
+  {
+    "company": "Mazars (Forvis Mazars)",
+    "website": "mazars.com",
+    "description": "Cabinet d'audit et conseil présent dans 40 pays africains, positionné comme l'alternative aux Big 4 pour les ETI et grandes PME africaines. Acteur de l'accompagnement des entreprises africaines en croissance.",
+    "trojan_horse": "BURHAN × Forvis Mazars Africa Audit Trail — protocole de traçabilité documentaire pour les dossiers d'audit africains, conforme IFRS et EU Audit Directive, co-développé avec l'équipe Afrique",
+    "key_decision_maker": "Hervé Hélias, PDG Forvis Mazars; direction Afrique via réseau de 40 pays membres",
+    "annual_value_estimate": 1800000,
+    "key_insight": "Mazars est le Big 5 des ETI africaines — BURHAN leur donne un outil de traçabilité documentaire que les Big 4 n'ont pas, créant un avantage concurrentiel sur les mandats de conformité CRMA et CS3D."
+  },
+  {
+    "company": "Decathlon",
+    "website": "decathlon.com",
+    "description": "Leader mondial du retail sport présent en Afrique au Maroc (+15 magasins), Egypte, Afrique du Sud, Tunisie et Côte d'Ivoire. Présence croissante en Afrique subsaharienne via franchises locales.",
+    "trojan_horse": "MYNε × Decathlon Africa Sport Marketplace — marketplace des équipements sportifs d'occasion et de seconde main en Afrique, intégrant ÆLYA pour l'identité des vendeurs et BURHAN pour la traçabilité des produits",
+    "key_decision_maker": "Barbara Martin Coppola, CEO Decathlon (depuis 2023); Mehdi Mabrouk, DG Maroc",
+    "annual_value_estimate": 1000000,
+    "key_insight": "Decathlon est le premier retailer sport en Afrique francophone — MYNε activé sur leur réseau de 15+ magasins marocains crée instantanément la plus grande marketplace sport-circulaire du corridor."
+  },
+  {
+    "company": "Inditex (Zara)",
+    "website": "inditex.com",
+    "description": "Premier groupe de mode mondial présent en Afrique via Zara, Massimo Dutti et Pull&Bear au Maroc, Tunisie, Egypte et Afrique du Sud. Sourcing partiel de textiles en Ethiopie et Maroc.",
+    "trojan_horse": "BURHAN × Inditex Morocco Textile Trace — protocole de traçabilité de la chaîne d'approvisionnement textile au Maroc pour Inditex, conformité EU CS3D 2027 et réponse aux pressions ONG sur les conditions de travail",
+    "key_decision_maker": "Óscar García Maceiras, CEO Inditex (depuis 2022); sourcing textile au Maroc via fournisseurs locaux",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Inditex doit certifier sa chaîne textile marocaine sous CS3D d'ici 2027 — BURHAN est la solution la plus rapide à déployer au Maroc où Inditex a déjà des fournisseurs établis et une relation de confiance."
+  },
+  {
+    "company": "H&M",
+    "website": "hm.com",
+    "description": "Deuxième groupe de mode mondial avec un sourcing textile important en Ethiopie (Hawassa Industrial Park) et Maroc. Présence retail en Afrique du Sud, Maroc et Egypte.",
+    "trojan_horse": "BURHAN × H&M Ethiopia Cotton Trace — traçabilité de la chaîne coton-tissu-vêtement depuis les filatures éthiopiennes d'H&M jusqu'aux étiquettes EU, conformité CRMA textile et réponse aux ONG",
+    "key_decision_maker": "Daniel Ervér, CEO H&M (depuis 2024, remplace Helena Helmersson); sourcing Ethiopie en discussion après instabilité politique",
+    "annual_value_estimate": 1300000,
+    "key_insight": "H&M est sous pression extrême sur sa chaîne africaine (Ethiopie) après les tensions politiques — BURHAN leur fournit la preuve de traçabilité responsable dont ils ont besoin pour leurs investisseurs ESG EU."
+  },
+  {
+    "company": "IKEA",
+    "website": "ikea.com",
+    "description": "Géant mondial du meuble présent au Maroc (Casablanca), Egypte et projet en cours d'expansion en Afrique de l'Ouest. Sourcing bois et textile partiellement en Afrique.",
+    "trojan_horse": "BURHAN × IKEA Maroc Wood Trace — traçabilité de la chaîne d'approvisionnement bois pour le store IKEA Casablanca, conformité EU Deforestation Regulation (EUDR) et certification FSC corridor",
+    "key_decision_maker": "Jon Abrahamsson Ring, CEO IKEA (Inter IKEA Systems); direction Afrique du Nord via franchise Al-Homaizi et autres",
+    "annual_value_estimate": 900000,
+    "key_insight": "IKEA Casablanca est le flagship retail d'Afrique du Nord — BURHAN/EUDR leur donne la conformité bois corridor avant l'expansion et crée un modèle réplicable pour chaque nouveau store africain."
+  },
+  {
+    "company": "Doctolib",
+    "website": "doctolib.fr",
+    "description": "Plateforme européenne de prise de rendez-vous médicaux présente en France, Italie et Allemagne. Pas encore déployée en Afrique mais forte demande diaspora et intérêt stratégique pour le corridor de santé EU-Afrique.",
+    "trojan_horse": "NOOS × Doctolib Africa Pre-Launch Health Ecosystem Scan — analyse gratuite des 5 marchés africains les plus prêts pour un déploiement Doctolib, co-présentée par Eigen comme partenaire stratégique de leur expansion",
+    "key_decision_maker": "Stanislas Niox-Chateau, CEO Doctolib (co-fondateur); présence diaspora en France = pont naturel vers Maroc et Sénégal",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Doctolib a une base utilisateur diaspora marocaine/sénégalaise en France — NOOS leur fournit l'analyse de faisabilité africaine et Eigen devient le partenaire de leur expansion continentale."
+  },
+  {
+    "company": "Alan",
+    "website": "alan.com",
+    "description": "Néo-assureur santé français présent en France, Espagne et Belgique avec 550 000+ membres. Modèle 100% digital disruptif de l'assurance santé d'entreprise, avec un potentiel d'expansion en Afrique du Nord.",
+    "trojan_horse": "NOOS × Alan Africa Corporate Health Scan — évaluation gratuite de la santé des employés de 50 grandes entreprises marocaines/sénégalaises, ouvrant la conversation sur un déploiement Alan Afrique avec Eigen comme partenaire",
+    "key_decision_maker": "Jean-Charles Samuelian-Werve, CEO Alan (co-fondateur); ouvert au partenariat Afrique selon ses écrits sur la santé comme accès universel",
+    "annual_value_estimate": 1200000,
+    "key_insight": "Alan est la définition de la disrupteur santé qui cherche de nouveaux marchés — NOOS positionne Eigen comme le partenaire infrastructure pour son expansion naturelle vers les 3 millions de salariés formels marocains."
+  },
+  {
+    "company": "HPS (Hightech Payment Systems)",
+    "website": "hps-worldwide.com",
+    "description": "Leader marocain des solutions de paiement électronique présent dans +90 pays avec son produit PowerCARD. Acteur clé du système de paiement de +100 banques africaines.",
+    "trojan_horse": "MYNε × HPS PowerCARD Corridor Payments — intégration de MYNε marketplace sur l'infrastructure PowerCARD pour créer une couche de commerce B2B minéraux critiques dans les banques africaines clientes HPS",
+    "key_decision_maker": "Abdeslam Alaoui Smaili, PDG HPS (co-fondateur, depuis 1995); HPS présent dans +100 banques africaines via PowerCARD",
+    "annual_value_estimate": 2000000,
+    "key_insight": "HPS touche +100 banques africaines via PowerCARD — MYNε intégré dans PowerCARD crée un canal de distribution vers toutes ces banques sans effort de vente additionnel, transformation d'un client en partenaire de distribution."
+  },
+  {
+    "company": "Wave",
+    "website": "wave.com",
+    "description": "Fintech de mobile money présente au Sénégal, Côte d'Ivoire, Mali, Burkina Faso et Ouganda avec des frais de transaction parmi les plus bas d'Afrique (1%). +10 millions d'utilisateurs actifs.",
+    "trojan_horse": "AMANA × Wave Solidarity Corridor — module de dons et tontines digitales traçables intégré à l'app Wave, permettant aux communautés Afrique de l'Ouest de financer collectivement des projets d'impact local",
+    "key_decision_maker": "Drew Durbin, CEO Wave (co-fondateur); valorisation $1.7Mds en 2021 — expansion rapide Afrique de l'Ouest",
+    "annual_value_estimate": 1500000,
+    "key_insight": "Wave a les frais les plus bas du marché et une croissance virale — AMANA comme feature de don/tontine crée une couche sociale sur l'infrastructure paiement Wave, différenciateur fort vs MTN MoMo et Orange Money."
+  },
+  {
+    "company": "Paystack",
+    "website": "paystack.com",
+    "description": "Infrastructure de paiement en ligne africaine (filiale Stripe depuis 2020) présente au Nigeria, Ghana, Kenya et Afrique du Sud. Traite les paiements en ligne pour +70 000 entreprises africaines.",
+    "trojan_horse": "MYNε × Paystack Corridor Commerce — intégration de MYNε marketplace B2B dans le stack Paystack pour les marchands africains qui vendent des matières premières et produits du corridor vers l'EU",
+    "key_decision_maker": "Shola Akinlade, CEO Paystack (co-fondateur); acquisition Stripe $200M+ — intégration dans l'écosystème Stripe Atlas",
+    "annual_value_estimate": 1600000,
+    "key_insight": "Paystack + Stripe = le réseau de paiement des startups africaines les plus sophistiquées — MYNε intégré dans Paystack crée le rail B2B export-corridor pour les +70 000 merchants sans construction d'infrastructure."
+  },
+  {
+    "company": "Interswitch",
+    "website": "interswitchgroup.com",
+    "description": "Infrastructure de paiement nigériane processing +1 milliard de transactions par an en Afrique de l'Ouest et Est via ses produits Quickteller, Verve et Interswitch Payment Gateway.",
+    "trojan_horse": "BURHAN × Interswitch Nigerian Minerals Payment Trace — traçabilité des paiements de la chaîne minérale nigériane (fer, lithium, or) via l'infrastructure Interswitch, conformité CRMA EU pour les exportateurs",
+    "key_decision_maker": "Mitchell Elegbe, CEO Interswitch (co-fondateur, depuis 2002); IPO potentiel relancé 2025 — valorisation estimée $1.5Mds",
+    "annual_value_estimate": 1800000,
+    "key_insight": "Elegbe prépare un IPO — BURHAN comme produit de compliance certifié EU CRMA augmente la valorisation Interswitch auprès des investisseurs institutionnels EU et US avant la cotation."
+  },
+  {
+    "company": "mPharma",
+    "website": "mpharma.com",
+    "description": "Startup ghannéenne de distribution pharmaceutique et gestion des stocks médicaments en Afrique, présente dans 11 pays africains avec +1500 pharmacies partenaires.",
+    "trojan_horse": "ÆLYA × mPharma Patient Consent Hub — protocole de consentement patient pour les données de prescription et d'achat médicaments dans les pharmacies mPharma, conforme EU RGPD et standards africains",
+    "key_decision_maker": "Gregory Rockson, Chairman mPharma (co-fondateur, maintenant Chairman); CEO en transition 2024",
+    "annual_value_estimate": 800000,
+    "key_insight": "mPharma est l'infrastructure pharmaceutique de 11 pays africains — ÆLYA comme couche de consentement-souveraineté données santé répond à leur besoin de conformité RGPD pour attirer des partenariats EU Pharma."
+  },
+  {
+    "company": "Helium Health",
+    "website": "heliumhealth.com",
+    "description": "Startup nigériane de logiciels de gestion hospitalière (HIS/EMR) présente dans 700+ établissements en Afrique de l'Ouest et de l'Est. Traite les dossiers médicaux de +25 millions de patients africains.",
+    "trojan_horse": "ÆLYA × Helium Health Sovereign Patient Data — protocole de souveraineté et consentement des données patients dans le HIS Helium, permettant aux patients africains de contrôler leurs dossiers médicaux électroniques",
+    "key_decision_maker": "Adegoke Olubusi, CEO Helium Health (co-fondateur); 700+ hôpitaux, 25M patients sous HIS",
+    "annual_value_estimate": 900000,
+    "key_insight": "Helium Health détient les dossiers médicaux de 25M de patients africains sans infrastructure de consentement — ÆLYA résout leur problème de compliance RGPD et devient l'infrastructure de souveraineté données santé africaine."
+  },
+  {
+    "company": "Endeavour Mining",
+    "website": "endeavourmining.com",
+    "description": "Premier producteur d'or en Afrique de l'Ouest coté à Londres, opérant des mines au Sénégal, Côte d'Ivoire, Mali, Burkina Faso et Guinée. Plus de 1,5 millions d'onces d'or produites annuellement.",
+    "trojan_horse": "BURHAN × Endeavour Gold Responsible Mine-to-Market — traçabilité blockchain de la chaîne or depuis les mines d'Afrique de l'Ouest jusqu'aux raffineurs EU, conformité LBMA et CRMA pour l'or corridor",
+    "key_decision_maker": "Ian Cockerill, CEO Endeavour Mining (depuis 2023, ex-CEO Gold Fields); opérations dans 5 pays Afrique de l'Ouest",
+    "annual_value_estimate": 2600000,
+    "key_insight": "Endeavour est le plus grand producteur d'or en Afrique de l'Ouest — BURHAN leur donne le premium LBMA Responsible Gold que leurs clients raffineurs EU exigent de plus en plus, justifiant un prix de vente supérieur."
+  },
+  {
+    "company": "UM6P (Université Mohammed VI Polytechnique)",
+    "website": "um6p.ma",
+    "description": "Université marocaine de recherche et d'innovation fondée par OCP Group, présente sur 3 campus (Ben Guerir, Benguerir, Rabat) et en expansion en Afrique subsaharienne. Centre d'excellence en sciences des matériaux, agriculture et IA.",
+    "trojan_horse": "YrKnown × UM6P Archives des Pionniers — série documentaire sur les chercheurs fondateurs de UM6P et les ingénieurs africains formés en premiere génération, patrimoine scientifique du continent",
+    "key_decision_maker": "Hicham El Habti, Président UM6P (depuis 2020); UM6P liée à OCP — cheval de troie naturel via Mostafa Terrab",
+    "annual_value_estimate": 2200000,
+    "key_insight": "UM6P est la porte d'entrée académique du corridor — un partenariat Eigen/UM6P accède à OCP, aux gouvernements africains partenaires et à 5 000 étudiants africains boursiers qui seront les décideurs du continent dans 10 ans."
+  },
+  {
+    "company": "42 Network",
+    "website": "42.fr",
+    "description": "Réseau d'écoles de coding par Xavier Niel présent avec 42 Khouribga et 42 Casablanca au Maroc, et en expansion en Afrique (42 Rabat, 42 Dakar en discussion). Modèle par pairs sans frais de scolarité.",
+    "trojan_horse": "MYNε × 42 Africa Talent Marketplace — marketplace des développeurs 42 Africa pour les projets Eigen, connectant les alumni des campus africains aux startups corridor cherchant des talents tech",
+    "key_decision_maker": "Nicolas Sadirac, co-fondateur 42 Network; 42 Khouribga — partenariat OCP/UM6P lien fort avec Terrab",
+    "annual_value_estimate": 1500000,
+    "key_insight": "42 Khouribga/Casablanca forme les meilleurs développeurs africains sans frais — MYNε comme marketplace talent 42 Africa crée le pipeline de développeurs pour Eigen et positionne les alumni comme ambassadeurs corridor."
+  },
+  {
+    "company": "Elaia Partners",
+    "website": "elaia.com",
+    "description": "Fonds de venture capital français spécialisé dans les deeptech (IA, biotech, space), avec des participations dans +100 startups européennes et un intérêt croissant pour les technologies africaines.",
+    "trojan_horse": "NOOS × Elaia Africa Deeptech Scan — service d'analyse gratuite des 20 meilleures deeptech africaines pour le comité d'investissement Elaia, positionnant Eigen comme gateway vers le corridor deeptech",
+    "key_decision_maker": "Marie Ekeland, co-fondatrice (départ 2020); Xavier Lazarus, Partner gérant",
+    "annual_value_estimate": 800000,
+    "key_insight": "Elaia investit dans les deeptech EU — NOOS comme outil de screening des deeptech africaines leur ouvre un deal flow différencié corridor que leurs concurrents n'ont pas, et Eigen devient leur partenaire scouting Afrique."
+  },
+  {
+    "company": "Breega Capital",
+    "website": "breega.com",
+    "description": "Fonds de venture capital franco-britannique spécialisé dans les scaleups tech (Series A-B), avec des participations en Europe et un focus croissant sur l'Afrique francophone (Maroc, Sénégal, Côte d'Ivoire).",
+    "trojan_horse": "NOOS × Breega Francophone Africa Venture Screen — analyse due diligence gratuite des 30 meilleures startups tech d'Afrique francophone soumises à Breega, utilisant la méthodologie NOOS",
+    "key_decision_maker": "Ben Marrel, CEO Breega (co-fondateur); focus Afrique francophone via réseaux d'opérateurs français",
+    "annual_value_estimate": 700000,
+    "key_insight": "Breega est le fonds de référence des entrepreneurs français avec ambitions africaines — NOOS co-développé avec Breega crée un standard de due diligence corridor qui s'impose aux entrepreneurs cherchant des financements EU-Afrique."
+  },
+  {
+    "company": "Partech Africa",
+    "website": "partechpartners.com",
+    "description": "Bras africain de Partech Ventures (Paris/San Francisco), premier fonds de venture dédié à l'Afrique avec +$300M déployés dans 60+ startups africaines. Leader absolu du VC africain panafricain.",
+    "trojan_horse": "RAQIB × Partech Africa Portfolio Intelligence — tableau de bord d'intelligence de marché pour les 60+ startups du portefeuille Partech, intégrant le monitoring géopolitique corridor et les signaux CRMA",
+    "key_decision_maker": "Tidjane Dème, Managing Partner Partech Africa (basé Dakar, ex-Google Africa); Cyril Collon, co-Managing Partner (Paris)",
+    "annual_value_estimate": 1200000,
+    "key_insight": "Tidjane Dème est LE visage du VC africain — un partenariat Partech × Eigen crée le premier intelligence platform pour les startups du corridor, différenciateur fort pour attirer les meilleures deals africaines."
+  },
+  {
+    "company": "TLcom Capital",
+    "website": "tlcom.vc",
+    "description": "Fonds de venture capital dédié à l'Afrique (Londres/Lagos/Nairobi) avec +$180M déployés dans les startups tech africaines. Focus sur les Series A-B en Afrique anglophone.",
+    "trojan_horse": "NOOS × TLcom Africa Investment Compass — outil de scoring du potentiel d'investissement des startups africaines Series A pour les deal teams TLcom, intégrant les données corridor de RAQIB",
+    "key_decision_maker": "Maurizio Caio, CEO TLcom Capital (co-fondateur, basé Londres); Omobola Johnson, Partner (ex-ministre Nigeria)",
+    "annual_value_estimate": 900000,
+    "key_insight": "TLcom avec Omobola Johnson (ex-ministre Nigeria) a un accès politique unique — NOOS leur donne l'outil de scaling du pipeline d'investissement qu'une équipe de 8 personnes ne peut pas faire manuellement sur 54 pays."
+  },
+  {
+    "company": "Kima Ventures",
+    "website": "kimaventures.com",
+    "description": "Fonds de pre-seed de Xavier Niel et Jeremie Berrebi, investissant dans 100+ startups par an worldwide dont un nombre croissant en Afrique francophone. Réseau d'influence dans l'écosystème startup mondial.",
+    "trojan_horse": "MYNε × Kima Africa Founders Network — marketplace de mise en relation des fondateurs des 100 startups africaines du portefeuille Kima, créant le premier réseau de co-investissement corridor",
+    "key_decision_maker": "Xavier Niel (fondateur Iliad/Free, 42 Network), Jeremie Berrebi (managing partner); Niel = actionnaire de Maroc Telecom via Iliad+Niel",
+    "annual_value_estimate": 1100000,
+    "key_insight": "Xavier Niel est actionnaire de Maroc Telecom via ses investissements personnels — la connexion Kima/Maroc Telecom/42 Khouribga fait de lui un hub naturel pour déployer Eigen sur tout l'écosystème marocain d'un coup."
+  },
+  {
+    "company": "BPI France",
+    "website": "bpifrance.fr",
+    "description": "Banque publique d'investissement française soutenant les entreprises françaises en Afrique via des garanties, cofinancements et fonds de fonds. Acteur clé du corridor EU-Afrique pour les PME françaises.",
+    "trojan_horse": "MIZAN × BPI France Africa Impact Guarantee — protocole de scoring d'impact ESG pour les garanties BPI sur les projets corridor EU-Afrique, aligné avec la taxonomie EU verte",
+    "key_decision_maker": "Nicolas Dufourcq, DG BPI France (depuis 2013); programmes Afrique via BPI France Export et fonds de co-investissement",
+    "annual_value_estimate": 2000000,
+    "key_insight": "BPI France est le facilitateur systémique des entreprises françaises en Afrique — MIZAN intégré dans leurs processus de garantie crée un scoring EU-compliant qui s'impose à toutes les PME françaises cherchant une garantie BPI corridor."
+  },
+  {
+    "company": "GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit)",
+    "website": "giz.de",
+    "description": "Agence de coopération allemande présente dans 40+ pays africains, déployant +3 Mds EUR par an en projets de développement. Leader des programmes de formation professionnelle, transition énergétique et chaînes de valeur durables en Afrique.",
+    "trojan_horse": "YrKnown × GIZ Africa Makers Archives — capturer en vidéo le savoir des artisans, agriculteurs et techniciens africains formés par GIZ en 50 ans de présence, patrimoine du développement continental",
+    "key_decision_maker": "Thorsten Schäfer-Gümbel, Président GIZ (depuis 2020, ex-vice-président SPD); bureau Afrique via +40 pays résidents",
+    "annual_value_estimate": 2500000,
+    "key_insight": "GIZ a 50 ans de terrain africain et un budget de 3Mds EUR — YrKnown comme outil de capitalisation du savoir terrain de GIZ crée un actif de récit institutionnel que le Bundestag et les partenaires africains de GIZ peuvent valoriser."
+  },
+  {
+    "company": "FMO (Dutch Entrepreneurial Development Bank)",
+    "website": "fmo.nl",
+    "description": "Banque de développement néerlandaise investissant +2 Mds EUR par an dans les pays émergents, dont +40% en Afrique. Focus sur l'agribusiness, énergie et services financiers africains.",
+    "trojan_horse": "BURHAN × FMO Africa Green Investment Trace — protocole de traçabilité des investissements verts FMO en Afrique (énergies renouvelables, agri durable), conforme EU Taxonomy et ODD reporting",
+    "key_decision_maker": "Linda Broekhuizen, CEO FMO (depuis 2019); FMO investi dans +40 pays africains via fonds et prêts directs",
+    "annual_value_estimate": 1600000,
+    "key_insight": "FMO est le DFI le plus agile du corridor — BURHAN leur donne le reporting EU Taxonomy automatique qui leur manque pour justifier leur classification Article 9 auprès des investisseurs institutionnels néerlandais."
+  },
+  {
+    "company": "DEG (Deutsche Investitions und Entwicklungsgesellschaft)",
+    "website": "deginvest.de",
+    "description": "Institution de financement du développement allemande (filiale KfW) déployant +2 Mds EUR en Afrique via des prêts et prises de participation dans les entreprises privées des pays émergents.",
+    "trojan_horse": "MIZAN × DEG Africa Impact Portfolio Dashboard — tableau de bord d'impact ESG en temps réel pour le portefeuille africain DEG, conforme EU Taxonomy et GRI, co-développé avec l'équipe ESG de KfW",
+    "key_decision_maker": "Philipp Türoff, CEO DEG (depuis 2021); DEG filiale KfW, investit dans +60 pays africains via equity et dette",
+    "annual_value_estimate": 1700000,
+    "key_insight": "DEG/KfW est l'institution de développement la plus exigeante en reporting ESG — MIZAN comme outil de tableau de bord portfolio répond exactement aux obligations de reporting Article 9 de KfW face au Parlement allemand."
+  },
+  {
+    "company": "Norfund",
+    "website": "norfund.no",
+    "description": "Fonds souverain d'investissement pour le développement norvégien, déployant +1 Mds EUR par an en Afrique via des investissements dans l'énergie solaire, la microfinance et l'agribusiness.",
+    "trojan_horse": "RAQIB × Norfund Nordic-Africa Corridor Investment Intelligence — intelligence géopolitique et de marché pour les 25 pays africains du portefeuille Norfund, intégrant les données CRMA et risques climatiques",
+    "key_decision_maker": "Tellef Thorleifsson, CEO Norfund (a annoncé sa démission, effective juillet 2026 — fenêtre de transition); investissements en Afrique sub-saharienne",
+    "annual_value_estimate": 1300000,
+    "key_insight": "La transition de direction chez Norfund en 2026 est une fenêtre pour repositionner leur stratégie africaine — RAQIB donne au nouveau CEO les outils d'intelligence qui lui manquent pour justifier les investissements devant le parlement norvégien."
+  },
+  {
+    "company": "Lazard",
+    "website": "lazard.com",
+    "description": "Banque d'investissement de référence pour les restructurations de dettes souveraines africaines (Zambie, Ghana, Sri Lanka) et le conseil M&A des grandes transactions continent. Bureau Casablanca en expansion.",
+    "trojan_horse": "NOOS × Lazard Africa Sovereign Debt Restructuring Lab — outil de due diligence et modélisation de la viabilité de la dette souveraine africaine, co-développé avec l'équipe Debt Advisory Lazard pour les comités de Paris",
+    "key_decision_maker": "Peter Orszag, CEO Lazard (depuis 2023, ex-OMB Obama); Peter Turrell, Head Africa Debt Advisory",
+    "annual_value_estimate": 2800000,
+    "key_insight": "Lazard conseille 8 pays africains en restructuration de dette en 2025 — NOOS comme outil de due diligence souveraine leur donne un avantage analytique sur les autres banques conseil et justifie des honoraires premium."
+  },
+  {
+    "company": "Kienbaum",
+    "website": "kienbaum.com",
+    "description": "Cabinet allemand de conseil RH et recrutement executive présent dans 22 pays européens et en expansion en Afrique. Spécialisé dans les programmes de développement du leadership et de transformation organisationnelle.",
+    "trojan_horse": "YrKnown × Kienbaum Africa Executive Knowledge Transfer — capturer le savoir des dirigeants africains en fin de carrière formés en Europe, créant un programme de mentoring structuré pour la prochaine génération de leaders corridor",
+    "key_decision_maker": "Walter Jochmann, Managing Director Kienbaum (partner gérant); présence Afrique en développement",
+    "annual_value_estimate": 800000,
+    "key_insight": "Kienbaum est le partenaire naturel pour le programme de transfert de savoir YrKnown appliqué aux dirigeants — leur réseau européen de CHROs est le canal de distribution idéal pour vendre YrKnown aux multinationales EU opérant en Afrique."
+  },
+  {
+    "company": "Iliad / Free",
+    "website": "iliad.fr",
+    "description": "Groupe télécoms français (Free Mobile, Free, Iliad Italie) fondé par Xavier Niel, avec une base de 45M abonnés européens dont une diaspora africaine francophone significative. Iliad n a pas de déploiement africain direct mais Niel est actionnaire personnel de Maroc Telecom et fondateur de 42 Network Africa.",
+    "trojan_horse": "MYNε × Free Diaspora Africa Connect — marketplace de services digitaux pour la diaspora africaine en France (Maroc, Sénégal, Côte d Ivoire) abonnée Free, première offre de commerce transfrontalier EU-Afrique via l infrastructure Free",
+    "key_decision_maker": "Thomas Reynaud, CEO Iliad (depuis 2021); Xavier Niel actionnaire fondateur — lien personnel avec Maroc Telecom et 42 Khouribga",
+    "annual_value_estimate": 1100000,
+    "key_insight": "Xavier Niel cumule Free, Maroc Telecom, 42 Khouribga et Kima Ventures — approcher Iliad via le prisme diaspora crée une offre unique que Niel peut porter sur 4 écosystèmes simultanément."
+  },
+  {
+    "company": "Bouygues Telecom",
+    "website": "bouyguestelecom.fr",
+    "description": "Troisième opérateur télécom français avec 15M abonnés, filiale distincte de Bouygues Construction. Présence télécom uniquement en France métropolitaine, mais base abonnés diaspora africaine (Maroc, Afrique sub-saharienne) importante.",
+    "trojan_horse": "ÆLYA × Bouygues Telecom Diaspora Digital ID — service d identité numérique pour la diaspora africaine abonnée Bouygues, permettant de prouver leur identité et leur solvabilité pour des transferts et services financiers vers l Afrique",
+    "key_decision_maker": "Benoît Torloting, CEO Bouygues Telecom (depuis 2023); Olivier Roussat Chairman Bouygues SA",
+    "annual_value_estimate": 900000,
+    "key_insight": "Bouygues Telecom a 2M+ abonnés de la diaspora africaine francophone en France — ÆLYA comme service d identité numérique pour cette diaspora ouvre un marché de services financiers transfrontaliers EU-Afrique de taille significative."
+  },
+  {
+    "company": "SocGen Maroc (Société Générale)",
+    "website": "sgmaroc.com",
+    "description": "Filiale marocaine de Société Générale, premier réseau bancaire étranger au Maroc avec 600+ agences et 4M de clients. Après le retrait de SocGen d Afrique subsaharienne, le Maroc est le seul actif africain stratégique du groupe.",
+    "trojan_horse": "BURHAN × SG Maroc Green Corridor Finance — protocole de traçabilité des financements verts et de la supply chain pour les PME exportatrices marocaines vers l EU, aligné CRMA et CS3D, vitrine de la banque responsable post-retrait africain",
+    "key_decision_maker": "Slawomir Krupa, CEO SocGen global; direction Maroc via SG Maroc — actif stratégique résiduel sur le corridor",
+    "annual_value_estimate": 800000,
+    "key_insight": "SG Maroc est le seul levier africain restant d un groupe qui veut réécrire son narratif continentale — BURHAN leur donne la preuve de responsabilité corridor que Krupa peut présenter à Paris et Bruxelles."
+  }
+]
