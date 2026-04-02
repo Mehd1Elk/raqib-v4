@@ -25,7 +25,7 @@ interface Command {
 type CommandAction = 'run' | 'pause' | 'resume' | 'stop';
 
 const STATUS_STYLES: Record<string, { bg: string; text: string; label: string }> = {
-  pending: { bg: '#B8963E', text: '#FFFFFF', label: 'EN QUEUE' },
+  pending: { bg: 'rgba(30,10,32,0.15)', text: '#1E0A20', label: 'EN QUEUE' },
   sent: { bg: '#3D5E8C', text: '#FFFFFF', label: 'ENVOYÉ' },
   ack: { bg: '#B87D3E', text: '#FFFFFF', label: 'REÇU' },
   completed: { bg: '#3D7C5E', text: '#FFFFFF', label: 'TERMINÉ' },
@@ -161,13 +161,13 @@ export default function CommandPanel() {
           </span>
         </div>
         <button onClick={refreshHistory}
-          className="p-1 rounded-none hover:bg-[rgba(184,150,62,0.08)]">
-          <RefreshCw size={12} className="text-[#918977]" />
+          className="p-1 rounded-none hover:bg-[rgba(30,10,32,0.06)]">
+          <RefreshCw size={12} className="text-[rgba(30,10,32,0.45)]" />
         </button>
       </div>
 
       {/* Agent selector + Action buttons */}
-      <div className="px-4 py-3 border-b border-[rgba(60,52,40,0.04)]">
+      <div className="px-4 py-3 border-b border-[rgba(30,10,32,0.04)]">
         <div className="flex items-center gap-3 mb-3">
           <div className="relative flex-1">
             <select
@@ -181,7 +181,7 @@ export default function CommandPanel() {
                 </option>
               ))}
             </select>
-            <ChevronDown size={10} className="absolute right-2 top-1/2 -translate-y-1/2 text-[#918977] pointer-events-none" />
+            <ChevronDown size={10} className="absolute right-2 top-1/2 -translate-y-1/2 text-[rgba(30,10,32,0.45)] pointer-events-none" />
           </div>
         </div>
 
@@ -217,15 +217,15 @@ export default function CommandPanel() {
           {activeCommand && (
             <span className="font-['JetBrains_Mono'] text-[7px] px-2 py-0.5 rounded-none-none"
               style={{
-                backgroundColor: STATUS_STYLES[activeCommand.status]?.bg || '#918977',
+                backgroundColor: STATUS_STYLES[activeCommand.status]?.bg || 'rgba(30,10,32,0.45)',
                 color: STATUS_STYLES[activeCommand.status]?.text || '#FFFFFF',
               }}>
               {STATUS_STYLES[activeCommand.status]?.label || activeCommand.status}
             </span>
           )}
-          {pollingRef.current && <Loader2 size={10} className="text-[#B8963E] animate-spin" />}
+          {pollingRef.current && <Loader2 size={10} className="text-[rgba(30,10,32,0.60)] animate-spin" />}
         </div>
-        <pre className="font-['JetBrains_Mono'] text-[10px] text-[#D4B662] bg-[#1C1814] p-3 rounded-none whitespace-pre-wrap min-h-[60px] max-h-[120px] overflow-y-auto">
+        <pre className="font-['JetBrains_Mono'] text-[10px] text-[#D4B662] bg-[#1E0A20] p-3 rounded-none whitespace-pre-wrap min-h-[60px] max-h-[120px] overflow-y-auto">
           {output}
         </pre>
       </div>
@@ -238,10 +238,10 @@ export default function CommandPanel() {
         <div className="max-h-[200px] overflow-y-auto space-y-0.5">
           {commands.map(cmd => (
             <div key={cmd.id}
-              className="flex items-center gap-2 py-1 px-2 rounded-none hover:bg-[rgba(184,150,62,0.03)]">
+              className="flex items-center gap-2 py-1 px-2 rounded-none hover:bg-[rgba(30,10,32,0.03)]">
               {cmd.status === 'completed' ? <Check size={10} className="text-[#3D7C5E]" /> :
                cmd.status === 'failed' ? <X size={10} className="text-[#9C3D3D]" /> :
-               cmd.status === 'pending' ? <Clock size={10} className="text-[#B8963E]" /> :
+               cmd.status === 'pending' ? <Clock size={10} className="text-[rgba(30,10,32,0.60)]" /> :
                <Loader2 size={10} className="text-[#3D5E8C]" />}
               <span className="font-['JetBrains_Mono'] text-[8px] text-[rgba(255,255,255,0.70)] w-14">
                 {cmd.command}
