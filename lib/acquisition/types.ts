@@ -117,3 +117,31 @@ export interface SupplyChain {
   killer_insight: string;
   prescriptor_effect: string;
 }
+
+export interface TrojanHorse {
+  id: string;
+  company_id: string | null;
+  group_name: string;
+  market: string;
+  sector: string;
+  contact_name: string;
+  contact_relation: string;
+  trojan_name: string;
+  trojan_emoji: string | null;
+  trojan_color: string;
+  trojan_one_liner: string;
+  emotional_core: string;
+  trojan_mechanism: string;
+  free_deliverable: string;
+  cascade: CascadeStep[];
+  total_value: string;
+  why_irresistible: string;
+  entry_brique: string;
+  created_at: string;
+}
+
+export interface CascadeStep {
+  step: string;
+  brick: string;
+  next: string;
+}

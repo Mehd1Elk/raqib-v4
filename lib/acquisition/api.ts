@@ -1,4 +1,4 @@
-import type { AcqCompany, AcqContact, AcqRegulation, AcqEvent, AcqPlaybook, DashboardKPIs, SupplyChain } from './types';
+import type { AcqCompany, AcqContact, AcqRegulation, AcqEvent, AcqPlaybook, DashboardKPIs, SupplyChain, TrojanHorse } from './types';
 
 const BASE = '/api/acquisition';
 
@@ -44,4 +44,8 @@ export function fetchProjection(): Promise<{ by_tier: Record<string, { count: nu
 
 export function fetchSupplyChain(): Promise<SupplyChain[]> {
   return get<SupplyChain[]>('/supply-chain');
+}
+
+export function fetchTrojanHorses(): Promise<TrojanHorse[]> {
+  return get<TrojanHorse[]>('/trojan-horses');
 }

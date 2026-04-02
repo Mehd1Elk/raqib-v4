@@ -11,6 +11,7 @@ const TABS = [
   { key: 'briques', label: 'Briques × Cibles', icon: '⬡', subs: ['Matrice'] },
   { key: 'cascade', label: 'Cascade', icon: '↯', subs: ['Parcours'] },
   { key: 'forcage', label: 'Forçage Légal', icon: '§', subs: ['Réglementations'] },
+  { key: 'trojan', label: 'Cheval de Troie', icon: '🐴', subs: ['11 Fiches'] },
   { key: 'events', label: 'Événements', icon: '◎', subs: ['GITEX', 'ATS', 'VivaTech'] },
   { key: 'projection', label: 'Projection', icon: '↗', subs: ['Revenue'] },
   { key: 'playbook', label: 'Playbook', icon: '▤', subs: ['DRH', 'DPO', 'CTO', 'RSE', 'Achats', 'CFO'] },
@@ -30,6 +31,7 @@ const EventsView = lazy(() => import('./EventsView'));
 const ProjectionView = lazy(() => import('./ProjectionView'));
 const PlaybookView = lazy(() => import('./PlaybookView'));
 const SupplyChainView = lazy(() => import('./SupplyChainView'));
+const TrojanHorseView = lazy(() => import('./TrojanHorseView'));
 
 function TabContent({ tab, subIdx }: { tab: TabKey; subIdx: number }) {
   switch (tab) {
@@ -40,6 +42,7 @@ function TabContent({ tab, subIdx }: { tab: TabKey; subIdx: number }) {
     case 'briques': return <BriquesMatrixView />;
     case 'cascade': return <CascadeView />;
     case 'forcage': return <ForcageLegalView />;
+    case 'trojan': return <TrojanHorseView />;
     case 'events': return <EventsView subIdx={subIdx} />;
     case 'projection': return <ProjectionView />;
     case 'playbook': return <PlaybookView subIdx={subIdx} />;
