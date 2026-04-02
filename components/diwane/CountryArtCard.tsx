@@ -4,14 +4,13 @@
 import Link from 'next/link';
 import type { DiwaneCountry } from '../../lib/diwane/types';
 import { FlagIcon } from '../corridor/FlagIcon';
-import { getMarketRankLabel, getMarketRankClass } from '../../lib/diwane/utils';
 
 interface CountryArtCardProps {
   country: DiwaneCountry;
 }
 
 export function CountryArtCard({ country: c }: CountryArtCardProps) {
-  const topArtist = c.topArtists?.[0];
+  const topArtist = c.artists?.[0];
   return (
     <Link href={`/diwane/${c.id}`} style={{ textDecoration: 'none' }}>
       <div className="country-card">
@@ -31,15 +30,11 @@ export function CountryArtCard({ country: c }: CountryArtCardProps) {
         <div className="country-card-stats">
           <div className="country-card-stat">
             <div className="country-card-stat-label">Marché art</div>
-            <div className="country-card-stat-value">{c.artMarket?.marketSize || 'N/A'}</div>
+            <div className="country-card-stat-value">{c.marketSize || 'N/A'}</div>
           </div>
           <div className="country-card-stat">
-            <div className="country-card-stat-label">Rang</div>
-            <div className="country-card-stat-value">
-              <span className={`rank-badge ${getMarketRankClass(c.artMarket?.globalRank)}`}>
-                {getMarketRankLabel(c.artMarket?.globalRank)}
-              </span>
-            </div>
+            <div className="country-card-stat-label">Artistes</div>
+            <div className="country-card-stat-value">{c.artists?.length || 0}</div>
           </div>
           <div className="country-card-stat">
             <div className="country-card-stat-label">Top artiste</div>
@@ -49,7 +44,7 @@ export function CountryArtCard({ country: c }: CountryArtCardProps) {
           </div>
           <div className="country-card-stat">
             <div className="country-card-stat-label">Galeries</div>
-            <div className="country-card-stat-value">{c.artMarket?.galleryCount || 'N/A'}</div>
+            <div className="country-card-stat-value">{c.galleries?.length || 0}</div>
           </div>
         </div>
       </div>

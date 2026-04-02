@@ -1,10 +1,10 @@
 // @ts-nocheck
 'use client';
 
-import type { Artist } from '../../lib/diwane/types';
+import type { DiwaneArtist } from '../../lib/diwane/types';
 
 interface ArtistCardProps {
-  artist: Artist;
+  artist: DiwaneArtist;
   countryName?: string;
 }
 
@@ -17,12 +17,16 @@ export function ArtistCard({ artist: a, countryName }: ArtistCardProps) {
       {a.auctionRecord && (
         <div className="artist-record">
           Record: {a.auctionRecord}
-          {a.auctionHouse && <span style={{ fontSize: '0.65rem', color: 'var(--text-faint)', marginLeft: '0.5rem' }}>{a.auctionHouse}</span>}
+        </div>
+      )}
+      {a.significance && (
+        <div style={{ fontSize: '0.6rem', color: 'var(--text-muted)', marginTop: '0.25rem', lineHeight: '1.3' }}>
+          {a.significance.length > 120 ? a.significance.substring(0, 120) + '...' : a.significance}
         </div>
       )}
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.5rem' }}>
         <span style={{ fontSize: '0.6rem', color: 'var(--text-faint)' }}>
-          {a.birthYear}{a.deathYear ? ` — ${a.deathYear}` : ''}
+          {a.born}{a.died ? ` — ${a.died}` : ''}
         </span>
         {countryName && (
           <span style={{ fontSize: '0.6rem', color: 'var(--camel)' }}>{countryName}</span>
