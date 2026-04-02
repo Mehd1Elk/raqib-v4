@@ -1,5 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createAcqClient } from '@/lib/acquisition/supabase';
+import perplexityData from '@/src/data/acquisition/supply-chain-perplexity.json';
+
+// Build enrichment map from Perplexity JSON
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const enrichMap = new Map<string, any>();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+(perplexityData as any[]).forEach((c: any) => {
+  enrichMap.set(c.company, {
+    total_nodes: c.total_nodes,
+    total_revenue: c.total_eigen_revenue_estimate,
+    killer_insight: c.killer_insight,
+    prescriptor_effect: c.prescriptor_effect,
+    sector: c.sector,
+  });
+});
 
 export async function GET(req: NextRequest) {
   const supabase = await createAcqClient();
@@ -30,50 +45,45 @@ export async function GET(req: NextRequest) {
   // Fetch company names
   const { data: companies } = await supabase
     .from('acq_companies')
-    .select('id, name')
+    .select('id, name, sector')
     .in('id', parentIds);
 
-  const nameMap = new Map<string, string>();
-  (companies || []).forEach((c: Record<string, unknown>) => nameMap.set(c.id as string, c.name as string));
+  const companyInfo = new Map<string, { name: string; sector: string }>();
+  (companies || []).forEach((c: Record<string, unknown>) =>
+    companyInfo.set(c.id as string, { name: c.name as string, sector: c.sector as string })
+  );
 
   // Group by parent
-  const chainsMap = new Map<string, { company_id: string; company_name: string; tiers: typeof rows; total_nodes: string; total_revenue: string }>();
+  const chainsMap = new Map<string, {
+    company_id: string;
+    company_name: string;
+    sector: string;
+    tiers: typeof rows;
+    total_nodes: string;
+    total_revenue: string;
+    killer_insight: string;
+    prescriptor_effect: string;
+  }>();
 
   for (const row of rows) {
     const cid = row.parent_company_id as string;
     if (!chainsMap.has(cid)) {
+      const info = companyInfo.get(cid);
+      const enrich = enrichMap.get(info?.name || '');
       chainsMap.set(cid, {
         company_id: cid,
-        company_name: nameMap.get(cid) || 'Inconnu',
+        company_name: info?.name || 'Inconnu',
+        sector: enrich?.sector || info?.sector || '',
         tiers: [],
-        total_nodes: '0',
-        total_revenue: '€0',
+        total_nodes: enrich?.total_nodes || '0',
+        total_revenue: enrich?.total_revenue || '€0',
+        killer_insight: enrich?.killer_insight || '',
+        prescriptor_effect: enrich?.prescriptor_effect || '',
       });
     }
     chainsMap.get(cid)!.tiers.push(row);
   }
 
-  // Compute totals
-  const chains = Array.from(chainsMap.values()).map(chain => {
-    const lastTier = chain.tiers[chain.tiers.length - 1];
-    const totalNodes = (lastTier as Record<string, unknown>)?.count_entities as string || '0';
-
-    let totalRev = 0;
-    for (const t of chain.tiers) {
-      const rev = (t as Record<string, unknown>).eigen_revenue as string || '';
-      const match = rev.match(/€([\d.]+)([MK])/);
-      if (match) {
-        const val = parseFloat(match[1]);
-        totalRev += match[2] === 'M' ? val * 1_000_000 : val * 1_000;
-      }
-    }
-
-    const revStr = totalRev >= 1_000_000
-      ? `€${(totalRev / 1_000_000).toFixed(1)}M/an`
-      : `€${(totalRev / 1_000).toFixed(0)}K/an`;
-
-    return { ...chain, total_nodes: totalNodes, total_revenue: revStr };
-  });
-
+  const chains = Array.from(chainsMap.values());
   return NextResponse.json(chains);
 }

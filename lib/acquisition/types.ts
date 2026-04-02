@@ -110,7 +110,10 @@ export interface SupplyChainTier {
 export interface SupplyChain {
   company_id: string;
   company_name: string;
+  sector: string;
   tiers: SupplyChainTier[];
   total_nodes: string;
   total_revenue: string;
+  killer_insight: string;
+  prescriptor_effect: string;
 }
