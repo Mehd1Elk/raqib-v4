@@ -24,7 +24,7 @@ export default function NexusControls() {
         <div className="font-[family-name:var(--font-playfair)] text-[18px] font-bold  text-[#D4B662] mb-1">
           Nexus
         </div>
-        <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] mb-4">
+        <div className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(255,255,255,0.45)] mb-4">
           11 entites &middot; {flowCount} flux
         </div>
 
@@ -41,7 +41,7 @@ export default function NexusControls() {
                 className="w-2 h-2 rounded-none-none shrink-0"
                 style={{ backgroundColor: color }}
               />
-              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] group-hover:text-[#D4B662] transition-colors">
+              <span className="font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(255,255,255,0.70)] group-hover:text-[#D4B662] transition-colors">
                 {label}
               </span>
             </label>
@@ -57,7 +57,7 @@ export default function NexusControls() {
           </a>
           <a
             href="/"
-            className="block text-center font-[family-name:var(--font-jetbrains)] text-[8px] text-[#918977] hover:text-[#D4B662] hover:underline"
+            className="block text-center font-[family-name:var(--font-jetbrains)] text-[8px] text-[rgba(255,255,255,0.45)] hover:text-[#D4B662] hover:underline"
           >
             &larr; Accueil
           </a>

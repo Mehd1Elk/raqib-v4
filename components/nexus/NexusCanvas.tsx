@@ -214,19 +214,18 @@ export default function NexusCanvas() {
       .attr('dy', -2)
       .attr('fill', '#FFFFFF')
       .attr('font-family', 'Playfair Display, serif')
-      .attr('font-weight', '700')
-      
-      .attr('font-size', d => Math.max(10, d.size / 5))
+      .attr('font-weight', '600')
+      .attr('font-size', 12)
+      .style('text-shadow', '0 0 8px rgba(0,0,0,0.80)')
       .text(d => d.name);
 
     // Tagline text
     nodeGs.append('text')
       .attr('text-anchor', 'middle')
-      .attr('dy', 10)
-      .attr('fill', d => d.color)
-      .attr('opacity', 0.6)
+      .attr('dy', 12)
+      .attr('fill', 'rgba(255,255,255,0.60)')
       .attr('font-family', 'JetBrains Mono, monospace')
-      .attr('font-size', 8)
+      .attr('font-size', 10)
       .text(d => d.tagline);
 
     /* ── tooltip (for flows) ── */
