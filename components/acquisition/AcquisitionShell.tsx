@@ -72,7 +72,7 @@ export default function AcquisitionShell() {
   const switchTab = (key: TabKey) => { setMainTab(key); setSubIdx(0); };
 
   return (
-    <div style={{ display: 'flex', height: '100vh', background: C.nacre, fontFamily: SN, overflow: 'hidden' }}>
+    <div style={{ display: 'flex', height: 'calc(100vh - 58px)', background: C.nacre, fontFamily: SN, overflow: 'hidden' }}>
       {/* Sidebar — PRUNE */}
       <aside style={{
         width: sideW, minWidth: sideW, background: C.prune,
