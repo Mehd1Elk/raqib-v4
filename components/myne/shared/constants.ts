@@ -2,30 +2,21 @@
 // Integrates with RAQIB shell via C import from acquisition constants
 
 export const M = {
-  bg: '#FDFAF3',
-  bgCard: '#FFFFFF',
-  bgPanel: '#F5F2EB',
-  border: '#D8D4CC',
-  gold: '#6B4FA0',
-  purple: '#7c3aed',
-  green: '#16a34a',
-  cyan: '#0891b2',
-  red: '#dc2626',
-  blue: '#2563eb',
-  rose: '#e11d48',
-  amber: '#d97706',
-  t1: '#1C1917',
-  t2: '#57534E',
-  t3: '#A8A29E',
-} as const;
-
-// Dark sidebar palette (used only in MYNEShell)
-export const S = {
-  bg: '#09090b',
+  bg: '#000000',
+  bgCard: '#09090b',
+  bgPanel: '#0f0f11',
   border: '#1a1a2e',
-  accent: '#a78bfa',
-  text: '#f8fafc',
-  muted: '#64748b',
+  gold: '#E8E4DE',
+  purple: '#a78bfa',
+  green: '#22c55e',
+  cyan: '#06b6d4',
+  red: '#ef4444',
+  blue: '#3b82f6',
+  rose: '#f43f5e',
+  amber: '#f97316',
+  t1: '#f8fafc',
+  t2: '#94a3b8',
+  t3: '#64748b',
 } as const;
 
 export const HD = "'Playfair Display', Georgia, serif";

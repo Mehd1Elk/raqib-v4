@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { M, S, HD, BD, MN } from './shared/constants';
+import { M, HD, BD, MN } from './shared/constants';
 
 const AccueilView = lazy(() => import('./pages/AccueilView'));
 const ManifesteView = lazy(() => import('./pages/ManifesteView'));
@@ -63,27 +63,27 @@ export default function MYNEShell() {
     <div style={{ display: 'flex', height: '100vh', background: '#FDFAF3', fontFamily: BD, overflow: 'hidden' }}>
       {/* Sidebar */}
       <aside style={{
-        width: sideW, minWidth: sideW, background: S.bg,
-        borderRight: `1px solid ${S.border}`, display: 'flex', flexDirection: 'column',
+        width: sideW, minWidth: sideW, background: M.bg,
+        borderRight: `1px solid ${M.border}`, display: 'flex', flexDirection: 'column',
         transition: 'width 0.2s, min-width 0.2s', overflow: 'hidden',
       }}>
         {/* Logo */}
         <div
           onClick={() => setCollapsed(!collapsed)}
           style={{
-            padding: collapsed ? '16px 12px' : '16px', borderBottom: `1px solid ${S.border}`,
+            padding: collapsed ? '16px 12px' : '16px', borderBottom: `1px solid ${M.border}`,
             display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', minHeight: 56,
             justifyContent: collapsed ? 'center' : 'flex-start',
           }}
         >
           {collapsed ? (
-            <span style={{ fontFamily: MN, fontSize: 14, fontWeight: 700, color: S.accent }}>M</span>
+            <span style={{ fontFamily: MN, fontSize: 14, fontWeight: 700, color: M.gold }}>M</span>
           ) : (
             <>
-              <span style={{ fontFamily: MN, fontSize: 18, fontWeight: 700, color: S.accent, letterSpacing: 6 }}>
+              <span style={{ fontFamily: MN, fontSize: 18, fontWeight: 700, color: M.gold, letterSpacing: 6 }}>
                 MYN&#949;
               </span>
-              <sup style={{ fontSize: 8, color: S.muted, marginLeft: 2, verticalAlign: 'super' }}>v3</sup>
+              <sup style={{ fontSize: 8, color: M.t3, marginLeft: 2, verticalAlign: 'super' }}>v3</sup>
             </>
           )}
         </div>
@@ -98,11 +98,11 @@ export default function MYNEShell() {
                 padding: collapsed ? '10px 0' : '10px 16px',
                 justifyContent: collapsed ? 'center' : 'flex-start',
                 border: 'none', cursor: 'pointer',
-                background: active ? `${S.accent}15` : 'transparent',
-                borderLeft: active ? `2px solid ${S.accent}` : '2px solid transparent',
+                background: active ? `${M.gold}15` : 'transparent',
+                borderLeft: active ? `2px solid ${M.gold}` : '2px solid transparent',
                 fontFamily: BD,
                 fontWeight: active ? 600 : 400,
-                fontSize: collapsed ? 14 : 12, color: active ? S.accent : S.muted,
+                fontSize: collapsed ? 14 : 12, color: active ? M.gold : M.t3,
                 letterSpacing: 0.3, textAlign: 'left',
                 transition: 'background 0.15s, color 0.15s',
               }}>
@@ -116,8 +116,8 @@ export default function MYNEShell() {
         {/* Back link */}
         {!collapsed && (
           <a href="/" style={{
-            display: 'block', padding: '12px 16px', borderTop: `1px solid ${S.border}`,
-            fontFamily: MN, fontSize: 8, color: S.muted, textDecoration: 'none',
+            display: 'block', padding: '12px 16px', borderTop: `1px solid ${M.border}`,
+            fontFamily: MN, fontSize: 8, color: M.t3, textDecoration: 'none',
             letterSpacing: 1.5, textTransform: 'uppercase',
           }}>
             &#8592; RAQIB V4
@@ -130,7 +130,7 @@ export default function MYNEShell() {
         {/* Header */}
         <header style={{
           height: 48, padding: '0 24px', display: 'flex', alignItems: 'center',
-          justifyContent: 'space-between', borderBottom: `1px solid ${M.border}`, background: M.bgPanel,
+          justifyContent: 'space-between', borderBottom: `1px solid ${M.border}`, background: M.bg,
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{ fontFamily: HD, fontSize: 15, fontWeight: 700, color: M.t1 }}>
@@ -156,11 +156,11 @@ export default function MYNEShell() {
         {/* Footer */}
         <footer style={{
           height: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          padding: '0 24px', background: S.bg, borderTop: `1px solid ${S.border}`,
+          padding: '0 24px', background: M.bg, borderTop: `1px solid ${M.border}`,
           fontFamily: MN, fontSize: 7, letterSpacing: 2, textTransform: 'uppercase',
         }}>
-          <span style={{ color: S.muted }}>RAQIB V4 &middot; MYN&#949; &middot; SOVEREIGN DATA MARKETPLACE</span>
-          <span style={{ color: S.accent }}>CORRIDOR ATLANTIQUE</span>
+          <span style={{ color: M.t3 }}>RAQIB V4 &middot; MYN&#949; &middot; SOVEREIGN DATA MARKETPLACE</span>
+          <span style={{ color: M.gold }}>CORRIDOR ATLANTIQUE</span>
         </footer>
       </div>
     </div>
