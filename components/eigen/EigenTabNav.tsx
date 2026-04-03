@@ -16,18 +16,18 @@ export function EigenTabNav({ activeTab, onTabSelect }: { activeTab: string; onT
   ];
 
   return (
-    <div role="tablist" aria-label="Navigation EIGEN" className="w-full flex items-center border-b border-[rgba(30,10,32,0.08)] bg-[#FAF8FC] overflow-x-auto sm:overflow-visible">
+    <div role="tablist" aria-label="Navigation EIGEN" className="w-full flex items-center border-b border-[rgba(228,212,234,0.12)] bg-[#1E0A20] overflow-x-auto sm:overflow-visible">
       {tabs.map((tab) => {
         const isActive = activeTab === tab.id;
         const cls = `flex items-center gap-2 px-5 py-[14px] shrink-0 transition-colors border-b-2 no-underline ${
           isActive
-            ? 'border-[#1E0A20] bg-[rgba(30,10,32,0.04)] text-[#1E0A20] font-normal'
-            : 'border-transparent text-[rgba(30,10,32,0.45)] hover:bg-[rgba(30,10,32,0.03)] hover:text-[#1E0A20]'
+            ? 'border-[#FFFFFF] bg-[rgba(228,212,234,0.08)] text-[#FFFFFF] font-normal'
+            : 'border-transparent text-[rgba(228,212,234,0.45)] hover:bg-[rgba(228,212,234,0.06)] hover:text-[#FFFFFF]'
         }`;
         const inner = (
           <>
             <svg
-              className={`w-3.5 h-3.5 ${isActive ? 'text-[#1E0A20]' : 'text-[rgba(30,10,32,0.45)]'}`}
+              className={`w-3.5 h-3.5 ${isActive ? 'text-[#FFFFFF]' : 'text-[rgba(228,212,234,0.45)]'}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -39,7 +39,7 @@ export function EigenTabNav({ activeTab, onTabSelect }: { activeTab: string; onT
               {tab.label}
             </span>
             {tab.badge !== undefined && (
-              <span className="ml-1 bg-[rgba(30,10,32,0.08)] text-[#1E0A20] text-[9px] font-[family-name:var(--font-jetbrains)] px-1.5 py-[2px] rounded-none">
+              <span className="ml-1 bg-[rgba(228,212,234,0.12)] text-[#FFFFFF] text-[9px] font-[family-name:var(--font-jetbrains)] px-1.5 py-[2px] rounded-none">
                 {tab.badge}
               </span>
             )}

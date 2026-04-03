@@ -18,9 +18,9 @@ export default function NexusPageClient() {
         <NexusMiniInfo />
       </div>
 
-      <div className="w-[300px] shrink-0 border-l border-[rgba(30,10,32,0.15)] bg-[#FAF8FC] flex flex-col z-20 shadow-2xl">
-        <div className="px-4 py-3 border-b border-[rgba(30,10,32,0.08)] bg-[#1E0A20]">
-          <h2 className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[#FAF8FC] tracking-[2px] uppercase">Nexus Stream Feed</h2>
+      <div className="w-[300px] shrink-0 border-l border-[rgba(228,212,234,0.12)] bg-[#1E0A20] flex flex-col z-20 shadow-2xl">
+        <div className="px-4 py-3 border-b border-[rgba(228,212,234,0.12)] bg-[rgba(228,212,234,0.04)]">
+          <h2 className="font-[family-name:var(--font-jetbrains)] text-[10px] text-[rgba(228,212,234,0.70)] tracking-[2px] uppercase">Nexus Stream Feed</h2>
         </div>
         <div className="flex-1 overflow-hidden">
           <EigenStream />
