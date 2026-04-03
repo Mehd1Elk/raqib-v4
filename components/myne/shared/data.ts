@@ -207,7 +207,7 @@ export const VISUAL_PRICING = {
 };
 
 export const EQUITY_DROPS = [
-  { id:"drop-1", name:"CG Ventures — Corridor", target:"Family offices corridor Afrique-MENA-EU", ticket:"25K–500K €", multiple:"×3–5", thesis:"Accès privilégié au marché corridor 600M habitants — avantage premier entrant", color:'#d4a574', status:"OUVERT" },
+  { id:"drop-1", name:"CG Ventures — Corridor", target:"Family offices corridor Afrique-MENA-EU", ticket:"25K–500K €", multiple:"×3–5", thesis:"Accès privilégié au marché corridor 600M habitants — avantage premier entrant", color:'#E8E4DE', status:"OUVERT" },
   { id:"drop-2", name:"Global Tech", target:"Fonds VC Tech international (EU, US, Asie)", ticket:"100K–2M €", multiple:"×2.5–4", thesis:"Infrastructure Web 4.0 — standard data marketplace nouvelle génération", color:'#a78bfa', status:"BIENTÔT" },
   { id:"drop-3", name:"YC Secondaries", target:"Alumni YC et fonds secondaires", ticket:"50K–500K €", multiple:"×2–3", thesis:"Secondaire structuré — liquidité partielle pour early investors", color:'#22c55e', status:"Q3 2026" },
   { id:"drop-4", name:"Africa Growth PE", target:"Fonds PE pan-africains", ticket:"500K–5M €", multiple:"×2.5–4", thesis:"Inclusion financière + marché data — double impact ESG mesurable", color:'#06b6d4', status:"Q4 2026" },
@@ -243,7 +243,7 @@ export const INCLUSION_FACTS = [
 ];
 
 export const CASHOUT_PARTNERS = [
-  { id:"wafacash", name:"Wafacash", region:"Maroc", network:"4 000 agences + 10 000 points partenaires", fee:"1.5 %", delay:"Immédiat", persona:"Fatima, 34 ans, Casablanca — retrait chez l'épicier du quartier", color:'#d4a574' },
+  { id:"wafacash", name:"Wafacash", region:"Maroc", network:"4 000 agences + 10 000 points partenaires", fee:"1.5 %", delay:"Immédiat", persona:"Fatima, 34 ans, Casablanca — retrait chez l'épicier du quartier", color:'#E8E4DE' },
   { id:"orange", name:"Orange Money", region:"Afrique de l'Ouest + MENA", network:"12 pays, 30M+ utilisateurs", fee:"1.2 %", delay:"Immédiat", persona:"Moussa, 28 ans, Dakar — reçoit sur son Orange Money après accord A2A", color:'#f97316' },
   { id:"wave", name:"Wave", region:"Sénégal, Côte d'Ivoire", network:"Frais les plus bas d'Afrique de l'Ouest", fee:"0.9 %", delay:"Immédiat", persona:"Aminata, 26 ans, Abidjan — transfère instantanément vers Wave", color:'#22c55e' },
   { id:"mtn", name:"MTN MoMo", region:"17 pays Afrique", network:"50M+ utilisateurs actifs", fee:"1.0 %", delay:"Immédiat", persona:"Kwame, 31 ans, Accra — reçoit en MoMo pour ses données IoT", color:'#f59e0b' },
@@ -263,7 +263,7 @@ export const REVENUE_FLOW_EXAMPLE = {
   dealAmount: 18000,
   breakdown: {
     producer: { amount:9540, pct:53, color:'#22c55e', label:"Producteurs (5 000 individus × 1,908 €)" },
-    platform: { amount:1980, pct:11, color:'#d4a574', label:"MYNε — infrastructure & R&D" },
+    platform: { amount:1980, pct:11, color:'#E8E4DE', label:"MYNε — infrastructure & R&D" },
     ecosystem: { amount:6480, pct:36, color:'#a78bfa', label:"Pool écosystème — stakers & nœuds" },
   },
   timeline_seconds: [
@@ -278,7 +278,7 @@ export const REVENUE_FLOW_EXAMPLE = {
 };
 
 export const DATA_WALLET_SECTIONS = [
-  { id:"balance", label:"Solde & Revenus", color:'#d4a574', desc:"Solde cumulé, revenus du mois, historique complet des transactions. Comme un compte bancaire — mais pour vos données.", features:["Solde temps réel","Graphique revenus 12 mois","Export PDF/CSV pour impôts"] },
+  { id:"balance", label:"Solde & Revenus", color:'#E8E4DE', desc:"Solde cumulé, revenus du mois, historique complet des transactions. Comme un compte bancaire — mais pour vos données.", features:["Solde temps réel","Graphique revenus 12 mois","Export PDF/CSV pour impôts"] },
   { id:"categories", label:"Mes Catégories", color:'#a78bfa', desc:"Activez/désactivez chaque catégorie de données. Choisissez le T-Level minimum acceptable. Tout est granulaire.", features:["Toggle par catégorie","T-Level slider","Preview revenus estimés"] },
   { id:"marketplace", label:"Offres en attente", color:'#22c55e', desc:"ÆLYA vous notifie quand une offre correspond à vos préférences. Vous acceptez ou refusez en un tap.", features:["Notification push","Détail acheteur + finalité","Accepter / Refuser / Counter"] },
   { id:"graph", label:"Data Graph", color:'#06b6d4', desc:"Visualisation de votre patrimoine de données. Qui a accédé à quoi, quand, à quel prix. BURHAN-certifié.", features:["Graphe interactif","Timeline des accès","Lien BURHAN on-chain"] },
@@ -294,7 +294,7 @@ export const WALLET_FREEMIUM = {
 export const ARCHITECTURE_PILLARS = [
   { id:"yknow", label:"YKNOW.AI", subtitle:"Couche de collecte souveraine", color:'#06b6d4', metric:"Collecte consentie — source de données primaire", outputs:["Données brutes T0 structurées","Métadonnées comportementales","Signal d'intention natif"], inputs:["Comportements utilisateur","Données IoT","Formulaires actifs"], desc:"YKNOW est le point d'entrée de la donnée dans l'écosystème MYNε. Il collecte, structure et préclassifie la donnée avant de la passer à ÆLYA." },
   { id:"aelya", label:"ÆLYA", subtitle:"Couche de traitement et protection", color:'#a78bfa', metric:"5 T-Levels — 100 % RGPD", outputs:["Dataset anonymisé T1→T5","Consentement granulaire","Décision A2A ACCEPT/REJECT/COUNTER"], inputs:["Données T0 de YKNOW","Règles utilisateur","Offres acheteurs B2B"], desc:"ÆLYA est le cœur intelligent du système. Policy Engine, transformation T-Level, négociation A2A, scanner CGU — tout passe par ÆLYA avant d'atteindre MYNε." },
-  { id:"myne", label:"MYNε", subtitle:"Couche de marché et settlement", color:'#d4a574', metric:"0.35 €/donnée santé — 53 % producteur", outputs:["Transaction finalisée","BURHAN certificat on-chain","Revenue 53 % distribué via MIZAN"], inputs:["Dataset certifié ÆLYA","Demande acheteur B2B","Smart contract Base L2"], desc:"MYNε est la marketplace et le settlement layer. Il orchestre la rencontre acheteur/vendeur, exécute la distribution MIZAN et certifie via BURHAN." },
+  { id:"myne", label:"MYNε", subtitle:"Couche de marché et settlement", color:'#E8E4DE', metric:"0.35 €/donnée santé — 53 % producteur", outputs:["Transaction finalisée","BURHAN certificat on-chain","Revenue 53 % distribué via MIZAN"], inputs:["Dataset certifié ÆLYA","Demande acheteur B2B","Smart contract Base L2"], desc:"MYNε est la marketplace et le settlement layer. Il orchestre la rencontre acheteur/vendeur, exécute la distribution MIZAN et certifie via BURHAN." },
 ];
 
 export const CONNEXION_CONTENT = {
@@ -316,7 +316,7 @@ export const CONNEXION_CONTENT = {
 export const VERTICAL_USE_CASES = [
   { sector:"Pharmacie & Recherche clinique", color:'#a78bfa', value:"Données de patients consentis pour essais cliniques Phase II/III", buyers:"Servier, Sanofi, Roche, Janssen, Institut Pasteur", tLevel:"T4–T5", pricing:"42 €/profil (biomarqueur T5) — 18 €/profil (comportement T4)", rgpd:"EHDS + RGPD + ICH-E6", corridor:"France, Maroc, Sénégal — accès aux cohortes non-occidentales" },
   { sector:"Services financiers", color:'#22c55e', value:"Scoring crédit alternatif pour populations non-bancarisées", buyers:"BNP Paribas, Société Générale, Orange Bank, Wafabank", tLevel:"T3–T4", pricing:"95 €/profil (intention crédit qualifiée)", rgpd:"RGPD + PSD2 + AI Act Art.5 (scoring automatisé)", corridor:"Maroc (66 % non-bancarisés), Sénégal, Côte d'Ivoire" },
-  { sector:"Grande consommation & Retail", color:'#d4a574', value:"Intentions d'achat déclarées — signal premium vs cookie tiers", buyers:"Carrefour, L'Oréal, Decathlon, Jumia", tLevel:"T2–T3", pricing:"0.012–0.025 €/profil (comportement) — 200 €/intention qualifiée", rgpd:"RGPD ePrivacy — remplacement cookies tiers post-2024", corridor:"Europe + Maroc + Afrique de l'Ouest francophone" },
+  { sector:"Grande consommation & Retail", color:'#E8E4DE', value:"Intentions d'achat déclarées — signal premium vs cookie tiers", buyers:"Carrefour, L'Oréal, Decathlon, Jumia", tLevel:"T2–T3", pricing:"0.012–0.025 €/profil (comportement) — 200 €/intention qualifiée", rgpd:"RGPD ePrivacy — remplacement cookies tiers post-2024", corridor:"Europe + Maroc + Afrique de l'Ouest francophone" },
   { sector:"Assurance", color:'#06b6d4', value:"Données comportementales santé et mobilité pour actuariat", buyers:"AXA, Allianz, MAIF, Atlanta (Maroc)", tLevel:"T3–T4", pricing:"55 €/profil (mobilité + santé agrégé T4)", rgpd:"RGPD + Directive Solvency II + ACAPS (Maroc)", corridor:"France, Belgique, Maroc" },
   { sector:"Éducation & RH", color:'#f43f5e', value:"Intentions de reconversion et profils de compétences", buyers:"OpenClassrooms, Coursera, LinkedIn Learning, OPCO", tLevel:"T2–T3", pricing:"20–80 €/intention reconversion qualifiée", rgpd:"RGPD + Directive Formation Pro", corridor:"France, Belgique, Maroc, Sénégal" },
 ];

@@ -70,7 +70,7 @@ function SubTriptyque() {
           {[
             { from:'YKNOW', to:'ÆLYA', label:'Données brutes T0', color:'#06b6d4' },
             { from:'ÆLYA', to:'MYNε', label:'Dataset certifié + prix', color:'#a78bfa' },
-            { from:'MYNε', to:'ÆLYA', label:'Offres acheteurs', color:'#d4a574' },
+            { from:'MYNε', to:'ÆLYA', label:'Offres acheteurs', color:'#E8E4DE' },
             { from:'ÆLYA', to:'YKNOW', label:'Feedback conformité', color:'#22c55e' },
             { from:'MYNε', to:'ÆLYA', label:'Revenue 53 % → producteur', color:'#22c55e' },
           ].map((lk, i) => (

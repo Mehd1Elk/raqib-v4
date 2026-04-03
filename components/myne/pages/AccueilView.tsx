@@ -55,7 +55,7 @@ export default function AccueilView() {
     <div style={{ padding: '48px 32px 60px', maxWidth: 1100, margin: '0 auto' }}>
       {/* Hero */}
       <div style={{ textAlign: 'center', padding: '60px 0 40px' }}>
-        <div style={{ fontFamily: HD, fontStyle: 'italic', color: M.gold, fontSize: 'clamp(26px,4.5vw,42px)', lineHeight: 1.3, marginBottom: 16 }}>
+        <div style={{ fontFamily: HD, color: M.gold, fontSize: 'clamp(26px,4.5vw,42px)', lineHeight: 1.3, marginBottom: 16 }}>
           Vos données valent 194&nbsp;€ par an.<br />Vous n&apos;en voyez pas un centime.
         </div>
         <div style={{ fontSize: 16, color: M.t2, maxWidth: 640, margin: '0 auto 28px', lineHeight: 1.7, fontFamily: BD }}>

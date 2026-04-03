@@ -6,7 +6,7 @@ export const M = {
   bgCard: '#09090b',
   bgPanel: '#0f0f11',
   border: '#1a1a2e',
-  gold: '#d4a574',
+  gold: '#E8E4DE',
   purple: '#a78bfa',
   green: '#22c55e',
   cyan: '#06b6d4',

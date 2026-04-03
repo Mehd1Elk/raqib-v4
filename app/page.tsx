@@ -301,6 +301,18 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card MYNε — Sovereign purple accent */}
+          <a href="/myne" style={{ background: '#0F0A14', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(123,94,167,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#7B5EA7', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>BRIQUE</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>MYNε — Data Sovereignty</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,224,240,0.55)', marginBottom: 10 }}>
+              Marketplace de données souveraines — 9 modules · Manifeste · ÆLYA · Pricing
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#7B5EA7', letterSpacing: 3, textTransform: 'uppercase' }}>
+              SOVEREIGN DATA MARKETPLACE
+            </div>
+          </a>
+
         </div>
       </div>
 
