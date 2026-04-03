@@ -37,7 +37,7 @@ export function DashboardHeader({ title, subtitle, entityColor, children }: Prop
         {children}
         <Link
           href="/acquisition"
-          className="text-[8px] font-[family-name:var(--font-jetbrains)] text-noir no-underline border border-noir rounded-none px-2 py-0.5 hover:bg-noir hover:text-ivory transition-colors"
+          className="text-[8px] font-[family-name:var(--font-jetbrains)] text-gold hover:bg-gold hover:text-white no-underline border border-gold rounded px-2 py-0.5 transition-colors"
         >
           ACQUISITION
         </Link>

@@ -43,7 +43,8 @@ export function GlobalNav() {
           <a href="/dashboards/london" className="block px-3 py-1.5 hover:bg-[rgba(30,10,32,0.04)] font-[family-name:var(--font-noto)] text-[11px] text-walnut pl-6">London (ATS mai)</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">INTELLIGENCE</div>
-          <a href="/corridor" className="block px-3 py-2 hover:bg-[rgba(30,10,32,0.04)] font-[family-name:var(--font-cormorant)] text-[13px]  font-bold" style={{ color: '#1E0A20' }}>Corridor Intelligence — 49 pays</a>
+          <a href="/corridor" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#C9A96E' }}>Corridor Intelligence — 49 pays</a>
+          <a href="/acquisition" className="block px-3 py-2 hover:bg-[rgba(184,150,62,0.08)] font-[family-name:var(--font-cormorant)] text-[13px] italic font-bold" style={{ color: '#C9A96E' }}>Intelligence d&apos;Acquisition</a>
 
           <div className="border-t border-div mt-2 pt-2 px-3 font-[family-name:var(--font-jetbrains)] text-[8px] text-t3 tracking-[2px]">OUTILS</div>
           <a href="/data" className="block px-3 py-1.5 hover:bg-[rgba(30,10,32,0.04)] font-[family-name:var(--font-cormorant)] text-[13px]  font-bold text-noir">Data Viewer &mdash; 1100 couches</a>
