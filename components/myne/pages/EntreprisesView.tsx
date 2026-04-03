@@ -3,13 +3,13 @@
 import { useState } from 'react';
 import { M, HD, BD, MN } from '../shared/constants';
 import MYNECard from '../shared/MYNECard';
-import { VERTICAL_USE_CASES, MARKETPLACE_DATASETS_SAMPLE, MARKETPLACE_STATS, RECENT_TRANSACTIONS, EXCHANGES, CHINA_COMPARISON, CHINA_LESSONS } from '../shared/data';
+import { VERTICAL_USE_CASES, MARKETPLACE_DATASETS_SAMPLE, MARKETPLACE_STATS, RECENT_TRANSACTIONS, EXCHANGES, CHINA_COMPARISON, CHINA_LESSONS, PRICING_ENGINES } from '../shared/data';
 
 function Badge({ label, color }: { label: string; color: string }) {
   return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
-const TABS = ['Marketplace','Verticales','Chine','SDK'];
+const TABS = ['Marketplace','Pricing Engines','Verticales','Chine','SDK'];
 
 function SubMarketplace() {
   return (
@@ -35,6 +35,37 @@ function SubMarketplace() {
           <Badge label={t.tLevel} color={M.purple} />
         </div>
       ))}
+    </div>
+  );
+}
+
+function SubPricingEngines() {
+  return (
+    <div>
+      <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>Pricing Engines — 4 moteurs. Un seul prix juste.</h2>
+      <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>MYNε calcule le prix de chaque dataset via quatre moteurs spécialisés. Chaque moteur applique ses propres multiplicateurs selon la nature de la donnée.</p>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))', gap:16 }}>
+        {PRICING_ENGINES.map(e => (
+          <MYNECard key={e.id} hover style={{ borderTop:`3px solid ${e.color}` }}>
+            <div style={{ fontWeight:600, fontSize:15, color:e.color, marginBottom:6 }}>{e.label}</div>
+            <p style={{ fontSize:13, color:M.t2, lineHeight:1.6, marginBottom:12 }}>{e.desc}</p>
+            <div style={{ marginBottom:12 }}>
+              {e.params.map(p => (
+                <div key={p.k} style={{ display:'flex', justifyContent:'space-between', padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>
+                  <span style={{ fontFamily:MN, fontSize:11, color:M.t3 }}>{p.k}</span>
+                  <span style={{ fontFamily:MN, fontSize:11, color:e.color, fontWeight:700 }}>{p.v}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginBottom:8 }}>
+              {e.multipliers.map((m, i) => <div key={i} style={{ fontSize:11, color:M.t2, padding:'2px 0' }}>× {m}</div>)}
+            </div>
+            <div style={{ fontFamily:MN, fontSize:10, color:M.t3, marginTop:8, padding:'6px 8px', background:`${e.color}10`, borderRadius:4 }}>
+              {e.formula}
+            </div>
+          </MYNECard>
+        ))}
+      </div>
     </div>
   );
 }
@@ -122,7 +153,7 @@ function App() {
 
 export default function EntreprisesView() {
   const [tab, setTab] = useState(0);
-  const subs = [SubMarketplace, SubVerticales, SubChine, SubSDK];
+  const subs = [SubMarketplace, SubPricingEngines, SubVerticales, SubChine, SubSDK];
   const Sub = subs[tab];
   return (
     <div style={{ padding:'32px 32px 60px', maxWidth:1100, margin:'0 auto' }}>

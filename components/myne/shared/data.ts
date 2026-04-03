@@ -389,3 +389,45 @@ export const BUYER_TYPES = [
   {id:'entreprise',label:'Entreprise',mult:1.0},
   {id:'academique',label:'Académique',mult:0.7},
 ];
+
+export const PRICING_ENGINES = [
+  {
+    id:'personal', label:'Personal Data Engine', color:'#E8E4DE',
+    desc:'Prix par profil selon T-Level, epsilon de privacy et volume.',
+    params:[
+      {k:'T0',v:'0.002 €/profil'},{k:'T1',v:'0.005 €/profil'},{k:'T2',v:'0.012 €/profil'},
+      {k:'T3',v:'0.025 €/profil'},{k:'T4',v:'0.045 €/profil'},{k:'T5',v:'0.100 €/profil'},
+    ],
+    multipliers:['Epsilon ε∈[1,3] → ×0.7–1.4','Volume >10K → –15%','Volume >100K → –25%'],
+    formula:'base × epsilon_mult × volume_discount',
+  },
+  {
+    id:'research', label:'Research Engine', color:'#06b6d4',
+    desc:'Pricing pour données de recherche académique et pharmaceutique.',
+    params:[
+      {k:'R0',v:'0.000 €/profil'},{k:'R1',v:'0.003 €/profil'},{k:'R2',v:'0.015 €/profil'},
+      {k:'R3',v:'0.040 €/profil'},{k:'R4',v:'0.080 €/profil'},{k:'R5',v:'0.150 €/profil'},
+    ],
+    multipliers:['Bonding curve: ×ln(n/100)','Temporal decay: ×e^(−age/12)','Longitudinal bonus: +30% si >24 mois'],
+    formula:'base × bonding_curve(n) × temporal_decay(ageMonths)',
+  },
+  {
+    id:'creative', label:'Creative Engine', color:'#f43f5e',
+    desc:'Données créatives, comportements média et consommation culturelle.',
+    params:[
+      {k:'Indie',v:'×0.3'},{k:'SMB',v:'×1.0'},{k:'Enterprise',v:'×3.5'},{k:'Mega',v:'×8.0'},
+    ],
+    multipliers:['Shapley value proxy activé','Exclusivité → ×2.5','Co-création → +20%'],
+    formula:'base × tier_mult × exclusivity_mult',
+  },
+  {
+    id:'media', label:'Media Engine', color:'#a78bfa',
+    desc:"Impressions qualifiées et signaux d'intention en temps réel.",
+    params:[
+      {k:'CPM base',v:'2.50 €'},{k:'Intention vérifiée',v:'×4.0'},{k:'Comportemental',v:'×2.0'},
+      {k:'Démographique',v:'×1.0'},{k:'Contextuel',v:'×0.8'},
+    ],
+    multipliers:['Live (0–1h) → ×2.0','Jour → ×1.5','Semaine → ×1.0','Mois → ×0.6','Ancien → ×0.3'],
+    formula:'(impressions/1000) × cpm × quality_mult × freshness_mult',
+  },
+];
