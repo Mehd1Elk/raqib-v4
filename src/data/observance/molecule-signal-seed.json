@@ -1,0 +1,565 @@
+{
+  "metadata": {
+    "project": "KHADIJA - Base de données clinique d'observance psychiatrique",
+    "version": "1.0",
+    "date": "2026-04-03",
+    "structure": "12 molécules × 6 signaux = 72 cellules",
+    "molecules": [
+      "lithium",
+      "valproate",
+      "clozapine",
+      "risperidone",
+      "sertraline",
+      "fluoxetine",
+      "aripiprazole",
+      "quetiapine",
+      "olanzapine",
+      "methylphenidate",
+      "atomoxetine",
+      "lamotrigine"
+    ],
+    "signals": [
+      "signal_1_ema_longitudinal",
+      "signal_2_prescription_renewal",
+      "signal_3_circadian_activity",
+      "signal_4_ema_entropy",
+      "signal_5_linguistic_proof_ingestion",
+      "signal_6_environmental_raqib"
+    ],
+    "field_definitions": {
+      "applicable": "oui | partiel | non",
+      "discriminant_strength": "haute (Se>80%, Sp>80%) | moyenne (Se>60%) | faible",
+      "detection_latency": "immediate | 48h | 1_semaine | 1_mois",
+      "reference": "1er auteur, journal, année",
+      "details": "description clinique"
+    }
+  },
+  "lithium": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Leucht S et al., Int J Methods Psychiatr Res, 2013",
+      "details": "YMRS principal (seuil MCSD=6.6 points, sévérité ≥25 PPV=83%). PHQ-9 pour pôle dépressif (seuil ≥10, Se=88%, Sp=88%). >50% rechute dans 10 semaines post-arrêt lithium. Modèle bayésien hiérarchique Pr(YMRS≥13) validé en EMA quotidien (Nature 2020). Cohorte EMBLEM N=3459."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_mois",
+      "reference": "Gitlin MJ et al., Int J Bipolar Disord, 2016",
+      "details": "Boîte 28j standard (France/UK). Monitoring sanguin OBLIGATOIRE : lithémie tous les 3-6 mois (maintenance). Double signal : gap ordonnance + absence bilan sanguin. Seuil gap >3j sur 28j (>10% CMG). >70% arrêts sont psychiatriques, pas iatrogènes. ~1/3 patients sous-thérapeutiques (Carli M, Pharmaceuticals 2022)."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Carr O et al., BJPsych, 2021; Gonzalez R et al., Neurosci Lett, 2022",
+      "details": "Triple signal accéléromètre : (1) Tremblements fins 8-12Hz (25% patients, FFT tri-axial poignet, distinguable du Parkinson 4-6Hz). (2) Nycturie (diabète insipide néphrogénique 40%, bursts nocturnes actigraphiques). (3) Stabilisation circadienne : PCA 5 marqueurs actigraphiques classifie 64% répondeurs. Avance de phase d'activité diurne précède amélioration thymique."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Lawrance EL et al., PNAS, 2022",
+      "details": "Signature computationnelle UNIQUE validée (OxLith RCT, n=51, 4 semaines) : lithium augmente la VOLATILITÉ affective positive (pas le bruit), empêchant le blocage dans les états extrêmes. Filtre bayésien espace-états distingue volatilité vs bruit. SampEn actigraphique augmenté en manie (p=0.025, PLoS ONE 2022). Euthymie sous lithium = SampEn réduit et patterns prédictibles."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Gitlin MJ, Int J Bipolar Disord, 2016; Ijuin M, BMJ Case Rep, 2011",
+      "details": "Triade PATHOGNOMONIQUE : (1) Tremblements fins (25%), 'mains qui tremblent'. (2) Polyurie/polydipsie (jusqu'à 70%), 'soif constante', 'urine la nuit'. (3) Goût métallique (BMJ Case Reports 2011), 'goût bizarre'. Combinaison hautement spécifique, aucun autre thymorégulateur ne produit les 3. ABSENCE de ces plaintes chez patient les ayant rapportées = proxy non-observance."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Finley PR, Aust Prescr, 2020; Alqarni A et al., Int J Bipolar Disord, 2025",
+      "details": "CHALEUR/DÉSHYDRATATION (critique) : DIN 40%, sudation → perte Na → réabsorption Li → toxicité (seuil >1.5 mEq/L). AINS : réduisent PG rénales, augmentent Li en jours. IEC/ARA : toxicité 20% patients en 3-5 semaines. SODIUM alimentaire : apport réduit → Li augmente. RAMADAN : étude prospective N=250 (Arabie Saoudite, 30-36°C) pas de changement significatif si hydratation adéquate (Alqarni 2025)."
+    }
+  },
+  "valproate": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Leucht S et al., Int J Methods Psychiatr Res, 2013; Lim B et al., Cochrane, 2019",
+      "details": "YMRS principal, mêmes seuils que lithium (MCSD=6.6, sévérité ≥25). CGI-S secondaire, ≥3 pendant ≥2 semaines. Supérieur au lithium dans états mixtes/dysphorie. Taux réponse comparable lithium (56% vs 62%, Cochrane 2019). Valproatémie optimale 75-99 µg/mL maintenance. Sous-thérapeutique chez ~1/3 patients."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "NICE Guideline; Carli M et al., Pharmaceuticals, 2022",
+      "details": "Boîte 28j (France). PAS de monitoring sanguin obligatoire en routine (NICE : 'ne pas mesurer les niveaux de routine sauf inefficacité ou suspicion de mauvaise observance'). Gap ordonnance = signal principal. Demi-vie 8-17h → niveaux sous-thérapeutiques en 3-5j de doses manquées. Seuil >3-5j sur 28j. Non-observance féminine élevée (alopécie, tératogénicité)."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "partiel",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "48h",
+      "reference": "Lim B et al., Cochrane, 2019",
+      "details": "Sédation principale (somnolence 19.7%, OR 1.76 vs placebo). Hypoactivité diurne sur actigraphie. Tremblements plus grossiers que lithium (3-6Hz, chevauchement avec tremblement essentiel). Prise de poids significative (+4.3kg à 6 mois vs +0.6kg lithium, 57% >4kg). Pas d'effet stabilisation circadienne spécifique validé par actigraphie."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "partiel",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Slettenaar A et al., PLoS ONE, 2022",
+      "details": "Réduit l'entropie des épisodes maniaques (SampEn activité motrice augmenté en manie vs euthymie). Efficacité limitée sur épisodes dépressifs → réduction entropie partielle. PAS de signature computationnelle EMA spécifique publiée comme pour le lithium. Détection d'augmentation entropie post-arrêt reflète surtout émergence maniaque."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Bagheri H et al., J Clin Diagn Res, 2017",
+      "details": "Profil distinctif : (1) ALOPÉCIE 12-28% (effluvium télogène, onset ~93j, dose-dépendant : 28% si Cp 85-150 µg/mL vs 4% bas niveaux). 'Cheveux tombent'. (2) Prise de poids (57-70% >4kg). 'Grossir'. (3) Tremblements (grossiers, dose-dépendants). (4) Troubles GI. Combinaison alopécie + prise de poids spécifique au valproate dans la classe thymorégulateurs."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Hernandez-Diaz S et al., JAMA Netw Open, 2024; UKTIS, 2022",
+      "details": "GROSSESSE/TÉRATOGÉNICITÉ (critique) : risque malformation absolue jusqu'à 11% au T1 (spina bifida, cardiaque), autisme 3× risque de base, QI réduit dose-dépendant. Programme PREVENT (EU). Seulement 22.3% des femmes sous VPA utilisent contraception (JAMA 2024, N=165,772). Exposition PATERNELLE : risque neurodéveloppemental (TGA 2025). HÉPATOTOXICITÉ : fatale chez <2 ans, polythérapie."
+    }
+  },
+  "clozapine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Schizophr Bull Open, 2025",
+      "details": "PANSS principal. Utilisé exclusivement dans schizophrénie résistante (TRS) = baseline PANSS élevée (~90-100). Seuil rechute : augmentation PANSS ≥12 points absolus (Se 82.1%, Sp 86.9%). 76.9% TRS atteignent ≥20% réduction PANSS en année 1. Taux abandon 3-6% (traitement de dernier recours). Non-observance = 5× risque rechute. Taux plasmatique cible ≥350 ng/mL."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "EMA, 2025 (DHPC révisé)",
+      "details": "Architecture de monitoring UNIQUE. NFS (PNN) : hebdomadaire × 18 semaines, puis mensuel, puis trimestriel. REMS FDA éliminé février 2025 mais monitoring clinique maintenu. PNN <500/mm³ = arrêt immédiat. Disponible uniquement via pharmacies/prescripteurs certifiés. Boîte 30j. Gap monitoring sanguin OU ordonnance = signal quasi-certain. Spécificité très supérieure aux autres antipsychotiques."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Hinze-Selch D et al., Neuropsychopharmacology, 2005",
+      "details": "Sédation PROFONDE multi-dimensionnelle. Anti-H1 + anticholinergique → hypersomnie diurne marquée, MESOR activité réduit, bouts d'immobilité prolongés. PSG : augmente sommeil NREM, augmente latence REM, réduit épisodes REM. Syndrome métabolique secondaire (prise poids + hyperglycémie) réduit activité indépendamment. Arrêt brutal → insomnie de sevrage + agitation dans 48-72h = burst d'activité détectable."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Chiappelli J et al., Schizophr Res, 2024",
+      "details": "Plus grand delta d'entropie de tous les antipsychotiques : baseline TRS = entropie très élevée → clozapine produit la plus grande réduction d'entropie EMA. Patients TRS se clusterisent en haut-symptômes (haute variance EMA) vs bas-symptômes (patterns sains). Taux complétion EMA psychose ~67%. Toute hausse variance symptômes sur ≥3 jours consécutifs = investigation observance. Routines sociales stables et faible entropie = forte proxy observance."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Maher S et al., Expert Opin Drug Saf, 2016",
+      "details": "HYPERSALIVATION (sialorrhée) = signal QUASI-PATHOGNOMONIQUE. Prévalence 80-92% (nocturne 85%, diurne 48%). Mécanisme : agonisme M4 paradoxal aux glandes sous-mandibulaires. 'Trop de salive', 'oreiller mouillé', 'je bave'. Signaux secondaires : constipation (30-50%), sédation (>90% EOS), énurésie (>50% pédiatrique), tachycardie. ABSENCE de sialorrhée chez patient l'ayant rapportée = doses manquées."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Haslemo T et al., Br J Clin Pharmacol, 2023",
+      "details": "TABAC/CYP1A2 (critique) : HAP du tabac induisent CYP1A2. Fumeurs nécessitent ~50% dose supérieure. Dès 5 cigarettes/j = induction maximale. ARRÊT TABAC : demi-vie CYP1A2 ~38.6h, nouveau steady-state en ~1 semaine. Niveaux clozapine augmentent 29-50%+ (un cas : 350→1328 ng/mL). Protocole : réduction 10%/j × 4j. HOSPITALISATION/INFECTION : cytokines inflammatoires inhibent CYP1A2 (jusqu'à 90%). RAMADAN : consolidation dose post-Iftar recommandée."
+    }
+  },
+  "risperidone": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Leucht S et al., JAMA Psychiatry (dose-response meta-analysis)",
+      "details": "PANSS principal. Seuil rechute : ≥12 points augmentation absolue (Se 82.1%, Sp 86.9%). À 5mg/j : 57% réduction relative risque rechute, 52% réduction rehospitalisation. PANSS moyen ~78-87 en semaine 3. Non-observance orale = raison #1 passage à RLAI (92.4% des switches). PDC <80% = non-observant."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Marcus SC et al., JMCP, 2023",
+      "details": "Boîte 30j orale. Formes LAI : Risperdal Consta (IM/2 semaines), Perseris (SC mensuel), Uzedy (mensuel ou bimestriel). Pas de monitoring sanguin. 6 trajectoires observance : 33% persistants, 25% arrêt immédiat (<1 mois), 15% arrêt graduel (<3 mois). Gaps <2 semaines augmentent significativement rechute/hospitalisation."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Janney CA et al., J Psychiatr Res, 2012",
+      "details": "Profil intermédiaire sédation-activation. Blocage D2/5-HT2A, faible anti-H1 vs clozapine/quétiapine → sédation modérée. Actigraphie (n=73) : activité physique significativement réduite vs contrôles sains. Risque SEP aux doses élevées (≥6mg) : bradykinésie, rigidité → réduction activité. Akathisie 13% → augmente mouvements nocturnes. Profil mixte complexe."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Stamatakis EA et al., Front Psychiatry, 2023",
+      "details": "Réduit variabilité EMA symptômes positifs. Phenotypage digital : SD de HRV au repos prédit PANSS négatif. ML non-supervisé sépare patients haut-symptômes (haute variance) vs sains. Patients observants sous rispéridone dans cluster bas-symptômes. Non-observance produit augmentation entropie EMA avec 5-7j latence avant rechute franche."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Kinon BJ et al., Psychoneuroendocrinology, 2003",
+      "details": "HYPERPROLACTINÉMIE = signal cardinal. Prévalence 88% femmes (vs 47.6% antipsychotiques conventionnels). Manifestations : GALACTORRHÉE (sécrétion lactée spontanée), aménorrhée/irrégularités menstruelles, gynécomastie (hommes), dysfonction sexuelle. Prolactine normalisée à 17.2 ng/mL en 1 semaine post-arrêt (vs 171.6 ng/mL sous traitement). 'Lait des seins', 'règles absentes'. SEP secondaires : akathisie 13%, rigidité 17.4%."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Semantic Scholar, CYP2D6 risperidone interactions",
+      "details": "CYP2D6 principal (métabolisme → palipéridone) + CYP3A4 mineur. Métaboliseurs lents CYP2D6 (5-10% Caucasiens) : niveaux plasmatiques élevés. Inhibiteurs CYP2D6 (fluoxétine, paroxétine) augmentent exposition. PAS d'interaction tabac significative (contrairement clozapine). RAMADAN : dose unique vespérale recommandée. Thermorégulation altérée via D2/5-HT2 → risque hyperthermie chaleur. Saisonnalité rechutes schizophrénie (printemps)."
+    }
+  },
+  "sertraline": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Gen Hosp Psychiatry, 2015; NPJ Ment Health Res, 2024",
+      "details": "PHQ-9 principal (seuil ≥10 après rémission, Se/Sp 88%). PHQ-9 ≥17 à S4 : Sp 95% pour non-rémission. Augmentation ≥5 points = alerte précoce. GAD-7 parallèle (synchronie 72.55% avec PHQ-9). Demi-vie courte (22-36h) → dropout pharmacodynamique en 3-7j → signal PHQ-9 rapide 2-4 semaines post-arrêt."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Pharmacoepidemiol Drug Saf, 2010 (n=4545)",
+      "details": "Boîte 30 comprimés standard. Prescription mensuelle. Gap ≥14j prédit arrêt : Se 87%, Sp 82%, VPP 93%. Gaps 8-19j hautement prédictifs sans dépasser 20% faux positifs. Alerte à J14, escalade à J21. Demi-vie courte rend même gaps brefs (3-5j) symptomatiquement conséquents."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Wilson S et al., Curr Psychiatry Rep, 2017",
+      "details": "Suppression REM, augmente latence REM, augmente éveils nocturnes, réduit SWS. Insomnie initiale 2-4 semaines (~17% vs 9% placebo). Tolérance se développe aux effets sommeil. Accéléromètre : (1) transitions repos-activité nocturnes augmentées, (2) retard endormissement, (3) inactivité diurne initiale. Arrêt : rebond REM 3-7j (bursts activité fenêtre sommeil)."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Deutsches Ärzteblatt Int, 2019",
+      "details": "Syndrome d'arrêt (ADS) chez ~56% des arrêts ISRS. Sertraline : onset 1-3j (parfois 12-24h), pic semaines 2-6. Symptômes ADS (brain zaps, labilité humeur, irritabilité, anxiété) augmentent directement variance EMA intra-individuelle. Spike soudain de variabilité réponses consécutives = signal forte. Mention spontanée ADS ('électricité dans la tête', vertige, nausée) = preuve de discontinuation. Complétion EMA 84-95% faisable (Chirokoff 2025)."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "GoodRx, 2024; NHS, 2025",
+      "details": "Empreinte distinctive : (1) NAUSÉES ~25% (effet le plus fréquent, résout en 4 sem). (2) DIARRHÉE 14-20% = ISRS le plus diarrhéique. (3) Dysfonction sexuelle 40-65% (persistante). (4) Insomnie. 'Mal au ventre', 'diarrhée', 'problèmes de sexe'. Combinaison nausées + diarrhée en premières 4 semaines = fingerprint hautement discriminant sertraline vs autres ISRS."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Dialogues Clin Neurosci, SAD; PMC, 2007 (FDA alerte ISRS+triptans)",
+      "details": "ISRS × PHOTOTHÉRAPIE : validé pour dépression saisonnière (SAD), combinaison additive. ISRS × ALCOOL : sédation amplifiée, dépression aggravée, tolérance réduite. Syndrome SÉROTONINERGIQUE : triptans + ISRS (alerte FDA 2006), tramadol + ISRS (onset médian 1j). Millepertuis = risque. Saisonnalité prescriptions sertraline (initiation automnale) = signal contextuel."
+    }
+  },
+  "fluoxetine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Psychol Assessment, 2024 (invariance longitudinale PHQ-9)",
+      "details": "PHQ-9 applicable mais signal retardé. Demi-vie 96-144h (parent) + norfluoxétine 4-16j → clairance complète 5-6 semaines. Même seuil PHQ-9 ≥10 mais ne pas attendre signal avant semaines 4-8. GAD-7 utile pour comorbidité anxieuse. Invariance mesure PHQ-9 confirmée sur 24 semaines."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "FDA Label fluoxétine; Pharmacoepidemiol Drug Saf, 2010",
+      "details": "Boîte 30 gélules/comprimés (20mg standard). Formulation hebdomadaire 90mg disponible. Seuil gap ≥14j applicable mais pharmacologiquement tamponné. Seuil d'alerte plus pertinent : J21-30 pour fluoxétine. Gap d'1 semaine = conséquence clinique minimale. Algorithme de gap adapté nécessaire pour formulation hebdomadaire."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "PMC, 2016 (Neurotoxicol Teratol, primates); JCSM, 2021",
+      "details": "Suppression REM moins prononcée initialement mais fragmentation sommeil PERSISTE tout au long du traitement (contrairement autres ISRS où tolérance se développe). Insomnie 19% (vs 10% placebo) = plus élevé que classe ISRS. Rêves vivides/bizarres. Rebond REM 4-12j post-arrêt (retardé vs sertraline 3-7j). Actigraphie : absence de SOREMs = biomarqueur digital différenciant."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "faible",
+      "detection_latency": "1_mois",
+      "reference": "Deutsches Ärzteblatt Int, 2019",
+      "details": "Auto-tapering par demi-vie longue → syndrome d'arrêt MINIMAL. 'Particulièrement non-problématique même en cas d'arrêt brutal'. ADS ~20% vs ~10% continuateurs = plus bas des ISRS. Entropie EMA ne peut PAS être utilisée comme détecteur temps-réel d'arrêt. Utilité longitudinale : détérioration progressive variance scores humeur sur semaines signale rechute plutôt qu'arrêt aigu."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Poison Control, 2025; Medical News Today",
+      "details": "Empreinte distincte de sertraline : (1) Suppression appétit 10% (vs 3% placebo). 'Pas faim'. (2) Insomnie 19%. (3) Dysfonction sexuelle ~70% (la plus élevée des ISRS). (4) Rêves étranges/vivides (suppression REM persistante). Triade 'rêves bizarres + perte appétit + insomnie' = fingerprint haute spécificité fluoxétine. Diarrhée MOINS spécifique vs sertraline."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Can-SAD trial; TI-UBC, 2025",
+      "details": "SAD : équivalence fluoxétine 20mg vs photothérapie 10000 lux (~60% réponse chacun, Can-SAD). Demi-vie longue = pont pharmacologique transitions saisonnières. ALCOOL : 6 RCTs documentent augmentation paradoxale consommation alcool chez patients TUA sous ISRS. CYP2D6 : fluoxétine = inhibiteur PUISSANT → élève tramadol + triptans. Inhibition CYP2D6 PERSISTE 2 semaines post-arrêt fluoxétine (fenêtre interaction prolongée)."
+    }
+  },
+  "aripiprazole": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "PANSS dose-response meta-analysis; Abilify Mycite FDA",
+      "details": "PANSS principal. Seuil ≥12 points augmentation absolue ou ≥20% relatif. Agoniste partiel D2 = profil rechute différent vs antagonistes pleins. ABILIFY MYCITE = SEUL médicament FDA-approuvé avec détection ingestion digitale : capteur IEM confirme prise via patch → smartphone. Détection en 30min-2h. Réduit hospitalisations psychiatriques vs standard-of-care."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Abilify Mycite RWE, 2023",
+      "details": "Formes orales (2-30mg), solution, ODT, IM court, LAI (Abilify Maintena 300/400mg mensuel, Aristada 441-882mg/4-8 semaines). Boîte 30j orale. Pas monitoring sanguin. Abilify Mycite crée horodatage digital chaque ingestion (30min-2h). PDC ≥80% = observant. 25% arrêt immédiat (<1 mois)."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Bellivier F et al., Psychiatry Res, 2024 (actimétrie n=153)",
+      "details": "Profil ACTIVATEUR unique = opposé des antipsychotiques sédatifs. Agonisme partiel D2 + faible anti-H1 + agonisme partiel 5-HT1A. Actimétrie (21j, bipolaires euthymiques) : rythme circadien MOINS ROBUSTE (p=0.016) mais pic activité PLUS PRÉCOCE (p=0.020) = avance de phase. AKATHISIE 8-18% : agitation motrice nocturne (incapacité rester immobile), fragmentation sommeil détectable. ARRÊT = déactivation circadienne relative (sommeil augmenté, activité matinale réduite) en 48-72h."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Torous J et al., Schizophr Bull, 2021",
+      "details": "Réduit symptômes positifs → entropie EMA réduite. Mais profil activateur crée entropie activité légèrement plus élevée que antipsychotiques sédatifs même quand observant (akathisie + moins de sédation). Abilify Mycite : patch fournit données passives (activité, physiologie) couplées aux timestamps ingestion → analyse entropie intra-patient unique corrélée à ingestion connue. Baisse variabilité activité paradoxale à l'arrêt = flag non-observance."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "WebMD; Curr Neuropharmacol, 2015 (meta-analyse akathisie)",
+      "details": "AKATHISIE = signal cardinal. ~8% adultes schizophrénie, ~18% bipolaire, RR 2.01 vs anciens SGA. 'Agitation intérieure', 'incapable de rester assis', 'besoin de marcher', 'jambes ne s'arrêtent pas'. Dose-dépendant. INSOMNIE (profil activateur). NAUSÉES/GI (initiation). ABSENCE notable : PAS d'hypersalivation (≠clozapine), PAS de prise poids significative (≠olanzapine), PAS de galactorrhée (≠rispéridone). Patch Mycite : irritation cutanée 9-18% = signal paradoxal confirmation ingestion."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Bellivier F et al., Psychiatry Res, 2024",
+      "details": "CYP2D6 + CYP3A4 substrat. Métaboliseurs lents CYP2D6 : AUC élevée. Inducteurs CYP3A4 (carbamazépine) réduisent niveaux. Inhibiteurs CYP3A4 (kétoconazole) augmentent. PAMPLEMOUSSE : peut augmenter biodisponibilité (effet modéré). PAS d'interaction tabac significative (≠clozapine). RAMADAN : profil activateur → prise vespérale (post-Iftar) préférée pour minimiser activation diurne. CHALEUR : thermorégulation altérée (dopamine-médiée). PHOTOPÉRIODE : avance de phase circadienne confirmée par actimétrie → changements photopériode saisonniers peuvent modifier timing efficacité."
+    }
+  },
+  "quetiapine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Lancet Psychiatry, 2024 (dose-response)",
+      "details": "PANSS principal. Indiqué schizophrénie (150-750mg), bipolaire (manie + dépression), adjuvant TDM. Large gamme doses : bas doses (25-200mg) off-label insomnie/anxiété (anti-H1 dominant), hautes doses (400-800mg) effet antipsychotique. Seuil PANSS ≥12 points (Se 82.1%, Sp 86.9%). MADRS pour dépression bipolaire. Non-observance → aggravation PANSS jours-semaines."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Marcus SC et al., JMCP, 2023",
+      "details": "IR (25-400mg) et XR (50-400mg). PAS de monitoring sanguin. PAS de forme LAI (contrairement rispéridone, aripiprazole, olanzapine). Boîte 30j. Usage off-label massif bas doses (insomnie, anxiété) crée défi unique : patient peut maintenir ordonnance pour sommeil tout en arrêtant dose antipsychotique → PDC apparemment haute mais dose clinique sous-thérapeutique. Ordonnance seule insuffisante sans vérification dose."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Bellivier F et al., Psychiatry Res, 2024",
+      "details": "Profil circadien LE PLUS SÉDATIF des SGA courants. Affinité H1 très élevée → sédation dose-indépendante + blocage α1 → hypotension orthostatique. Actimétrie : meilleure qualité sommeil (bénéfique bipolaire). Somnolence 18% schizophrénie, 57% dépression bipolaire. MESOR activité MARQUÉMENT réduit. ARRÊT : retour rapide insomnie + hyperéveil en 24-48h (rebond sevrage) = spike aigu activité motrice nocturne. Corrélation dose-activité : bas dose = signal principalement sédatif, dose antipsychotique = effets métaboliques/CV additionnels."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Chiappelli J et al., Schizophr Res, 2024",
+      "details": "Réduit symptômes positifs et thymiques → entropie EMA réduite. Effet sédatif crée profil EMA basse-variance caractéristique : patients rapportent sédation/fatigue consistante, activité réduite, réactivité émotionnelle diminuée → basse entropie même chez patients partiellement symptomatiques. Effet de suppression d'artefact (émoussement cognitif masque variabilité symptômes). GPS mobilité réduite, accélérométrie basse. Toute augmentation soudaine entropie = réduction dose ou arrêt probable."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "MedicineNet; prescribing information quétiapine",
+      "details": "BOUCHE SÈCHE = signal cardinal. 9% schizophrénie, 44% dépression bipolaire (dose-dépendant). Blocage muscarinique réduit sécrétion salivaire = mécanisme EXACT OPPOSÉ hypersalivation clozapine. 'Bouche sèche', 'coton dans la bouche'. SÉDATION/SOMNOLENCE : 18-57%. VERTIGES ORTHOSTATIQUES : ~7%. Triade bouche sèche + sédation + vertiges orthostatiques = discriminante quétiapine. CONSTIPATION 8-10%. Signal sédation particulièrement fiable à bas doses (insomnie)."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Bailey DG et al., CMAJ, 2013 (interactions pamplemousse)",
+      "details": "PAMPLEMOUSSE/CYP3A4 (documenté) : substrat CYP3A4. Furanocoumarines du pamplemousse inhibent irréversiblement CYP3A4 intestinal. 1 verre (200mL) = augmentation cliniquement significative biodisponibilité quétiapine → sédation accrue, hypotension, risque QTc. Récupération 2-3j après dernière consommation. RAMADAN : propriétés sédatives à bas doses bénéfiques pour insomnie perturbée du Ramadan, mais timing haute dose nécessite ajustement. TABAC : métabolisme CYP3A4/CYP2D6 principal, CYP1A2 minimal → arrêt tabac NE produit PAS augmentation dangereuse (≠clozapine). CHALEUR : effets anticholinergiques altèrent sudation → risque hyperthermie."
+    }
+  },
+  "olanzapine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "CATIE study; BMC Psychiatry, 2018",
+      "details": "PANSS principal. Seuil ≥12 points augmentation absolue (Se 82.1%, Sp 86.9%). 25% réduction PANSS = 'amélioration minimale' CGI. CATIE : olanzapine supérieure discontinuation toutes causes et PANSS vs rispéridone. PANSS total semaine 8 = 68.94 (SD 24.43). Non-observance → aggravation PANSS jours à 2 semaines. JAMA Netw Open : olanzapine LAI (Zyprexa Relprevv) supérieure prévention rechute."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Marcus SC et al., JMCP, 2023",
+      "details": "Formes orales (2.5-20mg), ODT (Zydis = dissolution immédiate langue, anti-cheeking), IM court, LAI (Zyprexa Relprevv 150-405mg/2-4 semaines, observation 3h post-injection obligatoire pour PDSS). Pas monitoring sanguin obligatoire. Boîte 30j orale. Wafers Zydis utilisés pour monitoring ingestion en clinique. Prise poids → barrière observance → certains patients arrêtent pour image corporelle."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Janney CA et al., J Psychiatr Res, 2012; Front Pharmacol, 2020",
+      "details": "Sédation marquée + prise poids = double suppression activité. Anti-H1 fort (sédation), anti-5-HT2C + anti-M3 (prise poids via appétit/satiété), α1 (hypotension). Actigraphie (n=54 vs 36 contrôles) : activité physique significativement réduite, temps sommeil augmenté. Prise poids RAPIDE : moyenne 7.9kg en 12 semaines, 80.6% >7% poids. Activité progressivement réduite par IMC croissant = signal cumulatif. MESOR significativement réduit."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Stamatakis EA et al., Front Psychiatry, 2023; JAMA Netw Open, 2024",
+      "details": "Réduit symptômes positifs → entropie EMA réduite. Sédation crée effet de plancher dans ratings EMA (émoussement cognitif réduit variabilité ratings indépendamment du statut symptomatique). Phenotypage digital : GPS mobilité réduite, temps écran réduit, accélérométrie basse. Olanzapine LAI = plus bas risque rechute patients incidents → profil entropie EMA le plus stable quand observant LAI. Prise poids peut introduire source entropie secondaire (détresse image corporelle)."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "Koskinen J et al., Front Pharmacol, 2020",
+      "details": "PRISE DE POIDS = signal cardinal. Moyenne 7.9kg en 12 semaines, 80.6% >7% poids corporel, 61.3% >10%. Prise précoce et rapide : 2.4kg semaines 1-4, 4.0kg semaines 5-8. APPÉTIT AUGMENTÉ : 77.4%, onset moyen 20.3j, 70.8% dans les 4 premières semaines. 'Toujours faim', 'mange beaucoup plus', 'pris du poids'. Balance connectée = vérification objective directe observance. SÉDATION invariable. Combinaison prise poids rapide + appétit augmenté + sédation = QUASI-PATHOGNOMONIQUE olanzapine aux doses thérapeutiques."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Transl Psychiatry, 2023 (CYP1A2 olanzapine)",
+      "details": "CYP1A2 principal (~75%) + UGT1A4 (comme clozapine). TABAC : fumeurs nécessitent 30-40% dose supérieure. Arrêt tabac augmente niveaux ~20-25% (moins dramatique que clozapine mais cliniquement pertinent). Ajustement dose recommandé. PAMPLEMOUSSE : CYP3A4 mineur, pas d'interaction significative documentée. RAMADAN : dose unique vespérale (Iftar) recommandée. Sédation problématique pendant cycle veille-sommeil altéré du Ramadan. MONITORING MÉTABOLIQUE : syndrome métabolique (poids, glycémie, lipides) nécessite bilans réguliers → visites labo = confirmation observance indirecte."
+    }
+  },
+  "methylphenidate": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Ustun B et al., JAMA Psychiatry, 2017; Weiss M et al., J Clin Med, 2019",
+      "details": "ASRS-5 adultes (Se 91.4%, Sp 96.0%, AUC 0.94). ADHD-RS-IV enfants (rémission ≤18, réponse ≥40-46% réduction, MCID 6 points). Effet AIGU (onset 1h, durée 4-12h selon formulation) → changements détectables le jour même. Arrêt = retour rapide vers baseline. Pattern on/off distinct. EMA hebdomadaire détecte doses manquées en 24-48h. Single-dose challenge prédictif réponse à 2 mois (Parlatini 2025)."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_mois",
+      "reference": "Gabay M, Hosp Pharm, 2013",
+      "details": "DEA Schedule II = PAS de renouvellement, prescription écrite OBLIGATOIRE chaque mois. Maximum 30j par ordonnance. Amendement DEA 2007 : prescriptions multiples le même jour pour 90j max mais remplissage séquentiel. Boîtes 28-30 comprimés. Concerta boîtes 28 (marchés européens). Gap >30j = discontinuation dans études pharmacoépidémiologiques. Drug holidays créent gaps prévisibles (voir signal 6)."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "48h",
+      "reference": "Corkum P et al., JCSM, 2020; Diepen HC et al., Neuropsychopharmacology, 2012",
+      "details": "Retarde endormissement ~30min, réduit TST ~30min (actigraphie/PSG). Allonge période circadienne libre. Normalise (réduit) activité motrice diurne hyperactive. Suppression appétit diurne avec rebond vespéral. Sevrage vespéral (wearing off 4-12h) = rebond symptômes. Jours sous traitement : sommeil réduit, endormissement retardé, activité diurne normalisée. Jours sans : retour activité élevée et sommeil normalisé. 77% TDAH adultes ont DLMO retardé (moyenne 23:43h)."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "immediate",
+      "reference": "Richards JB et al., J Abnorm Child Psychol, 2009; Tomoda A et al., Neuropsychopharmacology, 2023",
+      "details": "Pattern UNIQUE INVERSE vs thymorégulateurs/antipsychotiques. Baseline TDAH = HAUTE variabilité intra-individuelle (IIV) = haute entropie. MPH RÉDUIT IIV : diminue skew et queue des distributions TR, réduit 'lapses'. Modélisation dynamique bayésienne confirme MPH stabilise transitions état cérébral aberrantes. ON medication = BASSE entropie. ARRÊT = retour RAPIDE (heures) vers haute entropie baseline. C'est l'OPPOSÉ des troubles bipolaires/psychotiques où le médicament stabilise depuis une basse entropie."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "immediate",
+      "reference": "Khalili H et al., J Res Pharm Pract, 2014",
+      "details": "Cluster distinctif : (1) Anorexie 74% (enfants). (2) Irritabilité 57%. (3) Insomnie 47%. (4) Bouche sèche 15%. (5) Tachycardie 13-19%. (6) Perte de poids/retard croissance (chronique). 'Pas faim', 'cœur qui bat vite', 'ne dort pas'. ABSENT ou minimal : nausée, symptômes urinaires, dysfonction sexuelle (≠atomoxétine). Retour appétit en jour de 'drug holiday' = signal confirmatoire."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Ibrahim K & Donyai P, ADHD Atten Def Hyp Disord, 2018",
+      "details": "DRUG HOLIDAYS : pratique courante et reconnue cliniquement. Arrêt week-ends et vacances scolaires → signature comportementale/physiologique 2j détectable actigraphie. Année scolaire vs vacances = périodicité saisonnière. Gaps réguliers week-ends ≠ non-observance involontaire. EXAMENS : utilisation accrue en périodes d'examen. RAMADAN : conflit dosage diurne/jeûne = fenêtre 30j haut risque perturbation timing stimulants. Observance plus élevée jours d'école que week-ends/vacances (pédiatrique)."
+    }
+  },
+  "atomoxetine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Turgay A et al., Child Adolesc Psychiatry Ment Health, 2011",
+      "details": "ASRS adultes, ADHD-RS-IV enfants (mêmes seuils que MPH). Mais onset LENT : temps médian amélioration 25% = 3.7 semaines. Rémission complète médiane 14 semaines. Réponse précoce 4-6 semaines = indicateur pronostique fort (OR 2.99-6.19). Aggravation post-arrêt graduelle (jours-semaines, pas heures). Fenêtres EMA ≥4 semaines nécessaires. Évaluations mensuelles (ADHD-RS) plus appropriées que EMA quotidien."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Gabay M, Hosp Pharm, 2013; Allen AJ et al., Psychopharmacology, 2013",
+      "details": "NON classée substance contrôlée (DEA/EU). Prescriptible jusqu'à 90j avec renouvellements. Boîtes 28-30 gélules. Cycle prescription long réduit résolution temporelle monitoring par ordonnance vs MPH. Gap >90j entre renouvellements = signal non-observance (prescription trimestrielle). Étude coréenne : OROS-MPH et atomoxétine montrent moins de discontinuation que MPH-IR. Statut non-contrôlé élimine barrières accès (e-prescription libre, téléphone, infirmier)."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "partiel",
+      "discriminant_strength": "faible",
+      "detection_latency": "1_mois",
+      "reference": "Ishtiak-Ahmed K et al., Eur Psychiatry, 2022",
+      "details": "Profil qualitativement DIFFÉRENT du MPH. Moins de retard endormissement que stimulants. Somnolence initiale possible (opposé insomnie stimulant). Pas de perturbation directe horloge circadienne. Métaboliseurs lents CYP2D6 : risque problèmes sommeil accru (IRR 1.25). Amélioration hyperactivité motrice LENTE (suit onset thérapeutique, semaines). Détection aiguë doses manquées IMPOSSIBLE via actigraphie. Signal faible pour monitoring observance court terme."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Clemow DB & Bushe C, J Psychopharmacol, 2015",
+      "details": "Même direction que MPH : réduit IIV depuis baseline TDAH élevée. Mais effet GRADUEL (semaines) vs aigu MPH. Via inhibition recapture NE dans cortex préfrontal → contrôle top-down cognitif progressivement amélioré. PAS de réduction IIV aiguë heures après dose unique (≠MPH). Arrêt : retour lent vers haute IIV en jours-semaines. Monitoring IIV-basé = approprié pour confirmer traitement/absence sur semaines-mois, PAS pour doses manquées individuelles."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_semaine",
+      "reference": "Psychopharmacology Institute, 2020; Edvinsson D & Ekselius L, J Clin Psychopharmacol, 2018",
+      "details": "Profil DISTINCT du MPH : (1) NAUSÉES (cause principale arrêt précoce, 36% discontinuent pour troubles GI). (2) Appétit réduit (partagé avec MPH mais présent). (3) HÉSITATION URINAIRE / rétention (effets noradrénergiques sphincter = marqueur HAUTEMENT SPÉCIFIQUE distinguant atomoxétine du MPH). (4) Fatigue/somnolence (surtout dose matinale, absent MPH). (5) Constipation. (6) Libido réduite / dysfonction érectile (absents MPH). 'Nausée + difficultés urinaires' = cluster NRI quasi-pathognomonique."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "1_semaine",
+      "reference": "Gaedigk A et al., Clin Pharmacol Ther, 2019 (CPIC guideline)",
+      "details": "CYP2D6 = voie QUASI-EXCLUSIVE (98.4%). Métaboliseurs lents (7-10% Européens) : niveaux plasmatiques 4-10× plus élevés que métaboliseurs rapides à même dose. MI : taux réponse 93.55% vs 85.71% EM. Seuils toxicité : EI SNC ≥465 ng/mL, EI GI ≥509 ng/mL. Guideline CPIC dédié dosage guidé par génotype. ML PM peut paraître 'sur-médicamenté', UM peut paraître 'non-observant'. DRUG HOLIDAYS : rares avec atomoxétine (demi-vie longue, pas de rationale pharmaco). RAMADAN : impact FAIBLE, dose vespérale (Iftar) ou pré-aube (Suhoor) sans conséquence PK → option PRÉFÉRABLE aux stimulants pour patients musulmans pratiquants."
+    }
+  },
+  "lamotrigine": {
+    "signal_1_ema_longitudinal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Bowden CL, Calabrese JR et al., Arch Gen Psychiatry, 2003",
+      "details": "PHQ-9 principal (prévention épisodes DÉPRESSIFS bipolaires, 'stabilisation par le bas'). Deux RCTs 18 mois : lamotrigine supérieure placebo pour retarder épisode thymique, effet plus robuste pour dépression que manie. YMRS secondaire mais nécessaire (35% patients ont YMRS >4 points sous lamotrigine = possible activation/switch). CGI-BP-S ≥3 pendant ≥2 semaines (critère STEP-BD). Poids-neutre (−1.2kg vs −1.1kg placebo à 52 semaines). Latence détection plus longue que lithium/valproate."
+    },
+    "signal_2_prescription_renewal": {
+      "applicable": "oui",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Psychopharmacology Institute, 2024",
+      "details": "Boîte 28j (France/UK). PAS de monitoring sanguin de routine ('peuvent être vérifiés mais ne sont pas vérifiés en routine'). Gap ordonnance = signal principal et essentiellement unique. Demi-vie 24-30h → niveaux sous-thérapeutiques en 3-5j. Titration LENTE critique : 6-8 semaines (25mg/2 semaines) → gap pendant phase titration particulièrement dangereux. Co-prescription CO doit être signalée (dose doublée nécessaire). Pas d'équivalent monitoring obligatoire du lithium."
+    },
+    "signal_3_circadian_activity": {
+      "applicable": "partiel",
+      "discriminant_strength": "faible",
+      "detection_latency": "immediate",
+      "reference": "Sadler M, Epilepsia, 1999",
+      "details": "Profil relativement 'activateur'. Insomnie 6-10% (dose-dépendant, nécessitant réduction dose dans Sadler 1999 n=109), dans essais bipolaires 10%. Somnolence 9% (profil stimulation/sédation équilibré). Moins de sédation diurne que lithium ou valproate → patients sous lamotrigine PLUS DIFFICILES à distinguer des non-médicamentés par pattern circadien. Pas de tremblements spécifiques (4%). Poids-neutre : pas de pattern prise poids actigraphique progressif. Signal circadien PARTIEL car effets non spécifiques au médicament."
+    },
+    "signal_4_ema_entropy": {
+      "applicable": "partiel",
+      "discriminant_strength": "moyenne",
+      "detection_latency": "1_mois",
+      "reference": "Lawrance EL et al., PNAS, 2022 (lithium-spécifique, lamotrigine manque équivalent)",
+      "details": "Prévient principalement épisodes DÉPRESSIFS. Signature entropie attendue : réduction fréquence et profondeur épisodes dépressifs (variance PHQ-9 plus basse sur mois). NE produit PAS la signature 'volatilité positive augmentée' spécifique au lithium. Efficacité limitée épisodes maniaques (peut même les précipiter). Entropie PHQ-9 sur fenêtres mensuelles = mesure la plus sensible. Non-observance → variabilité PHQ-9 croissante et rechute dépressive sur 1-3 mois = signal plus lent que lithium."
+    },
+    "signal_5_linguistic_proof_ingestion": {
+      "applicable": "partiel",
+      "discriminant_strength": "faible",
+      "detection_latency": "1_mois",
+      "reference": "Indian J Psychiatry, 2026; MedCentral drug monograph, 2024",
+      "details": "PEU d'effets secondaires pathognomoniques. (1) RASH/SJS : 0.08-0.1% adultes, RARE et dangereux → CONTRE-INDIQUÉ comme marqueur observance (détection doit déclencher escalade urgence, pas confirmation observance). (2) Céphalées 5-10% (non spécifiques). (3) Insomnie 10% (partiellement utilisable). (4) POIDS-NEUTRE : ABSENCE de plaintes pondérales différencie de valproate/lithium = signal linguistique INVERSE. Signal NLP principalement INDIRECT : absence des clusters effets secondaires lithium/valproate peut être aussi informatif que leur présence."
+    },
+    "signal_6_environmental_raqib": {
+      "applicable": "oui",
+      "discriminant_strength": "haute",
+      "detection_latency": "48h",
+      "reference": "MGH Center Women's Mental Health, 2015; Christensen J et al., Br J Clin Pharmacol, 2016",
+      "details": "Interaction pharmacocinétique la plus cliniquement significative du groupe. CONTRACEPTIFS ORAUX COMBINÉS (critique) : estrogène induit UGT1A4, augmente clairance lamotrigine 40-60% EN 1 SEMAINE. Niveaux sous-thérapeutiques → dose lamotrigine doit augmenter 50-100%. Arrêt CO : niveaux DOUBLENT en 1 semaine → risque toxicité. Semaine pilule inactive : oscillation niveaux jusqu'à 2×. VALPROATE co-prescription : inhibe UGT, double demi-vie lamotrigine → dose divisée par 2. GROSSESSE : clairance augmente 40-65% (induction UGT progestérone/estrogène). TABAC : augmente clairance 34% via UGT2B7 (Ali DN, Biol Psychiatry GOS, 2025)."
+    }
+  }
+}

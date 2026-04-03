@@ -1,0 +1,1373 @@
+{
+  "meta": {
+    "titre": "Indice NOOS d'Observance — Benchmark des indices existants",
+    "date_generation": "2026-04-03",
+    "agent": "ZINEB",
+    "objectif": "Cartographie exhaustive des indices, échelles et benchmarks mesurant l'observance, la qualité de prise en charge psychiatrique et la performance des systèmes de santé mentale",
+    "nombre_indices": 24,
+    "signaux_noos": [
+      "engagement_app",
+      "renouvellement_pharmacie",
+      "biomarqueurs_wearable_HRV_sommeil_activite",
+      "biomarqueurs_vocaux",
+      "EMA_ecological_momentary_assessment",
+      "patterns_sommeil_activite"
+    ]
+  },
+
+  "categorie_1_observance": [
+    {
+      "id": "MPR",
+      "nom_complet": "Medication Possession Ratio",
+      "organisme_emetteur": "Pas d'organisme unique — développé dans la recherche pharmacoéconomique (années 1990s), largement adopté par les assureurs et CMS aux USA",
+      "frequence_publication": "Calcul continu sur données de claims — pas de publication périodique",
+      "annee_creation": "~1990-1995 (premiers usages dans la littérature pharmaco-épidémiologique)",
+      "methodologie": {
+        "dimensions_mesurees": ["Disponibilité de médicament sur une période donnée"],
+        "methode_calcul": "MPR = (somme des jours de dispensation pour toutes les ordonnances) / (nombre de jours dans la période). Fixed MPR (FMPR) utilise une période fixe (365 jours). Variable MPR (VMPR) ajuste le dénominateur à la dernière dispensation + jours supply.",
+        "scoring": "0-1+ (peut dépasser 1.0 si chevauchement de prescriptions). Seuil d'adhérence ≥ 0.80 (80%). MPR < 0.50 = mauvaise adhérence.",
+        "type_mesure": "Indirecte, objective, basée sur les claims pharmaceutiques"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie", "Trouble bipolaire", "Dépression majeure", "TDAH"],
+        "evidence_level": "Élevé — utilisé dans des centaines d'études pharmaco-épidémiologiques psychiatriques",
+        "etudes_cles": [
+          "Valenstein et al. 2004 — MPR chez patients schizophrènes VA",
+          "Sajatovic et al. 2007 — MPR trouble bipolaire",
+          "Assessing Population-Level Correlation (JMCP 2020) — corrélation MPR/MRCI sur 70,054 patients"
+        ]
+      },
+      "forces": [
+        "Objectif — ne dépend pas de la déclaration du patient",
+        "Facilement calculable à grande échelle sur données de claims",
+        "Standardisé et comparable entre études",
+        "Corrélé aux outcomes cliniques (réhospitalisations)"
+      ],
+      "limites": [
+        "Peut dépasser 100% (stockage, chevauchement) — ne reflète pas la prise réelle",
+        "Ne mesure pas l'ingestion effective du médicament",
+        "Dépend de la qualité des données de claims",
+        "Non applicable sans système de dispensation électronique",
+        "La durée de la période d'observation impacte significativement le résultat",
+        "Insensible aux patterns de prise (horaires, doses partielles)"
+      ],
+      "amelioration_noos": "NOOS peut calculer un MPR enrichi en combinant les données de renouvellement pharmacie (signal 2) avec l'engagement app (signal 1) et les patterns d'activité/sommeil (signal 6) pour détecter les gaps de prise réels vs les gaps de dispensation. Un MPR contextuel intégrant l'EMA (signal 5) permettrait de distinguer non-observance intentionnelle vs non-intentionnelle.",
+      "automatisation_noos": {
+        "calculable_automatiquement": true,
+        "signaux_noos_utilisables": ["renouvellement_pharmacie"],
+        "intervention_clinique_requise": false,
+        "explication": "Le MPR est directement calculable à partir des données de renouvellement pharmacie intégrées au système NOOS. Aucune intervention clinique nécessaire si NOOS est connecté aux systèmes de dispensation."
+      },
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5590759/",
+        "https://www.pharmacytimes.com/view/do-you-know-the-difference-between-these-adherence-measures",
+        "https://www.jmcp.org/doi/10.18553/jmcp.2020.26.7.860"
+      ]
+    },
+    {
+      "id": "PDC",
+      "nom_complet": "Proportion of Days Covered",
+      "organisme_emetteur": "Pharmacy Quality Alliance (PQA) — adopté par CMS (Centers for Medicare & Medicaid Services) comme mesure de qualité officielle (Medicare Star Ratings)",
+      "frequence_publication": "Calcul continu — intégré dans Medicare Star Ratings (annuel)",
+      "annee_creation": "~2006 (formalisation par PQA), adoption CMS ~2012",
+      "methodologie": {
+        "dimensions_mesurees": ["Proportion de jours couverts par un médicament dans une période définie"],
+        "methode_calcul": "PDC = (nombre de jours couverts dans la période) / (nombre total de jours dans la période) × 100. Contrairement au MPR, les jours chevauchants sont décalés au premier jour sans couverture, empêchant les valeurs > 100%.",
+        "scoring": "0-100%. Seuil d'adhérence ≥ 80% pour la plupart des médicaments, ≥ 90% pour les antirétroviraux.",
+        "type_mesure": "Indirecte, objective, basée sur les claims pharmaceutiques"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie", "Trouble bipolaire", "Dépression", "Tous psychotropes"],
+        "evidence_level": "Élevé — standard CMS pour les mesures d'adhérence Part D",
+        "etudes_cles": [
+          "PQA specifications pour Medicare Star Ratings",
+          "PDC real-world online pharmacy (JPPP 2021)",
+          "ExactCare Pharmacy adherence impact analysis"
+        ]
+      },
+      "forces": [
+        "Standard officiel CMS/PQA — référence réglementaire USA",
+        "Ne peut jamais dépasser 100% — plus intuitif que MPR",
+        "Ajuste les chevauchements de prescriptions",
+        "Largement validé dans les outcomes cliniques",
+        "Applicable multi-classes thérapeutiques"
+      ],
+      "limites": [
+        "Même limitation fondamentale que MPR — ne mesure pas l'ingestion",
+        "Les hypothèses de gaps (arrêt vs stockage) impactent les résultats",
+        "Nécessite un système de claims structuré",
+        "Ne capture pas l'adhérence aux médicaments injectables à libération prolongée",
+        "Insensible au timing de prise"
+      ],
+      "amelioration_noos": "NOOS peut créer un 'PDC+' qui enrichit le PDC classique en validant les jours couverts via des signaux biologiques. Les biomarqueurs wearable (signal 3 — HRV, patterns de sommeil) corrélés aux effets thérapeutiques attendus permettent de confirmer la prise effective. L'EMA (signal 5) valide subjectivement la couverture réelle.",
+      "automatisation_noos": {
+        "calculable_automatiquement": true,
+        "signaux_noos_utilisables": ["renouvellement_pharmacie"],
+        "intervention_clinique_requise": false,
+        "explication": "PDC directement calculable à partir du signal de renouvellement pharmacie. Enrichissable automatiquement avec les données wearable pour un PDC+ validé biologiquement."
+      },
+      "sources": [
+        "https://outcomes.com/knowledge-base/proportion-of-days-covered-pdc-in-outcomes",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8715592/",
+        "https://www.exactcarepharmacy.com/about-exactcare/news/how-medication-adherence-impacts-medicare-star-ratings/"
+      ]
+    },
+    {
+      "id": "MMAS_8",
+      "nom_complet": "Morisky Medication Adherence Scale — 8 items (MMAS-8)",
+      "organisme_emetteur": "Donald E. Morisky, UCLA School of Public Health (sous licence — MMAS Research LLC)",
+      "frequence_publication": "Instrument ponctuel — utilisé dans la recherche et la clinique. Licence requise.",
+      "annee_creation": "2008 (extension du MMAS-4 de 1986)",
+      "methodologie": {
+        "dimensions_mesurees": ["Comportement d'adhérence médicamenteuse", "Non-adhérence intentionnelle vs non-intentionnelle"],
+        "methode_calcul": "8 items : 7 items oui/non + 1 item Likert 5 points (item 8 normalisé /4). Score total 0-8.",
+        "scoring": "Score 8 = haute adhérence, 6-7 = adhérence moyenne, <6 = faible adhérence. L'analyse factorielle distingue non-adhérence intentionnelle (attitudes) vs non-intentionnelle (oubli).",
+        "type_mesure": "Auto-questionnaire (self-report)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie", "Trouble bipolaire", "Dépression", "Troubles anxieux", "TDAH"],
+        "evidence_level": "Élevé — validé en psychiatrie ambulatoire dans plusieurs langues",
+        "etudes_cles": [
+          "Morisky et al. 2008 (J Clin Hypertens) — validation originale",
+          "De Las Cuevas et al. 2014 (IJCHP) — validation psychiatrie ambulatoire espagnol, n=967",
+          "Morisky 2015 — distinction intentionnel/non-intentionnel chez patients psychiatriques"
+        ]
+      },
+      "forces": [
+        "Court (5-10 minutes), simple, auto-administré",
+        "Distingue non-adhérence intentionnelle vs non-intentionnelle — actionnable",
+        "Validé dans 100+ langues et multiples pathologies",
+        "Corrélé avec le DAI-10, le BPRS et les outcomes cliniques",
+        "Utilisable en routine clinique et en recherche"
+      ],
+      "limites": [
+        "Auto-report = biais de désirabilité sociale (surestimation adhérence)",
+        "Licence payante (MMAS Research LLC) — frein à l'adoption",
+        "Propriétés psychométriques variables selon les populations (Cronbach α=0.56-0.83)",
+        "Ne capture pas les patterns temporels de prise",
+        "Aucun PROM d'adhérence n'est classé catégorie A selon COSMIN"
+      ],
+      "amelioration_noos": "NOOS peut digitaliser le MMAS-8 via l'EMA (signal 5) en intégrant les 8 questions dans des micro-enquêtes in-app, puis corréler les réponses avec les signaux objectifs (renouvellement pharmacie, HRV, activité) pour calculer un score MMAS-8 validé objectivement. La distinction intentionnel/non-intentionnel est directement exploitable pour adapter les interventions NOOS (rappels pour non-intentionnelle, psychoéducation pour intentionnelle).",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["EMA_ecological_momentary_assessment", "engagement_app"],
+        "intervention_clinique_requise": false,
+        "explication": "Administrable automatiquement via l'app (EMA). Ne nécessite pas de clinicien. Cependant, reste un auto-report avec ses biais inhérents. NOOS peut le valider croisé avec les signaux objectifs."
+      },
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6224788/",
+        "https://www.moriskyscale.com/blog/dr-moriskys-breakthrough-in-medication-adherence-revolutionizing-assessment-with-intentional-and-unintentional-non-adherence",
+        "https://www.jmir.org/2020/10/e19179"
+      ]
+    },
+    {
+      "id": "BARS",
+      "nom_complet": "Brief Adherence Rating Scale",
+      "organisme_emetteur": "Matthew J. Byerly et al. (UT Southwestern Medical Center) — dérivé du questionnaire CATIE",
+      "frequence_publication": "Instrument ponctuel — libre d'utilisation",
+      "annee_creation": "2008",
+      "methodologie": {
+        "dimensions_mesurees": ["Adhérence médicamenteuse globale évaluée par le clinicien"],
+        "methode_calcul": "4 items : 3 questions sur la connaissance du régime, les doses manquées et les doses réduites + 1 échelle visuelle analogique (EVA) 0-100%. L'EVA constitue le score final d'adhérence.",
+        "scoring": "0-100% (EVA). Seuil typique de non-adhérence ≤ 70%. Formation clinicien < 60 minutes, administration < 5 minutes.",
+        "type_mesure": "Hétéro-évaluation (clinician-administered)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie", "Trouble schizoaffectif"],
+        "evidence_level": "Élevé — validé contre monitoring électronique (MEMS)",
+        "etudes_cles": [
+          "Byerly et al. 2008 (Schizophr Res) — validation vs MEMS, n=61, rs=0.59 p<0.0001",
+          "BARS ≤66% prédit réponse aux LAI (Schizophr Res 2020) — sensibilité 38%, spécificité 85%",
+          "Dérivé du questionnaire CATIE (Clinical Antipsychotic Trials of Intervention Effectiveness)"
+        ]
+      },
+      "forces": [
+        "Très bref (<5 minutes), facile à former (<60 min)",
+        "Validé contre le gold standard MEMS",
+        "Bonne sensibilité (73%) et spécificité (74%) pour identifier les non-adhérents",
+        "Prédit la réponse aux injectables à action prolongée (LAI)",
+        "Libre d'utilisation"
+      ],
+      "limites": [
+        "Nécessite un clinicien formé",
+        "Validé principalement en schizophrénie — données limitées en dépression/bipolaire",
+        "L'EVA repose sur le jugement clinique subjectif",
+        "La sensibilité d'un seul BARS (38% pour LAI) est modeste",
+        "Ne capture pas les patterns temporels"
+      ],
+      "amelioration_noos": "NOOS peut compléter le BARS en fournissant au clinicien des données objectives pré-remplies avant la consultation : le taux de renouvellement pharmacie (signal 2), l'engagement app (signal 1), les patterns de sommeil/activité (signal 6). Le clinicien informé peut ainsi calibrer son EVA sur des données réelles plutôt que sur la seule déclaration du patient.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["renouvellement_pharmacie", "engagement_app", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": true,
+        "explication": "Le BARS nécessite l'évaluation d'un clinicien. NOOS ne peut pas le calculer automatiquement mais peut pré-alimenter le clinicien avec des données objectives pour améliorer la précision de l'évaluation."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/18255269/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7306424/",
+        "https://www.psych-navigator.com/np-psych-navigator/Clinical-Tools/Psychiatric-Scales/Scale-1-(3)"
+      ]
+    },
+    {
+      "id": "DAI_10",
+      "nom_complet": "Drug Attitude Inventory — 10 items (DAI-10)",
+      "organisme_emetteur": "T.P. Hogan, A.G. Awad, R. Eastwood (version 30 items: 1983; version 10 items: 1983-1992)",
+      "frequence_publication": "Instrument ponctuel — libre d'utilisation",
+      "annee_creation": "1983 (DAI-30), DAI-10 dérivé ensuite",
+      "methodologie": {
+        "dimensions_mesurees": ["Attitudes subjectives envers le traitement psychotrope", "Sous-échelle Positive (effets bénéfiques perçus)", "Sous-échelle Négative (effets indésirables perçus)"],
+        "methode_calcul": "10 items vrai/faux. Score = somme (réponses correctes) - somme (réponses incorrectes). 6 items positifs, 4 items négatifs. Version modifiée DAI-9 avec échelle Likert 4 points.",
+        "scoring": "Score de -10 à +10. Score > 0 = attitude positive envers le traitement. Score ≤ 0 = attitude négative. Corrélation DAI-10/DAI-30 = 0.94.",
+        "type_mesure": "Auto-questionnaire (self-report)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie (validation primaire)", "Trouble schizoaffectif", "Troubles psychotiques", "Trouble bipolaire"],
+        "evidence_level": "Élevé — meilleur prédicteur d'adhérence en premier épisode psychotique",
+        "etudes_cles": [
+          "Hogan et al. 1983 — développement original, DAI prédit continuation traitement",
+          "Nielsen et al. 2012 — DAI-10 aussi bon que DAI-30, r=0.94, test-retest 0.79",
+          "Hofer et al. 2015 — corrélation DAI/niveaux plasmatiques antipsychotiques",
+          "Validation Nigeria (SAJP 2022) — Cronbach α=0.56, ICC=0.55"
+        ]
+      },
+      "forces": [
+        "Seul instrument mesurant une dimension clinique unique : l'attitude envers le traitement",
+        "Prédicteur fort de continuation du traitement en schizophrénie",
+        "Court (5-10 min), auto-administré, libre d'accès",
+        "Corrélé aux niveaux plasmatiques des antipsychotiques (mesure objective)",
+        "Traduit en nombreuses langues"
+      ],
+      "limites": [
+        "Le scoring (vrai/faux inversé) peut prêter à confusion",
+        "Les effets secondaires physiques ne sont pas évalués",
+        "Cohérence interne variable (α=0.56-0.81 selon populations)",
+        "Mesure l'attitude, pas le comportement réel de prise",
+        "Un item conceptuellement ambigu identifié (version DAI-9 proposée)"
+      ],
+      "amelioration_noos": "NOOS peut intégrer le DAI-10 dans ses micro-évaluations EMA (signal 5) et corréler les scores d'attitude avec les données comportementales objectives (engagement app, renouvellement). Un DAI-10 dynamique mesuré mensuellement via l'app permettrait de détecter les changements d'attitude précédant l'abandon thérapeutique, créant un signal prédictif de rechute.",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["EMA_ecological_momentary_assessment", "engagement_app"],
+        "intervention_clinique_requise": false,
+        "explication": "Auto-questionnaire administrable via l'app NOOS (EMA). Ne nécessite pas de clinicien. Cependant, mesure l'attitude et non le comportement — NOOS ajoute de la valeur en croisant avec les signaux comportementaux."
+      },
+      "sources": [
+        "https://www.hmpgloballearningnetwork.com/site/pcn/drug-attitude-inventory-10-dai-10",
+        "https://pubmed.ncbi.nlm.nih.gov/22440974/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC9082242/",
+        "https://lup.lub.lu.se/search/files/1602938/3460878.pdf"
+      ]
+    },
+    {
+      "id": "MARS",
+      "nom_complet": "Medication Adherence Rating Scale",
+      "organisme_emetteur": "Thompson, Kulkarni & Sergejew (2000) — Royal Melbourne Hospital / Monash University",
+      "frequence_publication": "Instrument ponctuel — libre d'utilisation",
+      "annee_creation": "2000",
+      "methodologie": {
+        "dimensions_mesurees": ["Comportement d'adhérence médicamenteuse (Facteur 1)", "Attitude envers la prise de médicaments (Facteur 2)", "Effets secondaires négatifs et attitudes envers les psychotropes (Facteur 3)"],
+        "methode_calcul": "10 items oui/non. Combinaison du Medication Adherence Questionnaire (Morisky 1986, 4 items) + Drug Attitude Inventory (Hogan 1983, 6 items modifiés). Structure à 3 facteurs confirmée par CFA.",
+        "scoring": "Score total 0-10. Score élevé = bonne adhérence. Temps de complétion ~5 minutes.",
+        "type_mesure": "Auto-questionnaire (self-report)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie (validation primaire)", "Trouble schizoaffectif", "Trouble délirant", "Psychoses en contexte de sans-abrisme"],
+        "evidence_level": "Modéré-Élevé — validé en population schizophrène dans plusieurs contextes",
+        "etudes_cles": [
+          "Thompson et al. 2000 (PubMed) — développement original",
+          "Fialko et al. 2008 (J Clin Psychopharmacol) — validation n=277, structure 3 facteurs",
+          "Fond et al. 2016 (Nature Sci Rep) — validation multicentrique chez SZ sans-abri, n=353, RMSEA=0.045, CFI=0.98"
+        ]
+      },
+      "forces": [
+        "Court, auto-administré, excellente acceptabilité (missing data <5%)",
+        "Combine comportement + attitude + effets secondaires en un seul instrument",
+        "Structure à 3 facteurs cliniquement actionnable",
+        "Validé dans des populations vulnérables (sans-abri SZ)",
+        "Libre d'utilisation, traduit en français"
+      ],
+      "limites": [
+        "Cohérence interne modeste (Kuder-Richardson ~0.6, basse pour facteur 2)",
+        "Format binaire (oui/non) limite la résolution",
+        "Effets plafond/plancher >15% pour certains facteurs",
+        "Corrélation modeste avec l'évaluation clinicien (r=0.18-0.25)",
+        "Auto-report = surestimation possible"
+      ],
+      "amelioration_noos": "Le MARS est particulièrement intéressant pour NOOS car sa structure tri-factorielle (comportement, attitude, effets secondaires) s'aligne directement avec les 6 signaux NOOS. Le Facteur 1 (comportement) peut être validé par le renouvellement pharmacie + engagement app. Le Facteur 2 (attitude) par l'EMA et les biomarqueurs vocaux (sentiment analysis). Le Facteur 3 (effets secondaires) par les wearables (sommeil perturbé, HRV altéré). NOOS crée ainsi un MARS objectivé en continu.",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["EMA_ecological_momentary_assessment", "engagement_app", "biomarqueurs_vocaux", "biomarqueurs_wearable_HRV_sommeil_activite"],
+        "intervention_clinique_requise": false,
+        "explication": "Auto-administrable via l'app. Chaque facteur du MARS peut être enrichi par un signal NOOS différent, créant un composite auto-report + objectif unique."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/10785582/",
+        "https://pubmed.ncbi.nlm.nih.gov/18083007/",
+        "https://www.nature.com/articles/srep31598"
+      ]
+    },
+    {
+      "id": "WHO_5D",
+      "nom_complet": "WHO Five Dimensions of Adherence Framework",
+      "organisme_emetteur": "Organisation Mondiale de la Santé (OMS/WHO)",
+      "frequence_publication": "Rapport fondateur 2003 : 'Adherence to Long-Term Therapies: Evidence for Action'. Pas de mise à jour formelle mais cadre toujours référence.",
+      "annee_creation": "2003",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "1. Facteurs socio-économiques",
+          "2. Facteurs liés au système de santé / équipe soignante",
+          "3. Facteurs liés à la thérapie",
+          "4. Facteurs liés à la condition/maladie",
+          "5. Facteurs liés au patient"
+        ],
+        "methode_calcul": "Cadre conceptuel multidimensionnel — pas de score numérique unique. Chaque dimension rassemble des facteurs et interventions identifiés par revue systématique. 102 modèles conceptuels classifiés selon ces 5 dimensions.",
+        "scoring": "Pas de scoring standardisé — c'est un cadre d'analyse, pas une échelle.",
+        "type_mesure": "Cadre conceptuel / Framework"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Applicable à toutes les pathologies psychiatriques chroniques"],
+        "evidence_level": "Très élevé — cadre de référence mondial, cité 12,000+ fois",
+        "etudes_cles": [
+          "OMS 2003 — Adherence to Long-Term Therapies: Evidence for Action",
+          "Sabaté 2003 — document fondateur",
+          "An Adaptable Framework (J Gen Intern Med 2021) — revue systématique de 102 modèles, 14 spécifiques à la psychiatrie"
+        ]
+      },
+      "forces": [
+        "Holiste — intègre patient + système + société + thérapie + condition",
+        "Universellement reconnu et cité (12,000+ citations)",
+        "Distingue adhérence de compliance (accord du patient vs soumission)",
+        "Applicable cross-culturellement et cross-pathologies",
+        "Met en avant le rôle du système de santé, pas seulement du patient"
+      ],
+      "limites": [
+        "Cadre conceptuel sans instrument de mesure standardisé",
+        "Pas de scoring — impossible de comparer quantitativement",
+        "Seulement 30/102 modèles identifiés adressent les 5 dimensions",
+        "Les facteurs socio-économiques sont sous-représentés dans les modèles de pays à haut revenu",
+        "N'intègre pas les dimensions numériques/digitales (2003)"
+      ],
+      "amelioration_noos": "NOOS est positionné pour être la première opérationnalisation digitale du cadre WHO 5D. Signal 1 (engagement app) = facteur patient. Signal 2 (renouvellement) = facteur système de santé. Signal 3 (wearables) = facteur condition. Signal 4 (voix) = facteur patient (émotionnel). Signal 5 (EMA) = facteur thérapie (effets secondaires, vécu). Signal 6 (sommeil/activité) = facteur socio-économique (patterns de vie). L'Indice NOOS d'Observance pourrait être le premier score quantitatif opérationnalisant les 5 dimensions WHO.",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["engagement_app", "renouvellement_pharmacie", "biomarqueurs_wearable_HRV_sommeil_activite", "biomarqueurs_vocaux", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": false,
+        "explication": "Le cadre WHO 5D n'a jamais été opérationnalisé en score unique. NOOS est en position de créer la première implémentation quantitative digitale de ce cadre. Les 6 signaux NOOS couvrent les 5 dimensions."
+      },
+      "sources": [
+        "https://iris.who.int/bitstream/handle/10665/42682/9241545992.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8390603/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11700791/"
+      ]
+    },
+    {
+      "id": "MEMS",
+      "nom_complet": "Medication Event Monitoring System (MEMS)",
+      "organisme_emetteur": "AARDEX Group (Suisse) — anciennement APREX Corporation",
+      "frequence_publication": "Dispositif commercial — pas de publication périodique. Données téléchargeables via plateforme medAmigo.",
+      "annee_creation": "~1988-1990 (premières publications), évolutions continues (MEMS TrackCap, MEMS Button)",
+      "methodologie": {
+        "dimensions_mesurees": ["Timing précis de chaque ouverture du flacon", "Patterns d'adhérence (régularité, intervalles inter-doses)", "Proportion de doses prises sur la période"],
+        "methode_calcul": "Micro-circuit électronique dans le bouchon enregistre date+heure de chaque ouverture. Données téléchargées via lecteur USB vers medAmigo. Calcul automatique de l'adhérence (% doses prises, timing adherence, drug holidays).",
+        "scoring": "% d'adhérence (0-100%). Fournit aussi : taking adherence (doses prises/prescrites), timing adherence (doses à l'heure), drug holidays (≥48h sans ouverture).",
+        "type_mesure": "Directe, objective, électronique (mais ne confirme pas l'ingestion)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Schizophrénie", "Trouble schizoaffectif", "Dépression majeure", "Trouble bipolaire"],
+        "evidence_level": "Considéré gold standard pour la recherche sur l'adhérence",
+        "etudes_cles": [
+          "Jeong et al. 2019 (Clin Psychopharmacol Neurosci) — MEMS post-hospitalisation psychiatrique, adhérence moyenne 84% à 4 semaines",
+          "Byerly et al. 2008 — MEMS comme référence pour valider le BARS",
+          "Smart Button study (JMIR 2019) — concordance MEMS vs bouton intelligent"
+        ]
+      },
+      "forces": [
+        "Gold standard objectif pour la recherche clinique",
+        "Mesure le timing précis — détecte les patterns (retards, drug holidays)",
+        "Données continues et longitudinales",
+        "Résistant physiquement (chutes, aéroport)",
+        "Peut motiver l'adhérence (effet Hawthorne positif)"
+      ],
+      "limites": [
+        "Coût élevé du dispositif (inadapté au suivi de routine)",
+        "Ne confirme pas l'ingestion (le bouchon peut être ouvert sans prise)",
+        "Un seul médicament par flacon — complexe en polypharmacie",
+        "Nécessite un flacon spécifique — incompatible avec les piluliers",
+        "L'effet Hawthorne fausse les données (amélioration temporaire liée à la surveillance)",
+        "Nécessite un téléchargement périodique des données"
+      ],
+      "amelioration_noos": "NOOS remplace le MEMS coûteux par une approche multi-signaux moins invasive et plus informative. Le signal 1 (engagement app) + signal 2 (renouvellement) + signal 6 (patterns activité) reconstruisent une approximation du MEMS sans device dédié. Les biomarqueurs vocaux (signal 4) et wearables (signal 3) ajoutent une dimension que le MEMS ne capture pas : la confirmation d'effets pharmacologiques (sédation détectée via HRV, prosodie altérée). NOOS = 'MEMS without the caps'.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["engagement_app", "renouvellement_pharmacie", "biomarqueurs_wearable_HRV_sommeil_activite", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": false,
+        "explication": "Le MEMS lui-même n'est pas calculable par NOOS (nécessite le device AARDEX). Mais NOOS peut créer un proxy digital du MEMS en combinant ses 6 signaux pour estimer les mêmes métriques (taking adherence, timing adherence, drug holidays) sans hardware dédié."
+      },
+      "sources": [
+        "https://aardexgroup.com/medication-event-monitoring-system/",
+        "https://formative.jmir.org/2019/2/e13558/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6478086/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3671915/"
+      ]
+    }
+  ],
+
+  "categorie_2_qualite_soins_psychiatriques": [
+    {
+      "id": "HoNOS",
+      "nom_complet": "Health of the Nation Outcome Scales",
+      "organisme_emetteur": "Royal College of Psychiatrists (UK) — commandité par le Department of Health",
+      "frequence_publication": "Instrument clinique de routine — fait partie du Mental Health Services Data Set (UK). Pas de publication périodique indépendante.",
+      "annee_creation": "1996 (Wing, Curtis, Beevor)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "Comportement (items 1-3 : comportement agressif, automutilation, consommation de substances)",
+          "Déficiences (items 4-5 : problèmes cognitifs, problèmes physiques)",
+          "Symptômes (items 6-8 : hallucinations/délires, humeur dépressive, autres symptômes)",
+          "Fonctionnement social (items 9-12 : relations, AVQ, conditions de vie, occupation)"
+        ],
+        "nombre_items": 12,
+        "methode_calcul": "Chaque item coté de 0 (pas de problème) à 4 (problème sévère). Score total = somme des 12 items (0-48). 4 sous-scores possibles.",
+        "scoring": "0-48 (total). Changement cliniquement significatif habituellement ≥ 4 points. Mesure de changement (admission-sortie ou suivi longitudinal).",
+        "temps_administration": "10-15 minutes",
+        "type_mesure": "Hétéro-évaluation clinicien (CROM - Clinician Reported Outcome Measure)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Toute pathologie psychiatrique sévère", "Psychoses", "Troubles de l'humeur", "Troubles anxieux sévères"],
+        "settings": ["Hospitalisation", "Ambulatoire", "Intervention précoce psychose", "Services communautaires"],
+        "evidence_level": "Élevé — instrument standard NHS, utilisé en Australie, Nouvelle-Zélande, Allemagne",
+        "etudes_cles": [
+          "Wing et al. 1998 — validation sur 2706 patients",
+          "Audin et al. 2001 — sensibilité au changement",
+          "Burgess et al. 2006 — utilisation pour qualité de service",
+          "BMJ Open 2016 — consistance HoNOS en transition de soins"
+        ]
+      },
+      "forces": [
+        "Bref (12 items, 10-15 min) et cliniquement intuitif",
+        "Couvre comportement + symptômes + fonctionnement en un seul instrument",
+        "Sensible au changement — particulièrement en hospitalisation",
+        "Standard national UK, intégré au dataset de santé mentale",
+        "Variantes disponibles : HoNOS-CA (enfants), HoNOS 65+ (gériatrie), HoNOS-secure"
+      ],
+      "limites": [
+        "Support limité pour la cohérence inter-évaluateurs",
+        "Le score total est un indicateur grossier — des changements compensatoires entre items masquent l'évolution réelle",
+        "Nécessite un clinicien formé",
+        "Moins sensible au changement en ambulatoire vs hospitalisation",
+        "Ne capture pas directement l'observance thérapeutique"
+      ],
+      "amelioration_noos": "NOOS peut créer un 'HoNOS digital continu' : les items Comportement (1-3) sont approximables via engagement app + activité wearable. Les items Symptômes (6-8) via biomarqueurs vocaux (prosodie dépressive, discours désorganisé) + EMA. Les items Social (9-12) via patterns d'utilisation smartphone (contacts, sorties). Seuls les items Déficiences (4-5) nécessitent une évaluation clinique. NOOS fournit un proxy HoNOS inter-consultations, détectant les dégradations entre les évaluations cliniques programmées.",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["engagement_app", "biomarqueurs_vocaux", "biomarqueurs_wearable_HRV_sommeil_activite", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": true,
+        "explication": "Le HoNOS officiel nécessite un clinicien. NOOS peut calculer un proxy digital continu pour 8/12 items via ses signaux, mais les items cognitifs et physiques restent clinicien-dépendants."
+      },
+      "sources": [
+        "https://www.cambridge.org/core/journals/advances-in-psychiatric-treatment/article/use-of-health-of-the-nation-outcome-scales-in-psychiatry/C0C9FB947AD154390134A4E2B7FB6E43",
+        "https://bmjopen.bmj.com/content/6/4/e010732",
+        "https://www.transformationpartners.nhs.uk/wp-content/uploads/2019/10/HoNOS-Analytical-Framework_Vf-1.pdf"
+      ]
+    },
+    {
+      "id": "WHODAS_2_0",
+      "nom_complet": "WHO Disability Assessment Schedule 2.0",
+      "organisme_emetteur": "Organisation Mondiale de la Santé (OMS/WHO)",
+      "frequence_publication": "Instrument standardisé — fait partie du DSM-5 (remplace le GAF). Manuel 2010, mises à jour continues.",
+      "annee_creation": "2010 (WHODAS 2.0 succède à WHODAS II)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "1. Cognition (comprendre et communiquer, 6 items)",
+          "2. Mobilité (se déplacer, 5 items)",
+          "3. Soins personnels (hygiène, habillage, 4 items)",
+          "4. Relations interpersonnelles (5 items)",
+          "5. Activités quotidiennes (ménage/travail, 8 items)",
+          "6. Participation sociale (8 items)"
+        ],
+        "nombre_items": "12 (version courte) ou 36 (version complète)",
+        "methode_calcul": "Chaque item coté sur échelle 5 points (aucune difficulté à difficulté extrême). Scoring simple (somme) ou scoring complexe (IRT-based). Scores standardisés 0-100 par domaine et total.",
+        "scoring": "0-100 (score standardisé). Score >35 = au-dessus du 90e percentile de handicap en population générale. Version auto-administrée, proxy, ou interview clinicien.",
+        "temps_administration": "5-20 minutes selon version",
+        "type_mesure": "Auto-évaluation / proxy / interview (multiple formats)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Toutes pathologies psychiatriques", "Troubles psychotiques sévères (version proxy recommandée)", "Troubles de l'humeur", "Troubles anxieux"],
+        "settings": ["Ambulatoire", "Hospitalisation", "Population générale", "Recherche clinique"],
+        "evidence_level": "Très élevé — instrument DSM-5, validé cross-culturellement",
+        "etudes_cles": [
+          "WHO Manual 2010 — validation globale multi-pays",
+          "Curaçao study (Front Psychiatry 2020) — version proxy chez SMI, score moyen 31.2",
+          "WHODAS remplace GAF dans DSM-5 — pas de confusion symptômes/fonctionnement"
+        ]
+      },
+      "forces": [
+        "Instrument DSM-5 officiel — standard mondial",
+        "Sépare explicitement symptômes et fonctionnement (contrairement au GAF)",
+        "Multiple formats (auto, proxy, interview) — flexible",
+        "Basé sur l'ICF — langage commun international",
+        "Applicable cross-diagnostique et cross-culturel"
+      ],
+      "limites": [
+        "Les patients SMI avec manque d'insight rapportent moins de difficultés",
+        "Version proxy recommandée en psychose mais données limitées",
+        "La version courte (12 items) perd la granularité par domaine",
+        "Le domaine Participation peut être artificiellement meilleur chez les hospitalisés (environnement protégé)",
+        "Ne mesure pas directement l'observance"
+      ],
+      "amelioration_noos": "NOOS peut auto-scorer un WHODAS 2.0 continu : Cognition via engagement app (temps de réponse, erreurs) + biomarqueurs vocaux (cohérence discours). Mobilité via wearable (pas/jour, sorties). Soins personnels via patterns activité/sommeil. Relations via EMA. Activités via engagement app + activité. Participation via EMA + patterns sociaux. Un 'WHODAS-NOOS' en temps réel alerte le clinicien avant que la détérioration fonctionnelle ne devienne cliniquement visible.",
+      "automatisation_noos": {
+        "calculable_automatiquement": "partiellement",
+        "signaux_noos_utilisables": ["engagement_app", "biomarqueurs_vocaux", "biomarqueurs_wearable_HRV_sommeil_activite", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": false,
+        "explication": "La version auto-report est administrable via l'app (EMA). NOOS peut enrichir chaque domaine avec des signaux passifs. L'auto-administration ne nécessite pas de clinicien, mais la version proxy (pour SMI sévère) oui."
+      },
+      "sources": [
+        "https://www.who.int/standards/classifications/international-classification-of-functioning-disability-and-health/who-disability-assessment-schedule",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7174765/",
+        "https://novopsych.com/assessments/health/the-world-health-organisation-disability-assessment-schedule-whodas-2-0-self-report-version/"
+      ]
+    },
+    {
+      "id": "CGI",
+      "nom_complet": "Clinical Global Impression Scale (CGI-S / CGI-I / CGI-E)",
+      "organisme_emetteur": "NIMH (National Institute of Mental Health) — Early Clinical Drug Evaluation Program (ECDEU)",
+      "frequence_publication": "Instrument ponctuel — utilisé dans pratiquement tous les essais cliniques psychiatriques depuis 1976.",
+      "annee_creation": "1976 (Guy, ECDEU Assessment Manual)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "CGI-S : Sévérité de la maladie au moment de l'évaluation",
+          "CGI-I : Amélioration globale depuis le début du traitement",
+          "CGI-E : Index d'efficacité (effet thérapeutique vs effets secondaires)"
+        ],
+        "nombre_items": 3,
+        "methode_calcul": "Chaque sous-échelle est un jugement clinique global unique. CGI-S et CGI-I : échelle à 7 points. CGI-E : matrice 4×4.",
+        "scoring": "CGI-S : 1 (normal) à 7 (parmi les plus sévèrement malades). CGI-I : 1 (très amélioré) à 7 (très aggravé). Évalué en considérant l'expérience totale du clinicien avec la population.",
+        "temps_administration": "<5 minutes",
+        "type_mesure": "Hétéro-évaluation clinicien (jugement global)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Toute pathologie psychiatrique — instrument transnosographique"],
+        "settings": ["Essais cliniques (critère primaire ou secondaire)", "Pratique clinique", "Suivi longitudinal"],
+        "evidence_level": "Très élevé — utilisé dans la quasi-totalité des essais cliniques psychiatriques",
+        "etudes_cles": [
+          "Guy 1976 — ECDEU Assessment Manual for Psychopharmacology",
+          "Busner & Targum 2007 (Psychiatry Edgmont) — guide d'utilisation clinique",
+          "Leucht et al. 2005 — corrélation CGI avec PANSS et HAM-D"
+        ]
+      },
+      "forces": [
+        "Ultra-bref (<5 min) — quasi pas de charge administrative",
+        "Universellement utilisé — comparabilité maximale entre études",
+        "Capture l'impression clinique globale — intègre implicitement toutes les dimensions",
+        "Sensible au changement dans les essais cliniques",
+        "Simple à former et à utiliser"
+      ],
+      "limites": [
+        "Très subjectif — dépend de l'expérience et du référentiel du clinicien",
+        "Pas d'ancrage standardisé détaillé — fiabilité inter-évaluateurs variable",
+        "Ne distingue pas les dimensions (symptômes vs fonctionnement vs adhérence)",
+        "Ne mesure pas l'observance directement",
+        "La CGI-I est relative à la baseline — pas comparable entre patients"
+      ],
+      "amelioration_noos": "NOOS peut informer le CGI du clinicien en fournissant un dashboard pré-consultation résumant l'évolution des 6 signaux. Le clinicien évalue alors le CGI-S/CGI-I avec des données objectives plutôt qu'avec la seule impression subjective. NOOS pourrait aussi calculer un 'CGI algorithmique' basé sur un modèle ML entraîné sur des CGI annotés corrélés aux patterns des 6 signaux.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["engagement_app", "biomarqueurs_wearable_HRV_sommeil_activite", "biomarqueurs_vocaux", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite", "renouvellement_pharmacie"],
+        "intervention_clinique_requise": true,
+        "explication": "Le CGI est par définition un jugement clinique global. NOOS ne peut pas le remplacer mais peut l'enrichir considérablement. Un CGI algorithmique prédictif est un objectif R&D à moyen terme."
+      },
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2880930/",
+        "https://en.wikipedia.org/wiki/Clinical_global_impression"
+      ]
+    },
+    {
+      "id": "GAF",
+      "nom_complet": "Global Assessment of Functioning",
+      "organisme_emetteur": "American Psychiatric Association — Axe V du DSM-IV / DSM-IV-TR",
+      "frequence_publication": "Retiré du DSM-5 (2013) — remplacé par WHODAS 2.0. Reste utilisé dans certains contextes (VA, tribunaux, assurances).",
+      "annee_creation": "1987 (DSM-III-R), dérivé du Global Assessment Scale (GAS, Endicott et al. 1976)",
+      "methodologie": {
+        "dimensions_mesurees": ["Fonctionnement psychologique", "Fonctionnement social", "Fonctionnement professionnel/scolaire"],
+        "nombre_items": 1,
+        "methode_calcul": "Échelle continue 0-100 divisée en déciles avec descripteurs d'ancrage. Le clinicien évalue 'le pire de' symptômes vs fonctionnement. GAF unique (DSM-IV) ou GAF-S + GAF-F séparés (version scandinave).",
+        "scoring": "0-100. 100 = fonctionnement supérieur, 0 = incapacité complète. Déciles : 91-100 (supérieur), 81-90 (minimal), 71-80 (transitoire), 61-70 (léger), 51-60 (modéré), 41-50 (sérieux), 31-40 (altération majeure), 21-30 (influencé par délires), 11-20 (danger), 1-10 (danger persistant).",
+        "temps_administration": "<5 minutes",
+        "type_mesure": "Hétéro-évaluation clinicien (échelle globale unique)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Toutes — instrument générique DSM-IV Axe V"],
+        "settings": ["Clinique", "Tribunaux (expertises)", "Assurances (évaluation incapacité)", "Recherche"],
+        "evidence_level": "Historiquement très élevé mais en déclin depuis DSM-5",
+        "etudes_cles": [
+          "Endicott et al. 1976 — Global Assessment Scale (précurseur)",
+          "DSM-IV-TR 2000 — intégration Axe V",
+          "Aas 2011 (Ann Gen Psychiatry) — guidelines for rating GAF"
+        ]
+      },
+      "forces": [
+        "Extrêmement bref et simple",
+        "Historique massif — décennies de données comparables",
+        "Corrélé avec le HoNOS (r=0.60)",
+        "Intuitif pour les cliniciens formés",
+        "Encore utilisé dans les systèmes médico-légaux et d'assurance"
+      ],
+      "limites": [
+        "Confond symptômes et fonctionnement — problème conceptuel majeur (raison du retrait DSM-5)",
+        "Fiabilité inter-évaluateurs problématique sans formation standardisée",
+        "La règle 'whichever is worst' masque les dimensions",
+        "Biais de point de départ (haut vs bas) influence le score",
+        "Retiré du DSM-5 — pas d'avenir en tant que standard"
+      ],
+      "amelioration_noos": "Le GAF est obsolète dans le DSM-5 mais certains contextes (assurances, expertises) l'exigent encore. NOOS peut calculer un proxy GAF à partir d'un mapping ML entre ses 6 signaux et les déciles GAF historiques, permettant une continuité avec les systèmes legacy tout en fournissant la granularité WHODAS 2.0 sous le capot.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["biomarqueurs_wearable_HRV_sommeil_activite", "engagement_app", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": true,
+        "explication": "Le GAF est un jugement clinique global nécessitant un évaluateur formé. NOOS peut calculer un proxy algorithmique pour les systèmes legacy mais le GAF officiel reste clinicien-dépendant."
+      },
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3036670/",
+        "https://gla-rehab.com/the-global-assessment-of-functioning-scale/",
+        "https://www.hillandponton.com/changing-how-the-va-rates-ptsd-gaf-vs-whodas-2-0/"
+      ]
+    },
+    {
+      "id": "ACT_FIDELITY",
+      "nom_complet": "Assertive Community Treatment Fidelity Scales (DACTS / TMACT)",
+      "organisme_emetteur": "DACTS : Dartmouth Psychiatric Research Center (Teague, Bond, Drake). TMACT : Monroe-DeVita, Moser, Teague (University of Washington / UNC / University of South Florida)",
+      "frequence_publication": "Évaluation de programme — fréquence variable selon juridiction. TMACT disponible en version électronique (eTMACT, SaaS).",
+      "annee_creation": "DACTS : 1998. TMACT : 2011.",
+      "methodologie": {
+        "dimensions_mesurees_DACTS": ["28 items couvrant structure d'équipe, ressources humaines, organisation des services, nature des services"],
+        "dimensions_mesurees_TMACT": [
+          "Operations & Structure",
+          "Core Team",
+          "Specialist Team",
+          "Core Practices",
+          "Evidence-Based Practices",
+          "Person-Centered Planning & Practices"
+        ],
+        "nombre_items": "DACTS : 28 items. TMACT : 47 items.",
+        "methode_calcul": "Chaque item coté sur échelle 1-5 (1 = non implémenté, 5 = pleinement implémenté). Score moyen sur l'ensemble des items = indice de fidélité global.",
+        "scoring": "Score moyen 1-5. Haute fidélité typiquement ≥ 4.0. Le TMACT fixe des standards plus élevés que le DACTS, notamment pour l'orientation rétablissement et les pratiques evidence-based.",
+        "temps_administration": "Audit d'1-2 jours par des évaluateurs formés (review de dossiers, interviews, observations)",
+        "type_mesure": "Évaluation programmatique (pas individuelle)"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Troubles mentaux sévères (schizophrénie, trouble bipolaire, dépression sévère)"],
+        "settings": ["Équipes ACT communautaires", "Services de réhabilitation", "Psychiatrie de secteur"],
+        "evidence_level": "Élevé — la fidélité ACT est corrélée aux outcomes (réduction hospitalisations, sans-abrisme)",
+        "etudes_cles": [
+          "Teague et al. 1998 — développement DACTS",
+          "Monroe-DeVita et al. 2011 — TMACT pilot-test, plus sensible au changement que DACTS",
+          "McHugo et al. 2007 — fidelity predicts outcomes",
+          "Psychiatric Services 2013 — comparaison DACTS/TMACT avec NCQA PCMH"
+        ]
+      },
+      "forces": [
+        "Mesure la fidélité au modèle — critique pour l'implémentation evidence-based",
+        "Le TMACT intègre le rétablissement, les EBPs et la personne-centrée",
+        "Version électronique (eTMACT) facilite l'évaluation standardisée",
+        "Corrélé aux outcomes patients (hospitalisations, logement, engagement)",
+        "Standard national dans plusieurs pays"
+      ],
+      "limites": [
+        "Mesure du programme, pas de l'individu",
+        "Nécessite des auditeurs formés (1-2 jours sur site)",
+        "Le DACTS est obsolescent — standards trop bas pour les pratiques actuelles",
+        "Coûteux en temps et ressources",
+        "Ne mesure pas l'observance individuelle"
+      ],
+      "amelioration_noos": "NOOS ne remplace pas l'évaluation de fidélité ACT mais peut fournir des données agrégées de population en temps réel. Les données NOOS (engagement app, renouvellement, outcomes wearable) agrégées au niveau de l'équipe ACT permettent un monitoring continu de la qualité de service sans audit formel. Un 'TMACT-lite digital' basé sur les outcomes patients mesurés par NOOS pourrait compléter les audits de fidélité périodiques.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "intervention_clinique_requise": true,
+        "explication": "Les échelles de fidélité ACT évaluent la structure et les processus de programme, pas les patients individuels. NOOS n'a pas les données pour les calculer. Cependant, NOOS peut fournir les outcomes agrégés qui informent indirectement la qualité du programme."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/21659289/",
+        "https://www.med.unc.edu/psych/cecmh/unc-institute-for-best-practices/assertive-community-treatment-act/tool-for-measurement-of-act-tmact/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC4001829/"
+      ]
+    },
+    {
+      "id": "FACT_FIDELITY",
+      "nom_complet": "Forensic Assertive Community Treatment Fidelity Scales (R-FACTS / FACTs 2017)",
+      "organisme_emetteur": "R-FACTS : Cuddeback, Wilson, Lamberti (University of Rochester / University of North Carolina). FACTs 2017 : réseau FACT néerlandais (Flexible ACT, distinct du Forensic ACT).",
+      "frequence_publication": "R-FACTS : expérimental (NIMH 2017, révisé 2021). FACTs 2017 : standard néerlandais pour Flexible ACT.",
+      "annee_creation": "R-FACTS : 2017 (expérimental), 2021 (publié). FACTs 2017 : 2017 (succède au FACTs 2008).",
+      "methodologie": {
+        "dimensions_mesurees_R_FACTS": [
+          "Haute fidélité ACT de base",
+          "Critères d'admission justice + santé mentale",
+          "Partenariat avec la justice pénale",
+          "Prise en charge des risques criminogènes",
+          "Logement, soins médicaux, services transitionnels"
+        ],
+        "dimensions_mesurees_FACTs_2017": [
+          "Partie A : 16 items quantitatifs (structure, organisation, processus) sur échelle 1-5",
+          "Partie B : 8 topics qualitatifs/descriptifs (rétablissement, eHealth, soins innovants) sur échelle 1-8"
+        ],
+        "nombre_items": "R-FACTS : en développement. FACTs 2017 : 16 quantitatifs + 8 qualitatifs.",
+        "methode_calcul": "FACTs 2017 : double évaluation quantitative (standardisée) + qualitative (appréciative). Les topics qualitatifs permettent l'adaptation au contexte local et au casemix.",
+        "scoring": "FACTs 2017 Partie A : 1-5 par item. Partie B : 1-8 par topic. Le FACTs 2017 a un caractère dualiste : composantes evidence-based strictement maintenues + adaptation locale flexible.",
+        "temps_administration": "Audit de programme (journée)",
+        "type_mesure": "Évaluation programmatique"
+      },
+      "application_psychiatrie": {
+        "pathologies": ["Troubles mentaux sévères avec implication justice (R-FACTS)", "Troubles mentaux sévères en communauté (FACTs 2017)"],
+        "settings": ["Équipes FACT forensiques (R-FACTS)", "Équipes Flexible ACT (FACTs 2017, Pays-Bas, Danemark, Suède)"],
+        "evidence_level": "Émergent — données préliminaires positives mais échelles encore en validation",
+        "etudes_cles": [
+          "Cuddeback et al. 2021 (Int J Law Psychiatry) — éléments essentiels du FACT, introduction R-FACTS",
+          "Van Veldhuizen et al. 2021 (Tilburg University) — développement FACTs 2017, pilotes en NL/DK/SE",
+          "Nugter et al. 2015 — association fidélité FACT / réduction hospitalisation"
+        ]
+      },
+      "forces": [
+        "Adresse une population critique (justice + santé mentale)",
+        "FACTs 2017 : approche dualiste (rigueur + flexibilité locale)",
+        "Intègre l'évaluation des risques et la sécurité",
+        "L'orientation rétablissement et l'eHealth sont intégrés",
+        "Permet la diversification selon le casemix et le contexte"
+      ],
+      "limites": [
+        "R-FACTS encore expérimental — validité et fiabilité non confirmées",
+        "FACTs 2017 générique — moins adapté aux sous-populations spécifiques",
+        "Nécessite des auditeurs formés",
+        "La partie qualitative (FACTs 2017 Partie B) est subjective",
+        "Données d'efficacité limitées par rapport au DACTS/TMACT"
+      ],
+      "amelioration_noos": "NOOS est pertinent pour le corridor justice-santé mentale en Afrique (où les structures FACT n'existent pas). Les données NOOS (observance, biomarqueurs de stabilité) pourraient servir de métriques d'outcome pour les programmes de santé mentale communautaire, fournissant la couche de données qui manque aux évaluations de fidélité FACT dans les LMIC.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "intervention_clinique_requise": true,
+        "explication": "Évaluation de programme — même logique que l'ACT fidelity. NOOS peut fournir des données d'outcome agrégées mais ne peut pas évaluer la structure et les processus du programme."
+      },
+      "sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/34033595/",
+        "https://repository.tilburguniversity.edu/server/api/core/bitstreams/8ff27f1b-50ed-4f71-b867-ed156193a6d6/content",
+        "https://www.prainc.com/introducing-forensic-assertive-community-treatment-fact-action-brief/"
+      ]
+    }
+  ],
+
+  "categorie_3_systemes_sante_mentale": [
+    {
+      "id": "WHO_AIMS",
+      "nom_complet": "WHO Assessment Instrument for Mental Health Systems (WHO-AIMS 2.2)",
+      "organisme_emetteur": "Organisation Mondiale de la Santé (OMS/WHO) — Department of Mental Health and Substance Abuse",
+      "frequence_publication": "Application ponctuelle par pays — pas de fréquence fixe. 50+ pays ont utilisé l'instrument.",
+      "derniere_edition": "WHO-AIMS 2.2 (2005)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "1. Cadre politique et législatif",
+          "2. Services de santé mentale",
+          "3. Santé mentale en soins primaires",
+          "4. Ressources humaines",
+          "5. Éducation du public et liens avec d'autres secteurs",
+          "6. Suivi et recherche"
+        ],
+        "methode_collecte": "28 facettes, 156 items. Questionnaire rempli par des référents nationaux (Ministère de la Santé). Inclut un programme de saisie de données et un template de rapport pays.",
+        "couverture_pays": 50,
+        "indicateurs_cles": ["Psychiatres/100,000 habitants", "Lits psychiatriques/100,000", "Proportion soins communautaires", "Existence politique santé mentale", "Formation droits humains"]
+      },
+      "indicateurs_observance": {
+        "present": false,
+        "details": "WHO-AIMS ne contient pas d'indicateur spécifique sur l'observance thérapeutique. Il évalue les structures et processus du système, pas les outcomes au niveau patient."
+      },
+      "application_psychiatrie": {
+        "focus": "Évaluation système de santé mentale au niveau national — LMIC principalement",
+        "evidence_level": "Élevé — instrument OMS de référence pour les LMIC",
+        "publications_cles": [
+          "WHO/MSD/MER/05.02 — document instrument original",
+          "Saxena et al. 2007 (Lancet) — WHO-AIMS dans les pays pilotes",
+          "Bull WHO 2008 — évaluation utilité WHO-AIMS dans 4 pays (Iraq, Japon, Philippines, Macédoine)"
+        ]
+      },
+      "forces": [
+        "Complet — couvre 6 domaines du système de santé mentale",
+        "Standardisé — permet la comparaison internationale",
+        "Conçu pour les LMIC — peu de ressources requises",
+        "Génère des données baseline pour le plaidoyer politique",
+        "Template de rapport facilite l'utilisation"
+      ],
+      "limites": [
+        "Ne mesure pas la culture ni le contexte politique",
+        "Items formulés en termes larges — validité de mesure questionnée",
+        "Disponibilité vs qualité non distinguées (ex : médicaments disponibles mais mal utilisés)",
+        "Pas d'indicateurs d'outcome patient (dont observance)",
+        "Version 2005 — pas mise à jour depuis 20 ans"
+      ],
+      "amelioration_noos": "NOOS peut contribuer au domaine 6 (Suivi et recherche) de WHO-AIMS en fournissant les données d'outcome patient qui manquent. Les données NOOS agrégées (taux d'observance populationnel, biomarqueurs de stabilité) créent une couche de monitoring des outcomes qui complète les données structurelles de WHO-AIMS. Pour le corridor EU-Afrique, NOOS pourrait être le système d'information qui rend WHO-AIMS actionnable.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "niveau_agregation": "National/Système",
+        "intervention_clinique_requise": true,
+        "explication": "WHO-AIMS évalue les systèmes nationaux — hors périmètre NOOS qui opère au niveau patient. Mais les données agrégées NOOS peuvent alimenter les indicateurs WHO-AIMS manquants."
+      },
+      "sources": [
+        "https://www.who.int/publications/i/item/WHO-MSD-MER-05.02",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC2647453/",
+        "https://pubmed.ncbi.nlm.nih.gov/17535942/"
+      ]
+    },
+    {
+      "id": "MH_ATLAS",
+      "nom_complet": "WHO Mental Health Atlas",
+      "organisme_emetteur": "Organisation Mondiale de la Santé (OMS/WHO) — Department of Mental Health and Substance Dependence",
+      "frequence_publication": "Triennale/quadriennale : 2001, 2005, 2011, 2014, 2017, 2020, 2024 (7ème édition)",
+      "derniere_edition": "Mental Health Atlas 2024 (publié 2025, données de 144/194 États membres)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "Politiques et plans de santé mentale",
+          "Législation santé mentale (approche droits)",
+          "Financement santé mentale",
+          "Ressources humaines (psychiatres, infirmiers, psychologues/100,000)",
+          "Disponibilité et utilisation des services",
+          "Télésanté (nouveau 2024)",
+          "Préparation aux urgences (nouveau 2024)",
+          "Systèmes d'information santé mentale"
+        ],
+        "methode_collecte": "Questionnaire standardisé aux points focaux santé mentale des Ministères de la Santé. Suivi des cibles du Plan d'action global santé mentale 2013-2030.",
+        "couverture_pays": 144,
+        "indicateurs_cles": [
+          "Target 1.1 : politique/plan santé mentale implémenté aligné droits humains",
+          "Target 2.3 : intégration santé mentale en soins primaires (5 critères, 12% remplissent les 5)",
+          "Target 3.1 : programmes de promotion/prévention",
+          "Target 3.3 : système de préparation urgences psychosociales (65% en 2024 vs 45% en 2020)",
+          "Target 4.1 : collecte routinière indicateurs santé mentale (44% en 2024 vs 35% en 2020)"
+        ]
+      },
+      "indicateurs_observance": {
+        "present": false,
+        "details": "Le Mental Health Atlas ne contient pas d'indicateur d'observance thérapeutique. Il mesure les inputs du système (ressources, politiques, services) mais pas les outcomes au niveau patient."
+      },
+      "application_psychiatrie": {
+        "focus": "Monitoring global du progrès des systèmes de santé mentale",
+        "evidence_level": "Très élevé — référence mondiale, 7 éditions depuis 2001",
+        "publications_cles": [
+          "WHO Mental Health Atlas 2024 (ISBN: 9789240114487)",
+          "Comprehensive Mental Health Action Plan 2013-2030"
+        ]
+      },
+      "forces": [
+        "Couverture mondiale (144 pays en 2024)",
+        "Série temporelle longue (2001-2024) — permet le suivi des tendances",
+        "Aligné sur le Plan d'action global — levier de plaidoyer politique",
+        "Nouvelles sections (télésanté, urgences) reflètent l'évolution post-COVID",
+        "Gratuit et accessible"
+      ],
+      "limites": [
+        "Données auto-déclarées par les gouvernements — biais de reporting",
+        "Pas d'indicateurs d'outcome patient ou d'observance",
+        "Participation 2024 plus basse que les éditions précédentes (144/194)",
+        "Indicateurs de structure/processus, pas de résultats",
+        "Les LMIC sous-représentées dans les données détaillées"
+      ],
+      "amelioration_noos": "Le Mental Health Atlas montre que 56% des pays ne collectent pas routinièrement les indicateurs de santé mentale. NOOS peut être le système qui comble ce gap en fournissant des données d'outcome patient automatisées à l'échelle du corridor EU-Afrique. L'agrégation des données NOOS peut alimenter directement les rapports Atlas nationaux, transformant les pays du corridor de 'non-reporters' en 'leaders data-driven'.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "niveau_agregation": "National/Global",
+        "intervention_clinique_requise": true,
+        "explication": "Instrument de monitoring global — hors périmètre NOOS. Les données NOOS agrégées peuvent cependant enrichir les rapports nationaux avec des indicateurs d'outcome qui manquent actuellement."
+      },
+      "sources": [
+        "https://www.who.int/publications/i/item/9789240114487",
+        "https://repository.gheli.harvard.edu/repository/12501/",
+        "https://www.salute.gov.it/new/sites/default/files/2025-10/Mental%20Health%20Atlas%202024%20WHO-eng_0.pdf"
+      ]
+    },
+    {
+      "id": "LANCET_GMH",
+      "nom_complet": "Lancet Commission on Global Mental Health and Sustainable Development Indicators / Countdown Global Mental Health 2030",
+      "organisme_emetteur": "The Lancet / Countdown Global Mental Health 2030 (collaboration multi-institutionnelle)",
+      "frequence_publication": "Commission : 2018 (rapport unique). Countdown 2030 : premier rapport 2021, dashboard continu.",
+      "derniere_edition": "Countdown Global Mental Health 2030 — premier rapport et dashboard 2021",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "Déterminants de la santé mentale (démographiques, économiques)",
+          "Facteurs influençant la demande de services (stigma, littératie en santé)",
+          "Offre de services de santé mentale",
+          "Couverture et qualité des services",
+          "Outcomes (statut de santé mentale, bien-être)"
+        ],
+        "methode_collecte": "Set d'indicateurs intégrés couvrant déterminants sociaux, statut de santé mentale, inputs et outcomes des services. Dashboard de données pour tous les pays. Trois gaps identifiés : treatment gap, quality gap, prevention gap.",
+        "couverture_pays": "Tous les pays (dashboard universel)",
+        "indicateurs_cles": [
+          "Treatment gap (écart de traitement)",
+          "Quality gap (qualité des soins reçus)",
+          "Prevention gap (couverture prévention)",
+          "SDG 3.4 (réduction mortalité prématurée MNT + santé mentale)",
+          "SDG 3.5 (prévention abus de substances)"
+        ]
+      },
+      "indicateurs_observance": {
+        "present": "indirectement",
+        "details": "L'observance n'est pas un indicateur spécifique mais le 'quality gap' et le 'treatment gap' impliquent des problèmes d'adhérence. Le Countdown recommande des indicateurs d'outcomes incluant le fonctionnement et le bien-être."
+      },
+      "application_psychiatrie": {
+        "focus": "Monitoring global de la santé mentale dans le cadre des SDGs",
+        "evidence_level": "Très élevé — Commission Lancet avec 28 experts mondiaux",
+        "publications_cles": [
+          "Patel et al. 2018 (Lancet) — Commission report",
+          "Countdown Global Mental Health 2030 (Lancet Psychiatry 2021)"
+        ]
+      },
+      "forces": [
+        "Vision intégrée : déterminants + services + outcomes",
+        "Ancré dans les SDGs — levier politique majeur",
+        "Dashboard universel et continu",
+        "Identifie 3 gaps actionnables (traitement, qualité, prévention)",
+        "Promeut les nouvelles technologies comme leviers"
+      ],
+      "limites": [
+        "Pas d'indicateur d'observance spécifique",
+        "Dépend des données disponibles — gaps importants dans les LMIC",
+        "Indicateurs principalement de type input/process — peu d'outcomes patient",
+        "Le Countdown est récent (2021) — données encore en construction"
+      ],
+      "amelioration_noos": "La Commission Lancet appelle explicitement à 'embrasser les nouvelles technologies' (recommendation e). NOOS est exactement cette technologie. Les données NOOS peuvent alimenter les indicateurs Countdown manquants : le 'quality gap' peut être mesuré par l'observance NOOS, et le 'treatment gap' peut être réduit par le monitoring digital NOOS dans les LMIC où les psychiatres sont à 0.1/100,000.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "niveau_agregation": "National/Global",
+        "intervention_clinique_requise": true,
+        "explication": "Indicateurs système — hors calcul individuel. NOOS contribue en amont en fournissant les données d'outcome patient qui alimentent ces indicateurs."
+      },
+      "sources": [
+        "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/102654274/The_Lancet_Commission_on_PATEL_Firstonline16October2018_GREEN_AAM_CC_BY_NC_ND_.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6520536/",
+        "https://www.thelancet.com/journals/lanpsy/article/PIIS2215-0366(21)00391-6/fulltext"
+      ]
+    },
+    {
+      "id": "OECD_MH_BENCHMARK",
+      "nom_complet": "OECD Mental Health System Performance Benchmark",
+      "organisme_emetteur": "Organisation de Coopération et de Développement Économiques (OCDE/OECD)",
+      "frequence_publication": "Rapport inaugural 2021. Mise à jour continue des indicateurs dans les Health at a Glance.",
+      "derniere_edition": "A New Benchmark for Mental Health Systems (2021)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "1. Personne-centrée",
+          "2. Accessibilité et qualité des services",
+          "3. Approche intégrée et multi-sectorielle",
+          "4. Prévention et promotion",
+          "5. Leadership et gouvernance",
+          "6. Innovation et durabilité"
+        ],
+        "methode_collecte": "23 indicateurs, dont beaucoup nouvellement collectés. Combinaison de données administratives, enquêtes de santé, données spécifiques collectées auprès des pays OCDE.",
+        "couverture_pays": "38 pays OCDE",
+        "indicateurs_cles": [
+          "Satisfaction de vie",
+          "Décès par suicide",
+          "Amélioration fonctionnelle post-traitement",
+          "Couverture des services",
+          "Expérience des usagers et des aidants",
+          "Niveaux de stigma"
+        ]
+      },
+      "indicateurs_observance": {
+        "present": "indirectement",
+        "details": "L'observance n'est pas un indicateur explicite. L'amélioration fonctionnelle post-traitement et la continuité des soins sont des proxies. Gaps majeurs dans les données d'outcome et de satisfaction usager."
+      },
+      "application_psychiatrie": {
+        "focus": "Benchmarking international de la performance des systèmes de santé mentale",
+        "evidence_level": "Élevé — cadre développé en réponse à l'appel des Ministres de la Santé OCDE 2017",
+        "publications_cles": [
+          "OECD 2021 — A New Benchmark for Mental Health Systems",
+          "OECD 2004 — Selecting Indicators for Quality of Mental Health Care (12 indicateurs consensus)"
+        ]
+      },
+      "forces": [
+        "6 dimensions couvrant la totalité du système",
+        "Comparabilité internationale entre 38 pays à haut revenu",
+        "Mandat politique fort (Ministres de la Santé 2017)",
+        "Inclut l'innovation comme dimension de performance",
+        "Indicateurs de satisfaction et d'expérience usager"
+      ],
+      "limites": [
+        "Seulement 2/23 indicateurs disponibles pour tous les pays (satisfaction de vie, suicide)",
+        "Gaps majeurs : stigma, outcomes fonctionnels, expérience usager",
+        "Limité aux pays OCDE — exclut les LMIC",
+        "Pas d'indicateur d'observance spécifique",
+        "Les données comparables internationalement restent difficiles à produire"
+      ],
+      "amelioration_noos": "L'OCDE admet que les lacunes de données sont majeures. NOOS peut contribuer à la dimension 6 (Innovation) et fournir les données d'outcome qui manquent pour les dimensions 1-2 (personne-centrée, qualité). Un 'indicateur NOOS d'observance' standardisé et collecté automatiquement dans les pays OCDE et au-delà résoudrait le problème identifié par l'OCDE : l'impossibilité actuelle de mesurer les outcomes fonctionnels post-traitement.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "niveau_agregation": "National/OCDE",
+        "intervention_clinique_requise": true,
+        "explication": "Benchmarking de système — NOOS contribue en amont avec des données individuelles agrégées. L'Indice NOOS pourrait devenir un indicateur standardisé intégré au benchmark OCDE."
+      },
+      "sources": [
+        "https://www.oecd.org/content/dam/oecd/en/publications/reports/2021/06/a-new-benchmark-for-mental-health-systems_c0cce868/4ed890f6-en.pdf",
+        "https://www.oecd.org/en/publications/selecting-indicators-for-the-quality-of-mental-health-care-at-the-health-systems-level-in-oecd-countries_388745076135.html"
+      ]
+    },
+    {
+      "id": "EU_COMPASS",
+      "nom_complet": "EU Compass for Action on Mental Health and Wellbeing",
+      "organisme_emetteur": "Commission Européenne (DG SANTE) — implémenté par le consortium EU Compass (2015-2018)",
+      "frequence_publication": "3 rapports annuels (2016, 2017, 2018) + articles scientifiques consensuels. Programme terminé en 2018.",
+      "derniere_edition": "Rapport annuel 2018 (final)",
+      "methodologie": {
+        "dimensions_mesurees": [
+          "7 priorités rotatives annuelles :",
+          "1. Prévention dépression et promotion résilience (2016)",
+          "2. Accès aux services de santé mentale (2016)",
+          "3. Santé mentale au travail (2017)",
+          "4. Santé mentale à l'école (2017)",
+          "5. Prévention du suicide (2017)",
+          "6. Services communautaires de santé mentale (2018)",
+          "7. Gouvernance intégrée (2018)"
+        ],
+        "methode_collecte": "Enquêtes annuelles auprès des États membres et des parties prenantes. Identification de bonnes pratiques. Articles scientifiques consensuels par thème. Forums annuels. Ateliers nationaux (28 pays UE + Islande + Norvège).",
+        "couverture_pays": "28+ (UE + EEE)",
+        "indicateurs_cles": [
+          "Bonnes pratiques identifiées par domaine",
+          "Progrès vers les objectifs du Pacte européen pour la santé mentale 2008",
+          "Indicateurs d'activité des systèmes d'information",
+          "Le rapport recommande de développer de nouveaux indicateurs sur l'utilisation des services"
+        ]
+      },
+      "indicateurs_observance": {
+        "present": false,
+        "details": "Pas d'indicateur d'observance. EU-COMPASS se concentre sur les politiques, les bonnes pratiques et les actions des États membres, pas sur les outcomes cliniques individuels."
+      },
+      "application_psychiatrie": {
+        "focus": "Monitoring et dissémination des politiques et bonnes pratiques en santé mentale dans l'UE",
+        "evidence_level": "Modéré — mécanisme politique plus que scientifique",
+        "publications_cles": [
+          "EU Compass Annual Reports 2016-2018",
+          "European Framework for Action on Mental Health and Wellbeing",
+          "4 scientific papers consensuels (2016-2018)"
+        ]
+      },
+      "forces": [
+        "Couverture UE complète avec engagement des États membres",
+        "Identification systématique de bonnes pratiques",
+        "Approche multi-sectorielle (travail, école, communauté)",
+        "Consensus papers avec validation par experts gouvernementaux",
+        "Levier politique direct via les groupes d'experts"
+      ],
+      "limites": [
+        "Programme terminé en 2018 — pas de continuation formelle",
+        "Descriptif plutôt qu'analytique — pas de benchmarking quantitatif",
+        "Pas d'indicateurs d'outcome patient",
+        "Les bonnes pratiques identifiées ne sont pas toujours reproductibles",
+        "Le rapport lui-même note le besoin de nouveaux indicateurs"
+      ],
+      "amelioration_noos": "EU-COMPASS est terminé mais son héritage identifie un gap critique : le manque d'indicateurs d'utilisation des services et d'outcomes. NOOS peut combler ce gap dans les pays européens du corridor en fournissant des données d'observance et de fonctionnement standardisées. Si l'UE relance un mécanisme similaire, NOOS serait un fournisseur naturel de données d'outcome digitales.",
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "niveau_agregation": "National/UE",
+        "intervention_clinique_requise": true,
+        "explication": "Mécanisme de monitoring politique — hors périmètre calcul NOOS. Les données agrégées NOOS peuvent informer les futures initiatives similaires."
+      },
+      "sources": [
+        "https://health.ec.europa.eu/non-communicable-diseases/mental-health/eu-compass-action-mental-health-and-well-being_en",
+        "https://health.ec.europa.eu/document/download/e21456a0-8c8e-44af-9c99-770b6ddda460_en",
+        "https://health.ec.europa.eu/document/download/202ac72a-c8ef-4b73-87e8-071ebe534837_en"
+      ]
+    }
+  ],
+
+  "categorie_4_digital_health": [
+    {
+      "id": "DTx_ASSESSMENT",
+      "nom_complet": "Digital Therapeutics Alliance (DTA) DTx Value Assessment & Integration Guide",
+      "organisme_emetteur": "Digital Therapeutics Alliance (DTA) — organisation industrielle internationale",
+      "frequence_publication": "Guide initial mai 2022. Mise à jour Clinical Evidence supplement juin 2023. Product Library continue.",
+      "derniere_version": "DTx Value Assessment Guide v1 (2022) + Clinical Evidence supplement (2023)",
+      "methodologie": {
+        "dimensions_evaluees": [
+          "1. Vue d'ensemble produit (indication, population, stade de développement)",
+          "2. Impact clinique (positionnement dans le parcours de soins, mesures cliniques)",
+          "3. Considérations techniques (architecture, IA/ML, cybersécurité, interopérabilité)",
+          "4. Utilisabilité produit (caractéristiques utilisateur, design, accessibilité, protection données)",
+          "5. Evidence clinique (selon framework GRADE : RCTs, RWE, PROs)",
+          "6. Évaluation économique (budget impact, cost-effectiveness)"
+        ],
+        "criteres_evaluation": [
+          "Risk of bias des études cliniques",
+          "Digital endpoints et digital biomarkers",
+          "Standardized patient assessments (GAD-7, PHQ-9, PSS)",
+          "Patient-reported outcomes (PROs)",
+          "Quality measures (HEDIS, CAHPS)",
+          "Interopérabilité EHR",
+          "Engagement clinicien et patient"
+        ],
+        "processus_certification": "Product Library : produits listés doivent répondre à la définition DTx et s'engager sur les Core Principles (sécurité, efficacité, design centré-utilisateur, supervision clinique appropriée).",
+        "niveaux_evidence": ["Prototyping (feasibility/acceptability)", "Pilot (preliminary efficacy)", "Pivotal (RCT)", "Post-market (RWE)"]
+      },
+      "application_sante_mentale": {
+        "specificite_psychiatrie": "Plusieurs DTx psychiatriques dans la Product Library : Woebot (dépression/anxiété), Freespira (PTSD/panic), reSET-O (opioid use disorder). La santé mentale est un vertical majeur du DTx.",
+        "exemples_produits_certifies": ["Woebot (anxiété, dépression)", "Freespira (PTSD, panique)", "reSET-O (addiction opioïdes)", "EndeavorRx (TDAH)"],
+        "evidence_level": "Variable selon le produit — de feasibility à RCT phase III"
+      },
+      "forces": [
+        "Cadre structuré pour les décideurs de santé (HCDMs)",
+        "Intègre l'évaluation clinique, technique et économique",
+        "Utilise le framework GRADE — standard international d'évaluation evidence",
+        "Product Library comme mécanisme de signal de qualité",
+        "Inclut les digital endpoints et biomarkers"
+      ],
+      "limites": [
+        "Framework industriel — pas de validation réglementaire directe",
+        "Pas de scoring numérique standardisé — plus un guide qu'un score",
+        "La Product Library est volontaire — pas d'audit indépendant",
+        "Focus sur les DTx au sens strict — exclut les solutions de monitoring",
+        "Le Clinical Evidence supplement reste déclaratif (checklist, pas scoring)"
+      ],
+      "evaluation_noos": {
+        "score_estime": "NOOS devrait viser la catégorie 'Pivotal' avec au moins un RCT en psychiatrie pour être listé dans la Product Library",
+        "dimensions_couvertes": ["Impact clinique (monitoring observance)", "Considérations techniques (6 signaux, IA)", "Digital endpoints (biomarqueurs digitaux)", "PROs via EMA"],
+        "dimensions_manquantes": ["RCT publié dans un journal peer-reviewed", "Clearance réglementaire (FDA/CE)", "Cost-effectiveness study"],
+        "recommandations": "NOOS devrait lancer un RCT pragmatique en schizophrénie comparant monitoring NOOS vs soins standards, avec pour endpoint primaire le taux de réhospitalisation à 12 mois."
+      },
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["engagement_app", "renouvellement_pharmacie", "biomarqueurs_wearable_HRV_sommeil_activite", "biomarqueurs_vocaux", "EMA_ecological_momentary_assessment", "patterns_sommeil_activite"],
+        "intervention_clinique_requise": true,
+        "explication": "Le DTx Assessment est un cadre d'évaluation de produit, pas un score patient. NOOS est évalué par ce framework, il ne le calcule pas. Les 6 signaux NOOS répondent bien aux critères de digital endpoints/biomarkers du framework."
+      },
+      "sources": [
+        "https://dtxalliance.org/wp-content/uploads/2022/05/DTx-Value-Assessment-Guide_May-2022.pdf",
+        "https://dtxalliance.org/wp-content/uploads/2023/06/DTx-Value-Assessment-Guide_Clinical-Evidence.pdf",
+        "https://www.sidekickhealth.com/news/digital-therapeutics-alliance-value-assessment-guide"
+      ]
+    },
+    {
+      "id": "NICE_ESF",
+      "nom_complet": "NICE Evidence Standards Framework for Digital Health Technologies (ESF)",
+      "organisme_emetteur": "National Institute for Health and Care Excellence (NICE) — UK",
+      "frequence_publication": "Publié décembre 2018. Mis à jour août 2022. Évolution continue.",
+      "derniere_version": "NICE ESF v2 (août 2022)",
+      "methodologie": {
+        "dimensions_evaluees": [
+          "Classification en 3 tiers (A, B, C) selon risque et fonction",
+          "21 standards en 5 groupes :",
+          "1. Design factors (9 standards : sécurité, acceptabilité, accessibilité, biais, interopérabilité, données)",
+          "2. Describing value (4 standards : proposition de valeur, pertinence, viabilité, mise en œuvre)",
+          "3. Demonstrating performance (3 standards : effectiveness Tier C, RWE, monitoring performance)",
+          "4. Delivering value (2 standards : value for money, commissioning)",
+          "5. Deployment considerations (3 standards : réalisation des bénéfices en pratique)"
+        ],
+        "criteres_evaluation": [
+          "Tier A : mode d'action plausible ('viewed as useful and relevant')",
+          "Tier B : études observationnelles ou quasi-expérimentales",
+          "Tier C (3a) : comparative study with relevant comparator",
+          "Tier C (3b) : high-quality RCT in UK-relevant setting — best practice standard"
+        ],
+        "processus_certification": "Pas de certification formelle mais les commissioning decisions NHS utilisent l'ESF comme guide d'évaluation.",
+        "niveaux_evidence": ["Tier A (system efficiency)", "Tier B (inform/communicate/record)", "Tier C-3a (prevent/self-manage)", "Tier C-3b (treat/diagnose/actively monitor)"]
+      },
+      "application_sante_mentale": {
+        "specificite_psychiatrie": "Les DHTs de santé mentale (CBT digitale, monitoring de symptômes, EMA) tombent typiquement dans les Tiers B ou C. Un programme CBT pour la dépression = Tier C-3b (traitement). Un monitoring d'humeur partagé avec le clinicien = Tier B.",
+        "exemples_produits_certifies": ["Ieso Digital Health (CBT online — NICE recommandé)", "SilverCloud (dépression/anxiété)", "Wysa (bien-être)"],
+        "evidence_level": "Très élevé — standard NHS, influence internationale"
+      },
+      "forces": [
+        "Classification par risque — proportionnalité evidence/risque",
+        "21 standards couvrant tout le cycle de vie du produit",
+        "Standard de fait pour l'entrée sur le marché NHS",
+        "Influence internationale — adopté/adapté en Allemagne (DiGA), Belgique, etc.",
+        "Inclut les inégalités de santé et l'atténuation des biais"
+      ],
+      "limites": [
+        "Orienté NHS — pas directement applicable aux LMIC",
+        "Le Tier C-3b (RCT) est très exigeant pour les startups",
+        "Ne différencie pas suffisamment les DHTs de monitoring vs traitement",
+        "Pas de scoring numérique — décision qualitative (standard met/not met)",
+        "Focus UK — adaptation nécessaire pour les marchés non-NHS"
+      ],
+      "evaluation_noos": {
+        "score_estime": "NOOS se classerait probablement en Tier B (monitoring partagé) ou Tier C-3a (prévention rechute). Pour atteindre C-3b, un RCT UK-relevant est nécessaire.",
+        "dimensions_couvertes": ["Design factors (standards 1-6)", "Describing value (standards 10-13)", "Some demonstrating performance (standard 15-16)"],
+        "dimensions_manquantes": ["Standard 14 (effectiveness evidence pour Tier C)", "RWE UK-specific (standard 15)", "Value for money analysis"],
+        "recommandations": "NOOS devrait viser le Tier B initialement pour l'entrée NHS, avec un pathway vers C-3a. Un partenariat avec un NHS Trust pour un pilote serait stratégique."
+      },
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": ["engagement_app", "biomarqueurs_wearable_HRV_sommeil_activite", "renouvellement_pharmacie", "EMA_ecological_momentary_assessment"],
+        "intervention_clinique_requise": true,
+        "explication": "L'ESF évalue le produit NOOS, pas les patients. NOOS est le sujet de l'évaluation, pas l'évaluateur. Les 6 signaux sont des inputs qui démontrent la conformité aux standards."
+      },
+      "sources": [
+        "https://www.nice.org.uk/corporate/ecd7/chapter/section-b-classification-of-digital-health-technologies",
+        "https://www.nice.org.uk/corporate/ecd7/chapter/section-c-evidence-standards-tables",
+        "https://www.covingtondigitalhealth.com/2018/12/nice-adopts-evidence-standards-for-the-development-and-assessment-of-digital-health-technologies-dhts/",
+        "https://www.dht.health/post/summary-of-the-nice-evidence-standards-framework-esf-for-digital-health-technologies"
+      ]
+    },
+    {
+      "id": "ORCHA_OBR",
+      "nom_complet": "ORCHA Baseline Review (OBR)",
+      "organisme_emetteur": "ORCHA (Organisation for the Review of Care and Health Applications) — UK, maintenant international",
+      "frequence_publication": "Évaluation continue. OBR en 6ème itération. 30,000+ évaluations réalisées. Adopté dans 10+ pays.",
+      "derniere_version": "OBR v6 (2024-2025). US Digital Health Assessment Framework (DHAF) dérivé du OBR (2025, avec ACP et ATA).",
+      "methodologie": {
+        "dimensions_evaluees": [
+          "1. Données et Vie privée (conformité RGPD, DCB 0129/0160, ISO 27001)",
+          "2. Assurance Professionnelle (sécurité clinique, evidence, gouvernance)",
+          "3. Utilisabilité et Accessibilité (design, inclusion, UX)"
+        ],
+        "criteres_evaluation": "350+ micro-critères binaires (oui/non). Chaque critère est testé indépendamment. Le format binaire assure objectivité, reproductibilité et comparabilité.",
+        "processus_certification": "Évaluation indépendante par ORCHA. Score de conformité par domaine. Intégré au NICE ESF (OBR traduit les standards NICE en critères testables). Base de plus de 70% des modèles d'accréditation digital health mondiaux.",
+        "niveaux_evidence": ["OBR (baseline)", "OBR+ (extended, incluant evidence clinique approfondie)"]
+      },
+      "application_sante_mentale": {
+        "specificite_psychiatrie": "ORCHA évalue des centaines d'apps de santé mentale. Les apps de monitoring d'humeur, CBT digitale, mindfulness, et observance médicamenteuse sont évaluées régulièrement.",
+        "exemples_produits_certifies": ["Évaluations de Calm, Headspace, Wysa, Daylight et d'autres apps santé mentale"],
+        "evidence_level": "Élevé — adopté par le NHS, adoptions internationales croissantes"
+      },
+      "forces": [
+        "350+ critères granulaires — évaluation la plus détaillée disponible",
+        "Objectif et reproductible (micro-critères binaires)",
+        "Intègre RGPD, NICE ESF, ISO 82304-2 en un seul framework",
+        "30,000+ évaluations — base de données comparative massive",
+        "Adoption internationale (10+ pays, 70% des modèles d'accréditation)",
+        "Extension US via DHAF (ACP + ATA + ORCHA)"
+      ],
+      "limites": [
+        "Service commercial (payant pour les développeurs d'apps)",
+        "Focus sur conformité et sécurité — moins sur l'efficacité clinique",
+        "Les 350 critères sont principalement structurels (a-t-on une politique X?) plutôt que d'outcome",
+        "L'évaluation est une photographie ponctuelle — pas de monitoring continu",
+        "Le score peut masquer des faiblesses critiques dans les domaines individuels"
+      ],
+      "evaluation_noos": {
+        "score_estime": "NOOS devrait viser un score OBR élevé dès le lancement. La conformité RGPD via ÆLYA est un avantage majeur. Les critères de sécurité clinique nécessitent une attention particulière (données de patients psychiatriques vulnérables).",
+        "dimensions_couvertes": ["Données et Vie privée (ÆLYA)", "Utilisabilité (design centré-patient)"],
+        "dimensions_manquantes": ["Assurance professionnelle (evidence clinique formelle)", "Certaines certifications de sécurité (ISO 27001, DCB 0129)"],
+        "recommandations": "NOOS devrait passer l'OBR avant le lancement commercial pour obtenir un label de qualité reconnu NHS et international. Priorité : ISO 27001 + RGPD Art.9 (données de santé) + safety case DCB 0160."
+      },
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "intervention_clinique_requise": true,
+        "explication": "L'OBR évalue le produit NOOS au niveau structurel. NOOS est évalué, il ne calcule pas le score OBR. Le score OBR est un badge de qualité pour NOOS."
+      },
+      "sources": [
+        "https://www.orchahealth.com/resources/assessment-frameworks/orcha-baseline-review",
+        "https://www.orchahealth.com/resources/assessment-frameworks/dhaf",
+        "https://www.orchahealth.com/resources/assessment-frameworks"
+      ]
+    },
+    {
+      "id": "mERA",
+      "nom_complet": "mHealth Evidence Reporting and Assessment (mERA) Checklist",
+      "organisme_emetteur": "WHO mHealth Technical Evidence Review Group (mTERG) — en collaboration avec Johns Hopkins Global mHealth Initiative",
+      "frequence_publication": "Publié mars 2016 dans The BMJ. Instrument unique, pas de mise à jour formelle.",
+      "derniere_version": "mERA v1 (2016)",
+      "methodologie": {
+        "dimensions_evaluees": [
+          "16 items core mERA (checklist de reporting) :",
+          "1. Infrastructure (hardware/software platform)",
+          "2. Technology platform (smartphone, SMS, IVR, web)",
+          "3. Interoperability / Health Information Systems",
+          "4. Intervention delivery (content, frequency, timing)",
+          "5. Intervention content (evidence-based?)",
+          "6. Usability / Content testing",
+          "7. User feedback",
+          "8. Access of individual participants",
+          "9. Cost assessment",
+          "10. Adoption input / Output (reach, sustainability)",
+          "11. Limitations for delivery at scale",
+          "12. Contextual adaptability",
+          "13. Replicability",
+          "14. Data security",
+          "15. Compliance with national guidelines or regulatory statutes",
+          "16. Fidelity of the intervention",
+          "+ 29 items méthodologiques (Appendice) pour le design d'étude"
+        ],
+        "criteres_evaluation": "Checklist de reporting (pas de scoring). Chaque item est 'reporté' ou 'non reporté'. Conçu comme complément à CONSORT (RCTs) et STROBE (observationnels).",
+        "processus_certification": "Pas de certification — guide de reporting pour auteurs, reviewers et éditeurs de journaux.",
+        "niveaux_evidence": ["Prototyping (feasibility)", "Pilot", "Scaled deployment (effect & implementation fidelity)"]
+      },
+      "application_sante_mentale": {
+        "specificite_psychiatrie": "Applicable à toute intervention mHealth incluant la santé mentale. Particulièrement pertinent pour les interventions dans les LMIC où les apps de santé mentale se multiplient.",
+        "exemples_produits_certifies": [],
+        "evidence_level": "Élevé — publié dans The BMJ, soutenu par l'OMS"
+      },
+      "forces": [
+        "Premier checklist standardisé pour le reporting mHealth",
+        "Soutien OMS — légitimité institutionnelle",
+        "Couvre contenu, contexte et caractéristiques techniques — triade essentielle",
+        "Complémentaire aux standards existants (CONSORT, STROBE)",
+        "Adapté à tout stade de maturité (prototypage à déploiement)"
+      ],
+      "limites": [
+        "Checklist de reporting, pas d'évaluation de qualité — ne score pas l'intervention",
+        "Pas de mise à jour depuis 2016 — antérieur aux avancées IA/ML",
+        "N'intègre pas les digital biomarkers ni les algorithmes adaptatifs",
+        "29 items méthodologiques en appendice sont optionnels",
+        "Adoption inégale par les journals — pas systématiquement exigé"
+      ],
+      "evaluation_noos": {
+        "score_estime": "NOOS devrait être en conformité complète avec les 16 items mERA pour toute publication scientifique. C'est un minimum de table enjeux.",
+        "dimensions_couvertes": ["Infrastructure (6 signaux, multi-platform)", "Technology platform (app mobile)", "Intervention delivery (monitoring continu)", "Data security (ÆLYA/RGPD)", "Contextual adaptability (corridor EU-Afrique)"],
+        "dimensions_manquantes": ["Items 9-10 (cost assessment, adoption/sustainability) à documenter", "Fidelity of intervention à mesurer dans un RCT"],
+        "recommandations": "Utiliser mERA comme checklist de base pour toute publication NOOS. Proposer une extension mERA-AI incluant les digital biomarkers, les algorithmes adaptatifs et les considérations éthiques IA."
+      },
+      "automatisation_noos": {
+        "calculable_automatiquement": false,
+        "signaux_noos_utilisables": [],
+        "intervention_clinique_requise": true,
+        "explication": "mERA est un checklist de reporting scientifique — utilisé par les chercheurs NOOS pour publier, pas par le système pour calculer quoi que ce soit."
+      },
+      "sources": [
+        "https://www.bmj.com/content/352/bmj.i1174",
+        "https://www.who.int/news/item/21-03-2016-new-checklist-published-to-help-improve-reporting-of-mhealth-interventions",
+        "https://primaryhealthcare4people.org/publication/guidelines-for-reporting-of-health-interventions-using-mobile-phones-mobile-health-mhealth-evidence-reporting-and-assessment-mera-checklist/"
+      ]
+    }
+  ],
+
+  "synthese_strategique": {
+    "total_indices_analyses": 24,
+    "repartition": {
+      "observance_adherence": 8,
+      "qualite_soins_psychiatriques": 6,
+      "systemes_sante_mentale": 5,
+      "digital_health_frameworks": 4,
+      "bonus_identifies": 1
+    },
+    "automatisation_noos_summary": {
+      "entierement_automatique": ["MPR", "PDC"],
+      "partiellement_automatique_via_app": ["MMAS_8", "DAI_10", "MARS", "WHODAS_2_0", "WHO_5D"],
+      "enrichissable_par_noos": ["BARS", "HoNOS", "CGI", "GAF"],
+      "hors_perimetre_individuel": ["ACT_FIDELITY", "FACT_FIDELITY", "WHO_AIMS", "MH_ATLAS", "LANCET_GMH", "OECD_MH_BENCHMARK", "EU_COMPASS"],
+      "noos_est_evalue_par": ["DTx_ASSESSMENT", "NICE_ESF", "ORCHA_OBR", "mERA"],
+      "remplacable_par_proxy_digital": ["MEMS"]
+    },
+    "gap_identifie": "AUCUN indice existant ne combine mesure objective multi-signaux + auto-report validé + contextualisation WHO 5D + applicabilité psychiatrie spécifique + calcul automatique continu + applicabilité LMIC. L'Indice NOOS d'Observance serait le premier.",
+    "positionnement_indice_noos": {
+      "definition_proposee": "Score composite continu (0-100) intégrant 6 signaux digitaux, mappé sur le cadre WHO 5D, validé contre les mesures existantes (PDC, MMAS-8, MEMS), spécifique à la psychiatrie, calculé automatiquement.",
+      "dimensions_du_score": [
+        "Dimension Comportementale (engagement app + renouvellement pharmacie → proxy PDC/MPR)",
+        "Dimension Attitudinale (EMA + biomarqueurs vocaux → proxy DAI-10/MARS)",
+        "Dimension Biologique (wearable HRV/sommeil/activité → proxy MEMS timing + validation pharmacologique)",
+        "Dimension Fonctionnelle (patterns activité + EMA → proxy WHODAS/HoNOS digital)",
+        "Dimension Contextuelle (agrégation des signaux → mapping WHO 5D)"
+      ],
+      "validation_requise": [
+        "Validation concurrente vs MEMS (gold standard) dans un échantillon psychiatrique",
+        "Validation prédictive vs réhospitalisations à 6 et 12 mois",
+        "Validation cross-culturelle corridor EU-Afrique",
+        "Sensibilité au changement après interventions d'adhérence",
+        "Test-retest reliability sur 4 semaines"
+      ],
+      "avantage_competitif": "Seul indice calculé passivement (pas de questionnaire patient ni évaluation clinicien), continu (pas ponctuel), multi-dimensionnel (pas mono-signal), et applicable LMIC (pas de hardware dédié ni claims database requis)."
+    }
+  }
+}

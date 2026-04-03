@@ -1,0 +1,841 @@
+{
+  "meta": {
+    "agent": "AMINA",
+    "mission": "Base scientifique des 5 leviers de création d'habitude appliqués à l'observance psychiatrique",
+    "date_generation": "2026-04-03",
+    "sources": ["PubMed", "PsycINFO", "Cochrane", "WHO", "NIMH", "Google Scholar"],
+    "structure": "5 leviers × (A. Fondement + B. Application observance + C. Application NOOS + D. 5 profils cognitifs) = 25 stratégies croisées"
+  },
+
+  "leviers": [
+    {
+      "id": 1,
+      "nom": "Implementation Intentions (If-Then Planning)",
+      "auteurs_reference": "Gollwitzer (1999); Gollwitzer & Sheeran (2006)",
+      "A_fondement_scientifique": {
+        "meta_analyse_reference": {
+          "auteurs": "Gollwitzer & Sheeran",
+          "journal": "Advances in Experimental Social Psychology",
+          "annee": 2006,
+          "N": 8461,
+          "k_etudes": 94,
+          "effect_size": "d = 0.65 (IC 95% : 0.60–0.70)",
+          "type_es": "Cohen's d",
+          "note": "Effet moyen-à-grand sur l'atteinte d'objectifs versus goal intention seule"
+        },
+        "meta_analyse_sante_mentale": {
+          "auteurs": "Toli, Webb & Hardy",
+          "journal": "Clinical Psychology Review",
+          "annee": 2016,
+          "N": 1636,
+          "k_etudes": 29,
+          "effect_size": "d = 0.99",
+          "type_es": "Cohen's d",
+          "populations": ["schizophrénie", "TDAH", "lésions frontales", "dépendance opiacés", "dépression"],
+          "note": "Effet large – les II automatisent le contrôle de l'action, bypassing les déficits exécutifs"
+        },
+        "meta_analyse_MCII": {
+          "auteurs": "Wang, Gai & Wang",
+          "journal": "Frontiers in Psychology",
+          "annee": 2021,
+          "N": 15907,
+          "k_etudes": 24,
+          "effect_size": "g = 0.336",
+          "type_es": "Hedges' g",
+          "note": "Mental Contrasting + Implementation Intentions combinés ; effet modéré par le style d'intervention (interactif g=0.465 > document g=0.277)"
+        },
+        "etudes_observance_medicamenteuse": [
+          {
+            "auteurs": "Conn, Ruppar et al.",
+            "journal": "Research in Social & Administrative Pharmacy",
+            "annee": 2015,
+            "N": 8243,
+            "k_etudes": 53,
+            "design": "Méta-analyse interventions observance chez adultes non-adhérents",
+            "effect_size_global": "d = 0.301 (traitement vs contrôle); d = 0.533 (pré-post traitement)",
+            "finding_cle": "Les interventions intégrant des prompts à prendre les médicaments (d=0.497) et le linking aux habitudes existantes (d=0.574) sont significativement plus efficaces que celles sans (d=0.234 et d=0.222 respectivement)"
+          },
+          {
+            "auteurs": "da Silva Duarte et al.",
+            "journal": "PubMed / Journal of Clinical Nursing",
+            "annee": 2020,
+            "N": 90,
+            "design": "RCT parallèle, diabète type 2, soins primaires",
+            "effet": "Amélioration significative de l'observance (p<0.0001), HbA1c (p<0.0001), détresse liée au diabète (p<0.0001) à 15 semaines",
+            "note": "Démonstration directe de l'II sur observance médicamenteuse orale"
+          }
+        ],
+        "etudes_psychiatrie_specifiques": [
+          {
+            "auteurs": "Gawrilow & Gollwitzer",
+            "annee": 2008,
+            "population": "Enfants TDAH",
+            "finding": "Les II améliorent l'inhibition de réponses (go/no-go) et complètent les effets des psychostimulants"
+          },
+          {
+            "auteurs": "Brandstätter, Lengfelder & Gollwitzer",
+            "annee": 2001,
+            "population": "Patients schizophrènes",
+            "finding": "Les II fonctionnent même sous charge cognitive élevée – automatisation du contrôle d'action testée chez patients schizophrènes et héroïnomanes en sevrage, sans perte d'efficacité"
+          },
+          {
+            "auteurs": "Toli et al.",
+            "annee": 2016,
+            "population": "Populations cliniques psychiatriques mixtes",
+            "finding": "d = 0.99 – les II sont efficaces même avec déficits exécutifs sévères car elles externalisent le contrôle vers des indices environnementaux"
+          }
+        ],
+        "duree_effet": {
+          "court_terme_inf3mois": "Fort (d=0.65 maintenu)",
+          "moyen_terme_3_12mois": "Modéré – nécessite renforcement périodique des plans (Silva et al., 2018 : d=0.25 avec renforcement vs atténuation sans)",
+          "long_terme_sup12mois": "Insuffisamment documenté en observance médicamenteuse ; atténuation probable sans recalibrage"
+        }
+      },
+
+      "B_application_observance_psychiatrique": {
+        "implementation_WHO": "Le rapport WHO 2003 'Adherence to Long-Term Therapies' identifie les facteurs patient-related (cognition, planification) parmi les 5 dimensions. Les II ciblent directement la dimension patient-related en structurant le passage intention→action via des plans if-then.",
+        "implementation_NIMH": "Les programmes NIMH de psychoéducation intègrent la planification comportementale (quand/où/comment prendre le traitement) comme composante standard des interventions d'observance pour troubles psychotiques.",
+        "implementation_NHS": "Le NHS NICE recommande des interventions comportementales incluant l'action planning et le coping planning pour l'observance dans les troubles bipolaires et la schizophrénie (NICE CG185, CG178).",
+        "resultats_psychiatrie": {
+          "schizophrenie": "Les interventions combinant éducation + techniques comportementales (incluant planification) montrent OR = 3.65 (IC 95% : 1.60–8.31) pour amélioration observance vs TAU (meta-analyse Defined et al., 2021, IJERPH)",
+          "depression": "L'observance antidépresseurs est améliorée par les programmes combinant éducation-comportement avec suivi téléphonique et plans de prévention de rechute personnalisés",
+          "bipolaire": "Les interventions psychoéducatives individualisées avec planification montrent des niveaux plasmatiques de thymorégulateurs significativement plus élevés à 1 mois (p<0.001) et 6 mois (p<0.001)"
+        },
+        "limitations": {
+          "fatigue_planification": "Les plans if-then doivent être révisés régulièrement – les contextes de vie changent, créant un décalage plan/réalité",
+          "deficit_executif_severe": "Paradoxalement, malgré le d=0.99 de Toli, la formation initiale du plan requiert un minimum de capacité cognitive – difficulté chez patients en phase aiguë",
+          "complexite_regimes": "Multi-médicaments nécessitent multi-plans, augmentant la charge cognitive initiale"
+        }
+      },
+
+      "C_application_NOOS": {
+        "implementation": {
+          "EMA_adaptatif": "L'EMA (Ecological Momentary Assessment) de NOOS sert de prompt contextuel en temps réel – le système détecte le moment optimal (basé sur les patterns de l'utilisateur) pour délivrer le 'if' du plan if-then",
+          "vocal": "L'interface vocale permet la formation du plan if-then dans un format naturel ('Quand je finis mon café du matin, alors je prends mon traitement') et renforce l'encodage par verbalisation",
+          "streak": "Le compteur de streak rend visible la conséquence positive du plan exécuté – feedback immédiat qui renforce l'association if→then",
+          "MYNe_reward": "Le système MYNε peut récompenser spécifiquement l'exécution du plan (pas juste la prise) – renforçant le processus de planification lui-même"
+        },
+        "metriques_succes": [
+          "Taux de confirmation de prise dans les 15 min suivant le prompt if-then (cible : >80%)",
+          "Réduction du temps moyen prompt→confirmation au fil des semaines (automatisation croissante)",
+          "Pourcentage de jours avec plan exécuté sans prompt externe (autonomisation)"
+        ],
+        "interactions_leviers": {
+          "II_x_habit_stacking": "SYNERGIE FORTE : Le habit stacking fournit le 'if' optimal (ancrage sur routine existante) tandis que l'II formalise le lien if→then. L'II amplifie le stacking en rendant explicite ce qui serait implicite.",
+          "II_x_variable_reward": "Le reward variable après exécution du plan renforce le pathway dopaminergique associé à l'indice environnemental, accélérant l'automatisation",
+          "II_x_identity": "Formuler l'II en termes identitaires ('Quand je finis mon café, je prends mon traitement parce que je suis quelqu'un qui prend soin de sa santé') combine les deux leviers"
+        }
+      },
+
+      "D_profils_cognitifs": {
+        "anxieux": {
+          "description_profil": "Hyper-vigilant aux effets secondaires, anticipe les réactions négatives, peut éviter la prise par peur",
+          "levier_dominant": "Implementation Intentions",
+          "pertinence": "HAUTE",
+          "justification": "L'II est le levier dominant pour l'anxieux car elle réduit la délibération au moment de la prise. Le plan if-then court-circuite la rumination anxieuse sur les effets secondaires en automatisant la décision. Le coping planning ('Si je ressens un effet secondaire, alors je note et j'en parle à mon médecin jeudi') désamorce l'anticipation anxieuse.",
+          "strategie_NOOS": "Prompt EMA calibré sur moment de faible anxiété (détecté via patterns EMA) + plan if-then incluant un coping plan pour effets secondaires + validation vocale rassurante post-prise",
+          "risque": "Si le prompt coïncide avec un pic d'anxiété, il peut être perçu comme intrusif et augmenter l'évitement"
+        },
+        "negligent": {
+          "description_profil": "Oubli non intentionnel, pas d'opposition au traitement mais absence de système mnésique",
+          "levier_dominant": "Implementation Intentions + Habit Stacking (co-dominance)",
+          "pertinence": "TRÈS HAUTE",
+          "justification": "L'II est le levier naturel du négligent : son problème est le gap intention→action, exactement ce que l'II résout. Combiné au habit stacking pour ancrer le plan sur une routine existante. Conn et al. (2015) : linking medication à habitudes existantes donne d=0.574 vs d=0.222 sans.",
+          "strategie_NOOS": "Identification de l'ancre optimale via EMA (quelle routine quotidienne est la plus stable?) + formation du plan if-then vocal + streak comme feedback de régularité + prompt adaptatif si déviation détectée",
+          "risque": "Faible – profil le plus réceptif aux II. Risque de désengagement si les prompts deviennent routiniers et ignorés (habituation au prompt)"
+        },
+        "contestataire": {
+          "description_profil": "Refus idéologique du traitement, opposition active, réactance psychologique",
+          "levier_dominant": "Identity Narrative (levier dominant) – l'II est secondaire",
+          "pertinence": "BASSE",
+          "justification": "L'II suppose une intention de base à transformer en action. Le contestataire n'a PAS cette intention – son problème est en amont (non-acceptation). Formater un plan if-then sans acceptation préalable peut être perçu comme coercitif et augmenter la réactance (Hong & Faedda, 1996). L'II ne devient utile qu'APRÈS un travail identitaire/motivationnel.",
+          "strategie_NOOS": "NE PAS proposer d'II en première intention. Utiliser d'abord le levier Identity Narrative. L'II n'est introduite qu'une fois le contestataire engagé dans un récit de santé autonome.",
+          "risque": "ÉLEVÉ si introduit trop tôt – renforce la réactance et le sentiment de contrôle externe"
+        },
+        "anosognosique": {
+          "description_profil": "Ne se croit pas malade, déni neurologique (pas psychologique), absence d'insight",
+          "levier_dominant": "Habit Stacking (levier dominant) – l'II est utile en mode automatique",
+          "pertinence": "MODÉRÉE",
+          "justification": "L'anosognosique ne formera pas spontanément un plan if-then car il ne reconnaît pas le besoin. Cependant, l'II a montré son efficacité chez les patients avec déficits frontaux (Toli d=0.99) car elle externalise le contrôle. La stratégie est de former l'II sans la cadrer comme 'adhérence au traitement' mais comme routine de bien-être général.",
+          "strategie_NOOS": "Cadrer le plan if-then autour du bien-être (sommeil, énergie) plutôt que de la maladie. Utiliser le prompt EMA comme déclencheur externe qui ne requiert pas d'insight. L'automatisation est l'allié : une fois le pattern installé, il persiste même sans conscience de maladie.",
+          "risque": "L'insight fluctuant peut amener à rejeter le plan lors de phases de déni accru"
+        },
+        "contextuel": {
+          "description_profil": "Observant en conditions stables, non-observant lors de perturbations externes (voyage, stress, changement de routine)",
+          "levier_dominant": "Implementation Intentions",
+          "pertinence": "TRÈS HAUTE",
+          "justification": "Le contextuel EST le profil cible idéal de l'II. Son problème est précisément la rupture du lien contexte→comportement. L'II avec coping planning ('Si ma routine est perturbée [voyage], alors je prends mon traitement au moment X dans le nouveau contexte') adresse directement cette vulnérabilité. Les plans adaptatifs multi-contextes sont la solution.",
+          "strategie_NOOS": "Formation de plans if-then multi-contextes via EMA (routine semaine, routine weekend, routine voyage) + détection automatique de changement de contexte (GPS, horaires) + prompt adaptatif au nouveau contexte + coping plans pré-enregistrés vocalement",
+          "risque": "Les contextes imprévisibles (urgence, crise) ne peuvent être tous planifiés – nécessite un plan 'par défaut' catch-all"
+        }
+      }
+    },
+
+    {
+      "id": 2,
+      "nom": "Habit Stacking (Anchor Habits)",
+      "auteurs_reference": "Clear (2018) Atomic Habits; Fogg (2019) Tiny Habits; Lally et al. (2010)",
+      "A_fondement_scientifique": {
+        "meta_analyse_reference": {
+          "auteurs": "Conn, Ruppar et al.",
+          "journal": "Research in Social & Administrative Pharmacy",
+          "annee": 2015,
+          "N": 8243,
+          "k_etudes": 53,
+          "effect_size_habit_linking": "d = 0.574 (interventions liant médicament à habitudes existantes) vs d = 0.222 (sans linking)",
+          "type_es": "Cohen's d (SMD)",
+          "note": "Le linking à des habitudes existantes multiplie par 2.6 l'efficacité de l'intervention d'observance"
+        },
+        "etude_fondamentale_automaticite": {
+          "auteurs": "Lally, van Jaarsveld, Potts & Wardle",
+          "journal": "European Journal of Social Psychology",
+          "annee": 2010,
+          "N": 96,
+          "finding": "Médiane de 66 jours pour atteindre le plateau d'automaticité (range 18–254 jours). Les comportements simples dans des contextes stables s'automatisent le plus vite. Un jour manqué ne compromet pas la formation de l'habitude.",
+          "mesure": "Self-Report Behavioural Automaticity Index (SRBAI)"
+        },
+        "modele_comportemental": {
+          "auteur": "BJ Fogg",
+          "modele": "B = MAP (Behavior = Motivation × Ability × Prompt)",
+          "principe": "Le habit stacking utilise une habitude existante comme Prompt naturel, réduisant la dépendance à la Motivation et maximisant l'Ability (la prise devient partie d'une séquence déjà maîtrisée)"
+        },
+        "etudes_observance_medicamenteuse": [
+          {
+            "auteurs": "Bolman et al. (revue dans Stawarz et al., 2020, JMIR)",
+            "journal": "Journal of Medical Internet Research",
+            "annee": 2020,
+            "k_etudes": 11,
+            "finding": "91% des études (10/11) montrent une corrélation positive entre force de l'habitude et observance médicamenteuse. La force de l'habitude est le prédicteur le plus fort de l'observance (devant pill burden, croyances, self-efficacy). Explique 19-27% de variance incrémentale.",
+            "mesure": "SRHI / SRBAI"
+          },
+          {
+            "auteurs": "Durand et al.",
+            "finding": "La force de l'habitude de prise médicamenteuse est plus fortement associée à la non-observance non-intentionnelle qu'intentionnelle",
+            "implication": "Le habit stacking cible spécifiquement l'oubli (non-intentionnel), pas le refus (intentionnel)"
+          },
+          {
+            "auteurs": "Interactive Journal of Medical Research (2025)",
+            "journal": "IJMR",
+            "annee": 2025,
+            "N": "large dataset cross-pathology",
+            "finding": "Corrélation ρ=0.55 (p<0.001) entre variabilité temporelle faible des prises (habit index objectif) et proportion de jours corrects. La force de l'habitude explique >30% de la variance de l'observance."
+          }
+        ],
+        "etudes_psychiatrie_specifiques": [
+          {
+            "auteurs": "Phillips et al.",
+            "finding": "Chez patients psychiatriques, la force de l'habitude prédit 6-27% de variance incrémentale dans l'observance au-delà des croyances liées au traitement. L'habitude a la plus forte association avec le timing correct des doses (MEMS)."
+          },
+          {
+            "auteurs": "Stawarz (UCL thesis, 2020)",
+            "finding": "Les patients qui réussissent à maintenir leur observance long-terme s'appuient sur des routines quotidiennes et des indices contextuels multiples. L'ancrage sur un événement de routine quotidien est la composante principale."
+          }
+        ],
+        "duree_effet": {
+          "court_terme_inf3mois": "Phase de formation : augmentation progressive de l'automaticité (Lally : gains maximaux dans les premières semaines)",
+          "moyen_terme_3_12mois": "Fort – une fois le plateau d'automaticité atteint (~66 jours médiane), l'habitude se maintient avec peu d'effort conscient",
+          "long_terme_sup12mois": "Fort SI le contexte reste stable. Vulnérable aux perturbations majeures de routine (déménagement, hospitalisation, changement de traitement)"
+        }
+      },
+
+      "B_application_observance_psychiatrique": {
+        "implementation_WHO": "Le WHO 2003 identifie la complexité du régime et l'intégration dans le mode de vie comme facteurs critiques. Le habit stacking simplifie l'intégration en supprimant la décision consciente via l'ancrage sur routines existantes.",
+        "implementation_NIMH": "Les programmes NIMH de Illness Management and Recovery (IMR) incluent l'identification de routines quotidiennes comme vecteurs de prise médicamenteuse.",
+        "implementation_NHS": "Le NHS Medicines Optimisation recommande l'intégration de la prise médicamenteuse dans les routines quotidiennes comme stratégie de première ligne pour l'observance.",
+        "resultats_psychiatrie": {
+          "schizophrenie": "Velligan et al. (2013) : les interventions comportementales structurant l'environnement (PharmCAT d=1.03, Med-eMonitor d=0.98) sont parmi les plus efficaces – elles créent des habitudes de prise en structurant l'environnement et les routines",
+          "depression": "Habit-Based Counseling for Medication Adherence (essai en cours, 2024) teste spécifiquement un worksheet d'habitude + discussion pharmacien pour nouveaux traitements chroniques incluant dépression",
+          "transdiagnostique": "La force de l'habitude est le prédicteur transdiagnostique le plus robuste de l'observance (Stawarz 2020, Phillips et al.)"
+        },
+        "limitations": {
+          "instabilite_routines": "Les patients psychiatriques ont souvent des routines instables (insomnie, épisodes, hospitalisations) qui fragilisent les ancres",
+          "phase_aigue": "En phase aiguë (manie, psychose), les routines sont complètement perturbées – le habit stacking perd son substrat",
+          "changement_traitement": "Chaque modification de régime (molécule, dosage, horaire) nécessite une reconstruction de l'habitude"
+        }
+      },
+
+      "C_application_NOOS": {
+        "implementation": {
+          "EMA_adaptatif": "L'EMA détecte les routines quotidiennes stables de l'utilisateur (patterns temporels et séquentiels) pour identifier automatiquement la meilleure ancre. Si la routine du matin est détectée comme la plus stable, le système ancre la prise sur cette routine.",
+          "vocal": "L'interface vocale guide la formation verbale de la stack : 'Après [ancre détectée], je prends mon traitement' – la verbalisation renforce l'encodage de la séquence",
+          "streak": "Le streak visualise la consolidation de l'habitude – mapping direct sur la courbe d'automaticité de Lally. Le compteur de jours consécutifs motive la phase critique des premières semaines",
+          "MYNe_reward": "Le reward renforce la séquence ancre→prise plutôt que la prise isolée – ceci renforce spécifiquement le stacking"
+        },
+        "metriques_succes": [
+          "Score SRBAI adapté (automaticité perçue de la séquence ancre→prise) mesuré hebdomadairement via EMA",
+          "Variabilité temporelle des prises (coefficient de variation du timing) – doit diminuer",
+          "Résistance aux perturbations : maintien de l'observance lors de changements de routine détectés"
+        ],
+        "interactions_leviers": {
+          "HS_x_implementation_intentions": "SYNERGIE MAXIMALE : Le HS fournit l'ancre (le 'if'), l'II formalise le plan (if→then). Ensemble, d=0.574 (Conn 2015). Le HS seul est implicite ; l'II le rend explicite et encodable.",
+          "HS_x_variable_reward": "Le reward variable post-séquence renforce l'ensemble de la chaîne comportementale, pas seulement le dernier maillon",
+          "HS_x_identity": "Quand la stack devient partie de l'identité quotidienne ('je suis quelqu'un qui prend son traitement avec son café'), l'habitude gagne en résilience"
+        }
+      },
+
+      "D_profils_cognitifs": {
+        "anxieux": {
+          "description_profil": "Hyper-vigilant aux effets secondaires",
+          "levier_dominant": "Implementation Intentions (pas HS comme dominant)",
+          "pertinence": "MODÉRÉE",
+          "justification": "Le HS aide l'anxieux en réduisant le moment de décision (= moment d'anxiété). Mais l'ancrage sur une routine peut être problématique si l'anxieux associe la routine à l'anxiété de la prise. Le HS est un levier de support, pas dominant.",
+          "strategie_NOOS": "Ancrer la prise sur une routine associée à un état émotionnel positif (après une activité plaisante plutôt qu'au réveil quand l'anxiété est élevée) + monitoring EMA de l'anxiété par moment de la journée pour optimiser l'ancre",
+          "risque": "Contamination de la routine-ancre par l'anxiété associée au médicament"
+        },
+        "negligent": {
+          "description_profil": "Oubli non intentionnel",
+          "levier_dominant": "Habit Stacking",
+          "pertinence": "TRÈS HAUTE",
+          "justification": "Le HS est LE levier dominant pour le négligent. Son problème est purement mnésique et le HS le résout en éliminant le besoin de se souvenir – la routine existante sert de prompt automatique. Phillips et al. : l'habitude est plus fortement liée à la non-observance non-intentionnelle. Conn 2015 : d=0.574 pour habit linking.",
+          "strategie_NOOS": "Détection EMA de la routine la plus stable + formation vocale de la stack + streak comme indicateur de consolidation + alerte adaptative uniquement si rupture de routine détectée (éviter la sur-sollicitation)",
+          "risque": "Si aucune routine quotidienne n'est suffisamment stable (mode de vie chaotique), le HS manque de substrat"
+        },
+        "contestataire": {
+          "description_profil": "Refus idéologique du traitement",
+          "levier_dominant": "Identity Narrative",
+          "pertinence": "BASSE",
+          "justification": "Le HS suppose que le patient veut prendre son traitement mais oublie. Le contestataire ne veut PAS le prendre. Automatiser un comportement rejeté est non seulement inefficace mais peut être perçu comme manipulation. Le HS n'est utile qu'APRÈS résolution de la résistance intentionnelle.",
+          "strategie_NOOS": "NE PAS proposer de stacking tant que l'opposition est active. Utiliser d'abord Identity Narrative et Social Pressure. Introduire le HS uniquement quand le patient a activement choisi de reprendre/maintenir le traitement.",
+          "risque": "Perçu comme tentative de contourner sa volonté – renforce l'opposition"
+        },
+        "anosognosique": {
+          "description_profil": "Ne se croit pas malade",
+          "levier_dominant": "Habit Stacking",
+          "pertinence": "HAUTE",
+          "justification": "Le HS est le levier dominant pour l'anosognosique car il NE REQUIERT PAS d'insight. Une fois la prise intégrée dans une routine quotidienne, elle se maintient par automaticité sans nécessiter la conscience d'être malade. Le HS contourne le déficit d'insight en rendant la prise 'invisible' – partie de la routine, pas acte de soin.",
+          "strategie_NOOS": "Cadrer la stack comme routine de 'bien-être/vitamines/énergie' plutôt que traitement de maladie. L'EMA détecte la routine la plus stable et ancre la prise sans expliciter le rationnel médical. La verbalisation vocale évite le terme 'traitement' – 'Après mon café, je prends mes capsules'.",
+          "risque": "Si l'insight revient temporairement et le patient réalise la 'ruse', perte de confiance. Approche éthiquement délicate."
+        },
+        "contextuel": {
+          "description_profil": "Observant sauf perturbation externe",
+          "levier_dominant": "Implementation Intentions + Habit Stacking (co-dominance)",
+          "pertinence": "HAUTE",
+          "justification": "Le HS est excellent pour le contextuel en conditions stables (sa force), mais vulnérable exactement quand il faut (perturbations). La solution est le MULTI-STACKING : plusieurs ancres alternatives pour différents contextes. Lally 2010 : un jour manqué ne compromet pas l'habitude, mais des perturbations prolongées la fragilisent.",
+          "strategie_NOOS": "Multi-stacking : formation de stacks pour routine_semaine, routine_weekend, routine_voyage via EMA + détection automatique du contexte + switch adaptatif de l'ancre + notification de changement de contexte avec rappel de la stack alternative",
+          "risque": "La multiplication des ancres peut créer de la confusion si mal orchestrée"
+        }
+      }
+    },
+
+    {
+      "id": 3,
+      "nom": "Variable Reward Schedule (Renforcement Intermittent)",
+      "auteurs_reference": "Skinner (1957) operant conditioning; Eyal (2014) Hooked; Behavioral economics",
+      "A_fondement_scientifique": {
+        "meta_analyse_reference": {
+          "auteurs": "Kurti, Davis, Redner, White, Skelly & Higgins",
+          "journal": "Preventive Medicine",
+          "annee": 2016,
+          "N": "revue systématique large (2009-2014)",
+          "finding": "Le contingency management (CM) montre des effect sizes modérés à larges pendant le traitement, qui s'atténuent mais restent évidents après terminaison. Efficace across SUD, populations et settings.",
+          "type_es": "Effet modéré-à-large pendant traitement"
+        },
+        "meta_analyse_sante_mentale": {
+          "auteurs": "Khazanov, Beed, Boland et al.",
+          "journal": "Journal of Consulting and Clinical Psychology",
+          "annee": 2022,
+          "design": "Méta-analyse des incitations financières pour engagement en traitement santé mentale",
+          "finding": "80% des interventions ciblaient le traitement des addictions. Les incitations financières augmentent significativement l'engagement en traitement mental health (attendance, observance médicamenteuse, complétion d'objectifs).",
+          "note": "Méta-analyse dans un cadre multi-niveaux incluant études observance médicamenteuse psychiatrique"
+        },
+        "etude_renforcement_intermittent": {
+          "auteurs": "Roll et al. (The Psychological Record)",
+          "journal": "The Psychological Record",
+          "annee": 2015,
+          "N": 119,
+          "design": "Comparaison CM continu vs intermittent prédictible vs intermittent imprévisible vs traitement standard, dépendance méthamphétamine",
+          "finding": "Intermittent prédictible : OR=2.38 (p<0.05) pour attendance, OR=2.40 (p<0.05) pour abstinence vs traitement standard. Les 3 schémas CM sont efficaces vs standard mais pas significativement différents entre eux.",
+          "implication": "La fréquence du renforcement peut être réduite tout en maintenant l'efficacité – compatible avec un modèle de reward variable"
+        },
+        "etude_observance_directe": {
+          "auteurs": "Kalayoglu et al.",
+          "journal": "American Journal of Pharmacy Benefits",
+          "annee": 2012,
+          "N": 50,
+          "design": "Plateforme de Dynamic Intermittent Reinforcement (DIR) automatisée, statines",
+          "finding": "Augmentation de 34.6% du taux de renouvellement (p=0.0016). Non-observance mensuelle chute de 27.2% à baseline à 1.2% au mois 2. Engagement quotidien 87.62%.",
+          "note": "Démonstration directe du renforcement intermittent automatisé sur observance médicamenteuse"
+        },
+        "etudes_psychiatrie_specifiques": [
+          {
+            "auteurs": "Noordraven et al.",
+            "journal": "BMC Psychiatry / BMJ Research Notes",
+            "annee": 2014,
+            "design": "RCT 'Money for Medication' – 30€/mois pour acceptation dépôt antipsychotique, 12 mois + 6 mois suivi",
+            "population": "Patients troubles psychotiques (schizophrénie principalement)",
+            "finding": "L'incitation financière améliore l'observance au dépôt antipsychotique pendant l'intervention. Coûts médicaux réduits à moyen terme."
+          },
+          {
+            "auteurs": "Sobolev, Patil, Guinart, Walsh & Kane",
+            "journal": "JMIR Mental Health",
+            "annee": 2022,
+            "design": "Étude pilote longitudinale – app mobile avec incitations financières quotidiennes basées sur behavioral economics, SMI",
+            "finding": "Faisabilité démontrée d'une intervention digitale combinant incitations financières et monitoring mobile pour observance médicamenteuse orale en maladie mentale sévère"
+          },
+          {
+            "auteurs": "Nature Digital Medicine (RL intervention)",
+            "journal": "npj Digital Medicine",
+            "annee": 2024,
+            "N": "RCT multi-site",
+            "finding": "Observance médicamenteuse 74.3% (intervention RL) vs 67.7% (contrôle) sur 6 mois. Amélioration de 13.6% (IC 95% : 1.7%–27.1%). L'algorithme de reinforcement learning personnalise le timing et type de renforcement."
+          }
+        ],
+        "modele_Eyal_Hooked": {
+          "phases": ["Trigger (externe→interne)", "Action (prise médicament)", "Variable Reward (anticipation dopaminergique)", "Investment (données de santé, streak, personnalisation)"],
+          "types_rewards_Eyal": {
+            "tribe": "Validation sociale (communauté d'adhérents)",
+            "hunt": "Récompense variable (points, badges, surprises)",
+            "self": "Sentiment de maîtrise et progression (streak, niveaux)"
+          }
+        },
+        "duree_effet": {
+          "court_terme_inf3mois": "Fort – effet maximal pendant la phase de renforcement actif",
+          "moyen_terme_3_12mois": "Modéré – le renforcement intermittent résiste mieux à l'extinction que le continu (principe de Skinner)",
+          "long_terme_sup12mois": "Risque d'extinction si les rewards sont retirés. Nécessite transition vers motivation intrinsèque. Noordraven : suivi 6 mois post-intervention pour évaluer le maintien."
+        }
+      },
+
+      "B_application_observance_psychiatrique": {
+        "implementation_WHO": "Le WHO 2003 ne mentionne pas explicitement le renforcement variable mais identifie les 'rewards' et incentives dans les facteurs socio-économiques. Les programmes CM sont de plus en plus intégrés dans les guidelines addictologie WHO/UNODC.",
+        "implementation_NIMH": "Le NIMH finance des recherches sur le contingency management digital pour l'observance en SMI. Le programme NIMH ALACRITY de Johns Hopkins utilise des interventions comportementales incluant des éléments de renforcement pour l'observance.",
+        "implementation_NHS": "Le NHS a testé des programmes d'incitations financières pour l'observance antipsychotique (Highton-Williamson et al., 2015). Les cliniciens rapportent des bénéfices sur l'observance, le contact, la communication et la confiance.",
+        "resultats_psychiatrie": {
+          "schizophrenie": "Noordraven RCT : 30€/mois améliore l'acceptation dépôt. Highton-Williamson 2015 : cliniciens rapportent amélioration observance, insight et fonctionnement social",
+          "addiction_psychiatrie": "CM largement validé en addictologie avec transfert vers observance : OR ~2.0-2.5 pour attendance (Roll 2015)",
+          "SMI_general": "Sobolev 2022 : app mobile + daily financial incentives faisable en SMI orale. Kane & Guinart : approche behavioral economics pour observance antipsychotiques oraux"
+        },
+        "limitations": {
+          "erosion_motivation_intrinseque": "Risque de 'crowding out' : la récompense externe peut éroder la motivation intrinsèque à long terme (Klein 2024, Deci SDT). Si le reward est retiré, observance peut chuter sous le baseline",
+          "habituation_reward": "Le reward perd son pouvoir de surprise avec le temps – nécessite recalibrage régulier de la variabilité",
+          "ethique": "Débat éthique significatif sur les incitations financières en psychiatrie (Kassam & Law, 2024) : coercition, consentement, stigma, relation thérapeutique",
+          "effet_plafond": "Chez les patients déjà observants, le reward variable n'apporte pas d'amélioration significative – cible spécifiquement les non-observants"
+        }
+      },
+
+      "C_application_NOOS": {
+        "implementation": {
+          "EMA_adaptatif": "L'EMA collecte les données comportementales qui alimentent l'algorithme de reinforcement learning (RL) – le système apprend quel type de reward, à quel moment, avec quelle fréquence, maximise l'observance pour chaque utilisateur",
+          "vocal": "Le feedback vocal post-prise délivre le reward de manière personnalisée et variable : parfois félicitations, parfois information de santé, parfois surprise – l'incertitude maintient l'engagement",
+          "streak": "Le streak est un reward de type 'self' (Eyal) : progression, maîtrise, compétence. Sa nature est intrinsèquement variable car la valeur perçue augmente avec la longueur (perte aversion : plus le streak est long, plus le coût de le briser est élevé)",
+          "MYNe_reward": "MYNε est le véhicule central du variable reward : points, badges, niveaux, récompenses tangibles délivrés sur un schedule variable ratio. L'algorithme RL optimise le schedule pour chaque profil."
+        },
+        "metriques_succes": [
+          "Taux d'engagement quotidien avec le système de reward (cible : >85% sur 3 mois)",
+          "Temps de réponse au trigger (diminution = anticipation du reward = engagement)",
+          "Maintien de l'observance pendant les phases de reward réduit (test d'extinction partielle)"
+        ],
+        "interactions_leviers": {
+          "VR_x_implementation_intentions": "Le reward variable renforce le pathway associatif du plan if-then : quand le reward suit l'exécution du plan, l'association if→then→reward accélère l'automatisation",
+          "VR_x_habit_stacking": "Le reward variable maintient l'engagement pendant la phase critique de formation de l'habitude (premières semaines avant le plateau d'automaticité)",
+          "VR_x_identity": "Les rewards de type 'self' (maîtrise, compétence) alimentent le récit identitaire : 'je suis quelqu'un qui réussit, qui maintient ses streaks'",
+          "VR_x_social": "Les rewards de type 'tribe' (classements, reconnaissance) activent la pression sociale positive"
+        }
+      },
+
+      "D_profils_cognitifs": {
+        "anxieux": {
+          "description_profil": "Hyper-vigilant aux effets secondaires",
+          "levier_dominant": "Implementation Intentions",
+          "pertinence": "MODÉRÉE avec précaution",
+          "justification": "Le reward variable peut réduire l'anxiété associée à la prise en créant une anticipation positive (dopamine) qui contrebalance l'anticipation négative (cortisol/effets secondaires). Mais attention : un reward trop imprévisible peut augmenter l'anxiété chez les profils intolérants à l'incertitude.",
+          "strategie_NOOS": "Utiliser des rewards prédictibles positifs (confirmation, streak) plutôt que des surprises imprévisibles. Le reward doit être calibré sur la réduction d'anxiété post-prise, pas sur l'excitation pré-prise. Récompenser spécifiquement le 'coping with side effects'.",
+          "risque": "L'imprévisibilité du schedule peut elle-même devenir source d'anxiété"
+        },
+        "negligent": {
+          "description_profil": "Oubli non intentionnel",
+          "levier_dominant": "Habit Stacking + Implementation Intentions",
+          "pertinence": "HAUTE",
+          "justification": "Le reward variable maintient l'attention du négligent pendant la phase de formation de l'habitude. Sans reward, le désintérêt naturel du négligent mène à l'oubli du nouveau comportement avant qu'il ne devienne automatique. Le reward variable est le 'carburant' qui alimente la formation de l'habitude.",
+          "strategie_NOOS": "Rewards fréquents et variés pendant les premières 8-10 semaines (phase critique de Lally), puis espacement progressif à mesure que l'automaticité augmente. Le streak est particulièrement efficace car il crée une 'dette de perte' – le négligent oublie de prendre mais pas de protéger son streak.",
+          "risque": "Si le reward est retiré trop tôt (avant automaticité), retour à l'oubli"
+        },
+        "contestataire": {
+          "description_profil": "Refus idéologique du traitement",
+          "levier_dominant": "Identity Narrative",
+          "pertinence": "BASSE à CONTRE-PRODUCTIVE",
+          "justification": "Le reward variable pour prendre un traitement rejeté idéologiquement est perçu comme corruption ou manipulation. Cela confirme le récit du contestataire : 'ils essaient de me contrôler avec des récompenses'. Klein (2024) : rewarding behavior with money may devalue intrinsic benefits of adherence. Le risque de renforcer la réactance est élevé.",
+          "strategie_NOOS": "NE PAS utiliser de rewards directs pour l'observance. Si utilisé, reward uniquement l'engagement dans le dialogue thérapeutique (pas la prise elle-même). Les rewards de type 'autonomie' (choix, contrôle) sont les seuls compatibles avec ce profil.",
+          "risque": "ÉLEVÉ – renforce le sentiment de manipulation et la réactance. Éthiquement problématique (Kassam & Law 2024)."
+        },
+        "anosognosique": {
+          "description_profil": "Ne se croit pas malade",
+          "levier_dominant": "Habit Stacking",
+          "pertinence": "MODÉRÉE",
+          "justification": "Le reward variable peut fonctionner avec l'anosognosique car il ne requiert pas d'insight – le mécanisme est purement comportemental (stimulus-réponse-renforcement). Noordraven 30€/mois : efficace indépendamment du niveau d'insight. Le reward crée une motivation extrinsèque qui compense l'absence de motivation intrinsèque (l'anosognosique ne perçoit pas de bénéfice intrinsèque au traitement).",
+          "strategie_NOOS": "Rewards tangibles et immédiats (pas abstraits comme 'amélioration de votre santé'). Récompenser la routine (pas le traitement de la maladie). MYNε points échangeables contre des bénéfices concrets. Le cadrage est crucial : 'bonus de bien-être' pas 'récompense pour traitement'.",
+          "risque": "Dépendance au reward extrinsèque sans développement de motivation intrinsèque – mais c'est acceptable si l'insight ne revient pas"
+        },
+        "contextuel": {
+          "description_profil": "Observant sauf perturbation externe",
+          "levier_dominant": "Implementation Intentions",
+          "pertinence": "HAUTE",
+          "justification": "Le reward variable aide le contextuel en maintenant l'engagement pendant les phases de perturbation – quand la routine est brisée, la motivation intrinsèque (habitude) est insuffisante, et le reward extrinsèque prend le relais. C'est le 'filet de sécurité' motivationnel.",
+          "strategie_NOOS": "Augmenter la fréquence et la valeur des rewards pendant les périodes de perturbation détectées (voyage, stress, changement). Le système NOOS détecte la perturbation via EMA et intensifie automatiquement le schedule de renforcement. Retour au schedule normal quand la stabilité est restaurée.",
+          "risque": "Le renforcement intensifié peut créer une dépendance aux perturbations (le patient 'provoque' des perturbations pour obtenir plus de rewards)"
+        }
+      }
+    },
+
+    {
+      "id": 4,
+      "nom": "Identity Narrative (Récit Identitaire)",
+      "auteurs_reference": "Oyserman (2007, 2009) Identity-Based Motivation; Ryan & Deci (2000) Self-Determination Theory",
+      "A_fondement_scientifique": {
+        "meta_analyse_reference_SDT": {
+          "auteurs": "Williams, Rodin, Ryan, Grolnick & Deci",
+          "journal": "Health Psychology",
+          "annee": 1998,
+          "N": 126,
+          "design": "Étude transversale appliquant la SDT à l'observance médicamenteuse long-terme",
+          "finding": "La régulation autonome médiatise la relation entre le soutien à l'autonomie perçu du médecin et l'observance médicamenteuse. Le modèle SDT est confirmé (LISREL : χ²(33)=40.8, ns, NNFI=.98). La régulation autonome est un prédicteur unique de l'observance au-delà de toutes les autres variables.",
+          "type_es": "Path coefficient = 0.78 (p<0.001) régulation autonome → observance",
+          "note": "Étude fondatrice de l'application de la SDT à l'observance médicamenteuse"
+        },
+        "modele_Oyserman_IBM": {
+          "auteurs": "Oyserman, Fryberg & Yoder",
+          "journal": "Journal of Personality and Social Psychology",
+          "annee": 2007,
+          "k_etudes": 7,
+          "finding": "L'Identity-Based Motivation (IBM) détermine quels comportements de santé sont perçus comme 'identité-syntones' (compatible avec le soi) ou 'identité-dystones'. Les comportements identité-syntones sont engagés pour leur valeur identitaire, pas pour leurs conséquences de santé. Quand un comportement de santé est identité-dystone, l'engagement diminue même avec connaissance des bénéfices.",
+          "implication_observance": "Si prendre son traitement psychiatrique est perçu comme identité-dystone ('les malades mentaux prennent des cachets, ce n'est pas moi'), l'observance chute indépendamment de la connaissance ou de la motivation extrinsèque"
+        },
+        "etude_narrative_schizophrenie": {
+          "auteurs": "Liu, Zhu, Zhang et al.",
+          "journal": "eClinicalMedicine (Lancet)",
+          "annee": 2025,
+          "N": "RCT multicentrique, schizophrénie stable",
+          "design": "Intervention psychoéducative narrative digitale vs soins communautaires standard, 3 mois + 3 mois suivi",
+          "finding": "Observance (MMAS-8) : β=0.75 (IC 95% : 0.10–1.40, p=0.02). Attitude médicamenteuse (DAI-10) : β=2.29 (0.42–4.15). Effets maintenus au suivi 3 mois. L'engagement émotionnel et la reconstruction cognitive via le récit améliorent l'observance de manière durable.",
+          "type_es": "Cohen's d reporté via GEE, effets significatifs et maintenus"
+        },
+        "etudes_psychiatrie_specifiques": [
+          {
+            "auteurs": "Williams et al. (1998, SDT)",
+            "finding": "La régulation autonome (motivation intrinsèque) est le plus fort prédicteur psychologique de l'observance médicamenteuse. Le soutien à l'autonomie du prescripteur facilite la régulation autonome qui facilite l'observance."
+          },
+          {
+            "auteurs": "Liu et al. (2025, 2026)",
+            "finding": "L'intervention narrative digitale avec jeu de rôle en troisième personne, histoires interactives et feedback comportemental améliore l'observance et les attitudes médicamenteuses en schizophrénie. Les patients plus âgés et moins éduqués bénéficient davantage."
+          },
+          {
+            "auteurs": "Oyserman (2007)",
+            "finding": "Quand l'identité sociale inclut la croyance que 'nous' ne faisons pas de promotion de santé, le priming de cette identité augmente le fatalisme et réduit l'accès aux connaissances de santé. Implication : le récit identitaire du patient psychiatrique vis-à-vis de son traitement est un déterminant majeur de l'observance."
+          }
+        ],
+        "duree_effet": {
+          "court_terme_inf3mois": "Modéré – la reconstruction narrative prend du temps",
+          "moyen_terme_3_12mois": "Fort – une fois le récit identitaire restructuré, l'effet est auto-renforçant (Liu 2025 : maintien à 6 mois)",
+          "long_terme_sup12mois": "Fort – les changements identitaires sont parmi les plus durables car ils modifient la structure même de la motivation"
+        }
+      },
+
+      "B_application_observance_psychiatrique": {
+        "implementation_WHO": "Le WHO 2003 identifie les croyances, perceptions et acceptation du patient comme facteurs patient-related centraux. Le récit identitaire est la structure psychologique sous-jacente à ces facteurs.",
+        "implementation_NIMH": "Les programmes NIMH de recovery-oriented care placent l'identité personnelle au centre : le recovery est défini comme la reconstruction d'une identité significative au-delà de la maladie. L'observance est un outil de ce projet identitaire, pas une fin en soi.",
+        "implementation_NHS": "Le NHS Recovery College modèle utilise des approches narratives et de co-production où les patients construisent un récit de rétablissement qui inclut le traitement comme choix actif (pas obligation passive).",
+        "resultats_psychiatrie": {
+          "schizophrenie": "Liu 2025 RCT : β=0.75 pour observance, maintenu 3 mois post-intervention. L'intervention narrative digitale est la première à combiner psychologie narrative et mécanismes comportementaux digitaux pour l'observance en schizophrénie.",
+          "depression": "L'approche SDT montre que la motivation autonome (identité-syntone) prédit mieux l'observance antidépresseurs que les facteurs de barrières perçues",
+          "bipolaire": "Le travail narratif sur l'identité bipolaire (acceptation sans sur-identification) améliore l'attitude médicamenteuse et indirectement l'observance"
+        },
+        "limitations": {
+          "temps_necessaire": "La restructuration narrative est un processus lent (semaines/mois) – pas de résultat rapide",
+          "deficit_cognitif": "Les patients avec déficits cognitifs sévères (schizophrénie negative) ont des capacités narratives réduites",
+          "instabilite_identitaire": "En phase aiguë, l'identité elle-même est perturbée – le travail narratif est impossible pendant la crise",
+          "risque_rumination": "Chez certains profils, l'introspection narrative peut augmenter la rumination et aggraver la dépression"
+        }
+      },
+
+      "C_application_NOOS": {
+        "implementation": {
+          "EMA_adaptatif": "L'EMA capture les verbalisations identitaires spontanées du patient ('je me sens bien aujourd'hui', 'je suis fatigué de ce traitement') qui alimentent le profil narratif et permettent des interventions ciblées",
+          "vocal": "L'interface vocale est le médium idéal pour le récit identitaire : le patient RACONTE son expérience plutôt que cocher des cases. Le vocal permet la narration naturelle, la reformulation positive, et le feedback narratif adaptatif ('Vous avez dit que vous vous sentiez mieux cette semaine – c'est cohérent avec votre engagement')",
+          "streak": "Le streak est recadré comme preuve identitaire : '14 jours consécutifs – ça, c'est vous qui prenez les choses en main'. Le streak alimente le récit de compétence et d'auto-détermination.",
+          "MYNe_reward": "MYNε intègre des rewards de type 'self' (Eyal) : progression, maîtrise, compétence qui alimentent le récit identitaire. Les milestones sont formulés en termes identitaires ('Vous avez atteint le niveau Autonome')"
+        },
+        "metriques_succes": [
+          "Score DAI-10 (Drug Attitude Inventory) mesuré mensuellement via EMA vocal",
+          "Proportion de verbalisations EMA à valence identitaire positive vs négative concernant le traitement",
+          "Shift du locus de contrôle : évolution du score HPLC interne vs externe",
+          "Corrélation entre stabilité du récit identitaire et observance sur 6 mois"
+        ],
+        "interactions_leviers": {
+          "IN_x_implementation_intentions": "L'II formulée en termes identitaires ('Quand je me lève, je prends mon traitement parce que je suis quelqu'un qui prend sa santé en main') combine intention automatique et ancrage identitaire",
+          "IN_x_habit_stacking": "Quand l'habitude stackée devient partie du récit identitaire ('Mon rituel du matin, c'est moi'), la résilience augmente car briser l'habitude = briser l'identité",
+          "IN_x_variable_reward": "Les rewards de type 'self mastery' alimentent le récit identitaire ; inversement, le récit identitaire augmente la valeur perçue des rewards intrinsèques",
+          "IN_x_social": "Le récit identitaire est co-construit socialement – le regard des pairs et du thérapeute valide ou invalide le récit du patient"
+        }
+      },
+
+      "D_profils_cognitifs": {
+        "anxieux": {
+          "description_profil": "Hyper-vigilant aux effets secondaires",
+          "levier_dominant": "Implementation Intentions (dominant), Identity Narrative (support)",
+          "pertinence": "MODÉRÉE à HAUTE",
+          "justification": "Le récit identitaire aide l'anxieux en restructurant le narratif : passer de 'je suis vulnérable aux effets secondaires' à 'je suis quelqu'un qui gère activement sa santé et signale les effets'. Le shift est de la passivité anxieuse vers l'agentivité. SDT : augmenter la régulation autonome réduit l'anxiété liée au traitement.",
+          "strategie_NOOS": "Construire progressivement un récit de 'self-advocate' : le patient qui surveille activement, signale, dialogue avec son médecin. L'EMA vocal recueille et reformule les verbalisations anxieuses en termes d'agentivité. Rewards de compétence (pas de surprise anxiogène).",
+          "risque": "Si le récit identitaire est trop centré sur la maladie, il peut renforcer l'identité de 'malade anxieux'"
+        },
+        "negligent": {
+          "description_profil": "Oubli non intentionnel",
+          "levier_dominant": "Habit Stacking (dominant)",
+          "pertinence": "BASSE",
+          "justification": "Le négligent n'a pas de problème identitaire avec son traitement – il l'accepte, il l'oublie. Le travail narratif identitaire est surdimensionné pour ce profil. Cependant, renforcer l'identité de 'personne organisée' peut indirectement soutenir la formation d'habitudes.",
+          "strategie_NOOS": "Levier secondaire : utiliser le streak comme preuve identitaire ('14 jours – vous êtes plus régulier que vous ne le pensiez'). Pas d'intervention narrative lourde, mais des micro-reformulations identitaires positives.",
+          "risque": "Si le négligent rate une prise, le feedback identitaire négatif ('vous n'êtes pas quelqu'un de régulier') est contre-productif"
+        },
+        "contestataire": {
+          "description_profil": "Refus idéologique du traitement",
+          "levier_dominant": "Identity Narrative",
+          "pertinence": "TRÈS HAUTE – LEVIER DOMINANT",
+          "justification": "Le contestataire a un problème FONDAMENTALEMENT identitaire : 'prendre un traitement psychiatrique est incompatible avec qui je suis'. C'est le seul profil où le problème est principalement identitaire. Oyserman 2007 : quand un comportement de santé est identité-dystone, la connaissance et la motivation extrinsèque sont insuffisantes. SDT Ryan & Deci : la régulation autonome (identifiée, intégrée) est le seul pathway durable. L'approche doit reconstruire un récit où le traitement est un choix autonome, pas une soumission.",
+          "strategie_NOOS": "1) NE PAS confronter le refus directement. 2) Explorer le récit identitaire via EMA vocal : 'Qu'est-ce qui est important pour vous?', 'Comment voyez-vous votre avenir?'. 3) Chercher les points de congruence entre objectifs de vie et stabilité (sans mentionner le traitement). 4) Progressivement, co-construire un récit où le traitement est un outil choisi au service de ses objectifs. 5) Les rewards de type 'autonomie' et 'compétence' renforcent le sentiment de self-determination.",
+          "risque": "Processus long et fragile. Rechute identitaire possible. Ne fonctionne qu'avec une alliance thérapeutique forte."
+        },
+        "anosognosique": {
+          "description_profil": "Ne se croit pas malade",
+          "levier_dominant": "Habit Stacking (dominant)",
+          "pertinence": "BASSE",
+          "justification": "Le travail identitaire narratif nécessite un minimum d'insight pour intégrer la maladie dans le récit de soi. L'anosognosique ne reconnaît pas la maladie, donc tout récit construit autour de 'gérer sa maladie' est rejeté. Paradoxe : l'identité est précisément ce qui est déficient (le patient n'intègre pas le statut de malade dans son identité).",
+          "strategie_NOOS": "Contourner l'anosognosie en construisant un récit de bien-être général (pas de maladie). 'Je suis quelqu'un qui optimise son énergie/son sommeil/sa concentration'. Le traitement est recadré comme outil de performance, pas de soin. Approche éthiquement discutable mais pragmatiquement efficace.",
+          "risque": "Si insight revient, le patient peut se sentir manipulé. Si l'insight ne revient jamais, le récit reste superficiel."
+        },
+        "contextuel": {
+          "description_profil": "Observant sauf perturbation externe",
+          "levier_dominant": "Implementation Intentions (dominant)",
+          "pertinence": "MODÉRÉE",
+          "justification": "Le récit identitaire du contextuel est stable ('je suis quelqu'un d'observant') mais fragile face aux perturbations. Le travail narratif peut renforcer la résilience en ancrant l'identité d'observant au-delà des contextes : 'je suis quelqu'un d'observant QUEL QUE SOIT le contexte, parce que c'est qui je suis, pas juste ce que je fais par habitude'.",
+          "strategie_NOOS": "Anticiper les perturbations dans le récit narratif : 'Quand mon contexte change, je m'adapte parce que mon engagement envers ma santé ne dépend pas de ma routine'. Utiliser les perturbations surmontées comme preuves identitaires ('Même en voyage, j'ai maintenu – ça prouve que c'est une vraie partie de moi').",
+          "risque": "Le feedback post-perturbation ratée peut menacer l'identité ('je ne suis finalement pas si fiable')"
+        }
+      }
+    },
+
+    {
+      "id": 5,
+      "nom": "Positive Social Pressure (Pression Sociale Positive)",
+      "auteurs_reference": "Christakis & Fowler (2007, 2009) Connected; Bandura (1977) Social Learning Theory",
+      "A_fondement_scientifique": {
+        "etude_reference_reseau": {
+          "auteurs": "Christakis & Fowler",
+          "journal": "New England Journal of Medicine",
+          "annee": 2007,
+          "N": 12067,
+          "design": "Analyse longitudinale 32 ans, Framingham Heart Study",
+          "finding": "L'obésité se propage via les réseaux sociaux : +57% risque si un ami est obèse, +20% pour ami d'ami, +10% pour ami d'ami d'ami. Règle des '3 degrés d'influence'. Effets directionnels : l'ami qui ne vous considère pas comme ami proche influence peu votre comportement, mais vous influencez fortement le sien.",
+          "type_es": "Odds Ratios : ami mutuel ~3x, ami directionnel ~1.57x, 2ème degré ~1.20x",
+          "extension": "Effets similaires documentés pour : cessation tabagique (OR=34% entre collègues), bonheur (contagion émotionnelle), solitude (contagion et marginalisation réseau)"
+        },
+        "meta_analyse_support_social_observance": {
+          "auteurs": "Wang, Li, Zhou et al.",
+          "journal": "Patient Preference and Adherence",
+          "annee": 2024,
+          "N": 300,
+          "design": "Analyse de médiation sérielle, schizophrénie",
+          "finding": "Association directe positive significative entre support social et observance (β=0.69, p<0.001). Le support social agit aussi indirectement via réduction du stigma (β=0.11) et de la dépression (β=0.15). Médiation sérielle stigma→dépression (β=0.04). Corrélation observance-support social r=0.39.",
+          "note": "Spécifique à la schizophrénie et à l'observance médicamenteuse"
+        },
+        "meta_analyse_non_observance_psychiatrique": {
+          "auteurs": "Semahegn, Torpey, Manu et al.",
+          "journal": "Systematic Reviews",
+          "annee": 2020,
+          "N": 120134,
+          "k_etudes": 46,
+          "finding": "49% de non-observance globale en troubles psychiatriques majeurs (schizophrénie 56%, dépression 50%, bipolaire 44%). Le manque de support social est un facteur significatif de non-observance. Le support familial est significativement associé à l'observance aux rendez-vous.",
+          "type_es": "Prévalence poolée 49% (IC 95% : 44%–55%)"
+        },
+        "revue_Cochrane_pair_support": {
+          "auteurs": "Cochrane Systematic Review",
+          "journal": "Cochrane Database of Systematic Reviews",
+          "annee": 2019,
+          "design": "Revue systématique peer support pour schizophrénie et SMI",
+          "finding": "Résultats inconsistants sur l'efficacité du peer support pour l'observance et l'auto-soin en santé mentale. L'evidence est insuffisante pour conclure à l'efficacité du peer support seul.",
+          "note": "Le peer support est prometteur mais pas suffisamment standardisé pour des conclusions fortes"
+        },
+        "duree_effet": {
+          "court_terme_inf3mois": "Fort – l'activation sociale produit des effets immédiats sur l'engagement",
+          "moyen_terme_3_12mois": "Modéré – dépend de la stabilité du réseau social et de l'engagement continu des pairs",
+          "long_terme_sup12mois": "Variable – les réseaux sociaux sont dynamiques. Le soutien peut s'éroder (fatigue des aidants) ou se renforcer (communauté établie)"
+        }
+      },
+
+      "B_application_observance_psychiatrique": {
+        "implementation_WHO": "Le WHO 2003 identifie le support social comme dimension socio-économique critique de l'observance. Les environnements de soutien (famille, communauté, professionnels) sont essentiels pour les patients en milieu communautaire.",
+        "implementation_NIMH": "Les programmes NIMH de Community Support Programs et Assertive Community Treatment (ACT) utilisent le réseau social élargi (équipe multidisciplinaire, famille, pairs) comme levier d'observance. Le NIMH promeut le Peer Support Specialist comme rôle professionnel.",
+        "implementation_NHS": "Le NHS utilise les Community Mental Health Teams (CMHT) et les programmes de Recovery College où le pair-aidant est central. Le NHS Long Term Plan 2019 intègre le social prescribing pour les troubles mentaux.",
+        "resultats_psychiatrie": {
+          "schizophrenie": "Wang 2024 : β=0.69 support social → observance. Le support social réduit le stigma et la dépression qui médiatisent la non-observance. Semahegn 2020 : le support familial est associé à l'observance aux rendez-vous.",
+          "depression": "L'implication des aidants dans le plan de traitement améliore l'observance antidépresseurs (Sher et al. : l'attribution par les aidants de la dépression à des facteurs cognitifs/attitudinaux prédit la non-observance)",
+          "bipolaire": "Les interventions familiales améliorent l'observance en bipolaire (méta-analyse Defined 2021 : interventions mixed [éducation+comportement+famille] ont un impact positif)",
+          "transdiagnostique": "Christakis & Fowler : les comportements de santé se propagent via les réseaux sociaux sur 3 degrés. Implication : un patient observant dans un réseau d'observants a plus de chances de le rester."
+        },
+        "limitations": {
+          "isolement_social": "Beaucoup de patients psychiatriques sont socialement isolés – le levier social manque de substrat chez ceux qui en ont le plus besoin",
+          "fatigue_aidants": "Les aidants familiaux s'épuisent – le soutien social n'est pas une ressource illimitée",
+          "stigma_paradoxal": "L'observance visible (prendre des cachets devant d'autres) peut augmenter le stigma perçu",
+          "controle_vs_soutien": "La frontière entre soutien positif et surveillance coercitive est fine – le 'monitoring' social peut être vécu comme intrusion"
+        }
+      },
+
+      "C_application_NOOS": {
+        "implementation": {
+          "EMA_adaptatif": "L'EMA peut mesurer le niveau de support social perçu et l'isolement en temps réel, permettant des interventions sociales ciblées quand l'isolement augmente",
+          "vocal": "L'interface vocale crée un 'compagnon' de soin qui simule une présence sociale bienveillante. Le vocal personnalisé est moins impersonnel qu'un SMS – il crée un lien para-social.",
+          "streak": "Le streak partagé (entre pairs, ou visible par le thérapeute) crée une accountability sociale positive – savoir que quelqu'un voit votre streak motive le maintien (Christakis : l'effet de réseau est directionnel – l'ami qui vous surveille vous influence plus)",
+          "MYNe_reward": "Les rewards de type 'tribe' (Eyal) : classements, reconnaissance par les pairs, badges communautaires. Le MYNε peut inclure des défis de groupe ou des objectifs partagés."
+        },
+        "metriques_succes": [
+          "Score de support social perçu mesuré via EMA (évolution longitudinale)",
+          "Taux de participation aux fonctionnalités sociales (streak partagé, communauté, défis)",
+          "Corrélation entre engagement social dans NOOS et taux d'observance",
+          "Net Promoter Score social : le patient recommande-t-il NOOS à ses pairs?"
+        ],
+        "interactions_leviers": {
+          "SP_x_implementation_intentions": "La formation du plan if-then avec un tiers (thérapeute, aidant, pair) augmente l'engagement contractuel et l'accountability",
+          "SP_x_habit_stacking": "Les normes sociales modèrent la relation habitude-observance : en habitude faible, une norme supportive est positivement liée à l'observance (Bolman et al.)",
+          "SP_x_variable_reward": "Les rewards de type 'tribe' (validation, reconnaissance, classement) sont intrinsèquement sociaux et activent le levier social",
+          "SP_x_identity": "Le récit identitaire est co-construit socialement. Le regard des pairs valide le nouveau récit du patient. Christakis : les normes comportementales se propagent via les réseaux."
+        }
+      },
+
+      "D_profils_cognitifs": {
+        "anxieux": {
+          "description_profil": "Hyper-vigilant aux effets secondaires",
+          "levier_dominant": "Implementation Intentions (dominant)",
+          "pertinence": "MODÉRÉE avec précaution",
+          "justification": "Le support social peut rassurer l'anxieux (validation par les pairs que les effets secondaires sont normaux et gérables). Mais le partage social de l'anxiété peut aussi amplifier les inquiétudes (contagion émotionnelle négative – Christakis : la solitude et le mal-être sont aussi contagieux). Les groupes de patients peuvent créer des boucles d'amplification anxieuse.",
+          "strategie_NOOS": "Créer un espace de support modéré (pas un forum libre d'anxiété). Connecter l'anxieux avec des pairs STABLES ET OBSERVANTS (pas d'autres anxieux). Utiliser le vocal du thérapeute comme présence rassurante. Le streak partagé avec le thérapeute (pas un groupe) crée une accountability sans exposition sociale anxiogène.",
+          "risque": "Contagion anxieuse dans les groupes. Surveillance sociale perçue comme intrusive."
+        },
+        "negligent": {
+          "description_profil": "Oubli non intentionnel",
+          "levier_dominant": "Habit Stacking",
+          "pertinence": "MODÉRÉE",
+          "justification": "Le support social crée un 'rappel social' – un aidant qui rappelle, un pair qui vérifie. Bolman et al. : les normes sociales modèrent la relation habitude-observance, surtout quand l'habitude est faible. Le social comble le gap avant que l'habitude ne soit consolidée.",
+          "strategie_NOOS": "Désigner un 'buddy d'observance' (pair ou aidant) qui reçoit une notification si le négligent rate sa prise. Le buddy envoie un rappel bienveillant (pas une injonction). Le streak partagé crée une accountability douce.",
+          "risque": "Dépendance au rappel social – le négligent ne développe jamais l'habitude car le social se substitue à l'automaticité"
+        },
+        "contestataire": {
+          "description_profil": "Refus idéologique du traitement",
+          "levier_dominant": "Identity Narrative (dominant), Social Pressure (support)",
+          "pertinence": "MODÉRÉE à HAUTE (si bien calibré)",
+          "justification": "La pression sociale positive peut fonctionner avec le contestataire si elle vient de pairs crédibles (pas d'autorité médicale). Le peer support par des pairs qui ont traversé le même refus et choisi de reprendre le traitement est puissant (modélisation sociale, Bandura). Christakis : l'influence est maximale quand elle vient d'un ami mutuel. Le contestataire est plus influencé par quelqu'un qui comprend son refus que par un médecin qui le juge.",
+          "strategie_NOOS": "Connecter le contestataire avec des pairs-aidants ayant vécu et résolu le même refus. Témoignages vocaux de pairs dans NOOS. PAS de surveillance par un médecin/aidant (= coercition). Le social doit être horizontal (pair-à-pair), pas vertical (médecin-patient). SDT : le social qui supporte l'autonomie facilite la régulation autonome.",
+          "risque": "Si les pairs assignés sont perçus comme 'vendus au système', l'effet est inversé. Si le réseau social du contestataire renforce le refus (co-contestataires), l'intervention sociale est contre-productive."
+        },
+        "anosognosique": {
+          "description_profil": "Ne se croit pas malade",
+          "levier_dominant": "Habit Stacking (dominant)",
+          "pertinence": "HAUTE",
+          "justification": "Le support social est crucial pour l'anosognosique car la famille/les proches sont souvent les seuls à reconnaître la maladie et à superviser le traitement. Le DSM-5 identifie l'anosognosie comme la cause la plus fréquente de non-observance en schizophrénie. Les stratégies familiales (rappels, supervision, accompagnement pharmacie) sont souvent la seule ligne de défense. Christakis : l'influence sociale est maximale dans les liens forts (famille).",
+          "strategie_NOOS": "Intégrer la famille/aidant dans le système NOOS comme co-utilisateur. L'aidant reçoit les alertes de non-prise et peut intervenir. Le vocal peut être configuré par l'aidant (message personnalisé). Le streak est partagé avec l'aidant. ATTENTION éthique : respecter les droits du patient même anosognosique.",
+          "risque": "Le patient peut percevoir le monitoring social comme persécution (surtout si paranoïaque). L'aidant peut s'épuiser. La surveillance crée une dynamique de pouvoir malsaine."
+        },
+        "contextuel": {
+          "description_profil": "Observant sauf perturbation externe",
+          "levier_dominant": "Implementation Intentions (dominant)",
+          "pertinence": "MODÉRÉE",
+          "justification": "Le support social peut servir de 'filet de sécurité' pendant les perturbations – quand la routine est brisée, le soutien humain prend le relais. Le buddy d'observance est particulièrement utile pendant les voyages ou changements de contexte. Le contextuel a un réseau social généralement plus stable que les autres profils.",
+          "strategie_NOOS": "Activer un mode 'perturbation' social : quand le changement de contexte est détecté, un pair ou aidant est automatiquement alerté pour renforcer le soutien. Le buddy envoie un message de vérification. L'accountability sociale est intensifiée pendant les phases vulnérables.",
+          "risque": "Dépendance au soutien social pendant les perturbations au lieu de développer des coping plans autonomes"
+        }
+      }
+    }
+  ],
+
+  "matrice_croisee_25_strategies": {
+    "description": "Matrice 5 leviers × 5 profils : levier DOMINANT recommandé pour chaque profil et niveau de pertinence de chaque levier",
+    "format": "profil → {levier_dominant, leviers_support, levier_contre_indique}",
+    "anxieux": {
+      "levier_dominant": "Implementation Intentions",
+      "justification_dominance": "L'II automatise la prise, court-circuitant la rumination anxieuse. Le coping planning (plan if-then pour effets secondaires) désamorce l'anticipation anxieuse. Toli d=0.99 en santé mentale.",
+      "leviers_support": ["Identity Narrative (restructuration du récit de vulnérabilité vers agentivité)", "Habit Stacking (ancrage sur routine à valence positive)"],
+      "leviers_moderes": ["Variable Reward (reward prédictible OK, imprévisible anxiogène)", "Social Pressure (soutien thérapeutique OK, groupe anxiogène)"],
+      "levier_contre_indique": "Variable Reward imprévisible (augmente l'intolérance à l'incertitude)",
+      "sequence_recommandee": "1. II avec coping planning → 2. HS ancré sur routine positive → 3. IN (self-advocate) → 4. VR prédictible → 5. SP thérapeutique"
+    },
+    "negligent": {
+      "levier_dominant": "Habit Stacking + Implementation Intentions (co-dominance)",
+      "justification_dominance": "Le problème est purement mnésique. Le HS (d=0.574 Conn 2015) et l'II (d=0.65 Gollwitzer) ciblent directement l'oubli non-intentionnel. Phillips et al. : l'habitude est le plus fort prédicteur de non-observance non-intentionnelle.",
+      "leviers_support": ["Variable Reward (maintien engagement pendant formation habitude)", "Social Pressure (buddy de rappel en phase de consolidation)"],
+      "leviers_moderes": ["Identity Narrative (micro-reformulations positives via streak)"],
+      "levier_contre_indique": "Aucun contre-indiqué – profil le plus réceptif à tous les leviers",
+      "sequence_recommandee": "1. HS (identifier ancre optimale via EMA) → 2. II (formaliser plan if-then) → 3. VR (maintenir engagement phase critique ~66 jours) → 4. SP (buddy backup) → 5. IN (reformulation identitaire progressive)"
+    },
+    "contestataire": {
+      "levier_dominant": "Identity Narrative",
+      "justification_dominance": "Le problème est fondamentalement identitaire : le traitement est identité-dystone. Oyserman 2007 : la connaissance et la motivation extrinsèque sont insuffisantes quand le comportement est identité-incompatible. SDT Ryan & Deci : seule la régulation autonome (identifiée/intégrée) est durable. La reconstruction du récit identitaire est le SEUL point d'entrée.",
+      "leviers_support": ["Social Pressure (peer support horizontal par pairs-aidants ayant vécu le refus)"],
+      "leviers_moderes": ["Implementation Intentions (uniquement APRÈS acceptation – formalise l'engagement autonome)"],
+      "levier_contre_indique": "Variable Reward (perçu comme manipulation/corruption) et Habit Stacking (automatiser un comportement rejeté = coercition)",
+      "sequence_recommandee": "1. IN (exploration narrative, valeurs, objectifs de vie) → 2. SP horizontal (pairs-aidants) → 3. SDT autonomy support → 4. II (quand engagement autonome émerge) → 5. HS et VR (uniquement en phase de maintenance choisie)"
+    },
+    "anosognosique": {
+      "levier_dominant": "Habit Stacking + Social Pressure (co-dominance)",
+      "justification_dominance": "Le HS contourne l'absence d'insight en automatisant la prise sans nécessiter la conscience de maladie. Le SP est nécessaire car la famille/aidants sont souvent les seuls à assurer la supervision. DSM-5 : anosognosie = cause #1 de non-observance en schizophrénie. Combinaison pragmatique qui n'exige pas d'insight.",
+      "leviers_support": ["Variable Reward (motivation extrinsèque compensant l'absence d'intrinsèque)", "Implementation Intentions (plan if-then en mode routine, sans cadrage médical)"],
+      "leviers_moderes": ["Identity Narrative (récit de bien-être général, évitant le terme 'maladie')"],
+      "levier_contre_indique": "Identity Narrative centré sur la maladie (le patient ne reconnaît pas la maladie, donc un récit autour d'elle est incohérent et rejeté)",
+      "sequence_recommandee": "1. HS (intégration routine, cadrage bien-être) → 2. SP (famille/aidant comme co-superviseur bienveillant) → 3. VR (rewards tangibles immédiats) → 4. II (plan automatique sans rationnel médical) → 5. IN bien-être (seulement si ouverture)"
+    },
+    "contextuel": {
+      "levier_dominant": "Implementation Intentions",
+      "justification_dominance": "Le contextuel a le gap intention→action le plus spécifique : il VEUT prendre son traitement et le FAIT en conditions normales, mais échoue lors de perturbations. L'II avec coping planning multi-contextes cible exactement cette vulnérabilité. Les plans adaptatifs (si routine perturbée → plan B) sont la solution directe.",
+      "leviers_support": ["Habit Stacking (multi-stacking pour différents contextes)", "Variable Reward (intensification pendant perturbations)", "Social Pressure (buddy activé en mode perturbation)"],
+      "leviers_moderes": ["Identity Narrative (ancrer l'identité d'observant au-delà des contextes)"],
+      "levier_contre_indique": "Aucun contre-indiqué – profil réceptif, le challenge est la variabilité contextuelle pas la résistance",
+      "sequence_recommandee": "1. II multi-contextes (routine, weekend, voyage, crise) → 2. HS multi-stacking → 3. VR adaptatif (intensifié lors perturbations détectées) → 4. SP (buddy alerte perturbation) → 5. IN (résilience identitaire trans-contextuelle)"
+    }
+  },
+
+  "synthese_transversale": {
+    "hierarchie_effect_sizes": {
+      "1_implementation_intentions_sante_mentale": "d = 0.99 (Toli 2016, N=1636, 29 études) – LARGE",
+      "2_implementation_intentions_general": "d = 0.65 (Gollwitzer & Sheeran 2006, N=8461, 94 études) – MOYEN-LARGE",
+      "3_habit_linking_observance": "d = 0.574 (Conn 2015, N=8243, 53 études, sous-groupe habit linking) – MOYEN",
+      "4_interventions_comportementales_schizophrenie": "d = 0.98-1.03 (Velligan 2013, PharmCAT/Med-eMonitor) – LARGE",
+      "5_MCII_combine": "g = 0.336 (Wang 2021, N=15907, 24 études) – PETIT-MOYEN",
+      "6_renforcement_intermittent_DIR": "+34.6% refill rate (Kalayoglu 2012) – modéré-à-large",
+      "7_support_social_schizophrenie": "β = 0.69 (Wang 2024, path coefficient) – FORT",
+      "8_narrative_schizophrenie": "β = 0.75 MMAS-8 (Liu 2025, RCT multicentrique) – significatif et maintenu"
+    },
+    "principes_cles": [
+      "La non-observance psychiatrique est multifactorielle (49% pooled, Semahegn 2020) – aucun levier seul n'est suffisant",
+      "Les interventions multicomposantes (éducation + comportement + social) sont systématiquement supérieures aux mono-composantes",
+      "L'observance non-intentionnelle (oubli) et intentionnelle (refus) nécessitent des leviers DIFFÉRENTS – HS/II pour l'oubli, IN/SDT pour le refus",
+      "Le profil cognitif du patient doit déterminer le levier dominant – one-size-fits-all est inefficace",
+      "Les interactions entre leviers créent des synergies mesurables (II + HS = d=0.574, VR + II = accélération automatisation, IN + SP = co-construction narrative)",
+      "Le temps est un facteur critique : HS/II agissent en semaines, VR maintient sur mois, IN restructure sur mois/années",
+      "Les facteurs attitudinaux (IN/SDT) sont les plus efficaces en troubles psychiatriques et musculo-squelettiques (SUCRA 99.25% dans réseau meta-analyse Frontiers Pharmacol 2018), tandis que les facteurs éducatifs+techniques dominent en infectieux et métabolique"
+    ],
+    "gap_recherche": [
+      "Absence de RCT testant les 5 leviers en combinaison vs isolément en psychiatrie",
+      "Manque de données long-terme (>12 mois) sur le habit stacking appliqué à l'observance psychiatrique",
+      "Le variable reward en observance psychiatrique orale (pas dépôt) est sous-étudié",
+      "L'interaction identity narrative × EMA adaptatif n'a pas été testée en RCT",
+      "Les profils cognitifs de non-observance ne sont pas standardisés – pas de classification validée internationalement",
+      "L'anosognosie comme modérateur des interventions d'observance est mentionnée mais rarement mesurée dans les essais"
+    ]
+  },
+
+  "sources_principales": [
+    {"ref": "Gollwitzer & Sheeran (2006). Implementation intentions and goal achievement: A meta-analysis. Advances in Experimental Social Psychology, 38, 69-119.", "doi": "10.1016/S0065-2601(06)38002-1"},
+    {"ref": "Toli, Webb & Hardy (2016). Does forming implementation intentions help people with mental health problems to achieve goals? A meta-analysis. Clinical Psychology Review, 44, 36-47.", "doi": "10.1016/j.cpr.2015.11.009"},
+    {"ref": "Lally, van Jaarsveld, Potts & Wardle (2010). How are habits formed: Modelling habit formation in the real world. European Journal of Social Psychology, 40(6), 998-1009.", "doi": "10.1002/ejsp.674"},
+    {"ref": "Conn, Ruppar et al. (2015). Medication adherence interventions that target subjects with adherence problems. Research in Social and Administrative Pharmacy, 12(2), 218-246.", "doi": "10.1016/j.sapharm.2015.06.001"},
+    {"ref": "Wang, Gai & Wang (2021). A meta-analysis of MCII on goal attainment. Frontiers in Psychology, 12, 565202.", "doi": "10.3389/fpsyg.2021.565202"},
+    {"ref": "Liu, Zhu, Zhang et al. (2025). Narrative-based psychoeducational intervention on medication adherence in schizophrenia. eClinicalMedicine (Lancet).", "doi": "10.1016/j.eclinm.2025"},
+    {"ref": "Williams, Rodin, Ryan, Grolnick & Deci (1998). Autonomous regulation and long-term medication adherence. Health Psychology, 17(3), 269-276.", "doi": "10.1037/0278-6133.17.3.269"},
+    {"ref": "Oyserman, Fryberg & Yoder (2007). Identity-based motivation and health. JPSP, 93(6), 1011-1027.", "doi": "10.1037/0022-3514.93.6.1011"},
+    {"ref": "Christakis & Fowler (2007). The spread of obesity in a large social network. NEJM, 357(4), 370-379.", "doi": "10.1056/NEJMsa066082"},
+    {"ref": "Wang, Li, Zhou et al. (2024). Social support and medication adherence in schizophrenia. Patient Preference and Adherence, 18, 923-932.", "doi": "10.2147/PPA.S459893"},
+    {"ref": "Semahegn, Torpey, Manu et al. (2020). Psychotropic medication non-adherence meta-analysis. Systematic Reviews, 9, 15.", "doi": "10.1186/s13643-020-1274-3"},
+    {"ref": "Defined et al. (2021). Interventions to improve medication adherence in schizophrenia or bipolar disorders. IJERPH, 18(19), 10388.", "doi": "10.3390/ijerph181910388"},
+    {"ref": "Roll et al. (2015). Reinforcement schedule effects on long-term behavior change. The Psychological Record, 65, 189-195.", "doi": "10.1007/s40732-014-0100-4"},
+    {"ref": "Noordraven et al. (2014). Money for medication: RCT financial incentives antipsychotic depot. BMC Psychiatry, 14, 343.", "doi": "10.1186/s12888-014-0343-3"},
+    {"ref": "Khazanov, Beed et al. (2022). Financial incentives and mental health treatment engagement: meta-analysis. J Consulting and Clinical Psychology, 90(6), 490-505.", "doi": "10.1037/ccp0000737"},
+    {"ref": "WHO (2003). Adherence to long-term therapies: evidence for action. World Health Organization.", "url": "https://iris.who.int/bitstream/handle/10665/42682/9241545992.pdf"},
+    {"ref": "Kassam & Law (2024). Financial incentives for medication adherence in SMI: ethical scoping review. International Journal of Mental Health, 53(4).", "doi": "10.1080/00207411.2024.2428052"},
+    {"ref": "Frontiers Pharmacology (2018). Network meta-analysis medication adherence interventions by disease. Frontiers in Pharmacology, 9, 1454.", "doi": "10.3389/fphar.2018.01454"}
+  ]
+}

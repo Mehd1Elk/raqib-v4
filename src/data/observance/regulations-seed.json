@@ -1,0 +1,835 @@
+{
+  "metadata": {
+    "report_title": "BURHAN Regulatory Forcing Function Map — EU-Africa Corridor",
+    "compiled_by": "ISMAIL — Regulatory Research Agent",
+    "date_compiled": "2026-04-03",
+    "total_regulations": 30,
+    "methodology": "Each regulation scored on a 1-10 Forcing Function Scale measuring how strongly it FORCES adoption of a trust/proof system like BURHAN. Revenue Trigger = Effective Date minus 12 months deployment time.",
+    "product_definitions": {
+      "BURHAN": "Eigen's proof-of-trust platform — cryptographic attestation, audit trails, conformity documentation, verifiable compliance evidence",
+      "AELYA": "Eigen's consent management system — data subject consent, privacy-preserving consent flows, multi-jurisdictional consent harmonization",
+      "NOOS": "Eigen's health data platform — health data interoperability, health regulatory compliance, clinical data management"
+    }
+  },
+  "summary_statistics": {
+    "total_regulations": 30,
+    "average_forcing_function_score": 6.5,
+    "max_forcing_function_score": 10,
+    "regulations_score_8_plus": 12,
+    "regulations_score_6_7": 10,
+    "regulations_score_5_minus": 8,
+    "total_entities_directly_subject": 2836957,
+    "total_entities_indirectly_impacted": 11903000,
+    "regulations_already_in_force": 18,
+    "top_revenue_triggers": [
+      {
+        "regulation": "EHDS",
+        "score": 10,
+        "revenue_trigger": "2026-03-26"
+      },
+      {
+        "regulation": "EIDAS_2",
+        "score": 10,
+        "revenue_trigger": "2025-12-31"
+      },
+      {
+        "regulation": "CS3D_CSDDD",
+        "score": 9,
+        "revenue_trigger": "2026-07-26"
+      },
+      {
+        "regulation": "DORA",
+        "score": 9,
+        "revenue_trigger": "2024-01-18"
+      },
+      {
+        "regulation": "FATF_RECOMMENDATIONS",
+        "score": 9,
+        "revenue_trigger": "2011-01-01"
+      },
+      {
+        "regulation": "AI_ACT",
+        "score": 8,
+        "revenue_trigger": "2025-08-02"
+      },
+      {
+        "regulation": "PSD3_PSR",
+        "score": 8,
+        "revenue_trigger": "2026-06-01"
+      },
+      {
+        "regulation": "IVDR",
+        "score": 8,
+        "revenue_trigger": "2021-05-26"
+      },
+      {
+        "regulation": "NIS2",
+        "score": 8,
+        "revenue_trigger": "2023-10-19"
+      },
+      {
+        "regulation": "SAPIN_II",
+        "score": 8,
+        "revenue_trigger": "2016-06-01"
+      },
+      {
+        "regulation": "LOI_VIGILANCE",
+        "score": 8,
+        "revenue_trigger": "2016-03-28"
+      },
+      {
+        "regulation": "AFCFTA_DTP",
+        "score": 8,
+        "revenue_trigger": "2026-01-01"
+      },
+      {
+        "regulation": "EU_FMD",
+        "score": 7,
+        "revenue_trigger": "2018-02-09"
+      },
+      {
+        "regulation": "DATA_ACT",
+        "score": 7,
+        "revenue_trigger": "2024-09-12"
+      },
+      {
+        "regulation": "MDR",
+        "score": 7,
+        "revenue_trigger": "2020-05-26"
+      },
+      {
+        "regulation": "CSRD",
+        "score": 7,
+        "revenue_trigger": "2024-01-02"
+      },
+      {
+        "regulation": "MOROCCO_LOI_09_08",
+        "score": 7,
+        "revenue_trigger": "2008-03-16"
+      },
+      {
+        "regulation": "NIGERIA_NDPA_2023",
+        "score": 7,
+        "revenue_trigger": "2022-06-12"
+      },
+      {
+        "regulation": "SOUTH_AFRICA_POPIA",
+        "score": 7,
+        "revenue_trigger": "2020-07-01"
+      }
+    ]
+  },
+  "regulations": [
+    {
+      "id": 1,
+      "regulation_id": "CS3D_CSDDD",
+      "full_name": "Corporate Sustainability Due Diligence Directive — Directive (EU) 2024/1760 (amended by 2025/794)",
+      "jurisdiction": "EU",
+      "entry_into_force": "2024-07-25",
+      "key_dates": [
+        "2024-07-25: Entered into force",
+        "2025-04-16: Amending Directive 2025/794 — penalty cap reduced to 3%, transposition pushed to 2028-07-26",
+        "2027-07-26: Phase 1 compliance (>5,000 employees, >€1.5bn turnover)",
+        "2028-07-26: Phase 2 compliance (>3,000 employees, >€900m)",
+        "2029-07-26: Phase 3 compliance (all in-scope ≥1,000 employees, ≥€450m)"
+      ],
+      "proof_certification_transparency_requirements": "Risk-based human rights & environmental due diligence across entire value chain. Publication of due diligence policy (Art. 5), documented risk mapping (Art. 6), prevention/mitigation/remediation plans (Art. 7-9), complaints mechanism (Art. 14), annual due diligence statement on website + ESAP (Art. 16), climate transition plan aligned with Paris Agreement (Art. 15), contractual cascading to business partners, civil liability exposure (Art. 22).",
+      "max_sanction": "3% of net worldwide turnover (amended from 5% by Directive 2025/794). Public naming/shaming. Civil liability claims with 5-year limitation period.",
+      "entities_directly_subject_eu_africa_corridor": 5500,
+      "entities_indirectly_impacted_supply_chain": 120000,
+      "burhan_role_eigen_product": "BURHAN Proof-of-Compliance module provides immutable audit trails for Art. 5 due diligence policies, Art. 6 risk mapping documentation, Art. 16 annual statements. Eigen's cryptographic attestation layer generates verifiable proof that due diligence was performed at each supply chain tier — critical for Art. 22 civil liability defense. Timestamped evidence chain for supervisory audits.",
+      "aelya_role_consent_mechanism": "ÆLYA manages stakeholder consent and data processing permissions for Art. 10 meaningful engagement with affected communities across African supply chains. Consent management for whistleblower data under Art. 14 complaints mechanism. GDPR-compliant consent flows for worker/community data collected during due diligence assessments.",
+      "noos_role_health": "Relevant where supply chain due diligence covers health & safety impacts on workers (Art. 6 covers 'adverse impacts on health and safety'). NOOS health monitoring data can provide evidence of occupational health compliance in African operations.",
+      "forcing_function_score": 9,
+      "forcing_function_rationale": "Companies MUST demonstrate documented, auditable due diligence across entire value chain or face 3% turnover fines + civil liability. Without a system like BURHAN, maintaining verifiable proof across multi-tier African supply chains is practically impossible. Score 9 (not 10) because some legacy GRC tools can partially address requirements.",
+      "effective_obligation_date": "2027-07-26",
+      "burhan_revenue_trigger": "2026-07-26",
+      "timeline_notes": "Phase 1 (largest companies) starts 2027-07-26. Full scope by 2029-07-26."
+    },
+    {
+      "id": 2,
+      "regulation_id": "AI_ACT",
+      "full_name": "Regulation (EU) 2024/1689 — Artificial Intelligence Act",
+      "jurisdiction": "EU (extraterritorial)",
+      "entry_into_force": "2024-08-01",
+      "key_dates": [
+        "2025-02-02: Prohibited AI practices banned + AI literacy obligations apply",
+        "2025-08-02: GPAI model obligations apply",
+        "2026-08-02: High-risk AI obligations (Annex III) + transparency obligations apply",
+        "2027-08-02: High-risk AI in regulated products (Annex I) must comply"
+      ],
+      "proof_certification_transparency_requirements": "CE marking + conformity assessment for high-risk AI. Technical documentation (Annex IV). Quality management system (Art. 17). Risk management throughout lifecycle (Art. 9). Post-market monitoring (Art. 72). Serious incident reporting within 15 days (Art. 73). GPAI: technical docs + training data summary. Systemic risk GPAI: model evaluations + adversarial testing. Transparency: disclose AI nature to users, label synthetic content.",
+      "max_sanction": "€35M or 7% of global turnover for prohibited practices. €15M or 3% for other violations. €7.5M or 1% for misleading information.",
+      "entities_directly_subject_eu_africa_corridor": 50000,
+      "entities_indirectly_impacted_supply_chain": 250000,
+      "burhan_role_eigen_product": "BURHAN provides the conformity assessment documentation layer — Art. 43 conformity assessment proofs, CE marking audit trail, Art. 9 risk management evidence, Art. 17 QMS documentation. Eigen's trust attestation generates cryptographic proof of algorithm transparency (Art. 50) and bias testing results. Critical for African AI providers exporting to EU market.",
+      "aelya_role_consent_mechanism": "ÆLYA manages Art. 50 transparency disclosures (informing users they interact with AI), consent for emotion recognition / biometric categorization systems. Data subject consent management for training data under Art. 10 data governance requirements.",
+      "noos_role_health": "Directly relevant — AI in healthcare is classified as high-risk (Annex III, §5). NOOS health AI must comply with full conformity assessment, CE marking, and clinical validation requirements. NOOS provides the health-specific AI compliance layer.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "CE marking and conformity assessment are MANDATORY for market access. However, existing quality management frameworks (ISO 42001) can partially substitute. Score 8 because the novelty of AI-specific compliance creates strong demand for specialized systems like BURHAN.",
+      "effective_obligation_date": "2026-08-02",
+      "burhan_revenue_trigger": "2025-08-02",
+      "timeline_notes": "Prohibited practices already banned (Feb 2025). High-risk AI full compliance: Aug 2026."
+    },
+    {
+      "id": 3,
+      "regulation_id": "EU_FMD",
+      "full_name": "Falsified Medicines Directive — Directive 2011/62/EU + Delegated Regulation (EU) 2016/161",
+      "jurisdiction": "EU/EEA",
+      "entry_into_force": "2011-07-01",
+      "key_dates": [
+        "2019-02-09: Mandatory serialization enforcement across EU/EEA",
+        "2025-02-08: Italy transition begins (Bollino → EU-FMD)",
+        "2027-02-08: Italy full EU-FMD compliance"
+      ],
+      "proof_certification_transparency_requirements": "End-to-end serialization: 2D DataMatrix unique identifier on every prescription medicine. Anti-tampering device. Upload to EMVS/NMVS repositories before market placement. Verification at each supply chain point. Decommissioning at point of dispensing. Record keeping of all operations. Alert management for failed verifications.",
+      "max_sanction": "Member State-set penalties. Poland: up to PLN 500,000 (~€115,000) + 5 years imprisonment. Italy: revised sanctions framework 2025. Loss of market authorization possible.",
+      "entities_directly_subject_eu_africa_corridor": 15000,
+      "entities_indirectly_impacted_supply_chain": 80000,
+      "burhan_role_eigen_product": "BURHAN provides the trust layer for medicine serialization verification beyond the EMVS system — particularly for cross-border pharma supply chains into Africa where EMVS coverage ends. Eigen's attestation proves medicine authenticity at each transit point along EU→Africa corridor. Bridges the verification gap between EU FMD system and African markets lacking equivalent infrastructure.",
+      "aelya_role_consent_mechanism": "Limited direct role. ÆLYA manages patient consent for pharmacovigilance data sharing when adverse events are reported across borders.",
+      "noos_role_health": "CORE role — FMD is entirely a health regulation. NOOS provides the health data integration layer connecting serialization data with patient safety monitoring, pharmacovigilance, and supply chain integrity tracking for medicines entering African health systems.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "Serialization infrastructure (EMVS/NMVS) already exists and handles compliance for EU-internal supply. BURHAN's value is highest for the EU→Africa extension where no equivalent system exists. Score 7 because within-EU compliance doesn't require BURHAN, but corridor extension does.",
+      "effective_obligation_date": "2019-02-09",
+      "burhan_revenue_trigger": "2018-02-09",
+      "timeline_notes": "Already fully in force since 2019. Revenue trigger is IMMEDIATE for corridor extension use case."
+    },
+    {
+      "id": 4,
+      "regulation_id": "DORA",
+      "full_name": "Digital Operational Resilience Act — Regulation (EU) 2022/2554",
+      "jurisdiction": "EU",
+      "entry_into_force": "2023-01-16",
+      "key_dates": [
+        "2025-01-17: Fully applicable — all financial entities must comply",
+        "2025-04-30: Register of Information on ICT third-party arrangements due to ESAs",
+        "2025-11-18: First list of Critical ICT Third-Party Providers (CTPPs) designated"
+      ],
+      "proof_certification_transparency_requirements": "Documented ICT risk management framework with annual review (Art. 5-16). Three-stage incident reporting: 4h initial, 72h intermediate, 1 month final (Art. 17-23). Annual resilience testing + TLPT every 3 years (Art. 24-27). Register of Information for all ICT third-party providers (Art. 28-44). Mandatory contractual clauses with ICT providers (Art. 30). CTPPs subject to direct EU oversight.",
+      "max_sanction": "CTPPs: up to €5,000,000 + 1% daily global turnover for ongoing non-compliance. Financial entities: Member State-set, up to €20M or 10% turnover (Italy). Personal liability for management.",
+      "entities_directly_subject_eu_africa_corridor": 22000,
+      "entities_indirectly_impacted_supply_chain": 50000,
+      "burhan_role_eigen_product": "BURHAN provides the ICT third-party risk documentation layer — Art. 28-30 Register of Information with cryptographic audit trail for all ICT service provider relationships. Eigen's attestation creates verifiable proof of resilience testing (Art. 24-27), incident classification timestamps (Art. 17-23), and contractual compliance documentation. Essential for financial entities relying on African ICT providers (fintech, cloud, outsourcing).",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent for information sharing between financial entities under Art. 45 cyber threat intelligence sharing arrangements. Data processing agreements with ICT third-party providers.",
+      "noos_role_health": "Indirect — DORA covers health insurers and reinsurers as financial entities. NOOS relevant for health insurance ICT resilience specifically.",
+      "forcing_function_score": 9,
+      "forcing_function_rationale": "The Register of Information requirement + three-stage incident reporting + TLPT documentation create a massive proof burden. Financial entities MUST have an auditable system tracking all ICT risk. Existing GRC tools are poorly adapted to the real-time, multi-tier documentation requirements. Score 9.",
+      "effective_obligation_date": "2025-01-17",
+      "burhan_revenue_trigger": "2024-01-18",
+      "timeline_notes": "ALREADY FULLY APPLICABLE since January 2025. Revenue trigger is NOW."
+    },
+    {
+      "id": 5,
+      "regulation_id": "PSD3_PSR",
+      "full_name": "Payment Services Directive 3 / Payment Services Regulation — COM(2023) 366 & 367",
+      "jurisdiction": "EU",
+      "entry_into_force": "2026-TBD (provisional agreement Nov 2025)",
+      "key_dates": [
+        "2025-11-27: Provisional political agreement reached",
+        "2026-TBD: Formal adoption expected",
+        "2027-TBD: Compliance deadline (~18 months after entry into force)"
+      ],
+      "proof_certification_transparency_requirements": "Mandatory SCA with documented evidence of authentication. Confirmation of Payee (IBAN name-matching) mandatory. PSP bears burden of proof that transaction was properly authenticated (Art. 55-59). New impersonation fraud liability regime. PSU permission dashboards for open banking consent. Fraud data sharing protocols (Art. 83). Integration with EUDI Wallet recognized.",
+      "max_sanction": "Up to 4% of turnover or €20M (whichever higher). Asset seizure, transaction prohibition, criminal referral.",
+      "entities_directly_subject_eu_africa_corridor": 10000,
+      "entities_indirectly_impacted_supply_chain": 100000,
+      "burhan_role_eigen_product": "BURHAN provides the SCA evidence layer — cryptographic proof that each transaction was properly authenticated per Art. 85-89. Confirmation of Payee verification audit trail. PSP liability defense documentation (Art. 55-59 burden of proof). Critical for EU-Africa remittance corridors where authentication chains cross jurisdictions.",
+      "aelya_role_consent_mechanism": "CORE role — ÆLYA powers the PSU permission dashboards mandated for open banking (Art. 32+). Manages all third-party data access consents, withdrawal of consent, and provides the transparency layer for user authorization of payment account access.",
+      "noos_role_health": "No direct health role.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "PSPs MUST prove proper authentication or absorb fraud losses. Confirmation of Payee is entirely new infrastructure. The burden-of-proof shift to PSPs creates strong demand for automated evidence systems. Score 8 (not higher because PSD2 infrastructure partially exists).",
+      "effective_obligation_date": "2027-06-01",
+      "burhan_revenue_trigger": "2026-06-01",
+      "timeline_notes": "Estimated compliance: mid-2027. Formal adoption still pending."
+    },
+    {
+      "id": 6,
+      "regulation_id": "DATA_ACT",
+      "full_name": "Regulation (EU) 2023/2854 — Data Act",
+      "jurisdiction": "EU",
+      "entry_into_force": "2024-01-11",
+      "key_dates": [
+        "2025-09-12: Main provisions applicable — IoT data access, B2B sharing, cloud switching",
+        "2026-09-12: 'Data by design' for new connected products",
+        "2027-01-12: Complete ban on cloud egress fees"
+      ],
+      "proof_certification_transparency_requirements": "Pre-contractual transparency: users must know what IoT data is collected, by whom, for what purpose (Art. 3). Data must be available immediately, continuously, in machine-readable format. FRAND terms for B2B data sharing (Art. 8-16). Smart contract essential requirements including audit/logging capability (Art. 36-37). 30-day cloud switching. International transfer documentation.",
+      "max_sanction": "Member State-set. Netherlands: up to €1M or 10% of EU turnover. France: up to 5% of global turnover. Germany: up to €5M or 4% of global turnover. Plus GDPR fines (€20M/4%) for personal data violations.",
+      "entities_directly_subject_eu_africa_corridor": 200000,
+      "entities_indirectly_impacted_supply_chain": 500000,
+      "burhan_role_eigen_product": "BURHAN provides the data access rights management layer — cryptographic proof of data availability per Art. 3-6, FRAND compliance documentation for B2B sharing (Art. 8-16), smart contract audit/logging capability per Art. 36-37 essential requirements. Eigen attestation for international data transfer documentation.",
+      "aelya_role_consent_mechanism": "ÆLYA manages user consent for IoT data collection and sharing (pre-contractual transparency per Art. 3). Consent management for B2B data sharing agreements. User permission management for cloud switching data portability.",
+      "noos_role_health": "Relevant for connected health devices (wearables, IoT medical devices). NOOS manages health data access rights under Data Act when IoT devices generate health-related data.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "IoT data access rights + smart contract requirements are new obligations but many overlap with existing GDPR infrastructure. Score 7 because the Data Act creates incremental rather than greenfield compliance needs. However, the corridor element (EU-Africa IoT supply chains) amplifies BURHAN's value.",
+      "effective_obligation_date": "2025-09-12",
+      "burhan_revenue_trigger": "2024-09-12",
+      "timeline_notes": "Main provisions applicable September 2025. Data by design: September 2026."
+    },
+    {
+      "id": 7,
+      "regulation_id": "DGA",
+      "full_name": "Regulation (EU) 2022/868 — Data Governance Act",
+      "jurisdiction": "EU",
+      "entry_into_force": "2022-06-23",
+      "key_dates": [
+        "2023-09-24: Fully applicable — all obligations enforceable",
+        "2023-08-09: EU logos for recognized data intermediaries launched"
+      ],
+      "proof_certification_transparency_requirements": "Mandatory notification to national authority before operating data intermediation services (Art. 10-15). EU logo and label for recognized providers. Public Commission register. Neutrality + structural separation (Art. 12). Logging of all intermediation activity. Data altruism organizations: register + annual transparency reports + comply with Commission rulebook (Art. 22). International transfer safeguards (Art. 31).",
+      "max_sanction": "Member State-set (effective, proportionate, dissuasive). Revocation of recognition. GDPR fines additionally apply for personal data. No EU-wide turnover cap in DGA itself.",
+      "entities_directly_subject_eu_africa_corridor": 500,
+      "entities_indirectly_impacted_supply_chain": 10000,
+      "burhan_role_eigen_product": "BURHAN provides the trust infrastructure for data intermediary recognition — notification documentation, neutrality/structural separation proof (Art. 12), activity logging with cryptographic attestation. Eigen's trust layer enables the 'recognised provider' credential verification that DGA mandates.",
+      "aelya_role_consent_mechanism": "ÆLYA manages data subject consent for personal data intermediation services. Critical for Art. 16-25 data altruism — managing consent of individuals donating data for public interest. Consent withdrawal management.",
+      "noos_role_health": "Relevant for health data intermediaries and health data altruism organizations (e.g., research data sharing). NOOS provides health-specific consent and anonymization layers.",
+      "forcing_function_score": 5,
+      "forcing_function_rationale": "DGA's notification regime is relatively light compared to other regulations. The number of directly affected entities is small (~500). Score 5 because compliance is achievable without BURHAN, though it adds value for trust demonstration.",
+      "effective_obligation_date": "2023-09-24",
+      "burhan_revenue_trigger": "2022-09-24",
+      "timeline_notes": "Already fully applicable since September 2023."
+    },
+    {
+      "id": 8,
+      "regulation_id": "EHDS",
+      "full_name": "Regulation (EU) 2025/327 — European Health Data Space",
+      "jurisdiction": "EU",
+      "entry_into_force": "2025-03-26",
+      "key_dates": [
+        "2027-03-26: General provisions + EHR certification requirements apply",
+        "2029-03-26: Primary use (Patient Summaries, ePrescriptions) mandatory; secondary use rules apply",
+        "2031-03-26: Second group (medical images, lab results) operational"
+      ],
+      "proof_certification_transparency_requirements": "EHR system CE marking + conformity assessment (Art. 28-41). European Interoperability Software Component + European Logging Software Component mandatory. Technical documentation per Annex III. Patient access/portability rights via MyHealth@EU. Secondary use: data permit application with documented purpose, safeguards, expected benefit. All professional access logged and patients informed. HDAB public register of approved permits. Results published within 18 months.",
+      "max_sanction": "€20M or 4% of global turnover for serious violations. €10M or 2% for minor. Exclusion from EHDS access for up to 5 years. Daily penalty payments.",
+      "entities_directly_subject_eu_africa_corridor": 100000,
+      "entities_indirectly_impacted_supply_chain": 300000,
+      "burhan_role_eigen_product": "CORE product alignment — BURHAN provides the trust infrastructure for EHR system conformity assessment documentation (Art. 28-41), CE marking audit trail, and the European Logging Software Component (access logging with who/when/what/where). Eigen attestation creates the immutable, verifiable health data access records that EHDS mandates. Critical for cross-border health data flows.",
+      "aelya_role_consent_mechanism": "CORE role — ÆLYA manages patient rights under EHDS: Art. 3-10 access/portability/restriction rights, opt-out mechanisms for secondary use, consent for health data access by researchers. Manages the 'permission dashboard' for patients to control who accesses their health data across EU borders.",
+      "noos_role_health": "PRIMARY NOOS REGULATION — EHDS is the core health data regulation. NOOS IS the health data space product. NOOS provides: MyHealth@EU integration, patient summary interoperability, ePrescription cross-border functionality, health data anonymization for secondary use, secure processing environment compliance.",
+      "forcing_function_score": 10,
+      "forcing_function_rationale": "EHDS MANDATES CE marking, conformity assessment, interoperability software component, and logging software component for ALL EHR systems. No EHR system can operate in the EU market without these. BURHAN/NOOS directly fulfill the mandatory technical requirements. Score 10 — impossible to be EHDS-compliant without a system like BURHAN for the trust/logging infrastructure.",
+      "effective_obligation_date": "2027-03-26",
+      "burhan_revenue_trigger": "2026-03-26",
+      "timeline_notes": "In force since March 2025. EHR certification: March 2027. Primary use mandatory: March 2029."
+    },
+    {
+      "id": 9,
+      "regulation_id": "EIDAS_2",
+      "full_name": "Regulation (EU) 2024/1183 — European Digital Identity Framework (eIDAS 2.0)",
+      "jurisdiction": "EU",
+      "entry_into_force": "2024-05-20",
+      "key_dates": [
+        "2026-12-31: All 27 Member States must offer at least one EUDI Wallet",
+        "2027-12-31: Banks/PSPs must accept EUDI Wallets for SCA"
+      ],
+      "proof_certification_transparency_requirements": "EUDI Wallet certification against common reference architecture. Qualified Trust Service Providers (QTSPs): conformity assessment by approved body + annual reassessment. National Trusted Lists of QTSPs. Qualified Electronic Attestations of Attributes (QEAAs) with cryptographic proof. Selective disclosure + zero-knowledge proofs. Relying parties must verify against EU Trust Lists. New trust services: e-archiving, electronic ledgers, electronic attestation of attributes (Art. 46a-46e).",
+      "max_sanction": "€5M or 1% of worldwide turnover for legal persons (Art. 16). Member States may set higher.",
+      "entities_directly_subject_eu_africa_corridor": 7800,
+      "entities_indirectly_impacted_supply_chain": 500000,
+      "burhan_role_eigen_product": "FOUNDATIONAL alignment — BURHAN IS a trust service in the eIDAS 2.0 sense. Eigen provides the 'electronic attestation of attributes' infrastructure (Art. 46a-46e), 'electronic ledger' capability, and 'e-archiving' services that are now regulated trust services under eIDAS 2.0. BURHAN can seek qualification as a QTSP. eIDAS 2.0 essentially creates the regulatory category that BURHAN occupies.",
+      "aelya_role_consent_mechanism": "CORE role — ÆLYA provides the selective disclosure and consent management for EUDI Wallet attribute sharing. Manages user consent for each attribute attestation, zero-knowledge proof generation for privacy-preserving verification, and the consent audit trail required by QTSPs.",
+      "noos_role_health": "Relevant for health attribute attestations (vaccination certificates, medical qualifications, health insurance credentials) via EUDI Wallet. NOOS provides health-specific Qualified Electronic Attestations of Attributes.",
+      "forcing_function_score": 10,
+      "forcing_function_rationale": "eIDAS 2.0 literally defines the product category BURHAN operates in — electronic attestations, electronic ledgers, e-archiving are now REGULATED trust services. Any entity wanting to provide these services MUST be qualified under eIDAS 2.0. BURHAN is the product. Score 10.",
+      "effective_obligation_date": "2026-12-31",
+      "burhan_revenue_trigger": "2025-12-31",
+      "timeline_notes": "EUDI Wallet deployment deadline: end 2026. Banks must accept by end 2027."
+    },
+    {
+      "id": 10,
+      "regulation_id": "MDR",
+      "full_name": "Regulation (EU) 2017/745 — Medical Devices Regulation",
+      "jurisdiction": "EU",
+      "entry_into_force": "2017-05-25",
+      "key_dates": [
+        "2021-05-26: Fully applicable",
+        "2027-12-31: End of transition for Class III devices",
+        "2028-12-31: Final transition — all devices MDR-certified"
+      ],
+      "proof_certification_transparency_requirements": "Full technical documentation per Annex II/III. Conformity assessment by Notified Body (all classes except I). CE marking. EU Declaration of Conformity. UDI (Unique Device Identification) registered in EUDAMED. Clinical evaluation (Art. 61). Post-market surveillance system. PSUR bi-annually (IIa) / annually (III). PMCF for IIb/III. PRRC appointment mandatory.",
+      "max_sanction": "Member State-set (Art. 113). Italy: up to €5M for non-compliant devices. Criminal liability in several Member States.",
+      "entities_directly_subject_eu_africa_corridor": 27000,
+      "entities_indirectly_impacted_supply_chain": 100000,
+      "burhan_role_eigen_product": "BURHAN provides the UDI-to-EUDAMED attestation chain — cryptographic proof of device conformity at each distribution point. Eigen's trust layer connects Notified Body certificates with real-time device tracking. Particularly valuable for medical devices distributed to African markets where traceability gaps exist.",
+      "aelya_role_consent_mechanism": "ÆLYA manages patient consent for clinical investigations (Art. 62-82), post-market clinical follow-up data, and serious incident reporting data sharing.",
+      "noos_role_health": "CORE health role — MDR governs all medical devices. NOOS provides the health regulatory compliance layer: clinical evaluation documentation, post-market surveillance data management, EUDAMED integration, and vigilance reporting.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "MDR conformity assessment is mature with 45 Notified Bodies. Existing systems handle in-EU compliance well. BURHAN's unique value is the EU-to-Africa traceability extension. Score 7.",
+      "effective_obligation_date": "2021-05-26",
+      "burhan_revenue_trigger": "2020-05-26",
+      "timeline_notes": "Already fully applicable. Transition ends 2028."
+    },
+    {
+      "id": 11,
+      "regulation_id": "IVDR",
+      "full_name": "Regulation (EU) 2017/746 — In Vitro Diagnostic Regulation",
+      "jurisdiction": "EU",
+      "entry_into_force": "2017-05-25",
+      "key_dates": [
+        "2022-05-26: Fully applicable",
+        "2027-12-31: End transition for legacy IVDs with NB",
+        "2029-12-31: End transition for lower-risk legacy devices"
+      ],
+      "proof_certification_transparency_requirements": "Similar to MDR but with 70-80% of IVDs reclassified upward (now requiring NB involvement vs. ~20% before). Four-tier classification (A/B/C/D). Performance evaluation (Art. 56-77). EU Reference Laboratories for Class D devices. UDI + EUDAMED registration. Technical documentation per Annex II/III. PRRC mandatory.",
+      "max_sanction": "Member State-set (Art. 105). Italy: up to €5M. Criminal liability possible.",
+      "entities_directly_subject_eu_africa_corridor": 5000,
+      "entities_indirectly_impacted_supply_chain": 30000,
+      "burhan_role_eigen_product": "BURHAN provides conformity assessment attestation for the massive reclassification wave — 80% of IVDs now need NB involvement (up from 20%). Eigen's trust layer documents performance evaluation data + EU Reference Laboratory consultations for Class D devices. Critical for diagnostic test kits distributed to Africa.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent for performance studies and clinical performance studies data. Patient consent for IVD data in research settings.",
+      "noos_role_health": "CORE health role — IVDs are fundamental health products. NOOS manages diagnostic test performance data, companion diagnostic coordination with EMA, and PMPF data for African market monitoring.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "The massive reclassification (20%→80-90% requiring NB) creates urgent compliance need. Many IVD manufacturers, especially smaller African-market-focused ones, lack infrastructure to manage this transition. Score 8 — higher than MDR due to the reclassification urgency.",
+      "effective_obligation_date": "2022-05-26",
+      "burhan_revenue_trigger": "2021-05-26",
+      "timeline_notes": "Already applicable. Transition ongoing through 2029."
+    },
+    {
+      "id": 12,
+      "regulation_id": "NIS2",
+      "full_name": "Directive (EU) 2022/2555 — NIS2",
+      "jurisdiction": "EU",
+      "entry_into_force": "2023-01-16",
+      "key_dates": [
+        "2024-10-17: Transposition deadline (19 Member States missed it)",
+        "2024-10-18: Enforcement begins",
+        "2025-04-17: Entity lists established by Member States"
+      ],
+      "proof_certification_transparency_requirements": "10 mandatory cybersecurity measures documented under Art. 21 (risk analysis, incident handling, BCP, supply chain security, encryption, MFA, etc.). Incident reporting cascade: 24h early warning, 72h full notification, 1-month final report. Supply chain security documentation (Art. 21(2)(d)). Management body cybersecurity training mandatory (Art. 20). Essential entities: proactive ex-ante audits. Personal management liability.",
+      "max_sanction": "Essential entities: €10M or 2% of worldwide turnover. Important entities: €7M or 1.4%. Temporary ban on executives. Public disclosure of non-compliance.",
+      "entities_directly_subject_eu_africa_corridor": 160000,
+      "entities_indirectly_impacted_supply_chain": 400000,
+      "burhan_role_eigen_product": "BURHAN provides the supply chain security documentation layer (Art. 21(2)(d)) — cryptographic proof of cybersecurity measures across multi-tier supply chains including African suppliers. Eigen attestation for incident reporting timestamps (24h/72h/1month). Audit trail for all 10 mandatory security measures. Critical for entities with African ICT supply chain dependencies.",
+      "aelya_role_consent_mechanism": "ÆLYA manages cyber threat intelligence sharing consent under Art. 29 information sharing arrangements. Data processing agreements for supply chain security assessments.",
+      "noos_role_health": "Healthcare is a NIS2 essential sector. NOOS provides health-specific cybersecurity compliance: hospital system security documentation, health data incident reporting, and healthcare supply chain security.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "160,000 entities MUST document 10 cybersecurity measures + supply chain security + incident reporting. The supply chain cascade to African suppliers creates massive documentation burden. Score 8 — existing cybersecurity frameworks help but NIS2's supply chain requirement is novel.",
+      "effective_obligation_date": "2024-10-18",
+      "burhan_revenue_trigger": "2023-10-19",
+      "timeline_notes": "Already enforceable since October 2024. Revenue trigger is NOW."
+    },
+    {
+      "id": 13,
+      "regulation_id": "DMA",
+      "full_name": "Regulation (EU) 2022/1925 — Digital Markets Act",
+      "jurisdiction": "EU",
+      "entry_into_force": "2022-11-01",
+      "key_dates": [
+        "2023-09-06: First 6 gatekeepers designated",
+        "2024-03-06: Compliance deadline for gatekeepers"
+      ],
+      "proof_certification_transparency_requirements": "Compliance reports to Commission within 6 months + annual updates. Advertising transparency (Art. 5(9)). Interoperability for messaging (Art. 7). Data access for business users (Art. 6(10)). Compliance officer designation (Art. 28). Annual independent audit of profiling techniques (Art. 33). Algorithm transparency.",
+      "max_sanction": "10% of worldwide turnover. 20% for repeat (3+ violations in 8 years). 5% daily turnover periodic penalties. Structural remedies (divestiture).",
+      "entities_directly_subject_eu_africa_corridor": 7,
+      "entities_indirectly_impacted_supply_chain": 50000,
+      "burhan_role_eigen_product": "Limited direct role — only 7 gatekeepers subject. BURHAN could provide compliance report documentation and audit trail for Art. 33 profiling audits, but the market is tiny.",
+      "aelya_role_consent_mechanism": "ÆLYA relevant for gatekeeper consent management — managing business user data access permissions (Art. 6(10)) and interoperability consent for messaging (Art. 7).",
+      "noos_role_health": "No direct health role.",
+      "forcing_function_score": 3,
+      "forcing_function_rationale": "Only 7 companies are directly subject. They have massive in-house compliance teams. BURHAN adds marginal value. Score 3.",
+      "effective_obligation_date": "2024-03-06",
+      "burhan_revenue_trigger": "2023-03-07",
+      "timeline_notes": "Already in force and enforced."
+    },
+    {
+      "id": 14,
+      "regulation_id": "DSA",
+      "full_name": "Regulation (EU) 2022/2065 — Digital Services Act",
+      "jurisdiction": "EU",
+      "entry_into_force": "2022-11-16",
+      "key_dates": [
+        "2024-02-17: Fully applicable to all intermediary services",
+        "2025-12-05: First fine — €120M against X (Twitter)"
+      ],
+      "proof_certification_transparency_requirements": "Content moderation transparency reports (Art. 15). Systemic risk assessment for VLOPs/VLOSEs (Art. 34). Risk mitigation measures (Art. 35). Independent annual audit at provider's expense (Art. 37). Advertising repository (Art. 39). Researcher data access (Art. 40). Compliance officer (Art. 41). Trusted flaggers program (Art. 22). No dark patterns (Art. 25).",
+      "max_sanction": "6% of worldwide annual turnover. 5% daily turnover periodic penalties. Service suspension as last resort.",
+      "entities_directly_subject_eu_africa_corridor": 100000,
+      "entities_indirectly_impacted_supply_chain": 200000,
+      "burhan_role_eigen_product": "BURHAN provides the annual independent audit documentation layer (Art. 37) and systemic risk assessment evidence chain (Art. 34). Eigen attestation for content moderation transparency reports. Advertising repository integrity verification. Value for African digital services targeting EU users.",
+      "aelya_role_consent_mechanism": "ÆLYA manages user consent for algorithmic recommendation systems (Art. 27-38), advertising targeting consent, and researcher data access authorization (Art. 40).",
+      "noos_role_health": "Indirect — DSA covers platforms hosting health misinformation. NOOS relevant for health content moderation risk assessments.",
+      "forcing_function_score": 6,
+      "forcing_function_rationale": "Most DSA obligations can be met with existing compliance frameworks. The annual independent audit (Art. 37) creates the strongest BURHAN use case. Score 6 — important but not a forcing function.",
+      "effective_obligation_date": "2024-02-17",
+      "burhan_revenue_trigger": "2023-02-17",
+      "timeline_notes": "Already fully applicable. Active enforcement."
+    },
+    {
+      "id": 15,
+      "regulation_id": "CSRD",
+      "full_name": "Directive (EU) 2022/2464 — Corporate Sustainability Reporting Directive (post-Omnibus 2026)",
+      "jurisdiction": "EU",
+      "entry_into_force": "2023-01-05",
+      "key_dates": [
+        "2025-01-01: Wave 1 reports published (large PIEs >500 employees)",
+        "2026-03-18: Omnibus simplification entered into force — scope narrowed to ~5,000",
+        "2027-01-01: Revised Wave 2 (>1,000 employees AND >€450M turnover)"
+      ],
+      "proof_certification_transparency_requirements": "ESRS-compliant sustainability reporting. Double materiality assessment. Third-party limited assurance by statutory auditor (Art. 26a). Value chain transparency. XBRL digital tagging via ESAP. Management report integration. Board governance disclosure.",
+      "max_sanction": "Member State-set. France: up to €18,750 financial + €375,000 criminal + 5 years imprisonment. Germany: up to €500,000.",
+      "entities_directly_subject_eu_africa_corridor": 5000,
+      "entities_indirectly_impacted_supply_chain": 200000,
+      "burhan_role_eigen_product": "BURHAN provides the value chain data verification layer — cryptographic attestation for ESG data collected from African supply chain partners. Eigen's trust layer enables auditable ESRS data aggregation from multi-tier supply chains. XBRL filing integrity verification.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent for value chain data collection from African suppliers and partners. Consent for stakeholder engagement data used in materiality assessments.",
+      "noos_role_health": "ESRS S1-S4 covers social topics including worker health and safety. NOOS provides health metrics for ESG reporting on workforce health across African operations.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "Mandatory third-party assurance + value chain transparency create strong documentation needs. However, the Omnibus narrowing to ~5,000 companies reduces the addressable market significantly. Score 7.",
+      "effective_obligation_date": "2025-01-01",
+      "burhan_revenue_trigger": "2024-01-02",
+      "timeline_notes": "Wave 1 already reporting. Post-Omnibus scope: ~5,000 companies."
+    },
+    {
+      "id": 16,
+      "regulation_id": "SAPIN_II",
+      "full_name": "Loi n°2016-1691 — Loi Sapin II (anticorruption)",
+      "jurisdiction": "France (extraterritorial)",
+      "entry_into_force": "2017-06-01",
+      "key_dates": [
+        "2017-06-01: Art. 17 compliance obligations apply",
+        "2024-10-16: AFA publishes CSRD/Sapin II alignment recommendations"
+      ],
+      "proof_certification_transparency_requirements": "8-pillar anticorruption compliance: code of conduct, whistleblowing mechanism, risk mapping, third-party due diligence, accounting controls, training, disciplinary regime, continuous evaluation. AFA audits and can demand documentation + on-site visits. Since 2024: ABC program reporting in CSRD sustainability reports.",
+      "max_sanction": "€1M administrative (companies) / €200K (executives). €5M criminal for corruption. CJIP up to 30% of annual revenue. 5-year AFA monitoring at company expense. 5-year EU public procurement exclusion.",
+      "entities_directly_subject_eu_africa_corridor": 1600,
+      "entities_indirectly_impacted_supply_chain": 50000,
+      "burhan_role_eigen_product": "BURHAN provides the 8-pillar documentation layer — particularly critical for Pillar 4 (third-party due diligence) across African operations. Eigen attestation creates verifiable proof of anticorruption assessments for every African business partner. AFA audit-ready evidence chain. Key for Bolloré-type Africa corridor cases.",
+      "aelya_role_consent_mechanism": "ÆLYA manages whistleblower data under Pillar 2 (alert mechanism). GDPR-compliant whistleblower identity protection + consent management for investigation data processing.",
+      "noos_role_health": "No direct health role (unless corruption concerns health sector procurement in Africa).",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "AFA actively audits and prosecutes. CJIP penalties reach 30% of revenue. The Bolloré Africa case proved extraterritorial enforcement is real. French companies in Africa MUST have documented anticorruption due diligence. Score 8.",
+      "effective_obligation_date": "2017-06-01",
+      "burhan_revenue_trigger": "2016-06-01",
+      "timeline_notes": "Already in force since 2017. Active AFA enforcement. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 17,
+      "regulation_id": "LOI_VIGILANCE",
+      "full_name": "Loi n°2017-399 — Loi de Vigilance (devoir de vigilance)",
+      "jurisdiction": "France (extraterritorial)",
+      "entry_into_force": "2017-03-28",
+      "key_dates": [
+        "2017-03-28: Entry into force",
+        "2026-03-12: First damages awarded for vigilance failure (Paris court)"
+      ],
+      "proof_certification_transparency_requirements": "Annual Vigilance Plan with 5 mandatory measures: risk mapping covering subsidiaries/suppliers/subcontractors, regular evaluation procedures, risk mitigation actions, whistleblowing mechanism (with unions), effectiveness monitoring. Published in annual management report. Court (2026) confirmed cartography must cover ALL subsidiaries (direct + indirect).",
+      "max_sanction": "Judicial injunction with daily astreinte. Civil liability for damages (first award: €88K in March 2026). No fixed administrative fine (struck down by Conseil constitutionnel). Will be strengthened by CSDDD transposition.",
+      "entities_directly_subject_eu_africa_corridor": 250,
+      "entities_indirectly_impacted_supply_chain": 80000,
+      "burhan_role_eigen_product": "BURHAN provides the Vigilance Plan documentation infrastructure — risk mapping across all African subsidiaries/suppliers (confirmed by 2026 court ruling), evaluation procedures with timestamped evidence, effectiveness monitoring data. Eigen attestation creates the Art. 22 civil liability defense documentation that companies need when operating in high-risk African geographies.",
+      "aelya_role_consent_mechanism": "ÆLYA manages Pillar 4 whistleblowing mechanism — consent for alert data collection, union consultation consent, GDPR-compliant whistleblower protection across French and African jurisdictions.",
+      "noos_role_health": "Relevant where vigilance covers health & safety impacts on workers in African operations. NOOS health monitoring for occupational health evidence.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "The 2026 damages ruling proves enforcement is real. Companies MUST demonstrate documented, effective vigilance across their African value chains or face civil liability. The court's expansion to ALL subsidiaries (direct + indirect) amplifies the documentation burden. Score 8.",
+      "effective_obligation_date": "2017-03-28",
+      "burhan_revenue_trigger": "2016-03-28",
+      "timeline_notes": "Already in force. Active litigation. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 18,
+      "regulation_id": "SEGUR_NUMERIQUE",
+      "full_name": "Ségur du Numérique en Santé",
+      "jurisdiction": "France",
+      "entry_into_force": "2021-07-01",
+      "key_dates": [
+        "2023-12-14: Wave 1 closed (98.7% installation rate)",
+        "2024-05-01: Wave 2 launched",
+        "2027-03-17: Wave 2 deployment deadline"
+      ],
+      "proof_certification_transparency_requirements": "ANS certification/referencing mandatory for health software. SONS financing only for certified solutions. 6 technical prerequisites (identitovigilance, cybersecurity, DMP feeding). HDS (Health Data Host) certification. HAS 2025-2029 certification integrates digital criteria.",
+      "max_sanction": "Incentive-based (no direct Ségur sanction). Loss of SONS financing for non-compliance. RGPD sanctions apply: up to €20M or 4% turnover. CEGEDIM: €800K CNIL fine (2024).",
+      "entities_directly_subject_eu_africa_corridor": 0,
+      "entities_indirectly_impacted_supply_chain": 5000,
+      "burhan_role_eigen_product": "Limited corridor relevance. BURHAN could provide ANS certification documentation management and HDS compliance attestation for French health software vendors potentially expanding to Francophone Africa.",
+      "aelya_role_consent_mechanism": "ÆLYA manages patient consent for DMP/Mon espace santé data feeding. Health data processing consent per HDS requirements.",
+      "noos_role_health": "Directly relevant — Ségur is a health digitization program. NOOS provides the interoperability and ANS certification compliance layer for French health systems. Model exportable to Francophone Africa.",
+      "forcing_function_score": 4,
+      "forcing_function_rationale": "Ségur is France-domestic with no direct EU-Africa corridor impact. Score 4 — only relevant through potential export of certified health software to Francophone Africa.",
+      "effective_obligation_date": "2021-09-01",
+      "burhan_revenue_trigger": "2020-09-01",
+      "timeline_notes": "Wave 1 complete. Wave 2 in progress through 2027. France-only."
+    },
+    {
+      "id": 19,
+      "regulation_id": "MON_ESPACE_SANTE",
+      "full_name": "Mon Espace Santé (Espace Numérique de Santé)",
+      "jurisdiction": "France",
+      "entry_into_force": "2022-01-01",
+      "key_dates": [
+        "2022-01-01: Automatic creation for all 68M beneficiaries (opt-out)",
+        "2024-01-01: Mandatory DMP feeding by healthcare providers"
+      ],
+      "proof_certification_transparency_requirements": "~100-criterion referencing process (Convergence platform) for app developers. HDS certification for data hosting. RGS homologation. CNIL RGPD compliance. Access traceability (every access logged and patient informed). Deletion within 3 months on request.",
+      "max_sanction": "RGPD: up to €20M or 4% turnover. CEGEDIM: €800K (2024). Criminal: 5 years imprisonment + €300K. Loss of HAS certification.",
+      "entities_directly_subject_eu_africa_corridor": 0,
+      "entities_indirectly_impacted_supply_chain": 3000,
+      "burhan_role_eigen_product": "Very limited corridor relevance. BURHAN could provide the Convergence referencing documentation + HDS compliance attestation.",
+      "aelya_role_consent_mechanism": "ÆLYA manages patient consent for Mon Espace Santé — opt-out mechanism management, professional access consent, app authorization consent management.",
+      "noos_role_health": "Directly relevant — Mon Espace Santé is a national health data space. NOOS model for patient-controlled health data. Reference architecture for Francophone African e-health projects.",
+      "forcing_function_score": 3,
+      "forcing_function_rationale": "France-domestic, no corridor impact. Score 3 — reference model only for African markets.",
+      "effective_obligation_date": "2022-01-01",
+      "burhan_revenue_trigger": "2021-01-01",
+      "timeline_notes": "Already live with 68M accounts. France-only."
+    },
+    {
+      "id": 20,
+      "regulation_id": "MALABO_CONVENTION",
+      "full_name": "African Union Convention on Cyber Security and Personal Data Protection (Malabo Convention)",
+      "jurisdiction": "African Union (15 ratifying states)",
+      "entry_into_force": "2023-06-08",
+      "key_dates": [
+        "2014-06-27: Adopted in Malabo",
+        "2023-06-08: Entered into force (15th ratification)",
+        "2026: 16 ratifications; 13 additional signed"
+      ],
+      "proof_certification_transparency_requirements": "Prior declaration/authorization to national DPA before processing (Art. 13). Adequacy requirement for transfers outside AU territory (Art. 14(6)). National DPA must authorize sensitive data processing. E-transaction trust services framework (Art. 1-7). Criminalization of unlawful data processing (Art. 25).",
+      "max_sanction": "Convention-level: none (delegated to national law). National examples: Morocco MAD 600K, Ghana GHS 150K. Varies widely.",
+      "entities_directly_subject_eu_africa_corridor": 15000,
+      "entities_indirectly_impacted_supply_chain": 100000,
+      "burhan_role_eigen_product": "BURHAN provides cross-border data transfer compliance documentation — Art. 14(6) adequacy proof for EU→Africa transfers. Prior authorization documentation for national DPAs. Eigen attestation creates the trust bridge between EU GDPR requirements and Malabo Convention requirements.",
+      "aelya_role_consent_mechanism": "CORE role — ÆLYA manages Art. 9 consent requirements across 15+ national jurisdictions with varying consent standards. Consent management harmonization across Malabo-implementing countries.",
+      "noos_role_health": "Health data is 'sensitive data' requiring prior DPA authorization. NOOS provides health-specific cross-border data transfer compliance for health research and clinical data.",
+      "forcing_function_score": 6,
+      "forcing_function_rationale": "The Convention is young (2023) with weak enforcement. But the prior authorization requirement for cross-border transfers creates a real compliance need for EU companies operating in ratifying states. Score 6 — growing importance.",
+      "effective_obligation_date": "2023-06-08",
+      "burhan_revenue_trigger": "2022-06-08",
+      "timeline_notes": "In force since June 2023. Enforcement maturing."
+    },
+    {
+      "id": 21,
+      "regulation_id": "MOROCCO_LOI_09_08",
+      "full_name": "Loi n° 09-08 — Protection des données personnelles (Maroc)",
+      "jurisdiction": "Morocco",
+      "entry_into_force": "2009-03-16",
+      "key_dates": [
+        "2009-03-16: Full enforcement",
+        "2025: Morocco pursuing EU adequacy decision"
+      ],
+      "proof_certification_transparency_requirements": "Prior CNDP declaration for standard processing (Art. 13). Prior CNDP authorization for sensitive data + cross-border transfers (Art. 14). Documentation of security measures (Art. 23). Case-by-case CNDP authorization for EU transfers (no whitelist). SCCs used in practice.",
+      "max_sanction": "MAD 10,000–600,000 (~€900–€55,000). Double for companies. Imprisonment 3 months to 4 years. Equipment seizure. Establishment closure.",
+      "entities_directly_subject_eu_africa_corridor": 8000,
+      "entities_indirectly_impacted_supply_chain": 25000,
+      "burhan_role_eigen_product": "BURHAN provides CNDP declaration/authorization documentation with verifiable proof of compliance. Critical for the massive EU-Morocco digital services corridor (BPO, automotive, aeronautics). Eigen attestation bridges GDPR and Loi 09-08 compliance documentation. Particularly valuable as Morocco pursues EU adequacy.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent harmonization between GDPR and Loi 09-08 — different consent standards that must be reconciled for EU-Morocco data flows. Cross-border consent management.",
+      "noos_role_health": "Health data is sensitive requiring CNDP authorization. NOOS manages health data transfers between Moroccan healthcare providers and EU institutions.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "Morocco is Africa's largest digital services exporter ($3.56B surplus). The prior authorization requirement for every cross-border transfer creates systematic compliance burden. EU adequacy pursuit will intensify requirements. Score 7.",
+      "effective_obligation_date": "2009-03-16",
+      "burhan_revenue_trigger": "2008-03-16",
+      "timeline_notes": "In force since 2009. Enforcement increasing as EU adequacy pursued. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 22,
+      "regulation_id": "NIGERIA_NDPA_2023",
+      "full_name": "Nigeria Data Protection Act, 2023",
+      "jurisdiction": "Nigeria (extraterritorial)",
+      "entry_into_force": "2023-06-12",
+      "key_dates": [
+        "2023-06-12: Signed into law",
+        "2025-03-20: GAID 2025 issued — clarifies cross-border transfers"
+      ],
+      "proof_certification_transparency_requirements": "DCMI/DPMI mandatory registration with NDPC (Sec. 44). Annual compliance audits through licensed DPCO. DPIA for cross-border transfers (Sec. 28). Cross-Border Data Transfer Instrument (CBDTI: SCCs, BCR, certification) pre-approved by NDPC. 72h breach notification (Sec. 40). Annual Compliance Audit Returns.",
+      "max_sanction": "Higher of NGN 10M (~$6,200) or 2% of annual gross revenue. Criminal: fine or 1 year imprisonment.",
+      "entities_directly_subject_eu_africa_corridor": 12000,
+      "entities_indirectly_impacted_supply_chain": 50000,
+      "burhan_role_eigen_product": "BURHAN provides NDPC registration and annual compliance documentation. Eigen attestation for CBDTI pre-approval evidence. Cross-border transfer documentation (Sec. 41-42). Critical for EU fintech and tech companies serving Nigeria's 220M population.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent under NDPA's explicit consent requirements — particularly for cross-border transfer consent derogations (Sec. 43). Multi-jurisdictional consent management for EU-Nigeria data flows.",
+      "noos_role_health": "Health is a critical sector under NDPA (DCMI threshold). NOOS manages health data compliance for Nigeria's growing health-tech sector.",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "Annual DPCO audits + CBDTI pre-approval create systematic compliance burden. Binance enforcement case shows NDPC is willing to act against foreign companies. Score 7 — fines are modest but 2% revenue is significant for large firms.",
+      "effective_obligation_date": "2023-06-12",
+      "burhan_revenue_trigger": "2022-06-12",
+      "timeline_notes": "In force since June 2023. Active enforcement. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 23,
+      "regulation_id": "KENYA_DPA_2019",
+      "full_name": "Kenya Data Protection Act, 2019",
+      "jurisdiction": "Kenya (extraterritorial)",
+      "entry_into_force": "2019-11-25",
+      "key_dates": [
+        "2022-07-14: Mandatory registration commences",
+        "2024-05: Kenya-EU adequacy dialogue launched (first in Africa)"
+      ],
+      "proof_certification_transparency_requirements": "Mandatory ODPC registration for all controllers/processors above thresholds (Sec. 18). Proof of safeguards to Data Commissioner before cross-border transfers (Sec. 31). DPIA for high-risk processing (Sec. 28). 72h breach notification. DPO mandatory for certain entities. Registration certificates valid 24 months.",
+      "max_sanction": "KES 5M (~$38,750) or 1% of turnover, WHICHEVER IS LOWER. Criminal: up to KES 3M or 10 years imprisonment (Sec. 64).",
+      "entities_directly_subject_eu_africa_corridor": 6500,
+      "entities_indirectly_impacted_supply_chain": 20000,
+      "burhan_role_eigen_product": "BURHAN provides ODPC registration compliance + cross-border transfer safeguard documentation (Sec. 31). Particularly valuable as Kenya pursues EU adequacy — BURHAN can demonstrate the safeguards Kenya needs to prove for adequacy decision.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent for cross-border sensitive personal data transfers. Multi-jurisdictional consent harmonization for Kenya-EU data flows.",
+      "noos_role_health": "Healthcare and financial services are mandatory registration sectors regardless of size. NOOS manages health data compliance for Kenya's health-tech ecosystem.",
+      "forcing_function_score": 5,
+      "forcing_function_rationale": "Penalties are low (1% of turnover, whichever is LOWER). Kenya's enforcement is growing but still nascent. EU adequacy pursuit increases importance. Score 5 — moderate forcing function.",
+      "effective_obligation_date": "2019-11-25",
+      "burhan_revenue_trigger": "2018-11-25",
+      "timeline_notes": "In force since 2019. EU adequacy dialogue ongoing. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 24,
+      "regulation_id": "SOUTH_AFRICA_POPIA",
+      "full_name": "Protection of Personal Information Act, 2013 (POPIA)",
+      "jurisdiction": "South Africa",
+      "entry_into_force": "2021-07-01",
+      "key_dates": [
+        "2021-07-01: Full enforcement",
+        "2023-07-03: First fine — ZAR 5M against Dept of Justice"
+      ],
+      "proof_certification_transparency_requirements": "Mandatory Information Officer registration. Prior authorization for special personal information transfers to countries without adequate protection (Sec. 57). Adequacy requirement for cross-border transfers (Sec. 72). Annual PIIA (Personal Information Impact Assessment). PAIA manual and processing records. Unique: protects juristic persons (companies) too.",
+      "max_sanction": "ZAR 10M (~$530,000) administrative. Criminal: 10 years imprisonment. Civil damages. Active enforcement against WhatsApp, Lancet, Dis-Chem.",
+      "entities_directly_subject_eu_africa_corridor": 20000,
+      "entities_indirectly_impacted_supply_chain": 60000,
+      "burhan_role_eigen_product": "BURHAN provides Sec. 72 cross-border transfer adequacy documentation — critical for the EU's largest African trade partner. Eigen attestation for Sec. 57 prior authorization evidence. Unique challenge: POPIA covers juristic persons, creating compliance complexity that BURHAN can systematize. SA-EU data flow compliance layer.",
+      "aelya_role_consent_mechanism": "ÆLYA manages Sec. 72 cross-border transfer consent — particularly complex because POPIA protects companies (not just individuals), requiring corporate consent management. Multi-stakeholder consent across EU-SA data flows.",
+      "noos_role_health": "Health data is special personal information under POPIA requiring prior authorization. NOOS manages health data compliance for SA's major healthcare sector (Lancet enforcement case).",
+      "forcing_function_score": 7,
+      "forcing_function_rationale": "SA is Africa's largest economy with the strongest data protection enforcement. Active fines against major companies. The juristic person protection uniqueness creates BURHAN-specific value. Score 7.",
+      "effective_obligation_date": "2021-07-01",
+      "burhan_revenue_trigger": "2020-07-01",
+      "timeline_notes": "Fully enforced since July 2021. Active enforcement. Revenue trigger: IMMEDIATE."
+    },
+    {
+      "id": 25,
+      "regulation_id": "AU_DTS",
+      "full_name": "Digital Transformation Strategy for Africa 2020-2030",
+      "jurisdiction": "African Union (55 Member States)",
+      "entry_into_force": "2020-02-07",
+      "key_dates": [
+        "2020-02-07: Adopted at 33rd AU Assembly",
+        "2030: Digital Single Market target; 99.9% digital identity coverage"
+      ],
+      "proof_certification_transparency_requirements": "Non-binding strategic framework. Mandates Member States to: develop data protection legislation aligned with Malabo Convention, promote open standards and interoperability for cross-border trust frameworks, implement digital identity with international assurance levels, establish regulation observatories. Cross-cutting: cybersecurity + privacy as mandatory pillars.",
+      "max_sanction": "None — non-binding policy framework. Political accountability only.",
+      "entities_directly_subject_eu_africa_corridor": 0,
+      "entities_indirectly_impacted_supply_chain": 500000,
+      "burhan_role_eigen_product": "BURHAN is the TYPE of system the AU DTS envisions — a cross-border trust framework with interoperable digital identity. Eigen can position as the technical implementation of the DTS vision for trusted digital transactions. Foundational market-shaping role.",
+      "aelya_role_consent_mechanism": "ÆLYA provides the consent layer for the DTS's digital identity vision — 99.9% digital identity coverage requires consent management at continental scale.",
+      "noos_role_health": "DTS references health digitization as a priority sector. NOOS aligns with the health data governance component.",
+      "forcing_function_score": 2,
+      "forcing_function_rationale": "Non-binding framework with no sanctions. Creates market conditions but doesn't force adoption. Score 2 — market-shaping only.",
+      "effective_obligation_date": "2020-02-07",
+      "burhan_revenue_trigger": "N/A — non-binding framework",
+      "timeline_notes": "Ongoing 2020-2030. Shapes national legislation."
+    },
+    {
+      "id": 26,
+      "regulation_id": "AFCFTA_DTP",
+      "full_name": "AfCFTA Protocol on Digital Trade + 8 Annexes",
+      "jurisdiction": "African Continental Free Trade Area (54 State Parties)",
+      "entry_into_force": "Not yet in force (requires 22 ratifications)",
+      "key_dates": [
+        "2024-02-17: Protocol adopted at 37th AU Summit",
+        "2025-02-16: All 8 Annexes adopted",
+        "2026-2027 est.: Entry into force (22 ratifications needed)",
+        "2031-2032 est.: Full national law alignment"
+      ],
+      "proof_certification_transparency_requirements": "Electronic trust services framework (Art. 8). Electronic authentication (Art. 9). Digital identities for cross-border transactions (Art. 14). Mandatory personal data protection laws (Art. 21). Free flow of data as default (Art. 22). Cybersecurity frameworks mandatory (Art. 25). Transparency: publish all digital trade regulations. Certification mechanisms recognized as transfer safeguard (Cross-Border Data Transfers Annex).",
+      "max_sanction": "Protocol-level: state-to-state dispute resolution only. National implementing laws will set private-sector sanctions (within 5 years of entry into force).",
+      "entities_directly_subject_eu_africa_corridor": 50000,
+      "entities_indirectly_impacted_supply_chain": 1000000,
+      "burhan_role_eigen_product": "BURHAN directly fulfills Art. 8 (electronic trust services) and Art. 14 (digital identities) requirements. Eigen is the technical implementation of the AfCFTA certification mechanism for cross-border data transfers. As the Protocol creates a Digital Single Market for 1.4 billion people, BURHAN becomes foundational infrastructure.",
+      "aelya_role_consent_mechanism": "ÆLYA provides the Art. 21 personal data protection consent layer harmonized across 54 countries. Cross-border data transfer consent management per the Cross-Border Data Transfers Annex.",
+      "noos_role_health": "Health data governance falls under Art. 21 data protection. NOOS provides health-specific compliance for cross-border health service delivery across AfCFTA.",
+      "forcing_function_score": 8,
+      "forcing_function_rationale": "Once in force (est. 2026-2027), the Protocol will mandate electronic trust services and digital identity across 54 countries. The potential market is 1.4 billion people. Score 8 (not higher because entry into force is still pending and implementation will take years).",
+      "effective_obligation_date": "2027-01-01",
+      "burhan_revenue_trigger": "2026-01-01",
+      "timeline_notes": "Not yet in force. 22 ratifications needed. SA's ratification expected early 2026."
+    },
+    {
+      "id": 27,
+      "regulation_id": "OECD_AI",
+      "full_name": "OECD Recommendation on Artificial Intelligence (OECD/LEGAL/0449)",
+      "jurisdiction": "International (47 adherents)",
+      "entry_into_force": "2019-05-22",
+      "key_dates": [
+        "2019-05-22: Original adoption",
+        "2024-05-03: Revised with generative AI provisions"
+      ],
+      "proof_certification_transparency_requirements": "Non-binding. Principles: transparency and explainability, accountability (traceability + auditability), robustness and safety (continuous monitoring), responsible disclosure. No certification scheme. 1,000+ AI policy initiatives tracked by OECD.AI Observatory.",
+      "max_sanction": "None — non-binding soft law. EU AI Act (derived from OECD Principles) has binding sanctions.",
+      "entities_directly_subject_eu_africa_corridor": 2000000,
+      "entities_indirectly_impacted_supply_chain": 5000000,
+      "burhan_role_eigen_product": "BURHAN provides the accountability and auditability infrastructure the Principles envision. Eigen attestation for transparency disclosure and responsible AI practices. Market positioning as the OECD-aligned trust layer.",
+      "aelya_role_consent_mechanism": "ÆLYA manages Principle 2 (human-centred values) consent requirements for AI interactions. Transparency disclosures per Principle 3.",
+      "noos_role_health": "Health AI falls under high-stakes applications requiring stronger transparency. NOOS provides health-specific OECD AI compliance.",
+      "forcing_function_score": 2,
+      "forcing_function_rationale": "Non-binding. No sanctions. Shapes the binding EU AI Act but doesn't itself force adoption. Score 2.",
+      "effective_obligation_date": "2019-05-22",
+      "burhan_revenue_trigger": "N/A — non-binding principles",
+      "timeline_notes": "In effect. Non-binding but shapes global AI policy."
+    },
+    {
+      "id": 28,
+      "regulation_id": "UNESCO_AI",
+      "full_name": "UNESCO Recommendation on the Ethics of Artificial Intelligence",
+      "jurisdiction": "Global (194 Member States)",
+      "entry_into_force": "2021-11-23",
+      "key_dates": [
+        "2021-11-23: Adopted unanimously by 193 Member States",
+        "2024: RAM and EIA tools rolled out to member states"
+      ],
+      "proof_certification_transparency_requirements": "Ethical Impact Assessment (EIA) frameworks mandatory. Transparency and auditability (full algorithm transparency when harm occurs). AI Ethics Officers or oversight mechanisms. Certification mechanisms encouraged (Art. 56). Regular reporting on implementation. Bans social scoring and mass surveillance.",
+      "max_sanction": "None — non-binding. Domestic legislation may carry sanctions. UNESCO monitoring and reporting.",
+      "entities_directly_subject_eu_africa_corridor": 0,
+      "entities_indirectly_impacted_supply_chain": 2000000,
+      "burhan_role_eigen_product": "BURHAN provides the EIA documentation infrastructure that UNESCO envisions. Eigen attestation for algorithm transparency when harm occurs. Certification mechanism per Art. 56.",
+      "aelya_role_consent_mechanism": "ÆLYA manages consent for AI data governance frameworks recommended by UNESCO. Individual rights management for AI system interactions.",
+      "noos_role_health": "Health AI is a priority sector for UNESCO EIA. NOOS provides health-specific ethical impact assessment documentation.",
+      "forcing_function_score": 2,
+      "forcing_function_rationale": "Non-binding. No sanctions. 194 member states committed politically but enforcement is zero. Score 2.",
+      "effective_obligation_date": "2021-11-23",
+      "burhan_revenue_trigger": "N/A — non-binding recommendation",
+      "timeline_notes": "Adopted 2021. Implementation ongoing. Non-binding."
+    },
+    {
+      "id": 29,
+      "regulation_id": "BASEL_III_IV",
+      "full_name": "Basel III/IV — CRR3 (Regulation EU 2024/1623) / CRD6 (Directive EU 2024/1619)",
+      "jurisdiction": "International (BCBS 28 members) → EU (CRR3/CRD6)",
+      "entry_into_force": "2025-01-01 (EU CRR3 most provisions)",
+      "key_dates": [
+        "2025-01-01: CRR3 most provisions applicable in EU",
+        "2027-01-01: FRTB deferred implementation in EU",
+        "2032-01-01: Output floor 72.5% fully phased in"
+      ],
+      "proof_certification_transparency_requirements": "Mandatory capital requirements: CET1 4.5%, Tier 1 6%, Total 8% of RWA. Capital buffers (conservation 2.5%, countercyclical 0-2.5%, G-SIB 1-3.5%). Leverage Ratio 3% (4.05% G-SIBs). LCR and NSFR 100%. Output floor 72.5% (phased). Pillar 3 mandatory public disclosures on capital, risk, ESG. Operational risk: new standardized approach. CRD6 third-country branch regime affecting African banks.",
+      "max_sanction": "ECB: up to 10% of annual turnover or 2x profits from breach. License withdrawal. Restrictions on dividends/bonuses. CRD6 third-country branch regime may force African banks to convert to EU subsidiaries (>€30B EU assets).",
+      "entities_directly_subject_eu_africa_corridor": 5800,
+      "entities_indirectly_impacted_supply_chain": 20000,
+      "burhan_role_eigen_product": "BURHAN provides Pillar 3 disclosure documentation with cryptographic attestation. Operational risk evidence chain under new standardized approach. CRD6 third-country branch compliance documentation for African banks with EU operations. ESG risk assessment evidence per CRD6 Art. 87a+.",
+      "aelya_role_consent_mechanism": "Limited. ÆLYA manages consent for customer data used in credit risk models and ESG assessments.",
+      "noos_role_health": "Indirect — health insurance companies are subject to analogous capital requirements.",
+      "forcing_function_score": 6,
+      "forcing_function_rationale": "Banks already have sophisticated compliance infrastructure. Basel compliance is mature. BURHAN adds value for: (1) Pillar 3 ESG disclosure (new), (2) third-country branch documentation for African banks, (3) operational risk evidence under new approach. Score 6.",
+      "effective_obligation_date": "2025-01-01",
+      "burhan_revenue_trigger": "2024-01-02",
+      "timeline_notes": "CRR3 applicable since January 2025. Output floor phases in through 2032."
+    },
+    {
+      "id": 30,
+      "regulation_id": "FATF_RECOMMENDATIONS",
+      "full_name": "FATF 40 Recommendations on AML/CFT",
+      "jurisdiction": "Global (200+ jurisdictions via FATF + 9 FSRBs)",
+      "entry_into_force": "2012 (current framework)",
+      "key_dates": [
+        "2012: Current 40 Recommendations framework",
+        "2019-06: VASP/crypto Travel Rule added",
+        "2024-12-30: EU crypto Travel Rule effective",
+        "2026-02: 8 African countries on grey list"
+      ],
+      "proof_certification_transparency_requirements": "Risk-Based Approach (Rec. 1): document AML/CFT risks. CDD/KYC (Rec. 10): verify identity, beneficial ownership, source of funds. 5-year record keeping (Rec. 11). Enhanced due diligence for PEPs (Rec. 12). Travel Rule for wire transfers (Rec. 16). STR filing to FIUs (Rec. 20). Beneficial ownership registries (Rec. 24-25). Mutual Evaluation peer review. EU AMLA direct supervision from 2028.",
+      "max_sanction": "Domestic: TD Bank $3.09B (record 2024). Country: grey/black listing (trade/finance restrictions). EU AMLA from 2028: direct supervision of ~40 cross-border entities. 8 African countries grey-listed (Feb 2026).",
+      "entities_directly_subject_eu_africa_corridor": 10000,
+      "entities_indirectly_impacted_supply_chain": 100000,
+      "burhan_role_eigen_product": "CORE role — BURHAN provides the KYC/CDD documentation chain with cryptographic attestation (Rec. 10). Travel Rule compliance evidence for cross-border EU-Africa remittances (Rec. 16). Beneficial ownership verification (Rec. 24-25). Critical for the $329B Africa cross-border payments market. Eigen attestation for enhanced due diligence on grey-listed African countries.",
+      "aelya_role_consent_mechanism": "ÆLYA manages customer consent for KYC data collection and sharing across jurisdictions. Consent for beneficial ownership disclosure. STR data handling consent.",
+      "noos_role_health": "Indirect — health sector fraud/AML compliance. Health insurance AML obligations.",
+      "forcing_function_score": 9,
+      "forcing_function_rationale": "FATF grey-listing causes catastrophic financial consequences (correspondent banking withdrawal, increased borrowing costs). 8 African countries currently grey-listed. EU banks MUST demonstrate enhanced due diligence for all transactions with these countries. Without automated, verifiable CDD/KYC systems, EU banks will simply de-risk (cut African correspondents). BURHAN prevents de-risking by providing trust. Score 9.",
+      "effective_obligation_date": "2012-01-01",
+      "burhan_revenue_trigger": "2011-01-01",
+      "timeline_notes": "Already in force. EU AMLA direct supervision from 2028. Revenue trigger: IMMEDIATE."
+    }
+  ]
+}

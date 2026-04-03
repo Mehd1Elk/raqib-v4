@@ -1,0 +1,822 @@
+{
+  "meta": {
+    "rapport": "MYNε — Marché des données psychiatriques RWE et pharmacovigilance",
+    "date_analyse": "2026-04-03",
+    "devise": "EUR",
+    "horizon": "3 ans (2026-2029)",
+    "myne_share": 0.53,
+    "sources_marche": [
+      "MarketsandMarkets RWE Solutions 2025-2030 ($10.8B, CAGR 14.8%)",
+      "Precedence Research Mental Health Clinical Trials ($3.44B 2025, $7B 2034, CAGR 8.24%)",
+      "SNS Insider Vocal Biomarkers ($1.59B 2025, $4.67B 2033, CAGR 14.62%)",
+      "GMI Digital Phenotyping ($1.5B 2024, $3.8B 2034)",
+      "Nova One Advisor Pharmacogenomics ($20B 2025, $47.7B 2035, CAGR 9.06%)",
+      "Nova One Advisor Healthcare Digital Twins ($1.13B 2025, $9.96B 2035, CAGR 24.32%)",
+      "Dataintelo Synthetic Health Data ($1.8B 2025, $12.4B 2034, CAGR 23.8%)",
+      "Mordor Intelligence RWE Solutions ($2.84B 2026, $6.04B 2031, CAGR 16.33%)",
+      "EY NHS Data Valuation (£5bn/an pour 55M profils = ~€90/profil/an)",
+      "Hospitalogy Synthetic Data Pricing (licensing $100K-$1M+; clinical trial per patient >$20K)",
+      "Deloitte AI Institute Custom Synthetic Data ($75K-$500K+ par projet)",
+      "Forrester Research Synthetic Data Premium (15-30% vs real datasets)",
+      "Heidel et al. 2021 PLOS ONE (digital dividend ~€237.30/mois willingness-to-pay patient data)",
+      "EHDS Regulation EU 2025/327 (entrée en vigueur 26 mars 2025)",
+      "Loi 09-08 Maroc (protection données personnelles, CNDP)"
+    ]
+  },
+  "categories": [
+    {
+      "id": 1,
+      "nom": "Scores EMA longitudinaux (PHQ-9, YMRS, GAD-7, PANSS raccourci)",
+      "description": "Séries temporelles 6-24 mois d'évaluations momentanées écologiques — scores validés de dépression, manie, anxiété, symptômes psychotiques collectés via NOOS",
+      "type_donnee": "Patient-Reported Outcomes (PRO) longitudinaux, séries temporelles EMA haute fréquence",
+      "producteur": "Patient via application NOOS (auto-évaluation quotidienne/hebdomadaire)",
+      "acheteur_primaire": {
+        "pharma": "Études d'efficacité post-AMM, label expansion, endpoints RWE pour HTA",
+        "assureur": "Modèles prédictifs de rechute pour pricing assurance santé/prévoyance",
+        "fondation": "Recherche académique sur trajectoires symptomatiques",
+        "ministere": "Surveillance épidémiologique santé mentale, politiques de santé publique",
+        "universite": "Recherche psychométrique, validation d'instruments numériques"
+      },
+      "buyer_persona": {
+        "pharma": "VP Medical Affairs / Director Real-World Evidence",
+        "assureur": "Chief Actuary / VP Underwriting",
+        "recherche": "Principal Investigator (PI) en psychiatrie",
+        "regulateur": "Director Pharmacovigilance"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "8-15 €/profil/mois (données PRO brutes pseudonymisées)",
+        "par_dataset_eur": "50 000 - 200 000 €/dataset (cohorte 500-2000 patients, 12 mois)",
+        "benchmark": "IQVIA/Flatiron licensing: $100K-$1M+ par dataset spécialisé; EY estime ~€90/profil/an pour données NHS curées; Hospitalogy rapporte licensing RWD de $100K à plusieurs millions"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "18-35 €/profil/mois",
+        "premium_description": "Enrichissement PGx (corrélation génotype-réponse symptomatique), digital twin (prédiction trajectoire), forensics (marqueurs pré-rechute dans séries EMA)",
+        "premium_multiplicateur": "2.0x - 2.5x vs données brutes",
+        "justification": "Forrester Research documente un premium de 15-30% pour données synthétiques vs réelles; l'enrichissement multimodal MYNε justifie un premium supérieur car il combine PRO + PGx + prédictif"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 12000,
+        "hypotheses": "Déploiement NOOS progressif: 2000 patients Y1, 4000 Y2, 6000 Y3 (corridor Maroc + diaspora francophone); taux de données exploitables ~80%",
+        "profils_actifs_moyens": 4000
+      },
+      "reglementation": {
+        "EHDS": "Article 33+ — données PRO éligibles à usage secondaire via Health Data Access Bodies; application progressive 2029",
+        "RGPD_Art89": "Base légale recherche scientifique — pseudonymisation requise, minimisation, pas de consentement spécifique si garanties appropriées",
+        "ICH_GCP": "E6(R3) — applicable si données utilisées pour soumissions réglementaires; traçabilité et qualité requises",
+        "Loi_09_08_Maroc": "Déclaration/autorisation CNDP obligatoire; données de santé = données sensibles; transfert international conditionné à niveau de protection adéquat; loi 28-13 pour recherche biomédicale"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé (k≥5) — suffisant pour licensing pharma/assureur avec contrat de licence de données",
+        "upgrade_recommande": "T4 (differential privacy) pour vente open dataset ou usage cross-juridictionnel"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "4000 profils × 25 €/mois moyen enrichi × 12 mois × 53% = 636 000 €/an",
+        "revenu_annuel_eur": 636000,
+        "revenu_3ans_eur": 1908000,
+        "sensibilite": "Range: 380K-950K €/an selon mix prix/volume"
+      }
+    },
+    {
+      "id": 2,
+      "nom": "Patterns de renouvellement d'ordonnance — données pharmacie BURHAN",
+      "description": "Données de dispensation en pharmacie: dates de renouvellement, gaps, medication possession ratio (MPR), proportion of days covered (PDC), switchs moléculaires",
+      "type_donnee": "Données de dispensation pharmacy claims, séries temporelles d'observance",
+      "producteur": "Pharmacien via système BURHAN (point de vente officine)",
+      "acheteur_primaire": {
+        "pharma": "Mesure d'adhérence post-lancement, études head-to-head RWE, pharmacovigilance",
+        "assureur": "Risk scoring, prédiction coûts sinistres, value-based contracts",
+        "ministere": "Surveillance nationale de l'observance, politique de remboursement",
+        "universite": "Études pharmaco-épidémiologiques"
+      },
+      "buyer_persona": {
+        "pharma": "Director Pharmacovigilance / VP Market Access & HEOR",
+        "assureur": "Chief Actuary / Head of Claims Analytics",
+        "recherche": "PI pharmaco-épidémiologie"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "5-12 €/profil/mois (claims data brutes)",
+        "par_dataset_eur": "80 000 - 350 000 €/dataset (cohorte 1000-5000 patients, 12-24 mois)",
+        "benchmark": "Marché pharmacy claims dominé par IQVIA, Symphony Health; Milliman documente forte corrélation adhérence-coûts; Surescripts Real-Time Prescription Benefit améliore pickup +3.2 pp"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "12-28 €/profil/mois",
+        "premium_description": "Enrichissement: corrélation PGx (CYP2D6/CYP2C19 vs réponse observée), digital twin (simulation d'arrêt), croisement avec EMA scores pour observance objective + subjective",
+        "premium_multiplicateur": "2.0x - 2.3x"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 18000,
+        "hypotheses": "Réseau BURHAN: 50-100 pharmacies Y1 → 200+ Y3; 3000 patients Y1, 6000 Y2, 9000 Y3; données plus volumineuses car capture automatisée",
+        "profils_actifs_moyens": 6000
+      },
+      "reglementation": {
+        "EHDS": "ePrescription/eDispensation = catégorie prioritaire EHDS (application 2029); données de dispensation éligibles usage secondaire",
+        "RGPD_Art89": "Pseudonymisation stricte; pharmacy claims = données de santé, base légale Art. 9(2)(j) RGPD",
+        "ICH_GCP": "Non directement applicable sauf si intégré dans protocole de recherche clinique",
+        "Loi_09_08_Maroc": "Autorisation CNDP requise pour traitement données de santé; pharmacien = responsable de traitement conjoint avec MYNε"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T2",
+        "description": "Pseudonymisé — suffisant pour partenariats pharma B2B avec DPA (Data Processing Agreement)",
+        "upgrade_recommande": "T3 k-anonymisé pour datasets multi-pharmacies"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "6000 profils × 18 €/mois moyen enrichi × 12 mois × 53% = 686 880 €/an",
+        "revenu_annuel_eur": 686880,
+        "revenu_3ans_eur": 2060640,
+        "sensibilite": "Range: 410K-1.03M €/an"
+      }
+    },
+    {
+      "id": 3,
+      "nom": "Données d'activité circadienne smartphone",
+      "description": "Phénotypage digital passif: accéléromètre, gyroscope, screen time, patterns veille/sommeil, mobilité GPS agrégée — biomarqueurs digitaux de rythme circadien",
+      "type_donnee": "Données capteur smartphone passives, séries temporelles continues",
+      "producteur": "Patient via smartphone NOOS (collecte passive en arrière-plan)",
+      "acheteur_primaire": {
+        "pharma": "Endpoints digitaux pour essais cliniques, biomarqueurs compagnons",
+        "fondation": "Recherche sur biomarqueurs digitaux de dépression/bipolarité",
+        "universite": "Études de phénotypage digital, validation de biomarqueurs"
+      },
+      "buyer_persona": {
+        "pharma": "Chief Medical Officer / VP Digital Health & Biomarkers",
+        "recherche": "PI neurosciences computationnelles / psychiatrie digitale"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "6-14 €/profil/mois (données capteur brutes)",
+        "par_dataset_eur": "100 000 - 400 000 €/dataset",
+        "benchmark": "GMI évalue le marché digital phenotyping à $1.5B en 2024, segment mental health monitoring = $455.5M; JAMA Network Open 2025 montre que 6 domaines psychopathologiques sont détectables par capteurs smartphone"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "15-32 €/profil/mois",
+        "premium_description": "Enrichissement: corrélation circadien × molécule (données RAQIB), croisement PGx (chronopharmacologie personnalisée), digital twin (modèle circadien individuel)",
+        "premium_multiplicateur": "2.2x - 2.5x"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 10000,
+        "hypotheses": "Sous-ensemble patients NOOS avec consentement capteur: ~80% opt-in; 1600 Y1, 3200 Y2, 5200 Y3",
+        "profils_actifs_moyens": 3300
+      },
+      "reglementation": {
+        "EHDS": "Données de wellness/capteur = zone grise; éligibles si qualifiées comme données de santé liées au parcours de soin",
+        "RGPD_Art89": "Données biométriques dérivées = catégorie spéciale Art. 9; pseudonymisation + DPIA obligatoire",
+        "ICH_GCP": "Applicable si utilisé comme endpoint digital dans essai clinique (FDA Digital Health Technologies guidance)",
+        "Loi_09_08_Maroc": "Données biométriques = données sensibles; autorisation CNDP préalable obligatoire"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — les données de mobilité et screen time présentent un risque élevé de ré-identification",
+        "upgrade_recommande": "T4 differential privacy recommandé pour tout dataset incluant des patterns de mobilité"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "3300 profils × 22 €/mois moyen enrichi × 12 mois × 53% = 461 736 €/an",
+        "revenu_annuel_eur": 461736,
+        "revenu_3ans_eur": 1385208,
+        "sensibilite": "Range: 280K-690K €/an"
+      }
+    },
+    {
+      "id": 4,
+      "nom": "Vocal biomarqueurs 30s quotidien",
+      "description": "Enregistrements vocaux quotidiens de 30 secondes analysés pour prosodie, débit verbal, richesse lexicale, pauses, tremblements — biomarqueurs vocaux de l'état mental",
+      "type_donnee": "Données audio transformées en features acoustiques et linguistiques; pas de stockage audio brut",
+      "producteur": "Patient via application NOOS (tâche vocale quotidienne)",
+      "acheteur_primaire": {
+        "pharma": "R&D biomarqueurs compagnons, mesure objective de réponse thérapeutique",
+        "fondation": "Recherche fondamentale prosodie et psychopathologie",
+        "universite": "NLP appliqué à la santé mentale, validation vocal biomarkers"
+      },
+      "buyer_persona": {
+        "pharma": "Chief Medical Officer / Head of Translational Medicine",
+        "recherche": "PI computational psychiatry"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "10-20 €/profil/mois (features extraites)",
+        "par_dataset_eur": "150 000 - 500 000 €/dataset",
+        "benchmark": "Marché vocal biomarkers: $1.59B en 2025 → $4.67B en 2033 (CAGR 14.62%); segment psychiatrique = 32.4% du marché soit ~$515M en 2025; U.S. market $0.44B en 2025"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "22-45 €/profil/mois",
+        "premium_description": "Enrichissement: corrélation PGx (voix × métabolisme médicament), corrélation EMA (voix × scores cliniques validés), modèle digital twin vocal, forensics (signature vocale pré-rechute)",
+        "premium_multiplicateur": "2.2x - 2.5x",
+        "justification": "Premium élevé car données vocales psychiatriques annotées sont extrêmement rares; la combinaison voix + scores cliniques + PGx est unique au monde"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 8000,
+        "hypotheses": "Sous-ensemble NOOS avec consentement vocal: ~65% opt-in; 1300 Y1, 2600 Y2, 4100 Y3",
+        "profils_actifs_moyens": 2700
+      },
+      "reglementation": {
+        "EHDS": "Données vocales transformées en features numériques = données de santé dérivées; usage secondaire possible via HDAB",
+        "RGPD_Art89": "Voix brute = donnée biométrique Art. 9; features extraites potentiellement hors Art. 9 si irréversiblement transformées",
+        "ICH_GCP": "Emerging — FDA guidance sur digital endpoints en développement; EMA qualification advice pathway",
+        "Loi_09_08_Maroc": "Voix = donnée biométrique; autorisation CNDP stricte; pas de transfert audio hors Maroc sans garanties"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T4",
+        "description": "Differential privacy — la voix est intrinsèquement identifiante; seules les features agrégées avec bruit DP doivent circuler",
+        "upgrade_recommande": "T5 synthetic pour datasets vendus en open access"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "2700 profils × 32 €/mois moyen enrichi × 12 mois × 53% = 549 504 €/an",
+        "revenu_annuel_eur": 549504,
+        "revenu_3ans_eur": 1648512,
+        "sensibilite": "Range: 330K-820K €/an"
+      }
+    },
+    {
+      "id": 5,
+      "nom": "Linguistic proof of ingestion",
+      "description": "Détection dans le texte libre patient de mentions d'effets secondaires (bouche sèche, somnolence, prise de poids, etc.) servant de preuve indirecte d'observance médicamenteuse",
+      "type_donnee": "Features NLP extraites de journaux textuels patient, classification binaire prise/non-prise",
+      "producteur": "Patient via texte libre dans NOOS (journal quotidien, chat thérapeutique)",
+      "acheteur_primaire": {
+        "pharma": "Pharmacovigilance signal detection, mesure d'observance non-invasive",
+        "regulateur": "Pharmacovigilance post-AMM, détection précoce de signaux de sécurité"
+      },
+      "buyer_persona": {
+        "pharma": "Director Pharmacovigilance / VP Drug Safety",
+        "regulateur": "Chef de département pharmacovigilance (ANSM, EMA, FDA)"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "5-10 €/profil/mois",
+        "par_dataset_eur": "40 000 - 150 000 €/dataset",
+        "benchmark": "Abilify Mycite (digital pill, FDA approved) = référence de proof of ingestion ($1,650/mois prix US); le NLP-based approach est une alternative low-cost; EudraVigilance contient 326,450 ADRs pour SSRIs seuls"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "12-22 €/profil/mois",
+        "premium_description": "Enrichissement: croisement linguistique × données pharmacie BURHAN (validation croisée), PGx (prédiction effets secondaires attendus vs rapportés), timeline forensics",
+        "premium_multiplicateur": "2.0x - 2.2x"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 9000,
+        "hypotheses": "Tout patient NOOS utilisant le journal textuel: ~75% de la base; 1500 Y1, 3000 Y2, 4500 Y3",
+        "profils_actifs_moyens": 3000
+      },
+      "reglementation": {
+        "EHDS": "NLP features dérivées = données de santé si liées au parcours de soin; pharmacovigilance = usage secondaire explicitement prévu par EHDS",
+        "RGPD_Art89": "Texte libre patient = données sensibles; NLP features agrégées potentiellement pseudonymisables",
+        "ICH_GCP": "ICH E2B(R3) pour rapports de pharmacovigilance; données NLP = source nouvelle de signal detection",
+        "Loi_09_08_Maroc": "Texte libre = donnée personnelle sensible; traitement NLP nécessite autorisation CNDP"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — features NLP agrégées par cohorte; texte brut jamais partagé",
+        "upgrade_recommande": "T4 pour rapports de pharmacovigilance destinés aux régulateurs"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "3000 profils × 16 €/mois moyen enrichi × 12 mois × 53% = 305 280 €/an",
+        "revenu_annuel_eur": 305280,
+        "revenu_3ans_eur": 915840,
+        "sensibilite": "Range: 180K-460K €/an"
+      }
+    },
+    {
+      "id": 6,
+      "nom": "Données de correction environnementale RAQIB",
+      "description": "Croisement météo (luminosité, pression, humidité, température) × molécule prescrite × scores d'observance — facteurs confondants environnementaux",
+      "type_donnee": "Données contextuelles environnementales liées à l'observance, séries temporelles multi-sources",
+      "producteur": "Capteur (API météo géolocalisée) + données NOOS/BURHAN agrégées",
+      "acheteur_primaire": {
+        "pharma": "R&D — facteurs confondants environnementaux dans études d'efficacité",
+        "assureur": "Modèles prédictifs saisonniers de rechute/sinistralité",
+        "universite": "Recherche chronobiologie et pharmaco-météorologie"
+      },
+      "buyer_persona": {
+        "pharma": "VP Medical Affairs / Director Biostatistics",
+        "assureur": "Chief Actuary / Head of Predictive Analytics",
+        "recherche": "PI chronobiologie / épidémiologie environnementale"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "3-8 €/profil/mois (données environnementales seules = faible valeur)",
+        "par_dataset_eur": "30 000 - 100 000 €/dataset",
+        "benchmark": "Données environnementales = commodity; la valeur vient du croisement avec données cliniques; PubMed documente que les facteurs environnementaux influencent significativement l'adhérence (GWR models R²=0.15-0.40)"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "8-18 €/profil/mois",
+        "premium_description": "Enrichissement: modèle RAQIB propriétaire de correction environnementale, croisement PGx (métabolisme × saison), digital twin (simulation saisonnière d'efficacité)",
+        "premium_multiplicateur": "2.0x - 2.5x",
+        "justification": "Donnée quasi unique — aucun concurrent ne propose de correction environnementale systématique sur l'observance psychiatrique"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 12000,
+        "hypotheses": "Tous les profils NOOS peuvent être enrichis RAQIB (pas de consentement additionnel pour données météo agrégées)",
+        "profils_actifs_moyens": 4000
+      },
+      "reglementation": {
+        "EHDS": "Données météo = non-personnelles; le croisement avec données patient crée des données de santé soumises à EHDS",
+        "RGPD_Art89": "Données météo seules = hors RGPD; croisement avec profil patient = données de santé pseudonymisées Art. 9",
+        "ICH_GCP": "Non directement applicable; utile comme covariable dans analyses post-hoc",
+        "Loi_09_08_Maroc": "Le croisement météo × patient relève de la loi 09-08 comme traitement de données personnelles"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T2",
+        "description": "Pseudonymisé — les données environnementales agrégées par zone géographique large réduisent le risque",
+        "upgrade_recommande": "T3 si géolocalisation fine incluse (risque ré-identification)"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "4000 profils × 12 €/mois moyen enrichi × 12 mois × 53% = 305 280 €/an",
+        "revenu_annuel_eur": 305280,
+        "revenu_3ans_eur": 915840,
+        "sensibilite": "Range: 180K-460K €/an"
+      }
+    },
+    {
+      "id": 7,
+      "nom": "Données pharmacogénomiques CYP",
+      "description": "Génotypage CYP2D6, CYP2C19, CYP3A4 + corrélation avec réponse clinique observée (EMA scores, effets secondaires, switchs) — pharmacogénomique appliquée à la psychiatrie",
+      "type_donnee": "Données génomiques + phénotype clinique longitudinal, cohorte appariée genotype-outcome",
+      "producteur": "Patient (test génétique opt-in) + clinicien (interprétation) + NOOS (réponse clinique)",
+      "acheteur_primaire": {
+        "pharma": "R&D precision medicine, stratification patient pour essais cliniques, companion diagnostics",
+        "universite": "Recherche pharmacogénomique psychiatrique",
+        "fondation": "Initiatives médecine personnalisée"
+      },
+      "buyer_persona": {
+        "pharma": "Chief Medical Officer / VP Translational Medicine / Head of Precision Medicine",
+        "recherche": "PI pharmacogénétique psychiatrique"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "25-50 €/profil/mois (données PGx + outcomes)",
+        "par_dataset_eur": "300 000 - 1 200 000 €/dataset (cohorte PGx annotée 500-2000 patients)",
+        "benchmark": "Marché PGx global: $20B en 2025 (Precedence Research); tests CYP single-gene: $250-450, multi-gene panels: $800-1,500; cohortes PGx annotées avec outcomes = premium très élevé; Koch et al. 2024 Biol Psychiatry décrit l'usage RWD pour precision medicine en psychiatrie"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "50-95 €/profil/mois",
+        "premium_description": "Enrichissement: digital twin PGx (simulation de switch moléculaire basée sur génotype), corrélation longitudinale génotype × EMA × pharmacy × vocal × circadien — donnée multimodale unique",
+        "premium_multiplicateur": "2.0x - 2.2x",
+        "justification": "Premium maximal car les cohortes psychiatriques PGx avec données longitudinales multimodales sont quasi inexistantes; le coût du test génétique est amorti sur la durée"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 3000,
+        "hypotheses": "Opt-in génotypage: ~25% de la base NOOS; 500 Y1, 1000 Y2, 1500 Y3; coût test ~€100-200/patient absorbé par MYNε ou facturé séparément",
+        "profils_actifs_moyens": 1000
+      },
+      "reglementation": {
+        "EHDS": "Données génomiques = catégorie sensible EHDS; usage secondaire soumis à conditions renforcées et HDAB",
+        "RGPD_Art89": "Données génétiques = catégorie spéciale Art. 9; DPIA obligatoire; consentement explicite ou base légale recherche Art. 89",
+        "ICH_GCP": "E18 Genomic Sampling — applicable; consentement spécifique pour génotypage requis",
+        "Loi_09_08_Maroc": "Données génétiques = données sensibles strictes; autorisation CNDP + consentement explicite du patient; transfert international conditionné; loi 28-13 applicable pour recherche biomédicale"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T4",
+        "description": "Differential privacy obligatoire — les données génomiques sont intrinsèquement identifiantes (quasi-identifiants génétiques)",
+        "upgrade_recommande": "T5 synthetic obligatoire pour tout dataset PGx vendu en dehors d'un accord de recherche bilatéral"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "1000 profils × 70 €/mois moyen enrichi × 12 mois × 53% = 445 200 €/an",
+        "revenu_annuel_eur": 445200,
+        "revenu_3ans_eur": 1335600,
+        "sensibilite": "Range: 270K-660K €/an"
+      }
+    },
+    {
+      "id": 8,
+      "nom": "Simulations digital twin",
+      "description": "Projections par patient simulé: probabilité d'arrêt de traitement, switch moléculaire optimal, trajectoire de rémission — modèles IA entraînés sur données NOOS+BURHAN+PGx",
+      "type_donnee": "Données synthétiques prédictives, outputs de modèles de simulation patient individuel",
+      "producteur": "MYNε (modèle IA propriétaire entraîné sur données multimodales patients NOOS)",
+      "acheteur_primaire": {
+        "pharma": "Simulation d'essais cliniques in-silico, market sizing, pricing & market access",
+        "assureur": "Modèles prédictifs individuels de coûts, risk stratification",
+        "fondation": "Recherche sur modèles computationnels en psychiatrie"
+      },
+      "buyer_persona": {
+        "pharma": "VP Market Access & HEOR / Chief Data Officer",
+        "assureur": "Chief Actuary / VP Risk Management",
+        "recherche": "PI computational psychiatry"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "15-35 €/simulation/profil/mois",
+        "par_dataset_eur": "200 000 - 800 000 €/projet de simulation (cohorte virtuelle 1000+ patients)",
+        "benchmark": "Healthcare digital twins market: $1.13B en 2025, CAGR 24-41%; Deloitte documente custom synthetic data projects $75K-$500K+; Freedom for All Americans décrit pilots de digital twins psychiatriques en 2025 dans hôpitaux majeurs"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "35-70 €/simulation/profil/mois",
+        "premium_description": "Enrichissement: jumeaux numériques calibrés sur PGx + EMA + pharmacy + vocal + circadien — résolution sans précédent; simulation de scénarios thérapeutiques multiples",
+        "premium_multiplicateur": "2.0x - 2.5x",
+        "justification": "Produit premium car MYNε détient les données d'entraînement propriétaires; pas de comparateur direct sur marché psychiatrique"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 15000,
+        "hypotheses": "Les simulations digital twin peuvent être générées pour tout profil NOOS + profils synthétiques additionnels; 3000 Y1, 5000 Y2, 7000 Y3",
+        "profils_actifs_moyens": 5000
+      },
+      "reglementation": {
+        "EHDS": "Données synthétiques/simulées = potentiellement hors EHDS si non dérivées de données individuelles identifiables; zone grise juridique",
+        "RGPD_Art89": "Si outputs basés sur modèles entraînés sur données personnelles: le modèle lui-même peut être soumis au RGPD; outputs agrégés = probablement non-personnels",
+        "ICH_GCP": "Simulation = outil de support; non directement soumis à ICH-GCP mais peut supporter soumissions réglementaires si validé",
+        "Loi_09_08_Maroc": "Modèle entraîné sur données marocaines: le processus d'entraînement relève de la loi 09-08; les outputs synthétiques potentiellement hors scope si irréversiblement anonymisés"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T5",
+        "description": "Synthetic — les outputs digital twin sont par construction des données synthétiques; le modèle lui-même nécessite T4 DP pour les données d'entraînement",
+        "upgrade_recommande": "N/A — T5 est le niveau maximum"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "5000 profils simulés × 50 €/mois moyen × 12 mois × 53% = 1 590 000 €/an",
+        "revenu_annuel_eur": 1590000,
+        "revenu_3ans_eur": 4770000,
+        "sensibilite": "Range: 950K-2.4M €/an — catégorie à plus fort potentiel de revenus"
+      }
+    },
+    {
+      "id": 9,
+      "nom": "Rapports relapse forensics",
+      "description": "Autopsies structurées de rechute: timeline événementielle pré-rechute, facteurs déclenchants identifiés, signaux précoces manqués, pattern recognition — dossiers de cas détaillés",
+      "type_donnee": "Données cliniques narratives structurées, case reports enrichis, timelines d'événements",
+      "producteur": "Clinicien (psychiatre/psychologue via NOOS) + algorithme MYNε (détection automatisée de patterns)",
+      "acheteur_primaire": {
+        "pharma": "R&D — identification de biomarqueurs de rechute, optimisation de protocoles d'intervention précoce",
+        "fondation": "Recherche sur prévention de la rechute",
+        "universite": "Formation médicale continue, case-based learning"
+      },
+      "buyer_persona": {
+        "pharma": "Chief Medical Officer / VP Clinical Development",
+        "recherche": "PI prevention studies",
+        "formation": "Directeur de programme de psychiatrie (formation médicale)"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "12-25 €/rapport/événement de rechute",
+        "par_dataset_eur": "80 000 - 300 000 €/dataset (100-500 case reports structurés)",
+        "benchmark": "Case reports structurés psychiatriques premium car haute valeur narrative + quantitative; Aripiprazole Tablets with Sensor (CEOR 2023) montre que monitoring objectif réduit HCRU de 42-89%"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "25-50 €/rapport/événement",
+        "premium_description": "Enrichissement: timeline multimodale complète (EMA + vocal + circadien + pharmacy + PGx), modèle causal de rechute, signature digitale pré-rechute réutilisable pour prédiction",
+        "premium_multiplicateur": "2.0x - 2.2x"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 4000,
+        "hypotheses": "Taux de rechute ~30%/an dans cohortes psychiatriques; sur 12000 patients Y3, ~3600 événements de rechute documentables; cumul 3 ans ~1000+2000+4000",
+        "profils_actifs_moyens": 2300
+      },
+      "reglementation": {
+        "EHDS": "Case reports = données de santé éligibles à usage secondaire; anonymisation renforcée nécessaire",
+        "RGPD_Art89": "Case reports = données de santé identifiantes par nature narrative; k-anonymisation + suppression quasi-identifiants narratifs",
+        "ICH_GCP": "E2B(R3) format pour rapports de sécurité; ICH-GCP applicable si utilisé dans contexte réglementaire",
+        "Loi_09_08_Maroc": "Autorisation CNDP; anonymisation des dossiers de cas avant partage"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — les case reports doivent être anonymisés narrativement (suppression noms, lieux, dates précises)",
+        "upgrade_recommande": "T4 pour bases de données de case reports à accès ouvert"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "2300 rapports × 35 €/rapport moyen enrichi × 12 mois × 53% = 516 516 €/an",
+        "revenu_annuel_eur": 516516,
+        "revenu_3ans_eur": 1549548,
+        "sensibilite": "Range: 310K-770K €/an"
+      }
+    },
+    {
+      "id": 10,
+      "nom": "Données dyade patient-aidant",
+      "description": "Signaux croisés: observance patient × épuisement aidant, corrélation bidirectionnelle — stress aidant comme prédicteur d'abandon thérapeutique patient",
+      "type_donnee": "Données appariées dyade (patient + aidant), séries temporelles parallèles",
+      "producteur": "Patient + aidant via NOOS (module aidant dédié)",
+      "acheteur_primaire": {
+        "pharma": "R&D — facteurs sociaux d'observance, design de programmes de soutien patient (PSP)",
+        "assureur": "Risk models incluant le contexte familial, produits d'assurance dépendance",
+        "fondation": "Recherche sur burden caregiver et son impact sur outcomes patient",
+        "ministere": "Politiques de soutien aux aidants, plans nationaux santé mentale"
+      },
+      "buyer_persona": {
+        "pharma": "VP Patient Engagement / Director Health Outcomes & Patient Support",
+        "assureur": "Chief Actuary / VP Long-Term Care Products",
+        "recherche": "PI psychologie de la santé / nursing research"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "10-20 €/dyade/mois",
+        "par_dataset_eur": "60 000 - 250 000 €/dataset (200-1000 dyades, 6-12 mois)",
+        "benchmark": "Nature 2025 documente corrélation significative caregiver burden × patient QoL (β=-0.356, p<0.001); JMIR 2025 montre que interventions dyadiques améliorent adhérence de β=4.68; 65.3% des aidants présentent un stress considérable; ~32% des dyades rapportent des difficultés financières"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "20-40 €/dyade/mois",
+        "premium_description": "Enrichissement: modèle causal dyade (stress aidant → abandon patient), croisement MHFS (score financier-santé), digital twin dyade (simulation d'interventions de soutien)",
+        "premium_multiplicateur": "2.0x - 2.2x",
+        "justification": "Données dyade psychiatriques longitudinales avec signaux quantifiés = produit très rare sur le marché"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 4000,
+        "hypotheses": "~35% des patients NOOS ont un aidant identifié et consentant; 700 dyades Y1, 1400 Y2, 1900 Y3",
+        "profils_actifs_moyens": 1300
+      },
+      "reglementation": {
+        "EHDS": "Données aidant = zone grise; éligibles si qualifiées comme données liées au parcours de soin du patient",
+        "RGPD_Art89": "Consentement séparé de l'aidant obligatoire; deux responsabilités de traitement distinctes",
+        "ICH_GCP": "Non directement applicable sauf si étude interventionnelle sur dyade",
+        "Loi_09_08_Maroc": "Deux déclarations/autorisations CNDP séparées (patient + aidant); traitement conjoint = responsabilités multiples"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — le caractère dyadique augmente le risque de ré-identification par croisement",
+        "upgrade_recommande": "T4 differential privacy pour datasets dyadiques publiés"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "1300 dyades × 28 €/mois moyen enrichi × 12 mois × 53% = 232 243 €/an",
+        "revenu_annuel_eur": 232243,
+        "revenu_3ans_eur": 696730,
+        "sensibilite": "Range: 140K-350K €/an"
+      }
+    },
+    {
+      "id": 11,
+      "nom": "Données de contagion réseau thérapeutique",
+      "description": "Effet de pair sur l'observance: influence des patients connectés (groupes thérapeutiques, pairs-aidants) sur les comportements d'adhérence au sein du réseau NOOS",
+      "type_donnee": "Données de réseau social thérapeutique anonymisé, graphes d'influence, métriques de centralité",
+      "producteur": "Réseau NOOS (interactions entre patients dans groupes thérapeutiques, effet de pair mesurable)",
+      "acheteur_primaire": {
+        "pharma": "R&D — design d'interventions de soutien par les pairs, amplification d'observance",
+        "fondation": "Recherche sur contagion sociale positive en santé",
+        "universite": "Network science appliquée à la santé mentale"
+      },
+      "buyer_persona": {
+        "pharma": "VP Patient Engagement / Director Behavioral Science",
+        "recherche": "PI social network analysis en santé"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "8-15 €/profil/mois (données réseau + outcomes)",
+        "par_dataset_eur": "80 000 - 300 000 €/dataset",
+        "benchmark": "BMC Med Res Methodology 2023 documente peer effects sur prescribing (IRR 0.044-0.059 selon connectivité); Sage Journals 2015 montre que peer interventions améliorent adhérence (12 études, effets positifs, attrition faible); diffusion of prescribing behaviors via patient-sharing networks documentée"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "18-30 €/profil/mois",
+        "premium_description": "Enrichissement: modèle de contagion calibré (R0 de l'observance), identification de super-spreaders d'adhérence, simulation d'interventions réseau via digital twin",
+        "premium_multiplicateur": "2.0x - 2.3x",
+        "justification": "Produit radicalement nouveau — aucun concurrent ne quantifie le R0 d'observance dans un réseau thérapeutique psychiatrique"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 6000,
+        "hypotheses": "Patients NOOS participant à des interactions de groupe/pair: ~50% de la base; 1000 Y1, 2000 Y2, 3000 Y3",
+        "profils_actifs_moyens": 2000
+      },
+      "reglementation": {
+        "EHDS": "Données de réseau social thérapeutique = nouvelle catégorie non explicitement couverte par EHDS; interprétation prudente nécessaire",
+        "RGPD_Art89": "Graphes sociaux = données personnelles même pseudonymisés (risque ré-identification par structure); DPIA obligatoire",
+        "ICH_GCP": "Non applicable directement",
+        "Loi_09_08_Maroc": "Données relationnelles = données personnelles sous loi 09-08; autorisation CNDP"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T4",
+        "description": "Differential privacy — les graphes sociaux sont hautement identifiants; seules les métriques agrégées (degré moyen, clustering coefficient) doivent circuler",
+        "upgrade_recommande": "T5 synthetic pour datasets réseau publics"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "2000 profils × 22 €/mois moyen enrichi × 12 mois × 53% = 280 896 €/an",
+        "revenu_annuel_eur": 280896,
+        "revenu_3ans_eur": 842688,
+        "sensibilite": "Range: 170K-420K €/an"
+      }
+    },
+    {
+      "id": 12,
+      "nom": "Données posologie optimisée",
+      "description": "Comparaison systématique: posologie prescrite (recommendation clinicien) vs résultats réels observés (EMA scores, effets secondaires, adhérence) — efficacité comparative des dosages",
+      "type_donnee": "Données d'efficacité comparative posologique, appariement dose-response avec outcomes longitudinaux",
+      "producteur": "Clinicien (prescription via NOOS) + Patient (outcomes) + BURHAN (dispensation effective)",
+      "acheteur_primaire": {
+        "pharma": "Dose optimization post-AMM, label extension, études dose-response RWE",
+        "ministere": "Guidelines thérapeutiques nationales, protocoles de soins",
+        "universite": "Recherche pharmacologie clinique"
+      },
+      "buyer_persona": {
+        "pharma": "VP Clinical Development / Director Dose Optimization / Head of HEOR",
+        "regulateur": "Chef de service évaluation des médicaments (HAS, ASMR)"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "10-22 €/profil/mois",
+        "par_dataset_eur": "120 000 - 500 000 €/dataset (dose-response cohorte 500-2000 patients)",
+        "benchmark": "France HAS demande des Post-Registration Studies dans 17% des cas (Fernandez et al. 2024); données dose-response RWE = haute valeur pour market access et pricing & reimbursement; Spanish antipsychotic adherence study montre impact dose sur adhérence OR 0.70"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "22-45 €/profil/mois",
+        "premium_description": "Enrichissement: PGx (génotype × dose optimale), digital twin (simulation dose-titration personnalisée), corrélation circadien × dose (chronodosage)",
+        "premium_multiplicateur": "2.0x - 2.2x"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 10000,
+        "hypotheses": "Tous patients NOOS avec données de prescription + outcomes: ~85% de la base; 1700 Y1, 3400 Y2, 4900 Y3",
+        "profils_actifs_moyens": 3300
+      },
+      "reglementation": {
+        "EHDS": "Données de prescription + outcomes = éligibles usage secondaire EHDS; format ePrescription = catégorie prioritaire",
+        "RGPD_Art89": "Base légale recherche Art. 89; pseudonymisation requise",
+        "ICH_GCP": "Applicable si soumission réglementaire; E6(R3) pour qualité des données",
+        "Loi_09_08_Maroc": "Autorisation CNDP pour traitement données de prescription"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — données dose-response agrégées par cohorte moléculaire",
+        "upgrade_recommande": "T4 pour publications ou soumissions réglementaires cross-juridictionnelles"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "3300 profils × 32 €/mois moyen enrichi × 12 mois × 53% = 671 616 €/an",
+        "revenu_annuel_eur": 671616,
+        "revenu_3ans_eur": 2014848,
+        "sensibilite": "Range: 400K-1.0M €/an"
+      }
+    },
+    {
+      "id": 13,
+      "nom": "Scores MHFS (Mental Health-Financial Score)",
+      "description": "Corrélation observance médicamenteuse × solvabilité/capacité de remboursement du patient — score composite santé-finance propriétaire MYNε",
+      "type_donnee": "Score composite dérivé, corrélation longitudinale santé mentale × indicateurs financiers agrégés",
+      "producteur": "MYNε (algorithme propriétaire croisant données NOOS + données financières opt-in patient)",
+      "acheteur_primaire": {
+        "assureur": "Underwriting santé/prévoyance, pricing de polices, risk stratification",
+        "banque_microfinance": "Credit scoring enrichi, prédiction de défaut corrélée à la santé mentale",
+        "ministere": "Politiques sociales, corrélation pauvreté-santé mentale"
+      },
+      "buyer_persona": {
+        "assureur": "Chief Actuary / VP Underwriting / Chief Risk Officer",
+        "finance": "Head of Credit Risk / VP Microfinance Products",
+        "public": "Directeur des politiques sociales"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "8-18 €/score/mois",
+        "par_dataset_eur": "100 000 - 400 000 €/dataset (cohorte scored 1000-5000 profils)",
+        "benchmark": "Milliman 2025 documente forte corrélation adhérence × coûts de santé (patients adherents = coûts significativement plus bas quand risk score >10); ~32% des dyades patient-aidant rapportent difficultés financières liées à la maladie; assureurs estiment valeur actuarielle de l'adhérence à $500B de coûts évitables/an (US)"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "18-35 €/score/mois",
+        "premium_description": "Enrichissement: MHFS calibré sur données multimodales NOOS (EMA + pharmacy + vocal + circadien), corrélation PGx (risque d'effets secondaires → arrêt → impact financier), digital twin financier",
+        "premium_multiplicateur": "2.0x - 2.2x",
+        "justification": "Score propriétaire sans équivalent marché — fusion santé mentale × finance = innovation actuarielle"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 8000,
+        "hypotheses": "Patients NOOS consentant au scoring financier: ~65% opt-in; 1300 Y1, 2600 Y2, 4100 Y3",
+        "profils_actifs_moyens": 2700
+      },
+      "reglementation": {
+        "EHDS": "Score composite santé-finance = hors scope EHDS (composante financière non couverte); données de santé sous-jacentes couvertes",
+        "RGPD_Art89": "Profilage automatisé Art. 22 RGPD — droit d'opposition renforcé; DPIA obligatoire; risque de discrimination si utilisé pour décisions automatisées",
+        "ICH_GCP": "Non applicable",
+        "Loi_09_08_Maroc": "Article 11 loi 09-08: interdiction de décisions automatisées produisant des effets juridiques basées uniquement sur traitement automatisé; consentement explicite + droit d'opposition"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T4",
+        "description": "Differential privacy obligatoire — le croisement santé × finance est hautement sensible et potentiellement discriminatoire",
+        "upgrade_recommande": "T5 synthetic pour tout usage actuariel en scoring; audit d'équité algorithmique recommandé"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "2700 profils × 25 €/mois moyen enrichi × 12 mois × 53% = 429 300 €/an",
+        "revenu_annuel_eur": 429300,
+        "revenu_3ans_eur": 1287900,
+        "sensibilite": "Range: 260K-640K €/an"
+      }
+    },
+    {
+      "id": 14,
+      "nom": "Données de cohorte longitudinale >5 ans",
+      "description": "Premium exceptionnel pour cohortes psychiatriques suivies >5 ans avec données multimodales continues — trajectoires de vie complètes",
+      "type_donnee": "Données longitudinales ultra-longues (>5 ans), séries temporelles multimodales complètes",
+      "producteur": "Patient fidélisé NOOS (rétention >5 ans) + ensemble de l'écosystème BURHAN/clinicien",
+      "acheteur_primaire": {
+        "pharma": "Études d'efficacité et sécurité long-terme, real-world outcome studies, label maintenance",
+        "assureur": "Modèles actuariels long-terme, pricing de produits prévoyance à vie",
+        "fondation": "Wellcome Trust et équivalents — programmes de recherche £1-5M sur données longitudinales",
+        "universite": "Recherche trajectoires de vie, épidémiologie psychiatrique"
+      },
+      "buyer_persona": {
+        "pharma": "Chief Medical Officer / VP Long-Term Safety / Director Lifecycle Management",
+        "assureur": "Chief Actuary",
+        "recherche": "PI cohorte longitudinale (niveau Wellcome/NIH)"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "30-60 €/profil/mois (premium ×3-5 vs cohorte standard)",
+        "par_dataset_eur": "500 000 - 3 000 000 €/dataset",
+        "benchmark": "Wellcome Trust finance £1-5M par projet sur données longitudinales santé mentale; Population Data BC (5.4M résidents, longitudinal) = référence; EY valorise données NHS longitudinales à £5bn/an; les clinical trial per-patient costs dépassent $20K (Hospitalogy); la rareté des cohortes psychiatriques >5 ans justifie un premium ×3-5"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "60-120 €/profil/mois",
+        "premium_description": "Enrichissement complet multimodal (EMA + pharmacy + circadien + vocal + PGx + RAQIB + dyade + forensics + posologie + MHFS) sur >5 ans = asset de données exceptionnel",
+        "premium_multiplicateur": "2.0x - 2.5x",
+        "justification": "Il n'existe pratiquement aucune cohorte psychiatrique multimodale digitale >5 ans dans le monde; MYNε vise un monopole de facto sur ce segment"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 500,
+        "hypotheses": "À l'horizon Y3, aucun profil n'a encore 5 ans de données; ce chiffre représente les profils projetés atteignant 5 ans à Y5-Y6; à Y3 = premiers profils atteignant 3 ans (base pour futures cohortes >5 ans)",
+        "profils_actifs_moyens": 200,
+        "note": "Revenus projetés à partir de Y5; Y1-Y3 = constitution de la cohorte"
+      },
+      "reglementation": {
+        "EHDS": "Cohortes longitudinales = usage secondaire prioritaire EHDS; conditions renforcées pour durée de conservation",
+        "RGPD_Art89": "Conservation longue durée justifiée par Art. 89 (archivage recherche scientifique); renouvellement du consentement ou base légale recherche",
+        "ICH_GCP": "Applicable pour études observationnelles long-terme si soumission réglementaire",
+        "Loi_09_08_Maroc": "Loi 28-13: archivage documents recherche biomédicale ≥20 ans; CNDP autorisation pour conservation longue durée"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T4",
+        "description": "Differential privacy — le caractère longitudinal ultra-long augmente considérablement le risque de ré-identification",
+        "upgrade_recommande": "T5 synthetic pour tout accès externe"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "200 profils × 85 €/mois moyen enrichi × 12 mois × 53% = 108 120 €/an (Y3); projection Y5: 1000 profils → 540 600 €/an",
+        "revenu_annuel_eur_Y3": 108120,
+        "revenu_annuel_eur_Y5_projection": 540600,
+        "revenu_3ans_eur": 324360,
+        "sensibilite": "Range Y3: 65K-160K €/an; Y5: 325K-810K €/an"
+      }
+    },
+    {
+      "id": 15,
+      "nom": "Données cross-pathologie (psychiatrie + comorbidités somatiques)",
+      "description": "Croisement données psychiatriques NOOS avec comorbidités somatiques (diabète, cardiovasculaire, métabolique, douleur chronique) — analyses transversales psychiatrie-somatique",
+      "type_donnee": "Données multidomaine croisées, comorbidité patterns, analyses cross-pathologie",
+      "producteur": "Patient + clinicien via NOOS (module comorbidités) + BURHAN (prescriptions multi-pathologies)",
+      "acheteur_primaire": {
+        "pharma": "R&D multi-indication, safety profiling cross-pathologie, drug repositioning",
+        "assureur": "Modèles de risque multi-morbidité, pricing santé globale",
+        "ministere": "Politiques de santé intégrées psychiatrie-somatique",
+        "universite": "Recherche sur comorbidités psychiatrie-somatique, voies inflammatoires communes"
+      },
+      "buyer_persona": {
+        "pharma": "VP Medical Affairs / Director Multi-Indication Strategy / Chief Medical Officer",
+        "assureur": "Chief Actuary / VP Population Health",
+        "recherche": "PI psychiatrie de liaison / médecine interne"
+      },
+      "prix_marche_actuel": {
+        "par_profil_par_mois_eur": "15-30 €/profil/mois (données cross-pathologie)",
+        "par_dataset_eur": "200 000 - 800 000 €/dataset (cohorte multi-morbide 500-2000 patients)",
+        "benchmark": "Frontiers in Psychiatry 2022 documente que comorbidités médicales sont significativement plus fréquentes chez patients psychiatriques; Cureus 2024 montre prévalence dépression modérée 26.5%, anxiété modérée 41.5% chez patients avec symptômes somatiques; pharma valorise fortement les données cross-pathologie pour drug repositioning"
+      },
+      "prix_enrichi_myne": {
+        "par_profil_par_mois_eur": "30-55 €/profil/mois",
+        "premium_description": "Enrichissement: PGx cross-pathologie (interactions médicamenteuses psychiatrie-somatique), digital twin multi-morbide, corrélation observance psychiatrique × outcomes somatiques, MHFS étendu",
+        "premium_multiplicateur": "2.0x - 2.2x",
+        "justification": "Les datasets croisant psychiatrie + somatique avec données longitudinales multimodales = ultra rares; valeur multipliée par le nombre de pathologies couvertes"
+      },
+      "volume_estime_3ans": {
+        "profils_disponibles": 7000,
+        "hypotheses": "~60% des patients psychiatriques NOOS ont au moins une comorbidité somatique; 1200 Y1, 2400 Y2, 3400 Y3",
+        "profils_actifs_moyens": 2300
+      },
+      "reglementation": {
+        "EHDS": "Données multi-pathologie = éligibles usage secondaire; potentiellement couvertes par plusieurs catégories EHDS simultanément",
+        "RGPD_Art89": "Le croisement multi-pathologie augmente la sensibilité des données; pseudonymisation renforcée + DPIA",
+        "ICH_GCP": "Applicable pour études observationnelles cross-pathologie",
+        "Loi_09_08_Maroc": "Données de santé multi-pathologie = données sensibles; autorisation CNDP étendue"
+      },
+      "t_level_aelya_minimum": {
+        "niveau": "T3",
+        "description": "k-anonymisé — le croisement multi-pathologie augmente le risque de ré-identification par combinaison de diagnostics rares",
+        "upgrade_recommande": "T4 differential privacy si diagnostics rares inclus; T5 synthetic pour open datasets"
+      },
+      "revenus_myne_estimes": {
+        "calcul": "2300 profils × 40 €/mois moyen enrichi × 12 mois × 53% = 585 648 €/an",
+        "revenu_annuel_eur": 585648,
+        "revenu_3ans_eur": 1756944,
+        "sensibilite": "Range: 350K-880K €/an"
+      }
+    }
+  ],
+  "synthese_financiere": {
+    "revenu_annuel_total_estime_eur": 6684219,
+    "revenu_3ans_total_estime_eur": 20052658,
+    "top_3_categories_par_revenu": [
+      {"rang": 1, "categorie": "Simulations digital twin", "revenu_annuel_eur": 1590000, "part_total": "23.8%"},
+      {"rang": 2, "categorie": "Patterns renouvellement BURHAN", "revenu_annuel_eur": 686880, "part_total": "10.3%"},
+      {"rang": 3, "categorie": "Données posologie optimisée", "revenu_annuel_eur": 671616, "part_total": "10.0%"}
+    ],
+    "revenu_par_acheteur_type": {
+      "pharma": "~55% du revenu total (~3.7M €/an) — acheteur primaire sur 14/15 catégories",
+      "assureur": "~20% du revenu total (~1.3M €/an) — acheteurs clés sur MHFS, pharmacy, circadien, RAQIB, dyade, longitudinal, cross-pathologie",
+      "universite_fondation": "~15% du revenu total (~1.0M €/an) — recherche académique, financement Wellcome/NIH/ANR",
+      "ministere_regulateur": "~10% du revenu total (~0.7M €/an) — pharmacovigilance, politiques publiques, guidelines"
+    },
+    "prix_moyen_par_profil_par_mois_enrichi_eur": 33,
+    "premium_moyen_enrichissement": "2.1x vs données brutes",
+    "volume_total_profils_actifs_moyens_3ans": 38000,
+    "hypotheses_cles": [
+      "Part MYNε: 53% du prix de marché (revenue share avec écosystème NOOS/BURHAN/patients)",
+      "Déploiement progressif sur 3 ans, corridor Maroc + diaspora francophone",
+      "Taux de consentement données exploitables: 65-85% selon catégorie",
+      "Pricing enrichi = 2.0-2.5x vs données brutes grâce aux layers PGx, digital twin, forensics",
+      "Les catégories PGx et longitudinal >5 ans montent en puissance à partir de Y3-Y5"
+    ]
+  },
+  "cadre_reglementaire_synthetique": {
+    "EHDS_EU_2025_327": {
+      "entree_en_vigueur": "26 mars 2025",
+      "application_usage_secondaire": "Mars 2029",
+      "impact_myne": "Ouvre le marché européen de données secondaires via Health Data Access Bodies; format standardisé ePrescription = avantage BURHAN; savings €11B estimés sur 10 ans pour l'écosystème",
+      "source": "Regulation (EU) 2025/327, publié au JO UE le 5 mars 2025"
+    },
+    "RGPD_Art89": {
+      "description": "Exemption recherche scientifique pour traitement de données de santé sans consentement spécifique si garanties appropriées (pseudonymisation, minimisation)",
+      "impact_myne": "Permet le licensing de données pseudonymisées à des fins de recherche; base légale solide pour le modèle B2B pharma/université"
+    },
+    "ICH_GCP_E6R3": {
+      "description": "Guidelines pour essais cliniques; E6(R3) intègre les données RWE et les sources digitales",
+      "impact_myne": "Les données NOOS/BURHAN peuvent être qualifiées comme source RWE pour soumissions réglementaires si traçabilité et qualité documentées"
+    },
+    "Loi_09_08_Maroc": {
+      "description": "Protection des personnes physiques à l'égard du traitement des données personnelles",
+      "amendements": "Loi 28-13 (recherche biomédicale), CNDP comme autorité de contrôle",
+      "impact_myne": "Déclaration/autorisation CNDP obligatoire avant tout traitement; données de santé = données sensibles; transfert international conditionné; amendes jusqu'à 600 000 MAD; archivage ≥20 ans pour recherche biomédicale",
+      "source": "9anonai.com guide 2026; NeoExpertise Law 09-08 guide 2026"
+    }
+  }
+}
