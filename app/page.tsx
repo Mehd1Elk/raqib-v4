@@ -339,6 +339,21 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card OBSERVANCE — Clinical teal accent */}
+          <a href="/observance" style={{ background: '#0A1214', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(90,172,172,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#5AACAC', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>CLINIQUE</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence Observance</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,240,240,0.55)', marginBottom: 10 }}>
+              Clinical Intelligence · 13 onglets · Molécule × Signal · Digital Twin · MHFS
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ fontSize: 12 }}>♡</span>
+              <span style={{ fontFamily: MN, fontSize: 8, color: '#5AACAC', letterSpacing: 3, textTransform: 'uppercase' }}>
+                MODULE OBSERVANCE
+              </span>
+            </div>
+          </a>
+
         </div>
       </div>
 

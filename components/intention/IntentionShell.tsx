@@ -12,6 +12,9 @@ import TransactionLedgerView from './views/TransactionLedgerView';
 // Lazy loaded components for new axes
 const ScorecardView = React.lazy(() => import('./views/ScorecardView'));
 const InventaireView = React.lazy(() => import('./views/InventaireView'));
+const ParadoxeGratuiteView = React.lazy(() => import('./views/ParadoxeGratuiteView'));
+const CascadeReglementaireView = React.lazy(() => import('./views/CascadeReglementaireView'));
+const IndiceSouveraineteView = React.lazy(() => import('./views/IndiceSouveraineteView'));
 
 const TABS = [
   { id: 'observatory', label: 'Observatoire', icon: '◉' },
@@ -65,6 +68,9 @@ export default function IntentionShell() {
       case 'ledger': content = <TransactionLedgerView />; break;
       case 'scorecard': content = <ScorecardView />; break;
       case 'inventaire': content = <InventaireView />; break;
+      case 'paradoxe': content = <ParadoxeGratuiteView />; break;
+      case 'reglementaire': content = <CascadeReglementaireView />; break;
+      case 'souverainete': content = <IndiceSouveraineteView />; break;
       default: content = <FallbackView />; break;
     }
     
