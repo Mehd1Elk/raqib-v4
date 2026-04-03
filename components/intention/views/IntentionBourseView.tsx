@@ -112,7 +112,7 @@ export default function IntentionBourseView() {
         
         <div className="flex-1 flex overflow-hidden">
           {/* BIDS (Acheteurs) */}
-          <div className="w-1/2 flex flex-col" style={{ borderRight: \`1px solid \${BLOOMBERG_PRUNE_COLORS.border}\` }}>
+          <div className="w-1/2 flex flex-col" style={{ borderRight: `1px solid ${BLOOMBERG_PRUNE_COLORS.border}` }}>
             <div className="grid grid-cols-3 p-3" style={COMMON_STYLES.separator}>
               <span style={{ ...COMMON_STYLES.categoryLabel, textAlign: 'left' }}>VOL</span>
               <span style={{ ...COMMON_STYLES.categoryLabel, textAlign: 'center' }}>BUYER TYPE</span>

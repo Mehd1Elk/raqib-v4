@@ -289,6 +289,18 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card INTENTION — Paradigme green accent */}
+          <a href="/intention" style={{ background: '#0A140A', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(34,197,94,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#22C55E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>PARADIGME</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence de l&apos;Intention</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,240,224,0.55)', marginBottom: 10 }}>
+              Bloomberg des Données · 10 onglets · Bourse des Intentions · Corridor Flows
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#22C55E', letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE INTENTION
+            </div>
+          </a>
+
           {/* Card SCIENCE — Quantum accent */}
           <a href="/science" style={{ background: '#0A0A14', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(99,102,241,0.25)' }}>
             <div style={{ fontFamily: MN, fontSize: 8, color: '#6366F1', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>SCIENCE</div>

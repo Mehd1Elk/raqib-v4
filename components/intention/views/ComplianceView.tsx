@@ -46,7 +46,7 @@ export default function ComplianceView() {
         <table className="w-full text-center" style={{ borderCollapse: 'collapse' }}>
           <thead>
             <tr>
-              <th className="p-3 text-left sticky left-0 bg-[#120D18]" style={{ ...COMMON_STYLES.categoryLabel, ...COMMON_STYLES.separator, borderRight: \`1px solid \${BLOOMBERG_PRUNE_COLORS.border}\` }}>
+              <th className="p-3 text-left sticky left-0 bg-[#120D18]" style={{ ...COMMON_STYLES.categoryLabel, ...COMMON_STYLES.separator, borderRight: `1px solid ${BLOOMBERG_PRUNE_COLORS.border}` }}>
                 CATÉGORIES
               </th>
               {COUNTRIES.map(c => (
@@ -59,7 +59,7 @@ export default function ComplianceView() {
           <tbody>
             {DATA_CATEGORIES.map((cat, i) => (
               <tr key={cat} className="hover:bg-white/5 transition-colors" style={COMMON_STYLES.separator}>
-                <td className="p-3 text-left sticky left-0 bg-[#120D18]" style={{ ...COMMON_STYLES.tableData, borderRight: \`1px solid \${BLOOMBERG_PRUNE_COLORS.border}\` }}>
+                <td className="p-3 text-left sticky left-0 bg-[#120D18]" style={{ ...COMMON_STYLES.tableData, borderRight: `1px solid ${BLOOMBERG_PRUNE_COLORS.border}` }}>
                   {cat}
                 </td>
                 {COUNTRIES.map((c, j) => {
@@ -90,11 +90,11 @@ export default function ComplianceView() {
                 {reg.name}
               </div>
               <div className="flex-1 flex items-center space-x-2">
-                <div className="flex-1 h-1.5 bg-black/50" style={{ border: \`0.5px solid \${BLOOMBERG_PRUNE_COLORS.border}\` }}>
+                <div className="flex-1 h-1.5 bg-black/50" style={{ border: `0.5px solid ${BLOOMBERG_PRUNE_COLORS.border}` }}>
                   <div 
                     className="h-full" 
                     style={{ 
-                      width: \`\${(reg.score / 10) * 100}%\`,
+                      width: `${(reg.score / 10) * 100}%`,
                       backgroundColor: reg.score > 7 ? BLOOMBERG_PRUNE_COLORS.accentPositive : (reg.score > 5 ? '#F59E0B' : BLOOMBERG_PRUNE_COLORS.accentNegative)
                     }} 
                   />

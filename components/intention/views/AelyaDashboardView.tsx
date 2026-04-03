@@ -124,8 +124,8 @@ export default function AelyaDashboardView() {
                       <span className="px-2 py-0.5" style={{ 
                         ...COMMON_STYLES.categoryLabel, 
                         color: getStatusColor(tx.status), 
-                        border: \`1px solid \${getStatusColor(tx.status)}40\`, // 40 = 25% opacity rough hex
-                        backgroundColor: \`\${getStatusColor(tx.status)}10\` 
+                        border: `1px solid ${getStatusColor(tx.status)}40`, // 40 = 25% opacity rough hex
+                        backgroundColor: `${getStatusColor(tx.status)}10` 
                       }}>
                         {tx.status}
                       </span>

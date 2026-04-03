@@ -45,7 +45,7 @@ export default function PricingEngineView() {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
               className="w-full bg-transparent border p-2 outline-none"
-              style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, color: BLOOMBERG_PRUNE_COLORS.textMain, ...COMMON_STYLES.tableData }}
+              style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, ...COMMON_STYLES.tableData, color: BLOOMBERG_PRUNE_COLORS.textMain }}
             >
               {CATEGORIES.map(c => <option key={c} value={c} className="bg-[#120D18]">{c}</option>)}
             </select>
@@ -81,7 +81,7 @@ export default function PricingEngineView() {
               <select 
                 value={corridor} onChange={(e) => setCorridor(e.target.value)}
                 className="w-full bg-transparent border p-2 outline-none"
-                style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, color: BLOOMBERG_PRUNE_COLORS.textMain, ...COMMON_STYLES.tableData }}
+                style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, ...COMMON_STYLES.tableData, color: BLOOMBERG_PRUNE_COLORS.textMain }}
               >
                 {CORRIDORS.map(c => <option key={c} value={c} className="bg-[#120D18]">{c}</option>)}
               </select>
@@ -91,7 +91,7 @@ export default function PricingEngineView() {
               <select 
                 value={frequency} onChange={(e) => setFrequency(e.target.value)}
                 className="w-full bg-transparent border p-2 outline-none"
-                style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, color: BLOOMBERG_PRUNE_COLORS.textMain, ...COMMON_STYLES.tableData }}
+                style={{ borderColor: BLOOMBERG_PRUNE_COLORS.border, ...COMMON_STYLES.tableData, color: BLOOMBERG_PRUNE_COLORS.textMain }}
               >
                 {FREQUENCIES.map(f => <option key={f} value={f} className="bg-[#120D18]">{f}</option>)}
               </select>
@@ -109,9 +109,9 @@ export default function PricingEngineView() {
           
           <div className="space-y-4 pt-2">
             {[
-              { label: 'REVENUE PRODUCTEUR (53%)', value: \`€\${producerRev.toFixed(2)}\`, color: BLOOMBERG_PRUNE_COLORS.textMain },
-              { label: 'FRAIS ÆLYA (15%)', value: \`€\${aelyaFee.toFixed(2)}\`, color: BLOOMBERG_PRUNE_COLORS.textSecondary },
-              { label: 'FRAIS BURHAN (10%)', value: \`€\${burhanFee.toFixed(2)}\`, color: BLOOMBERG_PRUNE_COLORS.textSecondary },
+              { label: 'REVENUE PRODUCTEUR (53%)', value: `€${producerRev.toFixed(2)}`, color: BLOOMBERG_PRUNE_COLORS.textMain },
+              { label: 'FRAIS ÆLYA (15%)', value: `€${aelyaFee.toFixed(2)}`, color: BLOOMBERG_PRUNE_COLORS.textSecondary },
+              { label: 'FRAIS BURHAN (10%)', value: `€${burhanFee.toFixed(2)}`, color: BLOOMBERG_PRUNE_COLORS.textSecondary },
             ].map((item, i) => (
               <div key={i} className="flex justify-between items-center">
                 <span style={COMMON_STYLES.categoryLabel}>{item.label}</span>
@@ -131,7 +131,7 @@ export default function PricingEngineView() {
                 €{cacActual.toFixed(2)}
               </span>
             </div>
-            <div className="flex justify-between items-center bg-[#1E0A20] p-3 -mx-3 mt-4" style={{ border: \`1px solid \${BLOOMBERG_PRUNE_COLORS.border}\` }}>
+            <div className="flex justify-between items-center bg-[#1E0A20] p-3 -mx-3 mt-4" style={{ border: `1px solid ${BLOOMBERG_PRUNE_COLORS.border}` }}>
               <span style={COMMON_STYLES.categoryLabel}>ROI VS CAC</span>
               <span style={COMMON_STYLES.pricePositive}>+{roi.toFixed(1)}%</span>
             </div>

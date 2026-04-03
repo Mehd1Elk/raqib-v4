@@ -99,8 +99,8 @@ export default function IntentionShell() {
                 style={{
                   backgroundColor: isActive ? 'rgba(228,212,234,0.05)' : 'transparent',
                   borderLeft: `2px solid ${isActive ? BLOOMBERG_PRUNE_COLORS.textMain : 'transparent'}`,
-                  color: isActive ? BLOOMBERG_PRUNE_COLORS.textMain : BLOOMBERG_PRUNE_COLORS.textSecondary,
                   ...COMMON_STYLES.categoryLabel,
+                  color: isActive ? BLOOMBERG_PRUNE_COLORS.textMain : BLOOMBERG_PRUNE_COLORS.textSecondary,
                   letterSpacing: '1px' // slight override for tabs
                 }}
               >

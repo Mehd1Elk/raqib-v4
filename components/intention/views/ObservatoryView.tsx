@@ -50,10 +50,10 @@ export default function ObservatoryView() {
       {/* 4 StatCards Bloomberg style */}
       <div className="grid grid-cols-4 gap-4">
         {[
-          { label: 'VALEUR CAPTÉE CORRIDOR', value: \`€\${totalValeurCaptee}B\`, color: BLOOMBERG_PRUNE_COLORS.accentPositive },
-          { label: "GAP D'INTENTION", value: \`€\${totalGapIntention}B\`, color: BLOOMBERG_PRUNE_COLORS.accentNegative },
+          { label: 'VALEUR CAPTÉE CORRIDOR', value: `€${totalValeurCaptee}B`, color: BLOOMBERG_PRUNE_COLORS.accentPositive },
+          { label: "GAP D'INTENTION", value: `€${totalGapIntention}B`, color: BLOOMBERG_PRUNE_COLORS.accentNegative },
           { label: 'PAYS ANALYSÉS', value: paysCount.toString(), color: BLOOMBERG_PRUNE_COLORS.textMain },
-          { label: 'ARPU MOYEN', value: \`€\${avgArpu}\`, color: BLOOMBERG_PRUNE_COLORS.textMain },
+          { label: 'ARPU MOYEN', value: `€${avgArpu}`, color: BLOOMBERG_PRUNE_COLORS.textMain },
         ].map((stat, i) => (
           <div key={i} className="p-4 flex flex-col justify-between h-24" style={COMMON_STYLES.card}>
             <div style={COMMON_STYLES.categoryLabel}>{stat.label}</div>
