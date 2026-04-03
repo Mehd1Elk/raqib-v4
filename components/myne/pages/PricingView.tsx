@@ -6,7 +6,7 @@ import MYNECard from '../shared/MYNECard';
 import { BUYER_PRICING_TABLE, PRODUCER_EARNINGS_EXAMPLES, SDK_TIERS, EQUITY_DROPS, FUNDORA_BENCHMARK, SPV_ARCHITECTURE, CASHOUT_PARTNERS, CASHOUT_PIPELINE, INCLUSION_FACTS, REVENUE_FLOW_EXAMPLE, ROADMAP_HORIZONS, DISTRIBUTION_RINGS, VISUAL_PRICING, BUYER_TYPES } from '../shared/data';
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 const TABS = ['Acheteurs', 'Producteurs', 'SDK Tiers', 'Équity', 'Cash-out', 'Roadmap', 'Simulateur', 'Revenue Flows', 'SPV'];
@@ -18,7 +18,7 @@ function SubBuyers() {
       <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Prix par profil selon le niveau de transformation. Plus le T-Level est élevé, plus la privacy est forte, plus le prix augmente.</p>
       <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13, marginBottom:24 }}>
         <thead><tr>{['T-Level','Description','€/profil','Vol. min','Certif','Cas typique'].map(h => <th key={h} style={{ padding:'10px 12px', textAlign:'left', borderBottom:`1px solid ${M.border}`, color:M.t1, fontWeight:600, fontSize:11 }}>{h}</th>)}</tr></thead>
-        <tbody>{BUYER_PRICING_TABLE.map(r => <tr key={r.tLevel}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><Badge label={r.tLevel} color={M.purple} /></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, color:M.t2 }}>{r.desc}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:700 }}>{r.pricePerProfile} €</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{r.minVolume}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><div style={{ display:'flex', gap:4, flexWrap:'wrap' }}>{r.certif.map(c => <Badge key={c} label={c} color={M.green} />)}</div></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontSize:12, color:M.t3 }}>{r.typical}</td></tr>)}</tbody>
+        <tbody>{BUYER_PRICING_TABLE.map(r => <tr key={r.tLevel}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><Badge label={r.tLevel} color={M.purple} /></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, color:M.t2 }}>{r.desc}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:300 }}>{r.pricePerProfile} €</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{r.minVolume}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><div style={{ display:'flex', gap:4, flexWrap:'wrap' }}>{r.certif.map(c => <Badge key={c} label={c} color={M.green} />)}</div></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontSize:12, color:M.t3 }}>{r.typical}</td></tr>)}</tbody>
       </table>
     </div>
   );
@@ -31,7 +31,7 @@ function SubProducers() {
       <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Exemples de profils réels et revenus estimés (53% du prix acheteur).</p>
       <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13 }}>
         <thead><tr>{['Profil','Catégories','T-Level','€/mois','€/an'].map(h => <th key={h} style={{ padding:'10px 12px', textAlign:'left', borderBottom:`1px solid ${M.border}`, color:M.t1, fontWeight:600 }}>{h}</th>)}</tr></thead>
-        <tbody>{PRODUCER_EARNINGS_EXAMPLES.map((p, i) => <tr key={i}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontWeight:500, color:M.t1 }}>{p.profile}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{p.categories}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><Badge label={p.tLevel} color={M.purple} /></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.green }}>{p.monthly} €</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:700 }}>{p.yearly} €</td></tr>)}</tbody>
+        <tbody>{PRODUCER_EARNINGS_EXAMPLES.map((p, i) => <tr key={i}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontWeight:500, color:M.t1 }}>{p.profile}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{p.categories}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}` }}><Badge label={p.tLevel} color={M.purple} /></td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.green }}>{p.monthly} €</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:300 }}>{p.yearly} €</td></tr>)}</tbody>
       </table>
     </div>
   );
@@ -46,7 +46,7 @@ function SubSDKTiers() {
           <MYNECard key={t.label} hover style={{ borderTop:`3px solid ${t.color}`, position:'relative' }}>
             {t.rec && <div style={{ position:'absolute', top:-10, right:16 }}><Badge label="RECOMMANDÉ" color={M.green} /></div>}
             <div style={{ fontWeight:600, fontSize:16, color:M.t1, marginBottom:4 }}>{t.label}</div>
-            <div style={{ fontFamily:MN, fontSize:28, color:t.color, fontWeight:700, marginBottom:4 }}>{t.price}{typeof t.price === 'number' ? '€/mois' : ''}</div>
+            <div style={{ fontFamily:MN, fontSize:28, color:t.color, fontWeight:300, marginBottom:4 }}>{t.price}{typeof t.price === 'number' ? '€/mois' : ''}</div>
             <div style={{ fontSize:11, color:M.t3, marginBottom:12 }}>{t.uam}</div>
             <ul style={{ padding:0, listStyle:'none', margin:'0 0 16px' }}>{t.features.map((f, i) => <li key={i} style={{ fontSize:12, color:M.t2, padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>✦ {f}</li>)}</ul>
             <button style={{ width:'100%', padding:'10px', background:t.color, color:'#000', border:'none', borderRadius:6, fontFamily:BD, fontSize:13, fontWeight:600, cursor:'pointer' }}>{t.cta}</button>
@@ -92,7 +92,7 @@ function SubCashout() {
     <div>
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>Cash-out — De la donnée au cash</h2>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(100px, 1fr))', gap:12, marginBottom:24 }}>
-        {INCLUSION_FACTS.map((f, i) => <div key={i} style={{ textAlign:'center', padding:12 }}><div style={{ fontFamily:MN, fontSize:20, color:M.gold, fontWeight:700 }}>{f.v}</div><div style={{ fontSize:10, color:M.t3, marginTop:2 }}>{f.l}</div></div>)}
+        {INCLUSION_FACTS.map((f, i) => <div key={i} style={{ textAlign:'center', padding:12 }}><div style={{ fontFamily:MN, fontSize:20, color:M.gold, fontWeight:300 }}>{f.v}</div><div style={{ fontSize:10, color:M.t3, marginTop:2 }}>{f.l}</div></div>)}
       </div>
       <h3 style={{ fontFamily:HD, marginBottom:12, color:M.t1 }}>Pipeline</h3>
       <div style={{ display:'flex', gap:4, flexWrap:'wrap', marginBottom:24 }}>
@@ -137,7 +137,7 @@ function SubRoadmap() {
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:12 }}>
         {DISTRIBUTION_RINGS.map(r => (
           <MYNECard key={r.ring} style={{ borderTop:`3px solid ${r.color}` }}>
-            <div style={{ fontFamily:MN, fontSize:18, color:r.color, fontWeight:700 }}>Ring {r.ring}</div>
+            <div style={{ fontFamily:MN, fontSize:18, color:r.color, fontWeight:300 }}>Ring {r.ring}</div>
             <div style={{ fontWeight:600, marginBottom:4, color:M.t1 }}>{r.label}</div>
             <div style={{ fontSize:12, color:M.t2, marginBottom:8 }}>{r.ch}</div>
             <div style={{ display:'flex', gap:12 }}>
@@ -191,7 +191,7 @@ function SubSimulateur() {
         </MYNECard>
         <MYNECard style={{ flex:'1 1 300px', borderTop:`3px solid ${M.gold}` }}>
           <div style={{ fontFamily:MN, fontSize:11, color:M.t3, marginBottom:8 }}>PRIX UNITAIRE</div>
-          <div style={{ fontFamily:MN, fontSize:36, color:M.gold, fontWeight:700, marginBottom:16 }}>{ppu.toFixed(4)} €</div>
+          <div style={{ fontFamily:MN, fontSize:36, color:M.gold, fontWeight:300, marginBottom:16 }}>{ppu.toFixed(4)} €</div>
           {[{l:'Producteurs 53 %',v:(total*0.53),c:M.green},{l:'Plateforme 11 %',v:(total*0.11),c:M.gold},{l:'Écosystème 36 %',v:(total*0.36),c:M.purple}].map(r => (
             <div key={r.l} style={{ marginBottom:8 }}>
               <div style={{ display:'flex', justifyContent:'space-between', fontSize:12, color:M.t2, marginBottom:4 }}><span>{r.l}</span><span style={{ fontFamily:MN, color:r.c }}>{r.v.toFixed(2)} €</span></div>
@@ -214,18 +214,18 @@ function SubRevenueFlows() {
       <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Exemple réel d&apos;une transaction de 18 000 €. Du ACCEPT à la réception mobile money.</p>
       <MYNECard style={{ marginBottom:24 }}>
         <div style={{ fontFamily:MN, fontSize:11, color:M.t3, marginBottom:8 }}>TRANSACTION EXEMPLE</div>
-        <div style={{ fontFamily:MN, fontSize:32, color:M.gold, fontWeight:700, marginBottom:16 }}>{R.dealAmount.toLocaleString('fr')} €</div>
+        <div style={{ fontFamily:MN, fontSize:32, color:M.gold, fontWeight:300, marginBottom:16 }}>{R.dealAmount.toLocaleString('fr')} €</div>
         <div style={{ display:'flex', gap:16, flexWrap:'wrap', marginBottom:16 }}>
           {Object.values(bd).map(d => (
             <div key={d.label} style={{ flex:'1 1 180px' }}>
-              <div style={{ fontFamily:MN, fontSize:24, color:d.color, fontWeight:700 }}>{d.amount.toLocaleString('fr')} €</div>
+              <div style={{ fontFamily:MN, fontSize:24, color:d.color, fontWeight:300 }}>{d.amount.toLocaleString('fr')} €</div>
               <div style={{ fontSize:11, color:M.t3 }}>{d.pct} %</div>
               <div style={{ fontSize:12, color:M.t2 }}>{d.label}</div>
             </div>
           ))}
         </div>
         <div style={{ display:'flex', gap:2, height:24, borderRadius:6, overflow:'hidden' }}>
-          {Object.values(bd).map(d => <div key={d.label} style={{ flex:d.pct, background:d.color, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:10, fontWeight:700, color:'#000' }}>{d.pct}%</div>)}
+          {Object.values(bd).map(d => <div key={d.label} style={{ flex:d.pct, background:d.color, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:10, fontWeight:300, color:'#000' }}>{d.pct}%</div>)}
         </div>
       </MYNECard>
       <h3 style={{ fontFamily:HD, marginBottom:12, color:M.t1 }}>Timeline 0 → 60s</h3>
@@ -253,7 +253,7 @@ function SubSPV() {
       <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
         {SPV_ARCHITECTURE.map(s => (
           <MYNECard key={s.layer} style={{ display:'flex', alignItems:'center', gap:16 }}>
-            <div style={{ width:40, height:40, borderRadius:'50%', background:M.purple, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:16, fontWeight:700, color:'#000', flexShrink:0 }}>{s.layer}</div>
+            <div style={{ width:40, height:40, borderRadius:'50%', background:M.purple, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:16, fontWeight:300, color:'#000', flexShrink:0 }}>{s.layer}</div>
             <div>
               <div style={{ fontWeight:600, color:M.t1, marginBottom:2 }}>{s.label}</div>
               <div style={{ fontSize:13, color:M.t2 }}>{s.desc}</div>

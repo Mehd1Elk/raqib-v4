@@ -6,7 +6,7 @@ import MYNECard from '../shared/MYNECard';
 import { VERTICAL_USE_CASES, MARKETPLACE_DATASETS_SAMPLE, MARKETPLACE_STATS, RECENT_TRANSACTIONS, EXCHANGES, CHINA_COMPARISON, CHINA_LESSONS, PRICING_ENGINES } from '../shared/data';
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 const TABS = ['Marketplace','Pricing Engines','Verticales','Chine','SDK'];
@@ -16,7 +16,7 @@ function SubMarketplace() {
     <div>
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>Marketplace — Live</h2>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(100px, 1fr))', gap:12, marginBottom:24 }}>
-        {Object.entries(MARKETPLACE_STATS).map(([k, v]) => <div key={k} style={{ textAlign:'center', padding:12 }}><div style={{ fontFamily:MN, fontSize:20, color:M.gold, fontWeight:700 }}>{v}</div><div style={{ fontSize:10, color:M.t3, marginTop:2 }}>{k}</div></div>)}
+        {Object.entries(MARKETPLACE_STATS).map(([k, v]) => <div key={k} style={{ textAlign:'center', padding:12 }}><div style={{ fontFamily:MN, fontSize:20, color:M.gold, fontWeight:300 }}>{v}</div><div style={{ fontSize:10, color:M.t3, marginTop:2 }}>{k}</div></div>)}
       </div>
       <h3 style={{ fontFamily:HD, marginBottom:12, color:M.t1 }}>Datasets disponibles</h3>
       <div style={{ overflowX:'auto', marginBottom:24 }}>
@@ -31,7 +31,7 @@ function SubMarketplace() {
           <span style={{ fontFamily:MN, fontSize:11, color:M.t3, minWidth:80 }}>{t.ts}</span>
           <span style={{ fontSize:13, color:M.t1 }}>{t.buyer}</span>
           <span style={{ fontFamily:MN, fontSize:11, color:M.gold }}>{t.dataset}</span>
-          <span style={{ marginLeft:'auto', fontFamily:MN, fontWeight:700, color:M.green }}>{t.amount} €</span>
+          <span style={{ marginLeft:'auto', fontFamily:MN, fontWeight:300, color:M.green }}>{t.amount} €</span>
           <Badge label={t.tLevel} color={M.purple} />
         </div>
       ))}
@@ -53,7 +53,7 @@ function SubPricingEngines() {
               {e.params.map(p => (
                 <div key={p.k} style={{ display:'flex', justifyContent:'space-between', padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>
                   <span style={{ fontFamily:MN, fontSize:11, color:M.t3 }}>{p.k}</span>
-                  <span style={{ fontFamily:MN, fontSize:11, color:e.color, fontWeight:700 }}>{p.v}</span>
+                  <span style={{ fontFamily:MN, fontSize:11, color:e.color, fontWeight:300 }}>{p.v}</span>
                 </div>
               ))}
             </div>

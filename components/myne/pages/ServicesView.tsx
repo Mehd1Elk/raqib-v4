@@ -6,7 +6,7 @@ import MYNECard from '../shared/MYNECard';
 import { DATA_WALLET_SECTIONS, WALLET_FREEMIUM, ARCHITECTURE_PILLARS } from '../shared/data';
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 const TABS = ['Data Wallet', 'Triptyque Architecture'];
@@ -31,7 +31,7 @@ function SubDataWallet() {
           <MYNECard key={p.label} hover style={{ flex:'1 1 300px', borderTop:`3px solid ${i === 0 ? M.t3 : M.gold}` }}>
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:8 }}>
               <span style={{ fontWeight:600, fontSize:16, color:M.t1 }}>{p.label}</span>
-              <span style={{ fontFamily:MN, fontSize:20, color: i === 0 ? M.t3 : M.gold, fontWeight:700 }}>{p.price}</span>
+              <span style={{ fontFamily:MN, fontSize:20, color: i === 0 ? M.t3 : M.gold, fontWeight:300 }}>{p.price}</span>
             </div>
             <ul style={{ padding:0, listStyle:'none', margin:0 }}>{p.features.map((f, idx) => <li key={idx} style={{ fontSize:13, color:M.t2, padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>✦ {f}</li>)}</ul>
             {'note' in p && <div style={{ fontSize:11, color:M.green, marginTop:8 }}>⚡ {(p as { note: string }).note}</div>}
@@ -49,9 +49,9 @@ function SubTriptyque() {
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))', gap:16, marginBottom:32 }}>
         {ARCHITECTURE_PILLARS.map(p => (
           <MYNECard key={p.id} style={{ borderTop:`4px solid ${p.color}` }}>
-            <div style={{ fontFamily:MN, fontWeight:700, fontSize:20, color:p.color, marginBottom:2 }}>{p.label}</div>
+            <div style={{ fontFamily:MN, fontWeight:300, fontSize:20, color:p.color, marginBottom:2 }}>{p.label}</div>
             <div style={{ fontSize:12, color:M.t3, marginBottom:12 }}>{p.subtitle}</div>
-            <div style={{ fontFamily:MN, fontSize:12, color:M.gold, marginBottom:14, fontWeight:700 }}>{p.metric}</div>
+            <div style={{ fontFamily:MN, fontSize:12, color:M.gold, marginBottom:14, fontWeight:300 }}>{p.metric}</div>
             <p style={{ fontSize:13, color:M.t2, lineHeight:1.6, marginBottom:14 }}>{p.desc}</p>
             <div style={{ marginBottom:10 }}>
               <div style={{ fontSize:11, fontWeight:600, color:M.green, marginBottom:4 }}>Inputs</div>
@@ -75,9 +75,9 @@ function SubTriptyque() {
             { from:'MYNε', to:'ÆLYA', label:'Revenue 53 % → producteur', color:'#22c55e' },
           ].map((lk, i) => (
             <div key={i} style={{ display:'flex', alignItems:'center', gap:10, padding:'8px 12px', background:lk.color + '08', borderRadius:8, borderLeft:`3px solid ${lk.color}` }}>
-              <span style={{ fontFamily:MN, fontSize:12, color:lk.color, fontWeight:700, minWidth:60 }}>{lk.from}</span>
+              <span style={{ fontFamily:MN, fontSize:12, color:lk.color, fontWeight:300, minWidth:60 }}>{lk.from}</span>
               <span style={{ color:M.t3 }}>→</span>
-              <span style={{ fontFamily:MN, fontSize:12, color:lk.color, fontWeight:700, minWidth:60 }}>{lk.to}</span>
+              <span style={{ fontFamily:MN, fontSize:12, color:lk.color, fontWeight:300, minWidth:60 }}>{lk.to}</span>
               <span style={{ fontSize:12, color:M.t2, flex:1 }}>{lk.label}</span>
             </div>
           ))}

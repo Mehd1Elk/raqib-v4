@@ -6,7 +6,7 @@ import MYNECard from '../shared/MYNECard';
 import { PSY_CATEGORIES, PSY_OFFERS, PSY_TRANSFORMS, PSY_PRICES, PSY_PROTECTIONS } from '../shared/data';
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 const TABS = ['Catégories','Marketplace','T-Level Santé'];
@@ -20,7 +20,7 @@ function SubCategories() {
       <MYNECard style={{ marginBottom:16 }}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
           <span style={{ fontWeight:600, color:M.t1 }}>Revenus mensuels estimés</span>
-          <span style={{ fontFamily:MN, fontSize:24, color:M.green, fontWeight:700 }}>{totalEarn.toFixed(2)} €/mois</span>
+          <span style={{ fontFamily:MN, fontSize:24, color:M.green, fontWeight:300 }}>{totalEarn.toFixed(2)} €/mois</span>
         </div>
       </MYNECard>
       {PSY_CATEGORIES.map(c => (

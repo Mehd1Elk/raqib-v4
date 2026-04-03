@@ -8,7 +8,7 @@ import { T_LEVELS, TL_TRANSFORMS, A2A_STEPS, BURHAN_FEATURES, BURHAN_JURISDICTIO
 const TABS = ['T-Levels','Differential Privacy','A2A','BURHAN','MIZAN','Architecture','Web 4.0'];
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 function SubTLevels() {
@@ -26,7 +26,7 @@ function SubTLevels() {
       </div>
       <MYNECard style={{ marginBottom:24 }}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'start', flexWrap:'wrap', gap:12 }}>
-          <div><div style={{ fontFamily:MN, fontSize:18, fontWeight:700, color:t.color }}>{t.label}</div><div style={{ fontSize:12, color:M.t3, marginTop:2 }}>{t.meta}</div></div>
+          <div><div style={{ fontFamily:MN, fontSize:18, fontWeight:300, color:t.color }}>{t.label}</div><div style={{ fontSize:12, color:M.t3, marginTop:2 }}>{t.meta}</div></div>
           <Badge label={`Protection ${t.protection}%`} color={t.color} />
         </div>
         <p style={{ fontSize:13, color:M.t2, margin:'12px 0', lineHeight:1.6 }}>{t.desc}</p>
@@ -91,7 +91,7 @@ function SubDP() {
               <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
                 <span style={{ fontFamily:MN, fontSize:14, color:M.t2 }}>{v}</span>
                 <span style={{ fontFamily:MN, fontSize:10, color:M.t3 }}>→</span>
-                <span style={{ fontFamily:MN, fontSize:14, color:M.gold, fontWeight:700 }}>{noised}</span>
+                <span style={{ fontFamily:MN, fontSize:14, color:M.gold, fontWeight:300 }}>{noised}</span>
               </div>
               <div style={{ fontSize:10, color:M.t3, marginTop:4 }}>&#916; = {(+noised - v).toFixed(2)}</div>
             </MYNECard>
@@ -152,12 +152,12 @@ function SubMizan() {
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>MIZAN — La distribution est automatique. Elle ne peut pas mentir.</h2>
       <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Inscrit dans le smart contract Base L2, MIZAN distribue : 53% producteur, 11% plateforme, 36% pool écosystème.</p>
       <div style={{ display:'flex', gap:4, height:40, borderRadius:8, overflow:'hidden', marginBottom:24 }}>
-        {Object.values(D).map(d => <div key={d.label} style={{ flex:d.pct, background:d.color, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:12, fontWeight:700, color:'#000' }}>{d.pct}% {d.label}</div>)}
+        {Object.values(D).map(d => <div key={d.label} style={{ flex:d.pct, background:d.color, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontSize:12, fontWeight:300, color:'#000' }}>{d.pct}% {d.label}</div>)}
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:16, marginBottom:24 }}>
         {Object.values(D).map(d => (
           <MYNECard key={d.label} style={{ borderTop:`3px solid ${d.color}` }}>
-            <div style={{ fontFamily:MN, fontSize:24, color:d.color, fontWeight:700 }}>{d.pct}%</div>
+            <div style={{ fontFamily:MN, fontSize:24, color:d.color, fontWeight:300 }}>{d.pct}%</div>
             <div style={{ fontWeight:600, margin:'4px 0', color:M.t1 }}>{d.label}</div>
             <div style={{ fontSize:12, color:M.t2 }}>{d.desc}</div>
           </MYNECard>
@@ -187,7 +187,7 @@ function SubArch() {
     <div>
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:24, color:M.t1 }}>Architecture — 26 tables, 23 routes, 92 tests</h2>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(100px, 1fr))', gap:16, marginBottom:24 }}>
-        {stats.map(m => <div key={m.l} style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:32, color:M.gold, fontWeight:700 }}>{m.v}</div><div style={{ fontSize:11, color:M.t3 }}>{m.l}</div></div>)}
+        {stats.map(m => <div key={m.l} style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:32, color:M.gold, fontWeight:300 }}>{m.v}</div><div style={{ fontSize:11, color:M.t3 }}>{m.l}</div></div>)}
       </div>
       <h3 style={{ fontFamily:HD, marginBottom:12, color:M.t1 }}>API Endpoints</h3>
       <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13, marginBottom:24 }}>
@@ -212,7 +212,7 @@ function SubWeb4() {
       <div style={{ display:'flex', gap:2, marginBottom:24 }}>
         {WEB_ERAS.map(e => (
           <div key={e.era} style={{ flex:1, padding:16, background:M.bgCard, borderBottom:`3px solid ${e.color}`, textAlign:'center', borderRadius:'8px 8px 0 0' }}>
-            <div style={{ fontFamily:MN, fontSize:14, fontWeight:700, color:e.color }}>{e.era}</div>
+            <div style={{ fontFamily:MN, fontSize:14, fontWeight:300, color:e.color }}>{e.era}</div>
             <div style={{ fontSize:10, color:M.t3, margin:'4px 0' }}>{e.years}</div>
             <div style={{ fontSize:11, fontWeight:600, marginBottom:4, color:M.t1 }}>{e.paradigm}</div>
             <div style={{ fontSize:11, color:M.t2 }}>{e.desc}</div>

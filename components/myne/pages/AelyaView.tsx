@@ -8,7 +8,7 @@ import { AELYA_TOUCHPOINTS, CGU_CLAUSES, SDK_TIERS, DISTRIBUTION_RINGS, ROADMAP_
 const TABS = ['Agent Fiduciaire','CGU Scanner','Extension Navigateur','SDK','Distribution','Roadmap'];
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 function SubAgent() {
@@ -73,7 +73,7 @@ function SubCGU() {
         {done && (
           <>
             <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:16 }}>
-              <div style={{ fontFamily:MN, fontSize:40, fontWeight:700, color:M.red }}>{score}/10</div>
+              <div style={{ fontFamily:MN, fontSize:40, fontWeight:300, color:M.red }}>{score}/10</div>
               <div><div style={{ fontWeight:600, color:M.red }}>RISQUE ÉLEVÉ</div><div style={{ fontSize:12, color:M.t3 }}>6 clauses analysées — 5 dangereuses ou risquées</div></div>
             </div>
             {CGU_CLAUSES.map((c, i) => (
@@ -128,7 +128,7 @@ console.log(consent.price)    // 0.025`;
           <MYNECard key={t.label} hover style={{ borderTop:`3px solid ${t.color}`, position:'relative' }}>
             {t.rec && <div style={{ position:'absolute', top:-10, right:16 }}><Badge label="RECOMMANDÉ" color={M.green} /></div>}
             <div style={{ fontWeight:600, fontSize:16, color:M.t1, marginBottom:4 }}>{t.label}</div>
-            <div style={{ fontFamily:MN, fontSize:28, color:t.color, fontWeight:700, marginBottom:4 }}>{t.price}{typeof t.price === 'number' ? ' €/mois' : ''}</div>
+            <div style={{ fontFamily:MN, fontSize:28, color:t.color, fontWeight:300, marginBottom:4 }}>{t.price}{typeof t.price === 'number' ? ' €/mois' : ''}</div>
             <div style={{ fontSize:11, color:M.t3, marginBottom:12 }}>{t.uam}</div>
             <ul style={{ padding:0, listStyle:'none', margin:'0 0 16px' }}>{t.features.map((f, i) => <li key={i} style={{ fontSize:12, color:M.t2, padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>&#10022; {f}</li>)}</ul>
             <button style={{ width:'100%', padding:'10px', background:t.color, color:'#000', border:'none', borderRadius:6, fontFamily:BD, fontSize:13, fontWeight:600, cursor:'pointer' }}>{t.cta}</button>
@@ -149,13 +149,13 @@ function SubDistribution() {
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>310 000 n&#339;uds à M24 — Zéro acquisition payante</h2>
       <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Quatre anneaux de distribution concentriques. CAC moyen {'<'} 0,10 €. La viralité organique du CGU Scanner alimente 65 % du volume.</p>
       <div style={{ display:'flex', gap:16, marginBottom:24, flexWrap:'wrap' }}>
-        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.gold, fontWeight:700 }}>310 000</div><div style={{ fontSize:11, color:M.t3 }}>n&#339;uds cibles M24</div></div>
-        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.green, fontWeight:700 }}>{'<'} 0,10 €</div><div style={{ fontSize:11, color:M.t3 }}>CAC moyen</div></div>
+        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.gold, fontWeight:300 }}>310 000</div><div style={{ fontSize:11, color:M.t3 }}>n&#339;uds cibles M24</div></div>
+        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.green, fontWeight:300 }}>{'<'} 0,10 €</div><div style={{ fontSize:11, color:M.t3 }}>CAC moyen</div></div>
       </div>
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:16 }}>
         {DISTRIBUTION_RINGS.map(r => (
           <MYNECard key={r.ring} hover style={{ borderTop:`3px solid ${r.color}` }}>
-            <div style={{ fontFamily:MN, fontSize:18, color:r.color, fontWeight:700 }}>Ring {r.ring}</div>
+            <div style={{ fontFamily:MN, fontSize:18, color:r.color, fontWeight:300 }}>Ring {r.ring}</div>
             <div style={{ fontWeight:600, marginBottom:4, color:M.t1 }}>{r.label}</div>
             <div style={{ fontSize:12, color:M.t2, marginBottom:8 }}>{r.ch}</div>
             <div style={{ display:'flex', gap:12 }}>

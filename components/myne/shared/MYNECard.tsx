@@ -17,9 +17,11 @@ export default function MYNECard({ children, style = {}, hover = false }: MYNECa
       onMouseLeave={() => setH(false)}
       style={{
         background: M.bgCard,
-        border: `1px solid ${h && hover ? M.gold + '60' : M.border}`,
-        borderRadius: 14,
-        padding: 24,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor: h && hover ? M.gold + '60' : M.border,
+        borderRadius: 10,
+        padding: 20,
         transition: 'border-color 0.3s, transform 0.3s',
         transform: h && hover ? 'translateY(-2px)' : 'none',
         ...style,

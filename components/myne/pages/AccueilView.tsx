@@ -21,7 +21,7 @@ function AnimCounter({ target, label }: { target: string; label: string }) {
   }, [target]);
   return (
     <div style={{ textAlign: 'center', padding: '0 20px', borderRight: `1px solid ${M.border}` }}>
-      <div ref={ref} style={{ fontFamily: MN, fontSize: 28, fontWeight: 700, color: M.gold }}>{val}</div>
+      <div ref={ref} style={{ fontFamily: MN, fontSize: 28, fontWeight: 300, color: M.gold }}>{val}</div>
       <div style={{ fontFamily: BD, fontSize: 11, color: M.t3, marginTop: 4 }}>{label}</div>
     </div>
   );
@@ -55,17 +55,17 @@ export default function AccueilView() {
     <div style={{ padding: '48px 32px 60px', maxWidth: 1100, margin: '0 auto' }}>
       {/* Hero */}
       <div style={{ textAlign: 'center', padding: '60px 0 40px' }}>
-        <div style={{ fontFamily: HD, color: M.gold, fontSize: 'clamp(26px,4.5vw,42px)', lineHeight: 1.3, marginBottom: 16 }}>
+        <div style={{ fontFamily: HD, color: M.gold, fontSize: 'clamp(26px,4.5vw,42px)', lineHeight: 1.3, marginBottom: 16, fontStyle: 'italic' }}>
           Vos données valent 194&nbsp;€ par an.<br />Vous n&apos;en voyez pas un centime.
         </div>
         <div style={{ fontSize: 16, color: M.t2, maxWidth: 640, margin: '0 auto 28px', lineHeight: 1.7, fontFamily: BD }}>
           MYNε transforme votre empreinte numérique en actif monétisable. Vous décidez. Vous encaissez. L&apos;agent ÆLYA négocie à votre place.
         </div>
         <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
-          <button style={{ padding: '12px 24px', borderRadius: 8, fontFamily: BD, fontSize: 14, fontWeight: 600, cursor: 'pointer', border: 'none', background: M.gold, color: '#000' }}>
+          <button style={{ padding: '12px 24px', borderRadius: 8, fontFamily: BD, fontSize: 14, fontWeight: 400, cursor: 'pointer', border: 'none', background: M.gold, color: '#000' }}>
             Rejoindre la liste d&apos;attente
           </button>
-          <button style={{ padding: '12px 24px', borderRadius: 8, fontFamily: BD, fontSize: 14, fontWeight: 600, cursor: 'pointer', background: 'transparent', border: `1px solid ${M.gold}`, color: M.gold }}>
+          <button style={{ padding: '12px 24px', borderRadius: 8, fontFamily: BD, fontSize: 14, fontWeight: 400, cursor: 'pointer', background: 'transparent', border: `1px solid ${M.gold}`, color: M.gold }}>
             Voir comment ça marche →
           </button>
         </div>
@@ -81,7 +81,7 @@ export default function AccueilView() {
         {cards.map((c, i) => (
           <MYNECard key={i} style={{ borderLeft: `3px solid ${c.color}` }}>
             <div style={{ fontSize: 24, marginBottom: 8 }}>{c.icon}</div>
-            <div style={{ fontWeight: 600, fontSize: 18, marginBottom: 6, color: M.t1 }}>{c.title}</div>
+            <div style={{ fontWeight: 400, fontSize: 18, marginBottom: 6, color: M.t1 }}>{c.title}</div>
             <div style={{ fontSize: 14, color: M.t2 }}>{c.desc}</div>
           </MYNECard>
         ))}
@@ -108,7 +108,7 @@ export default function AccueilView() {
         <p style={{ fontFamily: HD, fontSize: 20, lineHeight: 1.7, marginBottom: 16, color: M.t1 }}>
           Ce n&apos;est pas un bug. C&apos;est un modèle économique basé sur votre ignorance.
         </p>
-        <p style={{ fontFamily: BD, fontWeight: 700, fontSize: 24, color: M.gold }}>MYNε est la correction.</p>
+        <p style={{ fontFamily: BD, fontWeight: 300, fontSize: 24, color: M.gold }}>MYNε est la correction.</p>
       </div>
 
       {/* Research card */}

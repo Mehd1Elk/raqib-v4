@@ -5,7 +5,7 @@ export const M = {
   bg: '#000000',
   bgCard: '#09090b',
   bgPanel: '#0f0f11',
-  border: '#1a1a2e',
+  border: '#1a1a1e',
   gold: '#E8E4DE',
   purple: '#a78bfa',
   green: '#22c55e',
@@ -14,9 +14,9 @@ export const M = {
   blue: '#3b82f6',
   rose: '#f43f5e',
   amber: '#f97316',
-  t1: '#f8fafc',
-  t2: '#94a3b8',
-  t3: '#64748b',
+  t1: '#F0EDE8',
+  t2: '#8A8A8A',
+  t3: '#555555',
 } as const;
 
 export const HD = "'Playfair Display', Georgia, serif";

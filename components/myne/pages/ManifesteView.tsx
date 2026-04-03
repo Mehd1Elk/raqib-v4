@@ -8,7 +8,7 @@ import { KELTA_INVERSIONS, VOL_LEGAL_ROWS, VOL_LEGAL_STATS, CONTRADICTIONS, SPOT
 const TABS = ['KELTA','Vol légal','Contradictions','Analogie Spotify','Modèles GAFAM','Économie intention','TAM','Équipe'];
 
 function Badge({ label, color }: { label: string; color: string }) {
-  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
+  return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:400, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
 }
 
 function AccordionItem({ item, idx, open, toggle }: { item: typeof CONTRADICTIONS[0]; idx: number; open: boolean; toggle: () => void }) {
@@ -139,10 +139,10 @@ function SubTam() {
       <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:24, color:M.t1 }}>Un marché de $10,8 milliards</h2>
       <table style={{ width:'100%', borderCollapse:'collapse', fontSize:13, marginBottom:32 }}>
         <thead><tr>{['Marché','Part','TAM','Logique'].map(h => <th key={h} style={{ padding:'10px 12px', textAlign:'left', borderBottom:`1px solid ${M.border}`, color: h === 'TAM' ? M.gold : M.t1, fontWeight:600 }}>{h}</th>)}</tr></thead>
-        <tbody>{TAM_DATA.map((t, i) => <tr key={i}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontWeight:500, color:M.t1 }}>{t.m}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{t.p}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:700 }}>{t.t}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontSize:12, color:M.t2 }}>{t.l}</td></tr>)}</tbody>
+        <tbody>{TAM_DATA.map((t, i) => <tr key={i}><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontWeight:500, color:M.t1 }}>{t.m}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.t2 }}>{t.p}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontFamily:MN, color:M.gold, fontWeight:300 }}>{t.t}</td><td style={{ padding:'10px 12px', borderBottom:`1px solid ${M.border}`, fontSize:12, color:M.t2 }}>{t.l}</td></tr>)}</tbody>
       </table>
       <MYNECard style={{ textAlign:'center', marginBottom:32 }}>
-        <div style={{ fontFamily:MN, fontSize:36, color:M.gold, fontWeight:700 }}>$10,8 Mds</div>
+        <div style={{ fontFamily:MN, fontSize:36, color:M.gold, fontWeight:300 }}>$10,8 Mds</div>
         <div style={{ fontSize:12, color:M.t3, marginTop:4 }}>TAM conservateur — part de marché réaliste à 5 ans</div>
       </MYNECard>
       <h3 style={{ fontFamily:HD, marginBottom:16, color:M.t1 }}>Scénarios de valorisation</h3>
@@ -167,14 +167,14 @@ function SubEquipe() {
       <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))', gap:16 }}>
         <MYNECard>
           <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:12 }}>
-            <div style={{ width:48, height:48, borderRadius:'50%', background:`${M.gold}30`, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontWeight:700, color:M.gold }}>MH</div>
+            <div style={{ width:48, height:48, borderRadius:'50%', background:`${M.gold}30`, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontWeight:300, color:M.gold }}>MH</div>
             <div><div style={{ fontFamily:HD, fontSize:20, color:M.t1 }}>Mehdi</div><div style={{ fontSize:14, fontWeight:600, color:M.gold }}>CEO &amp; Co-fondateur</div></div>
           </div>
           <p style={{ fontSize:14, color:M.t2 }}>Vision stratégique, corridor Afrique-MENA-EU, go-to-market, fundraising</p>
         </MYNECard>
         <MYNECard>
           <div style={{ display:'flex', alignItems:'center', gap:16, marginBottom:12 }}>
-            <div style={{ width:48, height:48, borderRadius:'50%', background:`${M.purple}30`, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontWeight:700, color:M.purple }}>JM</div>
+            <div style={{ width:48, height:48, borderRadius:'50%', background:`${M.purple}30`, display:'flex', alignItems:'center', justifyContent:'center', fontFamily:MN, fontWeight:300, color:M.purple }}>JM</div>
             <div><div style={{ fontFamily:HD, fontSize:20, color:M.t1 }}>Johan Delhomme Montorfano</div><div style={{ fontSize:14, fontWeight:600, color:M.purple }}>CTO &amp; Co-fondateur</div></div>
           </div>
           <p style={{ fontSize:14, color:M.t2, marginBottom:8 }}>Architecture T-Levels, Differential Privacy, smart contracts Base L2</p>
