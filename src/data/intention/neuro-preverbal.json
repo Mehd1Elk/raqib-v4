@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "titre": "Technologies de Lecture d'Intention Pré-Verbale et Interfaces Homme-Machine d'Intention",
+    "auteur": "HAMID — Recherche Eigen",
+    "date": "2026-04-03",
+    "sources": ["web", "scholar"]
+  },
+
+  "section_1_acquisition_qai_apple": {
+    "resume": "Apple a acquis Q.ai, startup israélienne de ~100 personnes, en janvier 2026, pour environ 2 milliards USD — sa deuxième plus grosse acquisition après Beats (3 milliards, 2014). Q.ai développe une technologie de 'silent speech' basée sur la détection optique de micro-mouvements faciaux.",
+    "date_acquisition": "29 janvier 2026",
+    "montant": {
+      "estimation_FT": "~2 milliards USD",
+      "estimation_Reuters": "~1.6 milliard USD (valorisation startup)",
+      "estimation_Wccftech": "2 milliards USD",
+      "confirmation_officielle": "Non divulgué par Apple",
+      "contexte": "2ème plus grosse acquisition Apple après Beats (3B$, 2014). Q.ai avait levé seulement 24.5M$ en VC (GV, Kleiner Perkins, Spark, Exor)"
+    },
+    "technologie": {
+      "domaine_principal": "Audio AI / Silent Speech Interface",
+      "description": "Détection optique de micro-mouvements faciaux pour décoder la parole silencieuse, les chuchotements, et les états physiologiques. Le système projette de la lumière cohérente sur des régions faciales sélectionnées, capture la lumière réfléchie, et analyse les changements temporels subtils dans les patterns de speckle résultants pour déterminer les micro-mouvements.",
+      "capacites": [
+        "Décodage de parole silencieuse (mouthed commands, whispered speech)",
+        "Interprétation de contenu AVANT vocalisation complète (pré-vocalisation)",
+        "Identification de l'identité du locuteur",
+        "Détection de l'état émotionnel",
+        "Mesure de la fréquence cardiaque (principes PPG optiques)",
+        "Mesure du rythme respiratoire",
+        "Sensibilité aux micro-mouvements de l'ordre de dizaines de microns"
+      ],
+      "signaux_captes": [
+        "Micro-mouvements faciaux optiques (speckle patterns)",
+        "Groupes musculaires articulatoires et pré-vocalisation",
+        "Dynamiques motrices et microvasculaires",
+        "Signaux PPG-like pour rythme cardiaque",
+        "Signaux respiratoires"
+      ],
+      "principe_technique": "Interface optique : wearable tête/oreille qui projette lumière cohérente → capture lumière réfléchie → analyse des patterns de speckle temporels → décodage des micro-mouvements musculaires faciaux",
+      "slogan_site_web": "In a world full of noise, we craft a new kind of quiet. Magic. Realised."
+    },
+    "brevets": {
+      "brevet_principal": {
+        "numero": "WO2024018400A2",
+        "titre": "Detecting and utilizing facial micromovements",
+        "description": "Système optique tête-porté projetant lumière cohérente sur régions faciales, capturant lumière réfléchie, analysant micro-mouvements pour décoder: mots non-verbaux, identité, état émotionnel, fréquence cardiaque, rythme respiratoire. Architecture avec modules d'interprétation séparés.",
+        "claims_cles": [
+          "Non-verbal speech recognition via facial skin micro-movements",
+          "Identity recognition",
+          "Emotional state detection",
+          "Heart rate via optical micromovement (PPG-like)",
+          "Respiration rate detection",
+          "Pre-vocalization muscle recruitment detection"
+        ]
+      },
+      "brevet_apple_eeg_airpods": {
+        "numero": "US 20230225659A1",
+        "titre": "Biosignal Sensing Device Using Dynamic Selection of Electrodes",
+        "description": "AirPods avec capteurs EEG, EMG, EOG intégrés dans les tips et housing. Sélection dynamique d'électrodes par AI selon l'oreille de l'utilisateur. Mesure activité cérébrale, mouvement musculaire, mouvement oculaire, conductance cutanée.",
+        "statut": "Brevet Apple séparé de Q.ai — complémentaire"
+      }
+    },
+    "equipe_fondatrice": {
+      "fondateur_ceo": {
+        "nom": "Aviad Maizels",
+        "parcours": "Fondateur de PrimeSense (2005) — acquis par Apple en 2013 pour ~350-400M$. PrimeSense a fourni la technologie du Microsoft Kinect Xbox 360 et est devenu le fondement du Face ID Apple. Maizels était Senior Director Hardware & Technology chez Apple avant de partir fonder Q.ai en 2022. Co-fondateur de Bionaut Labs (2016, micro-robots chirurgicaux)."
+      },
+      "co_fondateur_cto": {
+        "nom": "Yonatan Wexler",
+        "parcours": "Co-fondateur Q.ai. Citation lors du lancement (2022): 'I can't tell you anything about our work, but I bet it will leave you speechless.'"
+      },
+      "co_fondateur_science": {
+        "nom": "Dr. Avi Barliya",
+        "parcours": "Co-fondateur Q.ai. Expertise en machine learning et interaction homme-machine."
+      },
+      "taille_equipe": "~100 employés",
+      "localisation": "Tel Aviv, Israël",
+      "note_historique": "~30% de l'équipe mobilisée après le 7 octobre 2023, meetings interrompus par alertes de roquettes pendant des mois"
+    },
+    "integration_apple": {
+      "produits_cibles_speculatifs": {
+        "airpods": {
+          "probabilite": "Très haute",
+          "applications": "Micro-mouvements faciaux + indices respiratoires pour traduction, contrôle bruit, Siri silencieux. Complémentaire au brevet EEG AirPods existant."
+        },
+        "vision_pro": {
+          "probabilite": "Haute",
+          "applications": "Couche speech silencieuse, détection fatigue/surcharge cognitive pour adapter l'UI (moins de notifications, transitions plus douces)"
+        },
+        "iphone": {
+          "probabilite": "Moyenne-haute",
+          "applications": "Assistant sans voix en environnements bruyants/partagés. Potentiel remplacement Face ID par reconnaissance micro-mouvements musculaires"
+        },
+        "apple_watch": {
+          "probabilite": "Moyenne",
+          "applications": "Intégration données physiologiques (HR, respiration) déjà existantes"
+        },
+        "apple_ring": {
+          "probabilite": "Spéculatif",
+          "applications": "Brevets Apple existants sur bague smart, mais Q.ai est focalisé visage/tête"
+        },
+        "ai_pin_wearable": {
+          "probabilite": "Spéculatif",
+          "applications": "Reports suggèrent Apple développe un pin AI (~taille AirTag) avec caméras, speaker, microphones — objectif 20M unités"
+        }
+      },
+      "horizon_temporel": "Intégration produit attendue 2027-2028",
+      "declaration_apple": "Johnny Srouji (SVP Hardware Technologies): 'Q.ai is an extraordinary company that is at the forefront of innovative applications of imaging and machine learning.'"
+    },
+    "sources": [
+      "https://www.reuters.com/business/apple-acquires-audio-ai-startup-qai-2026-01-29/",
+      "https://www.theverge.com/news/870353/apple-q-ai-acquisition-silent-speech",
+      "https://wccftech.com/apple-makes-one-of-its-largest-ever-acquisitions-buys-the-israeli-machine-learning-firm-q-ai/",
+      "https://www.neurofounders.co/articles/will-apples-q-ai-acquisition-open-the-door-for-neuro",
+      "https://www.calcalistech.com/ctechnews/article/bygjgvkl11e",
+      "https://www.timesofisrael.com/apple-buys-israeli-startup-reportedly-for-2-billion-that-reads-facial-micro-movements/",
+      "https://finance.yahoo.com/news/apple-buys-secretive-ai-startup-131250217.html",
+      "https://eu.36kr.com/en/p/3662665488802693"
+    ]
+  },
+
+  "section_2_concurrents_neuro_intention": {
+    "entreprises": [
+      {
+        "nom": "CTRL-Labs (Meta Reality Labs)",
+        "statut": "Acquis par Meta (Facebook) en septembre 2019",
+        "prix_acquisition": "500M$ à 1B$ (sources divergent; porte-parole Meta: <1B$)",
+        "technologie": "Surface Electromyography (sEMG) — lecture des signaux électriques musculaires de l'avant-bras. 16 pods d'électrodes en or, sampling 2kHz. Décode les intentions de mouvement des doigts AVANT que le mouvement soit visible.",
+        "signaux_captes": ["EMG de surface (muscles avant-bras)", "Signaux alpha-motorneurones spinaux"],
+        "device": "Bracelet poignet (Meta Neural Band) — livré avec les Meta Ray-Ban Display. 4 tailles. 18h autonomie. IPX7.",
+        "precision": "Fonctionne sans calibration individuelle grâce à l'entraînement AI sur >200,000 participants. Reconnaissance de gestes multi-doigts. Peut détecter mouvements sub-visuels.",
+        "latence": "Signal détectable AVANT le mouvement visible du doigt. Latence système non publiée précisément mais réputée <50ms pour gestes simples.",
+        "applications": ["Contrôle lunettes AR Meta Ray-Ban Display", "Scroll, click, type via gestes subtils des doigts", "Accessibilité pour personnes à mobilité réduite", "Futur: écriture silencieuse, contrôle AR Orion"],
+        "funding_pre_acquisition": "67M$ levés (GV, Lux Capital, Amazon Alexa Fund, Spark Capital, Founders Fund)",
+        "fondateur": "Thomas Reardon (computational neuroscientist), dirige toujours le projet chez Meta",
+        "publication_majeure": "Nature (juillet 2025) — 'A generic non-invasive neuromotor interface for human-computer interaction'",
+        "produit_commercial": "Meta Neural Band — livré avec Meta Ray-Ban Display (~1000-1400$). Annoncé Meta Connect 2025.",
+        "sources": [
+          "https://about.fb.com/news/2025/09/meta-ray-ban-display-ai-glasses-emg-wristband/",
+          "https://spyglass.org/meta-mind-wristband-ctrl-labs/",
+          "https://www.uploadvr.com/meta-semg-wristband-gestures-nature-paper/"
+        ]
+      },
+      {
+        "nom": "Neuralink",
+        "statut": "Actif — essais cliniques humains en cours",
+        "technologie": "BCI invasif — implant cérébral N1 (The Link) avec électrodes flexibles haute densité insérées par robot chirurgical R1. Wireless. Actuellement 1024 électrodes, prévu 3000 en 2026, 25000+ en 2028.",
+        "signaux_captes": ["Signaux corticaux directs (cortex moteur, bientôt cortex de la parole et cortex visuel)"],
+        "device": "Implant N1 'Telepathy' — inséré chirurgicalement dans le cortex moteur. Transmission sans fil.",
+        "precision": "Très haute pour contrôle curseur, bras robotique, écriture. Résultats cliniques impressionnants — participants quadriplégiques contrôlent ordinateurs, TV, bras robotique, jeux 3D.",
+        "latence": "1-10ms pour signaux corticaux directs. Latence système totale incluant décodage: ~50-200ms selon complexité.",
+        "applications": ["Restauration contrôle digital pour paralysie (Telepathy)", "Restauration parole pour ALS (Speech decoding — prévu 2025-2026)", "Restauration vision (Blindsight — FDA breakthrough device)", "Contrôle bras robotique (étude CONVOY)", "Futur: amélioration cognitive, conditions psychiatriques"],
+        "funding_total": "~1.29B$ levés. Dernière levée: 600-650M$ en mai 2025.",
+        "valuation": "~9-9.6B$ (mai 2025)",
+        "fondateur": "Elon Musk (2016). DJ Seo (Président).",
+        "participants_humains": "~7-20 participants implantés (selon sources, mi-2025 à début 2026). Essais au Canada, UK, UAE approuvés.",
+        "objectif_2026": "Production >1000 puces. Implantation cortex parole. Premier Blindsight multi-implant.",
+        "sources": [
+          "https://www.ijpsjournal.com/article/Recent+Progress+on+Neuralinks+BrainComputer+Interfaces",
+          "https://sacra.com/c/neuralink/",
+          "https://www.youtube.com/watch?v=FASMejN_5gs"
+        ]
+      },
+      {
+        "nom": "Kernel",
+        "statut": "Actif — recherche neuroscience non-invasive",
+        "technologie": "Casque wearable combinant EEG et spectroscopie proche infrarouge (fNIRS/TD-fNIRS). Deux modèles: Kernel Flow (hémodynamique via lasers infrarouges) et Kernel Flux (activité neuronale temps réel).",
+        "signaux_captes": ["EEG (activité électrique cérébrale)", "fNIRS (flux sanguin cérébral, oxygénation)", "Hémodynamique corticale"],
+        "device": "Casque portable taille casque vélo. Non-invasif. Mesure en environnement naturel (pas besoin d'IRM/labo).",
+        "precision": "Recherche-grade pour suivi activité cérébrale. Utilisé dans essais cliniques (ketamine + Cybin, étude FDA approuvée). Brain Age Tracker.",
+        "latence": "Flow (hémodynamique): 2-6s (limité par couplage neurovasculaire). Flux (EEG): temps réel ~50-200ms.",
+        "applications": ["Neuroscience as a Service (NaaS)", "Brain age tracking", "Essais cliniques psychédéliques", "Recherche Alzheimer, vieillissement cérébral", "Méditation et santé mentale"],
+        "funding_total": "~107M$ (54M$ Bryan Johnson + 53M$ Series C 2020: General Catalyst, Khosla Ventures). Bryan Johnson investissement personnel total ~100M$.",
+        "fondateur": "Bryan Johnson (fondateur Braintree/Venmo, vendu à PayPal 2013). Contrôle quasi-total de l'equity.",
+        "sources": [
+          "https://techcrunch.com/2020/07/09/kernel-raises-53-million-for-its-non-invasive-neuroscience-as-a-service-technology/",
+          "https://www.forbes.com/sites/willyakowicz/2021/10/31/kernels-brain-imaging-helmet-approved-for-clinical-trial-on-patients-using-ketamine/",
+          "https://beingpatient.com/kernel-helmet-brain-health/"
+        ]
+      },
+      {
+        "nom": "Emotiv",
+        "statut": "Actif — EEG grand public et recherche",
+        "technologie": "Casques EEG sans fil portables. Modèle phare: EPOC X (14 canaux). Électrodes sèches ou humides.",
+        "signaux_captes": ["EEG (14 canaux EPOC X)", "Détection états attentionnels", "Mouvements oculaires (EOG)"],
+        "device": "Casque sans fil léger. EPOC X (14 canaux, recherche). Insight (5 canaux, consommateur). MN8 (2 canaux, in-ear).",
+        "precision": "EPOC: reconnaissance clignement 75.6%, attention/méditation ~60.5%, eye state ~89.5%. Validé dans >4000 études. Comparable aux systèmes cliniques pour ERPs.",
+        "latence": "EEG standard: ~50-200ms selon tâche de classification.",
+        "applications": ["Recherche neuroscience (>4000 publications)", "BCI contrôle", "Détection somnolence conducteur (92% accuracy)", "Neurofeedback", "Interface cerveau-ordinateur", "Applications éducatives"],
+        "funding_total": "~5.7M$ levés (seed + debt). Bootstrapped majoritairement. Dernière: 3.9M$ dette en 2023.",
+        "fondateur": "Tan Le et Nam Do (2011, Sydney Australie)",
+        "modele_economique": "Vente hardware (299-999$) + licences logicielles + API",
+        "sources": [
+          "https://www.emotiv.com/blogs/news/eeg-headset-for-research",
+          "https://www.cbinsights.com/company/emotiv-systems/financials",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC4806709/"
+        ]
+      },
+      {
+        "nom": "NextMind (acquis par Snap)",
+        "statut": "Acquis par Snap Inc. en mars 2022. Produit headband discontinué.",
+        "prix_acquisition": "Non divulgué",
+        "technologie": "BCI visuelle non-invasive basée sur EEG. Décode l'activité cérébrale liée à l'attention visuelle (potentiels évoqués visuels). Machine learning pour traduire signaux cérébraux en commandes en quelques secondes.",
+        "signaux_captes": ["EEG (potentiels évoqués visuels steady-state / SSVEP)", "Attention visuelle focalisée"],
+        "device": "Headband compact, intégrable dans le strap d'un casque XR. Dev kit $399.",
+        "precision": "Permettait sélection d'objets virtuels par focus visuel. Précision limitée par signal EEG à travers le crâne.",
+        "latence": "Quelques secondes pour commandes basiques (sélection UI). Loin du temps réel sub-seconde pour contrôle fin.",
+        "applications": ["Contrôle AR/VR hands-free par pensée", "Gaming", "R&D Snap Spectacles lunettes AR"],
+        "funding_pre_acquisition": "Non divulgué publiquement",
+        "fondateur": "Sid Kouider (neuroscientifique, Paris)",
+        "equipe": "~20 employés, restés au bureau Paris post-acquisition",
+        "note": "Produit headband discontinué après acquisition. Technologie intégrée dans R&D Spectacles Snap.",
+        "sources": [
+          "https://observer.com/2022/03/snap-acquire-nextmind-brain-computer-interface-metaverse/",
+          "https://www.roadtovr.com/snap-bci-next-mind-acquisition/",
+          "https://www.cbinsights.com/research/snap-acquires-nextmind-nextmind-competitors-ctrl-labs-muse-neurable-neurosky/"
+        ]
+      },
+      {
+        "nom": "Paradromics",
+        "statut": "Actif — BCI haute bande passante, essais cliniques prévus 2026",
+        "technologie": "BCI invasif haute densité (Connexus® DDI). Implant cortical avec >10,000 électrodes par module. Fully implantable, wireless. Record industrie: >200 bits/seconde avec 56ms latence système.",
+        "signaux_captes": ["Signaux corticaux directs haute résolution"],
+        "device": "Connexus® Direct Data Interface — implant cortical. FDA Breakthrough Device Designation (2023).",
+        "precision": "Record SONIC benchmark: >200 bps (20x plus rapide que Neuralink initial, 100-200x plus rapide que Synchron). Dépasse le débit de la parole humaine transcrite (~40 bps).",
+        "latence": "56ms latence système totale à 200+ bps. 11ms à 100+ bps. Mesuré 10 mois post-implantation.",
+        "applications": ["Communication assistive pour paralysie sévère (ALS, lésion moelle)", "Restauration parole", "Futur: douleur chronique, troubles de l'humeur"],
+        "funding_total": "~121M$ (Series B 2025: NEOM Investment Fund. Series A 2023: 33M$ Prime Movers Lab. 15M$ NIH/DARPA. 20M$ seed.)",
+        "valuation": "~500M$ (estimation Neurofounders 2026)",
+        "fondateur": "Matt Angle, PhD (neuroscience, Stanford)",
+        "siege": "Austin, Texas",
+        "sources": [
+          "https://www.paradromics.com/news/paradromics-raises-33-million-in-funding-achieves-breakthrough-medical-device-designation-from-fda",
+          "https://www.cbinsights.com/company/paradromics/financials",
+          "https://www.paradromics.com/blog/bci-benchmarking"
+        ]
+      },
+      {
+        "nom": "Synchron",
+        "statut": "Actif — BCI vasculaire, le plus proche d'approbation PMA (FDA)",
+        "technologie": "BCI endovasculaire Stentrode™. Implant inséré via cathéter dans les vaisseaux sanguins du cerveau (pas de chirurgie ouverte). Interface avec cortex moteur à travers les parois vasculaires.",
+        "signaux_captes": ["Signaux neuronaux via parois vasculaires (cortex moteur)"],
+        "device": "Stentrode™ — stent endovasculaire avec électrodes. Procédure cathéter (pas de craniotomie). Transmission sans fil.",
+        "precision": "Plus faible que BCI corticaux directs (~1-2 bps rapporté). Suffisant pour contrôle digital basique (clics, navigation, texting).",
+        "latence": "Plus élevée que implants corticaux directs. Adapté pour contrôle digital basique, pas pour contrôle moteur fin.",
+        "applications": ["Contrôle mains-libres appareils digitaux pour paralysie sévère", "Compatible avec Apple Switch Control", "Navigation web, texting, smart home"],
+        "funding_total": "~345M$ (Series D 2025: 200M$ Double Point Ventures. Series C 2022: 75M$ ARCH Partners, Gates, Bezos. Series B 2021: 40M$ Khosla. Series A 2017: 10M$)",
+        "valuation": "~1B$ (2025)",
+        "fondateur": "Thomas Oxley, MD, PhD (spin-out University of Melbourne)",
+        "essais_cliniques": "Essai de faisabilité en cours aux US. Plus proche BCI d'approbation PMA FDA.",
+        "sources": [
+          "https://neuronewsinternational.com/synchron-raises-us200-million-in-series-d-financing-to-advance-bci-technology/",
+          "https://www.forbes.com/sites/naveenrao/2025/11/15/full-circle-synchrons-200-million-signals-revolution-by-evolution/",
+          "https://www.bloomberg.com/news/articles/2025-11-06/neuralink-rival-synchron-raises-200-million-for-brain-implant"
+        ]
+      },
+      {
+        "nom": "OpenBCI",
+        "statut": "Actif — open source, niche recherche/makers",
+        "technologie": "Plateforme EEG/EMG/ECG open source basée sur Arduino + chip ADS1299 (Texas Instruments). Boards low-cost pour acquisition biosignaux.",
+        "signaux_captes": ["EEG (8-16 canaux)", "EMG (muscles)", "ECG (cœur)", "Compatible tout type d'électrode"],
+        "device": "OpenBCI Board (8 ou 16 canaux) + casque imprimé 3D (Ultracortex). Bluetooth. SD card. Open source software GUI.",
+        "precision": "Validé scientifiquement dans de nombreuses études. Qualité comparable aux systèmes cliniques low-end. Précision dépend de l'application et du setup utilisateur.",
+        "latence": "Standard EEG: ~50-200ms selon traitement. Dépend du pipeline logiciel choisi.",
+        "applications": ["Recherche BCI open source", "Prototypage", "Éducation neuroscience", "Collaboration avec Valve pour casque VR BCI", "Communauté makers/hackers", "Détection émotion expérimentale"],
+        "funding_total": "~2-3.6M$ (Kickstarter + convertible notes. re.Mind Capital, BITKRAFT, NaHCO3)",
+        "fondateur": "Conor Russomanno et Joel Murphy",
+        "modele": "Open source hardware + logiciel. Board ~300$ (8 canaux). Communauté contributeurs.",
+        "sources": [
+          "https://en.wikipedia.org/wiki/OpenBCI",
+          "https://www.opensourceimaging.org/project/openbci/",
+          "https://www.cbinsights.com/company/openbci/financials"
+        ]
+      },
+      {
+        "nom": "Muse (InteraXon)",
+        "statut": "Actif — leader EEG méditation grand public",
+        "technologie": "Bandeau EEG 4 canaux pour méditation guidée par neurofeedback. Électrodes frontales et auriculaires. Nouveaux modèles intègrent PPG et accéléromètre.",
+        "signaux_captes": ["EEG (4 canaux)", "PPG (fréquence cardiaque)", "Accéléromètre (mouvement)", "Gyroscope"],
+        "device": "Bandeau Muse 2, Muse S (sommeil), Muse 2+ (nouvelles lunettes sport avec EEG intégré). $249-399.",
+        "precision": "Études indépendantes: amélioration mindfulness après sessions courtes, 20% amélioration qualité sommeil avec usage régulier. Précision EEG inférieure aux systèmes cliniques mais suffisante pour méditation/neurofeedback.",
+        "latence": "Temps réel pour neurofeedback méditation (~100-300ms). Non conçu pour contrôle BCI rapide.",
+        "applications": ["Méditation guidée par neurofeedback", "Suivi qualité sommeil", "Gestion stress", "Recherche brain health (partenariat cliniques)", "Nouvelles lunettes sport EEG"],
+        "funding_total": "~30.4M$ historique + 60M$ levée récente (octobre 2025). Total ~90M$+",
+        "fondateur": "Ariel Garten (Toronto, Canada, fondée 2007)",
+        "investisseurs": "BDC Capital, OMERS Ventures, Felicis Ventures, Horizons Ventures, A-Grade (Ashton Kutcher)",
+        "employes": "~71",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Muse_(headband)",
+          "https://techcrunch.com/2022/08/11/maker-of-the-muse-meditation-headband-raises-9-5m/",
+          "https://www.trysignalbase.com/news/funding/interaxon-inc-raises-60-million-for-neurotechnology-advancement"
+        ]
+      },
+      {
+        "nom": "Neurable",
+        "statut": "Actif — leader BCI non-invasif consommateur (casque audio EEG)",
+        "technologie": "EEG dry-electrode intégré dans casque audio premium (Master & Dynamic). 12 capteurs EEG tissu souple. AI propriétaire pour monitoring cognitif temps réel.",
+        "signaux_captes": ["EEG dry-electrode (12 canaux)", "Ondes alpha (8-12 Hz) et theta (4-8 Hz)", "P300 potentiels évoqués", "Corrélats de charge cognitive et fatigue"],
+        "device": "MW75 Neuro ($699) et MW75 Neuro LT ($499, sept 2025). Casque audio over-ear avec EEG intégré. Partnership Master & Dynamic.",
+        "precision": "~80-90% de la qualité EEG clinique (Quick20). Détection focus ~80% accuracy. Validé contre sham feedback (effet réel, pas placebo). Entraîné sur >7000 sessions EEG.",
+        "latence": "Temps réel pour monitoring cognitif (~100-300ms). Focus sessions, cognitive snapshot, mental recovery scores.",
+        "applications": ["Monitoring focus/fatigue pour productivité", "Cognitive Snapshot (2 min)", "Mental Recovery scoring", "Cognitive Strain tracking", "Futur: neuroadaptive environments", "Enterprise pilots"],
+        "funding_total": "65M$ (Series A 35M$ déc 2025, led by Spectrum Moonshot Fund. Précédent: 13M$. Total rounds: M Ventures, Point72 Ventures, Innospark)",
+        "fondateur": "Dr. Ramses Alcaide, CEO & Co-Founder (PhD, recherche depuis ~2011)",
+        "siege": "Boston, MA",
+        "sources": [
+          "https://www.neurofounders.co/articles/neurable-is-embedding-eegs-into-everyday-headphones",
+          "https://www.neurable.com/blog-posts/neurable-introduces-mw75-neuro-lt-lighter-more-accessible-just-as-groundbreaking",
+          "https://finance.yahoo.com/news/neurable-raises-35-million-series-140000162.html"
+        ]
+      }
+    ],
+    "tableau_comparatif_funding": {
+      "header": ["Entreprise", "Statut", "Funding Total", "Valuation", "Type BCI"],
+      "data": [
+        ["Neuralink", "Actif", "~1.29B$", "~9.6B$", "Invasif cortical"],
+        ["Synchron", "Actif", "~345M$", "~1B$", "Invasif vasculaire"],
+        ["Paradromics", "Actif", "~121M$", "~500M$", "Invasif cortical HD"],
+        ["Kernel", "Actif", "~107M$", "N/A", "Non-invasif (EEG+fNIRS)"],
+        ["Muse (InteraXon)", "Actif", "~90M$+", "N/A", "Non-invasif EEG consommateur"],
+        ["Neurable", "Actif", "65M$", "N/A", "Non-invasif EEG consommateur"],
+        ["CTRL-Labs/Meta", "Acquis 2019", "67M$ pre-acq", "500M$-1B$ acquisition", "Non-invasif EMG"],
+        ["Emotiv", "Actif", "~5.7M$", "N/A", "Non-invasif EEG"],
+        ["OpenBCI", "Actif", "~2-3.6M$", "N/A", "Non-invasif EEG open source"],
+        ["NextMind/Snap", "Acquis 2022", "N/A", "N/A (acquis)", "Non-invasif EEG visuel"]
+      ]
+    },
+    "sources_section": [
+      "https://www.neurofounders.co/articles/bci-enters-a-new-funding-stage"
+    ]
+  },
+
+  "section_3_interfaces_intention_comparatif": {
+    "description": "Comparatif des interfaces homme-machine classées par type de signal capté, de l'intention post-verbale à l'intention pré-consciente.",
+    "interfaces": [
+      {
+        "interface": "Smartphone (touch)",
+        "signal_capte": "Tap, scroll, type, pression",
+        "latence_signal": "50-200ms",
+        "valeur_informationnelle": "Faible — attention post-verbale, intention déjà formulée et exécutée",
+        "invasivite": "Nulle",
+        "cout_dispositif": "200-1500$",
+        "maturite": "Maximale — dominante depuis 2007",
+        "exemples": "iPhone, Android, tablettes",
+        "limites": "Requiert mains libres, attention visuelle, intention déjà consciente et verbalisée"
+      },
+      {
+        "interface": "Voix (Alexa, Siri, Google)",
+        "signal_capte": "Parole vocalisée, prosodie, commandes vocales",
+        "latence_signal": "300-800ms (reconnaissance + traitement NLP)",
+        "valeur_informationnelle": "Moyenne — intention verbalisée, post-consciente. Limitée par ambiguïté linguistique.",
+        "invasivite": "Nulle",
+        "cout_dispositif": "30-300$ (enceintes smart)",
+        "maturite": "Haute — grand public depuis ~2014 (Alexa)",
+        "exemples": "Siri, Alexa, Google Assistant, Copilot",
+        "limites": "Pas de confidentialité, inutilisable en public/bruyant, nécessite vocalisation"
+      },
+      {
+        "interface": "Silent Speech (Q.ai / AlterEgo)",
+        "signal_capte": "Micro-mouvements faciaux, contractions mâchoire/gorge, pré-vocalisation musculaire",
+        "latence_signal": "100-500ms estimé",
+        "valeur_informationnelle": "Haute — intention pré-vocale. Décode la parole AVANT qu'elle soit émise.",
+        "invasivite": "Faible (wearable tête/oreille/gorge)",
+        "cout_dispositif": "Intégré dans devices existants (AirPods, lunettes) — coût marginal",
+        "maturite": "Pré-commerciale — Q.ai acquis 2026, AlterEgo en prototype",
+        "exemples": "Q.ai (Apple), AlterEgo (MIT/Boston startup), Intelligent Throat (Nature 2026)",
+        "limites": "Vocabulaire limité pour l'instant, nécessite entraînement AI, sensible au placement"
+      },
+      {
+        "interface": "Geste spatial (Vision Pro, Quest)",
+        "signal_capte": "Position main, regard (eye tracking), gestes pinch/swipe",
+        "latence_signal": "100-300ms",
+        "valeur_informationnelle": "Moyenne-haute — intention spatiale et attentionnelle",
+        "invasivite": "Faible (casque porté)",
+        "cout_dispositif": "3500$ (Vision Pro), 500$ (Quest 3)",
+        "maturite": "Émergente — Vision Pro 2024, Quest depuis 2019",
+        "exemples": "Apple Vision Pro, Meta Quest, HoloLens",
+        "limites": "Fatigue bras, pas de précision fine, dépend du champ visuel"
+      },
+      {
+        "interface": "EMG poignet (Meta Neural Band)",
+        "signal_capte": "EMG surface avant-bras, signaux alpha-motorneurones spinaux",
+        "latence_signal": "<50ms pour gestes simples. Signal détecté AVANT le mouvement visible.",
+        "valeur_informationnelle": "Haute — intention pré-motrice. Lit le signal nerveux avant que le doigt ne bouge.",
+        "invasivite": "Nulle (bracelet poignet)",
+        "cout_dispositif": "Inclus dans Meta Ray-Ban Display (~1000-1400$). Futur standalone estimé 200-400$.",
+        "maturite": "Commerciale depuis septembre 2025 (Meta Ray-Ban Display). Recherche depuis 2019.",
+        "exemples": "Meta Neural Band, anciennement CTRL-Labs prototype",
+        "limites": "Limité aux gestes main/doigt, pas d'accès cognition/émotion, nécessite port bracelet"
+      },
+      {
+        "interface": "Wearable physiologique (montre/bague)",
+        "signal_capte": "PPG (HR, HRV, SpO2), température cutanée, accéléromètre, GSR potentiel",
+        "latence_signal": "Continue (monitoring permanent). Pas de commande directe — signaux d'état.",
+        "valeur_informationnelle": "Moyenne — intention physiologique, état interne (stress, fatigue, excitation). Proxy indirect d'intention.",
+        "invasivite": "Nulle",
+        "cout_dispositif": "200-800$ (Apple Watch, Oura Ring, Ultrahuman)",
+        "maturite": "Haute — Apple Watch depuis 2015, smart rings depuis ~2018",
+        "exemples": "Apple Watch, Oura Ring Gen 4, Samsung Galaxy Ring, Ultrahuman Ring Air",
+        "limites": "Pas de contrôle direct, signaux lents, corrélation faible avec intention spécifique"
+      },
+      {
+        "interface": "Bague intention (concept ḤIRZ / EMG doigt)",
+        "signal_capte": "EMG doigt (muscles intrinsèques main), GSR, température, IMU, PPG",
+        "latence_signal": "10-50ms estimé pour EMG doigt. Études montrent FMG peut précéder EMG de ~263ms.",
+        "valeur_informationnelle": "Haute — intention pré-motrice au niveau digital. Lit les contractions musculaires intrinsèques de la main.",
+        "invasivite": "Nulle (bague au doigt)",
+        "cout_dispositif": "200-400$ estimé",
+        "maturite": "Conceptuelle/R&D — études académiques 2023-2025 (HD-EMG doigt, Ring-a-Pose, Wrist2Finger). Pas de produit commercial EMG-ring encore.",
+        "exemples": "Concept ḤIRZ (Eigen), Ring-a-Pose (Cornell), études HD-sEMG doigt",
+        "limites": "Miniaturisation EMG dans form factor bague = défi majeur. Rapport signal/bruit sur doigt inférieur au poignet. Nécessite AI avancée.",
+        "etudes_cles": [
+          {
+            "titre": "Ring-a-Pose: A Ring for Continuous Hand Pose Tracking",
+            "source": "Cornell/ACM 2024",
+            "resultat": "Bague acoustique: 90.60% accuracy micro-gestes (user-independent), 99.27% (user-dependent)",
+            "doi": "10.48550/arXiv.2404.12980"
+          },
+          {
+            "titre": "Wrist2Finger: Sensing Fingertip Force",
+            "source": "ACM 2025",
+            "resultat": "Système ring-watch: MPJPE 0.57cm, force estimation r=0.76 avec un seul canal EMG poignet + IMU bague",
+            "doi": "10.1145/3746059.3747767"
+          },
+          {
+            "titre": "Wearable Ring-Shaped Biomedical Device",
+            "source": "MDPI Biosensors 2024",
+            "resultat": "Bague captant ECG, PPG, GSR et mouvement simultanément sur le doigt. Détection stress physique/mental validée.",
+            "doi": "10.3390/bios14040205"
+          },
+          {
+            "titre": "Force Myography vs EMG for Motion Intention Detection",
+            "source": "IEEE Sensors Letters 2024",
+            "resultat": "FMG (force myography piézoélectrique) détecte l'intention de mouvement 263±90ms AVANT l'EMG dans les scénarios sit-to-stand. SNR supérieur (53dB vs 39dB).",
+            "doi": "10.1109/LSENS.2024.3417278"
+          }
+        ]
+      },
+      {
+        "interface": "BCI non-invasif (EEG)",
+        "signal_capte": "EEG (ondes alpha, beta, theta, gamma, P300, SSVEP, imagerie motrice)",
+        "latence_signal": "50-300ms selon modalité (SSVEP plus rapide, imagerie motrice plus lente)",
+        "valeur_informationnelle": "Très haute — intention pré-consciente. Accès direct à l'activité cérébrale sous-jacente.",
+        "invasivite": "Faible (casque/bandeau sur tête ou dans oreilles)",
+        "cout_dispositif": "300-5000$ (consommateur: 249-699$, recherche: 1000-5000$)",
+        "maturite": "Moyenne — recherche mature depuis 50 ans, produits consommateurs depuis ~2010 (Emotiv, Muse, Neurable)",
+        "exemples": "Emotiv EPOC X, Muse 2/S, Neurable MW75 Neuro, OpenBCI Ultracortex",
+        "limites": "Signal faible à travers crâne, artefacts mouvement, confort limité pour port prolongé, résolution spatiale faible"
+      },
+      {
+        "interface": "BCI invasif",
+        "signal_capte": "Signaux corticaux directs (potentiels d'action, LFP)",
+        "latence_signal": "1-10ms signal brut. 11-56ms système total (Paradromics best). 50-200ms avec décodage complexe.",
+        "valeur_informationnelle": "Maximale — accès direct aux intentions motrices, parole, vision au niveau neuronal",
+        "invasivite": "Chirurgie (craniotomie pour Neuralink/Paradromics) ou cathéter vasculaire (Synchron)",
+        "cout_dispositif": "50,000$+ (chirurgie + dispositif + suivi)",
+        "maturite": "Émergente — premiers essais humains 2024-2026 (Neuralink, Synchron, Paradromics prévu 2026)",
+        "exemples": "Neuralink N1 Telepathy, Paradromics Connexus, Synchron Stentrode, BrainGate (recherche)",
+        "limites": "Chirurgie, risques infection/rejet, coût, réservé pathologies sévères pour l'instant. Questions éthiques majeures."
+      }
+    ],
+    "classement_par_proximite_intention": [
+      {"rang": 1, "interface": "BCI invasif", "distance_a_intention": "Minimale — cortex direct"},
+      {"rang": 2, "interface": "BCI non-invasif EEG", "distance_a_intention": "Faible — à travers le crâne"},
+      {"rang": 3, "interface": "EMG poignet/bague", "distance_a_intention": "Faible-moyenne — signal nerveux pré-moteur"},
+      {"rang": 4, "interface": "Silent Speech optique", "distance_a_intention": "Moyenne — pré-vocalisation musculaire"},
+      {"rang": 5, "interface": "Geste spatial", "distance_a_intention": "Moyenne — intention spatiale consciente"},
+      {"rang": 6, "interface": "Wearable physiologique", "distance_a_intention": "Moyenne-haute — proxy état interne"},
+      {"rang": 7, "interface": "Voix", "distance_a_intention": "Haute — intention verbalisée"},
+      {"rang": 8, "interface": "Touch smartphone", "distance_a_intention": "Maximale — intention exécutée"}
+    ],
+    "sources_section": [
+      "https://eureka.patsnap.com/report-comparing-brain-computer-interface-latency-across-various-communication-channels",
+      "https://www.paradromics.com/blog/bci-benchmarking"
+    ]
+  },
+
+  "section_4_bague_comme_interface": {
+    "marche_smart_ring": {
+      "taille_marche_2025": "Croissance 195% US jan-sept 2025 vs 2024. Revenu US smart rings: 217M$ (9 premiers mois 2025). Smart rings = 75% du revenu total fitness trackers (vs 46% en 2024).",
+      "projection": "Marché smart ring global projeté ~34B$ d'ici 2032",
+      "leader": "Oura détient >80% du marché mondial smart ring (IDC)"
+    },
+    "oura_ring": {
+      "modele_actuel": "Oura Ring Gen 4",
+      "signaux": ["PPG (HR, HRV, SpO2) — Smart Sensing multi-LED", "Température cutanée", "Accéléromètre + gyroscope", "Détection sommeil avancée (stages, latence)", "AFib detection (paid add-on)", "Pregnancy insights", "Cycle tracking"],
+      "prix": "299-499$ selon finition + abonnement 5.99$/mois (69.99$/an)",
+      "revenue_2024": "~500M$ (2x vs 2023)",
+      "revenue_2025_estime": "~1B$ (objectif CEO)",
+      "revenue_2026_projection": "~1.5-2B$ (CEO projection CNBC)",
+      "funding_total": "Dernière levée 900M$ (oct 2025, Fidelity). Précédent: 200M$ Series D (déc 2024).",
+      "valuation": "~11B$ (2025)",
+      "unites_vendues": ">5.5M depuis 2015. >2.5M depuis juin 2024 seul.",
+      "modele_economique": "80% hardware + 20% abonnement. ~2M abonnés payants.",
+      "note_juridique": "Oura a gagné un procès ITC contre Ultrahuman et RingConn pour violation de brevet design (2025). Ultrahuman retiré du marché US. RingConn a négocié une licence.",
+      "sources": [
+        "https://www.entrepreneur.com/business-news/smart-ring-maker-oura-expects-sales-to-grow-to-2b-next-year/499465",
+        "https://www.cnbc.com/2025/11/11/smart-ring-maker-oura-expects-close-to-2-billion-in-2026-sales-ceo.html",
+        "https://sacra.com/c/oura/"
+      ]
+    },
+    "comparatif_bagues": [
+      {
+        "nom": "Oura Ring Gen 4",
+        "capteurs": "PPG (multi-LED Smart Sensing), température, accéléromètre, gyroscope",
+        "prix": "349-499$",
+        "abonnement": "5.99$/mois",
+        "batterie": "~5-7 jours",
+        "poids": "~3-4g",
+        "materiaux": "Titane",
+        "forces": "Meilleure précision HR, écosystème riche, AFib detection, 80% part de marché",
+        "faiblesses": "Abonnement obligatoire pour fonctions avancées, se raye facilement (silver)"
+      },
+      {
+        "nom": "Samsung Galaxy Ring",
+        "capteurs": "PPG (2 photodiodes, 2 LEDs, 2 lasers rouge/IR), température cutanée, accéléromètre",
+        "prix": "399$",
+        "abonnement": "Aucun (pour l'instant; futur Galaxy AI potentiellement payant)",
+        "batterie": "~6-7 jours + étui de charge 361mAh",
+        "poids": "2.3-3g",
+        "materiaux": "Titane Grade",
+        "forces": "Pas d'abonnement, intégration Galaxy ecosystem, étui de charge pratique, Galaxy AI Energy Score",
+        "faiblesses": "Incompatible iPhone, moins de capteurs que Oura Gen 4, écosystème Samsung requis pour features complètes"
+      },
+      {
+        "nom": "RingConn Gen 2",
+        "capteurs": "PPG, accéléromètre, température cutanée",
+        "prix": "299$",
+        "abonnement": "Aucun",
+        "batterie": "10-12 jours + étui 150 jours",
+        "poids": "2-3g",
+        "epaisseur": "2mm (plus fine du marché)",
+        "materiaux": "Alliage titane aérospatial + résine époxy médicale",
+        "forces": "Plus fine/légère, détection apnée du sommeil (90.7% accuracy), batterie record, pas d'abonnement, prix agressif",
+        "faiblesses": "Écosystème logiciel moins riche, a dû négocier licence Oura (brevet ITC)",
+        "note": "HR/SpO2 accuracy revendiquée 98%"
+      },
+      {
+        "nom": "Ultrahuman Ring Air",
+        "capteurs": "PPG infrarouge + rouge + vert, température non-contact medical-grade, accéléromètre 6 axes",
+        "prix": "349$",
+        "abonnement": "Aucun (PowerPlugs tiers optionnels payants)",
+        "batterie": "~5-7 jours",
+        "poids": "2.4-3.6g",
+        "materiaux": "Titane",
+        "forces": "Pas d'abonnement, API ouverte, PowerPlugs extensibles, compatible Android + iOS",
+        "faiblesses": "Retiré du marché US (décision ITC violation brevet Oura, oct 2025). Disponible hors US.",
+        "funding": "Levée significative (Ultrahuman est une startup indienne bien financée)"
+      }
+    ],
+    "brevets_apple_smart_ring": {
+      "historique": "Apple dépose des brevets sur bague smart de manière 'consistante' depuis des années. Premières références dès 2007. Tour fournisseur Apple 2013 suggérant développement bague.",
+      "brevets_cles": [
+        "Bague avec contrôle par geste (finger gestures pour contrôler appareils Apple)",
+        "Bague comme talisman de sécurité (passage checkpoints, interaction avec écrans externes sans écran propre)",
+        "Capteurs biométriques (HR, SpO2, température)",
+        "NFC / Apple Pay via bague",
+        "Interaction avec Apple Health ecosystem"
+      ],
+      "statut_developpement": "Un 'industry insider' (fév 2025) affirme que Apple a fait des 'progrès considérables' sur sa bague smart, et que la 'commercialisation semble imminente'. Cependant, experts estiment que la complexité pourrait repousser le lancement vers 2026-2030.",
+      "leaker": "yeux1122 suggère qu'Apple continue la recherche sur une smart ring (2025)",
+      "sources": [
+        "https://vertu.com/lifestyle/apple-smart-ring-patents-2025/",
+        "https://appleinsider.com/inside/apple-ring",
+        "https://www.techradar.com/health-fitness/will-we-get-an-apple-ring-in-2026-heres-what-the-rumors-say-so-far"
+      ]
+    },
+    "faisabilite_emg_sur_doigt": {
+      "verdict": "Faisable en R&D, mais défis majeurs pour miniaturisation commerciale.",
+      "etudes_cles": [
+        {
+          "titre": "Motion Intention Estimation of Finger Motions with HD-EMG",
+          "auteurs": "Bandara, Chongzaijiao, Arata (2023)",
+          "resultat": "HD-sEMG (64 canaux) sur dos de la main permet classification de 6 mouvements de doigts avec haute précision via filtres Gabor et ECOC.",
+          "implication": "Les muscles intrinsèques de la main produisent des signaux EMG décodables, mais nécessitent actuellement haute densité de capteurs."
+        },
+        {
+          "titre": "Finger Movement Recognition via HD-EMG",
+          "auteurs": "Scientific Data 2022",
+          "resultat": "Base de données 64 canaux HD-sEMG (dos main + 8 canaux avant-bras). 12 mouvements de doigts, 20 participants. Mouvements index, majeur, annulaire sont spatialement indépendants en PCA. L'auriculaire corrèle avec l'annulaire.",
+          "implication": "Signal EMG intrinsèque main est riche mais nécessite haute résolution. Miniaturisation dans une bague = défi de ratio signal/bruit."
+        },
+        {
+          "titre": "Ring-a-Pose: A Ring for Continuous Hand Pose Tracking",
+          "auteurs": "Yu et al., Cornell 2024",
+          "resultat": "Bague avec capteur ACOUSTIQUE (pas EMG) — tracking continu de la pose de main. 90.60% accuracy micro-gestes (user-independent). Fonctionne sur n'importe quel doigt.",
+          "implication": "Approche alternative à l'EMG pour bague: sensing acoustique. Potentiellement plus adapté au form factor bague."
+        },
+        {
+          "titre": "Wrist2Finger: Ring-Watch Wearable System",
+          "auteurs": "Xiao et al., ACM 2025",
+          "resultat": "Système hybrid bague (IMU) + montre (1 canal EMG). Dual-branch transformer avec cross-modal attention. MPJPE 0.57cm, force estimation r=0.76. Le thumb et le majeur sont les mieux estimés.",
+          "implication": "Un canal EMG au poignet + IMU bague = approximation viable. Pas besoin d'EMG directement dans la bague."
+        },
+        {
+          "titre": "Force Myography (FMG) vs EMG for Intention Detection",
+          "auteurs": "Schaumann et al., IEEE 2024",
+          "resultat": "Capteurs FMG piézoélectriques 3D-printed détectent intention de mouvement 263±90ms AVANT l'EMG, avec SNR supérieur (53dB vs 39dB).",
+          "implication": "La FMG (force myography) pourrait être plus adaptée qu'EMG pour form factor bague: mesure déformation mécanique, pas signal électrique. Plus robuste, moins sensible au placement."
+        },
+        {
+          "titre": "Wearable Ring-Shaped Biomedical Device (ECG+PPG+GSR)",
+          "auteurs": "Volpes et al., MDPI Biosensors 2024",
+          "resultat": "Prototype bague captant ECG, PPG, GSR et mouvement simultanément sur le doigt. Extraction HR, HRV, PAT, SpO2, rythme respiratoire. Détection changements repos/stress validée.",
+          "implication": "Preuve de concept que ECG+PPG+GSR sont faisables dans un form factor bague. GSR (galvanic skin response) = signal émotionnel/stress accessible sur le doigt."
+        },
+        {
+          "titre": "sEMG-based Gesture-Free Hand Intention Recognition",
+          "auteurs": "Li et al., arXiv 2024",
+          "resultat": "Reconnaissance d'intentions de main SANS geste visible, via EMG de surface et contraction isométrique. Permet communication secrète (réunions, sport d'équipe) sans mouvement détectable.",
+          "implication": "Concept fondamental pour bague d'intention: détecter ce que la main VEUT faire sans qu'elle ne bouge."
+        }
+      ],
+      "defis_miniaturisation": [
+        "Le doigt a peu de muscles intrinsèques vs l'avant-bras",
+        "Le ratio signal/bruit EMG sur le doigt est inférieur au poignet",
+        "La surface de contact électrode-peau est très limitée dans un anneau",
+        "Le mouvement de la bague sur le doigt crée des artefacts",
+        "La consommation énergétique des capteurs EMG active vs la taille batterie d'une bague",
+        "Alternative prometteuse: FMG (force myography piézoélectrique) ou sensing acoustique plutôt qu'EMG classique"
+      ]
+    },
+    "concept_hirz": {
+      "nom": "ḤIRZ (حرز)",
+      "prononciation": "hirz",
+      "signification_originale": "Amulette protectrice dans la tradition islamique. Petit étui contenant des textes sacrés, porté sur le corps (souvent au doigt ou au cou) pour protection spirituelle. Tradition yéménite, maghrébine, ottomane.",
+      "concept_eigen": {
+        "description": "La bague ḤIRZ d'Eigen est un concept de bague smart qui réunit la dimension protectrice de l'amulette traditionnelle (حرز) avec la capacité d'interface d'intention pré-verbale. C'est une bague qui 'protège' son porteur en lisant ses intentions physiologiques et en agissant comme gardien intelligent.",
+        "double_fonction": {
+          "amulette_protectrice": [
+            "Monitoring continu de l'état physiologique (HR, HRV, température, GSR)",
+            "Détection précoce de stress, danger, anomalie cardiaque",
+            "Alertes de sécurité discrètes (vibration)",
+            "Lien avec contacts d'urgence",
+            "Détection chute, perte de connaissance",
+            "Protection données biométriques (identification)"
+          ],
+          "interface_intention": [
+            "Détection intention pré-motrice via EMG/FMG/acoustique au doigt",
+            "Commandes silencieuses et invisibles (contractions isométriques)",
+            "Interface discrète avec smartphone, lunettes AR, maison connectée",
+            "Communication secrète par micro-gestes codés",
+            "Contrôle d'urgence sans mouvement visible"
+          ]
+        },
+        "signaux_captes_cible": ["EMG ou FMG (intention pré-motrice)", "GSR (réponse galvanique — émotion/stress)", "Température cutanée", "PPG (HR, HRV, SpO2)", "IMU 6 axes (mouvement, geste)", "Potentiellement: acoustic sensing (Ring-a-Pose approach)"],
+        "specifications_cibles": {
+          "latence_intention": "10-50ms (EMG/FMG pré-moteur)",
+          "latence_physiologique": "Continue (monitoring permanent)",
+          "autonomie": ">7 jours (objectif comparable RingConn Gen 2)",
+          "poids": "<3g",
+          "epaisseur": "<3mm",
+          "materiau": "Titane + céramique",
+          "connectivite": "BLE 5.x",
+          "prix_cible": "200-400$",
+          "pas_abonnement": true
+        },
+        "positionnement": "La ḤIRZ n'est ni un simple tracker santé (Oura), ni un BCI invasif (Neuralink). C'est le chaînon manquant: une interface d'intention pré-verbale portée au doigt, enveloppée dans la métaphore culturelle de l'amulette protectrice. Elle lit ce que votre corps VEUT faire avant que vous ne le fassiez.",
+        "avantage_culturel": "Le port d'une bague protectrice (حرز، خاتم) est profondément ancré dans les cultures arabe, islamique et méditerranéenne. La ḤIRZ transforme un objet culturel familier en interface technologique de pointe, éliminant la friction d'adoption.",
+        "vision": "De l'amulette protectrice au guardian angel digital: la bague qui comprend votre intention avant que vous ne parliez."
+      }
+    },
+    "sources_section": [
+      "https://www.mdpi.com/2079-6374/14/4/205",
+      "https://arxiv.org/html/2404.12980v1",
+      "https://dl.acm.org/doi/10.1145/3746059.3747767",
+      "https://ieeexplore.ieee.org/document/10568330/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9243097/",
+      "https://arxiv.org/abs/2411.14131"
+    ]
+  }
+}

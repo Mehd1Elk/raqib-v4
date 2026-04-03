@@ -294,7 +294,7 @@ export default function Dashboard() {
             <div style={{ fontFamily: MN, fontSize: 8, color: '#22C55E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>PARADIGME</div>
             <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence de l&apos;Intention</div>
             <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,240,224,0.55)', marginBottom: 10 }}>
-              Bloomberg des Données · 10 onglets · Bourse des Intentions · Corridor Flows
+              Bloomberg des Données · 16 axes · Bourse des Intentions · Les Pionniers · Diaspora
             </div>
             <div style={{ fontFamily: MN, fontSize: 8, color: '#22C55E', letterSpacing: 3, textTransform: 'uppercase' }}>
               MODULE INTENTION

@@ -1,0 +1,1386 @@
+{
+  "agent": "YASSIR",
+  "mission": "Analyse approfondie des projets blockchain data et monétisation de l'attention",
+  "date_analyse": "2026-04-03",
+  "nombre_initiatives": 11,
+  "categories": ["BLOCKCHAIN DATA", "ATTENTION MONETIZATION"],
+  "synthese_globale": {
+    "destruction_valeur_moyenne": "-98.2% depuis ATH tous projets confondus",
+    "seul_succes_mass_market": "Brave Browser (100M MAU) — tous les autres échouent à franchir le seuil critique",
+    "pattern_commun": "ICO massive → pic spéculatif 2021 → effondrement 97-99% → pivot ou agonie",
+    "blockchain_reellement_necessaire": "3/11 projets (Oasis, Secret Network, Brave/BAT) — les autres font du blockchain-washing partiel ou total",
+    "lecon_pour_myne": "La monétisation des données NE NÉCESSITE PAS un token pour fonctionner. Le token est un frein à l'adoption. Brave réussit MALGRÉ le token, pas GRÂCE à lui."
+  },
+  "initiatives": [
+    {
+      "numero": 13,
+      "nom": "Oasis Network",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Oasis Network (anciennement Oasis Labs)",
+        "pays": "Singapour",
+        "annee_creation": 2018,
+        "fondateurs": "Dawn Song",
+        "formation_fondateurs": "Professeure titulaire UC Berkeley, spécialiste cybersécurité, co-créatrice de Keystone Enclave (TEE open-source RISC-V). ~90 publications académiques.",
+        "siege": "Singapour (R&D: San Francisco/Berkeley)",
+        "forme_juridique": "Oasis Protocol Foundation (fondation)",
+        "description_courte": "Blockchain Layer 1 confidential computing pour smart contracts privés et IA préservant la vie privée, basée sur les Trusted Execution Environments (TEE)."
+      },
+      "these": {
+        "probleme_cible": "Les blockchains publiques exposent toutes les données (états, transactions, inputs). Impossible de traiter des données sensibles (santé, finance, IA) sur blockchain sans couche de confidentialité.",
+        "solution_proposee": "Layer 1 avec confidential computing natif via TEE. Smart contracts 'Sapphire' (EVM confidentiel) où les inputs, outputs et états restent chiffrés. ROFL framework pour calcul off-chain vérifiable.",
+        "proposition_valeur": "Trustless AWS pour l'IA privée — permettre le calcul sur données chiffrées sans tiers de confiance.",
+        "these_investissement_originale": "La privacy-preserving computation sera la couche fondamentale du Web3 et de l'IA décentralisée. Oasis sera le 'cloud confidentiel' décentralisé.",
+        "marche_cible_tam": "Confidential computing: $54B d'ici 2028 (MarketsandMarkets). Privacy-preserving AI: segment émergent multi-milliards.",
+        "positionnement_vs_concurrents": "Concurrent direct de Secret Network (TEE aussi), Phala Network, Aleph Zero. Différenciation : EVM-compatible (Sapphire), credentials académiques de Dawn Song, ROFL pour calcul off-chain."
+      },
+      "architecture": {
+        "stack_technique": "Couche consensus (Byzantine Fault Tolerant) + couche ParaTime (runtime parallèles). Sapphire = EVM confidentiel. Cipher = WASM confidentiel. ROFL = Runtime OFfchain Logic via TEE.",
+        "blockchain_utilisee": "Blockchain propre (Oasis Network), Cosmos SDK modifié",
+        "role_du_token": "ROSE : paiement gas, staking pour validation, paiement des services de calcul confidentiel, délégation. SemiLiquid staking permet de staker tout en gardant la liquidité.",
+        "mecanisme_consensus": "Tendermint BFT modifié, Proof of Stake avec séparation consensus/compute",
+        "interoperabilite": "Bridges Ethereum, compatibilité EVM via Sapphire. IBC Cosmos en développement.",
+        "composants_cles": [
+          "Sapphire (Confidential EVM)",
+          "ROFL (Runtime Offchain Logic via TEE)",
+          "Cipher (Confidential WASM)",
+          "SemiLiquid Staking",
+          "Keystone Enclave (TEE open-source RISC-V)"
+        ],
+        "blockchain_necessaire_ou_washing": "PARTIELLEMENT JUSTIFIÉE. La blockchain apporte la décentralisation du trust pour le calcul confidentiel — pas de tiers unique qui contrôle le TEE. Mais la plupart des use cases (IA privée) pourraient fonctionner avec un réseau TEE sans blockchain. Le token ROSE ajoute une couche de friction inutile pour beaucoup d'applications enterprise. Score: 6/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Infrastructure Protocol (Layer 1)",
+        "sources_revenus": [
+          "Gas fees en ROSE sur le réseau",
+          "Frais de calcul confidentiel (ROFL)",
+          "Staking rewards (inflation)",
+          "Ecosystem grants pour attirer développeurs"
+        ],
+        "tokenomics": {
+          "token": "ROSE",
+          "supply_max": "10 milliards",
+          "supply_circulante": "7.55 milliards (75.5%)",
+          "prix_actuel_usd": "$0.01 (avril 2026)",
+          "ath_usd": "$0.5973 (15 janvier 2022)",
+          "chute_depuis_ath_pct": "-98.3%",
+          "market_cap_actuel": "~$75M",
+          "volume_24h": "$4-11M (variable, pics à $334M lors de narratifs privacy/AI)",
+          "utilite_reelle_du_token": "Utilité moyenne. Gas fees + staking sont réels mais le réseau a peu d'activité organique. La majorité de la valeur vient de la spéculation sur le narratif privacy/AI.",
+          "token_speculatif_ou_utile": "70% SPÉCULATIF / 30% UTILE. Le token pump sur les narratifs (privacy coins, AI) puis retombe. L'utilité organique (gas fees réels) est négligeable comparée au volume de trading."
+        },
+        "modele_b2b_b2c": "B2D (Business-to-Developer) principalement. Les développeurs construisent sur Oasis, les entreprises déploient des apps confidentielles. Aucun revenu B2C direct."
+      },
+      "financement": {
+        "total_leve": "~$45M+ (estimé)",
+        "rounds": [
+          "Seed: a16z crypto, Polychain Capital, Binance Labs",
+          "Series A: non public",
+          "Token sale: prix variable selon période"
+        ],
+        "investisseurs_notables": [
+          "a16z crypto",
+          "Polychain Capital",
+          "Binance Labs",
+          "Pantera Capital",
+          "Dragonfly Capital",
+          "Electric Capital"
+        ],
+        "ico_details": "Token sale privé multi-phases, pas d'ICO publique traditionnelle",
+        "valorisation_derniere_connue": "Peak market cap $2.07B (ATH). Actuellement ~$75M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Faible — quelques projets construisent sur ROFL (Zeph, WT3) mais pas de masse critique",
+        "metriques_cles": [
+          "ROFL mainnet lancé juillet 2025",
+          "105% de hausse en janvier 2026 sur narratif privacy/AI",
+          "$26M en Open Interest (pic)",
+          "Classé #200-312 par market cap"
+        ],
+        "partenariats_majeurs": [
+          "Collaboration avec projets DeFi confidentiels",
+          "Intégration avec l'écosystème Cosmos (en cours)"
+        ],
+        "adoption_reelle": "FAIBLE. Le réseau existe techniquement mais l'adoption réelle (transactions, TVL, dApps actives) reste marginale. La plupart de l'activité est spéculative.",
+        "developpeurs_actifs": "Communauté de développeurs modeste, principalement alimentée par les grants de la fondation",
+        "tvl_si_defi": "Non significatif"
+      },
+      "autopsie": {
+        "etat_actuel": "Techniquement solide mais commercialement faible. Le produit (confidential computing décentralisé) est pertinent mais n'a pas trouvé son product-market fit. La concurrence de Secret Network, Phala, et des solutions cloud TEE centralisées (Azure Confidential, AWS Nitro) est rude.",
+        "causes_succes_ou_echec": [
+          "FORCE : Crédibilité académique de Dawn Song, recherche de classe mondiale",
+          "FORCE : Architecture TEE solide et innovante",
+          "FAIBLESSE : Pas de killer app — aucune application phare n'utilise massivement Oasis",
+          "FAIBLESSE : Le narratif 'privacy blockchain' pump et dump cycliquement",
+          "FAIBLESSE : Enterprise clients préfèrent Azure Confidential Computing (centralisé mais fiable)"
+        ],
+        "destruction_valeur": "-98.3% depuis ATH. De $2.07B market cap à $75M. Destruction massive pour les investisseurs retail.",
+        "pivots_effectues": [
+          "De 'privacy-first cloud' généraliste vers focus spécifique sur l'IA confidentielle (ROFL)",
+          "Introduction du SemiLiquid staking pour améliorer la tokenomics"
+        ],
+        "signaux_dalerte": [
+          "Volume de trading concentré sur Binance — risque de wash trading",
+          "Aucune application phare avec utilisateurs réels massifs",
+          "Dépendance aux grants de la fondation pour l'écosystème"
+        ],
+        "verdict": "SURVIVANT TECHNOLOGIQUE — techniquement impressionnant mais commercialement stagnant. Le narratif privacy/AI lui offre des sursis spéculatifs mais l'adoption organique reste absente."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "MOYENNE. L'approche TEE pour le calcul sur données sensibles est directement pertinente pour MYNε (données psychiatriques). Mais le modèle token-centric est un anti-pattern.",
+        "ce_que_myne_doit_copier": "L'utilisation des TEE pour le calcul sur données de santé chiffrées. La narrative 'compute-to-data' (les données ne bougent pas, le calcul vient à elles) est exactement ce dont NOOS/MYNε a besoin.",
+        "ce_que_myne_doit_eviter": "Le token comme pré-requis pour accéder aux services. Les pharmas et hôpitaux ne veulent pas acheter du ROSE pour utiliser un service de données. Facturation en EUR/USD, pas en token.",
+        "avantage_myne": "MYNε a un vertical précis (psychiatrie/observance) avec des acheteurs identifiés (pharma, assureurs). Oasis n'a pas de vertical — c'est une infra horizontale sans client captif.",
+        "score_pertinence_0_10": 6
+      }
+    },
+    {
+      "numero": 14,
+      "nom": "iExec / RLC",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "iExec Blockchain Tech",
+        "pays": "France",
+        "annee_creation": 2016,
+        "fondateurs": "Gilles Fedak (INRIA, PhD Paris-Sud) + Haiwu He (Académie des Sciences de Chine)",
+        "formation_fondateurs": "Fedak : Chercheur permanent INRIA, 15 ans de recherche en calcul distribué et HPC, ~90 publications, Best Paper Award x2, Chinese Academy PIFI Award 2015. He : PhD en informatique, spécialiste du calcul distribué.",
+        "siege": "Lyon, France",
+        "forme_juridique": "SAS française + fondation",
+        "description_courte": "Marketplace décentralisée de cloud computing sur Ethereum. Fournit accès à la puissance de calcul, datasets et applications via un réseau décentralisé de providers."
+      },
+      "these": {
+        "probleme_cible": "Le cloud computing est dominé par 3 oligopoles (AWS, Azure, GCP) qui fixent les prix, contrôlent les données et verrouillent les clients. Les développeurs n'ont pas d'alternative décentralisée.",
+        "solution_proposee": "Marketplace où les providers de calcul louent leur puissance inutilisée, les users paient en RLC, et les smart contracts garantissent l'exécution. TEE pour la confidentialité.",
+        "proposition_valeur": "AWS décentralisé — cloud computing sans vendor lock-in, avec privacy via TEE, et marketplace open pour monétiser ses serveurs.",
+        "these_investissement_originale": "Le marché du cloud computing ($1.6T d'ici 2030) est mûr pour la décentralisation. iExec sera le 'Airbnb du cloud'.",
+        "marche_cible_tam": "Cloud computing: $679B (2024) → $1.6T (2030). DePIN (Decentralized Physical Infrastructure): $10B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent de Golem (GNT), Akash Network, Render Network, Phala. Différenciation : ancrage INRIA/recherche française, TEE intégré, partenariats enterprise (IBM, Intel, Alibaba Cloud)."
+      },
+      "architecture": {
+        "stack_technique": "Marketplace sur Ethereum (smart contracts Solidity). PoCo (Proof of Contribution) consensus pour vérifier l'exécution. TEE (Intel SGX) pour calcul confidentiel. Oracle Factory pour données off-chain.",
+        "blockchain_utilisee": "Ethereum (smart contracts) + sidechain iExec pour scalabilité",
+        "role_du_token": "RLC (Run on Lots of Computers) : paiement des services de calcul, staking comme dépôt de garantie pour les workers, gouvernance, incentives pour providers.",
+        "mecanisme_consensus": "PoCo (Proof of Contribution) — protocole de consensus propre pour vérifier que le calcul a été correctement exécuté",
+        "interoperabilite": "ERC-20 sur Ethereum, compatible avec tout l'écosystème ETH/DeFi",
+        "composants_cles": [
+          "iExec Marketplace (offre/demande de calcul)",
+          "PoCo (Proof of Contribution)",
+          "TEE via Intel SGX",
+          "Oracle Factory",
+          "iExec SDK pour développeurs",
+          "Confidential Computing toolkit"
+        ],
+        "blockchain_necessaire_ou_washing": "PARTIELLEMENT JUSTIFIÉE. La blockchain sert réellement pour le settlement des transactions de calcul (qui a calculé quoi, paiement automatique). Le PoCo protocol est intelligent. Mais le token RLC comme monnaie obligatoire est un frein — les entreprises veulent payer en EUR, pas en RLC. Score: 5/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Marketplace Protocol (B2B/B2D)",
+        "sources_revenus": [
+          "Commission sur les transactions de calcul via la marketplace",
+          "Vente de services enterprise (Confidential Computing)",
+          "Token appreciation (treasury)",
+          "Grants et partenariats"
+        ],
+        "tokenomics": {
+          "token": "RLC",
+          "supply_max": "87 millions (FIXE — aucune inflation, tous tokens mintés à l'ICO)",
+          "supply_circulante": "~87M (100% en circulation)",
+          "prix_actuel_usd": "$0.41 (avril 2026)",
+          "ath_usd": "$15.51",
+          "chute_depuis_ath_pct": "-97.4%",
+          "market_cap_actuel": "~$30-37M",
+          "volume_24h": "$5.4M",
+          "utilite_reelle_du_token": "Utilité RÉELLE mais limitée. RLC sert véritablement à payer le calcul sur la marketplace. Mais le volume de transactions réelles (non-spéculatives) est minuscule comparé au volume de trading.",
+          "token_speculatif_ou_utile": "60% SPÉCULATIF / 40% UTILE. L'offre fixe (87M, pas d'inflation) est un point positif rare dans le crypto. Mais l'utilisation organique reste faible."
+        },
+        "modele_b2b_b2c": "B2D (Business-to-Developer) + B2B enterprise. Pas de composante B2C."
+      },
+      "financement": {
+        "total_leve": "~$12M (ICO) + financements INRIA/académiques non quantifiés",
+        "rounds": [
+          "ICO: Avril 2017 — 10,000 BTC ($12M+) en moins de 3 heures"
+        ],
+        "investisseurs_notables": [
+          "WiSEED (Fedak au board)",
+          "Investisseurs ICO (pas de VC majeurs connus)",
+          "INRIA (support recherche)"
+        ],
+        "ico_details": "69% des tokens vendus à l'ICO. 17.2% équipe/advisors. 6.9% contingency. 6.9% développement.",
+        "valorisation_derniere_connue": "Market cap peak estimé ~$1B+. Actuellement ~$35M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Faible — utilisation organique de la marketplace limitée",
+        "metriques_cles": [
+          "Partenariats IBM, Intel, Alibaba Cloud (mais impact commercial flou)",
+          "100% supply en circulation (pas de dilution future)",
+          "SDK actif, documentation solide"
+        ],
+        "partenariats_majeurs": [
+          "IBM",
+          "Alibaba Cloud",
+          "Intel"
+        ],
+        "adoption_reelle": "FAIBLE. Les partenariats avec IBM et Intel sont impressionnants sur le papier mais n'ont pas généré d'adoption massive. Le cloud décentralisé reste une niche face à AWS/Azure/GCP.",
+        "developpeurs_actifs": "Communauté de développeurs modeste, principalement en France",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "Survivant chronique — 10 ans d'existence sans atteindre le product-market fit de masse. Le produit est techniquement valide mais le marché ne demande pas massivement du cloud décentralisé. Les entreprises choisissent AWS par commodité.",
+        "causes_succes_ou_echec": [
+          "FORCE : Expertise technique exceptionnelle (15 ans de recherche INRIA)",
+          "FORCE : Supply fixe — pas de dilution tokenomique",
+          "FORCE : Partenariats prestigieux (IBM, Intel)",
+          "FAIBLESSE : Le marché du cloud décentralisé ne décolle pas",
+          "FAIBLESSE : Pas de killer app visible — qui utilise vraiment iExec au quotidien?",
+          "FAIBLESSE : Localisation France = désavantage pour lever du VC américain"
+        ],
+        "destruction_valeur": "-97.4% depuis ATH. Les holders ICO de 2017 qui ont gardé ont perdu massivement.",
+        "pivots_effectues": [
+          "Du cloud computing généraliste vers la confidential computing (TEE)",
+          "Ajout de l'Oracle Factory pour diversifier",
+          "Pivot vers le narratif DePIN/AI"
+        ],
+        "signaux_dalerte": [
+          "10 ans d'existence sans adoption mass-market",
+          "Volume de la marketplace (transactions de calcul réelles) non publié — probablement faible",
+          "Concurrence féroce de projets mieux financés (Akash, Render)"
+        ],
+        "verdict": "PROJET ZOMBIE RESPECTABLE — techniquement solide, équipe crédible, mais incapable de trouver un marché. Le problème n'est pas le produit, c'est que le marché du cloud décentralisé est structurellement limité."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "MOYENNE-HAUTE. L'approche confidential computing et l'ancrage académique/INRIA sont des modèles pour MYNε. Mais le modèle marketplace token-only est un échec commercial à éviter.",
+        "ce_que_myne_doit_copier": "L'ancrage recherche académique (INRIA → crédibilité scientifique). Le supply fixe sans inflation (si MYNε a un token). Le TEE pour le traitement confidentiel des données de santé.",
+        "ce_que_myne_doit_eviter": "Le modèle marketplace horizontale sans vertical précis. 10 ans sans PMF est un signal que la proposition de valeur est trop abstraite. MYNε doit rester hyper-vertical (psychiatrie d'abord).",
+        "avantage_myne": "MYNε a un marché captif (données psychiatriques RWE, acheteurs pharma identifiés). iExec n'a jamais eu de client captif — n'importe qui peut choisir AWS à la place.",
+        "score_pertinence_0_10": 7
+      }
+    },
+    {
+      "numero": 15,
+      "nom": "Itheum",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "PIVOTÉ",
+      "identite": {
+        "nom_complet": "Itheum Protocol",
+        "pays": "Émirats Arabes Unis (Dubai)",
+        "annee_creation": 2016,
+        "fondateurs": "Équipe anonyme/semi-anonyme (pas de fondateur star identifié)",
+        "formation_fondateurs": "Background non documenté — absence de crédibilité académique ou industrielle visible.",
+        "siege": "Dubai, UAE",
+        "forme_juridique": "Fondation/DAO",
+        "description_courte": "Plateforme de Data NFT permettant aux utilisateurs de tokeniser, posséder et monétiser leurs données via des NFT sur MultiversX (ex-Elrond) et multi-chain."
+      },
+      "these": {
+        "probleme_cible": "Les utilisateurs génèrent des données massives (jeux, musique, santé) mais n'en captent aucune valeur. Les plateformes Web2 monopolisent la monétisation.",
+        "solution_proposee": "Transformer les données en Data NFTs — tokens non-fongibles représentant la propriété et les droits de licence sur un dataset. Marketplace décentralisée pour acheter/vendre ces Data NFTs.",
+        "proposition_valeur": "'Hyper-Digital, AGI-Ready Data' — infrastructure pour que l'IA puisse acheter des données directement aux producteurs via blockchain.",
+        "these_investissement_originale": "Le marché des données ($200B+) est mûr pour la décentralisation via les NFT. Itheum sera le marketplace des Data NFTs.",
+        "marche_cible_tam": "Big Data & Analytics: $346B (2030). Data brokerage: $200B+. AI training data: $50B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent d'Ocean Protocol, Streamr. Différenciation : Data NFTs (approche NFT vs token ERC-20), omnichain, focus gaming/musique."
+      },
+      "architecture": {
+        "stack_technique": "Data NFTs sur MultiversX + bridges Solana, Sui, Base. Data Coalition DAOs pour la gouvernance collective. BiTz XP points + Liveliness scores pour la réputation.",
+        "blockchain_utilisee": "MultiversX (primaire), Solana, Sui, Base (omnichain)",
+        "role_du_token": "ITHEUM : gouvernance, staking pour Liveliness score, paiement sur marketplace, récompenses utilisateurs",
+        "mecanisme_consensus": "Hérite du consensus MultiversX (Secure Proof of Stake)",
+        "interoperabilite": "Omnichain : MultiversX, Solana, Sui, Base. Bridges cross-chain.",
+        "composants_cles": [
+          "Data NFTs (tokenisation des données)",
+          "Data DEX (marketplace)",
+          "Data Coalition DAOs (gouvernance collective)",
+          "BiTz XP (points de réputation)",
+          "Liveliness Score (engagement on-chain)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING SÉVÈRE. Transformer des données en NFT ne résout aucun problème réel de data monetization. Le problème n'est pas la propriété on-chain mais la qualité des données, le consentement et les acheteurs. Un NFT de 'gameplay data' n'a quasi aucune valeur. Score: 2/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Marketplace Protocol (Data NFTs)",
+        "sources_revenus": [
+          "Commissions sur les transactions de Data NFTs",
+          "Vente de tokens ITHEUM",
+          "Partenariats/grants MultiversX"
+        ],
+        "tokenomics": {
+          "token": "ITHEUM",
+          "supply_max": "1 milliard (révisé, originalement non plafonné)",
+          "supply_circulante": "610M",
+          "prix_actuel_usd": "$0.0012 (avril 2026)",
+          "ath_usd": "$0.7821",
+          "chute_depuis_ath_pct": "-99.85%",
+          "market_cap_actuel": "$1.15M (!!!) — un projet mort par les chiffres",
+          "volume_24h": "$49 (!!! — quasi-zéro)",
+          "utilite_reelle_du_token": "AUCUNE utilité réelle mesurable. Personne n'achète de Data NFTs Itheum pour un usage productif. Le token est purement spéculatif.",
+          "token_speculatif_ou_utile": "99% SPÉCULATIF / 1% UTILE. Market cap $1.15M avec $49 de volume quotidien = projet mort."
+        },
+        "modele_b2b_b2c": "B2C (gamers, musiciens) mais aucun volume B2C mesurable"
+      },
+      "financement": {
+        "total_leve": "$7.5M",
+        "rounds": [
+          "Private Round: $0.02/token, $4M levés, valorisation $20M",
+          "Public Round (IDO): $0.04/token, $2M levés, valorisation $40M",
+          "Round non divulgué: $1.5M"
+        ],
+        "investisseurs_notables": [
+          "Morningstar Ventures (investisseur lead)",
+          "Fonds MultiversX/Elrond ecosystem"
+        ],
+        "ico_details": "IDO mars 2022. 5% TGE pour le private, 100% unlock pour le public. ATH ROI: 17.46x pour les participants IDO.",
+        "valorisation_derniere_connue": "FDV actuelle: $1.22M. Initial FDV: $40M. Destruction: -97% de la valorisation initiale."
+      },
+      "traction": {
+        "utilisateurs_actifs": "~100K membres communautaires revendiqués — aucune métrique d'utilisation réelle",
+        "metriques_cles": [
+          "Communauté: 100K+ (revendiqué mais non vérifié)",
+          "Volume marketplace: quasi-nul",
+          "Partenariat Sony/Astar (annoncé mais impact zéro visible)"
+        ],
+        "partenariats_majeurs": [
+          "Sony (Astar Web3 incubation program)",
+          "MultiversX ecosystem"
+        ],
+        "adoption_reelle": "QUASI-NULLE. $49 de volume quotidien signifie que personne n'utilise le protocol. Les 100K membres sont probablement des airdrop hunters.",
+        "developpeurs_actifs": "Équipe core réduite. Pas de communauté de développeurs externe visible.",
+        "tvl_si_defi": "$0"
+      },
+      "autopsie": {
+        "etat_actuel": "PROJET MORIBOND. Market cap $1.15M, volume quotidien $49. Le projet existe techniquement mais n'a aucune traction. Le pivot vers 'AGI-Ready Data' est du marketing désespéré.",
+        "causes_succes_ou_echec": [
+          "ÉCHEC : Concept de Data NFT = solution cherchant un problème",
+          "ÉCHEC : Dépendance totale à MultiversX (EGLD lui-même en difficulté, -95% depuis ATH)",
+          "ÉCHEC : Aucune demande réelle pour des NFTs de gameplay data",
+          "ÉCHEC : Fondateurs sans crédibilité académique/industrielle",
+          "ÉCHEC : Timing terrible — lancé pendant le peak NFT (2022), effondré avec le marché"
+        ],
+        "destruction_valeur": "-99.85% depuis ATH. Les investisseurs private à $0.02 ont perdu 94%. Les investisseurs public à $0.04 ont perdu 97%. Destruction TOTALE.",
+        "pivots_effectues": [
+          "De 'data trading platform' vers 'Data NFTs'",
+          "De MultiversX-only vers omnichain (Solana, Sui, Base)",
+          "De 'data ownership' vers 'AGI-Ready Data' (rebrand marketing 2025)"
+        ],
+        "signaux_dalerte": [
+          "Volume $49/jour = ZÉRO liquidité",
+          "Fondateurs non identifiables/crédibles",
+          "Narratif change tous les 6 mois (pivot permanent)",
+          "Dépendance à un écosystème en déclin (MultiversX)"
+        ],
+        "verdict": "MORT CLINIQUE. Le projet respire encore techniquement mais n'a aucune raison économique d'exister. Le concept de Data NFT est du blockchain-washing pur."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "ANTI-MODÈLE PARFAIT. Tout ce que MYNε doit éviter.",
+        "ce_que_myne_doit_copier": "RIEN. L'approche Data NFT est un échec total.",
+        "ce_que_myne_doit_eviter": "Le NFT-washing des données. Tokeniser des données en NFT ne crée aucune valeur réelle. Les acheteurs de données (pharma, assureurs) ne veulent pas des NFTs — ils veulent des datasets structurés, conformes RGPD, avec provenance vérifiable.",
+        "avantage_myne": "MYNε a des acheteurs réels (pharma, hôpitaux) qui paient en EUR pour des données RWE. Itheum n'a jamais identifié un seul acheteur concret.",
+        "score_pertinence_0_10": 2
+      }
+    },
+    {
+      "numero": 16,
+      "nom": "Ocean Protocol",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Ocean Protocol Foundation",
+        "pays": "Singapour",
+        "annee_creation": 2017,
+        "fondateurs": "Bruce Pon + Trent McConaghy",
+        "formation_fondateurs": "Pon : CEO de BigchainDB, serial entrepreneur. McConaghy : CTO BigchainDB, PhD en IA/machine learning, expert en supply chain blockchain. Duo crédible avec track record.",
+        "siege": "Singapour (équipe distribuée, Berlin/Allemagne pour BigchainDB)",
+        "forme_juridique": "Ocean Protocol Foundation (Singapour)",
+        "description_courte": "Protocole open-source de marketplace de données décentralisée. Permet de publier, découvrir, et consommer des datasets avec licensing et compute-to-data."
+      },
+      "these": {
+        "probleme_cible": "Les données sont le pétrole du 21e siècle mais restent enfermées en silos (GAFA, entreprises). Les data scientists et développeurs IA n'ont pas accès à des données de qualité. Le data sharing est risqué (fuite, perte de contrôle).",
+        "solution_proposee": "Marketplace décentralisée où les propriétaires de données les publient (avec licensing), les acheteurs les consomment (via compute-to-data — le calcul va à la donnée, pas l'inverse). Datatokens ERC-20 représentent l'accès aux datasets.",
+        "proposition_valeur": "Libérer les données pour l'IA, de manière sécurisée et avec rémunération des producteurs.",
+        "these_investissement_originale": "Le marché des données est dominé par des intermédiaires centralisés. Un protocole ouvert et décentralisé capturera une part massive de ce marché de $200B+.",
+        "marche_cible_tam": "Data marketplace: $200B+. AI training data: $50B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent direct d'Itheum, Streamr. Différenciation : compute-to-data (la donnée ne bouge pas), Datatokens, intégration la plus mature, équipe la plus crédible."
+      },
+      "architecture": {
+        "stack_technique": "Smart contracts Ethereum (Datatokens ERC-20). Provider (stockage/accès). Aquarius (métadonnées). Compute-to-data (C2D). Staking on data pour le quality signaling.",
+        "blockchain_utilisee": "Ethereum (primaire) + Polygon",
+        "role_du_token": "OCEAN : staking sur les datasets (quality signal), récompenses de curation, paiement sur marketplace, gouvernance",
+        "mecanisme_consensus": "Hérite d'Ethereum (Proof of Stake)",
+        "interoperabilite": "ERC-20, Polygon, bridges multiples",
+        "composants_cles": [
+          "Datatokens (accès tokenisé aux données)",
+          "Compute-to-Data (C2D)",
+          "Aquarius (indexation métadonnées)",
+          "Staking/curation sur datasets",
+          "Ocean Market (marketplace)"
+        ],
+        "blockchain_necessaire_ou_washing": "PARTIELLEMENT JUSTIFIÉE. La blockchain apporte la traçabilité de la propriété et du licensing des données. Le compute-to-data est une innovation réelle. Mais la plupart des data marketplaces fonctionnent sans blockchain (Snowflake Marketplace, AWS Data Exchange). Le token est un frein pour les acheteurs enterprise. Score: 5/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Protocol (marketplace infra)",
+        "sources_revenus": [
+          "Fees sur les transactions de datatokens",
+          "Staking rewards",
+          "Treasury (tokens OCEAN non distribués)"
+        ],
+        "tokenomics": {
+          "token": "OCEAN",
+          "supply_max": "1.41 milliards",
+          "supply_circulante": "200M (seulement 14% du max!)",
+          "prix_actuel_usd": "$0.12-0.13 (avril 2026)",
+          "ath_usd": "$1.93 (10 avril 2021)",
+          "chute_depuis_ath_pct": "-93.6%",
+          "market_cap_actuel": "~$25M",
+          "volume_24h": "$90K-925K (très variable)",
+          "utilite_reelle_du_token": "Utilité FAIBLE. Le staking sur datasets existe mais le volume de transactions sur Ocean Market est minuscule ($102K TVL!). La majorité du volume de trading est spéculative.",
+          "token_speculatif_ou_utile": "80% SPÉCULATIF / 20% UTILE. Le concept est bon (staking = quality signal) mais personne ne l'utilise à échelle."
+        },
+        "modele_b2b_b2c": "B2D/B2B — principalement développeurs et data scientists. Pas de composante B2C directe."
+      },
+      "financement": {
+        "total_leve": "~$30M+ (token sales + VC rounds)",
+        "rounds": [
+          "Token sale 2019-2020",
+          "Divers rounds VC non publics"
+        ],
+        "investisseurs_notables": [
+          "Investisseurs non documentés en détail publiquement"
+        ],
+        "ico_details": "Token sale avec ATH ROI de 16.14x pour les early buyers",
+        "valorisation_derniere_connue": "ATH market cap ~$1B. Actuellement ~$25M. FDV: ~$91M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Faible — quelques centaines de datasets publiés lors des data challenges",
+        "metriques_cles": [
+          "TVL: $102K (EXTRÊMEMENT faible — prouve l'absence d'utilisation réelle)",
+          "200+ datasets publiés lors du lancement initial",
+          "~1.7M OCEAN stakés lors du premier data challenge"
+        ],
+        "partenariats_majeurs": [
+          "ASI Alliance (Fetch.ai + SingularityNET) — QUITTÉ en octobre 2025",
+          "BigchainDB (même fondateurs)"
+        ],
+        "adoption_reelle": "TRÈS FAIBLE. $102K de TVL pour un protocole de $25M de market cap est un ratio désastreux (market cap/TVL = 657x). La sortie de l'ASI Alliance en octobre 2025 est un signal négatif majeur.",
+        "developpeurs_actifs": "Communauté open-source modeste",
+        "tvl_si_defi": "$102K"
+      },
+      "autopsie": {
+        "etat_actuel": "EN DÉCLIN. La sortie de l'ASI Alliance (après que 81% des OCEAN ont été swappés vers FET) a fragmenté la communauté. 270M OCEAN restent dans 37K+ wallets d'investisseurs qui n'ont pas converti. Delisting par Binance, Bitget, Kraken pour la merger ASI. Le projet est une coquille de son ancienne gloire.",
+        "causes_succes_ou_echec": [
+          "FORCE : Concept innovant (compute-to-data) — vrai innovation",
+          "FORCE : Équipe crédible (Pon + McConaghy)",
+          "FORCE : Premier mover dans les data marketplaces blockchain",
+          "ÉCHEC : Le marché des data marketplaces décentralisées ne décolle pas",
+          "ÉCHEC : La merger ASI puis le retrait ont créé un chaos communautaire",
+          "ÉCHEC : Les acheteurs de données (entreprises) préfèrent Snowflake Marketplace, AWS Data Exchange",
+          "ÉCHEC : TVL $102K après 7 ans = pas de product-market fit"
+        ],
+        "destruction_valeur": "-93.6% depuis ATH. De ~$1B market cap à $25M. La merger ASI puis le retrait a ajouté de la confusion et de la destruction.",
+        "pivots_effectues": [
+          "De data marketplace pure vers compute-to-data",
+          "Merger avec ASI Alliance (mars 2024)",
+          "Retrait de ASI Alliance (octobre 2025) — re-indépendance",
+          "Exploration de l'IA comme narratif de survie"
+        ],
+        "signaux_dalerte": [
+          "TVL $102K = aucune utilisation réelle du protocole",
+          "Sortie de l'ASI Alliance = échec de la stratégie de consolidation",
+          "Seulement 14% du supply en circulation = dilution massive à venir",
+          "Delisting par plusieurs exchanges majeurs"
+        ],
+        "verdict": "PREMIER MOVER EN DÉCLIN. Le concept était visionnaire en 2017 mais l'exécution a échoué. Le marché des data marketplaces décentralisées n'existe probablement pas à l'échelle espérée."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "HAUTE. Ocean Protocol est le concurrent conceptuel le plus direct de MYNε. Son échec est une mine d'enseignements.",
+        "ce_que_myne_doit_copier": "Le concept de compute-to-data est EXACTEMENT ce que MYNε devrait utiliser pour les données psychiatriques (les données ne quittent jamais le NOOS, les algorithmes viennent aux données). La traçabilité de la provenance des données via blockchain est pertinente.",
+        "ce_que_myne_doit_eviter": "Le token comme pré-requis obligatoire pour acheter des données. La marketplace horizontale sans vertical. Le token sale qui dilue massivement (14% circulant, 86% à distribuer). La merger puis retrait d'alliances — signal de panique stratégique.",
+        "avantage_myne": "MYNε a un vertical captif (psychiatrie/observance) avec des acheteurs identifiés et un prix au profil/mois quantifié (€18-70/profil/mois). Ocean n'a jamais eu de vertical ni de pricing clair.",
+        "score_pertinence_0_10": 9
+      }
+    },
+    {
+      "numero": 17,
+      "nom": "Streamr",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Streamr Network AG",
+        "pays": "Suisse",
+        "annee_creation": 2017,
+        "fondateurs": "Henri Pihkala",
+        "formation_fondateurs": "Entrepreneur tech finlandais, background en data streaming et event-driven architecture. Pas de profil académique de premier plan.",
+        "siege": "Zug, Suisse (Crypto Valley)",
+        "forme_juridique": "AG suisse + Streamr DAO",
+        "description_courte": "Réseau décentralisé pour le streaming de données en temps réel. Infrastructure pub/sub pour le transport, partage et monétisation de flux de données."
+      },
+      "these": {
+        "probleme_cible": "Les flux de données en temps réel (IoT, DeFi, marchés) sont centralisés par des intermédiaires (AWS Kinesis, Kafka managé). Pas de couche de transport de données décentralisée pour le Web3.",
+        "solution_proposee": "Réseau peer-to-peer de streaming de données. Les opérateurs de nœuds reçoivent, propagent et servent des flux de données. Le réseau est résistant à la censure et fonctionne sans serveur central.",
+        "proposition_valeur": "Le 'eBay des flux de données en temps réel' — un point d'accès pour toutes les données temps réel du monde.",
+        "these_investissement_originale": "Le Web3 a besoin d'une couche de transport de données décentralisée comme Internet a besoin de TCP/IP. Streamr sera cette couche.",
+        "marche_cible_tam": "Data streaming: $65B d'ici 2030. IoT data: $1T+.",
+        "positionnement_vs_concurrents": "Niche très spécifique — pas de concurrent direct blockchain. Concurrents Web2 : Apache Kafka, AWS Kinesis, Confluent."
+      },
+      "architecture": {
+        "stack_technique": "Réseau pub/sub peer-to-peer. Protocole de streaming sur Ethereum/Polygon. Nœuds opérateurs (broker nodes) qui propagent les données. SDK pour développeurs.",
+        "blockchain_utilisee": "Ethereum + Polygon (smart contracts pour sponsorship, staking)",
+        "role_du_token": "DATA : staking pour opérateurs de nœuds, gouvernance DAO (SIP votes), paiement pour les flux de données premium, incentives réseau",
+        "mecanisme_consensus": "Réseau de nœuds sans consensus blockchain propre — utilise Ethereum/Polygon pour le settlement",
+        "interoperabilite": "ERC-20 sur Ethereum, bridges Polygon",
+        "composants_cles": [
+          "Streamr Network (réseau de nœuds pub/sub)",
+          "Streamr Hub (marketplace de flux)",
+          "Broker Nodes (opérateurs)",
+          "Streamr SDK",
+          "Sponsorship protocol (paiement pour flux)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING MODÉRÉ. Le réseau de streaming P2P est une innovation réelle MAIS la blockchain n'est pas nécessaire pour du pub/sub décentralisé (BitTorrent, IPFS fonctionnent sans token). Le token DATA est un mécanisme d'incentive artificiel. Score: 3/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Infrastructure Protocol (data streaming)",
+        "sources_revenus": [
+          "Sponsorship fees sur les flux de données",
+          "Staking rewards",
+          "Treasury DAO (réserve de tokens DATA)"
+        ],
+        "tokenomics": {
+          "token": "DATA",
+          "supply_max": "2 milliards",
+          "supply_circulante": "~1.26B (63%)",
+          "prix_actuel_usd": "$0.001 (avril 2026, CMC) — DISCORDANCE avec CoinGecko à $0.017",
+          "ath_usd": "$0.3746 (7 janvier 2018)",
+          "chute_depuis_ath_pct": "-99.7%",
+          "market_cap_actuel": "$1.3M (CMC) à $13.6M (CoinGecko) — données contradictoires",
+          "volume_24h": "$185K-1.2M",
+          "utilite_reelle_du_token": "Utilité MINIMALE. Les opérateurs de nœuds stakent du DATA mais le volume de flux monétisés sur le réseau est négligeable. Le token sert principalement de mechanism d'incentive artificiel.",
+          "token_speculatif_ou_utile": "90% SPÉCULATIF / 10% UTILE. Le réseau fonctionne techniquement mais personne ne paie pour des flux de données sur Streamr quand Kafka est gratuit et fiable."
+        },
+        "modele_b2b_b2c": "B2D (développeurs IoT/DeFi). Aucun composant B2C."
+      },
+      "financement": {
+        "total_leve": "~€25M (ICO)",
+        "rounds": [
+          "ICO: Octobre 2017, ~€25M levés"
+        ],
+        "investisseurs_notables": [
+          "Investisseurs ICO 2017 (pas de VC de premier plan documenté)"
+        ],
+        "ico_details": "ICO à $0.0615/token. ATH ROI: 6.09x. ROI actuel: 0.02x (-98.3%).",
+        "valorisation_derniere_connue": "ATH market cap estimé ~$250M+. Actuellement $1.3-13.6M (selon source)."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Opérateurs de nœuds (nombre non publié), développeurs utilisant le SDK (marginal)",
+        "metriques_cles": [
+          "Mainnet 1.0 complété (roadmap 2017 terminée)",
+          "DAO actif (votes SIP-22 pour débloquer 100M DATA de la réserve)",
+          "Passage de R&D à adoption post-mainnet"
+        ],
+        "partenariats_majeurs": [
+          "Swash (initialement construit sur Streamr DATA)",
+          "Quelques intégrations IoT"
+        ],
+        "adoption_reelle": "TRÈS FAIBLE. Après 9 ans (2017-2026), le réseau n'a pas trouvé d'utilisation de masse. Le mainnet est live mais le volume de flux payants est négligeable.",
+        "developpeurs_actifs": "Communauté réduite mais engagée",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "SURVIVANT FRAGILE. Le mainnet 1.0 est terminé mais l'adoption est quasi-nulle. La DAO vote pour débloquer des réserves de tokens ce qui signifie que le projet a besoin de financement. 9 ans sans traction significative.",
+        "causes_succes_ou_echec": [
+          "FORCE : Vision claire et cohérente depuis 2017",
+          "FORCE : Mainnet livré (le roadmap 2017 est terminé)",
+          "ÉCHEC : Pas de demande pour du data streaming décentralisé — Kafka/Kinesis suffisent",
+          "ÉCHEC : Le marché IoT décentralisé n'a pas décollé",
+          "ÉCHEC : Tokenomics en échec — SIP-22 vote pour diluer (100M tokens supplémentaires)"
+        ],
+        "destruction_valeur": "-99.7% depuis ATH. Un des pires performers du panel. Les investisseurs ICO à $0.06 détiennent maintenant ~$0.001.",
+        "pivots_effectues": [
+          "De marketplace de data vers infrastructure de streaming pur",
+          "De R&D vers 'application layer' (2025)",
+          "Introduction du DAO pour la gouvernance"
+        ],
+        "signaux_dalerte": [
+          "Vote pour débloquer des réserves = trésorerie à sec",
+          "-99.7% depuis ATH",
+          "Données de prix contradictoires entre CMC et CoinGecko",
+          "Aucune application phare sur le réseau"
+        ],
+        "verdict": "INFRASTRUCTURE SANS USAGE. Le réseau fonctionne mais personne n'en a besoin. Le problème que Streamr résout (data streaming décentralisé) n'est pas un vrai problème pour le marché."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "BASSE. Le streaming temps réel n'est pas le core de MYNε (qui traite des données agrégées, pas des flux temps réel).",
+        "ce_que_myne_doit_copier": "Le concept de Data Union (agrégation collective de données avec rémunération) utilisé par Swash sur Streamr est pertinent pour NOOS/MYNε.",
+        "ce_que_myne_doit_eviter": "9 ans de développement sans PMF. Le sur-engineering d'une infrastructure quand le marché ne demande rien. Le DAO comme mécanisme de gouvernance quand il n'y a pas d'utilisateurs à gouverner.",
+        "avantage_myne": "MYNε a des acheteurs identifiés (pharma) qui veulent des données agrégées, pas du streaming temps réel. Le modèle est plus simple et directement monétisable.",
+        "score_pertinence_0_10": 4
+      }
+    },
+    {
+      "numero": 18,
+      "nom": "Secret Network",
+      "categorie": "BLOCKCHAIN DATA",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Secret Network (anciennement Enigma)",
+        "pays": "États-Unis",
+        "annee_creation": 2020,
+        "fondateurs": "Issu du projet Enigma (MIT, Guy Zyskind). SCRT Labs est l'entité principale de développement.",
+        "formation_fondateurs": "Guy Zyskind : MIT Media Lab, recherche en privacy-preserving computation. Équipe technique solide issue du MIT.",
+        "siege": "États-Unis (distribution globale)",
+        "forme_juridique": "Réseau décentralisé + SCRT Labs (entité de développement)",
+        "description_courte": "Première blockchain mainnet avec smart contracts préservant la confidentialité. Les 'Secret Contracts' chiffrent inputs, outputs et états — computation privée on-chain."
+      },
+      "these": {
+        "probleme_cible": "Les smart contracts sur les blockchains publiques (Ethereum, Solana) exposent tout : balances, transactions, logique business. Impossible pour des applications DeFi, santé, identité nécessitant de la confidentialité.",
+        "solution_proposee": "Smart contracts chiffrés via TEE (Intel SGX). Les Secret Contracts préservent la confidentialité des données tout en étant exécutés de manière vérifiable. Secret Tokens rendent n'importe quel token privé.",
+        "proposition_valeur": "La couche de confidentialité du Web3 — rendre n'importe quelle blockchain privée via Secret Network.",
+        "these_investissement_originale": "La privacy sera un droit fondamental du Web3. Secret Network sera la couche de confidentialité universelle.",
+        "marche_cible_tam": "Privacy-preserving computation: $54B (2028). Confidential AI: marché émergent multi-milliards. Web3 privacy infra: $5B+.",
+        "positionnement_vs_concurrents": "Concurrent direct d'Oasis Network. Différenciation : premier mainnet (2020), écosystème DeFi/NFT actif, pivot vers l'IA confidentielle (SecretAI/SecretVM)."
+      },
+      "architecture": {
+        "stack_technique": "Cosmos SDK modifié. TEE (Intel SGX) dans chaque nœud validateur. Secret Contracts (CosmWasm chiffré). SNIP-20/SNIP-250 tokens (tokens privés). SecretAI + SecretVM pour l'IA confidentielle.",
+        "blockchain_utilisee": "Blockchain propre (Cosmos ecosystem, IBC)",
+        "role_du_token": "SCRT : gas fees, staking/validation, gouvernance. SCRT est PUBLIC mais convertible en sSCRT (SNIP-20, privé). Les Secret Tokens sont des versions privées de n'importe quel token.",
+        "mecanisme_consensus": "Tendermint BFT (Cosmos), Delegated Proof of Stake",
+        "interoperabilite": "IBC (Inter-Blockchain Communication) avec tout l'écosystème Cosmos. Bridges Ethereum, BSC, Monero, Bitcoin (Shinobi).",
+        "composants_cles": [
+          "Secret Contracts (smart contracts chiffrés)",
+          "SNIP-20/SNIP-250 (tokens privés)",
+          "SecretAI (IA confidentielle via TEE)",
+          "SecretVM (VM confidentielle arbitraire)",
+          "Secret Bridges (cross-chain privacy)",
+          "SilentSwap (trading privé)",
+          "Shade Protocol (DeFi privée)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN JUSTIFIÉE. C'est un des rares cas où la blockchain est réellement nécessaire : la décentralisation du calcul confidentiel empêche un point unique de défaillance/censure pour les TEE. Sans blockchain, un seul opérateur TEE pourrait être compromis/forcé. Score: 8/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Layer 1 Protocol (infra confidentielle)",
+        "sources_revenus": [
+          "Gas fees en SCRT",
+          "SecretAI/SecretVM : services de calcul confidentiel facturés",
+          "Staking rewards (inflation)",
+          "Ecosystem development"
+        ],
+        "tokenomics": {
+          "token": "SCRT",
+          "supply_max": "Illimitée (inflationnaire, ~15% staking rewards/an)",
+          "supply_circulante": "313-336M",
+          "prix_actuel_usd": "$0.08-0.20 (données contradictoires, avril 2026)",
+          "ath_usd": "$10.38 (28 octobre 2021)",
+          "chute_depuis_ath_pct": "-98 à -99.3%",
+          "market_cap_actuel": "$26-62M (selon source)",
+          "volume_24h": "$1-2.3M",
+          "utilite_reelle_du_token": "Utilité RÉELLE MAIS LIMITÉE. SCRT est nécessaire pour le gas et le staking. Le réseau a ~$10M de TVL et un écosystème DeFi actif (Shade, SilentSwap, Stashh). Plus d'utilité organique que la plupart du panel.",
+          "token_speculatif_ou_utile": "55% SPÉCULATIF / 45% UTILE. L'écosystème existe réellement avec des apps fonctionnelles. Mais l'inflation illimitée est un problème structurel."
+        },
+        "modele_b2b_b2c": "B2D (développeurs) + B2B (SecretAI pour enterprises) + B2C (DeFi privée, NFTs confidentiels)"
+      },
+      "financement": {
+        "total_leve": "Non documenté précisément — Enigma avait levé initialement, puis token sale SCRT",
+        "rounds": [
+          "Enigma token sale (phase précédente)",
+          "SCRT token launch 2020",
+          "Grants Cosmos ecosystem"
+        ],
+        "investisseurs_notables": [
+          "Fonds Cosmos/Tendermint ecosystem",
+          "Nvidia Inception Program (programme d'accélération)"
+        ],
+        "ico_details": "Prix ICO ~$0.60. ATH ROI: 17.3x. ROI actuel: 0.13x (-87% depuis ICO).",
+        "valorisation_derniere_connue": "ATH market cap ~$1.6B. Actuellement $26-62M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Communauté active (184K followers @SecretNetwork), validateurs actifs",
+        "metriques_cles": [
+          "TVL: $10M (le plus élevé du panel blockchain data)",
+          "Shade Protocol, Stashh, SilentSwap actifs",
+          "SecretAI intégré (DeepSeek R1 confidentiel)",
+          "Partenariat Solidus AI Tech (juillet 2025)",
+          "Nvidia Inception program"
+        ],
+        "partenariats_majeurs": [
+          "Solidus AI Tech",
+          "Nvidia Inception",
+          "Cintara AI",
+          "Shade Protocol (DeFi native)"
+        ],
+        "adoption_reelle": "MODÉRÉE. C'est le projet le plus vivant du panel blockchain data. TVL $10M, DeFi fonctionnelle, NFTs confidentiels, SecretAI en production. Mais la taille reste modeste vs les Layer 1 majeurs.",
+        "developpeurs_actifs": "Communauté de développeurs active, nouveau Developer Portal lancé 2026",
+        "tvl_si_defi": "$10.1M"
+      },
+      "autopsie": {
+        "etat_actuel": "LE MEILLEUR DU LOT BLOCKCHAIN DATA. Réseau fonctionnel avec un vrai écosystème (DeFi, AI, NFT). Le pivot SecretAI/SecretVM est stratégiquement intelligent. MAIS : KuCoin a délisté SCRT (mars 2026), l'inflation est illimitée, et les vulnérabilités TEE (wiretap.fail, tee.fail) ont ébranlé la confiance.",
+        "causes_succes_ou_echec": [
+          "FORCE : Premier mainnet privacy smart contracts (premier mover crédible)",
+          "FORCE : Écosystème DeFi/NFT réel et fonctionnel",
+          "FORCE : Pivot SecretAI/SecretVM — positionnement intelligent sur l'IA confidentielle",
+          "FORCE : IBC/Cosmos interopérabilité",
+          "FAIBLESSE : Vulnérabilités TEE régulières — Intel SGX n'est pas parfait",
+          "FAIBLESSE : Inflation illimitée du SCRT = dilution permanente",
+          "FAIBLESSE : Delistings (KuCoin mars 2026) réduisent la liquidité"
+        ],
+        "destruction_valeur": "-98 à -99.3% depuis ATH. De $1.6B à $26-62M. Destruction massive mais l'écosystème reste vivant.",
+        "pivots_effectues": [
+          "D'Enigma (MIT) vers Secret Network (réseau indépendant)",
+          "De 'privacy transactions' vers 'privacy smart contracts'",
+          "De DeFi privée vers SecretAI/SecretVM (IA confidentielle)",
+          "Passage à MRENCLAVE Seed Rotation après vulnérabilités TEE"
+        ],
+        "signaux_dalerte": [
+          "Delisting KuCoin (mars 2026)",
+          "Vulnérabilités TEE récurrentes",
+          "Supply illimitée = inflation structurelle",
+          "Pression réglementaire sur les privacy coins (SAFE Crypto Act, MiCA)"
+        ],
+        "verdict": "SURVIVANT LE PLUS CRÉDIBLE du panel blockchain data. Le seul projet avec un écosystème réellement fonctionnel. Le pivot vers l'IA confidentielle est la bonne stratégie. Mais les risques réglementaires et techniques sont réels."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "HAUTE. Secret Network prouve que la confidentialité computationnelle via TEE fonctionne en production. Le concept SecretAI est directement applicable à MYNε/NOOS.",
+        "ce_que_myne_doit_copier": "L'architecture TEE pour les smart contracts sur données de santé. Le concept de 'viewing keys' (accès sélectif — le patient décide qui voit ses données). L'approche SecretAI pour l'inférence confidentielle.",
+        "ce_que_myne_doit_eviter": "Le token inflationnaire illimité. La dépendance à Intel SGX (vulnérable). L'approche horizontale — Secret essaie de faire DeFi + AI + NFT + Bridge, MYNε doit rester hyper-focus psychiatrie.",
+        "avantage_myne": "MYNε + ÆLYA (consent/compliance) + NOOS (collecte) forment un stack vertical complet. Secret Network est une infra horizontale sans vertical captif. MYNε a aussi le RGPD/MDR comme forcing function (obligation légale = adoption forcée).",
+        "score_pertinence_0_10": 8
+      }
+    },
+    {
+      "numero": 19,
+      "nom": "Brave Browser / BAT",
+      "categorie": "ATTENTION MONETIZATION",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Brave Software, Inc. / Basic Attention Token",
+        "pays": "États-Unis",
+        "annee_creation": 2015,
+        "fondateurs": "Brendan Eich",
+        "formation_fondateurs": "LÉGENDE du tech : créateur de JavaScript (1995), co-fondateur de Mozilla (Firefox). A quitté Mozilla en 2014. Le fondateur le plus crédible de tout le panel crypto attention/data.",
+        "siege": "San Francisco, Californie, USA",
+        "forme_juridique": "Brave Software, Inc. (corporation américaine)",
+        "description_courte": "Navigateur web privacy-first avec système de publicité opt-in qui rémunère les utilisateurs en BAT pour leur attention. Réinvente le modèle publicitaire digital."
+      },
+      "these": {
+        "probleme_cible": "La publicité digitale est un oligopole toxique : Google/Meta captent 60%+ des revenus publicitaires, les utilisateurs sont traqués sans consentement, les publishers ne captent qu'une fraction de la valeur, et la fraude publicitaire coûte $100B+/an.",
+        "solution_proposee": "Navigateur bloquant trackers/pubs par défaut + système opt-in : les utilisateurs choisissent de voir des pubs privacy-preserving et reçoivent 70% des revenus en BAT. Les créateurs/publishers reçoivent le reste.",
+        "proposition_valeur": "Un internet plus rapide, plus privé, qui rémunère les utilisateurs pour leur attention au lieu de les exploiter.",
+        "these_investissement_originale": "L'attention des utilisateurs est la ressource la plus précieuse d'Internet. Brave/BAT la tokenise et la redistribue équitablement.",
+        "marche_cible_tam": "Digital advertising: $740B (2025), $1T+ (2030). Browser market: 5B+ utilisateurs. Privacy tech: $25B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent de Chrome/Google (dominance 65%), Firefox, DuckDuckGo. Seul navigateur combinant privacy + crypto rewards + search engine propre à cette échelle."
+      },
+      "architecture": {
+        "stack_technique": "Navigateur basé sur Chromium. Brave Shields (ad/tracker blocking). Brave Rewards (opt-in ads → BAT). Brave Search (index indépendant, 1.6B queries/mois). Brave Wallet (multi-chain). Leo AI (assistant IA intégré).",
+        "blockchain_utilisee": "Ethereum (BAT ERC-20) + Solana (partenariat wallet)",
+        "role_du_token": "BAT (Basic Attention Token) : les annonceurs achètent du BAT pour leurs campagnes, les utilisateurs reçoivent du BAT pour visionner des pubs, les créateurs reçoivent du BAT des fans (tipping). Moyen de paiement du système publicitaire Brave.",
+        "mecanisme_consensus": "ERC-20 sur Ethereum (pas de blockchain propre)",
+        "interoperabilite": "ERC-20 (Ethereum), Solana, BSC bridges",
+        "composants_cles": [
+          "Brave Browser (Chromium fork, 100M MAU)",
+          "Brave Shields (ad/tracker blocking)",
+          "Brave Rewards (70% ad revenue en BAT aux users)",
+          "Brave Search (1.6B queries/mois, index propre)",
+          "Brave Wallet (multi-chain, built-in)",
+          "Brave Ads (plateforme pub opt-in)",
+          "Leo AI (assistant IA intégré)"
+        ],
+        "blockchain_necessaire_ou_washing": "PARTIELLEMENT JUSTIFIÉE. Le BAT fonctionne comme moyen de paiement micro-transactionnel entre annonceurs et utilisateurs. La blockchain apporte la transparence et l'auditabilité des flux publicitaires. MAIS Brave réussit principalement parce que c'est un BON NAVIGATEUR, pas grâce au BAT. Brave SANS le token fonctionnerait aussi bien. Score: 4/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Freemium Ad Platform (B2C + B2B)",
+        "sources_revenus": [
+          "Brave Ads : 30% commission sur les pub utilisateur, 15% sur les pubs publisher",
+          "Brave Search Premium",
+          "Brave VPN",
+          "Brave Talk (visioconférence)",
+          "Partnerships et intégrations"
+        ],
+        "tokenomics": {
+          "token": "BAT",
+          "supply_max": "1.5 milliards (FIXE)",
+          "supply_circulante": "1.495B (99.7% en circulation — quasi-totalement distribué)",
+          "prix_actuel_usd": "$0.10-0.15 (avril 2026)",
+          "ath_usd": "$1.92",
+          "chute_depuis_ath_pct": "-92 à -95%",
+          "market_cap_actuel": "$140-218M",
+          "volume_24h": "$27-41M (volume RÉEL, pas de wash trading)",
+          "utilite_reelle_du_token": "Utilité RÉELLE MAIS MODESTE. BAT circule dans l'écosystème publicitaire (annonceurs → users → créateurs). 8M+ users gagnent du BAT. 14ème token le plus distribué on-chain sur Ethereum. Mais la plupart des utilisateurs Brave n'utilisent PAS le BAT.",
+          "token_speculatif_ou_utile": "50% UTILE / 50% SPÉCULATIF. Le BAT a la meilleure utilité réelle de tout le panel, grâce aux 100M MAU de Brave. Mais la majorité de la valeur vient du trading, pas de l'utilisation publicitaire."
+        },
+        "modele_b2b_b2c": "B2C (utilisateurs Brave) + B2B (annonceurs). Vrai modèle business avec revenus réels ($26M en 2023)."
+      },
+      "financement": {
+        "total_leve": "$42M+",
+        "rounds": [
+          "VC: $7M (Founders Fund, etc.) — pré-ICO",
+          "ICO: $35M en moins de 30 secondes (juin 2017) — 156,250 ETH"
+        ],
+        "investisseurs_notables": [
+          "Founders Fund (Peter Thiel)",
+          "Pantera Capital",
+          "Foundation Capital",
+          "Digital Currency Group"
+        ],
+        "ico_details": "1 milliard BAT vendus en 30 secondes. Seulement ~130 acheteurs. 5 acheteurs ont pris 50%. Un seul acheteur: $4.6M. 500M BAT réservés pour User Growth Pool. TRÈS concentré.",
+        "valorisation_derniere_connue": "Sacra estime Brave à un multiple de ses $26M de revenus. Market cap BAT: $140-218M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "100M MAU (septembre 2025) — LE SEUL projet du panel avec une adoption de masse",
+        "metriques_cles": [
+          "100M Monthly Active Users",
+          "42M Daily Active Users",
+          "DAU/MAU ratio: 0.42 (engagement élevé)",
+          "2.5M nouveaux users/mois",
+          "Brave Search: 1.6B queries/mois",
+          "15M+ réponses IA/jour",
+          "8M+ users gagnent du BAT",
+          "$26M de revenus en 2023 (+30% YoY)",
+          "14ème token le plus distribué on-chain (Ethereum)"
+        ],
+        "partenariats_majeurs": [
+          "Solana (intégration wallet)",
+          "Gemini (custodial wallet pour BAT)",
+          "Uphold (payment partner)",
+          "Unstoppable Domains (.brave domains)"
+        ],
+        "adoption_reelle": "LE SEUL SUCCÈS MASS-MARKET du panel. 100M MAU est comparable à des produits mainstream. L'antitrust contre Chrome pourrait accélérer la migration vers Brave.",
+        "developpeurs_actifs": "Large équipe interne + communauté open-source (Chromium fork)",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "LE CHAMPION INCONTESTÉ. Seul projet avec 100M d'utilisateurs, revenus réels, et modèle business viable. Le BAT est utile mais Brave réussirait probablement aussi sans token. Le navigateur est le produit, pas le token.",
+        "causes_succes_ou_echec": [
+          "SUCCÈS : Produit réellement supérieur — plus rapide, plus privé, bloque les pubs",
+          "SUCCÈS : Brendan Eich — crédibilité et expertise technique légendaire",
+          "SUCCÈS : Distribution organique — les gens adoptent Brave pour ses qualités, pas pour le BAT",
+          "SUCCÈS : Modèle économique réel avec revenus publicitaires",
+          "SUCCÈS : Brave Search indépendant — pas dépendant de Google",
+          "POINT FAIBLE : BAT à -92% depuis ATH — le token ne capte pas la valeur créée par Brave",
+          "POINT FAIBLE : ICO ultra-concentrée (5 whales = 50%)"
+        ],
+        "destruction_valeur": "-92 à -95% depuis ATH. Mais la destruction est relative — Brave l'entreprise croît. Le token et l'entreprise sont partiellement décorrelés.",
+        "pivots_effectues": [
+          "De 'browser + BAT' vers 'super-app Web3' (Search, Wallet, VPN, Talk, AI)",
+          "Intégration Solana (2021)",
+          "Brave Search avec IA (2025)"
+        ],
+        "signaux_dalerte": [
+          "BAT ne capte pas la croissance de Brave — décorrelation token/business",
+          "ICO concentrée = risque de sell pressure par whales",
+          "Google antitrust bénéficie Brave mais l'issue est incertaine"
+        ],
+        "verdict": "SUCCÈS PRODUIT, ÉCHEC TOKEN. Brave est un succès remarquable (100M MAU). Le BAT est un succès mitigé — utile mais pas nécessaire. La leçon: le produit > le token."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "TRÈS HAUTE. Brave prouve que la monétisation de l'attention fonctionne SEULEMENT si le produit est excellent d'abord. Le token est secondaire.",
+        "ce_que_myne_doit_copier": "Le modèle opt-in (l'utilisateur CHOISIT de partager). Le revenue share transparent (70/30). La distribution organique par qualité du produit, pas par token incentives. Le fondateur star.",
+        "ce_que_myne_doit_eviter": "L'ICO concentrée. La décorrelation token/valeur business. Le BAT perd -92% alors que Brave croît — preuve que le token n'est pas le véhicule de valeur.",
+        "avantage_myne": "MYNε peut utiliser le modèle Brave (opt-in, revenue share transparent) sans token. Les patients NOOS opt-in pour partager leurs données d'observance, MYNε leur reverse 53% en EUR, pas en crypto. Plus simple, plus conforme RGPD.",
+        "score_pertinence_0_10": 9
+      }
+    },
+    {
+      "numero": 20,
+      "nom": "Presearch",
+      "categorie": "ATTENTION MONETIZATION",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Presearch",
+        "pays": "Canada (HQ récent: San Diego, USA)",
+        "annee_creation": 2017,
+        "fondateurs": "Colin Pape",
+        "formation_fondateurs": "Entrepreneur tech canadien, background en search et marketing digital. Pas de profil académique ou technique de premier plan.",
+        "siege": "Canada / San Diego, USA",
+        "forme_juridique": "Corporation (levée de fonds via SAFE sur Wefunder 2025)",
+        "description_courte": "Moteur de recherche décentralisé privacy-first. Les utilisateurs gagnent des PRE pour leurs recherches. 40,000+ nœuds communautaires propulsent le réseau."
+      },
+      "these": {
+        "probleme_cible": "Google contrôle 90%+ des recherches mondiales, traque les utilisateurs, manipule les résultats. Aucune alternative décentralisée crédible n'existe.",
+        "solution_proposee": "Moteur de recherche décentralisé : les utilisateurs gagnent des PRE pour chercher, les nœuds communautaires traitent les requêtes, les annonceurs stakent du PRE pour des mots-clés (modèle ad AdWords décentralisé).",
+        "proposition_valeur": "Cherchez en privé, gagnez de la crypto, aidez à construire l'avenir de la recherche.",
+        "these_investissement_originale": "Le search est un monopole de $200B+ prêt à être disrupté par la décentralisation et les crypto-incentives.",
+        "marche_cible_tam": "Search advertising: $200B+ (Google seul). Privacy search: $5B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent de DuckDuckGo, Ecosia, Brave Search. Différenciation : décentralisé (nœuds communautaires), crypto rewards, keyword staking ads."
+      },
+      "architecture": {
+        "stack_technique": "Meta-search engine (agrège résultats de multiple sources). 40,000+ nœuds communautaires. Hybrid Proof-of-Work. Wallet self-custodial sur Base L2. Presearch 3.0 : première search engine Base-native Web3.",
+        "blockchain_utilisee": "Ethereum (ERC-20) + Base (Coinbase L2) depuis 2025",
+        "role_du_token": "PRE : récompense pour les recherches (search-to-earn), staking pour opérateurs de nœuds, staking pour annonceurs (keyword ads), search staking enhancement (plus tu stakes, plus tu gagnes/recherche)",
+        "mecanisme_consensus": "Hybrid Proof-of-Work (nœuds effectuent du travail réel = traitement de requêtes)",
+        "interoperabilite": "ERC-20 → Base L2 migration",
+        "composants_cles": [
+          "Presearch Search Engine",
+          "40,000+ Community Nodes",
+          "Keyword Staking Ads (AdWords décentralisé)",
+          "Search-to-Earn",
+          "Self-custodial wallet (Base L2)",
+          "Frontier Intelligence (index indépendant en développement)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING MODÉRÉ À FORT. Un moteur de recherche n'a pas besoin de blockchain. DuckDuckGo fait la même chose (privacy search) sans token ni nœuds. Le token PRE est un mécanisme d'incentive qui crée de la friction plutôt que de la valeur. Score: 2/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Search Engine avec crypto rewards",
+        "sources_revenus": [
+          "Keyword staking ads (annonceurs stakent PRE)",
+          "Site takeover sponsoring",
+          "Revenue $208K/an (2025) — MINUSCULE"
+        ],
+        "tokenomics": {
+          "token": "PRE",
+          "supply_max": "500M-1B (données contradictoires)",
+          "supply_circulante": "590-909M",
+          "prix_actuel_usd": "$0.0018-0.0034 (avril 2026)",
+          "ath_usd": "$0.8142 (5 janvier 2018)",
+          "chute_depuis_ath_pct": "-99.6%",
+          "market_cap_actuel": "$1.6-2M",
+          "volume_24h": "$3-4K (QUASI-ZÉRO — illiquide)",
+          "utilite_reelle_du_token": "Utilité THÉORIQUE. Le PRE sert à staker pour les ads et les nœuds, mais avec $208K de revenus annuels et $3K de volume quotidien, l'économie du token est fictive.",
+          "token_speculatif_ou_utile": "95% SPÉCULATIF / 5% UTILE. Le modèle économique génère $208K/an pour une valorisation revendiquée de $15M (SAFE). Revenue multiple: 72x. Absurde."
+        },
+        "modele_b2b_b2c": "B2C (utilisateurs search) + B2B (annonceurs). Mais les volumes sont dérisoires."
+      },
+      "financement": {
+        "total_leve": "Inconnu précisément. ICO 2017 + SAFE Wefunder 2025 ($15M valuation cap)",
+        "rounds": [
+          "ICO: Octobre 2017 (montant non documenté)",
+          "SAFE Wefunder 2025: valuation cap $15M, 10% discount"
+        ],
+        "investisseurs_notables": [
+          "Investisseurs retail (Wefunder crowdfunding)"
+        ],
+        "ico_details": "ICO 2017 à $0.0615/token. ROI actuel: -97%.",
+        "valorisation_derniere_connue": "SAFE 2025: $15M cap. Revenue multiple: ~72x sur $208K de revenus. Cash: $86K. Burn: $40K/mois. RUNWAY: ~2 mois de cash."
+      },
+      "traction": {
+        "utilisateurs_actifs": "390K+ utilisateurs, 150K MAU, 10M+ recherches/mois",
+        "metriques_cles": [
+          "390K+ utilisateurs totaux",
+          "150K MAU",
+          "10M+ recherches/mois",
+          "40,000+ nœuds communautaires",
+          "13M search impressions/mois",
+          "Revenus: $208K/an (vs $27K l'année précédente = 7.7x croissance)",
+          "Burn: $40K/mois, Cash: $86K"
+        ],
+        "partenariats_majeurs": [
+          "Google Android Search Choice Screen (Europe, 2022)",
+          "Migration vers Base (Coinbase L2)"
+        ],
+        "adoption_reelle": "MODESTE MAIS RÉELLE. 150K MAU et 10M recherches/mois est respectable pour un projet de cette taille. Mais c'est 0.001% de Google. La croissance revenus (7.7x YoY) est positive mais la base est minuscule.",
+        "developpeurs_actifs": "Petite équipe core",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "SURVIE PRÉCAIRE. $86K de cash, $40K de burn/mois = 2 mois de runway. La levée Wefunder à $15M cap est désespérée. Le produit fonctionne mais l'échelle est insuffisante pour la viabilité. 150K MAU vs 100M pour Brave = 667x moins gros.",
+        "causes_succes_ou_echec": [
+          "FORCE : Produit fonctionnel — le moteur de recherche marche",
+          "FORCE : Communauté engagée (40K nœuds)",
+          "FORCE : Android Search Choice Screen exposure (2022)",
+          "FORCE : Croissance revenus 7.7x YoY",
+          "ÉCHEC : Échelle insuffisante — 150K MAU ne suffit pas pour un moteur de recherche",
+          "ÉCHEC : Token à -99.6% = zéro confiance marché",
+          "ÉCHEC : Revenue multiple absurde (72x sur $208K)",
+          "ÉCHEC : Cash runway ~2 mois"
+        ],
+        "destruction_valeur": "-99.6% depuis ATH. Les investisseurs ICO à $0.06 détiennent maintenant $0.002.",
+        "pivots_effectues": [
+          "De meta-search vers Web3-native search (Presearch 3.0)",
+          "Migration d'Ethereum vers Base L2",
+          "De token ICO vers SAFE equity crowdfunding (Wefunder)"
+        ],
+        "signaux_dalerte": [
+          "Cash runway ~2 mois (CRITIQUE)",
+          "Volume quotidien $3K (ILLIQUIDE)",
+          "-99.6% depuis ATH",
+          "SAFE à 72x revenue multiple",
+          "Passage d'ICO à equity crowdfunding = le token model a échoué"
+        ],
+        "verdict": "EN DANGER DE MORT. Le produit est correct mais l'économie ne fonctionne pas. Le passage de token model à equity crowdfunding (Wefunder) est un aveu d'échec du modèle crypto. 150K MAU ne suffit pas pour un search engine viable."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "BASSE. Le search est un marché totalement différent de la data monetization santé.",
+        "ce_que_myne_doit_copier": "Le modèle de nœuds communautaires (infrastructure décentralisée) pourrait inspirer un réseau de cliniques/cabinets NOOS. Le passage de token à equity quand le modèle crypto échoue — MYNε devrait commencer par l'equity, pas le token.",
+        "ce_que_myne_doit_eviter": "Le search-to-earn. Le token comme principal incentive utilisateur. La sous-capitalisation chronique. Le revenue multiple absurde.",
+        "avantage_myne": "MYNε a un marché B2B clair (pharma paie €18-70/profil/mois). Presearch n'a que $208K de revenus après 8 ans. MYNε peut générer plus avec 1,000 patients NOOS qu'avec 150K utilisateurs Presearch.",
+        "score_pertinence_0_10": 3
+      }
+    },
+    {
+      "numero": 21,
+      "nom": "Swash",
+      "categorie": "ATTENTION MONETIZATION",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Swash",
+        "pays": "Finlande",
+        "annee_creation": 2020,
+        "fondateurs": "Équipe incluant leadership avec background data/privacy (identité précise non documentée publiquement)",
+        "formation_fondateurs": "Background en data science et analytics. Hannu Verkasalo recruté comme exec (background market research).",
+        "siege": "Finlande",
+        "forme_juridique": "Startup + Data Union DAO",
+        "description_courte": "Extension navigateur et portail de gains. Les utilisateurs gagnent des points/SWASH en partageant leurs données de navigation et en complétant des tâches. Construit initialement sur Streamr (Data Union)."
+      },
+      "these": {
+        "probleme_cible": "Les utilisateurs génèrent des données de navigation précieuses mais ne reçoivent rien en retour. Les data brokers gagnent des milliards en revendant ces données sans consentement.",
+        "solution_proposee": "Extension navigateur simple : installe Swash → tes données de navigation sont collectées → tu gagnes des SWASH → tu échanges contre du cash, des gift cards ou des crypto. Data Union = pouvoir collectif des membres.",
+        "proposition_valeur": "Soyez rémunéré pour vos données. Swash est un portail de gains en ligne.",
+        "these_investissement_originale": "Les données de navigation de millions d'utilisateurs agrégées via une Data Union créent un dataset unique et précieux pour les acheteurs B2B (adtech, market research).",
+        "marche_cible_tam": "Data brokerage: $350B+ (2025). Online survey/task platforms: $50B+.",
+        "positionnement_vs_concurrents": "Concurrent de Brave Rewards, Cirus, Permission.io, Honeygain. Différenciation : Data Union (collectif), multi-plateforme (Chrome, Firefox), fiat off-ramp."
+      },
+      "architecture": {
+        "stack_technique": "Extension navigateur (Chrome, Firefox). Initialement construit sur Streamr DATA tokens. Propre token SWASH depuis 2021. Staking, referral programs.",
+        "blockchain_utilisee": "Ethereum (ERC-20)",
+        "role_du_token": "SWASH : récompense pour le partage de données, staking pour gains supplémentaires, referral rewards, transactions dans l'écosystème",
+        "mecanisme_consensus": "Hérite d'Ethereum",
+        "interoperabilite": "ERC-20",
+        "composants_cles": [
+          "Swash Browser Extension",
+          "Data Union (collectif de données)",
+          "Earning Portal (tâches, sondages, navigation)",
+          "Staking mechanism",
+          "Fiat/Gift card redemption"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING FORT. Un portail de micro-tâches et de partage de données n'a pas besoin de blockchain. Survey Junkie, Honeygain font la même chose sans crypto. Le token SWASH ajoute de la friction et de la complexité pour l'utilisateur moyen. Score: 1/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Data Union / Task Platform",
+        "sources_revenus": [
+          "Vente de données agrégées de navigation aux acheteurs B2B",
+          "Commissions sur les tâches et sondages",
+          "Token sale proceeds"
+        ],
+        "tokenomics": {
+          "token": "SWASH",
+          "supply_max": "1 milliard",
+          "supply_circulante": "990-995M (quasi-totalement distribué)",
+          "prix_actuel_usd": "$0.002-0.003 (avril 2026)",
+          "ath_usd": "$0.68-0.95 (oct/nov 2021)",
+          "chute_depuis_ath_pct": "-99.7%",
+          "market_cap_actuel": "$1.8-3.2M",
+          "volume_24h": "$9-85K (principalement Gate.io = une seule exchange)",
+          "utilite_reelle_du_token": "QUASI-NULLE. Le token sert à rémunérer les utilisateurs mais les montants sont si faibles ($0.002/token) que la valeur par session est négligeable. Les utilisateurs sérieux préfèrent des paiements fiat.",
+          "token_speculatif_ou_utile": "95% SPÉCULATIF / 5% UTILE. Listé sur une seule exchange (Gate.io). Volume dérisoire. Le pivot vers 'earning portal' (cash, gift cards) montre que le token ne convainc pas les utilisateurs."
+        },
+        "modele_b2b_b2c": "B2C (utilisateurs extension) + B2B (acheteurs données). Mais le B2B n'est pas documenté/visible."
+      },
+      "financement": {
+        "total_leve": "~$23M",
+        "rounds": [
+          "Round 1: $4M (septembre 2021, mené par crypto investors)",
+          "Round 2: $19M oversubscribed (janvier 2022)"
+        ],
+        "investisseurs_notables": [
+          "Crypto angels et fonds (non nommés publiquement)"
+        ],
+        "ico_details": "Token launch octobre 2021 à $0.09. ATH ROI: 7.57x. ROI actuel: 0.02x (-97.8%).",
+        "valorisation_derniere_connue": "ATH market cap ~$38M. Actuellement $1.8-3.2M."
+      },
+      "traction": {
+        "utilisateurs_actifs": "220K+ membres Data Union (2022). Chiffres actuels non publiés.",
+        "metriques_cles": [
+          "220K+ membres Data Union (2022, probablement stable ou en déclin)",
+          "Extension Chrome et Firefox actives",
+          "Pivot vers 'earning portal' avec tâches et gift cards"
+        ],
+        "partenariats_majeurs": [
+          "Streamr (partenaire initial, infrastructure Data Union)",
+          "Pas de partenariat enterprise B2B documenté"
+        ],
+        "adoption_reelle": "FAIBLE. 220K membres est correct pour une extension mais le taux d'utilisation active est inconnu. Le pivot vers des tâches et gift cards suggère que la monétisation pure des données ne fonctionne pas.",
+        "developpeurs_actifs": "Équipe petite",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "EN DÉCLIN LENT. $23M levés pour un market cap de $2M = destruction de 91% de la valeur levée. Le pivot vers 'earning portal' (gift cards, cash, tâches) est un aveu que le modèle 'earn crypto for your data' ne fonctionne pas seul. L'extension existe toujours mais sans croissance visible.",
+        "causes_succes_ou_echec": [
+          "FORCE : Concept simple et intuitif (install extension → earn)",
+          "FORCE : Data Union = concept collectif intéressant",
+          "ÉCHEC : $23M levés pour $2M de market cap = gestion catastrophique du capital",
+          "ÉCHEC : Le gain par utilisateur est trop faible pour retenir les gens",
+          "ÉCHEC : Pas de B2B visible — qui achète les données Swash?",
+          "ÉCHEC : Token à -99.7% = zéro confiance"
+        ],
+        "destruction_valeur": "-99.7% depuis ATH. $23M levés pour un projet valant $2M. Les investisseurs ont perdu ~$21M.",
+        "pivots_effectues": [
+          "De Streamr DATA tokens vers propre token SWASH",
+          "De 'data monetization' vers 'earning portal' (tâches + gift cards + cash)",
+          "Extension de Chrome vers Firefox et autres browsers"
+        ],
+        "signaux_dalerte": [
+          "-99.7% depuis ATH",
+          "Listé sur une seule exchange (Gate.io)",
+          "Revenus/données B2B non documentés",
+          "Pivot vers les gift cards = le crypto ne marche pas pour les users",
+          "$23M levés brûlés sans traction"
+        ],
+        "verdict": "QUASI-MORT. Le concept Data Union est intéressant en théorie mais l'exécution a échoué. $23M brûlés pour $2M de valeur résiduelle. Le pivot vers les gift cards est un signal de désespoir."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "MOYENNE. Le concept de Data Union (agrégation collective avec rémunération) est conceptuellement pertinent pour MYNε/NOOS.",
+        "ce_que_myne_doit_copier": "Le concept de Data Union — les patients NOOS forment un collectif dont les données agrégées valent plus que les données individuelles. L'extension navigateur simple (UX minimale pour l'utilisateur).",
+        "ce_que_myne_doit_eviter": "Le token comme paiement ($0.002/token est ridicule). $23M brûlés sans B2B clair. Le pivot vers gift cards — MYNε doit payer en EUR dès le départ. Ne pas dépendre d'un seul exchange pour la liquidité du token.",
+        "avantage_myne": "MYNε a des données de HAUTE valeur (psychiatrie RWE, €18-70/profil/mois) vs données de navigation basse valeur ($0.001/session). La Data Union NOOS vaut 10,000x une Data Union de browsing data.",
+        "score_pertinence_0_10": 5
+      }
+    },
+    {
+      "numero": 22,
+      "nom": "Cirus Foundation",
+      "categorie": "ATTENTION MONETIZATION",
+      "statut": "PIVOTÉ",
+      "identite": {
+        "nom_complet": "Cirus Foundation",
+        "pays": "Îles Cook",
+        "annee_creation": 2018,
+        "fondateurs": "Michael Luckhoo + Daniel Bland",
+        "formation_fondateurs": "Background business/entrepreneur. Pas de profil technique ou académique de premier plan documenté. Juridiction offshore (Îles Cook) est un red flag.",
+        "siege": "Rarotonga, Îles Cook (juridiction offshore)",
+        "forme_juridique": "Fondation (Îles Cook)",
+        "description_courte": "Plateforme de monétisation de données via un routeur WiFi hardware (Cirus Device) et une extension navigateur. Capture les données IoT du foyer pour les monétiser."
+      },
+      "these": {
+        "probleme_cible": "Les données générées par les appareils connectés du foyer (IoT) valent des milliards mais les utilisateurs n'en reçoivent rien. Les FAI et GAFA captent toute la valeur.",
+        "solution_proposee": "Un routeur WiFi propriétaire (Cirus Device) qui capture les données de tous les appareils connectés du foyer + une plateforme pour monétiser ces données via blockchain. Version software (extension) pour l'accès sans hardware.",
+        "proposition_valeur": "Votre foyer est une mine de données — le Cirus Device vous permet d'en tirer un revenu passif.",
+        "these_investissement_originale": "1 million de foyers × 5 personnes × données IoT = dataset massif et unique. Le routeur hardware crée un avantage concurrentiel défendable.",
+        "marche_cible_tam": "IoT data: $1T+. Smart home: $250B (2030). Data brokerage: $350B+.",
+        "positionnement_vs_concurrents": "Approche unique : hardware (routeur) + software. Concurrent de Swash (software only), Brave (browser only). Différenciation : capture données IoT (pas juste navigation)."
+      },
+      "architecture": {
+        "stack_technique": "Cirus Device (routeur WiFi custom avec validateur node, stockage, IoT platform). Cirus Core Platform (software). Cirus Confluence Network (agrégation/monétisation). Polygon (Layer 2). Extension navigateur.",
+        "blockchain_utilisee": "Polygon (Ethereum Layer 2)",
+        "role_du_token": "CIRUS : récompense pour partage de données, authentification des devices, staking pour multiplier les gains (1.0x → 1.5x → 2.0x), paiement réseau",
+        "mecanisme_consensus": "Hérite de Polygon",
+        "interoperabilite": "ERC-20 / Polygon",
+        "composants_cles": [
+          "Cirus Device (routeur WiFi hardware)",
+          "Cirus Core Platform (software)",
+          "Cirus Confluence Network (agrégation données)",
+          "Browser Extension",
+          "Wallet-as-a-Service (pivot 2023)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING QUASI-TOTAL. Un routeur WiFi qui collecte des données IoT n'a aucun besoin de blockchain. La blockchain est là pour le token, qui est là pour l'ICO. L'authentification des devices, la provenance des données et les paiements fonctionnent mieux avec des systèmes traditionnels. Score: 1/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Hardware + Software (data monetization)",
+        "sources_revenus": [
+          "Vente du Cirus Device (jamais commercialisé à échelle)",
+          "Monétisation des données agrégées",
+          "Token sale",
+          "Wallet-as-a-Service (pivot 2023, avec Shift Markets)"
+        ],
+        "tokenomics": {
+          "token": "CIRUS",
+          "supply_max": "250 millions",
+          "supply_circulante": "62-213M (données contradictoires — signal d'opacité)",
+          "prix_actuel_usd": "$0.001 (avril 2026)",
+          "ath_usd": "$1.10-1.73",
+          "chute_depuis_ath_pct": "-99.9%",
+          "market_cap_actuel": "$47K-375K (MICRO-CAP = essentiellement mort)",
+          "volume_24h": "$22-25 (!!!) — ZÉRO ABSOLU",
+          "utilite_reelle_du_token": "ZÉRO. Le device n'a jamais été déployé à échelle. Le token n'a aucune utilité mesurable. $22/jour de volume = personne ne trade, personne n'utilise.",
+          "token_speculatif_ou_utile": "100% MORT. Ce n'est même plus spéculatif — il n'y a plus de marché."
+        },
+        "modele_b2b_b2c": "B2C (foyers avec Cirus Device) mais le device n'a probablement jamais été livré à échelle."
+      },
+      "financement": {
+        "total_leve": "~$3.8M",
+        "rounds": [
+          "Private Round: $0.09/token, $1.89M levés, valorisation $22.5M",
+          "Public IDO: $0.13/token, montant non documenté"
+        ],
+        "investisseurs_notables": [
+          "Aucun investisseur de renom documenté"
+        ],
+        "ico_details": "IDO août 2021. ATH ROI: 13.2x pour les participants IDO. ROI actuel: ~0.01x (-99%).",
+        "valorisation_derniere_connue": "Market cap $47K-375K. Essentiellement zéro."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Contrat D-VoiS pour 1M foyers en Inde annoncé (oct 2021) — jamais confirmé/déployé",
+        "metriques_cles": [
+          "Contrat D-VoiS: 1M foyers / 5M users — ANNONCÉ mais jamais vérifié",
+          "Cirus Device devait être livré Q2 2022 — statut inconnu",
+          "Pivot Wallet-as-a-Service avec Shift Markets (déc 2023)",
+          "Volume $22/jour = MORT"
+        ],
+        "partenariats_majeurs": [
+          "D-VoiS (ISP indien) — contrat annoncé mais exécution douteuse",
+          "Shift Markets (infra exchange) — pivot WaaS 2023"
+        ],
+        "adoption_reelle": "NULLE. Aucune preuve que le Cirus Device a été produit ou déployé à échelle. Le contrat D-VoiS de 1M foyers semble être de la communication sans substance. $22/jour de volume confirme l'absence totale d'écosystème.",
+        "developpeurs_actifs": "Probablement 0 développeurs actifs. Dernier code audit par Hacken (date inconnue).",
+        "tvl_si_defi": "$0"
+      },
+      "autopsie": {
+        "etat_actuel": "MORT EFFECTIVE. $22/jour de volume, market cap $47-375K, aucun produit déployé, pivot vers Wallet-as-a-Service = désespoir. Juridiction Îles Cook + fondateurs non-techniques + promesses non tenues (D-VoiS, device Q2 2022) = tous les signaux d'un projet qui a brûlé l'argent ICO sans rien livrer.",
+        "causes_succes_ou_echec": [
+          "ÉCHEC TOTAL : Device hardware jamais livré à échelle",
+          "ÉCHEC : Contrat D-VoiS = vaporware (annoncé, jamais exécuté)",
+          "ÉCHEC : Juridiction offshore (Îles Cook) = gouvernance opaque",
+          "ÉCHEC : Fondateurs sans crédibilité technique",
+          "ÉCHEC : $3.8M levés pour $375K de valeur résiduelle",
+          "ÉCHEC : Pivot WaaS = abandon total de la mission originale"
+        ],
+        "destruction_valeur": "-99.9% depuis ATH. De ~$100M+ market cap estimé à $47-375K. DESTRUCTION QUASI-TOTALE.",
+        "pivots_effectues": [
+          "De data monetization via hardware vers Wallet-as-a-Service (2023)",
+          "Partenariat Shift Markets pour wallets CEX non-custodial",
+          "Abandon probable du Cirus Device"
+        ],
+        "signaux_dalerte": [
+          "Juridiction Îles Cook = RED FLAG majeur",
+          "Volume $22/jour = projet mort",
+          "Device jamais livré",
+          "Contrat D-VoiS probablement fictif",
+          "Supply circulante contradictoire (62M vs 213M = opacité)",
+          "Pivot radical = abandon de la vision"
+        ],
+        "verdict": "SCAM PROBABLE ou incompétence absolue. Toutes les promesses non tenues, juridiction offshore, volume $22/jour. Les investisseurs ont perdu 99.9%."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "ANTI-MODÈLE. Ce que MYNε ne doit JAMAIS devenir.",
+        "ce_que_myne_doit_copier": "L'idée (pas l'exécution) de capturer les données IoT du foyer est conceptuellement intéressante pour des devices de santé connectés (NOOS via Apple Watch, etc.).",
+        "ce_que_myne_doit_eviter": "TOUT. Juridiction offshore, hardware non livré, contrats fantômes, token sans utilité, fondateurs sans crédibilité technique, pivot radical. MYNε doit être en France/EU (SAS), livrer le produit avant le token, et avoir des fondateurs crédibles.",
+        "avantage_myne": "MYNε est basé en France (EIGEN Holding SAS), a un produit défini (NOOS), des briques logicielles identifiées (ÆLYA, BURHAN), et un fondateur documenté. L'opposé absolu de Cirus.",
+        "score_pertinence_0_10": 1
+      }
+    },
+    {
+      "numero": 23,
+      "nom": "Permission.io",
+      "categorie": "ATTENTION MONETIZATION",
+      "statut": "ACTIF",
+      "identite": {
+        "nom_complet": "Permission.io",
+        "pays": "Suisse (Zug) / États-Unis",
+        "annee_creation": 2017,
+        "fondateurs": "Charlie Silver (Chairman/CEO)",
+        "formation_fondateurs": "Background business/marketing/advertising. Profil entrepreneur adtech, pas technique.",
+        "siege": "Crypto Valley (Zug, Suisse) + opérations US",
+        "forme_juridique": "Corporation",
+        "description_courte": "Plateforme publicitaire Web3 où les consommateurs gagnent du ASK pour avoir opt-in dans le partage de données et le visionnage de publicités ciblées."
+      },
+      "these": {
+        "probleme_cible": "La publicité digitale repose sur la surveillance (cookies, tracking). Les consommateurs subissent des pubs non-consenties. Les annonceurs gaspillent du budget en ciblage approximatif.",
+        "solution_proposee": "Permission Ads — DSP (Demand-Side Platform) crypto-native où les annonceurs récompensent directement les consommateurs en ASK pour leur opt-in et leurs données déclaratives. L'utilisateur contrôle quand et comment il est ciblé.",
+        "proposition_valeur": "Web3 advertising : les marques récompensent directement les consommateurs, éliminant les intermédiaires adtech.",
+        "these_investissement_originale": "Le consentement explicite (permission marketing, Seth Godin) + blockchain = nouvelle ère publicitaire où l'utilisateur est rémunéré.",
+        "marche_cible_tam": "Digital advertising: $740B (2025). Permission/consent-based marketing: $20B+ d'ici 2028.",
+        "positionnement_vs_concurrents": "Concurrent de Brave Ads, Swash, Cirus. Différenciation : Permission Ads DSP (plateforme annonceur), focus enterprise/brands, ASK comme monnaie publicitaire."
+      },
+      "architecture": {
+        "stack_technique": "Permission Ads DSP (plateforme annonceur). Blockchain Permission (fork Ethereum initialement). Migration vers Polygon puis Base (Coinbase L2). Smart contracts pour les rewards.",
+        "blockchain_utilisee": "Polygon + Base (Coinbase L2, lancé janvier 2025)",
+        "role_du_token": "ASK : récompense pour opt-in et partage de données, paiement entre annonceurs et consommateurs, mécanisme de la plateforme publicitaire",
+        "mecanisme_consensus": "Hérite de Polygon/Base",
+        "interoperabilite": "Polygon, Base (Coinbase L2), anciennement blockchain propre",
+        "composants_cles": [
+          "Permission Ads DSP (plateforme annonceur)",
+          "ASK Token (rewards)",
+          "Declared data sharing (données déclaratives)",
+          "Video ad engagement rewards",
+          "Base L2 deployment (2025)"
+        ],
+        "blockchain_necessaire_ou_washing": "BLOCKCHAIN-WASHING FORT. Une plateforme publicitaire qui récompense les utilisateurs pour regarder des pubs n'a pas besoin de blockchain. Swagbucks, InboxDollars font exactement la même chose depuis 20 ans en fiat. Le token ASK ajoute de la friction (besoin de wallet, exchange, etc.) sans valeur ajoutée. Score: 1/10 nécessité blockchain."
+      },
+      "modele_economique": {
+        "type": "Ad Platform (DSP) avec crypto rewards",
+        "sources_revenus": [
+          "Revenus publicitaires (DSP)",
+          "Token sale / equity financing",
+          "Probablement commission sur les transactions ASK"
+        ],
+        "tokenomics": {
+          "token": "ASK",
+          "supply_max": "100 milliards (!!!)",
+          "supply_circulante": "22-23 milliards (seulement 23%)",
+          "prix_actuel_usd": "$0.0001 (avril 2026)",
+          "ath_usd": "$0.008-0.025 (données contradictoires)",
+          "chute_depuis_ath_pct": "-99.6%",
+          "market_cap_actuel": "$2.3-3.1M",
+          "volume_24h": "$810-$83K (très variable, principalement Gate.io et Uniswap)",
+          "utilite_reelle_du_token": "MINIMALE. Le token sert à récompenser le visionnage de pubs mais à $0.0001/token, il faut visionner des milliers de pubs pour gagner quelques centimes. L'utilité est théorique.",
+          "token_speculatif_ou_utile": "90% SPÉCULATIF / 10% UTILE. Supply de 100 MILLIARDS avec 23% en circulation = DILUTION MASSIVE à venir (77% du supply restant à distribuer). Red flag tokenomique majeur."
+        },
+        "modele_b2b_b2c": "B2B (annonceurs/marques) + B2C (consommateurs opt-in). Mais le volume de chaque côté est minuscule."
+      },
+      "financement": {
+        "total_leve": "$47M+ (equity) + $5M (token pre-sale) = ~$52M total",
+        "rounds": [
+          "Token pre-sale: $5M",
+          "Equity financing: $47M cumulé (multiple rounds)"
+        ],
+        "investisseurs_notables": [
+          "Investisseurs equity non documentés publiquement"
+        ],
+        "ico_details": "$47M en equity est CONSIDÉRABLE pour un projet à $2.3M de market cap. Destruction de valeur massive.",
+        "valorisation_derniere_connue": "Market cap token: $2.3-3.1M. Equity valuation: inconnue mais $47M levés suggèrent une valorisation passée bien plus élevée."
+      },
+      "traction": {
+        "utilisateurs_actifs": "Non documenté publiquement — absence de métriques est un red flag",
+        "metriques_cles": [
+          "ASK listé sur Gate.io (2022)",
+          "Migration vers Base (Coinbase L2) — janvier 2025",
+          "Aucune métrique d'utilisateurs actifs publiée"
+        ],
+        "partenariats_majeurs": [
+          "Aucun partenariat enterprise majeur documenté"
+        ],
+        "adoption_reelle": "QUASI-NULLE. $47M+ levés mais aucune métrique d'adoption publiée. L'absence de données de traction est le signal le plus négatif possible.",
+        "developpeurs_actifs": "Équipe interne, pas de communauté de développeurs externe",
+        "tvl_si_defi": "N/A"
+      },
+      "autopsie": {
+        "etat_actuel": "ZOMBIE BIEN FINANCÉ. $52M levés pour un market cap de $2.3M et aucune traction publiée. Le projet existe juridiquement mais n'a pas de preuve d'adoption. La migration vers Base (2025) est un signe de vie minimal mais insuffisant.",
+        "causes_succes_ou_echec": [
+          "ÉCHEC : $52M levés sans traction = gestion catastrophique du capital",
+          "ÉCHEC : Supply de 100 MILLIARDS = tokenomics absurdes",
+          "ÉCHEC : Aucune métrique d'adoption publiée après 8 ans",
+          "ÉCHEC : Le modèle 'pay users to watch ads' existe en fiat depuis 20 ans (Swagbucks)",
+          "ÉCHEC : Migration de blockchain (Permission → Polygon → Base) = instabilité technique",
+          "FORCE RELATIVE : $47M d'equity = runway potentiel (si pas déjà brûlé)"
+        ],
+        "destruction_valeur": "-99.6% depuis ATH. $52M levés pour $2.3M de market cap = destruction de $50M de valeur investisseur.",
+        "pivots_effectues": [
+          "De blockchain propre (Permission Blockchain) vers Polygon",
+          "De Polygon vers Base (Coinbase L2) — 2025",
+          "Rebranding/repositionnement permanent"
+        ],
+        "signaux_dalerte": [
+          "$52M levés, $2.3M market cap = ratio catastrophique",
+          "Supply 100 MILLIARDS avec 23% circulant = dilution 4x à venir",
+          "Aucune métrique d'adoption après 8 ans",
+          "3 migrations de blockchain = instabilité",
+          "Volume $810/jour sur certains jours = illiquide"
+        ],
+        "verdict": "ZOMBIE BIEN FINANCÉ. Le pire ratio argent levé/valeur créée du panel ($52M → $2.3M). Preuve que le capital ne garantit pas l'adoption. Le modèle 'pay to watch ads + crypto' ne fonctionne pas."
+      },
+      "lecon_myne": {
+        "pertinence_pour_myne": "BASSE MAIS ÉDUCATIVE. Permission.io prouve que même avec $52M, le modèle 'récompenser l'attention avec un token' ne fonctionne pas s'il n'y a pas de produit supérieur.",
+        "ce_que_myne_doit_copier": "Le concept de 'permission marketing' (consentement explicite avant toute collecte de données) est exactement ce qu'ÆLYA fait. Mais en EUR, pas en token.",
+        "ce_que_myne_doit_eviter": "Supply 100 MILLIARDS (!). $52M brûlés sans traction. 3 migrations de blockchain. L'absence de métriques publiées. Le modèle publicitaire comme source principale de revenus (fragile et compétitif).",
+        "avantage_myne": "MYNε ne vend pas de pub — il vend des données de santé haute valeur (€18-70/profil/mois). La source de revenus est directe (pharma → données), pas intermédiée (annonceur → pub → clic → token). Plus robuste, plus prévisible.",
+        "score_pertinence_0_10": 3
+      }
+    }
+  ],
+  "tableau_comparatif": {
+    "colonnes": ["Projet", "Token", "Prix actuel", "ATH", "Chute %", "Market Cap", "Vol 24h", "Blockchain nécessaire?", "Score MYNε"],
+    "donnees": [
+      ["Oasis Network", "ROSE", "$0.01", "$0.60", "-98.3%", "$75M", "$4-11M", "6/10", "6/10"],
+      ["iExec/RLC", "RLC", "$0.41", "$15.51", "-97.4%", "$35M", "$5.4M", "5/10", "7/10"],
+      ["Itheum", "ITHEUM", "$0.0012", "$0.78", "-99.85%", "$1.15M", "$49", "2/10", "2/10"],
+      ["Ocean Protocol", "OCEAN", "$0.12", "$1.93", "-93.6%", "$25M", "$90K-925K", "5/10", "9/10"],
+      ["Streamr", "DATA", "$0.001", "$0.37", "-99.7%", "$1.3M", "$185K", "3/10", "4/10"],
+      ["Secret Network", "SCRT", "$0.08-0.20", "$10.38", "-98/99%", "$26-62M", "$1-2.3M", "8/10", "8/10"],
+      ["Brave/BAT", "BAT", "$0.10-0.15", "$1.92", "-92/95%", "$140-218M", "$27-41M", "4/10", "9/10"],
+      ["Presearch", "PRE", "$0.002", "$0.81", "-99.6%", "$1.6M", "$3K", "2/10", "3/10"],
+      ["Swash", "SWASH", "$0.002", "$0.68-0.95", "-99.7%", "$1.8-3.2M", "$9-85K", "1/10", "5/10"],
+      ["Cirus Foundation", "CIRUS", "$0.001", "$1.10-1.73", "-99.9%", "$47-375K", "$22", "1/10", "1/10"],
+      ["Permission.io", "ASK", "$0.0001", "$0.008-0.025", "-99.6%", "$2.3M", "$810-83K", "1/10", "3/10"]
+    ]
+  },
+  "meta_analyse": {
+    "pattern_1_destruction_valeur": "10/11 projets ont perdu plus de 92% de leur valeur depuis l'ATH. Moyenne: -98.2%. Le seul projet à 'seulement' -92% est Brave, qui réussit grâce à son produit, pas son token.",
+    "pattern_2_blockchain_washing": "7/11 projets n'ont pas besoin de blockchain (score ≤3/10). La blockchain est réellement justifiée pour Secret Network (8/10) et partiellement pour Oasis (6/10) et iExec/Ocean (5/10). Pour les projets d'attention (Swash, Cirus, Permission, Presearch), la blockchain est un pur marketing.",
+    "pattern_3_volume_reel": "Seuls Brave/BAT ($27-41M) et iExec ($5.4M) ont un volume de trading significatif. 5 projets ont un volume quotidien inférieur à $100K. 2 projets ont un volume inférieur à $100/jour (Cirus: $22, Itheum: $49).",
+    "pattern_4_utilite_token": "Aucun token du panel n'a une utilité réelle dominante sur sa composante spéculative. Le BAT est le plus utile (50/50) grâce aux 100M MAU de Brave. Les autres sont 80-100% spéculatifs.",
+    "pattern_5_product_market_fit": "Seul Brave a trouvé un PMF (100M MAU). Secret Network a un mini-PMF (TVL $10M, DeFi active). Tous les autres n'ont PAS de PMF après 5-9 ans d'existence.",
+    "lecon_fondamentale_pour_myne": "La monétisation des données et de l'attention est un vrai marché MAIS le token/blockchain est RAREMENT le bon véhicule. Brave réussit MALGRÉ le token, pas GRÂCE à lui. MYNε doit construire un excellent produit (NOOS) d'abord, monétiser en EUR/USD, et n'envisager le token QUE si et quand l'échelle le justifie."
+  }
+}

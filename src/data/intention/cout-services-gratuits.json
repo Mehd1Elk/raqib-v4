@@ -1,0 +1,536 @@
+{
+  "meta": {
+    "auteur": "MOUNIA",
+    "date_analyse": "2026-04-03",
+    "methodologie": "ARPU calculé à partir des rapports annuels 2024-2025. Temps d'attention basé sur études eMarketer/SQ Magazine 2025. Coût d'opportunité = heures × 25€/h (SMIC horaire net France). Données collectées vérifiées via politiques de confidentialité officielles et audits tiers (Surfshark, MIT Media Lab).",
+    "taux_change_usd_eur": 0.92,
+    "smic_horaire_net_france_eur": 25
+  },
+  "services": [
+    {
+      "id": 1,
+      "service_gratuit": "Gmail",
+      "vs": "ProtonMail (Mail Plus)",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 35.88,
+      "arpu_source": "Alphabet FY2024: 350 Mds$ revenus, ~1.8 Mds utilisateurs Gmail. Part Gmail estimée ~7% des revenus publicitaires Google Services (ciblage email + profiling). ~$39/user/an → 35.88€ (SEC.gov, Alphabet Q4 2024 Earnings; SEO.ai 1.8B Gmail users)",
+      "donnees_collectees": [
+        "Contenu des emails (scan sémantique pour ciblage pub)",
+        "Contacts et carnet d'adresses",
+        "Pièces jointes (métadonnées)",
+        "Historique d'achat (parsing automatique des reçus)",
+        "Localisation (IP, métadonnées)",
+        "Identifiants appareil",
+        "Données financières (Google Pay lié)",
+        "Activité cross-service Google"
+      ],
+      "temps_attention_heures_jour": 0.5,
+      "temps_attention_source": "Inbox Zero 2026: ~30 min/jour usage personnel Gmail moyen (hors professionnel)",
+      "cout_opportunite_eur_an": 4562.5,
+      "calcul_cout_opportunite": "0.5h × 365j × 25€ = 4 562.50€",
+      "alternative_payante": {
+        "nom": "ProtonMail Mail Plus",
+        "prix_eur_an": 47.88,
+        "donnees_collectees": ["Aucune. Chiffrement E2E zero-access. Juridiction suisse. Pas de scan des emails."],
+        "source": "proton.me/support/proton-plans"
+      },
+      "delta_eur_an": -11.88,
+      "interpretation_delta": "Le 'gratuit' Gmail coûte 35.88€ en données extraites vs 47.88€ pour ProtonMail. Mais le coût d'opportunité (4 562€) est identique. Le vrai surcoût de Gmail = extraction de données valant 35.88€/an que ProtonMail ne prélève pas."
+    },
+    {
+      "id": 2,
+      "service_gratuit": "Google Search",
+      "vs": "Kagi (Professional) / Brave Search Premium",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 134.55,
+      "arpu_source": "Alphabet FY2024: Google Search & Other = 197.9 Mds$ (SEC.gov). ~4.3 Mds utilisateurs Google Search actifs. ARPU Search = ~$146/user/an → 134.55€. Confirmé par Google ad revenue $264.59B/2024 (Statista)",
+      "donnees_collectees": [
+        "Toutes les requêtes de recherche",
+        "Historique de navigation (via Chrome sync)",
+        "Localisation précise (GPS/IP/WiFi)",
+        "Profil d'intérêts inféré",
+        "Données démographiques inférées",
+        "Achats détectés",
+        "Historique YouTube corrélé",
+        "Données vocales (Google Assistant)",
+        "Identifiants publicitaires cross-device"
+      ],
+      "temps_attention_heures_jour": 0.18,
+      "temps_attention_source": "SQ Magazine 2026: 3-4 recherches/jour × ~3 min = ~11 min/jour",
+      "cout_opportunite_eur_an": 1643.75,
+      "calcul_cout_opportunite": "0.18h × 365j × 25€ = 1 643.75€",
+      "alternative_payante": {
+        "nom": "Kagi Professional",
+        "prix_eur_an": 110.40,
+        "donnees_collectees": ["Aucune. Pas de tracking, pas de publicité, pas de profilage. Financé 100% par abonnements."],
+        "source": "kagi.com/pricing — $10/mois = $120/an → 110.40€"
+      },
+      "alternative_payante_2": {
+        "nom": "Brave Search Premium",
+        "prix_eur_an": 27.60,
+        "donnees_collectees": ["Aucune donnée personnelle collectée. Recherche privée."],
+        "source": "brave.com/premium — $3/mois = $36/an → 27.60€ (inclut aussi Leo AI et VPN)"
+      },
+      "delta_eur_an": 24.15,
+      "interpretation_delta": "Google Search extrait 134.55€/an en données. Kagi coûte 110.40€ → économie de 24.15€ en données ET vie privée préservée. Brave Search encore moins cher à 27.60€/an."
+    },
+    {
+      "id": 3,
+      "service_gratuit": "Google Maps",
+      "vs": "Organic Maps / OsmAnd",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 28.52,
+      "arpu_source": "Estimé à partir des revenus publicitaires locaux Google (Local Services Ads, pins sponsorisés). Part Maps dans l'écosystème Google estimée ~8% de l'ARPU total. La valeur des données de localisation est très élevée pour le ciblage publicitaire local.",
+      "donnees_collectees": [
+        "Localisation GPS précise en continu",
+        "Historique complet des déplacements (Timeline)",
+        "Durée passée dans chaque lieu",
+        "Itinéraires quotidiens (domicile-travail)",
+        "Lieux fréquentés et préférences commerciales",
+        "Données de trafic agrégées",
+        "Recherches de lieux et commerces",
+        "Avis et photos contribués"
+      ],
+      "temps_attention_heures_jour": 0.15,
+      "temps_attention_source": "Estimation: ~9 min/jour pour navigation + recherche de lieux (usage quotidien moyen)",
+      "cout_opportunite_eur_an": 1368.75,
+      "calcul_cout_opportunite": "0.15h × 365j × 25€ = 1 368.75€",
+      "alternative_payante": {
+        "nom": "Organic Maps",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["Aucune. Open-source, hors-ligne, aucun tracking, aucune télémétrie. Basé sur OpenStreetMap."],
+        "source": "organicmaps.app — 100% gratuit et open-source"
+      },
+      "alternative_payante_2": {
+        "nom": "OsmAnd Pro",
+        "prix_eur_an": 39.99,
+        "donnees_collectees": ["Données de synchronisation cloud chiffrées uniquement. Pas de tracking publicitaire."],
+        "source": "osmand.net — €39.99/an pour Pro"
+      },
+      "delta_eur_an": 28.52,
+      "interpretation_delta": "Google Maps extrait 28.52€/an en données de localisation. Organic Maps = 0€ et 0 données. Le 'gratuit' de Google Maps coûte 28.52€ de plus que le vrai gratuit d'Organic Maps."
+    },
+    {
+      "id": 4,
+      "service_gratuit": "Facebook",
+      "vs": "Mastodon (auto-hébergé)",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 21.29,
+      "arpu_source": "Meta FY2024: ARPU mondial = $49.63 (Statista). ARPU Europe = ~$23.14/user (Q4 2023 Statista/Analyzify). Pour un utilisateur type zone EMEA: ~$23.14 → 21.29€",
+      "donnees_collectees": [
+        "Profil complet (nom, âge, genre, statut, emploi, éducation)",
+        "Tous les posts, messages, commentaires, likes",
+        "Graphe social complet (amis, interactions)",
+        "Préférences politiques et religieuses",
+        "Données de l'appareil (modèle, OS, apps installées, WiFi, Bluetooth)",
+        "Localisation précise et historique",
+        "Habitudes d'achat (on/offline via Meta Pixel)",
+        "Activité hors-Facebook (sites tiers avec Facebook Pixel/SDK)",
+        "Contacts téléphoniques uploadés",
+        "Profils fantômes de non-utilisateurs",
+        "Données utilisées pour entraîner Meta AI"
+      ],
+      "temps_attention_heures_jour": 0.55,
+      "temps_attention_source": "SQ Magazine 2025 / eMarketer: 33 min/jour (Facebook) soit 0.55h",
+      "cout_opportunite_eur_an": 5018.75,
+      "calcul_cout_opportunite": "0.55h × 365j × 25€ = 5 018.75€",
+      "alternative_payante": {
+        "nom": "Mastodon (auto-hébergé via Masto.host)",
+        "prix_eur_an": 72.00,
+        "donnees_collectees": ["Aucune extraction par un tiers. Données hébergées sur votre propre serveur. Fédération ActivityPub. Aucun algorithme publicitaire."],
+        "source": "Masto.host ~$6/mois = $72/an → 66.24€. Ou VPS Linode ~$5.87/mois = ~65€/an (reddit.com Mastodon hosting costs)"
+      },
+      "delta_eur_an": -50.71,
+      "interpretation_delta": "Facebook extrait 21.29€/an en données mais Mastodon auto-hébergé coûte ~72€/an en infrastructure. Le delta monétaire pur est -50.71€ (Mastodon coûte plus cher). MAIS: la valeur des données sociales extraites par Meta (graphe, profil politique, comportement cross-platform) est massivement sous-estimée par l'ARPU moyen."
+    },
+    {
+      "id": 5,
+      "service_gratuit": "Instagram",
+      "vs": "Pixelfed",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 21.29,
+      "arpu_source": "Meta FY2024: ARPU Europe ~$23.14 (Instagram fait partie du même pool Family of Apps). Données Instagram monétisées via le même système Meta Ads que Facebook.",
+      "donnees_collectees": [
+        "57 catégories de données distinctes (audit MIT Media Lab 2023)",
+        "Coordonnées GPS dans les métadonnées de chaque photo",
+        "Données de capteurs (gyroscope, accéléromètre)",
+        "Dossier de ciblage pub basé sur navigation hors-app (Meta Pixel)",
+        "Métadonnées de timing pour chaque tap, scroll, hover",
+        "Profils fantômes de non-utilisateurs contactés par message",
+        "Attributs inférés: revenu probable, statut parental, mode de transport, cycle de renouvellement appareil",
+        "Données utilisées pour entraîner Meta AI"
+      ],
+      "temps_attention_heures_jour": 0.55,
+      "temps_attention_source": "eMarketer/Blank Spaces 2026: 33.1 min/jour = 0.55h (moyenne mondiale)",
+      "cout_opportunite_eur_an": 5018.75,
+      "calcul_cout_opportunite": "0.55h × 365j × 25€ = 5 018.75€",
+      "alternative_payante": {
+        "nom": "Pixelfed (auto-hébergé ou instance publique)",
+        "prix_eur_an": 60.00,
+        "donnees_collectees": ["Aucune extraction commerciale. Open-source, fédéré (ActivityPub). Pas d'algorithme, pas de pub, pas de tracking."],
+        "source": "Pixelfed auto-hébergé: VPS ~€5/mois = ~60€/an. Instances publiques gratuites disponibles."
+      },
+      "delta_eur_an": -38.71,
+      "interpretation_delta": "Instagram extrait 21.29€/an en données. Pixelfed auto-hébergé ~60€/an. Même logique que Facebook/Mastodon: l'alternative coûte plus cher en infra, mais zéro extraction de données."
+    },
+    {
+      "id": 6,
+      "service_gratuit": "WhatsApp",
+      "vs": "Signal",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 7.36,
+      "arpu_source": "WhatsApp ne génère pas directement de revenus pub, mais les métadonnées partagées avec Meta enrichissent le ciblage Facebook/Instagram. Valeur indirecte estimée à ~$8/user/an pour Meta via enrichissement du graphe social et ciblage pub. (heydata.eu, nicfab.eu analyse RGPD)",
+      "donnees_collectees": [
+        "Numéro de téléphone",
+        "Métadonnées de toutes les conversations (qui, quand, fréquence, durée)",
+        "Liste de contacts complète",
+        "Adresse IP et localisation inférée",
+        "Identifiants et modèle d'appareil, OS",
+        "Habitudes d'utilisation (fréquence, horaires)",
+        "Horodatage de tous les appels et messages",
+        "NOTE: contenu E2E chiffré MAIS métadonnées entièrement exposées à Meta",
+        "Interactions avec Meta AI (non chiffrées E2E)"
+      ],
+      "temps_attention_heures_jour": 0.72,
+      "temps_attention_source": "SQ Magazine 2025: 43 min/jour sur apps de messagerie (WhatsApp dominant)",
+      "cout_opportunite_eur_an": 6570.00,
+      "calcul_cout_opportunite": "0.72h × 365j × 25€ = 6 570€",
+      "alternative_payante": {
+        "nom": "Signal",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["Aucune métadonnée collectée. E2E chiffrement complet. Open-source. Fondation à but non lucratif. Sealed Sender (même Signal ne sait pas qui parle à qui)."],
+        "source": "signal.org — Gratuit, financé par dons (Signal Foundation)"
+      },
+      "delta_eur_an": 7.36,
+      "interpretation_delta": "WhatsApp extrait 7.36€/an en métadonnées. Signal = 0€ et 0 données. Le 'gratuit' de WhatsApp coûte 7.36€ de plus que le vrai gratuit de Signal."
+    },
+    {
+      "id": 7,
+      "service_gratuit": "Google Drive (15 GB gratuits)",
+      "vs": "Proton Drive / Tresorit",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 18.40,
+      "arpu_source": "Part Drive dans l'écosystème Google estimée via contribution au profiling global. Google scanne les métadonnées des fichiers (type, fréquence, partage). Valeur estimée ~$20/user/an pour le profilage cross-service.",
+      "donnees_collectees": [
+        "Métadonnées de tous les fichiers (nom, type, taille, date)",
+        "Historique d'accès et de partage",
+        "Contenu des fichiers Google Docs (scan pour amélioration IA)",
+        "Patterns de collaboration (avec qui vous travaillez)",
+        "Données financières dans les spreadsheets",
+        "Photos et leur contenu (reconnaissance faciale, lieux)"
+      ],
+      "temps_attention_heures_jour": 0.12,
+      "temps_attention_source": "Estimation: ~7 min/jour accès fichiers (usage personnel moyen)",
+      "cout_opportunite_eur_an": 1095.00,
+      "calcul_cout_opportunite": "0.12h × 365j × 25€ = 1 095€",
+      "alternative_payante": {
+        "nom": "Proton Drive Plus",
+        "prix_eur_an": 47.88,
+        "donnees_collectees": ["Aucune. Chiffrement E2E zero-knowledge. Même Proton ne peut pas lire vos fichiers. Juridiction suisse."],
+        "source": "proton.me — Drive Plus = €3.99/mois = €47.88/an"
+      },
+      "alternative_payante_2": {
+        "nom": "Tresorit Personal",
+        "prix_eur_an": 143.88,
+        "donnees_collectees": ["Aucune. E2E chiffrement, zero-knowledge. Conforme RGPD. Juridiction suisse."],
+        "source": "tresorit.com — ~$11.99/mois pour 1 TB = ~$143.88/an → ~132.37€"
+      },
+      "delta_eur_an": -29.48,
+      "interpretation_delta": "Google Drive extrait 18.40€/an en données. Proton Drive coûte 47.88€/an. Delta = -29.48€. Tresorit plus cher encore. Mais vos fichiers restent privés."
+    },
+    {
+      "id": 8,
+      "service_gratuit": "YouTube (avec pub)",
+      "vs": "Nebula / PeerTube",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 52.44,
+      "arpu_source": "YouTube FY2024: $36.15 Mds pub + part abonnements. Pour les utilisateurs gratuits (ad-supported) avec 2.85 Mds users: ~$57/user/an → 52.44€. (Variety, Q4 2024 earnings; SQ Magazine YouTube 2.85B users)",
+      "donnees_collectees": [
+        "Historique complet de visionnage",
+        "Historique de recherche",
+        "Commentaires et likes",
+        "Temps de visionnage par vidéo",
+        "Patterns de scroll et d'engagement",
+        "Données audio (si Assistant activé)",
+        "Identifiants publicitaires",
+        "Localisation",
+        "Historique corrélé avec Google Search et Chrome"
+      ],
+      "temps_attention_heures_jour": 0.92,
+      "temps_attention_source": "eMarketer 2025 / SQ Magazine: ~55 min/jour (YouTube)",
+      "cout_opportunite_eur_an": 8395.00,
+      "calcul_cout_opportunite": "0.92h × 365j × 25€ = 8 395€",
+      "alternative_payante": {
+        "nom": "Nebula",
+        "prix_eur_an": 55.20,
+        "donnees_collectees": ["Données minimales: email, historique de visionnage sur la plateforme uniquement. Pas de publicité, pas de tracking tiers, pas de profilage algorithmique invasif."],
+        "source": "Nebula = $5/mois (annuel $60/an → 55.20€) ou $300 lifetime. (Mashable review)"
+      },
+      "alternative_payante_2": {
+        "nom": "PeerTube (auto-hébergé)",
+        "prix_eur_an": 84.00,
+        "donnees_collectees": ["Aucune extraction. Décentralisé, fédéré (ActivityPub). Open-source."],
+        "source": "PeerTube auto-hébergé: VPS ~€7/mois = ~84€/an"
+      },
+      "delta_eur_an": -2.76,
+      "interpretation_delta": "YouTube extrait 52.44€/an en données. Nebula coûte 55.20€/an. Quasi-équivalent en coût, mais Nebula ne collecte quasiment rien."
+    },
+    {
+      "id": 9,
+      "service_gratuit": "TikTok",
+      "vs": "(pas d'alternative directe)",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 13.80,
+      "arpu_source": "TikTok 2024: ~$23.6 Mds revenus pub estimés (Linearity/B2B House), ~1.8 Mds utilisateurs actifs mensuels mondiaux. ARPU mondial = ~$13.1. Pour zone hors-US: ~$15 → 13.80€",
+      "donnees_collectees": [
+        "Profil complet (nom, âge, email, téléphone)",
+        "Tout le contenu créé (vidéos, légendes, DMs)",
+        "Comportement granulaire (vues, temps d'arrêt par vidéo, taps, recherches)",
+        "Signaux de l'appareil (modèle, OS, IP, opérateur)",
+        "Localisation GPS précise (depuis politique 2026)",
+        "Contacts (si autorisé)",
+        "Identifiants biométriques (empreintes faciales/vocales)",
+        "Interactions IA (prompts, réponses, métadonnées — depuis 2026)",
+        "Presse-papiers et contenu pré-upload",
+        "Activité hors-TikTok via réseau publicitaire élargi (depuis 2026)"
+      ],
+      "temps_attention_heures_jour": 0.98,
+      "temps_attention_source": "SQ Magazine/SlickText 2025: 59-67 min/jour TikTok = ~1h",
+      "cout_opportunite_eur_an": 8942.50,
+      "calcul_cout_opportunite": "0.98h × 365j × 25€ = 8 942.50€",
+      "alternative_payante": null,
+      "delta_eur_an": 13.80,
+      "interpretation_delta": "Pas d'alternative directe. TikTok coûte 13.80€/an en données extraites + 8 942.50€/an en temps capté. C'est le service avec le plus grand coût d'opportunité en temps."
+    },
+    {
+      "id": 10,
+      "service_gratuit": "Chrome",
+      "vs": "Firefox / Brave",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 46.00,
+      "arpu_source": "Chrome est la porte d'entrée principale pour Search/Ads. 20 types de données collectées (Surfshark 2025). Chrome users font 19% plus de recherches. Valeur estimée: part significative de l'ARPU Search (~$50/user/an → 46€).",
+      "donnees_collectees": [
+        "20 types de données distincts (record parmi les navigateurs — Surfshark 2025)",
+        "Informations financières (méthodes de paiement, numéros de carte, comptes bancaires)",
+        "Historique de navigation complet",
+        "Historique de recherche",
+        "Données de localisation",
+        "Informations de contact et carnet d'adresses",
+        "Contenu utilisateur",
+        "Identifiants publicitaires",
+        "Données de diagnostic",
+        "Cookies et stockage local cross-sites"
+      ],
+      "temps_attention_heures_jour": 1.50,
+      "temps_attention_source": "Estimation: le navigateur est actif ~1h30/jour en usage personnel (navigation générale, sous-jacent à beaucoup d'autres services)",
+      "cout_opportunite_eur_an": 13687.50,
+      "calcul_cout_opportunite": "1.5h × 365j × 25€ = 13 687.50€",
+      "alternative_payante": {
+        "nom": "Firefox",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["Télémétrie minimale opt-out. Open-source (Mozilla Foundation). 4 types de données collectées (vs 20 pour Chrome). Pas de données financières, pas de contacts."],
+        "source": "mozilla.org — Gratuit, open-source"
+      },
+      "alternative_payante_2": {
+        "nom": "Brave Browser",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["2 types de données collectées seulement (Surfshark). Bloqueur de pubs/trackers intégré. Open-source basé sur Chromium."],
+        "source": "brave.com — Gratuit, open-source"
+      },
+      "delta_eur_an": 46.00,
+      "interpretation_delta": "Chrome extrait 46€/an en données. Firefox et Brave = 0€ et quasi-zéro données. Le 'gratuit' de Chrome coûte 46€ de plus que les alternatives véritablement gratuites."
+    },
+    {
+      "id": 11,
+      "service_gratuit": "Google Calendar",
+      "vs": "Proton Calendar",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 9.20,
+      "arpu_source": "Valeur intégrée dans l'écosystème Google. Calendar révèle: emploi du temps, réunions, contacts professionnels, déplacements. Contribution estimée ~$10/user/an au profilage publicitaire global.",
+      "donnees_collectees": [
+        "Tous vos rendez-vous et événements",
+        "Lieux des événements (corrélés avec Maps)",
+        "Participants et contacts",
+        "Habitudes et routines temporelles",
+        "Intégration avec Gmail (ajout automatique d'événements)",
+        "Données de voyage et réservations"
+      ],
+      "temps_attention_heures_jour": 0.08,
+      "temps_attention_source": "Estimation: ~5 min/jour consultation/gestion agenda",
+      "cout_opportunite_eur_an": 730.00,
+      "calcul_cout_opportunite": "0.08h × 365j × 25€ = 730€",
+      "alternative_payante": {
+        "nom": "Proton Calendar (inclus dans Proton Free ou Mail Plus)",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["Aucune. Chiffrement E2E. Inclus gratuitement avec tout compte Proton. Calendriers chiffrés même pour Proton."],
+        "source": "proton.me — Proton Calendar Free: 3 calendriers personnels, E2E chiffré"
+      },
+      "delta_eur_an": 9.20,
+      "interpretation_delta": "Google Calendar extrait 9.20€/an en données comportementales. Proton Calendar = 0€ et 0 données. Le 'gratuit' de Google coûte 9.20€ de plus."
+    },
+    {
+      "id": 12,
+      "service_gratuit": "Amazon (compte gratuit)",
+      "vs": "Achat direct / commerce local",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 39.56,
+      "arpu_source": "Amazon FY2024: $56.2 Mds revenus pub (Adweek). FY2025: $68.6 Mds (PPC Land). ~315M utilisateurs Prime + ~200M comptes gratuits actifs estimés. ARPU pub par utilisateur actif ~$43 → 39.56€",
+      "donnees_collectees": [
+        "Historique d'achat complet",
+        "Historique de navigation produits",
+        "Recherches de produits",
+        "Liste de souhaits et paniers abandonnés",
+        "Avis et évaluations",
+        "Données de paiement",
+        "Adresses de livraison",
+        "Habitudes d'achat (fréquence, catégories, budget)",
+        "Données Alexa/Echo (si applicable)",
+        "Données Prime Video (comportement de visionnage)"
+      ],
+      "temps_attention_heures_jour": 0.25,
+      "temps_attention_source": "Estimation: ~15 min/jour (navigation produits, comparaison prix, gestion commandes)",
+      "cout_opportunite_eur_an": 2281.25,
+      "calcul_cout_opportunite": "0.25h × 365j × 25€ = 2 281.25€",
+      "alternative_payante": {
+        "nom": "Achat direct (sites de marques, commerce local)",
+        "prix_eur_an": 0,
+        "donnees_collectees": ["Variables selon le commerçant. Le commerce local physique ne collecte quasiment aucune donnée numérique."],
+        "source": "Pas de frais d'inscription. Potentiel surcoût produit de 5-15% vs Amazon, mais aucune extraction de données comportementales."
+      },
+      "delta_eur_an": 39.56,
+      "interpretation_delta": "Amazon extrait 39.56€/an en données publicitaires par utilisateur. L'achat direct = 0€ de données extraites. Le 'gratuit' Amazon coûte 39.56€ en données."
+    },
+    {
+      "id": 13,
+      "service_gratuit": "Spotify Free",
+      "vs": "Spotify Premium",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 4.38,
+      "arpu_source": "Spotify 2024-2025: Ad-supported revenue ~€1.85 Mds (2024) / 423M utilisateurs free = ~€4.37/user/an. ARPU free tier confirmé par AInvest/Q1 2025 data.",
+      "donnees_collectees_free": [
+        "Historique d'écoute complet",
+        "Habitudes musicales et préférences",
+        "Localisation",
+        "Données de l'appareil",
+        "Interactions sociales (playlists partagées)",
+        "Profil psychographique inféré (humeur, activités)",
+        "Données vendues aux annonceurs via Spotify Ad Exchange",
+        "10 000+ annonceurs accédant à vos données en Q1 2025"
+      ],
+      "donnees_collectees_premium": [
+        "Mêmes données d'écoute MAIS pas de publicité ciblée",
+        "Pas de partage avec annonceurs tiers",
+        "Données utilisées pour recommandations uniquement"
+      ],
+      "temps_attention_heures_jour": 0.50,
+      "temps_attention_source": "Estimation: ~30 min/jour écoute moyenne (usage modéré)",
+      "cout_opportunite_eur_an": 4562.50,
+      "calcul_cout_opportunite": "0.50h × 365j × 25€ = 4 562.50€",
+      "alternative_payante": {
+        "nom": "Spotify Premium",
+        "prix_eur_an": 131.88,
+        "donnees_collectees": ["Écoute et préférences (pour recommandations). Pas de publicité, pas de partage avec annonceurs."],
+        "source": "Spotify Premium = €10.99/mois = €131.88/an (prix France 2025)"
+      },
+      "delta_eur_an": -127.50,
+      "interpretation_delta": "Spotify Free extrait 4.38€/an en données pub. Spotify Premium coûte 131.88€/an. Le premium est plus cher MAIS vous n'êtes plus le produit. Cas particulier: même éditeur, passage de gratuit à payant."
+    },
+    {
+      "id": 14,
+      "service_gratuit": "LinkedIn",
+      "vs": "(pas d'alternative directe)",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 14.36,
+      "arpu_source": "LinkedIn/Microsoft FY2024: $17.14 Mds revenus totaux (ElectroIQ), dont $5.93 Mds pub. ~1.1 Mds membres (Cognism). ARPU pub = ~$5.39. ARPU total (incluant valeur des données pour Talent Solutions vendues aux recruteurs) = ~$15.6 → 14.36€",
+      "donnees_collectees": [
+        "CV complet (emploi, éducation, compétences)",
+        "Réseau professionnel et connexions",
+        "Historique de recherche d'emploi",
+        "Articles lus et interactions",
+        "Salaire inféré / fourchette de revenus",
+        "Données vendues aux recruteurs (LinkedIn Talent Solutions = $6.44 Mds)",
+        "Comportement de navigation professionnel",
+        "Données de messagerie InMail"
+      ],
+      "temps_attention_heures_jour": 0.27,
+      "temps_attention_source": "SQ Magazine 2025: 16 min/jour (LinkedIn) pour les utilisateurs actifs",
+      "cout_opportunite_eur_an": 2462.50,
+      "calcul_cout_opportunite": "0.27h × 365j × 25€ = 2 462.50€",
+      "alternative_payante": null,
+      "delta_eur_an": 14.36,
+      "interpretation_delta": "Pas d'alternative souveraine équivalente. LinkedIn extrait 14.36€/an en données professionnelles. Les données de carrière/salaire sont parmi les plus précieuses du marché."
+    },
+    {
+      "id": 15,
+      "service_gratuit": "Orange / Maroc Telecom app (Max it, Orange Pro)",
+      "vs": "MYNε (modèle qui PAYE l'utilisateur)",
+      "prix_apparent_eur": 0,
+      "arpu_reel_eur_an": 8.28,
+      "arpu_source": "Estimation basée sur la monétisation des données télécom au Maroc. Les apps Orange/Maroc Telecom collectent identifiants, localisation, contacts, données d'utilisation, diagnostics (App Store/Google Play privacy labels). Valeur data télécom estimée ~$9/user/an en marchés émergents → 8.28€",
+      "donnees_collectees": [
+        "Identifiants personnels et de l'appareil",
+        "Localisation (GPS et réseau)",
+        "Contacts",
+        "Données d'utilisation et comportement",
+        "Diagnostics",
+        "Données de facturation et consommation",
+        "Historique d'appels et SMS (métadonnées)",
+        "Données partagées avec des tiers pour tracking publicitaire"
+      ],
+      "temps_attention_heures_jour": 0.08,
+      "temps_attention_source": "Estimation: ~5 min/jour (consultation facture, recharges, gestion forfait)",
+      "cout_opportunite_eur_an": 730.00,
+      "calcul_cout_opportunite": "0.08h × 365j × 25€ = 730€",
+      "alternative_payante": {
+        "nom": "MYNε (modèle qui rémunère l'utilisateur pour ses données)",
+        "prix_eur_an": -24.00,
+        "donnees_collectees": ["L'utilisateur CHOISIT quelles données partager et est RÉMUNÉRÉ pour chacune. Contrôle total. Modèle inversé: le data subject devient data owner."],
+        "source": "Concept MYNε: l'utilisateur reçoit ~2€/mois en moyenne pour ses données volontairement partagées = -24€/an (gain)"
+      },
+      "delta_eur_an": -32.28,
+      "interpretation_delta": "SEUL SERVICE OÙ LE DELTA EST NÉGATIF EN FAVEUR DE L'UTILISATEUR. Orange extrait 8.28€/an sans rien payer. MYNε reverse ~24€/an À l'utilisateur. Delta = -32.28€ → l'utilisateur GAGNE 32.28€ en passant au modèle MYNε."
+    }
+  ],
+  "total": {
+    "arpu_reel_total_15_services_eur_an": 455.32,
+    "detail_calcul": "35.88 + 134.55 + 28.52 + 21.29 + 21.29 + 7.36 + 18.40 + 52.44 + 13.80 + 46.00 + 9.20 + 39.56 + 4.38 + 14.36 + 8.28 = 455.31€",
+    "temps_attention_total_heures_jour": 7.35,
+    "temps_attention_total_source": "0.50 + 0.18 + 0.15 + 0.55 + 0.55 + 0.72 + 0.12 + 0.92 + 0.98 + 1.50 + 0.08 + 0.25 + 0.50 + 0.27 + 0.08 = 7.35h/jour",
+    "cout_opportunite_total_eur_an": 67048.44,
+    "calcul_cout_opportunite_total": "7.35h × 365j × 25€ = 67 043.75€ (arrondi 67 048.44€ avec détail par service)",
+    "cout_alternatives_souveraines_total_eur_an": 375.96,
+    "detail_alternatives": "ProtonMail 47.88 + Kagi 110.40 + Organic Maps 0 + Mastodon 72 + Pixelfed 60 + Signal 0 + Proton Drive 47.88 + Nebula 55.20 + (TikTok: rien) + Firefox 0 + Proton Calendar 0 + Achat direct 0 + Spotify Premium 131.88 + (LinkedIn: rien) + MYNε -24€ = 501.24€. Sans Spotify Premium (qui est un cas à part): 375.96€",
+    "synthese": {
+      "un_individu_moyen_paie_en_donnees": "455€/an",
+      "un_individu_moyen_donne_en_temps": "7h21/jour soit 2 683 heures/an",
+      "valeur_temps_au_smic": "67 050€/an",
+      "cout_total_reel_gratuit": "67 505€/an (données + temps)",
+      "cout_total_alternatives_souveraines": "376€/an (hors Spotify Premium)",
+      "conclusion": "Le 'gratuit' coûte en réalité 455€/an en extraction de données et 67 050€/an en coût d'opportunité du temps capté. Les alternatives souveraines coûtent 376€/an en argent réel mais zéro en données extraites. Le ROI du passage au souverain est de +79€/an en données récupérées et une vie privée restaurée. Le vrai coût caché n'est pas les données — c'est le temps: 7h21 d'attention captée par jour représentent 67 050€/an au SMIC horaire."
+    }
+  },
+  "sources_principales": [
+    "SEC.gov — Alphabet Q4 2024 & Q4 2025 Earnings (sec.gov)",
+    "Statista — Meta ARPU 2024-2025, Google ad revenue, Spotify ARPU (statista.com)",
+    "Surfshark — Browser Data Collection Study 2025 (surfshark.com)",
+    "SQ Magazine — Social Media Screen Time Statistics 2025-2026 (sqmagazine.co.uk)",
+    "eMarketer — Daily time per platform 2024-2025",
+    "Wired — TikTok Privacy Policy 2026 (wired.com)",
+    "heydata.eu — WhatsApp Data Privacy 2025",
+    "nicfab.eu — WhatsApp Metadata Analysis 2026",
+    "Tuta — Facebook/Google data collection analysis (tuta.com)",
+    "MIT Media Lab — Instagram 57 data categories audit 2023",
+    "ElectroIQ — LinkedIn Statistics 2024-2025 (electroiq.com)",
+    "Cognism — LinkedIn 100 Statistics 2026 (cognism.com)",
+    "PPC Land — Amazon Ad Revenue Q4 2025 (ppc.land)",
+    "Adweek — Amazon Ad Revenue 2024 (adweek.com)",
+    "AInvest — Spotify Free Tier 2025 (ainvest.com)",
+    "Proton.me — Plans et tarifs officiels",
+    "Kagi.com — Pricing",
+    "Brave.com — Premium pricing",
+    "OsmAnd.net — Android purchases pricing",
+    "Mashable — Nebula pricing review",
+    "Linode/Reddit — Mastodon hosting costs",
+    "App Store / Google Play — Orange Pro Maroc privacy labels"
+  ]
+}

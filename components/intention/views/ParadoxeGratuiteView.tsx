@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { PERPLEXITY_SERVICES_GRATUITS } from '@/src/data/intention/perplexity-data';
 
 const C = BLOOMBERG_PRUNE_COLORS;
 const MONO = '"JetBrains Mono", monospace';
@@ -10,33 +11,17 @@ const SERIF = '"Playfair Display", serif';
 interface Service {
   name: string;
   gratuitPrix: string;
-  arpu: number;       // € ARPU réel données vendues/an
-  heures: number;     // heures/jour captées
-  coutOpportunite: number; // €/an (heures * valorisation)
-  coutTotal: number;  // ARPU + coût d'opportunité
+  arpu: number;
+  heures: number;
+  coutOpportunite: number;
+  coutTotal: number;
   alternative: string;
   prixAlternative: number;
   donneesAlternative: string;
   isMyne?: boolean;
 }
 
-const SERVICES: Service[] = [
-  { name: 'Gmail / Google', gratuitPrix: '€0', arpu: 287, heures: 1.4, coutOpportunite: 210, coutTotal: 497, alternative: 'ProtonMail', prixAlternative: 48, donneesAlternative: 'Zéro' },
-  { name: 'Facebook / Meta', gratuitPrix: '€0', arpu: 314, heures: 1.8, coutOpportunite: 270, coutTotal: 584, alternative: 'Signal Groups', prixAlternative: 0, donneesAlternative: 'Zéro' },
-  { name: 'Instagram / Meta', gratuitPrix: '€0', arpu: 198, heures: 2.0, coutOpportunite: 300, coutTotal: 498, alternative: 'Pixelfed', prixAlternative: 12, donneesAlternative: 'Minimal' },
-  { name: 'YouTube / Google', gratuitPrix: '€0', arpu: 92, heures: 1.5, coutOpportunite: 225, coutTotal: 317, alternative: 'YouTube Premium', prixAlternative: 144, donneesAlternative: 'Réduite' },
-  { name: 'Google Search', gratuitPrix: '€0', arpu: 134, heures: 0.6, coutOpportunite: 90, coutTotal: 224, alternative: 'Kagi Search', prixAlternative: 60, donneesAlternative: 'Zéro' },
-  { name: 'Google Maps', gratuitPrix: '€0', arpu: 56, heures: 0.3, coutOpportunite: 45, coutTotal: 101, alternative: 'Maps.me', prixAlternative: 0, donneesAlternative: 'Minimal' },
-  { name: 'WhatsApp / Meta', gratuitPrix: '€0', arpu: 41, heures: 1.2, coutOpportunite: 180, coutTotal: 221, alternative: 'Signal', prixAlternative: 0, donneesAlternative: 'Zéro' },
-  { name: 'TikTok / ByteDance', gratuitPrix: '€0', arpu: 167, heures: 2.1, coutOpportunite: 315, coutTotal: 482, alternative: 'Aucune (pause)', prixAlternative: 0, donneesAlternative: 'N/A' },
-  { name: 'Spotify (Freemium)', gratuitPrix: '€0', arpu: 89, heures: 1.3, coutOpportunite: 0, coutTotal: 89, alternative: 'Spotify Premium', prixAlternative: 120, donneesAlternative: 'Réduite' },
-  { name: 'LinkedIn / Microsoft', gratuitPrix: '€0', arpu: 176, heures: 0.5, coutOpportunite: 75, coutTotal: 251, alternative: 'LinkedIn Premium', prixAlternative: 396, donneesAlternative: 'Réduite' },
-  { name: 'Amazon (Données)', gratuitPrix: '€0', arpu: 231, heures: 0.4, coutOpportunite: 60, coutTotal: 291, alternative: 'Magasin local', prixAlternative: 0, donneesAlternative: 'Zéro' },
-  { name: 'Netflix (données)', gratuitPrix: '€0', arpu: 42, heures: 1.8, coutOpportunite: 0, coutTotal: 42, alternative: 'Aucune migration', prixAlternative: 0, donneesAlternative: 'Modérée' },
-  { name: 'Apple (gratuit)', gratuitPrix: '€0', arpu: 65, heures: 0.3, coutOpportunite: 45, coutTotal: 110, alternative: 'iCloud+ (payant)', prixAlternative: 36, donneesAlternative: 'Réduite' },
-  { name: 'Microsoft (Copilot)', gratuitPrix: '€0', arpu: 88, heures: 0.7, coutOpportunite: 105, coutTotal: 193, alternative: 'M365 Personnel', prixAlternative: 69, donneesAlternative: 'Réduite' },
-  { name: 'Snapchat / Snap', gratuitPrix: '€0', arpu: 43, heures: 0.9, coutOpportunite: 135, coutTotal: 178, alternative: 'Snap+ / pause', prixAlternative: 36, donneesAlternative: 'Réduite' },
-];
+const SERVICES: Service[] = PERPLEXITY_SERVICES_GRATUITS as unknown as Service[];
 
 const MYNE_ROW: Service & { revenueRecu: number; delta: number } = {
   name: 'MYNε',

@@ -2,24 +2,9 @@
 
 import React from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { PERPLEXITY_CORRIDORS } from '@/src/data/intention/perplexity-data';
 
-const CORRIDORS = [
-  { id: 'fr-ma', name: 'France → Maroc', pop: '1.5M', remit: '€8.2B', top1: 'Crédit Immo', top1Price: '€42', top2: 'Santé Senior', top3: 'Bancaire', tam: '€45M' },
-  { id: 'es-ma', name: 'Espagne → Maroc', pop: '800K', remit: '€3.1B', top1: 'Agricole', top1Price: '€28', top2: 'Immo', top3: 'Santé', tam: '€18M' },
-  { id: 'it-sn', name: 'Italie → Sénégal', pop: '350K', remit: '€1.4B', top1: 'B2B Trade', top1Price: '€35', top2: 'Logement', top3: 'Scolarité', tam: '€9M' },
-  { id: 'fr-sn', name: 'France → Sénégal', pop: '300K', remit: '€1.2B', top1: 'Immobilier', top1Price: '€38', top2: 'Santé', top3: 'Formation', tam: '€8.5M' },
-  { id: 'uk-ng', name: 'UK → Nigeria', pop: '220K', remit: '€4.5B', top1: 'Tech Invest', top1Price: '€55', top2: 'Business', top3: 'Real Estate', tam: '€10M' },
-  { id: 'fr-ci', name: 'France → Côte d\'Ivoire', pop: '250K', remit: '€0.9B', top1: 'Santé', top1Price: '€22', top2: 'Immobilier', top3: 'Business', tam: '€5M' },
-  { id: 'de-gh', name: 'Allemagne → Ghana', pop: '100K', remit: '€0.6B', top1: 'Équipement', top1Price: '€18', top2: 'Immo', top3: 'Scolarité', tam: '€1.5M' },
-  { id: 'fr-ml', name: 'France → Mali', pop: '120K', remit: '€1.1B', top1: 'Auto', top1Price: '€15', top2: 'Santé', top3: 'Énergie', tam: '€1.2M' },
-  { id: 'fr-cm', name: 'France → Cameroun', pop: '90K', remit: '€0.8B', top1: 'Scolarité', top1Price: '€25', top2: 'Santé', top3: 'Business', tam: '€1.8M' },
-  { id: 'pt-ao', name: 'Portugal → Angola', pop: '180K', remit: '€0.5B', top1: 'Immobilier', top1Price: '€30', top2: 'Auto', top3: 'Tech', tam: '€4M' },
-  { id: 'es-sn', name: 'Espagne → Sénégal', pop: '70K', remit: '€0.3B', top1: 'Agricole', top1Price: '€12', top2: 'Immo', top3: 'Santé', tam: '€0.5M' },
-  { id: 'it-ma', name: 'Italie → Maroc', pop: '400K', remit: '€1.8B', top1: 'Business', top1Price: '€25', top2: 'Immo', top3: 'Retail', tam: '€8M' },
-  { id: 'be-ma', name: 'Belgique → Maroc', pop: '350K', remit: '€1.5B', top1: 'Assurance', top1Price: '€32', top2: 'Santé', top3: 'Immo', tam: '€9M' },
-  { id: 'nl-ma', name: 'Pays-Bas → Maroc', pop: '400K', remit: '€1.9B', top1: 'Investissement', top1Price: '€45', top2: 'Immo', top3: 'Tech', tam: '€15M' },
-  { id: 'uk-gh', name: 'UK → Ghana', pop: '110K', remit: '€1.2B', top1: 'Real Estate', top1Price: '€40', top2: 'Business', top3: 'Scolarité', tam: '€3.5M' }
-];
+const CORRIDORS = PERPLEXITY_CORRIDORS as unknown as { id: string; name: string; pop: string; remit: string; top1: string; top1Price: string; top2: string; top3: string; tam: string }[];
 
 export default function DiasporaView() {
   return (

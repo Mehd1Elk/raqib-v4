@@ -1,0 +1,1068 @@
+[
+  {
+    "id": 1,
+    "nom": "AKASHA Foundation",
+    "statut": "PIVOTÉ",
+    "section_1_identite": {
+      "nom_complet": "AKASHA Foundation (AKASHA Stiftung)",
+      "pays": "Suisse",
+      "annee_fondation": 2015,
+      "fondateurs": [
+        {
+          "nom": "Mihai Alisie",
+          "parcours": "Co-fondateur d'Ethereum et co-fondateur/rédacteur en chef de Bitcoin Magazine. Diplômé de l'Universitatea Lucian Blaga din Sibiu (Licence en Cybernétique, Informatique Économique et Statistiques, 2007-2010). A participé au lancement d'Ethereum depuis la Suisse avant de fonder AKASHA."
+        }
+      ],
+      "structure_juridique": "Fondation (Stiftung), non-profit. Numéro registre: CHE-189.356.574",
+      "mission_originale": "Construire un réseau social décentralisé utilisant Ethereum et IPFS pour assurer le stockage permanent de l'information, combattre la censure et permettre la liberté d'expression et la perpétuité créative.",
+      "mission_actuelle": "Nourrir des projets aidant les individus à débloquer leur potentiel via des systèmes ouverts élargissant les esprits collectifs. Construction de rails de financement, hubs locaux (Barcelone, Rome, ETHERLAKEN), préservation des connaissances (Ethereum TV). Guidé par les valeurs Ethereum.",
+      "website": "https://akasha.org",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Impermanence de l'information en ligne (suppressions par gouvernements/entreprises, pannes serveurs), centralisation menant à la censure et à la fragilité du web. Les plateformes centralisées contrôlent le discours et suppriment le contenu à volonté.",
+      "theorie_du_changement": "Utiliser Ethereum pour les smart contracts/événements et IPFS pour le stockage permanent P2P du contenu, créant une plateforme sociale/publication décentralisée et résistante à la censure, faisant évoluer Internet vers une infrastructure distribuée.",
+      "hypotheses_vraies": "La technologie décentralisée (Ethereum/IPFS) est viable pour les applications sociales. L'intérêt pour la souveraineté des données a crû considérablement.",
+      "hypotheses_fausses": "Échec à atteindre l'adoption de masse pour le réseau social original (beta ~2018, aucun nombre significatif d'utilisateurs rapporté). Le marché n'était pas prêt pour l'UX blockchain.",
+      "vision_10_ans": "Non explicitement documentée. Vision implicite: un web social permanent et décentralisé comme 'meilleure maison de l'Esprit' pour l'humanité."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Ethereum (smart contracts, événements), IPFS (stockage/distribution de contenu), React/Redux Saga/Node.js/Electron (application). Actuellement: mécanismes DeFi, repos open-source sur GitHub (akasha-core, etc.).",
+      "modele_de_donnees": "Contenu stocké sur IPFS (P2P, épinglé par l'utilisateur pour la persistance). Métadonnées/événements sur la blockchain Ethereum (décentralisé, immuable). L'utilisateur possède ses clés et son contenu.",
+      "protocole_de_consentement": "Nature décentralisée implique le contrôle utilisateur via wallets/clés privées. Aucune autorité centrale. Le contenu publié est public par nature sur IPFS.",
+      "interoperabilite": "Écosystème Ethereum (micropaiements ETH initialement, potentiel BTC). IPFS pour l'adressage de contenu. Limité à l'écosystème Ethereum/IPFS.",
+      "open_source": true,
+      "repositories": "GitHub: AKASHAorg (akasha-core monorepo)"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Non-profit: dons et grants présumés. Aucun modèle de revenus commercial identifié.",
+      "pricing": "N/A",
+      "unit_economics": "Non disponible",
+      "path_to_profitability": "Non applicable (fondation non-profit). Durable via grants/donations de l'écosystème Ethereum."
+    },
+    "section_5_financement": {
+      "rounds": "Aucun round de financement public, ICO ou investisseurs trouvés sur Crunchbase/TechCrunch/AngelList. Financement présumé via dotation fondation et grants Ethereum.",
+      "valorisation": "Non disponible",
+      "burn_rate_estime": "Non disponible",
+      "runway_ou_date_mort": "Actif en 2025 (hubs et projets en cours)"
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Réseau social original: faible traction (utilisateurs beta inconnus, pas de métriques pic/actuels)",
+      "utilisateurs_actuels": "Projets actuels (hubs): inconnu",
+      "entreprises_partenaires": "Ethereum Foundation (historique), hubs locaux (Barcelone, Rome, ETHERLAKEN), Ethereum.Community, Ethereum TV",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "Mondial (hubs en Suisse, Espagne, Italie). Fondé en Suisse.",
+      "moments_clefs": [
+        "2015: Fondation par Mihai Alisie post-Ethereum",
+        "2016: Réseau social dévoilé/annoncé (couverture Bitcoin Magazine)",
+        "2017: Stiftung enregistrée",
+        "2018: Beta publique du réseau social",
+        "~2020+: Pivot vers hubs/financement/préservation des connaissances",
+        "2025: Hubs actifs (ouverture Rome, collaboration Barcelone)"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "~2018-2020: Pivot du réseau social dApp vers l'infrastructure communautaire Ethereum plus large/hubs",
+      "facteur_echec_primaire": "Manque d'adoption/traction utilisateur pour le réseau social décentralisé dû aux barrières UX (nœuds locaux, coûts gas ETH), compétition écrasante des plateformes centralisées.",
+      "facteurs_echec_secondaires": [
+        "Frais de gas Ethereum élevés pour chaque interaction (publier, voter, commenter)",
+        "Complexité technique (setup IPFS/Ethereum) inaccessible au grand public",
+        "Timing: UX blockchain trop primitive en 2016-2018"
+      ],
+      "analyse_contrefactuelle": "Auraient dû: se concentrer sur une UX mobile-first bien meilleure, subventionner le gas plus longtemps, intégrer les L2 émergents plus tôt (Polygon, Arbitrum), s'associer avec des influenceurs pour les effets de réseau. Le réseau social décentralisé arrivait 5 ans trop tôt.",
+      "depouilles": "Aucun acquéreur. Code open-source sur GitHub. Pivot interne vers le rôle de catalyseur communautaire Ethereum."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε doit éviter de bâtir son adoption sur une UX crypto-native. AKASHA a échoué car l'expérience utilisateur dépendait entièrement de la blockchain (gas, wallets, nœuds). MYNε peut abstraire la complexité technique derrière une interface intention-first.",
+      "element_a_copier": "L'approche de hubs physiques locaux pour créer de la communauté et de l'engagement tangible. Le modèle fondation non-profit pour la gouvernance.",
+      "element_a_eviter": "Dépendance technique totale à une blockchain L1 coûteuse pour chaque micro-interaction. Ne jamais exposer les frictions blockchain à l'utilisateur final.",
+      "partenariat_envisageable": "Potentiel d'intégration avec les hubs communautaires AKASHA existants comme premiers testeurs. Code open-source réutilisable pour la couche de publication décentralisée."
+    }
+  },
+  {
+    "id": 2,
+    "nom": "MyData Global",
+    "statut": "ACTIF",
+    "section_1_identite": {
+      "nom_complet": "MyData Global ry",
+      "pays": "Finlande",
+      "annee_fondation": 2018,
+      "fondateurs": [
+        {
+          "nom": "Antti 'Jogi' Poikola",
+          "parcours": "Co-fondateur, pionnier des données ouvertes en Finlande. Actuellement Directeur Exécutif de la Finnish Data Center Association (FDCA). Fondateur de l'Open Knowledge Finland. Travaille sur les approches human-centric des données personnelles."
+        },
+        {
+          "nom": "70+ organisations fondatrices",
+          "parcours": "Incluant Sitra (Fonds d'Innovation Finlandais), Ministère des Transports et Communications de Finlande, Open Knowledge Finland, BitsaboutMe, CitizenMe, digi.me, Meeco, Sovrin Foundation, Forum Virium Helsinki, et de nombreuses autres. Plus de 100 personnes de 20+ pays ont participé à l'assemblée fondatrice le 11 octobre 2018."
+        }
+      ],
+      "structure_juridique": "Association non-profit enregistrée (ry = rekisteröity yhdistys, association enregistrée de droit finlandais)",
+      "mission_originale": "Autonomiser les individus en améliorant leur droit à l'autodétermination concernant leurs données personnelles. Créer une société numérique juste, durable et prospère pour tous.",
+      "mission_actuelle": "Même mission. Développer un mouvement mondial pour les pratiques de données human-centric. Membres dans 40+ pays. Cadre MyData Operators pour les intermédiaires de données.",
+      "website": "https://mydata.org",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les individus n'ont pas de contrôle sur leurs données personnelles. Les organisations collectent et traitent les données sans consentement véritable. L'asymétrie de pouvoir entre plateformes et utilisateurs mine la confiance et les droits numériques.",
+      "theorie_du_changement": "Construire un mouvement mondial fédérant entreprises, gouvernements, académiques et société civile autour de principes communs (Déclaration MyData). Établir des standards et meilleures pratiques (MyData Operators) pour créer un écosystème interopérable de données human-centric. Approche bottom-up: convaincre l'écosystème entier plutôt qu'imposer une solution technique unique.",
+      "hypotheses_vraies": "La régulation de la vie privée a explosé (GDPR, CCPA). L'intérêt institutionnel pour les données human-centric a grandi (gouvernements finlandais, EU). Le mouvement a atteint une masse critique d'organisations (100+ membres dans 40+ pays).",
+      "hypotheses_fausses": "L'adoption par le marché reste lente. Les consommateurs n'ont pas encore massivement adopté les outils de souveraineté des données. La monétisation du modèle associatif reste un défi.",
+      "vision_10_ans": "Non explicitement documentée en ces termes. Vision implicite: un écosystème mondial interopérable où chaque individu contrôle ses données personnelles et les partage sur ses propres termes."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "MyData n'est pas une plateforme technique mais un framework/mouvement. Définit des principes et standards: MyData Operators framework, interopérabilité entre PDSes (Personal Data Stores).",
+      "modele_de_donnees": "Centré sur l'individu: chaque personne contrôle un 'compte MyData' qui agrège ses données de multiples sources. Les opérateurs MyData sont des intermédiaires de confiance.",
+      "protocole_de_consentement": "Framework de consentement dynamique défini par les principes MyData. Interopérable avec GDPR. Les opérateurs doivent respecter des critères d'audit.",
+      "interoperabilite": "Par conception: le framework est agnostique technologiquement. Compatible avec Solid, HAT, digi.me, Meeco, et tout Personal Data Store conforme aux principes.",
+      "open_source": true,
+      "repositories": "Principes et documents ouverts. Pas de code propriétaire (c'est un framework, pas un logiciel)."
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Cotisations des membres (organisations et individus). Organisation de conférences annuelles (MyData Conference). Grants et subventions. Pas de revenus commerciaux directs.",
+      "pricing": "Cotisations: variables selon le type de membre (individu/organisation/taille).",
+      "unit_economics": "Non applicable (association non-profit)",
+      "path_to_profitability": "Non applicable. Autosuffisance via cotisations et conférences."
+    },
+    "section_5_financement": {
+      "rounds": "Pas de rounds de financement privé. Soutien initial de Sitra (Fonds d'Innovation Finlandais) qui a été un catalyseur clé. Grants EU et finlandais. Revenus des conférences et cotisations.",
+      "valorisation": "N/A",
+      "burn_rate_estime": "Non disponible. Structure légère de type association.",
+      "runway_ou_date_mort": "Actif en 2025-2026. Conférence MyData 2025 prévue les 24-26 septembre (10e anniversaire du mouvement)."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Non applicable (mouvement/association, pas une plateforme)",
+      "utilisateurs_actuels": "100+ organisations membres dans 40+ pays. Centaines d'individus membres.",
+      "entreprises_partenaires": "Sitra, Business Finland, Fujitsu, NTT DATA, TietoEVRY, Yle (Finnish Broadcasting), Aalto University, University of Edinburgh, et de nombreuses startups de l'écosystème personal data (digi.me, Meeco, BitsaboutMe, CitizenMe, DataYogi, Polypoly, etc.)",
+      "volume_transactions": "N/A",
+      "couverture_geographique": "Mondial: forte base en Finlande et Europe du Nord, présence en Asie (Japon, Corée), Afrique, Amériques. Hubs régionaux (Barcelone, Suède).",
+      "moments_clefs": [
+        "2014-2015: Premières réunions PIMS et naissance du concept MyData autour de Sitra",
+        "2016: Première conférence MyData à Helsinki",
+        "Mars 2017: Lancement du MyData Global Network",
+        "11 octobre 2018: Fondation officielle de MyData Global (non-profit)",
+        "2019+: Déploiement du framework MyData Operators",
+        "2025: Conférence du 10e anniversaire (24-26 septembre)"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "N/A (toujours actif, pas pivoté)",
+      "facteur_echec_primaire": "N/A",
+      "facteurs_echec_secondaires": [],
+      "analyse_contrefactuelle": "N/A",
+      "depouilles": "N/A"
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε est une plateforme avec un produit concret. MyData est un mouvement/association qui crée des standards mais pas de produit. MYNε peut s'appuyer sur les standards MyData tout en offrant l'implémentation que MyData ne fournit pas.",
+      "element_a_copier": "L'approche multi-stakeholder et la construction de communauté. Le framework MyData Operators comme modèle de certification. La capacité à fédérer des acteurs hétérogènes (gouvernements, entreprises, académiques, société civile).",
+      "element_a_eviter": "Le risque de rester trop théorique/framework sans produit concret adoptable par les utilisateurs finaux.",
+      "partenariat_envisageable": "Alliance stratégique forte: MYNε pourrait devenir un MyData Operator certifié, bénéficiant du réseau de 100+ organisations et de la légitimité institutionnelle. Participation aux conférences MyData comme vitrine."
+    }
+  },
+  {
+    "id": 3,
+    "nom": "Solid / Inrupt",
+    "statut": "ACTIF",
+    "section_1_identite": {
+      "nom_complet": "Solid Project (MIT) / Inrupt, Inc.",
+      "pays": "USA",
+      "annee_fondation": 2015,
+      "fondateurs": [
+        {
+          "nom": "Tim Berners-Lee",
+          "parcours": "Inventeur du World Wide Web (1989, CERN). Directeur du W3C. Professeur au MIT CSAIL. Anobli (Sir). Titulaire du Turing Award 2016. A lancé Solid comme projet de recherche au MIT pour 're-décentraliser' le web qu'il avait créé."
+        },
+        {
+          "nom": "John Bruce (CEO Inrupt)",
+          "parcours": "Technologue et entrepreneur en cybersécurité. Co-fondateur et ancien CEO de Resilient Systems (acquis par IBM en 2016). Expérience chez Symantec, IBM. Rejoint Tim Berners-Lee pour commercialiser Solid via Inrupt en 2018."
+        }
+      ],
+      "structure_juridique": "Solid: projet open-source hébergé au MIT. Inrupt: société commerciale (Inc.), Delaware, USA.",
+      "mission_originale": "Solid (Social Linked Data): redécentraliser le web en donnant à chaque utilisateur un POD (Personal Online Datastore) où stocker ses données, avec contrôle granulaire du partage. Séparer les données des applications.",
+      "mission_actuelle": "Inrupt: déployer l'infrastructure Solid à l'échelle entreprise et gouvernementale via l'Enterprise Wallet Infrastructure. Permettre aux clients de maintenir la souveraineté sur leurs données tout en profitant de la personnalisation AI.",
+      "website": "https://www.inrupt.com (Inrupt), https://solidproject.org (Solid)",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Le web que Berners-Lee a créé a été capturé par des plateformes centralisées (GAFAM) qui emprisonnent les données utilisateurs dans des silos. Les utilisateurs ont perdu le contrôle de leurs données. Le modèle publicitaire/surveillance domine.",
+      "theorie_du_changement": "Créer un standard/protocole ouvert (Solid) qui sépare les données des applications. Chaque utilisateur stocke ses données dans un POD interopérable. Les applications accèdent aux données via des permissions granulaires, sans les posséder. Inrupt commercialise l'infrastructure enterprise-grade pour accélérer l'adoption. Vision: recréer l'infrastructure de base du web, comme Visa pour les cartes de crédit ou VeriSign pour DNS.",
+      "hypotheses_vraies": "Le besoin de souveraineté des données est réel et croissant (GDPR, etc.). Le concept de PODs est techniquement viable. Des gouvernements sont intéressés (Flandre, NHS).",
+      "hypotheses_fausses": "L'adoption communautaire open-source est restée très limitée. L'interopérabilité entre PODs pose des défis pratiques majeurs. La communauté Solid stagne hors d'Inrupt (selon des observateurs en 2024). L'adoption massive est beaucoup plus lente que prévu.",
+      "vision_10_ans": "Recréer l'infrastructure core du web. Chaque personne et organisation a un POD. Les applications sont découplées des données. Le modèle de surveillance publicitaire est remplacé par un web où l'utilisateur est au centre."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Solid Protocol basé sur les standards W3C: Linked Data (RDF, Turtle), LDP (Linked Data Platform), WebID pour l'identité, WAC (Web Access Control). Inrupt fournit une implémentation enterprise-grade du serveur Solid (Enterprise Solid Server - ESS).",
+      "modele_de_donnees": "Chaque utilisateur possède un POD (Personal Online Datastore) hébergé chez le fournisseur de son choix. Données en RDF/Linked Data. Les applications lisent/écrivent dans le POD avec permissions granulaires. Séparation totale données/applications.",
+      "protocole_de_consentement": "Web Access Control (WAC): l'utilisateur définit qui peut accéder à quelles données dans son POD. Permissions granulaires au niveau fichier/dossier. Identité via WebID (URI déréférençable).",
+      "interoperabilite": "Par conception: basé sur les standards ouverts du W3C. Les PODs sont interopérables entre fournisseurs. Les applications sont agnostiques au fournisseur de POD. Mais en pratique l'interopérabilité reste un défi majeur (fragmentation des implémentations).",
+      "open_source": "Solid Protocol: oui (MIT). Inrupt ESS: propriétaire (enterprise). SDKs open-source disponibles.",
+      "repositories": "GitHub: solidproject/solid, inrupt/"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Inrupt: Enterprise SaaS. Vente d'Enterprise Solid Server (ESS) et de l'Enterprise Wallet Infrastructure aux gouvernements et grandes entreprises. Licences, support, déploiement.",
+      "pricing": "Non public. Enterprise pricing (contrats sur mesure).",
+      "unit_economics": "Non disponible publiquement.",
+      "path_to_profitability": "Non encore atteint. Focus sur la croissance et les déploiements gouvernementaux/enterprise. Inrupt se positionne comme infrastructure critique (comparable à Visa/VeriSign dans son pitch)."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "Seed",
+          "date": "2018",
+          "montant": "Non divulgué",
+          "investisseurs": [
+            "Glasswing Ventures"
+          ],
+          "notes": "Premier investissement, annoncé ~10 mois après la co-fondation d'Inrupt"
+        },
+        {
+          "type": "Series A",
+          "date": "Décembre 2021",
+          "montant": "~$30M (rapporté par TechCrunch, non confirmé officiellement)",
+          "investisseurs": [
+            "Forte Ventures (lead)",
+            "Akamai Technologies",
+            "Glasswing Ventures",
+            "Allstate",
+            "Minderoo Foundation's Frontier Technology Initiative"
+          ],
+          "notes": "Inrupt visait entre $30M et $50M selon TechCrunch"
+        }
+      ],
+      "valorisation": "Non divulguée",
+      "burn_rate_estime": "Non disponible. Équipe de taille significative (estimée 50-100 personnes).",
+      "runway_ou_date_mort": "Actif en 2025-2026. Présence au Web Summit 2025. Blog actif en 2026."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Solid communauté: quelques milliers de PODs créés. Adoption entreprise: pilotes gouvernementaux.",
+      "utilisateurs_actuels": "Communauté Solid: stagnante selon des observateurs 2024. Enterprise via Inrupt: clients actifs mais chiffres non publics.",
+      "entreprises_partenaires": "Gouvernement flamand (Belgique) — déploiement Solid pour les citoyens. NHS UK (pilote santé). BBC (exploration). Bruce Schneier (expert crypto, conseiller). Akamai Technologies (investisseur/partenaire).",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "USA (HQ Inrupt, Boston), Europe (Flandre, UK), Mondial (ambitions globales)",
+      "moments_clefs": [
+        "2015: Lancement du projet Solid au MIT par Tim Berners-Lee",
+        "2018: Fondation d'Inrupt (Berners-Lee + John Bruce). Seed Glasswing Ventures",
+        "2020: Bruce Schneier rejoint Inrupt comme Security Architecture",
+        "2021: Series A ~$30M (Forte Ventures lead)",
+        "2022-2024: Déploiements pilotes (Flandre, NHS)",
+        "2025: Web Summit - présentation Enterprise Wallet Infrastructure",
+        "2024: Critique de la communauté sur la stagnation de Solid hors Inrupt"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "N/A (toujours actif)",
+      "facteur_echec_primaire": "N/A (pas encore mort mais sous pression). Risque principal identifié: la communauté open-source Solid stagne, l'adoption est quasi-exclusivement via Inrupt enterprise, ce qui contredit la vision de décentralisation.",
+      "facteurs_echec_secondaires": [],
+      "analyse_contrefactuelle": "N/A",
+      "depouilles": "N/A"
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε peut apprendre de la tension Inrupt entre open-source communautaire et produit enterprise. Solid a été capturé par son propre véhicule commercial. MYNε doit trouver un meilleur équilibre entre ouverture et monétisation.",
+      "element_a_copier": "Le concept de POD (Personal Online Datastore) comme unité fondamentale. L'approche basée sur des standards ouverts (W3C). La crédibilité apportée par un fondateur de stature mondiale.",
+      "element_a_eviter": "La complexité technique RDF/Linked Data qui rend Solid inaccessible aux développeurs moyens. La stagnation communautaire quand l'entreprise commerciale capte l'essentiel du développement. L'approche trop 'infra' sans killer app pour l'utilisateur final.",
+      "partenariat_envisageable": "Interopérabilité avec les PODs Solid comme option de stockage. Intégration de l'identité WebID. Potentiel de collaboration avec Inrupt sur les standards, mais en tant que concurrent sur l'interface utilisateur."
+    }
+  },
+  {
+    "id": 4,
+    "nom": "ProjectVRM",
+    "statut": "ACTIF",
+    "section_1_identite": {
+      "nom_complet": "ProjectVRM (Vendor Relationship Management)",
+      "pays": "USA",
+      "annee_fondation": 2006,
+      "fondateurs": [
+        {
+          "nom": "Doc Searls (David Searls)",
+          "parcours": "Né en 1947. Journaliste et auteur: co-auteur de The Cluetrain Manifesto (1999), auteur de The Intention Economy (2012). Rédacteur en chef de Linux Journal (1996-2019). Co-fondateur de l'agence de publicité Hodskins Simone & Searls. Fellow du Berkman Klein Center (Harvard) de 2006 à 2010. Fellow du CITS à UC Santa Barbara. BA du Guilford College (1969). A lancé ProjectVRM en tant que fellow au Berkman Klein."
+        }
+      ],
+      "structure_juridique": "Projet de recherche hébergé par le Berkman Klein Center (Harvard University). Spin-off: Customer Commons, un 501(c)(3) non-profit.",
+      "mission_originale": "Encourager le développement d'outils VRM pour que les individus contrôlent leurs relations avec les organisations (pendant du CRM côté client). Prouver que les clients libres valent plus que les clients captifs. Conduire la recherche sur le VRM.",
+      "mission_actuelle": "Développer des standards comme IEEE 7012 (MyTerms) pour des conditions de confidentialité personnelles lisibles par machine. Permettre des agents IA personnels pour des accords réciproques. Promouvoir l'économie de l'intention avec l'agency du consommateur.",
+      "website": "https://projectvrm.org",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les clients sont captifs des vendeurs via le CRM/surveillance. Il n'existe pas d'outils pour l'indépendance des consommateurs, le partage sélectif de données, ou la définition de ses propres conditions. L'économie de l'attention exploite la vie privée.",
+      "theorie_du_changement": "Inverser la relation CRM→VRM. Passer de l'économie de l'attention (surveillance, capture) à l'économie de l'intention via des outils/standards VRM. Les clients deviennent des acteurs indépendants avec des agents personnels qui proposent leurs termes, menant à des relations réciproques de confiance. Le livre 'The Intention Economy' (2012) est le manifeste fondateur.",
+      "hypotheses_vraies": "L'hypothèse centrale (les clients libres valent plus que les clients captifs) se confirme avec le temps. Le standard MyTerms (IEEE 7012) est en voie de publication (2026). L'IA personnelle rend enfin réaliste le concept d'agent VRM.",
+      "hypotheses_fausses": "L'adoption massive du VRM a été beaucoup plus lente que prévu (Loi d'Amara: surestimation à court terme, sous-estimation à long terme). 20 ans après la fondation, aucun outil VRM n'a atteint le grand public.",
+      "vision_10_ans": "Non explicitement documentée. Vision implicite: un écosystème VRM avec des individus gérant indépendamment leurs relations, marchés ouverts, contrôle des données personnelles."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Standards ouverts: IEEE 7012 (MyTerms), DIDComm, Beckn Protocol, AT Protocol. Agents IA personnels, plugins navigateur (r-buttons). Protocoles décentralisés. Pas de blockchain.",
+      "modele_de_donnees": "L'individu est le point d'intégration et de contrôle de ses propres données. Partage sélectif et volontaire via agents/contrats.",
+      "protocole_de_consentement": "MyTerms (IEEE 7012): conditions de confidentialité personnelles lisibles par machine, proposées par des agents personnels, acceptées par des agents d'organisations. Contrats auditables.",
+      "interoperabilite": "S'intègre avec Beckn, DIDComm v2, AT Protocol, Matrix, GNAP, MCP. APIs/standards ouverts.",
+      "open_source": true,
+      "repositories": "Communautaire. Nombreux efforts VRM open-source listés sur projectvrm.org."
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Projet de recherche non-commercial. Pas de revenus (grants/donations possibles via Customer Commons). Financé par Harvard Berkman Klein Center.",
+      "pricing": "N/A",
+      "unit_economics": "N/A",
+      "path_to_profitability": "N/A (recherche académique/non-profit)"
+    },
+    "section_5_financement": {
+      "rounds": "Aucun round de financement trouvé. Recherche académique hébergée par Harvard.",
+      "valorisation": "N/A",
+      "burn_rate_estime": "N/A (projet académique)",
+      "runway_ou_date_mort": "En cours (actif 2026). Doc Searls continue de publier activement."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "N/A (projet de recherche/mouvement, pas une plateforme)",
+      "utilisateurs_actuels": "Communauté/mailing list/wiki. Pas de métriques utilisateurs.",
+      "entreprises_partenaires": "Customer Commons, IEEE, Consumer Reports, Tim Berners-Lee/Solid, MyData, Kwaai. Événements: IIW (Internet Identity Workshop), VRM Day.",
+      "volume_transactions": "N/A",
+      "couverture_geographique": "Mondial (basé USA, événements mondiaux, alliés en Europe)",
+      "moments_clefs": [
+        "2006: Lancement de ProjectVRM au Berkman Klein Center",
+        "2012: Publication de 'The Intention Economy' par Doc Searls. Spin-off Customer Commons",
+        "2017: Début de IEEE P7012 (MyTerms)",
+        "2025: Brouillon MyTerms complété",
+        "2026: Publication de MyTerms prévue. VRM Day/IIW continus"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "N/A (toujours actif)",
+      "facteur_echec_primaire": "N/A",
+      "facteurs_echec_secondaires": [],
+      "analyse_contrefactuelle": "N/A",
+      "depouilles": "N/A"
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε est une plateforme actionnable avec un produit, pas un projet de recherche. ProjectVRM a posé l'idéologie et les standards depuis 2006, mais n'a jamais produit d'outil grand public. MYNε peut incarner ce que ProjectVRM théorise depuis 20 ans.",
+      "element_a_copier": "Le standard MyTerms (IEEE 7012) comme fondation pour le protocole de consentement MYNε. Le concept d'agent IA personnel proposant les termes du consommateur. Le cadre intellectuel solide de l'économie de l'intention. La communauté IIW/VRM Day comme réseau de premiers adoptants.",
+      "element_a_eviter": "Rester au stade théorique/standard sans produit adoptable pendant 20 ans. L'approche purement académique sans business model.",
+      "partenariat_envisageable": "Alliance naturelle forte: MYNε peut devenir l'implémentation de référence de ProjectVRM/MyTerms. Doc Searls comme conseiller/ambassadeur. Intégration du standard IEEE 7012 dans MYNε. Présence aux événements IIW/VRM Day."
+    }
+  },
+  {
+    "id": 5,
+    "nom": "Meeco",
+    "statut": "ACTIF",
+    "section_1_identite": {
+      "nom_complet": "Meeco / Meeco Groep NV",
+      "pays": "Australie (HQ), Belgique (HQ Europe)",
+      "annee_fondation": 2012,
+      "fondateurs": [
+        {
+          "nom": "Katryna Dow",
+          "parcours": "Fondatrice et CEO. Background en tech et innovation. A travaillé sur la vision de faire de l'individu la source la plus riche et précise de ses propres données. Pionnière de l'économie des données personnelles. A acheté des Ether tôt dans la campagne Ethereum. Active dans les communautés MyData, WEF, et identité décentralisée."
+        }
+      ],
+      "structure_juridique": "Meeco: société privée (Australie). Meeco Groep NV: siège européen en Belgique (constitué fin 2019).",
+      "mission_originale": "Permettre aux individus de contrôler et profiter de leurs données personnelles en les agrégeant dans un cloud personnel. Transformer les données personnelles en actifs aussi précieux que de l'argent.",
+      "mission_actuelle": "Plateforme de partage de données personnelles et moteur de consentement pour la conformité GDPR. API-of-Me. Identité numérique et Verifiable Credentials. Permettre l'échange sécurisé de données avec consentement auditable.",
+      "website": "https://www.meeco.me",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les données personnelles sont dispersées dans des silos contrôlés par des entreprises. Les individus n'ont ni visibilité ni contrôle sur leurs données. Le modèle actuel est inefficace et coûteux pour les entreprises (données achetées via intermédiaires sont souvent inexactes).",
+      "theorie_du_changement": "Inverser le modèle: faire de l'individu la source la plus riche et la plus précise de données. Réduire les coûts pour les entreprises en allant directement à l'individu. L'individu possède un 'cloud personnel' avec des 'life tiles' organisant ses données. Partage sélectif via permissions. Le modèle B2B2C permet aux entreprises de payer pour des données de meilleure qualité avec consentement.",
+      "hypotheses_vraies": "La régulation a validé le besoin (GDPR, Australian CDR, Open Banking). Les Verifiable Credentials deviennent un standard. L'identité décentralisée gagne en traction.",
+      "hypotheses_fausses": "L'adoption B2C directe est restée très limitée. Le marché a mis beaucoup plus longtemps que prévu à mûrir. La monétisation des données personnelles par l'individu reste marginale.",
+      "vision_10_ans": "Non explicitement documentée. Implicite: un monde où chaque individu possède et contrôle son identité numérique et ses données, les partageant avec consentement pour des services personnalisés."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Plateforme cloud. API-of-Me (API personnelle). Moteur de consentement (Consent Engine). Vault personnel chiffré (Zero-Knowledge Encryption). Verifiable Credentials. Distributed Ledger Technology (DLT).",
+      "modele_de_donnees": "L'individu possède un vault personnel chiffré. Données agrégées via API depuis de multiples sources (banques, santé, social, IoT). L'utilisateur contrôle le partage via le Consent Engine. Données chiffrées en zero-knowledge (Meeco ne peut pas les voir).",
+      "protocole_de_consentement": "Consent Engine propriétaire: consentement granulaire, auditable, conforme GDPR. L'utilisateur donne des permissions spécifiques à des organisations spécifiques pour des données spécifiques, pour une durée spécifique.",
+      "interoperabilite": "Open Banking, Australian CDR, GDPR. API/SDK. Verifiable Credentials standards (W3C). Intégration avec sources bancaires, santé, fidélité, patrimoine.",
+      "open_source": "Partiellement. SDK et certains composants ouverts. Plateforme core propriétaire.",
+      "repositories": "Non identifié publiquement"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "B2B et B2B2C. Licences de plateforme pour entreprises (banques, assurances, gouvernements). Revenus de déploiement et intégration. Pilotes et PoCs avec des clients enterprise.",
+      "pricing": "Enterprise (non public). Contrats sur mesure.",
+      "unit_economics": "Non disponible publiquement",
+      "path_to_profitability": "Non encore atteint. Croissance des revenus via partenariats bancaires en Benelux et services financiers en Australie. Équipe de ~15-20 personnes (structure lean)."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "Pre-Series A",
+          "date": "Octobre 2019",
+          "montant": "AUD $9.4M (combinaison cash, IP et actifs — inclut l'acquisition de SVX Group)",
+          "investisseurs": [
+            "Non détaillés publiquement. Greg Embleton (ex-CEO SVX) rejoint comme Chairman."
+          ],
+          "notes": "Transaction combinant investissement et acquisition de SVX Group (fintech australienne avec brevets pour le stockage/partage sécurisé d'informations personnelles et business)."
+        }
+      ],
+      "valorisation": "Non divulguée",
+      "burn_rate_estime": "Non disponible. Équipe de ~15-20 personnes.",
+      "runway_ou_date_mort": "Actif en 2025-2026. Participation au G20 TechSprint 2025. 15 employés (BIS G20 doc)."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Non public. Principalement B2B/enterprise.",
+      "utilisateurs_actuels": "Non public. Clients enterprise actifs.",
+      "entreprises_partenaires": "Partenariats bancaires en Benelux. Clients services financiers en Australie. Respect Network (partenaire fondateur, 2013). Amazon AWS (infrastructure). Participation G20 TechSprint 2025.",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "Australie et Belgique/Benelux principalement. Ambitions mondiales.",
+      "moments_clefs": [
+        "2012: Fondation par Katryna Dow",
+        "2013: Partenariat fondateur avec Respect Network",
+        "2014: Premiers pitches et levée initiale",
+        "2019: Pre-Series A AUD $9.4M + acquisition SVX Group. Constitution de Meeco Groep NV (Belgique)",
+        "2020+: Focus Verifiable Credentials et identité décentralisée",
+        "2025: Participation G20 TechSprint. 15 employés."
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "N/A (actif, mais a évolué du B2C vers le B2B/enterprise)",
+      "facteur_echec_primaire": "N/A (toujours actif)",
+      "facteurs_echec_secondaires": [],
+      "analyse_contrefactuelle": "N/A",
+      "depouilles": "N/A"
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "Meeco a survécu 12+ ans en pivotant du B2C pur vers le B2B enterprise. MYNε peut apprendre de cette résilience mais aussi du fait que Meeco reste petit (~15 employés après 12 ans). Le modèle enterprise est durable mais ne scale pas facilement.",
+      "element_a_copier": "Le Consent Engine auditable (conformité GDPR native). L'approche Zero-Knowledge Encryption pour le vault personnel. Le pivot intelligent vers les Verifiable Credentials. Le modèle B2B2C qui génère des revenus réels.",
+      "element_a_eviter": "Rester trop petit trop longtemps. 12 ans avec ~15 employés suggère une difficulté à lever des fonds significatifs et à scaler. L'approche trop technique/infrastructure sans killer app B2C.",
+      "partenariat_envisageable": "Intégration technique: MYNε pourrait intégrer le Consent Engine de Meeco ou s'interopérer via les standards de Verifiable Credentials. Alliance géographique: Meeco couvre l'Australie/Benelux, MYNε pourrait couvrir d'autres régions."
+    }
+  },
+  {
+    "id": 6,
+    "nom": "Streamity",
+    "statut": "MORT",
+    "section_1_identite": {
+      "nom_complet": "Streamity (StreamDesk)",
+      "pays": "Singapour",
+      "annee_fondation": 2017,
+      "fondateurs": [
+        {
+          "nom": "Équipe non clairement identifiée",
+          "parcours": "Projet crypto enregistré à Singapour. Équipe principalement russophone. Fondateurs non proéminents dans l'écosystème. Peu de background vérifiable."
+        }
+      ],
+      "structure_juridique": "Société enregistrée à Singapour (structure exacte non vérifiée)",
+      "mission_originale": "Créer un échange décentralisé de cryptomonnaies (StreamDesk) permettant l'échange crypto-fiat sans intermédiaire, via smart contracts Ethereum.",
+      "mission_actuelle": "N/A (projet effectivement mort)",
+      "website": "https://streamity.org (statut incertain, possiblement détourné ou inactif)",
+      "website_en_ligne": false
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les échanges centralisés de cryptomonnaies sont vulnérables aux hacks, ont des frais élevés, et nécessitent de faire confiance à un tiers. L'échange crypto-fiat est particulièrement compliqué en décentralisé.",
+      "theorie_du_changement": "Utiliser les smart contracts Ethereum pour permettre l'échange P2P direct de crypto et fiat à des prix de marché en temps réel, sans intermédiaire. Le token STM finance le développement et sert de monnaie interne du service.",
+      "hypotheses_vraies": "Le besoin d'échanges décentralisés était réel (le secteur DEX a explosé avec Uniswap, etc.).",
+      "hypotheses_fausses": "Le modèle crypto-fiat P2P via smart contracts seul ne résout pas les problèmes de liquidité, de conformité KYC/AML, et de rampe fiat. Le marché a évolué vers des solutions différentes (AMM, DEX agrégateurs).",
+      "vision_10_ans": "Non documentée. Probablement: devenir la plateforme de référence pour l'échange décentralisé crypto-fiat."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Ethereum (smart contracts ERC-20). Token STM sur le standard ERC-20. StreamDesk comme application décentralisée. API de systèmes de paiement pour le fiat.",
+      "modele_de_donnees": "Smart contracts gèrent les transactions P2P. Le token STM est utilisé pour les frais et services sur la plateforme.",
+      "protocole_de_consentement": "N/A (échange crypto, pas de données personnelles au sens personal data store)",
+      "interoperabilite": "Ethereum uniquement. Intention d'intégrer des systèmes de paiement fiat.",
+      "open_source": "Inconnu. White paper disponible mais code source non vérifié.",
+      "repositories": "Non identifié"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Token ICO (STM) pour le financement. Commissions sur les échanges via StreamDesk. Privilèges pour les détenteurs de 1250+ STM.",
+      "pricing": "Commissions d'échange (montant non spécifié, promis inférieures aux concurrents centralisés).",
+      "unit_economics": "Non disponible",
+      "path_to_profitability": "Jamais atteint. Le projet semble avoir cessé tout développement actif."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "ICO",
+          "date": "Mars 2018 (Phase 1: 12-25 mars 2018, Phase 2 ensuite)",
+          "montant": "$4.2M levés (selon ICO Hot List)",
+          "investisseurs": [
+            "Investisseurs ICO publics"
+          ],
+          "notes": "Token STM à $0.20. 186M tokens total supply (hard cap). Pre-sale en janvier 2018 avec 30% de discount. Target original: $2.8M, possiblement étendu à $20M. Tokens non vendus: 180M total sur CoinMarketCap."
+        }
+      ],
+      "valorisation": "Basée sur le token. STM a perdu quasi toute sa valeur.",
+      "burn_rate_estime": "Non disponible",
+      "runway_ou_date_mort": "Effectivement mort vers 2019-2020. Le token est toujours listé sur CoinMarketCap mais à valeur quasi nulle. Des posts Binance de 2023 le qualifient de 'scam'."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Inconnu. Probablement très faible.",
+      "utilisateurs_actuels": "Zéro (projet mort)",
+      "entreprises_partenaires": "Aucun partenaire connu",
+      "volume_transactions": "Probablement négligeable",
+      "couverture_geographique": "Singapour (enregistrement), ciblait le marché mondial",
+      "moments_clefs": [
+        "2017: Annonce du projet",
+        "Janvier 2018: Pre-sale ICO",
+        "Mars 2018: ICO Phase 1 ($4.2M levés)",
+        "2018-2019: Développement présumé de StreamDesk",
+        "2019-2020: Cessation effective d'activité",
+        "2023: Identifié comme scam sur Binance Square"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "~2019-2020: Mort effective. Le projet a cessé toute communication et développement visible.",
+      "facteur_echec_primaire": "Projet ICO probablement frauduleux ou au minimum incompétent. Levée de fonds via ICO sans produit viable ni équipe crédible. Typique de la bulle ICO 2017-2018 où 80% des projets étaient des arnaques (étude Statis 2018).",
+      "facteurs_echec_secondaires": [
+        "Aucune traction produit réelle malgré les fonds levés",
+        "Équipe opaque sans track record vérifiable",
+        "Le problème crypto-fiat décentralisé s'est avéré insoluble sans partenariats bancaires",
+        "Effondrement du marché crypto en 2018 réduisant l'intérêt et la valeur du token"
+      ],
+      "analyse_contrefactuelle": "Si le projet était légitime: auraient dû construire le produit avant l'ICO, établir des partenariats bancaires pour la rampe fiat, et se concentrer sur un marché géographique spécifique avec une régulation claire.",
+      "depouilles": "Rien. Token STM quasi sans valeur. Code probablement abandonné. Aucun acquéreur."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε est fondamentalement différent: c'est un projet d'économie de l'intention, pas un exchange crypto opportuniste. La leçon est celle de la crédibilité: MYNε doit éviter toute association avec les mécaniques ICO/token qui ont détruit la confiance.",
+      "element_a_copier": "Rien. Streamity n'a produit aucune innovation récupérable.",
+      "element_a_eviter": "Absolument tout: le modèle ICO sans produit, l'équipe opaque, les promesses de rendement, l'absence de traction avant financement. MYNε doit être l'anti-Streamity: produit d'abord, financement ensuite, transparence totale.",
+      "partenariat_envisageable": "Aucun. Streamity est un cadavre toxique."
+    }
+  },
+  {
+    "id": 7,
+    "nom": "polypoly",
+    "statut": "MORT",
+    "section_1_identite": {
+      "nom_complet": "polypoly (polyVerse: polypoly Cooperative SCE, polypoly Enterprise GmbH, polypoly Foundation)",
+      "pays": "Allemagne (Berlin) / Liechtenstein (HQ fondation)",
+      "annee_fondation": 2019,
+      "fondateurs": [
+        {
+          "nom": "Thorsten Dittmar",
+          "parcours": "Directeur général (Managing Director) de polypoly Cooperative. Entrepreneur allemand spécialisé dans la tech et les données. Background en startups et économie des données. A conçu l'architecture tripartite du polyVerse."
+        }
+      ],
+      "structure_juridique": "Structure tripartite unique: (1) polypoly Cooperative SCE (Société Coopérative Européenne, for-profit), (2) polypoly Enterprise GmbH (for-profit, Allemagne), (3) polypoly Foundation (non-profit, Liechtenstein). Ensemble appelé le 'polyVerse'.",
+      "mission_originale": "Créer une économie des données équitable pour tous, en commençant par l'utilisateur individuel. Redonner le contrôle des données aux citoyens européens via une coopérative pan-européenne.",
+      "mission_actuelle": "N/A (effectivement mort/inactif vers 2023-2024)",
+      "website": "https://polypoly.coop (DNS ne résout plus), https://polypoly.org (redirige, contenu minimal)",
+      "website_en_ligne": false
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les monopoles de données (Facebook, Google) offrent des services gratuits mais au prix de la vie privée et du consentement. Des milliards d'euros générés par les données des citoyens européens sont échangés offshore. Les individus n'ont ni contrôle ni profit de leurs données.",
+      "theorie_du_changement": "Modèle coopératif européen: les membres sont co-propriétaires de la technologie (polyPod). L'edge computing sur les appareils des utilisateurs remplace les data centers centralisés. Les entreprises louent la capacité de calcul distribuée des polyPods, économisant massivement sur l'infrastructure. Les économies sont partagées avec les utilisateurs (estimé jusqu'à $250/mois par utilisateur). Le tout dans un cadre GDPR natif car les données ne quittent jamais l'appareil.",
+      "hypotheses_vraies": "L'edge computing a progressé. Le GDPR a créé un besoin réel. Le modèle coopératif européen a un attrait idéologique.",
+      "hypotheses_fausses": "Les entreprises n'ont pas adopté le calcul distribué sur les appareils utilisateurs. La promesse de $250/mois par utilisateur était irréaliste. Le modèle coopératif SCE est trop complexe juridiquement pour scaler rapidement.",
+      "vision_10_ans": "Coopératives polyPod dans chaque pays. Chaque citoyen est co-propriétaire de la tech de données. Économie des données 'fair trade' européenne concurrençant les GAFAM."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "polyPod: application installable sur laptop, smartphone, ou appareil IoT. Edge computing décentralisé. Le calcul se fait sur l'appareil de l'utilisateur, pas dans le cloud. GDPR-compliant by design (données ne quittent pas l'appareil).",
+      "modele_de_donnees": "Données stockées uniquement sur l'appareil de l'utilisateur dans le polyPod. polyPedia: base de données open-source sur le comportement data de milliers d'entreprises. Les entreprises envoient des algorithmes au polyPod (pas l'inverse: les données restent sur place).",
+      "protocole_de_consentement": "L'utilisateur contrôle totalement: décide à qui donner accès, pour quelles données, en échange de quoi (paiement, don, etc.). Aucune donnée ne peut être accédée sans permission explicite.",
+      "interoperabilite": "Automatisation de la récupération de données GDPR auprès des fournisseurs (Facebook, Amazon, WhatsApp, Google). Installation possible sur tout appareil.",
+      "open_source": true,
+      "repositories": "polyPod devait être open-source sous licence de la Coopérative"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Triple flux: (1) Cooperative: cotisations membres (€5-€500 par action), dividendes des profits data partagés. (2) Enterprise GmbH: services B2B aux entreprises (intégration IT, consulting, big data). (3) Foundation: franchise pour les coopératives data hors-Europe. Le rapport EU SMART 2020/694 mentionne €250K MRR via trois clients blue-chip.",
+      "pricing": "Actions coopérative: €5 (1 action) à €500 (100 actions). Services enterprise: sur mesure.",
+      "unit_economics": "Non disponible. Promesse de $250/mois/utilisateur en redistribution (non vérifiable).",
+      "path_to_profitability": "Non atteint. Malgré des revenus émergents, le projet a vraisemblablement manqué de runway."
+    },
+    "section_5_financement": {
+      "rounds": "~€20M de sources publiques et privées (selon rapport EU SMART 2020/694). Trois piliers: entrepreneurs/crowdfunding industriel, sources publiques (national et EU), donations/cotisations citoyens.",
+      "valorisation": "Non disponible",
+      "burn_rate_estime": "Environ 45 employés au pic. Burn rate estimé €200-300K/mois minimum.",
+      "runway_ou_date_mort": "Site polypoly.coop ne résout plus (DNS mort). polypoly.org redirige vers une page minimale. Effectivement mort vers 2023-2024."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Cooperative: aucun utilisateur au lancement (go-live prévu début 2021). Enterprise: 3 clients blue-chip mentionnés.",
+      "utilisateurs_actuels": "Zéro (inactif)",
+      "entreprises_partenaires": "3 entreprises blue-chip non nommées (selon rapport EU). Négociations avec Inde, Afrique du Sud, Canada, Suisse, UK, USA pour la franchise Foundation.",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "Allemagne (Berlin), Liechtenstein, Afrique du Sud. Ambitions pan-européennes via le statut SCE.",
+      "moments_clefs": [
+        "2019: Fondation des trois entités polypoly",
+        "Décembre 2020: Charte complète de la Coopérative SCE. Annonces VentureBeat/HackerNoon/Dataconomy. Publication du white paper polyPod.",
+        "Début 2021: Lancement prévu du polyPod (retardé par COVID)",
+        "2021-2022: Développement. ~45 employés. €250K MRR.",
+        "2023-2024: Fermeture effective. Sites web morts ou redirigés."
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "~2023-2024: Mort. Le site polypoly.coop ne résout plus en DNS. Le site polypoly.org redirige vers une page quasi vide.",
+      "facteur_echec_primaire": "Complexité structurelle excessive. La structure tripartite (Coopérative SCE + GmbH + Foundation) était juridiquement et opérationnellement trop complexe pour une startup. Les coûts de coordination et de compliance ont consommé les ressources avant que le produit ne soit adopté.",
+      "facteurs_echec_secondaires": [
+        "La promesse d'edge computing distribué sur appareils utilisateurs était techniquement prématurée",
+        "Le modèle coopératif pan-européen (SCE) impose des contraintes juridiques lourdes dans chaque juridiction",
+        "Le produit polyPod n'a jamais atteint un stade d'adoption significatif malgré les annonces"
+      ],
+      "analyse_contrefactuelle": "Auraient dû: commencer avec une structure simple (une seule GmbH), lancer un MVP minimal dans un seul pays, prouver la traction avant de déployer l'architecture coopérative. Le 'polyVerse' tripartite était un piège de complexité structurelle.",
+      "depouilles": "Aucun acquéreur identifié. Code polyPod potentiellement disponible si open-source publié. La community polypoly s'est dissoute."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "MYNε doit impérativement éviter la sur-ingénierie structurelle. polypoly a créé trois entités juridiques avant d'avoir un seul utilisateur. MYNε doit prouver le produit d'abord, complexifier la structure ensuite.",
+      "element_a_copier": "Le concept de computation sur l'appareil (edge computing pour la vie privée). L'idée de polyPedia (base de données ouverte sur le comportement data des entreprises) est brillante et récupérable.",
+      "element_a_eviter": "Structure juridique tripartite (SCE + GmbH + Foundation) avant d'avoir prouvé le produit. La promesse de $250/mois par utilisateur non vérifiable. Le modèle coopératif pan-européen comme véhicule de lancement (trop lent, trop complexe).",
+      "partenariat_envisageable": "Récupération potentielle du concept polyPedia et du code open-source si disponible. Les anciens membres de la coopérative polypoly sont des early adopters naturels pour MYNε. Thorsten Dittmar pourrait être un contact utile."
+    }
+  },
+  {
+    "id": 8,
+    "nom": "HAT / Dataswyft",
+    "statut": "ACTIF",
+    "section_1_identite": {
+      "nom_complet": "HAT (Hub of All Things) Microserver / Dataswyft Ltd",
+      "pays": "Royaume-Uni",
+      "annee_fondation": 2015,
+      "fondateurs": [
+        {
+          "nom": "Prof. Dr. Irene Ng",
+          "parcours": "Professeure de Marketing & Service Systems à l'Université de Warwick. PhD en Marketing Science de la National University of Singapore. Ancienne CEO de SA Tours Group (1989-1994), fondatrice/CEO d'Empress Cruise Lines (1994-1996, vendue). Postes académiques à Exeter et Warwick. Pionnière des marchés multi-sided pour les données personnelles."
+        }
+      ],
+      "structure_juridique": "Dataswyft Ltd (société privée à responsabilité limitée, UK). HAT Community Foundation (HCF, non-profit, régulateur de l'écosystème).",
+      "mission_originale": "Concevoir et ingéniérer un marché multi-sided pour les données personnelles où les données d'un individu seraient possédées par l'individu (projet HAT, 2013, Warwick).",
+      "mission_actuelle": "Débloquer la valeur des données pour tous en permettant la production, le stockage, le traitement, l'utilisation et le partage de données auto-souveraines. Créer une économie de données bottom-up autonomisant les individus et les PME.",
+      "website": "https://dataswyft.com, https://www.hubofallthings.com",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Propriété centralisée des données par les plateformes menant à des données périmées et vulnérables. Défaillance du marché de l'économie des données personnelles où les individus ne possèdent ni ne contrôlent leurs données.",
+      "theorie_du_changement": "Passer de l'économie de l'attention (plateformes centralisées extraient la valeur) à l'économie de l'intention via la propriété auto-souveraine des données dans des microserveurs personnels. Les individus contrôlent, partagent et monétisent leurs données en sécurité, créant des marchés de données libres.",
+      "hypotheses_vraies": "L'hypothèse de propriété individuelle des données créant de la valeur s'est confirmée: technologie déployée, brevet délivré en janvier 2025, réseaux en croissance dans plusieurs pays.",
+      "hypotheses_fausses": "L'adoption de masse n'est pas encore atteinte malgré 10+ ans de développement. Le marché pour les données personnelles 'bottom-up' reste embryonnaire.",
+      "vision_10_ans": "Déploiement mondial des HAT Microservers et écosystèmes Dataswyft. Économie de données intelligente avec les données auto-souveraines comme classe d'actifs. Justice sociale via une distribution équitable de la valeur des données."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Serveur de données décentralisé cloud-native (HAT Microserver). Core open-source. Plateforme API Dataswyft. Data wallets. Hybrid (hébergé par Dataswyft, portable à travers les clouds). Pas de blockchain.",
+      "modele_de_donnees": "Individus/organisations possèdent tous les droits de PI légaux sur leurs données dans leur HAT Microserver personnel (données auto-souveraines). Données portables, source de vérité maintenue.",
+      "protocole_de_consentement": "Protocoles techno-légaux pour la portabilité/partage des données. Système de 'prélèvement automatique' de données. Contrats à la demande via Dataswyft Wallet sous régulation HCF.",
+      "interoperabilite": "Entièrement portable entre systèmes cloud. APIs/SDKs pour développeurs. Interopérable avec les stacks tech existantes. Connecteurs de données pour sources comme banques/hôpitaux.",
+      "open_source": true,
+      "repositories": "GitHub: dataswift/HAT2.0 (code technique HAT entièrement ouvert depuis 2016)"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Data accounts as-a-service (par PDA/utilisateur/mois à partir de $0.10, rabais d'inactivité). Licences de plateforme. Yield/distribution des revenus d'actifs data.",
+      "pricing": "Par utilisateur/mois: $0.10+ pour les data accounts. 80% de rabais pour les réseaux de 100K+ utilisateurs.",
+      "unit_economics": "Non disponible publiquement",
+      "path_to_profitability": "Voie via la mise à l'échelle des réseaux/écosystèmes, partenariats, fonds comme le fonds USD $40M Thorton-Altima. Expérimentation 2019-2024 sur les modèles."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "Grants de recherche UK",
+          "date": "2013-2019",
+          "montant": ">$50M (grants académiques, 6 universités UK participantes au projet HAT)",
+          "investisseurs": [
+            "UK Research Councils",
+            "6 universités britanniques"
+          ],
+          "notes": "Financement de recherche, pas investissement equity"
+        },
+        {
+          "type": "Seed",
+          "date": "Septembre 2019",
+          "montant": "£1.8M (~$2.3M)",
+          "investisseurs": [
+            "IQ Capital (lead)",
+            "Pacific & Orient Properties",
+            "Alphanumeric Corp",
+            "Delin Ventures"
+          ],
+          "notes": "Round seed pour Dataswyft Ltd"
+        },
+        {
+          "type": "Fonds partenaire",
+          "date": "2025",
+          "montant": "USD $40M (Thorton-Altima fund via Innovorsa Group)",
+          "investisseurs": [
+            "Innovorsa Group"
+          ],
+          "notes": "Fonds d'investissement dans l'écosystème, pas investissement direct dans Dataswyft"
+        }
+      ],
+      "valorisation": "Non disponible publiquement",
+      "burn_rate_estime": "Non disponible publiquement",
+      "runway_ou_date_mort": "Actif en 2026. Brevet US délivré en janvier 2025. Réseaux en croissance."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Non disponible publiquement. Le pricing par utilisateur implique un objectif de 100K+ utilisateurs.",
+      "utilisateurs_actuels": "Non disponible publiquement",
+      "entreprises_partenaires": "HAT Community Foundation (régulateur). Innovorsa Group (fonds). Ministère de l'Agriculture d'Indonésie (National Food Brigade). Partenaires académiques (6 universités UK). HATLAB Studio.",
+      "volume_transactions": "Non disponible publiquement",
+      "couverture_geographique": "UK, Malaisie, Chypre, Indonésie. Ambitions mondiales.",
+      "moments_clefs": [
+        "2013: Début du projet HAT (Warwick University)",
+        "2015: Alpha HAT",
+        "2016: Lancement et open-source du code HAT",
+        "2019: Seed Dataswyft £1.8M (IQ Capital)",
+        "2024: Dataswyft Wallet/CheckD",
+        "Janvier 2025: Brevet US délivré",
+        "2025: MOU Indonésie, fonds USD $40M"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "N/A (actif)",
+      "facteur_echec_primaire": "N/A",
+      "facteurs_echec_secondaires": [],
+      "analyse_contrefactuelle": "N/A",
+      "depouilles": "N/A"
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "HAT/Dataswyft vient du monde académique (10 ans de recherche avant la commercialisation). MYNε peut bouger plus vite en s'appuyant sur la recherche déjà réalisée sans les contraintes académiques.",
+      "element_a_copier": "Le modèle techno-légal (protocoles combinant technologie et cadre juridique). Le pricing ultra-bas ($0.10/utilisateur/mois) pour l'adoption de masse. L'approche HAT Community Foundation comme régulateur indépendant de l'écosystème. Le brevet comme protection IP.",
+      "element_a_eviter": "10 ans de recherche académique avant la commercialisation. La dépendance aux grants de recherche. Le manque de visibilité grand public malgré une technologie solide.",
+      "partenariat_envisageable": "Intégration technique forte: les HAT Microservers pourraient servir de backend de stockage pour MYNε. La HCF pourrait régulier l'écosystème MYNε. Expansion géographique complémentaire (HAT couvre UK/Asie du Sud-Est, MYNε pourrait couvrir Europe/Afrique)."
+    }
+  },
+  {
+    "id": 9,
+    "nom": "digi.me",
+    "statut": "PIVOTÉ",
+    "section_1_identite": {
+      "nom_complet": "digi.me Limited",
+      "pays": "UK (fondé), puis Pays-Bas (siège déplacé)",
+      "annee_fondation": 2009,
+      "fondateurs": [
+        {
+          "nom": "Julian Ranger",
+          "parcours": "Fondateur et Chairman. Entrepreneur tech britannique. A lancé digi.me initialement comme SocialSafe, un service de backup de réseaux sociaux, avec £20,000 de son propre argent en 2009. Active dans la communauté MyData (membre fondateur). Défenseur du concept 'Internet of Me'."
+        }
+      ],
+      "structure_juridique": "Société privée (Limited), initialement UK, siège déplacé aux Pays-Bas.",
+      "mission_originale": "Service de sauvegarde de médias sociaux (SocialSafe, 2009). Évoluée vers: permettre à chaque individu de posséder et contrôler véritablement ses données personnelles. 'We never see, never touch and never hold your data'.",
+      "mission_actuelle": "Pivotée vers une plateforme B2B/SDK de Consent Access Library. Fournit aux entreprises les outils pour accéder aux données utilisateurs avec consentement vérifié et conforme.",
+      "website": "https://digi.me",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les données personnelles sont emprisonnées dans des silos (Facebook, banques, santé). Les individus n'ont ni vue d'ensemble ni contrôle. Le partage non-consenti de données est omniprésent. Le GDPR crée des obligations de conformité complexes pour les entreprises.",
+      "theorie_du_changement": "Permettre à chaque individu de rassembler TOUTES ses données (social, financier, santé) dans un store personnel sur son propre appareil (jamais dans le cloud digi.me). Puis, offrir le 'Permissioned Access': l'utilisateur choisit quelles données partager, avec qui, quand et pourquoi. Les entreprises obtiennent des données riches avec consentement total, conformes au GDPR. L'individu est au centre: 'Internet of Me'.",
+      "hypotheses_vraies": "Le concept de consentement vérifié est devenu central avec le GDPR. La demande B2B pour le 'permissioned access' est réelle. Les entreprises ont besoin de solutions de conformité.",
+      "hypotheses_fausses": "L'adoption B2C pure (utilisateurs téléchargeant l'app pour gérer leurs données) est restée limitée (~400K utilisateurs en 2016 mais engagement faible). Les utilisateurs ne veulent pas activement gérer leurs données. Le modèle 'zero cloud storage' est un handicap technique pour la scale.",
+      "vision_10_ans": "Non explicitement documentée. Implicite: un monde où chaque individu possède son 'Internet of Me' et les entreprises accèdent aux données via permission."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Application mobile/desktop qui collecte et stocke les données localement (aucun stockage cloud). Traitement via Virtual PC model — les cloud services ne font que le processing, ne stockent jamais de données personnelles. SDK/API pour l'intégration B2B (Consent Access Library).",
+      "modele_de_donnees": "Toutes les données stockées exclusivement sur l'appareil de l'utilisateur (mobile, desktop, ou disque réseau). Données structurées agrégées depuis les APIs des plateformes (Facebook, banques, apps santé). L'utilisateur possède 100% de ses données.",
+      "protocole_de_consentement": "Permissioned Access: l'utilisateur autorise explicitement le partage de données spécifiques avec des tiers spécifiques pour des usages spécifiques. Consent audit trail. Conforme GDPR.",
+      "interoperabilite": "Connecteurs API vers de multiples sources: réseaux sociaux (Facebook, Twitter, Instagram, Flickr), finance, santé, Evernote. SDK/API pour les développeurs tiers.",
+      "open_source": "Partiellement (SDK open-source, plateforme core propriétaire)",
+      "repositories": "GitHub: digime/"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "B2B: licences SDK/API de la Consent Access Library aux entreprises. Services d'intégration. Le pivot vers B2B reflète l'échec du modèle B2C pur.",
+      "pricing": "Non public. Enterprise pricing.",
+      "unit_economics": "Non disponible",
+      "path_to_profitability": "Non atteint au moment du pivot. Le pivot B2B améliore les unit economics (revenus récurrents enterprise vs. app gratuite B2C)."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "Bootstrap + early rounds",
+          "date": "2009-2015",
+          "montant": "~£2.9M (£7.1M total cumulé au moment de la Series A, moins les £4.2M de la Series A)",
+          "investisseurs": [
+            "Julian Ranger (£20K initial)",
+            "Investisseurs non détaillés"
+          ],
+          "notes": "Lancement avec £20K du fondateur"
+        },
+        {
+          "type": "Series A",
+          "date": "Juin 2016",
+          "montant": "£4.2M ($6.1M)",
+          "investisseurs": [
+            "Swiss Re (lead — réassureur mondial, $30B de CA)"
+          ],
+          "notes": "Total levé au moment de la Series A: £7.1M ($10.2M). Partenariats Toshiba, Lenovo, Evernote. 400K utilisateurs. Swiss Re comme investisseur stratégique (pas un VC tech)."
+        }
+      ],
+      "valorisation": "Non divulguée",
+      "burn_rate_estime": "Non disponible",
+      "runway_ou_date_mort": "Actif mais pivoté. Siège déplacé aux Pays-Bas. Focus B2B/SDK."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "~400,000 utilisateurs de l'app à travers 140 pays (au moment de la Series A, 2016)",
+      "utilisateurs_actuels": "Inconnu post-pivot B2B. L'app B2C n'est plus le focus.",
+      "entreprises_partenaires": "Swiss Re (investisseur/partenaire), Toshiba, Lenovo, Evernote. Membre fondateur de MyData Global.",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "UK (origines), Pays-Bas (nouveau siège), 140 pays (distribution app)",
+      "moments_clefs": [
+        "2009: Lancement comme SocialSafe (backup social media) avec £20K",
+        "2012-2015: Évolution vers digi.me (personal data store)",
+        "Juin 2016: Series A £4.2M (Swiss Re lead). 400K utilisateurs. Partenariats Toshiba/Lenovo/Evernote.",
+        "2018: Membre fondateur MyData Global",
+        "~2019-2021: Pivot vers B2B/SDK (Consent Access Library). Déplacement siège aux Pays-Bas.",
+        "2022+: Focus B2B, app B2C de moins en moins visible"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "~2019-2021: Pivot du B2C (app personal data store) vers le B2B (SDK Consent Access Library pour entreprises). Déplacement du siège UK vers Pays-Bas.",
+      "facteur_echec_primaire": "Le cold start problem B2C: les utilisateurs ne veulent pas activement gérer leurs données personnelles. Malgré 400K téléchargements, l'engagement était faible. Aucune killer app B2C n'a émergé du concept de 'personal data store'.",
+      "facteurs_echec_secondaires": [
+        "Le modèle 'zero cloud storage' (tout sur l'appareil) limitait les fonctionnalités et la synchronisation cross-device",
+        "Les APIs des plateformes (Facebook, etc.) se sont progressivement fermées, réduisant la valeur du produit",
+        "La concurrence des solutions de privacy intégrées (Apple, navigateurs) a réduit le besoin d'une app dédiée"
+      ],
+      "analyse_contrefactuelle": "Auraient dû: pivoter vers le B2B plus tôt (avant 2019). Le vrai marché était les entreprises ayant besoin de conformité GDPR, pas les consommateurs voulant gérer leurs données. L'investissement de Swiss Re (assurance) indiquait déjà le bon marché: les industries réglementées.",
+      "depouilles": "Pas mort mais réduit. L'app B2C est devenue secondaire. L'entreprise survit via le SDK B2B. Julian Ranger reste actif dans la communauté MyData."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "digi.me a prouvé que le 'personal data store' B2C pur est un marché quasi-impossible. MYNε doit avoir une proposition de valeur immédiate et concrète pour l'utilisateur (pas juste 'gérez vos données') et un modèle B2B2C dès le départ.",
+      "element_a_copier": "Le concept de 'Permissioned Access' comme protocole de consentement. L'approche 'zero-knowledge' (ne jamais voir/toucher/stocker les données). Le recrutement d'un investisseur stratégique industriel (Swiss Re) plutôt que purement VC.",
+      "element_a_eviter": "Le modèle B2C 'data store' sans killer app. Le stockage exclusif sur appareil (trop limitant). La dépendance aux APIs tierces (qui se ferment). Le pivot tardif (2019 au lieu de 2017).",
+      "partenariat_envisageable": "Intégration du SDK digi.me comme couche de consentement dans MYNε. Julian Ranger comme conseiller (20 ans d'expérience dans le personal data). Accès au réseau d'entreprises de digi.me en Europe."
+    }
+  },
+  {
+    "id": 10,
+    "nom": "CitizenMe",
+    "statut": "PIVOTÉ",
+    "section_1_identite": {
+      "nom_complet": "CitizenMe → DataSapien",
+      "pays": "UK",
+      "annee_fondation": 2013,
+      "fondateurs": [
+        {
+          "nom": "StJohn Deakins",
+          "parcours": "Fondateur et CEO. Entrepreneur tech britannique. Vision de donner à chaque humain son propre stockage de données et IA personnelle. A piloté le pivot vers DataSapien. Background en technologie human-centric."
+        }
+      ],
+      "structure_juridique": "Société privée (UK). CitizenMe Ltd.",
+      "mission_originale": "Donner à chaque humain son propre stockage de données personnelles et IA, directement dans l'app CitizenMe. Pionnier B2C de la 'Zero Data' technologie.",
+      "mission_actuelle": "DataSapien: solutions de données client edge et IA personnelle pour les marques mondiales. Pivot du B2C vers le B2B enterprise. CitizenMe 'en pause'.",
+      "website": "https://citizenme.com (actif mais en pause), https://www.datasapien.com (nouveau véhicule)",
+      "website_en_ligne": true
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les individus n'ont pas de contrôle sur leurs données numériques. Les entreprises ont besoin de données consommateurs de qualité mais les méthodes traditionnelles (cookies, tracking) sont intrusives, imprécises et de plus en plus réglementées.",
+      "theorie_du_changement": "Donner aux consommateurs le pouvoir de rassembler leurs propres données dans une app. Les entreprises paient directement les consommateurs pour leurs données (zero-party data). Les données auto-déclarées et consenties sont plus précises et plus éthiques. Le modèle marketplace crée un échange gagnant-gagnant.",
+      "hypotheses_vraies": "Le concept de zero-party data est devenu un standard marketing. 450K citoyens ont utilisé la plateforme avec 11M+ transactions de données. Des marques mondiales (Mars, Sainsbury's, GSK, WPP, UK Government) ont adopté le service.",
+      "hypotheses_fausses": "La monétisation B2C (~£5/mois en moyenne pour l'utilisateur) est trop faible pour créer un engagement durable. 50% des utilisateurs téléchargeaient pour l'argent, l'autre 50% pour les insights — aucun des deux groupes n'est suffisamment engagé pour un modèle durable.",
+      "vision_10_ans": "IA personnelle pour les 8 milliards de citoyens d'Internet. Chaque individu possède et contrôle son IA et ses données."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "App mobile avec traitement edge (sur l'appareil). Technologie 'Zero Data': les données personnelles sont traitées localement, ne transitent jamais par les serveurs CitizenMe. Connecteurs vers les comptes sociaux pour l'importation.",
+      "modele_de_donnees": "L'utilisateur possède ses données sur son appareil. Les analyses de personnalité (psychométrie) sont réalisées localement. Les données sont pseudonymisées avant tout partage avec des organisations.",
+      "protocole_de_consentement": "Consentement explicite par transaction: l'utilisateur accepte de partager des données spécifiques en échange d'une rémunération immédiate. Transparent et granulaire.",
+      "interoperabilite": "Connecteurs vers réseaux sociaux (Facebook, etc.). API pour les entreprises clientes (marketplace insights).",
+      "open_source": "Non (propriétaire)",
+      "repositories": "Non public"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Marketplace de données: les entreprises paient pour accéder aux données zero-party des utilisateurs via des sondages et échanges de données. Les utilisateurs reçoivent un paiement immédiat (~£5/mois global en moyenne). B2B: études de marché, consumer insights.",
+      "pricing": "Enterprise: sur mesure pour les marques (accès aux données zero-party et insights consommateurs).",
+      "unit_economics": "Non disponible publiquement. 450K utilisateurs et 11M transactions suggèrent ~24 transactions par utilisateur au total.",
+      "path_to_profitability": "Non atteint. Le pivot vers DataSapien (B2B) vise une meilleure économie unitaire."
+    },
+    "section_5_financement": {
+      "rounds": [
+        {
+          "type": "Early rounds",
+          "date": "2013-2019",
+          "montant": "~$2.8M cumulés (selon Startups of London, 2019)",
+          "investisseurs": [
+            "Non détaillés"
+          ],
+          "notes": "$1.5M initial, puis $2.8M cumulés en 2019"
+        },
+        {
+          "type": "Venture round",
+          "date": "Octobre 2021",
+          "montant": "~$2M (£1.4M d'investisseurs institutionnels + angels AIN)",
+          "investisseurs": [
+            "North East Venture Fund (NEVF)",
+            "Angel Investment Network angels"
+          ],
+          "notes": "Total porté à ~$4.8M cumulés"
+        }
+      ],
+      "valorisation": "Non divulguée",
+      "burn_rate_estime": "Non disponible",
+      "runway_ou_date_mort": "CitizenMe 'en pause' depuis octobre 2024. DataSapien actif."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "450,000 citoyens (au pic)",
+      "utilisateurs_actuels": "CitizenMe en pause. DataSapien: inconnu.",
+      "entreprises_partenaires": "Mars, Sainsbury's, GSK, WPP, UK Government",
+      "volume_transactions": "11 millions+ de transactions de données zero-party",
+      "couverture_geographique": "UK (principalement), ambitions USA (levée 2022 pour l'expansion US)",
+      "moments_clefs": [
+        "2013: Fondation par StJohn Deakins",
+        "2019: 2.8M cumulés levés. Marketplace active.",
+        "2021: Levée £1.4M (NEVF + AIN). 450K utilisateurs, 11M transactions. Clients: Mars, Sainsbury's, GSK, WPP, UK Gov.",
+        "2022: Préparation expansion USA. 60% d'une nouvelle levée 'committée'.",
+        "Octobre 2024: Annonce du pivot. CitizenMe 'en pause'. L'équipe lance DataSapien.",
+        "Exploration: AdTech, Privacy-Tech, psychométrie de personnalité, Consumer Insights"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "Octobre 2024: CitizenMe mise 'en pause'. L'équipe originale lance DataSapien (B2B enterprise).",
+      "facteur_echec_primaire": "Le modèle B2C marketplace de données personnelles ne scale pas: la rémunération par utilisateur (~£5/mois) est trop faible pour créer un engagement durable, et l'acquisition B2C est trop coûteuse par rapport aux revenus B2B générés.",
+      "facteurs_echec_secondaires": [
+        "CitizenMe était 'né en avance sur son temps' (selon le fondateur lui-même en 2024)",
+        "Le marché de la zero-party data est devenu compétitif avec des solutions alternatives plus simples",
+        "Financement insuffisant (~$4.8M en 10 ans) pour atteindre la scale nécessaire"
+      ],
+      "analyse_contrefactuelle": "Auraient dû: pivoter vers le B2B plus tôt (dès 2019-2020 quand le GDPR avait créé la demande enterprise). Le talent technique était là (11M transactions), mais le modèle économique B2C ne pouvait pas supporter l'entreprise. DataSapien aurait dû être lancé 3-4 ans plus tôt.",
+      "depouilles": "L'équipe CitizenMe est devenue DataSapien. La technologie est réutilisée dans un contexte B2B. Les 450K utilisateurs et les partenariats (Mars, GSK, etc.) sont l'actif principal récupéré."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "CitizenMe prouve que même avec une traction réelle (450K users, 11M transactions, clients blue-chip), le modèle marketplace B2C de données personnelles ne suffit pas. MYNε doit intégrer le B2B2C dès le jour 1 et ne pas dépendre de la monétisation directe des données utilisateurs.",
+      "element_a_copier": "La technologie Zero Data (processing edge sur appareil). Le concept de marketplace de zero-party data (les entreprises paient, les utilisateurs reçoivent). Les partenariats avec des marques mondiales comme validation du modèle.",
+      "element_a_eviter": "Compter sur ~£5/mois de revenus par utilisateur comme modèle B2C. 10 ans avec <$5M de financement total. Pivoter trop tard vers le B2B.",
+      "partenariat_envisageable": "Contact direct avec StJohn Deakins et l'équipe DataSapien. Les insights de 11M transactions sont précieux. Les anciens clients (Mars, GSK, WPP) sont des prospects pour MYNε. La technologie Zero Data est potentiellement intégrable."
+    }
+  },
+  {
+    "id": 11,
+    "nom": "BitsaboutMe AG",
+    "statut": "MORT",
+    "section_1_identite": {
+      "nom_complet": "BitsaboutMe AG (en liquidation)",
+      "pays": "Suisse",
+      "annee_fondation": 2017,
+      "fondateurs": [
+        {
+          "nom": "Christian Kunz",
+          "parcours": "Co-fondateur et CEO. PhD en Physique du MIT et de l'Université de Bonn. Ancien CEO du ricardo Group (leader du e-commerce suisse). Senior Director Strategy chez eBay Allemagne. Co-fondateur d'i2impact AG. Coach startup chez Innosuisse (agence suisse d'innovation)."
+        },
+        {
+          "nom": "Christophe Legendre",
+          "parcours": "Co-fondateur et CTO. Lead developer. Après la fermeture de BitsaboutMe, est devenu Staff Backend Engineer chez FlexAI."
+        }
+      ],
+      "structure_juridique": "Aktiengesellschaft (AG) — société anonyme de droit suisse. Devenue 'BitsaboutMe AG in Liquidation'.",
+      "mission_originale": "Permettre aux individus de reprendre le contrôle de leurs données personnelles, protéger leur vie privée et obtenir une compensation équitable lorsqu'ils partagent leurs données sur un marketplace avec des entreprises.",
+      "mission_actuelle": "N/A (cessé les opérations)",
+      "website": "https://bitsabout.me (domaine détourné vers un site de gambling non lié)",
+      "website_en_ligne": false
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les utilisateurs manquent de contrôle sur leurs données personnelles exploitées par la big tech. Pas de transparence, pas d'analyse, pas de monétisation possible pour l'individu. Privacy by Design absente des plateformes existantes.",
+      "theorie_du_changement": "Passer de l'économie de l'attention (utilisateurs comme produit) à une économie de 'fair trade' des données. Les utilisateurs possèdent, gèrent et partagent sélectivement leurs données pour des récompenses. Les entreprises obtiennent des données de meilleure qualité car déclarées volontairement et actualisées. L'open banking évolue vers le 'open everything'.",
+      "hypotheses_vraies": "Les régulations de privacy ont augmenté (GDPR). L'IA a amplifié la valeur des données. Le besoin de souveraineté data est reconnu.",
+      "hypotheses_fausses": "L'adoption utilisateur pour un marketplace de données personnelles est restée insuffisante. Les entreprises n'ont pas massivement acheté des données via ce canal. Le financement VC s'est tari dans un paysage rigide.",
+      "vision_10_ans": "Changement de paradigme vers une économie des données contrôlée par le consommateur. De l'open banking à 'l'open everything'."
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Privacy by Design. Personal Data Store (PDS) avec chiffrement state-of-the-art (données stockées sur les appareils utilisateurs). App web pour l'agrégation de données depuis les comptes en ligne. Marketplace hybride centralisé.",
+      "modele_de_donnees": "L'utilisateur possède ses données dans un PDS personnel chiffré. L'entreprise ne peut pas accéder sans consentement explicite. L'utilisateur contrôle: importation, visualisation, édition, suppression, exportation, partage.",
+      "protocole_de_consentement": "Consentement explicite requis pour tout partage. Conforme GDPR et protection des données suisse.",
+      "interoperabilite": "Intégration avec comptes en ligne (banque, shopping). Échange de données ouvert pour marketing/CRM/recherche.",
+      "open_source": "Inconnu (aucune preuve trouvée)",
+      "repositories": "Non identifié"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Frais de transaction/pourcentage sur les ventes du marketplace de données. Cashback (1% sur les achats). Insights/outils freemium. Les entreprises paient pour accéder aux données agrégées et consenties.",
+      "pricing": "Les utilisateurs gagnent de l'argent/récompenses pour le partage. Pas de prix public pour les entreprises.",
+      "unit_economics": "Non disponible",
+      "path_to_profitability": "Jamais atteint. Cessé les opérations par manque de fonds."
+    },
+    "section_5_financement": {
+      "rounds": "Aucun round public détaillé. Le post LinkedIn de fermeture mentionne des investisseurs remerciés. Startupticker.ch le cite parmi les shutdowns dans un 'paysage VC rigide'.",
+      "valorisation": "Non disponible",
+      "burn_rate_estime": "Non disponible. Petite équipe.",
+      "runway_ou_date_mort": "Opérations cessées le 3 juin 2024. Faillite ouverte le 3 juin 2024, terminée en août 2024 (faute d'actifs suffisants)."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Non divulgué. 'Utilisateurs loyaux' mentionnés mais chiffres inconnus. Faible traction implicite.",
+      "utilisateurs_actuels": "Zéro (fermé)",
+      "entreprises_partenaires": "Deutsche Bank (collaboration pilote). Autres pour la recherche de marché.",
+      "volume_transactions": "Non disponible",
+      "couverture_geographique": "Principalement Suisse. App disponible internationalement (APK Android).",
+      "moments_clefs": [
+        "Janvier 2017: Fondation",
+        "2018: Membre fondateur de MyData Global",
+        "2021: Sélection au Fintech Investor Day",
+        "~2023: Partenariat pilote Deutsche Bank",
+        "3 juin 2024: Cessation des opérations. Ouverture de la faillite.",
+        "Août 2024: Faillite terminée (faute d'actifs)"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "3 juin 2024: Opérations cessées. Faillite ouverte le même jour.",
+      "facteur_echec_primaire": "Financement insuffisant dans un paysage VC rigide. Malgré un partenariat Deutsche Bank et une mission pertinente, BitsaboutMe n'a pas réussi à lever les fonds nécessaires pour scaler.",
+      "facteurs_echec_secondaires": [
+        "Adoption utilisateur trop faible pour le marketplace de données personnelles",
+        "Modèle de monétisation (marketplace) difficile à faire fonctionner avec peu d'utilisateurs (chicken-and-egg problem)",
+        "Timing: le marché suisse est petit, et l'expansion internationale nécessitait des fonds non disponibles"
+      ],
+      "analyse_contrefactuelle": "Auraient dû: se concentrer exclusivement sur les outils B2B d'agrégation de données ou s'associer exclusivement avec des banques/fintech pour des revenus stables. Le partenariat Deutsche Bank est arrivé trop tard. Chercher des grants non-dilutifs plus tôt (Innosuisse, EU Horizon).",
+      "depouilles": "Liquidation. Aucun acquéreur. Faillite terminée faute d'actifs. Domaine bitsabout.me détourné vers un site de gambling. Le CTO (Christophe Legendre) est parti chez FlexAI."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "BitsaboutMe confirme que le marketplace de données personnelles B2C pur ne fonctionne pas, même en Suisse avec des fondateurs crédibles (PhD MIT, ex-CEO eBay). MYNε doit avoir un modèle de revenus B2B solide dès le départ, pas dépendre du volume utilisateurs pour monétiser.",
+      "element_a_copier": "Le partenariat avec une grande banque (Deutsche Bank) comme validation. Le concept de 'data fair trade'. Le Privacy by Design avec chiffrement sur l'appareil.",
+      "element_a_eviter": "Dépendre du VC suisse (trop rigide). Le marketplace chicken-and-egg (besoin d'utilisateurs pour attirer les entreprises, besoin d'entreprises pour attirer les utilisateurs). Sous-capitalisation chronique.",
+      "partenariat_envisageable": "Récupération du concept et du réseau MyData. Christian Kunz (ex-CEO) pourrait être un conseiller précieux (expérience eBay/ricardo + échec personal data marketplace). Les enseignements du pilote Deutsche Bank sont récupérables."
+    }
+  },
+  {
+    "id": 12,
+    "nom": "DataYogi",
+    "statut": "PIVOTÉ",
+    "section_1_identite": {
+      "nom_complet": "DataYogi → DataPal",
+      "pays": "UK (Édimbourg, Écosse)",
+      "annee_fondation": 2019,
+      "fondateurs": [
+        {
+          "nom": "Iain Henderson",
+          "parcours": "Praticien de longue date et architecte de solutions en CRM, marketing et innovation data à travers secteurs et géographies. Focus sur l'empowerment des données personnelles, le protocole JLINC, et l'organisation MyData. Propriétaire de DataYogi. Speaker MyData 2023. Basé à Édimbourg."
+        }
+      ],
+      "structure_juridique": "Incubé au sein d'Information Answers. DATAYOGI LABS LTD enregistrée en 2024 (possiblement sans lien).",
+      "mission_originale": "App de gestion de données personnelles pour tracker les informations produits/services, garanties, garder les données en sécurité et gérées en un seul endroit. Débloquer le pouvoir des données personnelles.",
+      "mission_actuelle": "DataPal: classeur numérique intelligent pour que les individus contrôlent, stockent et partagent leurs données personnelles selon leurs propres termes.",
+      "website": "Site DataYogi offline. DataPal: https://www.datapal.me",
+      "website_en_ligne": false
+    },
+    "section_2_these_fondatrice": {
+      "probleme_exact": "Les utilisateurs n'ont pas de contrôle sur leurs données personnelles dispersées entre de multiples services. Incapacité de tracker ses propres données (garanties, produits, etc.) de manière sécurisée.",
+      "theorie_du_changement": "Passer à un modèle human-centric où les individus rassemblent/curent/utilisent leurs propres données via l'identité décentralisée, des agents personnels et des accords lisibles par machine (protocole JLINC).",
+      "hypotheses_vraies": "Non vérifiable (trop peu de données publiques sur la traction).",
+      "hypotheses_fausses": "Non vérifiable (trop peu de données publiques).",
+      "vision_10_ans": "Non documentée"
+    },
+    "section_3_architecture_technique": {
+      "stack_technique": "Inconnu en détail. Probablement web-based. Focus sur les data vaults et possiblement JLINC (protocole décentralisé de partage de données).",
+      "modele_de_donnees": "L'utilisateur possède/contrôle ses données dans un classeur numérique personnel/vault.",
+      "protocole_de_consentement": "Termes définis par l'utilisateur pour le partage de données.",
+      "interoperabilite": "Standards comme JLINC pour le partage de données/identité.",
+      "open_source": "Inconnu",
+      "repositories": "Non identifié"
+    },
+    "section_4_modele_economique": {
+      "revenue_model": "Inconnu",
+      "pricing": "Inconnu",
+      "unit_economics": "Inconnu",
+      "path_to_profitability": "Inconnu"
+    },
+    "section_5_financement": {
+      "rounds": "Aucun financement trouvé. Projet à très petite échelle, incubé dans Information Answers.",
+      "valorisation": "Inconnu",
+      "burn_rate_estime": "Inconnu. Probablement très faible (1-2 personnes).",
+      "runway_ou_date_mort": "Pivoté vers DataPal ~2020. Statut actuel incertain."
+    },
+    "section_6_traction": {
+      "utilisateurs_pic": "Inconnu",
+      "utilisateurs_actuels": "Inconnu",
+      "entreprises_partenaires": "Information Answers (incubateur)",
+      "volume_transactions": "Inconnu",
+      "couverture_geographique": "UK (Édimbourg, Écosse)",
+      "moments_clefs": [
+        "2019: Incubé par Information Answers",
+        "~2020: Pivot vers DataPal",
+        "2021: Développement website",
+        "2023: Iain Henderson speaker à MyData Conference"
+      ]
+    },
+    "section_7_autopsie": {
+      "date_pivot": "~2020: Pivot de DataYogi vers DataPal (classeur numérique intelligent).",
+      "facteur_echec_primaire": "Manque de visibilité et de traction. Projet trop petit, sans financement, incapable de se démarquer dans un marché déjà encombré de solutions personal data.",
+      "facteurs_echec_secondaires": [
+        "Absence totale de financement",
+        "Timing du marché: trop de concurrents avec plus de moyens",
+        "Projet solo/micro-équipe sans les ressources pour développer un produit compétitif"
+      ],
+      "analyse_contrefactuelle": "Aurait dû: lever un minimum de seed funding. Se concentrer sur un use case ultra-spécifique (ex: garanties produits uniquement) plutôt que le personal data store généraliste. S'associer avec un acteur plus gros de l'écosystème.",
+      "depouilles": "Pivoté vers DataPal. Iain Henderson reste actif dans la communauté MyData/VRM."
+    },
+    "section_8_lecon_myne": {
+      "difference_structurelle": "DataYogi illustre le risque d'une initiative trop petite, sans financement, dans un marché qui nécessite de la scale. MYNε doit avoir les moyens de ses ambitions dès le départ.",
+      "element_a_copier": "L'intégration du protocole JLINC pour les accords data lisibles par machine. L'implication dans la communauté MyData pour la crédibilité.",
+      "element_a_eviter": "Lancer sans financement. Rester un projet solo/micro sans ambition de scale. Le 'personal data store' généraliste sans killer feature différenciante.",
+      "partenariat_envisageable": "Iain Henderson comme contact/conseiller communautaire MyData. Le protocole JLINC comme composant technique potentiel. Très faible priorité par rapport aux autres initiatives."
+    }
+  }
+]
