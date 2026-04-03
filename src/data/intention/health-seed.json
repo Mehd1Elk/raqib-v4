@@ -1,0 +1,958 @@
+{
+  "meta": {
+    "agent": "RACHID — Agent de recherche spécialisé valorisation données santé mentale",
+    "projet": "NOOS × MYNε — Psychiatrie Vertical",
+    "date_compilation": "2026-04-03",
+    "revenue_share_myne": "53%",
+    "corridor": "EU-Afrique",
+    "hypotheses": {
+      "population_EU_sante_mentale": "84M personnes touchées (Eurostat 2019, ~46% post-COVID = ~207M symptomatiques)",
+      "population_Afrique_sante_mentale": "150M personnes touchées (OMS Afrique 2025)",
+      "taux_digitalisation_EU": "83% accès EHR (Digital Decade 2025)",
+      "taux_digitalisation_Afrique": "44% abonnés mobile SSA (GSMA 2023), 87% smartphones projetés 2030",
+      "marche_donnees_desidentifiees_global": "USD 8.21Md en 2025, USD 15.31Md projeté 2032 (CAGR 9.37%)",
+      "marche_EHDS_economies_estimees": "EUR 11Md sur 10 ans (Commission Européenne)",
+      "marche_digital_sante_EU": "EUR 97Md+ projeté 2030"
+    },
+    "sources_principales": [
+      "Eurostat Mental Health Statistics 2024",
+      "OMS Afrique Mental Health Dashboard 2025",
+      "European Health Data Space Regulation (EU) 2025/327",
+      "Forbes — Health Record Valuation (2025)",
+      "Duke University — Kim Report on Mental Health Data Brokers (2023)",
+      "Grand View Research — De-identified Health Data Market",
+      "Global Market Insights — Digital Phenotyping Market",
+      "SNS Insider — Psychiatric Digital Biomarkers Market",
+      "Precedence Research — Pharmacogenomics Market",
+      "Mordor Intelligence — RWE Solutions Market",
+      "BioSpace — Mental Health Clinical Trials Market",
+      "Pro Pharma Research — RWE Study Costs",
+      "Health Capital Consultants — Valuing Healthcare Data",
+      "Nature Digital Medicine — Crisis Prediction ML (2022)"
+    ]
+  },
+  "categories": [
+    {
+      "id": 1,
+      "nom": "Scores PHQ-9/GAD-7 longitudinaux",
+      "type_donnee": "Scores standardisés de dépression (PHQ-9) et anxiété (GAD-7) collectés en série temporelle, typiquement toutes les 2-4 semaines sur 6-24 mois",
+      "producteur": {
+        "primaire": "Patient (auto-évaluation via app ou questionnaire clinique)",
+        "secondaire": "Clinicien (validation, scoring contextuel)",
+        "plateforme": "Apps mHealth (BetterHelp, Wysa, FriendnPal), EHR psychiatriques, plateformes d'essais cliniques"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Endpoints secondaires essais cliniques antidépresseurs/anxiolytiques, démonstration efficacité RWE",
+          "buyer_persona": "Dir. Medical Affairs / VP Clinical Development"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Stratification risque, prédiction coûts sinistres santé mentale, pricing polices",
+          "buyer_persona": "Chief Actuary / Dir. Actuariat Santé"
+        },
+        {
+          "secteur": "Recherche académique",
+          "usage": "Études épidémiologiques, validation instruments, trajectoires symptomatiques",
+          "buyer_persona": "Principal Investigator / Dir. Recherche"
+        },
+        {
+          "secteur": "Digital Therapeutics",
+          "usage": "Calibration algorithmes de severity scoring, preuve d'efficacité DTx",
+          "buyer_persona": "Chief Medical Officer"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 2 – 8",
+        "fourchette_dataset_cohorte": "EUR 50,000 – 250,000 (cohorte 5,000+ patients, 12 mois longitudinaux)",
+        "reference": "Données brokers santé: $0.05-$50/record selon complétude (Health Capital Consultants); mental health aggregated records: $275/5,000 records minimum (Duke/Kim 2023); subscriptions: $75,000-$100,000/an",
+        "facteur_premium": "x2-3 si longitudinal >6 points temporels avec métadonnées cliniques"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~15M profils potentiels (patients suivis en ambulatoire, 3.1M hospitalisés/an + ambulatoire estimé x5)",
+        "Afrique": "~2M profils digitalisés (plateformes émergentes: Wysa, FriendnPal, Shezlong, Wazi, Vimbo couvrant ~500K-2M utilisateurs actifs)",
+        "total_corridor": "~17M profils potentiels, ~3M exploitables à court terme",
+        "croissance": "CAGR 15-20% porté par EHDS et mobile-first Afrique"
+      },
+      "t_level_minimum": {
+        "niveau": "T2 (pseudonymisé avec agrégation temporelle)",
+        "justification": "Données patient-reported non cliniques directes; pseudonymisation suffisante sous RGPD Art.4(5) et Recital 26; EHDS autorise secondary use avec pseudonymisation",
+        "si_recherche_clinique": "T3 (pseudonymisé + k-anonymity k≥5) pour publication"
+      },
+      "reglementation": {
+        "EHDS": "Secondary use autorisé via Health Data Access Bodies (HDAB) dès mars 2029; scores PRO (Patient-Reported Outcomes) inclus dans catégories prioritaires",
+        "RGPD": "Art.9 — données de santé, base légale: consentement explicite (Art.9(2)(a)) ou intérêt public santé (Art.9(2)(i)); pseudonymisation encouragée (Recitals 28-29)",
+        "ICH_GCP": "Non directement applicable (hors essai clinique), mais si utilisé comme endpoint dans un essai: conformité GCP requise, consentement éclairé obligatoire",
+        "specifique": "Directive européenne dispositifs médicaux (MDR) si le scoring est intégré dans un SaMD"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "3M profils × EUR 5/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 95,400,000",
+        "horizon": "2028-2030 (post-EHDS secondary use)"
+      }
+    },
+    {
+      "id": 2,
+      "nom": "EMA (Ecological Momentary Assessment) mood data",
+      "type_donnee": "Micro-évaluations en temps réel de l'humeur, stress, contexte social, collectées 3-8 fois/jour via smartphone (notifications push), incluant géolocalisation contextuelle et timestamps",
+      "producteur": {
+        "primaire": "Patient (saisie active via prompts smartphone)",
+        "secondaire": "Capteur passif smartphone (accéléromètre, luminosité, activité app)",
+        "plateforme": "ExpiWell, mEMA, Ilumivu, apps de recherche sur mesure"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Endpoints écologiques pour essais cliniques Phase III-IV, mesure granulaire de l'effet thérapeutique en vie réelle",
+          "buyer_persona": "VP Clinical Operations / Dir. Outcomes Research"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Modélisation dynamique des états affectifs, réseaux temporels de symptômes",
+          "buyer_persona": "Principal Investigator (psychologie computationnelle)"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Scoring comportemental en temps réel pour polices wellness",
+          "buyer_persona": "Dir. Innovation Produits / Chief Data Officer"
+        },
+        {
+          "secteur": "Employeur",
+          "usage": "Monitoring bien-être anonymisé des équipes, détection précoce burnout",
+          "buyer_persona": "VP People / Dir. QVT (Qualité de Vie au Travail)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 5 – 15",
+        "fourchette_dataset": "EUR 100,000 – 500,000 (étude EMA 500+ sujets, 14 jours, 6 prompts/jour)",
+        "reference": "Coût étude EMA prospective: USD 500K-2M (ProPharma Research 2024); valeur données granulaires supérieure aux PRO standards",
+        "facteur_premium": "x3-5 si couplé avec données capteurs passifs (actigraphie, GPS)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~1M profils (études recherche + apps commercial wellness)",
+        "Afrique": "~200K profils (limité par data costs mobiles, mais croissant avec 5G SSA)",
+        "total_corridor": "~1.2M profils, ~500K exploitables",
+        "croissance": "CAGR 25-30% (accélération par EHDS + smartphone penetration Afrique)"
+      },
+      "t_level_minimum": {
+        "niveau": "T3 (pseudonymisé + suppression géolocalisation précise + k-anonymity)",
+        "justification": "Données hautement granulaires temporellement; géolocalisation = quasi-identifiant; nécessite généralisation spatiale (zone >1km²) et temporelle",
+        "si_recherche": "T4 (anonymisation formelle avec differential privacy ε≤1.0) pour open data"
+      },
+      "reglementation": {
+        "EHDS": "Couvert par secondary use si collecté via dispositif de santé enregistré; consentement spécifique recommandé pour granularité temporelle",
+        "RGPD": "Art.9 + Art.22 (profilage automatisé); AIPD obligatoire (Art.35); droit à l'effacement applicable; consentement explicite requis",
+        "ICH_GCP": "Applicable si dans cadre essai clinique (eCOA/ePRO); validation instrument requise",
+        "specifique": "ePrivacy Directive (accès capteurs smartphone); réglementation DMA si distribuée via plateformes gatekeeper"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "500K profils × EUR 10/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 31,800,000",
+        "horizon": "2027-2029"
+      }
+    },
+    {
+      "id": 3,
+      "nom": "Données d'observance thérapeutique (prise médicament)",
+      "type_donnee": "Données de compliance médicamenteuse psychiatrique: timestamps de prise, doses manquées, patterns d'interruption, corrélation avec symptômes. Sources: smart pill bottles, apps rappel, pharmacy claims, MEMS caps",
+      "producteur": {
+        "primaire": "Patient (déclaratif via app ou capteur pilulier)",
+        "secondaire": "Pharmacie (données de dispensation/renouvellement)",
+        "tertiaire": "Capteur IoT (pilulier connecté, ingestible sensor)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Optimisation posologie, démonstration adherence RWE pour HTA submissions, réduction $188Md/an pertes non-adhérence US",
+          "buyer_persona": "VP Market Access / Dir. HEOR (Health Economics & Outcomes Research)"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Prédiction coûts, programmes de gestion thérapeutique, value-based contracts",
+          "buyer_persona": "Chief Actuary / VP Managed Care"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Études d'effectiveness vs efficacy, modélisation PK/PD en conditions réelles",
+          "buyer_persona": "Principal Investigator / Dir. Pharmacologie Clinique"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 3 – 12",
+        "fourchette_dataset": "EUR 75,000 – 400,000 (cohorte thérapeutique spécifique, 12 mois)",
+        "reference": "Optum claims data: ~$45K/an/seat académique, $60M+/an secteur privé pour suite complète; adherence data premium vs claims standard",
+        "facteur_premium": "x4-6 si couplé avec outcomes cliniques (rechute, hospitalisation)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~8M profils (patients sous psychotropes avec données pharmacy claims digitalisées)",
+        "Afrique": "~500K profils (limité par faible pénétration piluliers connectés, mais pharmacy data croissante)",
+        "total_corridor": "~8.5M profils, ~4M exploitables",
+        "croissance": "CAGR 12-15%"
+      },
+      "t_level_minimum": {
+        "niveau": "T2 (pseudonymisé)",
+        "justification": "Données de dispensation indirectes; pseudonymisation avec suppression identifiants patient et pharmacie suffisante",
+        "si_cross_reference": "T3 si croisement avec données cliniques (diagnostic + traitement = risque de ré-identification)"
+      },
+      "reglementation": {
+        "EHDS": "Données de dispensation (eDispensation) = catégorie prioritaire EHDS dès 2029; secondary use couvert",
+        "RGPD": "Art.9; base légale consentement ou intérêt public; données de santé stricto sensu",
+        "ICH_GCP": "Applicable pour données issues d'essais; monitoring adherence = safety endpoint",
+        "specifique": "Directive 2001/83/CE (pharmacovigilance); EMA guideline on medication adherence"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "4M profils × EUR 7/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 178,080,000",
+        "horizon": "2027-2030"
+      }
+    },
+    {
+      "id": 4,
+      "nom": "Données pharmacovigilance (effets secondaires)",
+      "type_donnee": "Rapports d'effets indésirables (ADR/ADE) des psychotropes: type, sévérité, temporalité, causalité, outcomes. Sources: déclarations spontanées, EHR mining, patient-reported via apps",
+      "producteur": {
+        "primaire": "Clinicien (déclaration obligatoire aux autorités)",
+        "secondaire": "Patient (déclaration spontanée, apps pharmacovigilance)",
+        "tertiaire": "IA/NLP (extraction automatisée des EHR et littérature)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Signal detection, PSUR/PBRER, risk management plans, post-marketing surveillance",
+          "buyer_persona": "Dir. Pharmacovigilance / Chief Safety Officer"
+        },
+        {
+          "secteur": "Agences réglementaires",
+          "usage": "Surveillance post-AMM, décisions de retrait/restriction",
+          "buyer_persona": "Dir. Évaluation (EMA, ANSM)"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Évaluation risque produit, pricing couverture médicaments",
+          "buyer_persona": "Chief Actuary / Dir. Risk Management"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 8 – 25",
+        "fourchette_dataset": "EUR 200,000 – 1,000,000 (registre ADR spécifique molécule, données enrichies)",
+        "reference": "Marché pharmacovigilance global: USD 9.35Md (2025), projeté USD 31.56Md (2034), CAGR 14.6% (Fortune Business Insights); données PV premium car réglementairement obligatoires",
+        "facteur_premium": "x5-10 si données structurées avec causalité évaluée et narratifs cliniques"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~5M rapports/an (EudraVigilance + déclarations nationales; Australie: 125K ADR notifications/an pour comparaison)",
+        "Afrique": "~200K rapports/an (sous-déclaration massive, WHO VigiBase coverage faible)",
+        "total_corridor": "~5.2M rapports/an, ~2M exploitables en psychiatrie",
+        "croissance": "CAGR 10-12% (poussé par réglementation et digitalisation reporting)"
+      },
+      "t_level_minimum": {
+        "niveau": "T3 (pseudonymisé + k-anonymity + suppression narratifs identifiants)",
+        "justification": "Données réglementaires avec narratifs cliniques potentiellement ré-identifiants; EMA exige pseudonymisation stricte pour accès secondaire",
+        "si_open_access": "T5 (full differential privacy) — rarement atteint, données généralement sous accès contrôlé"
+      },
+      "reglementation": {
+        "EHDS": "Données réglementaires couvertes; accès via HDAB avec approbation spécifique",
+        "RGPD": "Art.9(2)(i) intérêt public santé; Art.9(2)(j) recherche; exemption consentement possible pour PV",
+        "ICH_GCP": "E2E(R1) Pharmacovigilance Planning; E2B(R3) ICSR transmission; MedDRA coding obligatoire",
+        "specifique": "Règlement (EU) 726/2004; Directive 2010/84/EU; EudraVigilance access policy; Good Pharmacovigilance Practices (GVP)"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "2M rapports × EUR 15/rapport/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 190,800,000",
+        "horizon": "2028-2031"
+      }
+    },
+    {
+      "id": 5,
+      "nom": "Biomarqueurs numériques (sommeil, activité, voix)",
+      "type_donnee": "Signaux physiologiques et comportementaux passifs: actigraphie (patterns activité/repos), variabilité cardiaque (HRV), analyse acoustique vocale (prosodie, jitter, shimmer), patterns sommeil (latence, efficacité, architecture). Sources: wearables, smartphones",
+      "producteur": {
+        "primaire": "Capteur (Apple Watch, Fitbit, Oura, smartphones)",
+        "secondaire": "Patient (port du dispositif, compliance)",
+        "tertiaire": "Algorithme IA (extraction features, scoring)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Biomarqueurs digitaux comme endpoints dans essais cliniques (FDA Digital Health Center of Excellence), companion diagnostics",
+          "buyer_persona": "VP Clinical Development / Dir. Digital Health Strategy"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Underwriting dynamique basé sur biomarqueurs comportementaux, programmes wellness",
+          "buyer_persona": "Chief Actuary / VP Innovation Assurance"
+        },
+        {
+          "secteur": "MedTech",
+          "usage": "Training algorithmes SaMD, validation clinical-grade vs consumer-grade",
+          "buyer_persona": "VP R&D / CTO"
+        },
+        {
+          "secteur": "Employeur",
+          "usage": "Corporate wellness monitoring, détection précoce burnout via wearables",
+          "buyer_persona": "VP People / Chief Wellbeing Officer"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 10 – 30",
+        "fourchette_dataset": "EUR 200,000 – 800,000 (cohorte 1,000+ sujets, 3 mois continus, multi-capteurs)",
+        "reference": "Marché psychiatric digital biomarkers: USD 631M (2024), projeté USD 5.65Md (2034), CAGR 24.5% (Nova One Advisor); wearable segment 39.9% market share",
+        "facteur_premium": "x3-5 si données brutes avec métadonnées contextuelles (pas seulement features extraites)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~25M utilisateurs wearables avec données santé mentale pertinentes (Apple Watch, Fitbit, Oura en EU)",
+        "Afrique": "~3M utilisateurs (smartphone-based majoritairement, wearables limités aux marchés premium SA, Nigeria, Kenya)",
+        "total_corridor": "~28M profils potentiels, ~5M avec données suffisamment continues",
+        "croissance": "CAGR 20-25% (adoption wearables + FDA/EMA acceptance digital biomarkers)"
+      },
+      "t_level_minimum": {
+        "niveau": "T3 (pseudonymisé + agrégation features + suppression données brutes biométriques)",
+        "justification": "Données biométriques = catégorie spéciale RGPD Art.9; HRV et patterns vocaux sont quasi-identifiants; nécessite feature extraction avant partage",
+        "si_modeles_IA": "T4 (federated learning ou differential privacy ε≤0.5) pour training modèles sans extraction données brutes"
+      },
+      "reglementation": {
+        "EHDS": "Données de bien-être (wellness) potentiellement exclues sauf si qualifiées données de santé; frontière floue pour wearables non-CE",
+        "RGPD": "Art.9 (données biométriques + données de santé); Art.35 AIPD obligatoire; consentement explicite requis; données vocales = données biométriques si identification possible",
+        "ICH_GCP": "Applicable si biomarqueur utilisé comme endpoint essai clinique; FDA guidance 'Digital Health Technologies for Remote Data Acquisition'",
+        "specifique": "MDR (EU) 2017/745 si dispositif qualifié SaMD; AI Act (EU) 2024/1689 pour systèmes IA à haut risque en santé"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "5M profils × EUR 18/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 572,400,000",
+        "horizon": "2027-2030"
+      }
+    },
+    {
+      "id": 6,
+      "nom": "Données de Digital Phenotyping (patterns smartphone)",
+      "type_donnee": "Quantification comportementale passive via smartphone: patterns d'utilisation (screen time, app switching), dynamique sociale (fréquence appels/SMS, taille réseau), mobilité (rayon géographique, régularité), patterns de frappe (vitesse, erreurs), circadian rhythms digitaux",
+      "producteur": {
+        "primaire": "Smartphone (collecte passive via SDK intégré)",
+        "secondaire": "Patient (consentement au monitoring passif)",
+        "plateforme": "Mindstrong (fermé), BiAffect, LAMP, Beiwe (Harvard)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Digital endpoints pré-cliniques, screening cohortes à risque, monitoring post-randomisation",
+          "buyer_persona": "VP Digital Medicine / Dir. Clinical Innovation"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Risk scoring comportemental, détection précoce décompensation, programmes de prévention",
+          "buyer_persona": "Chief Data Officer / VP Analytics"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Phenotypage à grande échelle, études d'association génotype-phenotype digital",
+          "buyer_persona": "Principal Investigator (psychiatrie computationnelle)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 8 – 20",
+        "fourchette_dataset": "EUR 150,000 – 600,000 (cohorte 2,000+ sujets, monitoring continu 3 mois+)",
+        "reference": "Marché digital phenotyping: USD 1.5Md (2024), projeté USD 3.8Md (2034), CAGR 9.7% (Global Market Insights); mental health monitoring segment: USD 455M (2024)",
+        "facteur_premium": "x4-8 si couplé avec données cliniques validées (diagnostic + phenotype digital)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~5M profils potentiels (apps recherche + digital health platforms)",
+        "Afrique": "~1.5M profils (520M abonnés mobile SSA, mais SDK deployment limité)",
+        "total_corridor": "~6.5M profils potentiels, ~1.5M exploitables",
+        "croissance": "CAGR 20-25%"
+      },
+      "t_level_minimum": {
+        "niveau": "T4 (anonymisé avec differential privacy ε≤1.0 + suppression trajectoires GPS)",
+        "justification": "Données comportementales ultra-granulaires = risque élevé de ré-identification (localisation, patterns uniques); Article 29 WP reconnaît DP comme seule technique mitigeant les 3 risques (linkability, inference, singling out)",
+        "minimum_absolu": "T3 sous accès très contrôlé (data clean room)"
+      },
+      "reglementation": {
+        "EHDS": "Zone grise — digital phenotyping pas explicitement dans les catégories EHDS; pourrait relever de 'données issues de dispositifs médicaux' si SaMD",
+        "RGPD": "Art.9 + Art.22 (profilage); ePrivacy Directive (accès terminal); AIPD obligatoire; consentement explicite granulaire nécessaire",
+        "ICH_GCP": "Non applicable sauf si intégré dans protocole d'essai clinique",
+        "specifique": "AI Act si modèles prédictifs déployés; Code de conduite numérique santé (en développement FR/DE)"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "1.5M profils × EUR 14/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 133,560,000",
+        "horizon": "2028-2031"
+      }
+    },
+    {
+      "id": 7,
+      "nom": "Dossiers anonymisés essais cliniques",
+      "type_donnee": "Individual Patient Data (IPD) d'essais cliniques psychiatriques: données démographiques, endpoints primaires/secondaires, safety data, données de randomisation. Formats: CDISC/SDTM, ADaM",
+      "producteur": {
+        "primaire": "Investigateur clinique (collecte dans le cadre du protocole)",
+        "secondaire": "Sponsor pharma (propriétaire légal des données)",
+        "tertiaire": "CRO (gestion opérationnelle)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma (concurrent)",
+          "usage": "Méta-analyses, design d'essais futurs, comparateurs historiques, repurposing moléculaire",
+          "buyer_persona": "VP Clinical Development / Dir. Biostatistiques"
+        },
+        {
+          "secteur": "Agences réglementaires",
+          "usage": "Évaluation bénéfice-risque, décisions AMM",
+          "buyer_persona": "Dir. Évaluation Scientifique"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Réplication, méta-analyses IPD, développement méthodologique",
+          "buyer_persona": "Principal Investigator"
+        },
+        {
+          "secteur": "Assurance/HTA",
+          "usage": "Health Technology Assessment, décisions de remboursement",
+          "buyer_persona": "Dir. Évaluation Médico-Économique"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_dataset": "EUR 100,000 – 2,000,000 (varie selon taille essai, phase, indication)",
+        "fourchette_par_profil": "EUR 50 – 500/patient (essai Phase III psychiatrie, données complètes)",
+        "reference": "Études RWE: USD 80K-2M (ProPharma 2024); accès YODA/CSDR généralement gratuit pour recherche non-commerciale mais commercial access coûteux; marché essais cliniques santé mentale: USD 3.44Md (2025), projeté USD 7Md (2034) CAGR 8.24%",
+        "facteur_premium": "x5-10 pour essais avec biomarqueurs génomiques ou imagerie; données oncologie comparaison: $950-$2,000/patient"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~500K patients inclus dans essais psychiatriques actifs/récents (ClinicalTrials.gov + EU CTR)",
+        "Afrique": "~50K patients (essais multicentristes avec sites africains en croissance)",
+        "total_corridor": "~550K profils, ~200K avec données complètes accessibles",
+        "croissance": "CAGR 8-10%"
+      },
+      "t_level_minimum": {
+        "niveau": "T4 (anonymisé selon ICH E18 + k-anonymity k≥11 + suppression variables rares)",
+        "justification": "ICH-GCP E6(R3) et EMA Policy 0070 exigent anonymisation robuste; 65% des agences requièrent data-sharing agreement; Health Canada/EMA ont des standards spécifiques",
+        "si_open_access": "T5 (full DP + synthetic data augmentation)"
+      },
+      "reglementation": {
+        "EHDS": "Clinical trial data explicitement inclus dans les catégories de secondary use (Art.33 EHDS); accès via HDAB",
+        "RGPD": "Art.89 exemptions recherche scientifique; Art.9(2)(j) recherche avec garanties appropriées",
+        "ICH_GCP": "E6(R3) modernisé — exigences de data sharing renforcées; E18 guideline sur anonymisation des données d'essais cliniques; consentement éclairé doit couvrir le secondary use",
+        "specifique": "EMA Policy 0070 (publication proactive données cliniques); CSDR (ClinicalStudyDataRequest.com); Règlement UE 536/2014 essais cliniques"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "200K profils × EUR 200/profil (one-time) × 53%",
+        "valeur_annuelle": "EUR 21,200,000 (modèle licensing, non récurrent mensuel)",
+        "horizon": "2029-2032 (post-EHDS full deployment)"
+      }
+    },
+    {
+      "id": 8,
+      "nom": "Données Real World Evidence (RWE)",
+      "type_donnee": "Données issues de la pratique clinique courante hors essais: EHR psychiatriques, claims, registres, données de dispensation, données de soins intégrées. Longitudinales, multi-sources, reflétant les conditions réelles de traitement",
+      "producteur": {
+        "primaire": "Hôpitaux/cliniques psychiatriques (EHR)",
+        "secondaire": "Assureurs/payeurs (claims data)",
+        "tertiaire": "Pharmacies (dispensation data)",
+        "aggregateur": "IQVIA, Optum, Flatiron, Cegedim, THIN, Cerner"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Post-marketing surveillance, HTA evidence, label expansion, comparator effectiveness",
+          "buyer_persona": "VP HEOR / Dir. Real World Evidence"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Analyse parcours patient, prédiction coûts, gestion du risque populationnel",
+          "buyer_persona": "Chief Actuary / VP Population Health"
+        },
+        {
+          "secteur": "Agences réglementaires",
+          "usage": "Evidence pour conditional marketing authorizations, post-authorization safety studies",
+          "buyer_persona": "Dir. Évaluation / Safety Committee"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Études d'effectiveness, études de cohorte, pharmacoépidémiologie",
+          "buyer_persona": "Principal Investigator / Dir. Centre Pharmacoépi"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 5 – 20",
+        "fourchette_dataset": "EUR 200,000 – 5,000,000 (selon exhaustivité, géographie, durée)",
+        "reference": "Marché RWE solutions: USD 2.44Md (2025), projeté USD 6.04Md (2031), CAGR 16.33% (Mordor Intelligence); Optum private sector: ~$60M/an pour suite complète; academic: ~$45K-$100K/an/seat; primary care records: ~$50/patient lifetime value (Forbes 2025)",
+        "facteur_premium": "x3-5 pour données psychiatriques (sensibilité + rareté relative)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~30M profils psychiatriques dans les EHR (3.1M hospitalisés/an + ambulatoire; 84M touchés, ~35% avec données numériques exploitables)",
+        "Afrique": "~2M profils (émergent, limité aux hôpitaux urbains digitalisés SA, Kenya, Nigeria, Maroc, Egypte)",
+        "total_corridor": "~32M profils, ~10M avec qualité suffisante pour RWE",
+        "croissance": "CAGR 15-20%"
+      },
+      "t_level_minimum": {
+        "niveau": "T3 (pseudonymisé + k-anonymity k≥5 + suppression identifiants directs et indirects)",
+        "justification": "Standard de l'industrie pour RWE; IQVIA et Optum utilisent pseudonymisation + statistical de-identification conforme HIPAA Safe Harbor / RGPD equivalent",
+        "si_cross_border": "T4 pour transfert EU-Afrique (garanties supplémentaires Art.49 RGPD)"
+      },
+      "reglementation": {
+        "EHDS": "Catégorie prioritaire — EHR data, claims data, registries explicitement visés; HDAB gatekeeper; deadline 2029 pour secondary use infrastructure",
+        "RGPD": "Art.9 + Art.89; bases légales multiples (consentement, intérêt public, recherche); AIPD recommandée",
+        "ICH_GCP": "Non directement applicable (hors essai), mais Good Pharmacoepidemiological Practice (GPP) et ISPE guidelines applicables",
+        "specifique": "DARWIN EU (EMA Data Analysis and Real World Interrogation Network); réseau ConcePTION; HMA/EMA Big Data Strategy"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "10M profils × EUR 10/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 636,000,000",
+        "horizon": "2028-2032"
+      }
+    },
+    {
+      "id": 9,
+      "nom": "Scores cognitifs neuropsychologiques",
+      "type_donnee": "Résultats de batteries neuropsychologiques: MMSE, MoCA, WAIS subtests, TMT A/B, Stroop, CANTAB, NCPT (web-based). Mesures: mémoire de travail, attention, fonctions exécutives, vitesse de traitement. Formats: scores bruts + normés",
+      "producteur": {
+        "primaire": "Neuropsychologue (administration test en clinique)",
+        "secondaire": "Plateforme digitale (NCPT/Lumosity: 750K+ adultes; Cambridge Cognition CANTAB)",
+        "tertiaire": "Patient (auto-administration tests web)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Cognitive endpoints dans essais cliniques (schizophrénie, TCA, trouble bipolaire), screening patients",
+          "buyer_persona": "VP Clinical Development (CNS) / Dir. Neuroscience"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Évaluation capacité fonctionnelle pour invalidité, prédiction retour au travail",
+          "buyer_persona": "Dir. Prestations / Medical Advisor"
+        },
+        {
+          "secteur": "Employeur",
+          "usage": "Screening cognitif workforce (postes critiques), évaluation impact programmes wellness",
+          "buyer_persona": "VP People / Dir. Médecine du Travail"
+        },
+        {
+          "secteur": "EdTech/NeuroTech",
+          "usage": "Training datasets pour cognitive enhancement apps, normative data",
+          "buyer_persona": "CTO / VP Product"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil": "EUR 5 – 25 (par évaluation)",
+        "fourchette_dataset": "EUR 50,000 – 300,000 (dataset normé 5,000+ sujets avec démographiques)",
+        "reference": "Marché cognitive assessment & training: CAGR 27.14% (DataM Intelligence); NCPT dataset Nature 2022: 750K+ adultes, ~5.5M subtests — open access; tests cliniques: $200-$500/session billings mais données agrégées moins chères",
+        "facteur_premium": "x2-3 si longitudinal (pre/post traitement) avec données cliniques associées"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~3M profils (patients évalués cliniquement + utilisateurs plateformes digitales cognitives)",
+        "Afrique": "~200K profils (limité par disponibilité neuropsychologues: 1.4/100K en Afrique)",
+        "total_corridor": "~3.2M profils, ~1.5M exploitables avec standardisation",
+        "croissance": "CAGR 15-20% (digitalisation des tests + web-based platforms)"
+      },
+      "t_level_minimum": {
+        "niveau": "T2 (pseudonymisé)",
+        "justification": "Scores cognitifs agrégés = faible risque ré-identification; pseudonymisation standard suffisante sauf si couplé avec données cliniques détaillées",
+        "si_couplage_imagerie": "T4 (anonymisation renforcée car IRMf + cognition = quasi-identifiant)"
+      },
+      "reglementation": {
+        "EHDS": "Couvert si généré dans contexte de soins; données de recherche hors soins = hors scope EHDS primaire mais potentiellement secondary use",
+        "RGPD": "Art.9 si lié à diagnostic santé mentale; sinon données personnelles standard (Art.6)",
+        "ICH_GCP": "Applicable si endpoint essai clinique; validation psychométrique de l'instrument requise",
+        "specifique": "Propriété intellectuelle des tests (Pearson, PAR): licence nécessaire pour redistribution des items; seuls les scores agrégés sont librement partageables"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "1.5M profils × EUR 12/profil × 2 évaluations/an × 53%",
+        "valeur_annuelle": "EUR 19,080,000",
+        "horizon": "2027-2030"
+      }
+    },
+    {
+      "id": 10,
+      "nom": "Données génomiques psychiatriques (pharmacogénétique)",
+      "type_donnee": "Variants génétiques influençant la réponse aux psychotropes: CYP2D6, CYP2C19, CYP3A4 (métabolisme), HTR2A, SLC6A4 (réponse ISRS), COMT (cognition), HLA-B*1502 (carbamazépine). Formats: VCF, genotyping arrays, PGx panels",
+      "producteur": {
+        "primaire": "Laboratoire de génétique (séquençage/génotypage)",
+        "secondaire": "Patient (consentement + prélèvement biologique)",
+        "tertiaire": "Biobanques (UK Biobank, deCODE, HUNT)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Stratification patients essais cliniques, companion diagnostics, drug repurposing, precision psychiatry",
+          "buyer_persona": "VP Precision Medicine / Dir. Translational Science"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Prédiction réponse thérapeutique, optimisation coûts traitement personnalisé",
+          "buyer_persona": "Chief Medical Officer / Dir. Innovation"
+        },
+        {
+          "secteur": "Diagnostics",
+          "usage": "Développement panels PGx, validation clinique tests génomiques",
+          "buyer_persona": "VP R&D / Dir. Développement Produit"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "GWAS psychiatriques, Psychiatric Genomics Consortium, études polygenic risk score",
+          "buyer_persona": "Principal Investigator (génétique psychiatrique)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil": "EUR 50 – 200 (panel PGx basic); EUR 500 – 5,000 (WGS + phenotype)",
+        "fourchette_dataset": "EUR 500,000 – 5,000,000 (cohorte génotypée 10K+ sujets avec phénotype psychiatrique)",
+        "reference": "Marché pharmacogénomique: USD 19.59Md (2025), projeté USD 46.29Md (2035), CAGR 8.98% (Precedence Research); données génomiques + phénotypiques: $1,700-$5,000/profil, >$6,000 si couplé (Forbes/Tempus 2025)",
+        "facteur_premium": "x5-10 pour populations africaines (diversité génétique sous-représentée = valeur scientifique exceptionnelle)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~2M profils pharmacogénétiques (biobanques + tests cliniques PGx croissants)",
+        "Afrique": "~100K profils (H3Africa, AWI-Gen, quelques biobanques nationales; sous-représentation massive = opportunité)",
+        "total_corridor": "~2.1M profils, ~500K avec données PGx psychiatriques spécifiques",
+        "croissance": "CAGR 15-20% (poussé par precision medicine et declining sequencing costs)"
+      },
+      "t_level_minimum": {
+        "niveau": "T4 (anonymisé + suppression SNPs rares identifiants + contrôle accès strict)",
+        "justification": "Données génomiques = théoriquement impossible à anonymiser complètement (ADN = identifiant unique); RGPD Art.9 catégorie spéciale; nécessite governance stricte type trusted research environment",
+        "minimum_absolu": "T3 avec data clean room + contrat interdisant re-identification + audit trail"
+      },
+      "reglementation": {
+        "EHDS": "Données génomiques explicitement dans les catégories EHDS secondary use; accès restreint aux environnements de traitement sécurisés",
+        "RGPD": "Art.9 (données génétiques = catégorie spéciale); Recital 34; certains États membres ont réglementations supplémentaires (France: Loi de bioéthique 2021; Allemagne: Gendiagnostikgesetz)",
+        "ICH_GCP": "ICH E15, E16, E18 pour données pharmacogénomiques dans essais cliniques; consentement spécifique requis pour analyses génétiques",
+        "specifique": "Convention d'Oviedo (Conseil de l'Europe); UNESCO Déclaration internationale sur les données génétiques humaines; Nagoya Protocol (accès ressources génétiques africaines)"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "500K profils × EUR 1,000/profil (one-time + annual licensing) × 53%",
+        "valeur_annuelle": "EUR 265,000,000",
+        "horizon": "2029-2033 (maturation biobanques + EHDS)"
+      }
+    },
+    {
+      "id": 11,
+      "nom": "Données d'imagerie cérébrale (IRMf anonymisées)",
+      "type_donnee": "Neuroimagerie fonctionnelle et structurelle: IRMf (BOLD signal, connectivity maps), IRM structurelle (volumétrie, cortical thickness), DTI (tractographie), PET (récepteurs 5-HT, DAT). Formats: NIfTI, DICOM anonymisé, BIDS",
+      "producteur": {
+        "primaire": "Centre d'imagerie/hôpital (acquisition IRM)",
+        "secondaire": "Chercheur (post-processing, quality control)",
+        "plateforme": "OpenNeuro/OpenfMRI, ADNI, UK Biobank Brain Imaging, Human Connectome Project"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Biomarqueurs imagerie pour essais cliniques CNS, target validation, proof-of-concept",
+          "buyer_persona": "VP Neuroscience / Dir. Translational Imaging"
+        },
+        {
+          "secteur": "MedTech/IA",
+          "usage": "Training algorithmes diagnostic IA, computer-aided diagnosis, quantitative neuroimaging",
+          "buyer_persona": "CTO / VP AI Research"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Études d'association brain-behavior, méta-analyses neuroimagerie, atlas normatifs",
+          "buyer_persona": "Principal Investigator (neuroimagerie)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_scan": "EUR 30 – 150 (imagerie médicale standard — Forbes 2025); EUR 500 – 2,000 (IRMf avec paradigme + post-processing)",
+        "fourchette_dataset": "EUR 200,000 – 3,000,000 (cohorte 500+ sujets, multimodal, avec données cliniques)",
+        "reference": "Acquisition IRM: $500-$3,000/scan (coût production); datasets publics (OpenNeuro): gratuit mais limités en psychiatrie; datasets privés multi-sites: $1M+ pour études larges",
+        "facteur_premium": "x5-10 pour données psychiatriques annotées (diagnostic + traitement + suivi longitudinal)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~500K IRMf psychiatriques dans les bases existantes (ENIGMA consortium, UK Biobank ~100K brain scans, études multicentriques)",
+        "Afrique": "~10K scans (limité par infrastructure IRM: <1 scanner/million habitants dans la majorité des pays SSA)",
+        "total_corridor": "~510K scans, ~200K exploitables avec qualité suffisante",
+        "croissance": "CAGR 10-12% (portable MRI et cloud processing pourraient accélérer en Afrique)"
+      },
+      "t_level_minimum": {
+        "niveau": "T4 (defacing obligatoire + suppression métadonnées DICOM + k-anonymity sur démographiques associés)",
+        "justification": "IRM structurelle = biométrique (reconstruction faciale possible sans defacing); DICOM headers contiennent identifiants; nécessite pipeline de dé-identification validé (DeID, fsldeface)",
+        "si_federated": "T3 acceptable si analyse fédérée sans extraction des images (COINSTAC)"
+      },
+      "reglementation": {
+        "EHDS": "Imagerie médicale = catégorie prioritaire EHDS (imaging reports + raw images mentionnés); secondary use couvert avec garanties",
+        "RGPD": "Art.9 (données de santé + biométriques); données d'imagerie = données de santé même après defacing (risque résiduel de ré-identification via brain morphometry)",
+        "ICH_GCP": "Applicable pour imaging endpoints dans essais cliniques; central reading standards",
+        "specifique": "Règlement MDR pour software d'analyse d'images (SaMD); AI Act pour systèmes de diagnostic assisté par IA en neurologie/psychiatrie"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "200K scans × EUR 800/scan (licensing) × 53%",
+        "valeur_annuelle": "EUR 84,800,000 (modèle one-time licensing renouvelable)",
+        "horizon": "2030-2034"
+      }
+    },
+    {
+      "id": 12,
+      "nom": "Registres de tentatives de suicide (épidémiologie)",
+      "type_donnee": "Données épidémiologiques sur tentatives de suicide et auto-mutilation: incidence, caractéristiques démographiques, méthodes, facteurs déclencheurs, parcours de soins pré/post, récidive. Sources: registres hospitaliers, urgences, registres nationaux (rares)",
+      "producteur": {
+        "primaire": "Hôpital/urgences (enregistrement de l'épisode)",
+        "secondaire": "Registre national (quand existant: Irlande NSRF, Danemark, Belgique)",
+        "tertiaire": "WHO/EURO Multicentre Study (monitoring sites)",
+        "lacune_majeure": "Aucun registre national systématique dans la majorité des pays EU et aucun en Afrique"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Agences de santé publique",
+          "usage": "Politique de prévention suicide, évaluation programmes, allocation ressources",
+          "buyer_persona": "Dir. Santé Publique / Responsable Programme Suicide Prevention"
+        },
+        {
+          "secteur": "Pharma",
+          "usage": "Safety monitoring psychotropes (risque suicidaire comme signal), études post-AMM",
+          "buyer_persona": "Dir. Pharmacovigilance / Chief Safety Officer"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Modélisation risque suicide pour polices vie/invalidité, tarification",
+          "buyer_persona": "Chief Actuary (Vie/Prévoyance)"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Études épidémiologiques, évaluation interventions, modèles prédictifs",
+          "buyer_persona": "Principal Investigator (suicidologie)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil": "EUR 15 – 50 (données hautement sensibles = prix élevé par unité)",
+        "fourchette_dataset": "EUR 100,000 – 500,000 (registre national, multi-années)",
+        "reference": "Données extrêmement rares et sensibles; accès principalement via collaborations institutionnelles; pas de marché ouvert; valeur inestimable pour modèles prédictifs",
+        "facteur_premium": "x10+ pour données complètes avec parcours pré/post et outcomes longitudinaux"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~800K tentatives/an enregistrées (estimation; taux EU: 136-186/100K historique WHO, sous-déclaration importante; 3.1M hospitalisations MH/an dont ~5-10% liées auto-mutilation)",
+        "Afrique": "~Inestimable (absence quasi-totale de monitoring systématique; OMS 2016 a publié un manuel mais déploiement minimal)",
+        "total_corridor": "~800K épisodes documentés/an, <200K avec données qualité suffisante",
+        "croissance": "CAGR 5-8% (lent car dépendant d'investissements publics dans les registres)"
+      },
+      "t_level_minimum": {
+        "niveau": "T5 (anonymisation complète + differential privacy + accès environnement ultra-sécurisé)",
+        "justification": "Données les plus sensibles du spectre santé mentale; combinaison suicide + identité = risque discriminatoire maximal; consentement souvent impossible (patient en crise); nécessité de protections maximales",
+        "exception": "T4 dans environnement de recherche accrédité avec comité éthique approbation spécifique"
+      },
+      "reglementation": {
+        "EHDS": "Couvert mais avec restrictions maximales; Member States peuvent imposer des limitations supplémentaires (opt-out élargi possible pour données suicide)",
+        "RGPD": "Art.9(2)(i) intérêt public vital; Art.9(2)(j) recherche avec garanties maximales; base légale intérêt public (pas consentement — souvent impossible)",
+        "ICH_GCP": "Non applicable directement (données observationnelles), mais Helsinki Declaration apply pour recherche sur populations vulnérables",
+        "specifique": "WHO Practice Manual on Surveillance (2016); Recommandation CM/Rec(2006)10 du Conseil de l'Europe; Guide OMS prévention du suicide; réglementations nationales de santé publique sur déclaration obligatoire (variable par pays)"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "200K profils × EUR 30/profil/an × 53%",
+        "valeur_annuelle": "EUR 3,180,000",
+        "horizon": "2030-2035 (nécessite développement registres)",
+        "note": "Valeur sociétale disproportionnée par rapport à la valeur commerciale; modèle hybride public-privé plus approprié"
+      }
+    },
+    {
+      "id": 13,
+      "nom": "Données de consommation de soins (parcours patient)",
+      "type_donnee": "Trajectoires complètes de soins psychiatriques: consultations (généraliste, psychiatre, psychologue), hospitalisations, urgences, prescriptions, arrêts maladie, ALD, durées moyennes de séjour, coûts par épisode. Sources: claims, SNDS (France), GKV (Allemagne), NHS Digital",
+      "producteur": {
+        "primaire": "Payeur/assureur (claims data)",
+        "secondaire": "Hôpital (PMSI, DRG data)",
+        "tertiaire": "Systèmes nationaux (SNDS France: 67M assurés; GKV Allemagne: 73M)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Analyse parcours patient, identification points d'intervention, market access evidence, burden of illness",
+          "buyer_persona": "VP Market Access / Dir. HEOR"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Tarification, gestion sinistres, prédiction coûts, programmes de care management",
+          "buyer_persona": "Chief Actuary / VP Claims"
+        },
+        {
+          "secteur": "Autorités de santé",
+          "usage": "Planification offre de soins, évaluation politiques publiques, remboursement",
+          "buyer_persona": "Dir. Assurance Maladie / Dir. Stratégie Santé"
+        },
+        {
+          "secteur": "Consulting santé",
+          "usage": "Analyses de marché, benchmarking coûts, advisory",
+          "buyer_persona": "Partner Healthcare Practice"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_profil_par_mois": "EUR 3 – 10",
+        "fourchette_dataset": "EUR 150,000 – 2,000,000 (claims nationaux, multi-années, indication spécifique)",
+        "reference": "IQVIA: 1.5Md+ claims/an, 192M+ patients US; Optum: 84M patients; en EU, accès SNDS pour recherche: EUR 0-5,000 (public), mais accès commercial via revendeurs: EUR 100K-1M+; top 5% patients = 55% des dépenses santé",
+        "facteur_premium": "x2-3 pour données psychiatriques complètes (parcours multi-settings rarement capturés)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~40M profils avec parcours MH documenté dans les systèmes nationaux (estimation: 84M touchés × ~50% ayant contact système de soins documenté)",
+        "Afrique": "~3M profils (assurance maladie formelle limitée: ~10-15% couverture en SSA; Maroc: AMO; SA: medical schemes)",
+        "total_corridor": "~43M profils, ~15M exploitables",
+        "croissance": "CAGR 10-15% (digitalisation systèmes de santé + couverture universelle en progression)"
+      },
+      "t_level_minimum": {
+        "niveau": "T3 (pseudonymisé + k-anonymity + suppression géolocalisation fine)",
+        "justification": "Standard SNDS/NHS Digital; données de consommation = données de santé; pseudonymisation avec chaîne de hachage irréversible (standard SNDS)",
+        "si_granulaire": "T4 pour données au niveau du séjour individuel avec diagnostic détaillé"
+      },
+      "reglementation": {
+        "EHDS": "Claims et données de remboursement = catégorie prioritaire; harmonisation cross-border via EHDS dès 2029",
+        "RGPD": "Art.9; accès via instances nationales (INDS en France, NHS Digital en UK); procédures d'accès strictes avec approbation CNIL/équivalent",
+        "ICH_GCP": "Non applicable (données hors essai)",
+        "specifique": "Législations nationales d'accès aux données de santé (France: Loi de modernisation du système de santé 2016; Allemagne: Digitale-Versorgung-Gesetz; UK: Health and Social Care Act 2022)"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "15M profils × EUR 6/profil/mois × 12 mois × 53%",
+        "valeur_annuelle": "EUR 572,400,000",
+        "horizon": "2028-2032"
+      }
+    },
+    {
+      "id": 14,
+      "nom": "Données RPS employeur (Risques Psychosociaux)",
+      "type_donnee": "Données d'évaluation des risques psychosociaux en entreprise: résultats questionnaires (Karasek, Siegrist, Copenhagen PSQ), taux de burnout, absentéisme MH, turnover lié au stress, interventions wellness. Formats: scores agrégés par département/site, longitudinaux",
+      "producteur": {
+        "primaire": "Employeur (via campagnes d'évaluation RPS obligatoires en EU)",
+        "secondaire": "Prestataire IPRP (Intervenant en Prévention des Risques Professionnels)",
+        "tertiaire": "Plateformes wellness (Affinity OS, Moka.care, Alan, Lyra Health)"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Assurance (prévoyance/collective)",
+          "usage": "Pricing polices collectives, prédiction sinistralité arrêts maladie, programmes prévention",
+          "buyer_persona": "Chief Actuary / Dir. Souscription Collective"
+        },
+        {
+          "secteur": "Employeur (peer benchmarking)",
+          "usage": "Benchmarking sectoriel, évaluation ROI programmes wellness, compliance réglementaire",
+          "buyer_persona": "VP People / DRH / Dir. RSE"
+        },
+        {
+          "secteur": "Consulting RH",
+          "usage": "Advisory QVT, audits sociaux, due diligence M&A (risque humain)",
+          "buyer_persona": "Partner People Advisory / Dir. Audit Social"
+        },
+        {
+          "secteur": "Recherche",
+          "usage": "Études épidémiologiques occupationnelles, évaluation politiques publiques travail",
+          "buyer_persona": "Principal Investigator (santé au travail)"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_employe_par_an": "EUR 2 – 8 (données agrégées anonymisées)",
+        "fourchette_dataset": "EUR 50,000 – 300,000 (benchmark sectoriel multi-entreprises, multi-années)",
+        "reference": "Marché occupational health: USD 5.84Md (2026), projeté USD 7.76Md (2031), CAGR 5.83% (Mordor Intelligence); mental health services segment: CAGR 10.47%; US market: USD 1.19Md (2024)",
+        "facteur_premium": "x3-5 si données individuelles (vs agrégées) avec corrélation productivité/absentéisme"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~50M salariés potentiellement couverts (évaluation RPS obligatoire en France, partiellement en DE, ES, IT; ~200M workforce EU, ~25% avec évaluations formalisées)",
+        "Afrique": "~5M salariés (secteur formel avec compliance OHS: SA, Maroc, Nigeria, Kenya principalement)",
+        "total_corridor": "~55M profils, ~15M avec données structurées exploitables",
+        "croissance": "CAGR 12-15% (réglementation croissante + awareness post-COVID)"
+      },
+      "t_level_minimum": {
+        "niveau": "T1 (agrégation département/site ≥30 personnes) ou T2 (pseudonymisé individuel)",
+        "justification": "Données RPS sont typiquement collectées de manière agrégée (obligation légale); niveau individuel = données de santé au travail sous RGPD Art.9",
+        "si_individuel": "T3 minimum avec consentement explicite et accord CSE/comité d'entreprise"
+      },
+      "reglementation": {
+        "EHDS": "Hors scope direct (données occupationnelles ≠ données de soins), mais pourrait être inclus si lié à diagnostic médical",
+        "RGPD": "Art.9 si données individuelles de santé; Art.88 traitement données dans le contexte de l'emploi; consentement employé problématique (déséquilibre de pouvoir)",
+        "ICH_GCP": "Non applicable",
+        "specifique": "Directive-cadre 89/391/CEE (sécurité au travail); Accord-cadre européen sur le stress au travail (2004); France: Code du travail Art. L4121-1 à L4121-5; Loi Rebsamen 2015; Canada/Québec: nouvelle législation psychosociale 2025"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "15M profils × EUR 5/profil/an × 53%",
+        "valeur_annuelle": "EUR 39,750,000",
+        "horizon": "2027-2030"
+      }
+    },
+    {
+      "id": 15,
+      "nom": "Données prédictives rechute (ML models)",
+      "type_donnee": "Outputs de modèles de machine learning prédisant la rechute psychiatrique: risk scores (probabilité 0-1 sur 28 jours), features importance, alertes cliniques, calibration data. Inclut les données d'entraînement sous-jacentes (EHR + wearables + EMA combinés)",
+      "producteur": {
+        "primaire": "Algorithme ML (logistic regression, random forest, SVM — AUC 0.45-0.98 selon études)",
+        "secondaire": "EHR + capteurs + patient-reported data (inputs du modèle)",
+        "tertiaire": "Clinicien (validation des prédictions, feedback loop)",
+        "reference_cle": "Nature Medicine 2022: ML crisis prediction AUC 0.797, cliniquement utile dans 64% des cas; BMJ Open 2025: AUC 0.45-0.95 pour rechute troubles psychotiques"
+      },
+      "acheteurs": [
+        {
+          "secteur": "Pharma",
+          "usage": "Enrichment stratégies essais cliniques, identification patients à haut risque, companion diagnostics algorithmiques",
+          "buyer_persona": "VP Digital Health / Dir. Precision Psychiatry"
+        },
+        {
+          "secteur": "Assurance",
+          "usage": "Risk scoring dynamique, prédiction hospitalisations évitables, value-based insurance design",
+          "buyer_persona": "Chief Actuary / VP Predictive Analytics"
+        },
+        {
+          "secteur": "Systèmes de santé",
+          "usage": "Triage prédictif, allocation ressources CMHT, réduction crises évitables",
+          "buyer_persona": "Dir. Médical / Chief Clinical Informatics Officer"
+        },
+        {
+          "secteur": "Digital Therapeutics",
+          "usage": "Engine prédictif pour apps d'intervention juste-à-temps (JITAI)",
+          "buyer_persona": "CTO / VP Clinical AI"
+        }
+      ],
+      "prix_marche": {
+        "fourchette_par_prediction": "EUR 5 – 20 (par patient par mois de monitoring prédictif)",
+        "fourchette_modele": "EUR 500,000 – 5,000,000 (licence modèle pré-entraîné + droits d'utilisation + données d'entraînement)",
+        "fourchette_dataset_training": "EUR 1,000,000 – 10,000,000 (données multi-modales labelisées: EHR + wearables + outcomes vérifiés)",
+        "reference": "Valeur exponentielle car combine toutes les catégories précédentes; modèles validés cliniquement = actif stratégique; réduction hospitalisations évitables = ROI mesurable direct",
+        "facteur_premium": "x10-20 si modèle validé prospectivement avec evidence of clinical utility (Nature Medicine 2022 level)"
+      },
+      "volume_estime_corridor_EU_Afrique": {
+        "EU": "~5M patients éligibles au monitoring prédictif (patients suivis en ambulatoire, risque modéré-élevé de rechute)",
+        "Afrique": "~500K patients (population cible restreinte par infrastructure, mais mobile-first models adaptables)",
+        "total_corridor": "~5.5M patients cibles, ~1M actuellement monitorables",
+        "croissance": "CAGR 30-40% (croissance la plus rapide de toutes les catégories — convergence IA + data + clinical validation)"
+      },
+      "t_level_minimum": {
+        "niveau": "T4 (modèle: differential privacy dans le training; données: pseudonymisation + federated learning)",
+        "justification": "Modèles ML peuvent mémoriser des données individuelles (membership inference attacks); nécessite privacy-preserving ML techniques; AI Act EU classe les systèmes de santé IA comme 'high-risk'",
+        "pour_deploiement": "T2-T3 acceptable si déployé dans le contexte de soins du patient (primary use)"
+      },
+      "reglementation": {
+        "EHDS": "Couvert pour secondary use; AI outputs sur données de santé = catégorie émergente non explicitement traitée mais englobée",
+        "RGPD": "Art.22 (décision automatisée significative — droit à l'explication); Art.9; AIPD obligatoire (Art.35); Art.13-14 transparence algorithmique",
+        "ICH_GCP": "Si utilisé comme decision support dans essai clinique: validation selon GAMP5 / FDA Software as Medical Device guidance",
+        "specifique": "AI Act (EU) 2024/1689: systèmes IA en santé = 'high-risk' (Annex III); conformité assessment obligatoire; FDA AI/ML-based SaMD guidance; NICE Evidence Standards Framework for Digital Health Technologies"
+      },
+      "valeur_myne_estimee": {
+        "calcul": "1M patients × EUR 12/patient/mois × 12 mois × 53% + licensing modèles EUR 20M",
+        "valeur_annuelle": "EUR 96,320,000",
+        "horizon": "2028-2032"
+      }
+    }
+  ],
+  "synthese": {
+    "valeur_totale_annuelle_estimee_MYNe": "EUR 2,939,770,000 (~EUR 2.94Md/an au plateau)",
+    "repartition_par_secteur_acheteur": {
+      "pharma": "~45% (clinical trials, RWE, PV, precision medicine)",
+      "assurance": "~25% (actuariat, risk scoring, parcours patient)",
+      "recherche": "~15% (académique, consortiums, agences)",
+      "employeur": "~10% (RPS, wellness, cognitive)",
+      "MedTech_AI": "~5% (training data, SaMD validation)"
+    },
+    "top_5_categories_par_valeur": [
+      {"rang": 1, "categorie": "Données RWE", "valeur": "EUR 636M"},
+      {"rang": 2, "categorie": "Biomarqueurs numériques", "valeur": "EUR 572M"},
+      {"rang": 3, "categorie": "Données consommation de soins", "valeur": "EUR 572M"},
+      {"rang": 4, "categorie": "Données génomiques psychiatriques", "valeur": "EUR 265M"},
+      {"rang": 5, "categorie": "Données pharmacovigilance", "valeur": "EUR 191M"}
+    ],
+    "facteurs_differenciants_MYNe_AELYA": {
+      "consentement_eclaire": "ÆLYA transforme l'obligation réglementaire (RGPD Art.9 consentement explicite) en avantage compétitif: données consenties = premium de 30-50% sur données opt-out",
+      "corridor_EU_Afrique": "Diversité génétique africaine + données sous-représentées = x5-10 premium pour pharma precision medicine; EHDS 2034 ouvre accès aux pays tiers",
+      "revenue_share_53": "Alignement d'intérêts avec les producteurs de données (patients, cliniciens); fidélisation > volume",
+      "T_level_natif": "Anonymisation native dès la collecte vs post-hoc = réduction coûts compliance de 60-80%"
+    },
+    "timeline_reglementaire": {
+      "2025_mars": "EHDS entre en vigueur (Regulation EU 2025/327)",
+      "2027_mars": "Commission adopte implementing acts EHDS",
+      "2029_mars": "Secondary use opérationnel pour EHR, claims, imaging, eDispensation",
+      "2030": "AI Act pleinement applicable (high-risk health AI)",
+      "2034": "EHDS ouvert aux pays tiers — corridor Afrique activé"
+    },
+    "risques_cles": [
+      "Fragmentation réglementaire EU (opt-out national variable)",
+      "Sous-digitalisation Afrique (infrastructure IRM, EHR coverage)",
+      "Résistance patients au data sharing (confiance = variable clé)",
+      "Concurrence data brokers existants (IQVIA, Optum, Cegedim) avec avantage d'échelle",
+      "Volatilité pricing données désidentifiées (Tempus: $502 → $128/record en 4 ans)"
+    ]
+  }
+}

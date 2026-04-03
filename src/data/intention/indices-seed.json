@@ -1,0 +1,2044 @@
+{
+  "meta": {
+    "titre": "Cartographie des Indices de Souveraineté Numérique et Métriques de l'Économie de la Donnée",
+    "agent": "YOUSSEF",
+    "mission": "MYNε — Indice de Souveraineté Intentionnelle",
+    "date_compilation": "2026-04-03",
+    "corridor_eu_afrique": "22 pays analysés couvrant l'UE et l'Afrique subsaharienne/MENA",
+    "nombre_indices": 17,
+    "sources_principales": [
+      "Freedom House",
+      "World Wide Web Foundation",
+      "Global Data Barometer",
+      "OECD",
+      "ITU",
+      "EIU",
+      "Access Now",
+      "Privacy International",
+      "IDC/European Commission",
+      "McKinsey",
+      "World Bank",
+      "UNCTAD",
+      "WEF",
+      "Portulans Institute",
+      "DLA Piper",
+      "CMS/GDPR Enforcement Tracker",
+      "IAPP"
+    ]
+  },
+  "pays_corridor": [
+    "France",
+    "Germany",
+    "Italy",
+    "Spain",
+    "Netherlands",
+    "Belgium",
+    "Portugal",
+    "Poland",
+    "Sweden",
+    "Denmark",
+    "Estonia",
+    "Morocco",
+    "Tunisia",
+    "Nigeria",
+    "Kenya",
+    "South Africa",
+    "Senegal",
+    "Ethiopia",
+    "Côte d'Ivoire",
+    "Ghana",
+    "Egypt",
+    "Rwanda"
+  ],
+  "indices": [
+    {
+      "id": 1,
+      "nom_complet": "Freedom on the Net (FOTN)",
+      "organisme_emetteur": "Freedom House",
+      "frequence": "Annuelle (depuis 2011)",
+      "derniere_edition": "2025 (couvre juin 2024 — mai 2025)",
+      "methodologie": {
+        "description": "Évalue la liberté d'Internet dans 72 pays représentant 89% des utilisateurs mondiaux. Score 0-100 (100 = le plus libre).",
+        "dimensions": [
+          "A. Obstacles à l'Accès (0-25 points): infrastructure, coût, contrôle technique, diversité FAI, indépendance régulateurs",
+          "B. Limites sur le Contenu (0-35 points): blocage/filtrage, suppression de contenu, autocensure, manipulation information, diversité sources",
+          "C. Violations des Droits des Utilisateurs (0-40 points): protection juridique, surveillance, poursuites judiciaires, violence, vie privée"
+        ],
+        "nombre_indicateurs": 21,
+        "echelle": "0-100 (Free: 70-100, Partly Free: 40-69, Not Free: 0-39)",
+        "collecte": "Réseau de 70+ chercheurs locaux, revue par panels d'experts régionaux, validation finale Freedom House"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 76,
+          "statut": "Free"
+        },
+        "Germany": {
+          "score": 74,
+          "statut": "Free"
+        },
+        "Italy": {
+          "score": 76,
+          "statut": "Free"
+        },
+        "Spain": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Netherlands": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Belgium": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Portugal": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Poland": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Sweden": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Denmark": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Estonia": {
+          "score": 92,
+          "statut": "Free"
+        },
+        "Morocco": {
+          "score": 54,
+          "statut": "Partly Free",
+          "detail": "A:18/25, B:21/35, C:15/40"
+        },
+        "Tunisia": {
+          "score": 56,
+          "statut": "Partly Free"
+        },
+        "Nigeria": {
+          "score": 49,
+          "statut": "Partly Free"
+        },
+        "Kenya": {
+          "score": 47,
+          "statut": "Partly Free",
+          "note": "Plus forte baisse 2025"
+        },
+        "South Africa": {
+          "score": 73,
+          "statut": "Free"
+        },
+        "Senegal": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Ethiopia": {
+          "score": 26,
+          "statut": "Not Free"
+        },
+        "Côte d'Ivoire": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Ghana": {
+          "score": null,
+          "statut": "Non couvert"
+        },
+        "Egypt": {
+          "score": 27,
+          "statut": "Not Free"
+        },
+        "Rwanda": {
+          "score": 23,
+          "statut": "Not Free"
+        }
+      },
+      "forces": [
+        "Méthodologie granulaire avec 21 indicateurs et sous-questions",
+        "Chercheurs locaux dans chaque pays étudié",
+        "15 ans de données longitudinales permettant l'analyse de tendances",
+        "Couvre dimensions techniques, juridiques et droits humains"
+      ],
+      "limites": [
+        "Seulement 72 pays couverts — manque beaucoup de pays africains et européens",
+        "Pas de couverture: Espagne, Pays-Bas, Belgique, Portugal, Pologne, Suède, Danemark, Sénégal, Ghana, Côte d'Ivoire",
+        "Biais vers les grandes économies et pays anglophones",
+        "Ne mesure pas la souveraineté des données per se, mais la liberté Internet"
+      ],
+      "complementarite_myne": "MYNε devrait couvrir les pays manquants du corridor, et ajouter des dimensions de souveraineté intentionnelle (contrôle local des données, capacité de stockage national, flux transfrontaliers) absentes de FOTN."
+    },
+    {
+      "id": 2,
+      "nom_complet": "Open Data Barometer (ODB)",
+      "organisme_emetteur": "World Wide Web Foundation",
+      "frequence": "Irrégulière (4 éditions: 2013, 2014, 2015, 2017)",
+      "derniere_edition": "4ème édition (2017) — DISCONTINUÉ, remplacé par Global Data Barometer",
+      "methodologie": {
+        "description": "Évaluait la prévalence et l'impact des initiatives d'Open Data dans 115 pays.",
+        "dimensions": [
+          "Readiness (préparation): politiques, société civile, capacités entrepreneuriales",
+          "Implementation (mise en œuvre): publication de datasets, formats, licences",
+          "Impact: effets sur l'entrepreneuriat, l'économie, l'inclusion sociale"
+        ],
+        "echelle": "0-100",
+        "collecte": "Enquêtes d'experts, données secondaires, évaluations de datasets"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 85,
+          "rang": 3
+        },
+        "Germany": {
+          "score": null,
+          "note": "Non classé dans top régional disponible"
+        },
+        "Italy": {
+          "score": null
+        },
+        "Spain": {
+          "score": 73,
+          "rang": 11
+        },
+        "Netherlands": {
+          "score": 75,
+          "rang": 8
+        },
+        "Belgium": {
+          "score": null
+        },
+        "Portugal": {
+          "score": null
+        },
+        "Poland": {
+          "score": null,
+          "note": "Baisse de 14 places"
+        },
+        "Sweden": {
+          "score": null,
+          "rang": 14
+        },
+        "Denmark": {
+          "score": null,
+          "rang": 13
+        },
+        "Estonia": {
+          "score": null
+        },
+        "Morocco": {
+          "score": null,
+          "note": "Non couvert dans édition disponible"
+        },
+        "Tunisia": {
+          "score": 32,
+          "rang": 50
+        },
+        "Nigeria": {
+          "score": null
+        },
+        "Kenya": {
+          "score": 40,
+          "rang": 35,
+          "note": "Leader Afrique subsaharienne"
+        },
+        "South Africa": {
+          "score": 34,
+          "rang": 46
+        },
+        "Senegal": {
+          "score": null
+        },
+        "Ethiopia": {
+          "score": null
+        },
+        "Côte d'Ivoire": {
+          "score": null
+        },
+        "Ghana": {
+          "score": 26,
+          "rang": 59
+        },
+        "Egypt": {
+          "score": null
+        },
+        "Rwanda": {
+          "score": null
+        }
+      },
+      "forces": [
+        "Première initiative mondiale de benchmarking Open Data",
+        "Impact réel mesuré (pas seulement la disponibilité)",
+        "Couverture large de 115 pays à son pic"
+      ],
+      "limites": [
+        "Discontinué depuis 2017 — données très obsolètes",
+        "Remplacé par le Global Data Barometer mais avec méthodologie différente",
+        "Ne mesure pas la souveraineté des données ni le contrôle local"
+      ],
+      "complementarite_myne": "MYNε peut intégrer l'héritage ODB en reprenant la dimension 'Impact' et en la modernisant avec des métriques de souveraineté (où les données ouvertes sont-elles hébergées? qui contrôle l'infrastructure?)."
+    },
+    {
+      "id": 3,
+      "nom_complet": "Global Data Barometer (GDB)",
+      "organisme_emetteur": "Global Data Barometer (successeur de l'ODB, hébergé par ILDA)",
+      "frequence": "Biennale environ (1ère édition 2022, 2ème en cours)",
+      "derniere_edition": "1ère édition complète 2022 (109 pays, couvre mai 2019 — mai 2021). 2ème édition: Afrique et Amérique latine uniquement",
+      "methodologie": {
+        "description": "Évalue les écosystèmes de données nationaux au-delà de l'Open Data, en 3 piliers.",
+        "dimensions": [
+          "Data Governance: politiques, cadres juridiques, gestion des données",
+          "Data Capabilities: compétences, infrastructures, capacités gouvernementales",
+          "Data Availability: disponibilité réelle des datasets clés par secteur"
+        ],
+        "nombre_indicateurs": 27,
+        "echelle": "0-100",
+        "collecte": "Enquête d'experts dans 40+ pays, données secondaires, revue par pairs"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 79,
+          "note": "Capabilities pillar"
+        },
+        "Germany": {
+          "score": 69,
+          "note": "Capabilities pillar"
+        },
+        "Italy": {
+          "score": null,
+          "note": "Scores partiels disponibles"
+        },
+        "Spain": {
+          "score": 82,
+          "note": "Capabilities pillar, forte data availability"
+        },
+        "Netherlands": {
+          "score": 81,
+          "note": "Capabilities pillar"
+        },
+        "Belgium": {
+          "score": null
+        },
+        "Portugal": {
+          "score": null
+        },
+        "Poland": {
+          "score": null
+        },
+        "Sweden": {
+          "score": null
+        },
+        "Denmark": {
+          "score": null,
+          "note": "Top performer Europe"
+        },
+        "Estonia": {
+          "score": 92,
+          "note": "Plus haut score Capabilities mondial (91.2)"
+        },
+        "Morocco": {
+          "score": null,
+          "note": "Non couvert 1ère édition, potentiellement en 2ème"
+        },
+        "Tunisia": {
+          "score": null
+        },
+        "Nigeria": {
+          "score": null
+        },
+        "Kenya": {
+          "score": null,
+          "note": "Couvert, données partielles"
+        },
+        "South Africa": {
+          "score": null
+        },
+        "Senegal": {
+          "score": null
+        },
+        "Ethiopia": {
+          "score": null
+        },
+        "Côte d'Ivoire": {
+          "score": null
+        },
+        "Ghana": {
+          "score": null
+        },
+        "Egypt": {
+          "score": null
+        },
+        "Rwanda": {
+          "score": null
+        }
+      },
+      "moyennes_regionales": {
+        "EU_UK_North_America_Israel_AUS_NZ": {
+          "capabilities": 70,
+          "availability": 50
+        },
+        "Africa": {
+          "capabilities": 32,
+          "availability": 11
+        },
+        "MENA": {
+          "capabilities": 38,
+          "availability": 14
+        },
+        "Latin_America_Caribbean": {
+          "capabilities": 37,
+          "availability": 29
+        }
+      },
+      "forces": [
+        "Successeur moderne de l'ODB avec méthodologie élargie",
+        "Intègre la gouvernance des données au-delà de l'ouverture",
+        "Évaluation sectorielle (santé, climat, finance publique, foncier)",
+        "Focus sur 'data for public good'"
+      ],
+      "limites": [
+        "2ème édition réduite géographiquement (Afrique + Am. latine seulement)",
+        "Données de la 1ère édition datent de 2019-2021",
+        "Ne mesure pas le flux transfrontalier de données ni la dépendance aux clouds étrangers",
+        "Scores agrégés parfois difficiles à interpréter sans contexte"
+      ],
+      "complementarite_myne": "MYNε peut compléter le GDB en ajoutant un pilier 'Souveraineté Intentionnelle' mesurant la localisation des données, la dépendance aux hyperscalers, et la capacité d'autonomie décisionnelle sur les politiques data."
+    },
+    {
+      "id": 4,
+      "nom_complet": "OECD Digital Government Index (DGI)",
+      "organisme_emetteur": "OCDE (Organisation de Coopération et de Développement Économiques)",
+      "frequence": "Biennale (pilote 2020, 2ème édition 2023)",
+      "derniere_edition": "2023 (données 2020-2022, 33 pays OCDE + 4 pays en accession + 1 partenaire)",
+      "methodologie": {
+        "description": "Benchmark des fondations nécessaires à la transformation numérique du secteur public. Score 0-1.",
+        "dimensions": [
+          "Digital by Design: institutionnalisation du numérique dans la gouvernance (avg OCDE: 0.684)",
+          "Data-driven Public Sector: utilisation des données pour la prise de décision",
+          "Government as a Platform: interopérabilité et écosystèmes de services",
+          "Open by Default: culture d'ouverture, accès aux données ouvertes (avg OCDE: 0.53)",
+          "User-driven: conception centrée sur l'utilisateur",
+          "Proactiveness: anticipation des besoins citoyens (avg OCDE: 0.57)"
+        ],
+        "nombre_data_points": 155,
+        "echelle": "0-1",
+        "collecte": "OECD Survey on Digital Government 2.0, validé par les Senior Digital Government Officials (E-Leaders)"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 0.72,
+          "rang_top10": true
+        },
+        "Germany": {
+          "score": null,
+          "note": "Données non incluses dans l'édition 2023"
+        },
+        "Italy": {
+          "score": null,
+          "note": "Environ 0.50-0.55 estimé"
+        },
+        "Spain": {
+          "score": null,
+          "note": "Environ 0.55-0.60 estimé"
+        },
+        "Netherlands": {
+          "score": null,
+          "note": "Environ 0.60 estimé"
+        },
+        "Belgium": {
+          "score": null
+        },
+        "Portugal": {
+          "score": null
+        },
+        "Poland": {
+          "score": null
+        },
+        "Sweden": {
+          "score": null
+        },
+        "Denmark": {
+          "score": 0.81,
+          "rang": 2
+        },
+        "Estonia": {
+          "score": 0.73,
+          "rang_top10": true
+        },
+        "Morocco": {
+          "score": null,
+          "note": "Non membre OCDE — non couvert"
+        },
+        "Tunisia": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Nigeria": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Kenya": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "South Africa": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Senegal": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Ethiopia": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Côte d'Ivoire": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Ghana": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Egypt": {
+          "score": null,
+          "note": "Non couvert"
+        },
+        "Rwanda": {
+          "score": null,
+          "note": "Non couvert"
+        }
+      },
+      "top_10_global": [
+        "Korea (0.935)",
+        "Denmark (0.81)",
+        "United Kingdom (0.78)",
+        "Norway",
+        "Australia",
+        "Estonia",
+        "Colombia",
+        "Ireland",
+        "France",
+        "Canada"
+      ],
+      "moyenne_ocde": 0.605,
+      "forces": [
+        "Méthodologie rigoureuse validée par les gouvernements eux-mêmes",
+        "Couvre le cycle complet: stratégie → politiques → mise en œuvre → monitoring",
+        "Focus sur la transformation digitale centrée sur l'humain",
+        "6 dimensions complémentaires et transversales"
+      ],
+      "limites": [
+        "Limité aux pays OCDE (38 membres) — exclut totalement l'Afrique",
+        "Ne couvre pas le Maroc, la Tunisie, ni aucun pays africain",
+        "Mesure les 'fondations' pas les résultats concrets pour les citoyens",
+        "Données collectées jusqu'en octobre 2022 — retard de publication"
+      ],
+      "complementarite_myne": "MYNε devrait étendre le modèle DGI aux pays non-OCDE du corridor en adaptant les dimensions (ex: 'Government as a Platform' dans un contexte africain de mobile-first). Ajouter une dimension 'Souveraineté de l'Infrastructure Cloud Publique'."
+    },
+    {
+      "id": 5,
+      "nom_complet": "ICT Development Index (IDI)",
+      "organisme_emetteur": "ITU (Union Internationale des Télécommunications, ONU)",
+      "frequence": "Annuelle (méthodologie révisée v3.1 depuis 2023)",
+      "derniere_edition": "IDI 2025 (3ème édition de la nouvelle méthodologie)",
+      "methodologie": {
+        "description": "Mesure le développement TIC axé sur la connectivité universelle et significative. Score 0-100. Couvre 170+ pays.",
+        "dimensions": [
+          "Universal Connectivity Pillar: couverture réseau 3G+, abonnements haut débit mobile, pourcentage utilisateurs Internet, coût mobile données/voix, taux possession smartphone",
+          "Meaningful Connectivity Pillar: trafic haut débit mobile, vitesse Internet, compétences numériques, sécurité en ligne"
+        ],
+        "nombre_indicateurs": 10,
+        "echelle": "0-100",
+        "collecte": "Données officielles des régulateurs télécoms nationaux, collectées par ITU via les États membres"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 95.2,
+          "note": "Estimé à partir du ranking régional"
+        },
+        "Germany": {
+          "score": 94.8
+        },
+        "Italy": {
+          "score": 92.5
+        },
+        "Spain": {
+          "score": 93.0
+        },
+        "Netherlands": {
+          "score": 95.5
+        },
+        "Belgium": {
+          "score": 94.0
+        },
+        "Portugal": {
+          "score": 92.0
+        },
+        "Poland": {
+          "score": 91.0
+        },
+        "Sweden": {
+          "score": 95.7
+        },
+        "Denmark": {
+          "score": 97.9
+        },
+        "Estonia": {
+          "score": 98.5
+        },
+        "Morocco": {
+          "score": 86.8,
+          "rang_afrique": 2
+        },
+        "Tunisia": {
+          "score": 79.6
+        },
+        "Nigeria": {
+          "score": null,
+          "note": "Estimé 55-65 range"
+        },
+        "Kenya": {
+          "score": null,
+          "note": "Estimé 60-70 range"
+        },
+        "South Africa": {
+          "score": 85.0,
+          "rang_afrique": 5
+        },
+        "Senegal": {
+          "score": null,
+          "note": "Estimé 50-60 range"
+        },
+        "Ethiopia": {
+          "score": null,
+          "note": "Estimé 35-45 range"
+        },
+        "Côte d'Ivoire": {
+          "score": null,
+          "note": "Estimé 50-60 range"
+        },
+        "Ghana": {
+          "score": null,
+          "note": "Estimé 55-65 range"
+        },
+        "Egypt": {
+          "score": null,
+          "note": "Estimé 75-80 range"
+        },
+        "Rwanda": {
+          "score": null,
+          "note": "Estimé 45-55 range"
+        }
+      },
+      "score_moyen_global": 74.8,
+      "score_min": 21.3,
+      "score_max": 100.0,
+      "forces": [
+        "Couverture massive: 170+ pays — la meilleure couverture de tous les indices",
+        "Données officielles des gouvernements (pas d'enquêtes subjectives)",
+        "Méthodologie révisée en 2023 par groupes d'experts internationaux",
+        "Focus sur la connectivité 'significative' (qualité, pas juste quantité)",
+        "Mandaté par les États membres de l'ITU"
+      ],
+      "limites": [
+        "Focus étroit sur la connectivité — ne mesure pas la gouvernance des données",
+        "Pas de dimension souveraineté, vie privée, ou droits numériques",
+        "58% des données étaient estimées dans l'ancienne méthodologie",
+        "Ne capture pas la qualité de l'expérience utilisateur réelle"
+      ],
+      "complementarite_myne": "Le IDI fournit l'infrastructure de base — MYNε peut l'utiliser comme socle et superposer les dimensions de souveraineté: sur cette infrastructure, qui contrôle les données? Où transitent-elles? Quelles protections existent?"
+    },
+    {
+      "id": 6,
+      "nom_complet": "Democracy Index (composante numérique)",
+      "organisme_emetteur": "Economist Intelligence Unit (EIU)",
+      "frequence": "Annuelle (depuis 2006)",
+      "derniere_edition": "2024 (167 pays)",
+      "methodologie": {
+        "description": "Index composite mesurant la qualité de la démocratie. Score 0-10. Pas de pilier numérique dédié mais les libertés civiles incluent la liberté d'expression en ligne.",
+        "dimensions": [
+          "Electoral Process and Pluralism",
+          "Functioning of Government (avg mondiale: 4.53, le plus bas)",
+          "Political Participation",
+          "Political Culture",
+          "Civil Liberties (inclut expression en ligne, vie privée numérique) — plus forte baisse: -1.00 depuis 2008"
+        ],
+        "echelle": "0-10 (Full Democracy: 8.01-10, Flawed Democracy: 6.01-8, Hybrid: 4.01-6, Authoritarian: 0-4)",
+        "collecte": "Évaluations par experts EIU + enquêtes représentatives"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 7.99,
+          "rang": 26,
+          "categorie": "Flawed Democracy",
+          "note": "Rétrogradé de Full à Flawed en 2024"
+        },
+        "Germany": {
+          "score": 8.73,
+          "rang": 12,
+          "categorie": "Full Democracy"
+        },
+        "Italy": {
+          "score": 7.58,
+          "rang": null,
+          "categorie": "Flawed Democracy"
+        },
+        "Spain": {
+          "score": 8.13,
+          "rang": null,
+          "categorie": "Full Democracy"
+        },
+        "Netherlands": {
+          "score": 9.0,
+          "rang": null,
+          "categorie": "Full Democracy"
+        },
+        "Belgium": {
+          "score": null,
+          "note": "Environ 7.5-8.0"
+        },
+        "Portugal": {
+          "score": 8.08,
+          "rang": null,
+          "categorie": "Full Democracy",
+          "note": "Promu Full Democracy en 2024"
+        },
+        "Poland": {
+          "score": 7.4,
+          "categorie": "Flawed Democracy"
+        },
+        "Sweden": {
+          "score": 9.39,
+          "rang": 3,
+          "categorie": "Full Democracy"
+        },
+        "Denmark": {
+          "score": 9.28,
+          "rang": null,
+          "categorie": "Full Democracy"
+        },
+        "Estonia": {
+          "score": 8.13,
+          "rang": null,
+          "categorie": "Full Democracy",
+          "note": "Promu Full Democracy en 2024"
+        },
+        "Morocco": {
+          "score": 4.97,
+          "categorie": "Hybrid Regime"
+        },
+        "Tunisia": {
+          "score": 4.71,
+          "rang": 93,
+          "categorie": "Hybrid Regime",
+          "note": "Forte baisse depuis 2021"
+        },
+        "Nigeria": {
+          "score": 4.16,
+          "rang": 106,
+          "categorie": "Authoritarian"
+        },
+        "Kenya": {
+          "score": 5.05,
+          "rang": 89,
+          "categorie": "Hybrid Regime"
+        },
+        "South Africa": {
+          "score": 7.16,
+          "rang": 43,
+          "categorie": "Flawed Democracy"
+        },
+        "Senegal": {
+          "score": null,
+          "note": "Estimé 5.5-6.0, Hybrid regime"
+        },
+        "Ethiopia": {
+          "score": 3.24,
+          "rang": 116,
+          "categorie": "Authoritarian"
+        },
+        "Côte d'Ivoire": {
+          "score": 4.22,
+          "rang": 105,
+          "categorie": "Authoritarian"
+        },
+        "Ghana": {
+          "score": null,
+          "note": "Estimé 6.0-6.5, Flawed Democracy"
+        },
+        "Egypt": {
+          "score": 2.79,
+          "rang": 128,
+          "categorie": "Authoritarian"
+        },
+        "Rwanda": {
+          "score": 3.34,
+          "rang": 114,
+          "categorie": "Authoritarian"
+        }
+      },
+      "score_moyen_mondial": 5.17,
+      "tendance": "Baisse continue depuis 2006 (5.52) jusqu'au plus bas historique (5.17) en 2024",
+      "forces": [
+        "167 pays couverts — excellente couverture mondiale",
+        "Données longitudinales depuis 2006",
+        "Catégorisation claire en 4 types de régimes",
+        "Civil liberties inclut partiellement les droits numériques"
+      ],
+      "limites": [
+        "Pas de pilier numérique dédié — le digital est noyé dans Civil Liberties",
+        "Méthodologie partiellement opaque (EIU propriétaire)",
+        "Ne mesure pas la souveraineté des données ni la gouvernance numérique",
+        "Biais potentiel vers le modèle démocratique occidental"
+      ],
+      "complementarite_myne": "MYNε peut extraire et amplifier la dimension numérique que l'EIU noie dans les libertés civiles. Créer un sous-indice 'Démocratie Numérique' spécifique avec: transparence algorithmique, participation en ligne, accès à l'information, protection des lanceurs d'alerte numériques."
+    },
+    {
+      "id": 7,
+      "nom_complet": "#KeepItOn Internet Shutdown Tracker",
+      "organisme_emetteur": "Access Now (ONG) + coalition #KeepItOn",
+      "frequence": "Annuelle (rapport) + suivi continu en temps réel",
+      "derniere_edition": "2024 (rapport publié février 2025)",
+      "methodologie": {
+        "description": "Recense et documente les coupures d'Internet imposées par les autorités dans le monde. Données qualitatives et quantitatives.",
+        "dimensions": [
+          "Nombre de coupures par pays",
+          "Durée des coupures",
+          "Type (coupure totale, ralentissement, blocage de plateformes)",
+          "Contexte (élections, manifestations, examens, conflit)",
+          "Justification officielle vs. impact réel"
+        ],
+        "echelle": "Comptage absolu de shutdowns (pas de score composite)",
+        "collecte": "Réseau mondial de journalistes, société civile, techniciens, rapports utilisateurs"
+      },
+      "scores_corridor": {
+        "France": {
+          "shutdowns_2024": 0
+        },
+        "Germany": {
+          "shutdowns_2024": 0
+        },
+        "Italy": {
+          "shutdowns_2024": 0
+        },
+        "Spain": {
+          "shutdowns_2024": 0
+        },
+        "Netherlands": {
+          "shutdowns_2024": 0
+        },
+        "Belgium": {
+          "shutdowns_2024": 0
+        },
+        "Portugal": {
+          "shutdowns_2024": 0
+        },
+        "Poland": {
+          "shutdowns_2024": 0
+        },
+        "Sweden": {
+          "shutdowns_2024": 0
+        },
+        "Denmark": {
+          "shutdowns_2024": 0
+        },
+        "Estonia": {
+          "shutdowns_2024": 0
+        },
+        "Morocco": {
+          "shutdowns_2024": 0,
+          "note": "Pas de coupure documentée en 2024"
+        },
+        "Tunisia": {
+          "shutdowns_2024": 0
+        },
+        "Nigeria": {
+          "shutdowns_2024": null,
+          "note": "Historique de coupures mais pas en 2024"
+        },
+        "Kenya": {
+          "shutdowns_2024": 1,
+          "note": "Coupure de ~7h pendant les manifestations anti-taxes juin 2024 — première jamais au Kenya"
+        },
+        "South Africa": {
+          "shutdowns_2024": 0
+        },
+        "Senegal": {
+          "shutdowns_2024": null,
+          "note": "Historique récent de coupures"
+        },
+        "Ethiopia": {
+          "shutdowns_2024": null,
+          "note": "Pays parmi les pires historiquement, amélioration en 2024"
+        },
+        "Côte d'Ivoire": {
+          "shutdowns_2024": 0
+        },
+        "Ghana": {
+          "shutdowns_2024": 0
+        },
+        "Egypt": {
+          "shutdowns_2024": 0
+        },
+        "Rwanda": {
+          "shutdowns_2024": 0
+        }
+      },
+      "stats_globales_2024": {
+        "total_shutdowns": 296,
+        "pays_concernes": 54,
+        "augmentation_vs_2022": "35% d'augmentation du nombre de pays",
+        "pires_pays": [
+          "Myanmar (85)",
+          "India (84)",
+          "Pakistan (21)",
+          "Russia (19)"
+        ],
+        "note": "Pire année jamais enregistrée"
+      },
+      "forces": [
+        "Données en temps réel sur les coupures Internet",
+        "Réseau de détection mondial avec vérification multiple",
+        "Contextualisation politique de chaque coupure",
+        "Advocacy efficace et médiatisation"
+      ],
+      "limites": [
+        "Métrique binaire (shutdown ou pas) — ne mesure pas la censure subtile",
+        "Pas de score composite permettant la comparaison inter-pays au-delà du comptage",
+        "Certaines coupures peuvent passer inaperçues dans les pays fermés",
+        "Ne mesure pas le throttling (ralentissement intentionnel) non documenté"
+      ],
+      "complementarite_myne": "MYNε peut intégrer les données Access Now comme indicateur négatif dans son indice, et aller plus loin: mesurer le throttling, le DPI (Deep Packet Inspection), le filtrage SNI, la manipulation DNS — les formes subtiles de contrôle que les shutdowns ne capturent pas."
+    },
+    {
+      "id": 8,
+      "nom_complet": "Data Protection Laws Assessment",
+      "organisme_emetteur": "Privacy International / UNCTAD / DLA Piper (multiples sources agrégées)",
+      "frequence": "Continue (mises à jour régulières)",
+      "derniere_edition": "2025-2026 (données continues)",
+      "methodologie": {
+        "description": "Cartographie de l'existence et du niveau de la législation sur la protection des données par pays. Classification qualitative.",
+        "dimensions": [
+          "Existence d'une loi-cadre sur la protection des données",
+          "Couverture: données personnelles, santé, finances, télécoms",
+          "Mécanismes d'application (DPA indépendante)",
+          "Sanctions prévues (financières, pénales)",
+          "Alignement RGPD / Convention 108+"
+        ],
+        "echelle": "Qualitative (Legislation in 1-4 areas, ou classification UNCTAD)",
+        "collecte": "Analyse juridique comparative, contributions d'experts locaux"
+      },
+      "scores_corridor": {
+        "France": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Germany": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Italy": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Spain": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Netherlands": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Belgium": {
+          "legislation_areas": 3,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Portugal": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Poland": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Sweden": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Denmark": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Estonia": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Plein (État membre UE)"
+        },
+        "Morocco": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Loi 09-08, CNDP)",
+          "note": "Convention 108 ratifiée"
+        },
+        "Tunisia": {
+          "legislation_areas": 3,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Loi organique 2004)"
+        },
+        "Nigeria": {
+          "legislation_areas": 3,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (NDPA 2023)"
+        },
+        "Kenya": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Data Protection Act 2019)"
+        },
+        "South Africa": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (POPIA 2013/2020)"
+        },
+        "Senegal": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Loi 2008)",
+          "note": "CDP active"
+        },
+        "Ethiopia": {
+          "legislation_areas": 2,
+          "dpa_independante": false,
+          "alignement_rgpd": "Faible"
+        },
+        "Côte d'Ivoire": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Loi 2013, ARTCI)"
+        },
+        "Ghana": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Data Protection Act 2012)"
+        },
+        "Egypt": {
+          "legislation_areas": 4,
+          "dpa_independante": false,
+          "alignement_rgpd": "Faible (Loi 151/2020, pas encore pleinement appliquée)"
+        },
+        "Rwanda": {
+          "legislation_areas": 4,
+          "dpa_independante": true,
+          "alignement_rgpd": "Partiel (Loi 2021)"
+        }
+      },
+      "forces": [
+        "Couverture quasi-universelle (194 pays suivis par UNCTAD)",
+        "Suivi de l'évolution législative en temps réel",
+        "Comparaison possible avec le standard RGPD"
+      ],
+      "limites": [
+        "Pas de score numérique composite — comparaison difficile",
+        "L'existence d'une loi ne garantit pas son application effective",
+        "Ne mesure pas les capacités de l'autorité de protection des données",
+        "Pas de mesure de l'efficacité ou de l'impact réel sur les citoyens"
+      ],
+      "complementarite_myne": "MYNε doit aller au-delà de l'existence légale pour mesurer l'effectivité: budget de la DPA, nombre de sanctions, délai de traitement des plaintes, sensibilisation du public. C'est le gap majeur entre la loi et la pratique."
+    },
+    {
+      "id": 9,
+      "nom_complet": "European Data Market Monitoring Tool",
+      "organisme_emetteur": "IDC pour la Commission Européenne (DG CONNECT)",
+      "frequence": "Trisannuelle (2013-2016, 2017-2020, 2021-2023, 2024-2026)",
+      "derniere_edition": "EDM 2024-2026 (données 2023)",
+      "methodologie": {
+        "description": "Quantifie la valeur du marché européen des données et de l'économie de la donnée dans l'UE27.",
+        "dimensions": [
+          "Data Market Value: valeur du marché des données (produits, services)",
+          "Data Economy Value: impact de la donnée sur l'ensemble de l'économie",
+          "Data Professionals: nombre de professionnels de la donnée",
+          "Data Companies: entreprises dont l'activité principale est liée aux données",
+          "Data Skills: compétences disponibles en science des données",
+          "Data Users: organisations utilisant des données pour leurs décisions"
+        ],
+        "echelle": "Valeurs monétaires (€), comptages absolus",
+        "collecte": "Enquêtes IDC, données Eurostat, modélisation économétrique"
+      },
+      "scores_corridor": {
+        "France": {
+          "part_marche_eu": "17.3%",
+          "rang_eu": 2
+        },
+        "Germany": {
+          "part_marche_eu": "27.4%",
+          "rang_eu": 1
+        },
+        "Italy": {
+          "part_marche_eu": "~10%",
+          "rang_eu": 3
+        },
+        "Spain": {
+          "part_marche_eu": "~7%",
+          "rang_eu": 5
+        },
+        "Netherlands": {
+          "part_marche_eu": "~7%",
+          "rang_eu": 4
+        },
+        "Belgium": {
+          "note": "Couvert mais pas dans le top 5"
+        },
+        "Portugal": {
+          "note": "Couvert"
+        },
+        "Poland": {
+          "note": "Couvert"
+        },
+        "Sweden": {
+          "note": "Couvert"
+        },
+        "Denmark": {
+          "note": "Couvert"
+        },
+        "Estonia": {
+          "note": "Couvert"
+        },
+        "Morocco": {
+          "note": "Non couvert (hors UE)"
+        },
+        "Tunisia": {
+          "note": "Non couvert"
+        },
+        "Nigeria": {
+          "note": "Non couvert"
+        },
+        "Kenya": {
+          "note": "Non couvert"
+        },
+        "South Africa": {
+          "note": "Non couvert"
+        },
+        "Senegal": {
+          "note": "Non couvert"
+        },
+        "Ethiopia": {
+          "note": "Non couvert"
+        },
+        "Côte d'Ivoire": {
+          "note": "Non couvert"
+        },
+        "Ghana": {
+          "note": "Non couvert"
+        },
+        "Egypt": {
+          "note": "Non couvert"
+        },
+        "Rwanda": {
+          "note": "Non couvert"
+        }
+      },
+      "chiffres_cles_2023": {
+        "data_market_eu27": "€91 milliards (2023)",
+        "data_economy_eu27": "€544 milliards (2023)",
+        "data_economy_pct_gdp": "4.2%",
+        "croissance_annuelle": "9.3%",
+        "prevision_2030_baseline": "€118 milliards (marché) / €723-995 milliards (économie)"
+      },
+      "forces": [
+        "Seule étude quantifiant la valeur monétaire du marché des données en Europe",
+        "Données longitudinales depuis 2013",
+        "3 scénarios prospectifs (baseline, high growth, challenge)",
+        "Commanditée par la Commission Européenne — influence politique directe"
+      ],
+      "limites": [
+        "Exclusivement UE27 — zéro couverture africaine",
+        "Méthodologie IDC propriétaire (pas totalement transparente)",
+        "Ne mesure pas la souveraineté mais la valeur marchande",
+        "Pas de dimension équité ou inclusion dans la distribution de la valeur"
+      ],
+      "complementarite_myne": "MYNε pourrait créer un 'African Data Market Monitor' miroir, quantifiant la valeur de l'économie de la donnée africaine et les fuites de valeur vers les hyperscalers étrangers. Métrique clé absente: le % de la valeur data captée localement vs. exportée."
+    },
+    {
+      "id": 10,
+      "nom_complet": "McKinsey Global Data Economy Reports",
+      "organisme_emetteur": "McKinsey Global Institute (MGI)",
+      "frequence": "Ad hoc (rapports majeurs: 2011, 2016, 2021, mises à jour régulières)",
+      "derniere_edition": "Multiple rapports thématiques continus (pas d'indice unique)",
+      "methodologie": {
+        "description": "Analyses stratégiques de la valeur économique des données et de l'IA. Pas un indice à proprement parler mais des estimations de marché.",
+        "dimensions": [
+          "Valeur économique totale des données (estimation globale)",
+          "Cross-border data flows et leur impact sur le PIB",
+          "Potentiel de création de valeur par l'IA et les données",
+          "Maturité data des entreprises par secteur et région",
+          "Investissements en infrastructure data et cloud"
+        ],
+        "echelle": "Valeurs monétaires ($), pourcentages PIB",
+        "collecte": "Enquêtes McKinsey, données publiques, modélisation économique"
+      },
+      "scores_corridor": {
+        "note_generale": "McKinsey ne produit pas de score par pays. Fournit des estimations régionales et sectorielles."
+      },
+      "estimations_cles": {
+        "cross_border_data_flows_impact_pib": "Estimé à 10.1% du PIB mondial (2014 MGI)",
+        "ai_potential_value_2030": "$13 trillions d'impact PIB mondial potentiel",
+        "data_economy_global_estimate": "$3+ trillions annuels"
+      },
+      "forces": [
+        "Analyses stratégiques de très haute qualité utilisées par les décideurs",
+        "Estimations macroéconomiques des flux de données transfrontaliers",
+        "Focus sur la création de valeur et l'impact business"
+      ],
+      "limites": [
+        "Pas d'indice ou ranking pays — inutilisable directement pour benchmarking",
+        "Méthodologie propriétaire et non reproductible",
+        "Focus sur les économies développées et les grandes entreprises",
+        "Biais consulting (perspective des grands clients McKinsey)"
+      ],
+      "complementarite_myne": "MYNε peut s'inspirer des frameworks McKinsey pour la dimension économique tout en créant des métriques par pays que McKinsey ne fournit pas. Focus: valeur data générée par pays × % captée localement = 'Ratio de Souveraineté Économique Data'."
+    },
+    {
+      "id": 11,
+      "nom_complet": "World Development Indicators — Digital Development",
+      "organisme_emetteur": "Banque Mondiale",
+      "frequence": "Continue (trimestrielle) + rapports thématiques",
+      "derniere_edition": "WDI mis à jour décembre 2024 (Digital Development Dashboard)",
+      "methodologie": {
+        "description": "Collection massive d'indicateurs de développement incluant des métriques numériques. Pas un indice composite mais une base de données.",
+        "dimensions": [
+          "Infrastructure: abonnements haut débit fixe/mobile, serveurs sécurisés",
+          "Accès: % population utilisant Internet, couverture mobile",
+          "Économie numérique: exportations services TIC, entreprises tech",
+          "Gouvernance: e-government, données ouvertes",
+          "Capital humain: compétences numériques, formation STEM"
+        ],
+        "echelle": "Indicateurs individuels (pas de score composite)",
+        "collecte": "Données officielles des gouvernements, partenariats avec ITU, UNESCO, etc."
+      },
+      "scores_corridor": {
+        "note": "La Banque Mondiale fournit des indicateurs individuels par pays, pas de score agrégé. Exemples d'indicateurs disponibles pour les pays du corridor: % Internet users, mobile cellular subscriptions per 100 people, secure internet servers per million, etc. Tous les 22 pays du corridor sont couverts."
+      },
+      "forces": [
+        "Couverture universelle (217 économies)",
+        "Données officielles et standardisées",
+        "Gratuitement accessible via API et portail data",
+        "Mise à jour régulière",
+        "Classifications par niveau de revenu utiles pour l'analyse"
+      ],
+      "limites": [
+        "Pas d'indice composite — nécessite un travail d'agrégation",
+        "Retard de publication de certains indicateurs (2-3 ans)",
+        "Pas de dimension souveraineté, vie privée ou droits numériques",
+        "Indicateurs trop basiques (connectivité) pour la souveraineté data"
+      ],
+      "complementarite_myne": "MYNε peut utiliser les WDI comme données d'entrée pour son indice et les enrichir avec des dimensions manquantes. La Banque Mondiale fournit le 'quoi' (infrastructure), MYNε ajouterait le 'qui contrôle' et le 'pour qui'."
+    },
+    {
+      "id": 12,
+      "nom_complet": "Digital Economy Report",
+      "organisme_emetteur": "CNUCED / UNCTAD (Nations Unies)",
+      "frequence": "Biennale (2019, 2021, 2024)",
+      "derniere_edition": "2024 — Thème: empreinte environnementale de la numérisation",
+      "methodologie": {
+        "description": "Rapport analytique sur l'économie numérique mondiale avec focus pays en développement. Pas un indice mais une analyse qualitative et quantitative.",
+        "dimensions": [
+          "E-commerce: $27 trillions de ventes B2B en 2022 (43 pays)",
+          "Services numériques: exportations, part dans le commerce",
+          "Concentration: domination des plateformes géantes",
+          "Inégalités numériques: fossé Nord-Sud dans la capture de valeur",
+          "Impact environnemental: consommation énergie data centers (460 TWh en 2022, = France)"
+        ],
+        "echelle": "Analyses qualitatives + données quantitatives (pas de score pays)",
+        "collecte": "Données UNCTAD, enquêtes, données douanières, publications académiques"
+      },
+      "donnees_cles": {
+        "pct_services_numeriques_exports_avances": "60%+",
+        "pct_services_numeriques_exports_pvd": "44%",
+        "pct_services_numeriques_exports_pma": "15%",
+        "exportations_services_numeriques_pvd_2024": "$1.1 trillion (20% du total mondial)",
+        "concentration_investissements": "80% des projets greenfield numériques dans le Sud mondial concentrés dans 10 pays, principalement asiatiques"
+      },
+      "forces": [
+        "Perspective unique des pays en développement (voix du Sud)",
+        "Analyse des asymétries de pouvoir dans l'économie numérique",
+        "Données sur les flux transfrontaliers de données",
+        "Cadre analytique pour les négociations multilatérales"
+      ],
+      "limites": [
+        "Pas d'indice ou de ranking par pays",
+        "Données disparates et incomplètes pour de nombreux pays",
+        "Biennale = retard par rapport à l'évolution rapide du numérique",
+        "Focus descriptif plus que prescriptif"
+      ],
+      "complementarite_myne": "UNCTAD fournit le cadre analytique des asymétries — MYNε peut opérationnaliser cette analyse en métriques quantifiables: ratio de dépendance cloud, balance commerciale data, capacité de traitement local AI."
+    },
+    {
+      "id": 13,
+      "nom_complet": "Global Competitiveness Index — ICT Adoption Pillar",
+      "organisme_emetteur": "World Economic Forum (WEF)",
+      "frequence": "Annuelle (dernière édition complète: 2019, suspendue ensuite)",
+      "derniere_edition": "2019 (GCI 4.0) — SUSPENDU depuis COVID, pas de nouvelle édition",
+      "methodologie": {
+        "description": "Pilier 'ICT Adoption' du GCI mesurant l'adoption des TIC comme facteur de compétitivité nationale. Score 0-100.",
+        "dimensions": [
+          "Mobile-cellular telephone subscriptions per 100 pop",
+          "Mobile-broadband subscriptions per 100 pop",
+          "Fixed-broadband Internet subscriptions per 100 pop",
+          "Fibre Internet subscriptions per 100 pop",
+          "Internet users % of population"
+        ],
+        "echelle": "0-100",
+        "collecte": "Données ITU, enquêtes WEF auprès de dirigeants d'entreprise"
+      },
+      "scores_corridor_2019": {
+        "France": {
+          "score_global": 78.8,
+          "rang": 15
+        },
+        "Germany": {
+          "score_global": 81.8,
+          "rang": 7
+        },
+        "Italy": {
+          "score_global": 71.5,
+          "rang": 30
+        },
+        "Spain": {
+          "score_global": 75.3,
+          "rang": 23
+        },
+        "Netherlands": {
+          "score_global": 82.4,
+          "rang": 4
+        },
+        "Belgium": {
+          "score_global": 76.4,
+          "rang": 22
+        },
+        "Portugal": {
+          "score_global": 70.4,
+          "rang": 34
+        },
+        "Poland": {
+          "score_global": 68.9,
+          "rang": 37
+        },
+        "Sweden": {
+          "score_global": 81.2,
+          "rang": 8
+        },
+        "Denmark": {
+          "score_global": 81.2,
+          "rang": 10
+        },
+        "Estonia": {
+          "score_global": 70.9,
+          "rang": 31
+        },
+        "Morocco": {
+          "score_global": 60.0,
+          "rang": 75
+        },
+        "Tunisia": {
+          "score_global": null,
+          "note": "Environ rang 80-90"
+        },
+        "Nigeria": {
+          "score_global": null,
+          "note": "Non classé dans les données disponibles"
+        },
+        "Kenya": {
+          "score_global": 54.1,
+          "rang": 95
+        },
+        "South Africa": {
+          "score_global": null,
+          "note": "Environ rang 60"
+        },
+        "Senegal": {
+          "score_global": null
+        },
+        "Ethiopia": {
+          "score_global": null,
+          "note": "Environ rang 120+"
+        },
+        "Côte d'Ivoire": {
+          "score_global": null
+        },
+        "Ghana": {
+          "score_global": 51.2,
+          "rang": 111
+        },
+        "Egypt": {
+          "score_global": 54.5,
+          "rang": 93
+        },
+        "Rwanda": {
+          "score_global": 52.8,
+          "rang": 100
+        }
+      },
+      "champion_ict_adoption": "South Korea (91.3 — score quasi-parfait sur le pilier ICT Adoption)",
+      "forces": [
+        "Intégration du numérique dans un framework de compétitivité globale",
+        "140+ pays couverts",
+        "Combinaison données objectives + enquêtes dirigeants",
+        "Renommée mondiale du WEF"
+      ],
+      "limites": [
+        "SUSPENDU depuis 2019 — données obsolètes",
+        "Pilier ICT limité à l'adoption (pas la gouvernance ou la souveraineté)",
+        "Ne mesure que la connectivité, pas l'usage intelligent des données",
+        "Enquête dirigeants = biais vers les grandes entreprises multinationales"
+      ],
+      "complementarite_myne": "Si le WEF relance le GCI, MYNε peut proposer un pilier enrichi 'Digital Sovereignty' en remplacement du pilier ICT Adoption basique. Sinon, MYNε remplace de facto cette dimension manquante dans le paysage."
+    },
+    {
+      "id": 14,
+      "nom_complet": "Network Readiness Index (NRI)",
+      "organisme_emetteur": "Portulans Institute (Washington DC)",
+      "frequence": "Annuelle (depuis 2002, méthodologie rénovée depuis 2019)",
+      "derniere_edition": "NRI 2025 (127 pays, 53 indicateurs)",
+      "methodologie": {
+        "description": "Mesure la capacité de préparation réseau et de transformation numérique des pays. Score 0-100.",
+        "dimensions": [
+          "Technology Pillar: Access (tarifs, couverture), Content (GitHub, apps), Future Technologies (IA, robots)",
+          "People Pillar: Individuals (compétences), Businesses (adoption), Governments (services en ligne)",
+          "Governance Pillar: Trust (cybersécurité, serveurs sécurisés), Regulation (qualité réglementaire, e-commerce), Inclusion (e-participation, genre)",
+          "Impact Pillar: Economy (brevets TIC, exports services TIC), SDG Contribution (santé, éducation, énergie)"
+        ],
+        "nombre_indicateurs": 53,
+        "echelle": "0-100",
+        "collecte": "Données secondaires de sources internationales (ITU, Banque Mondiale, WEF, UNESCO, etc.)"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": null,
+          "rang": "~15-20 estimé",
+          "note": "Europe, non confirmé"
+        },
+        "Germany": {
+          "score": null,
+          "rang": "~13-18 estimé"
+        },
+        "Italy": {
+          "score": 62.48,
+          "rang": null,
+          "note": "Visible dans données partielles"
+        },
+        "Spain": {
+          "score": 65.42,
+          "rang": null
+        },
+        "Netherlands": {
+          "score": null,
+          "rang": "~6-10 estimé"
+        },
+        "Belgium": {
+          "score": null
+        },
+        "Portugal": {
+          "score": null
+        },
+        "Poland": {
+          "score": null
+        },
+        "Sweden": {
+          "score": null,
+          "rang": 5
+        },
+        "Denmark": {
+          "score": null,
+          "rang": 4
+        },
+        "Estonia": {
+          "score": null,
+          "rang": "~20-25 estimé"
+        },
+        "Morocco": {
+          "score": 46.38,
+          "rang": 73,
+          "detail": {
+            "technology": 47.8,
+            "people": 37.42,
+            "governance": 55.53,
+            "impact": 44.78
+          }
+        },
+        "Tunisia": {
+          "score": null,
+          "rang": "Estimé 75-85"
+        },
+        "Nigeria": {
+          "score": null,
+          "rang": "Estimé 90-100"
+        },
+        "Kenya": {
+          "score": null,
+          "rang": 77
+        },
+        "South Africa": {
+          "score": null,
+          "rang": 69
+        },
+        "Senegal": {
+          "score": null,
+          "rang": "Estimé 80-90"
+        },
+        "Ethiopia": {
+          "score": null,
+          "rang": "Estimé 100-110"
+        },
+        "Côte d'Ivoire": {
+          "score": null,
+          "rang": "Estimé 85-95"
+        },
+        "Ghana": {
+          "score": null,
+          "rang": "Estimé 85-95"
+        },
+        "Egypt": {
+          "score": null,
+          "rang": "Estimé 70-80"
+        },
+        "Rwanda": {
+          "score": null,
+          "rang": 87
+        }
+      },
+      "top_5_global_2025": [
+        {
+          "rang": 1,
+          "pays": "United States",
+          "score": 79.13
+        },
+        {
+          "rang": 2,
+          "pays": "Finland",
+          "score": 75.82
+        },
+        {
+          "rang": 3,
+          "pays": "Singapore",
+          "score": 75.46
+        },
+        {
+          "rang": 4,
+          "pays": "Denmark"
+        },
+        {
+          "rang": 5,
+          "pays": "Sweden"
+        }
+      ],
+      "top_africa": [
+        {
+          "rang": 58,
+          "pays": "Mauritius"
+        },
+        {
+          "rang": 69,
+          "pays": "South Africa"
+        },
+        {
+          "rang": 77,
+          "pays": "Kenya"
+        }
+      ],
+      "forces": [
+        "127 pays — bonne couverture incluant l'Afrique",
+        "4 piliers équilibrés (technologie, humain, gouvernance, impact)",
+        "53 indicateurs très granulaires",
+        "Analyse par niveau de revenu pertinente pour le corridor EU-Afrique",
+        "Mise à jour annuelle"
+      ],
+      "limites": [
+        "Ne mesure pas la souveraineté des données spécifiquement",
+        "Dépendance aux données secondaires (retard inhérent)",
+        "Pilier 'Governance' ne couvre pas la gouvernance data au sens strict",
+        "Institut relativement peu connu vs. ITU ou WEF"
+      ],
+      "complementarite_myne": "Le NRI est le cadre existant le plus proche de ce que MYNε vise. MYNε devrait: (1) ajouter un 5ème pilier 'Data Sovereignty', (2) enrichir le pilier Governance avec des métriques de protection données + localisation, (3) ajouter un indice de 'dépendance numérique externe'."
+    },
+    {
+      "id": 15,
+      "nom_complet": "GDPR Enforcement Tracker",
+      "organisme_emetteur": "DLA Piper (cabinet d'avocats) + CMS Law",
+      "frequence": "Continue (mise à jour en temps réel) + rapport annuel en janvier",
+      "derniere_edition": "Janvier 2025 (couvrant 2024)",
+      "methodologie": {
+        "description": "Recense toutes les amendes RGPD imposées par les autorités de protection des données en Europe depuis mai 2018.",
+        "dimensions": [
+          "Montant total des amendes par pays",
+          "Nombre d'amendes par pays",
+          "Type de violation (base légale insuffisante, sécurité, droits des personnes)",
+          "Nombre de notifications de violation de données",
+          "Évolution annuelle de l'enforcement"
+        ],
+        "echelle": "Valeurs monétaires (€), comptages",
+        "collecte": "Suivi systématique des décisions des DPA européennes, sources officielles"
+      },
+      "scores_corridor": {
+        "France": {
+          "total_amendes_eur": 888115200,
+          "nombre_amendes": 81,
+          "rang_somme": 2
+        },
+        "Germany": {
+          "total_amendes_eur": 102903054,
+          "nombre_amendes": 218,
+          "notifications_breaches": 27829
+        },
+        "Italy": {
+          "total_amendes_eur": 278179860,
+          "nombre_amendes": 490,
+          "rang_somme": 5
+        },
+        "Spain": {
+          "total_amendes_eur": 136726042,
+          "nombre_amendes": 1055,
+          "note": "Plus actif en nombre de sanctions"
+        },
+        "Netherlands": {
+          "total_amendes_eur": 353395500,
+          "nombre_amendes": 42,
+          "notifications_breaches": 33471,
+          "note": "Leader en notifications de breaches"
+        },
+        "Belgium": {
+          "note": "Amendes modérées, DPA active"
+        },
+        "Portugal": {
+          "note": "Amendes limitées"
+        },
+        "Poland": {
+          "total_amendes_eur": 21445978,
+          "nombre_amendes": 107,
+          "notifications_breaches": 14286
+        },
+        "Sweden": {
+          "note": "Amendes modérées"
+        },
+        "Denmark": {
+          "note": "Amendes modérées"
+        },
+        "Estonia": {
+          "note": "Amendes faibles (petite économie)"
+        },
+        "Morocco": {
+          "note": "Hors scope RGPD — CNDP applique Loi 09-08"
+        },
+        "Tunisia": {
+          "note": "Hors scope RGPD — INPDP peu active"
+        },
+        "Nigeria": {
+          "note": "Hors scope RGPD"
+        },
+        "Kenya": {
+          "note": "Hors scope RGPD — ODPC applique DPA 2019"
+        },
+        "South Africa": {
+          "note": "Hors scope RGPD — Information Regulator applique POPIA"
+        },
+        "Senegal": {
+          "note": "Hors scope RGPD"
+        },
+        "Ethiopia": {
+          "note": "Hors scope RGPD — pas de DPA"
+        },
+        "Côte d'Ivoire": {
+          "note": "Hors scope RGPD"
+        },
+        "Ghana": {
+          "note": "Hors scope RGPD"
+        },
+        "Egypt": {
+          "note": "Hors scope RGPD"
+        },
+        "Rwanda": {
+          "note": "Hors scope RGPD"
+        }
+      },
+      "totaux_globaux": {
+        "total_amendes_depuis_2018": "€5.88 milliards",
+        "nombre_total_amendes": 2245,
+        "plus_grosse_amende": "€1.2 milliards (Meta, Irlande, 2023)",
+        "top_pays_somme": [
+          "Ireland (€4.04B)",
+          "France (€888M)",
+          "Luxembourg (€746M)",
+          "Netherlands (€353M)",
+          "Italy (€278M)"
+        ]
+      },
+      "forces": [
+        "Données exhaustives et vérifiées en temps réel",
+        "Transparence totale sur chaque décision",
+        "Permet de mesurer l'effectivité réelle du RGPD",
+        "Comparaison inter-pays de l'enforcement"
+      ],
+      "limites": [
+        "Limité à l'espace RGPD (EEA + UK) — pas de couverture africaine",
+        "Le montant des amendes ne reflète pas nécessairement la qualité de la protection",
+        "Concentration des amendes sur les Big Tech (biais structurel)",
+        "Ne mesure pas la souveraineté mais la conformité réglementaire"
+      ],
+      "complementarite_myne": "MYNε devrait créer un 'Data Enforcement Tracker' équivalent pour le corridor africain, mesurant l'activité des DPA africaines (CNDP Maroc, ODPC Kenya, Information Regulator SA, CDP Sénégal, etc.). Métrique clé: ratio amendes/PIB comme indicateur d'effectivité."
+    },
+    {
+      "id": 16,
+      "nom_complet": "Global Digitalization Index (GDI)",
+      "organisme_emetteur": "Huawei Technologies",
+      "frequence": "Annuelle (depuis 2022)",
+      "derniere_edition": "GDI 2024 (77 pays)",
+      "methodologie": {
+        "description": "Mesure la maturité de la transformation numérique des pays, avec focus sur l'infrastructure digitale.",
+        "dimensions": [
+          "Digital Infrastructure: computing, stockage, cloud, 5G, fibre",
+          "Digital Applications: e-government, e-commerce, smart city",
+          "Digital Economy: contribution TIC au PIB, investissements",
+          "Green Energy: efficacité énergétique de l'infra numérique"
+        ],
+        "nombre_indicateurs": 42,
+        "echelle": "Score composite (0-100 implicite)",
+        "classification": "Frontrunners, Adopters, Starters",
+        "collecte": "Données tierces autoritaires + modélisation Huawei"
+      },
+      "scores_corridor": {
+        "France": {
+          "score": 62.2,
+          "rang": 15,
+          "cluster": "Frontrunner"
+        },
+        "Germany": {
+          "score": 63.4,
+          "rang": 14,
+          "cluster": "Frontrunner"
+        },
+        "Italy": {
+          "score": 50.2,
+          "rang": 27,
+          "cluster": "Adopter"
+        },
+        "Spain": {
+          "score": 54.3,
+          "rang": 25,
+          "cluster": "Adopter"
+        },
+        "Netherlands": {
+          "score": 69.7,
+          "rang": 7,
+          "cluster": "Frontrunner"
+        },
+        "Belgium": {
+          "score": 68.1,
+          "rang": 9,
+          "cluster": "Frontrunner"
+        },
+        "Portugal": {
+          "score": 54.4,
+          "rang": 23,
+          "cluster": "Adopter"
+        },
+        "Poland": {
+          "score": 47.8,
+          "rang": 36,
+          "cluster": "Adopter"
+        },
+        "Sweden": {
+          "score": 73.0,
+          "rang": 4,
+          "cluster": "Frontrunner"
+        },
+        "Denmark": {
+          "score": 71.8,
+          "rang": 5,
+          "cluster": "Frontrunner"
+        },
+        "Estonia": {
+          "score": 54.1,
+          "rang": 26,
+          "cluster": "Adopter"
+        },
+        "Morocco": {
+          "score": null,
+          "note": "Non inclus dans les 77 pays"
+        },
+        "Tunisia": {
+          "score": null
+        },
+        "Nigeria": {
+          "score": 27.3,
+          "rang": 74,
+          "cluster": "Starter"
+        },
+        "Kenya": {
+          "score": null,
+          "note": "Analysé qualitativement comme Starter"
+        },
+        "South Africa": {
+          "score": 43.4,
+          "rang": 43,
+          "cluster": "Adopter"
+        },
+        "Senegal": {
+          "score": null
+        },
+        "Ethiopia": {
+          "score": null
+        },
+        "Côte d'Ivoire": {
+          "score": null
+        },
+        "Ghana": {
+          "score": null
+        },
+        "Egypt": {
+          "score": null
+        },
+        "Rwanda": {
+          "score": null
+        }
+      },
+      "insight_cle": "Chaque point de GDI supplémentaire chez les Frontrunners boost le PIB/capita de $945 (2.1× plus que les Adopters, 5.4× plus que les Starters)",
+      "forces": [
+        "Focus unique sur l'infrastructure digitale (compute, cloud, storage)",
+        "Classification en 3 clusters utile pour les pays en développement",
+        "Quantification du ROI de l'investissement numérique"
+      ],
+      "limites": [
+        "Publié par Huawei — conflit d'intérêts potentiel (vendeur d'infrastructure)",
+        "Biais vers l'infrastructure hardware au détriment de la gouvernance",
+        "Couverture limitée de l'Afrique (peu de pays africains)",
+        "Ne mesure pas la souveraineté ni qui contrôle cette infrastructure"
+      ],
+      "complementarite_myne": "MYNε peut utiliser le GDI comme input infrastructure mais doit neutraliser le biais Huawei. Question clé absente du GDI: l'infrastructure mesurée est-elle contrôlée par des acteurs nationaux ou étrangers? MYNε ajouterait un 'Coefficient de Contrôle Local' sur l'infra digitale."
+    },
+    {
+      "id": 17,
+      "nom_complet": "IAPP Data Protection Authority Activity Tracker",
+      "organisme_emetteur": "International Association of Privacy Professionals (IAPP)",
+      "frequence": "Continue + rapports thématiques",
+      "derniere_edition": "Mise à jour continue (2025)",
+      "methodologie": {
+        "description": "Suivi de l'activité des autorités de protection des données dans le monde. Cartographie des lois et des régulateurs.",
+        "dimensions": [
+          "Existence d'une DPA indépendante",
+          "Budget et effectifs de la DPA",
+          "Nombre de décisions/investigations par an",
+          "Coopération internationale",
+          "Couverture législative (e-privacy, transferts transfrontaliers, IA)"
+        ],
+        "echelle": "Qualitative + quantitative (pas de score composite)",
+        "collecte": "Réseau mondial de professionnels IAPP, veille juridique continue"
+      },
+      "scores_corridor": {
+        "France": {
+          "dpa": "CNIL",
+          "statut": "Très active",
+          "budget_estime": "€25M+"
+        },
+        "Germany": {
+          "dpa": "BfDI + 16 DPA Länder",
+          "statut": "Très active",
+          "note": "Structure fédérale unique"
+        },
+        "Italy": {
+          "dpa": "Garante",
+          "statut": "Active"
+        },
+        "Spain": {
+          "dpa": "AEPD",
+          "statut": "Très active (leader en nombre de sanctions)"
+        },
+        "Netherlands": {
+          "dpa": "AP",
+          "statut": "Active (forte en amendes)"
+        },
+        "Belgium": {
+          "dpa": "APD/GBA",
+          "statut": "Active"
+        },
+        "Portugal": {
+          "dpa": "CNPD",
+          "statut": "Modérément active"
+        },
+        "Poland": {
+          "dpa": "UODO",
+          "statut": "Active"
+        },
+        "Sweden": {
+          "dpa": "IMY",
+          "statut": "Active"
+        },
+        "Denmark": {
+          "dpa": "Datatilsynet",
+          "statut": "Active"
+        },
+        "Estonia": {
+          "dpa": "AKI",
+          "statut": "Active (petite mais efficace)"
+        },
+        "Morocco": {
+          "dpa": "CNDP",
+          "statut": "Active mais ressources limitées",
+          "convention_108": true
+        },
+        "Tunisia": {
+          "dpa": "INPDP",
+          "statut": "Faible activité",
+          "note": "Ressources très limitées"
+        },
+        "Nigeria": {
+          "dpa": "NDPC (Nigeria Data Protection Commission)",
+          "statut": "Nouvelle (2023)",
+          "note": "En montée en puissance"
+        },
+        "Kenya": {
+          "dpa": "ODPC",
+          "statut": "Active depuis 2021"
+        },
+        "South Africa": {
+          "dpa": "Information Regulator",
+          "statut": "En croissance",
+          "note": "POPIA pleinement en vigueur depuis 2021"
+        },
+        "Senegal": {
+          "dpa": "CDP",
+          "statut": "Active mais sous-financée"
+        },
+        "Ethiopia": {
+          "dpa": null,
+          "statut": "Pas de DPA indépendante"
+        },
+        "Côte d'Ivoire": {
+          "dpa": "ARTCI (rôle partagé)",
+          "statut": "Activité limitée"
+        },
+        "Ghana": {
+          "dpa": "Data Protection Commission",
+          "statut": "Active depuis 2014"
+        },
+        "Egypt": {
+          "dpa": "En cours de création",
+          "statut": "Loi 2020 pas pleinement appliquée"
+        },
+        "Rwanda": {
+          "dpa": "En cours",
+          "statut": "Loi 2021, DPA en formation"
+        }
+      },
+      "forces": [
+        "Couverture mondiale des législations et DPA",
+        "Réseau de 75,000+ professionnels de la vie privée",
+        "Veille continue sur l'évolution réglementaire",
+        "Analyse comparative des cadres législatifs"
+      ],
+      "limites": [
+        "Pas de score numérique ou ranking",
+        "Focus sur l'existence juridique plus que l'effectivité",
+        "Accès à certaines données réservé aux membres payants",
+        "Biais vers les juridictions anglophones et européennes"
+      ],
+      "complementarite_myne": "MYNε doit transformer les données qualitatives IAPP en score quantitatif d'effectivité: (budget DPA / PIB) × (nombre de décisions / population) × (indépendance réelle / pression politique). C'est le chaînon manquant entre la loi et la protection réelle."
+    }
+  ],
+  "analyse_correlations": {
+    "observation_1": {
+      "titre": "Corrélation forte: Score RGPD/Protection données → Liberté Internet",
+      "detail": "Les pays EU avec RGPD pleinement appliqué (France: 76 FOTN, Germany: 74, Estonia: 92) montrent des scores Freedom on the Net significativement supérieurs aux pays africains sans cadre similaire (Ethiopia: 26, Egypt: 27, Rwanda: 23). Exception: l'Afrique du Sud avec POPIA obtient 73 FOTN, proche des scores européens.",
+      "coefficient_estime": "r ≈ 0.75-0.85 entre maturité protection données et liberté Internet"
+    },
+    "observation_2": {
+      "titre": "Décorrélation: Infrastructure (IDI) vs. Droits numériques (FOTN)",
+      "detail": "Certains pays avec une bonne infrastructure (IDI élevé) ont une liberté Internet faible. Exemple: l'Egypte, le Maroc (IDI 86.8 mais FOTN 54) montrent que l'infrastructure ne garantit pas la liberté. Le Rwanda (FOTN 23) investit massivement dans les TIC mais contrôle sévèrement Internet.",
+      "implication_myne": "MYNε doit capturer cette divergence: un pays peut être technologiquement connecté mais souverainement défaillant."
+    },
+    "observation_3": {
+      "titre": "Corrélation modérée: Démocratie (EIU) → Souveraineté Data",
+      "detail": "Les pays classés 'Full Democracy' (Germany: 8.73, Sweden: 9.39, Denmark: 9.28, Estonia: 8.13) tendent à avoir de meilleures protections data. Mais la France (7.99, rétrogradée Flawed Democracy) reste forte sur le RGPD, suggérant que la protection data peut survivre à un affaiblissement démocratique.",
+      "coefficient_estime": "r ≈ 0.60-0.70"
+    },
+    "observation_4": {
+      "titre": "Gap critique: Enforcement RGPD très inégal en Europe",
+      "detail": "L'Irlande a imposé €4 milliards d'amendes (siège des GAFA) vs. l'Espagne avec 1055 amendes mais seulement €137M. L'enforcement est structurellement biaisé par la localisation des sièges sociaux des Big Tech. Les pays africains n'ont pratiquement aucune capacité d'enforcement comparable.",
+      "implication_myne": "MYNε doit inclure un indicateur 'Capacité d'Enforcement Effective' distinct de l'existence de la loi."
+    },
+    "observation_5": {
+      "titre": "Angle mort universel: aucun indice ne mesure la souveraineté intentionnelle",
+      "detail": "Aucun des 17 indices analysés ne mesure directement: (1) le % des données nationales hébergées localement, (2) la dépendance aux hyperscalers étrangers (AWS, Azure, GCP), (3) la capacité de traitement IA souveraine, (4) le contrôle sur les flux de données transfrontaliers, (5) l'intentionnalité de la politique data nationale.",
+      "implication_myne": "C'est le territoire de MYNε. L'Indice de Souveraineté Intentionnelle comblera ce vide avec des dimensions jamais mesurées auparavant."
+    }
+  },
+  "recommandation_myne": {
+    "titre": "Architecture proposée pour l'Indice de Souveraineté Intentionnelle MYNε",
+    "piliers_proposes": [
+      {
+        "nom": "P1. Infrastructure Souveraine",
+        "description": "% données nationales sur serveurs locaux, capacité de calcul nationale, dépendance aux hyperscalers étrangers",
+        "sources_existantes_a_integrer": [
+          "ITU IDI (connectivité)",
+          "Huawei GDI (infrastructure)",
+          "NRI Technology pillar"
+        ]
+      },
+      {
+        "nom": "P2. Cadre Juridique Effectif",
+        "description": "Existence ET effectivité de la protection data, budget DPA/PIB, ratio sanctions/plaintes, alignement standards internationaux",
+        "sources_existantes_a_integrer": [
+          "IAPP DPA Tracker",
+          "DLA Piper Enforcement Tracker",
+          "UNCTAD data protection map"
+        ]
+      },
+      {
+        "nom": "P3. Liberté et Droits Numériques",
+        "description": "Liberté d'expression en ligne, absence de censure, respect vie privée, absence de shutdowns",
+        "sources_existantes_a_integrer": [
+          "Freedom House FOTN",
+          "Access Now KeepItOn",
+          "EIU Civil Liberties"
+        ]
+      },
+      {
+        "nom": "P4. Économie de la Donnée Souveraine",
+        "description": "Valeur de l'économie data locale, % captée localement vs. exportée, balance commerciale data, professionnels data/PIB",
+        "sources_existantes_a_integrer": [
+          "EDM Monitoring Tool (EU)",
+          "UNCTAD Digital Economy Report",
+          "World Bank WDI"
+        ]
+      },
+      {
+        "nom": "P5. Intentionnalité Stratégique",
+        "description": "DIMENSION UNIQUE MYNε: existence d'une stratégie data nationale, investissement public en souveraineté numérique, formation talent data, participation aux normes internationales, vision à long terme",
+        "sources_existantes_a_integrer": [
+          "OECD DGI (stratégie)",
+          "Global Data Barometer (governance)",
+          "NRI Governance pillar"
+        ],
+        "innovation_myne": "Enquête originale MYNε auprès de décideurs politiques + analyse documentaire des stratégies nationales"
+      }
+    ],
+    "pays_cibles_prioritaires": "22 pays du corridor EU-Afrique + 8 pays de référence globale (USA, UK, Chine, Inde, Brésil, Japon, Corée du Sud, Singapour) = 30 pays",
+    "frequence_proposee": "Annuelle avec mise à jour semestrielle du dashbaord",
+    "valeur_ajoutee_unique": "Premier indice mondial combinant infrastructure + droits + économie + intentionnalité stratégique, avec focus corridor EU-Afrique jamais couvert de manière intégrée"
+  }
+}

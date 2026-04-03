@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "agent": "FARID",
+    "mission": "Cartographie réglementaire — Souveraineté des données & Économie de l'intention — Corridor EU-Afrique",
+    "cible": "MYNε (Intention Economy Engine) + ÆLYA (Consent & Compliance Layer)",
+    "ecosysteme": "EIGEN Venture Ecosystem",
+    "date_compilation": "2026-04-03",
+    "nombre_reglementations": 21,
+    "methodologie_scoring": "MYNε Alignment Score (1-10) : 10 = la réglementation force directement l'adoption du modèle MYNε/ÆLYA par création d'obligation légale de consentement granulaire, portabilité des données d'intention, ou monétisation souveraine"
+  },
+  "reglementations": [
+    {
+      "id": "EU-001",
+      "nom_complet": "Règlement Général sur la Protection des Données (RGPD) — Regulation (EU) 2016/679",
+      "acronyme": "RGPD / GDPR",
+      "juridiction": "Union Européenne (27 États membres + EEE)",
+      "date_entree_vigueur": "2018-05-25",
+      "statut_implementation": "En vigueur — pleinement applicable",
+      "impact_myne": "AUTORISE ET FORCE",
+      "articles_pertinents": {
+        "Art_7_Consentement": {
+          "texte": "Le responsable du traitement doit être en mesure de démontrer que la personne concernée a consenti au traitement. Le consentement doit être libre, spécifique, éclairé et univoque. Le retrait doit être aussi facile que l'octroi.",
+          "impact_myne": "FORCE l'adoption — ÆLYA devient l'infrastructure de consentement granulaire obligatoire. Chaque finalité de traitement nécessite un consentement séparé, ce qui correspond exactement au modèle d'intention explicite de MYNε."
+        },
+        "Art_20_Portabilite": {
+          "texte": "Droit de recevoir les données personnelles dans un format structuré, couramment utilisé et lisible par machine, et de les transmettre à un autre responsable du traitement sans obstacle.",
+          "impact_myne": "FORCE l'adoption — MYNε est le véhicule natif de portabilité. Art. 20 crée le droit légal pour chaque individu de récupérer et monétiser ses données d'intention. Formats requis : CSV, JSON, XML."
+        },
+        "Art_6_Bases_legales": "Le consentement (Art. 6(1)(a)) et le contrat (Art. 6(1)(b)) sont les deux bases légales activant la portabilité — exactement le modèle MYNε.",
+        "Art_17_Droit_effacement": "Renforce la souveraineté individuelle — l'utilisateur MYNε peut effacer ses données d'intention à tout moment.",
+        "Art_25_Privacy_by_design": "Obligation de protection dès la conception — ÆLYA implémente ce principe nativement."
+      },
+      "sanctions_maximales": {
+        "tier_1": "10 000 000 EUR ou 2% du CA annuel mondial",
+        "tier_2": "20 000 000 EUR ou 4% du CA annuel mondial",
+        "note": "Le plus élevé des deux montants s'applique. Exemples récents : TikTok 530M EUR (2025), Meta 479M EUR (2025)."
+      },
+      "opportunite_forcage_legal": "L'Art. 20 RGPD CRÉE le marché de MYNε. Toute entreprise collectant des données basées sur consentement ou contrat DOIT permettre la portabilité. MYNε devient le standard d'interopérabilité. L'Art. 7 force le consentement granulaire par finalité — ÆLYA devient l'outil de compliance de référence.",
+      "myne_alignment_score": 10,
+      "sources": [
+        "https://gdpr-info.eu/art-20-gdpr/",
+        "https://gdpr-text.com/read/article-7/",
+        "https://usercentrics.com/knowledge-hub/gdpr-fines/"
+      ]
+    },
+    {
+      "id": "EU-002",
+      "nom_complet": "Data Governance Act — Regulation (EU) 2022/868",
+      "acronyme": "DGA",
+      "juridiction": "Union Européenne",
+      "date_entree_vigueur": "2023-09-24",
+      "statut_implementation": "En vigueur",
+      "impact_myne": "AUTORISE ET ENCADRE",
+      "articles_pertinents": {
+        "Art_11_Services_intermediation": "Les fournisseurs de services d'intermédiation de données ne peuvent pas utiliser les données pour d'autres fins que la mise à disposition. Séparation juridique obligatoire. MYNε doit opérer en entité séparée comme intermédiaire de données d'intention.",
+        "Art_12_Conditions": "Procédures justes, transparentes et non-discriminatoires pour les détenteurs et utilisateurs de données. Prix équitables. Interopérabilité des formats.",
+        "Art_15_Data_altruism": "Organisations reconnues d'altruisme en matière de données — opportunité pour ÆLYA de structurer le consentement altruiste.",
+        "Art_34_Sanctions": "Sanctions effectives, proportionnées et dissuasives, définies par les États membres."
+      },
+      "sanctions_maximales": {
+        "montant": "Défini par chaque État membre — Espagne : jusqu'à 600 000 EUR, Allemagne : jusqu'à 500 000 EUR pour infractions graves",
+        "note": "Le DGA ne fixe pas de montant maximal uniforme — Art. 34 délègue aux États membres."
+      },
+      "opportunite_forcage_legal": "Le DGA crée le cadre légal pour les 'data intermediation services' — MYNε se positionne comme intermédiaire certifié de données d'intention. L'obligation de neutralité (Art. 11) valide le modèle MYNε où l'utilisateur reste souverain. ÆLYA gère le consentement pour la réutilisation des données du secteur public.",
+      "myne_alignment_score": 8,
+      "sources": [
+        "https://www.european-data-governance-act.com",
+        "https://www.alston.com/en/insights/publications/2023/10/eu-data-governance-act",
+        "https://www.activemind.legal/guides/data-governance-act-dga/"
+      ]
+    },
+    {
+      "id": "EU-003",
+      "nom_complet": "Data Act — Regulation (EU) 2023/2854",
+      "acronyme": "Data Act",
+      "juridiction": "Union Européenne (effet extraterritorial)",
+      "date_entree_vigueur": "2024-01-11",
+      "date_application_principale": "2025-09-12",
+      "statut_implementation": "En transition — provisions principales applicables depuis 12 septembre 2025",
+      "impact_myne": "FORCE",
+      "articles_pertinents": {
+        "Chapitre_II_Acces_IoT": "Les utilisateurs ont le droit d'accéder gratuitement aux données brutes générées par leurs appareils connectés (wearables, smart home, véhicules connectés). Accès direct obligatoire pour produits mis sur le marché après sept. 2026.",
+        "Chapitre_III_Partage_tiers": "L'utilisateur peut demander le transfert de ses données vers tout tiers de son choix. Le détenteur doit faciliter le transfert de manière sécurisée et documentée.",
+        "Chapitre_IV_Clauses_abusives": "Protection contre les clauses contractuelles abusives dans les contrats B2B de partage de données.",
+        "Chapitre_VI_Cloud_switching": "Élimination des frais de changement de fournisseur cloud d'ici 2027. Interopérabilité obligatoire."
+      },
+      "sanctions_maximales": {
+        "montant": "Défini par chaque État membre — notification à la Commission au 12 septembre 2025",
+        "note": "Extraterritorial : s'applique à toute entreprise opérant sur le marché EU, indépendamment de sa localisation."
+      },
+      "opportunite_forcage_legal": "Le Data Act ÉTEND la portabilité RGPD à TOUTES les données IoT, pas seulement les données personnelles. MYNε devient le hub de collecte et monétisation des données d'intention comportementales captées par wearables (Apple Watch), smart home, véhicules. ÆLYA gère le consentement pour le partage avec des tiers.",
+      "myne_alignment_score": 9,
+      "sources": [
+        "https://www.cliffordchance.com/content/dam/cliffordchance/briefings/2023/07/eu-data-act.pdf",
+        "https://www.wsgrdataadvisor.com/2025/03/eu-data-act-imposes-new-data-sharing-obligations/",
+        "https://www.skadden.com/insights/publications/2025/06/eu-data-act"
+      ]
+    },
+    {
+      "id": "EU-004",
+      "nom_complet": "European Health Data Space — Regulation (EU) 2025/327",
+      "acronyme": "EHDS",
+      "juridiction": "Union Européenne",
+      "date_entree_vigueur": "2025-03-26",
+      "statut_implementation": "En transition — entrée en vigueur, application progressive jusqu'à 2035",
+      "impact_myne": "AUTORISE ET FORCE (secteur santé)",
+      "articles_pertinents": {
+        "Usage_primaire": "Les individus ont le droit d'accéder, contrôler et partager leurs données de santé électroniques, y compris transfrontalier. Catégories prioritaires : résumés patients, e-prescriptions (2029), imagerie médicale, résultats de laboratoire (2031).",
+        "Usage_secondaire": "Réutilisation des données de santé pour la recherche, l'innovation, les politiques publiques et les activités réglementaires — via les Health Data Access Bodies.",
+        "Interoperabilite_EHR": "Les systèmes de dossiers de santé électroniques (EHR) doivent être certifiés pour l'interopérabilité et la sécurité d'ici janvier 2026.",
+        "Gouvernance": "European Health Data Space Board + Health Data Access Bodies nationaux + DPA pour le RGPD."
+      },
+      "sanctions_maximales": {
+        "montant": "Défini par chaque État membre — cadre de conformité pré/post-marché pour les systèmes EHR",
+        "impact_economique": "11 milliards EUR d'économies projetées sur 10 ans, expansion de 20-30% du secteur santé numérique"
+      },
+      "opportunite_forcage_legal": "L'EHDS crée un marché MASSIF pour MYNε dans le secteur santé. Les données de santé personnelles deviennent portables par obligation légale. MYNε peut devenir l'intermédiaire de consentement et de monétisation des données de santé (wearables Apple Watch → EHDS). ÆLYA gère le consentement différencié usage primaire vs secondaire.",
+      "myne_alignment_score": 9,
+      "sources": [
+        "https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en",
+        "https://www.european-health-data-space.com",
+        "https://www.ey.com/en_gr/technical/tax/tax-alerts/regulation-2025-327-establishing-ehds"
+      ]
+    },
+    {
+      "id": "EU-005",
+      "nom_complet": "Artificial Intelligence Act — Regulation (EU) 2024/1689",
+      "acronyme": "AI Act",
+      "juridiction": "Union Européenne (effet extraterritorial)",
+      "date_entree_vigueur": "2024-08-01",
+      "statut_implementation": "En transition — application phasée de 2025 à 2027",
+      "impact_myne": "CONTRAINT ET AUTORISE",
+      "articles_pertinents": {
+        "Art_10_Data_governance": {
+          "texte": "Les systèmes d'IA à haut risque doivent être développés sur la base de jeux de données d'entraînement répondant à des critères de qualité : gouvernance appropriée, traçabilité de l'origine, détection des biais, représentativité statistique.",
+          "impact_myne": "Les données d'intention collectées par MYNε, avec consentement ÆLYA, constituent un jeu de données d'entraînement CONFORME par design : consentement explicite, traçabilité, pas de biais de collecte subreptice."
+        },
+        "Art_4_AI_literacy": "Formation IA obligatoire — applicable depuis février 2025.",
+        "Art_50_Transparence": "Obligations de transparence pour systèmes IA à risque limité.",
+        "Prohibitions": "Interdiction du scoring social, de la manipulation subliminale, de la reconnaissance émotionnelle au travail — depuis février 2025."
+      },
+      "sanctions_maximales": {
+        "tier_1_prohibitions": "35 000 000 EUR ou 7% du CA annuel mondial",
+        "tier_2_high_risk": "15 000 000 EUR ou 3% du CA annuel mondial",
+        "tier_3_info_incorrecte": "7 500 000 EUR ou 1% du CA annuel mondial",
+        "note": "Proportionnel pour PME/startups"
+      },
+      "opportunite_forcage_legal": "L'Art. 10 crée une DEMANDE STRUCTURELLE pour des données d'entraînement conformes. MYNε produit des données d'intention avec consentement explicite, traçabilité complète et gouvernance intégrée — exactement ce qu'exige l'AI Act. Les entreprises développant de l'IA à haut risque DOIVENT sourcer des données conformes → MYNε devient le fournisseur de référence.",
+      "myne_alignment_score": 8,
+      "sources": [
+        "https://artificialintelligenceact.eu/article/10/",
+        "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-eu-ai-act-implementation-timeline-understanding-the-next-deadline-for-compliance/",
+        "https://www.shaip.com/blog/the-cost-of-non-compliance-eu-ai-act-penalties/"
+      ]
+    },
+    {
+      "id": "EU-006",
+      "nom_complet": "Regulation (EU) 2024/1183 amending Regulation (EU) No 910/2014 — European Digital Identity Framework",
+      "acronyme": "eIDAS 2.0 / EUDI Wallet",
+      "juridiction": "Union Européenne",
+      "date_entree_vigueur": "2024-05-20",
+      "statut_implementation": "En transition — Wallets déployés fin 2026, acceptation obligatoire d'ici décembre 2027",
+      "impact_myne": "FORCE",
+      "articles_pertinents": {
+        "Art_5a_EUDI_Wallet": "Chaque État membre doit fournir un portefeuille d'identité numérique européen (EUDI Wallet) à ses citoyens. Gratuit, volontaire, open source.",
+        "Art_5b_Relying_parties": "Les grandes plateformes en ligne (VLOP au sens du DSA) et les services privés utilisant une authentification forte DOIVENT accepter le Wallet.",
+        "Art_5c_Certification": "Certification obligatoire de conformité pour les Wallets.",
+        "Attestations_electroniques": "Attestations électroniques qualifiées d'attributs — identité vérifiable, diplômes, permis, données de santé."
+      },
+      "sanctions_maximales": {
+        "montant": "Défini par chaque État membre — sanctions pour non-conformité des trust service providers",
+        "note": "Obligation d'acceptation par VLOP et services privés avec authentification forte d'ici déc. 2027"
+      },
+      "opportunite_forcage_legal": "eIDAS 2.0 crée L'INFRASTRUCTURE IDENTITAIRE pour MYNε. L'EUDI Wallet devient le vecteur d'identité souveraine sur lequel MYNε se branche. ÆLYA peut émettre/gérer les attestations de consentement comme attestations électroniques qualifiées. Le Wallet permet le contrôle granulaire des attributs partagés — modèle natif d'économie de l'intention.",
+      "myne_alignment_score": 10,
+      "sources": [
+        "https://www.european-digital-identity-regulation.com",
+        "https://www.signaturit.com/blog/eidas-2-0-compliance-deadlines-and-steps-for-companies/",
+        "https://shuftipro.com/blog/how-eidas-2-regulations-reshape-identity-verification/"
+      ]
+    },
+    {
+      "id": "EU-007",
+      "nom_complet": "Digital Markets Act — Regulation (EU) 2022/1925",
+      "acronyme": "DMA",
+      "juridiction": "Union Européenne",
+      "date_entree_vigueur": "2022-11-01",
+      "date_application": "2023-05-02",
+      "statut_implementation": "En vigueur — premières amendes infligées en 2025",
+      "impact_myne": "FORCE",
+      "articles_pertinents": {
+        "Art_5_2_Consentement_cross_platform": "Les gatekeepers doivent obtenir un consentement spécifique avant de combiner les données personnelles entre leurs différentes plateformes. Le modèle 'consent or pay' de Meta jugé non conforme (amende 200M EUR).",
+        "Art_6_9_Portabilite": "Droit à la portabilité des données étendu — plus large que le RGPD : s'applique indépendamment de la base juridique, inclut les données sur d'autres individus si fournies par l'utilisateur.",
+        "Art_6_10_Acces_donnees_business": "Les gatekeepers doivent donner aux utilisateurs professionnels et tiers autorisés l'accès aux données personnelles générées par les utilisateurs finaux, avec consentement préalable.",
+        "Art_7_Interoperabilite_messaging": "Interopérabilité obligatoire des messageries — communication cross-plateforme."
+      },
+      "sanctions_maximales": {
+        "montant": "Jusqu'à 10% du CA annuel mondial",
+        "recidive": "Jusqu'à 20% du CA annuel mondial",
+        "non_conformite_systematique": "Mesures structurelles (cession d'activité)",
+        "exemples_2025": "Apple 500M EUR, Meta 200M EUR (avril 2025)"
+      },
+      "opportunite_forcage_legal": "Le DMA OBLIGE les gatekeepers (Google, Apple, Meta, Amazon) à ouvrir leurs données. MYNε se positionne comme le réceptacle des données portées hors des plateformes. L'Art. 5(2) force un consentement spécifique par plateforme — ÆLYA standardise ce consentement. L'Art. 6(9) élargit la portabilité au-delà du RGPD — MYNε capture les données d'intention libérées.",
+      "myne_alignment_score": 9,
+      "sources": [
+        "https://secureprivacy.ai/blog/digital-markets-act-dma-explained-2025",
+        "https://www.rpclegal.com/snapshots/technology-digital/summer-2025/first-fines-issued-under-the-eu-digital-markets-act/",
+        "https://2b-advice.com/en/2025/04/28/dma-violations-eu-imposes-700-million-euro-fines-on-apple-and-meta/"
+      ]
+    },
+    {
+      "id": "EU-008",
+      "nom_complet": "Payment Services Directive 3 (PSD3) & Payment Services Regulation (PSR)",
+      "acronyme": "PSD3/PSR",
+      "juridiction": "Union Européenne",
+      "date_accord_politique": "2025-11-27",
+      "statut_implementation": "En négociation — accord politique provisoire atteint, adoption formelle en cours",
+      "impact_myne": "AUTORISE ET FORCE (secteur paiement)",
+      "articles_pertinents": {
+        "Open_banking_APIs": "Obligation de fournir au moins une interface dédiée gratuite pour l'échange de données avec les services d'information de compte et d'initiation de paiement.",
+        "Dashboard_utilisateur": "Dashboard obligatoire intégré dans l'interface utilisateur pour surveiller et contrôler les autorisations d'accès aux données. Révocation gratuite à tout moment.",
+        "Fraude_collaborative": "Échange de données liées à la fraude entre PSP — avec DPIA obligatoire et stockage limité à 5 ans.",
+        "Transparence": "Obligations renforcées de transparence sur les frais, conversions de devises, délais de transfert."
+      },
+      "sanctions_maximales": {
+        "montant": "Définies par les autorités nationales — pouvoir de fixer des délais et d'imposer des amendes en cas de non-rétablissement des interfaces API.",
+        "note": "Le PSR est un règlement directement applicable (pas de transposition). PSD3 est une directive (transposition requise)."
+      },
+      "opportunite_forcage_legal": "PSD3/PSR crée le dashboard de consentement bancaire — ÆLYA peut s'intégrer comme couche de consentement unifiée. L'open banking étendu libère les données de transaction financière — MYNε capte les intentions d'achat en temps réel. La portabilité bancaire nourrit le profil d'intention de l'utilisateur.",
+      "myne_alignment_score": 7,
+      "sources": [
+        "https://www.dlapiper.com/en/insights/publications/2026/03/psd3-and-psr",
+        "https://www.jpmorgan.com/insights/payments/operations-optimization/psd3",
+        "https://banking.vision/en/psd3-and-psr-regulations-for-banks/"
+      ]
+    },
+    {
+      "id": "AF-001",
+      "nom_complet": "Convention de l'Union Africaine sur la Cybersécurité et la Protection des Données à caractère personnel",
+      "acronyme": "Convention de Malabo",
+      "juridiction": "Union Africaine (55 États membres)",
+      "date_adoption": "2014-06-27",
+      "date_entree_vigueur": "2023-06-08",
+      "statut_implementation": "En vigueur — entrée en force après 15 ratifications (Angola, Bénin, Tchad, Congo, Égypte, Gabon, Gambie, Guinée-Bissau, Lesotho, Mauritanie, Namibie, Niger, São Tomé et Príncipe, Sénégal, Zambie). Implémentation nationale très variable.",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Chapitre_II_Protection_donnees": "Mandat aux États membres d'établir des cadres juridiques nationaux pour la collecte, le traitement et le stockage sécurisés des données personnelles.",
+        "Chapitre_III_E_commerce": "Normes pour les transactions électroniques.",
+        "Chapitre_IV_Cybersecurite": "Cadre de lutte contre la cybercriminalité et coopération internationale.",
+        "Limites": "Critiquée pour l'absence de provisions sur les flux transfrontaliers de données, ce qui est vital pour MYNε. Pas de mécanisme d'oversight continental robuste."
+      },
+      "sanctions_maximales": {
+        "montant": "Pas de sanctions harmonisées au niveau continental — chaque État membre définit ses propres sanctions dans sa législation nationale.",
+        "note": "La Convention mandate l'établissement de cadres nationaux mais ne fixe pas de montants."
+      },
+      "opportunite_forcage_legal": "La Convention de Malabo LÉGITIME l'approche de MYNε en Afrique : obligation de cadres nationaux de protection des données = demande pour des outils de compliance comme ÆLYA. Le gap d'implémentation crée une opportunité de marché : MYNε/ÆLYA comme solution clé en main pour les États en cours de mise en conformité. Cependant, l'absence de provisions sur les flux transfrontaliers est un frein.",
+      "myne_alignment_score": 5,
+      "sources": [
+        "https://www.diplomacy.edu/blog/what-is-the-malabo-convention/",
+        "https://en.wikipedia.org/wiki/Malabo_Convention",
+        "https://dataprotection.africa/wp-content/uploads/malabo_roadmap_Sept_2022.pdf"
+      ]
+    },
+    {
+      "id": "AF-002",
+      "nom_complet": "African Union Data Policy Framework",
+      "acronyme": "AU DPF",
+      "juridiction": "Union Africaine",
+      "date_publication": "2022-07-28",
+      "statut_implementation": "En vigueur — cadre directeur non-contraignant, guide les politiques nationales",
+      "impact_myne": "AUTORISE ET ENCOURAGE",
+      "articles_pertinents": {
+        "Principes_directeurs": "Coopération, intégration, souveraineté des données, transparence, équité, inclusion.",
+        "Portabilite_donnees": "Le Framework recommande EXPLICITEMENT le renforcement des droits de portabilité des données et des politiques d'accès aux données. Promotion des standards d'open data.",
+        "Privacy_by_design": "Recommande l'approche privacy-by-design et le déploiement de techniques de dé-identification.",
+        "DPA_independantes": "Recommande la création d'autorités de protection des données indépendantes, financées et efficaces.",
+        "Flux_transfrontaliers": "Recommande l'alignement des régulations nationales pour faciliter les flux de données intra-africains, avec des mesures de confiance.",
+        "Marche_unique_numerique": "Vision d'un Marché Unique Numérique Africain (African Digital Single Market)."
+      },
+      "sanctions_maximales": {
+        "montant": "Aucune — cadre directeur, non-contraignant",
+        "note": "Le Framework guide les politiques nationales mais n'impose pas de sanctions."
+      },
+      "opportunite_forcage_legal": "Le AU DPF est le BLUEPRINT continental pour MYNε. La recommandation explicite de portabilité + privacy by design + DPA indépendantes valide architecturalement MYNε/ÆLYA. Le Framework encourage les sandboxes réglementaires — opportunité de tester MYNε dans un cadre protégé. La vision du African DSM crée le marché cible.",
+      "myne_alignment_score": 7,
+      "sources": [
+        "https://au.int/en/documents/20220728/au-data-policy-framework",
+        "https://fpf.org/blog/the-african-unions-data-policy-framework-context-key-takeaways-and-implications-for-data-protection-on-the-continent/",
+        "https://cipesa.org/2022/11/key-takeaways-from-the-2022-african-union-data-policy-framework/"
+      ]
+    },
+    {
+      "id": "AF-003",
+      "nom_complet": "Loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel",
+      "acronyme": "Loi 09-08 (Maroc / CNDP)",
+      "juridiction": "Royaume du Maroc",
+      "date_promulgation": "2009-02-18",
+      "statut_implementation": "En vigueur — supervision par la CNDP (7 membres nommés par le Roi)",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Consentement": "Le traitement ne peut être effectué que si la personne a exprimé son consentement de manière indubitable (sauf exceptions : contrat, obligation légale, sauvegarde de la vie, intérêt public).",
+        "Declaration_autorisation": "Approche déclarative (contrairement au RGPD) : déclaration préalable pour données non-sensibles, autorisation préalable CNDP pour données sensibles, interconnexion de fichiers, transferts vers pays sans protection adéquate.",
+        "Droits_personnes": "Droit d'information, d'accès, de rectification, d'opposition.",
+        "Transfert_international": "Le transfert vers un État étranger nécessite un niveau de protection suffisant, ou autorisation CNDP avec garanties (clauses contractuelles types, BCR).",
+        "Art_67_et_seq_Sanctions_penales": "15 types d'infractions sanctionnées — de l'amende à l'emprisonnement."
+      },
+      "sanctions_maximales": {
+        "amendes": "10 000 à 200 000 MAD (~920 à 18 500 EUR)",
+        "peines_penales": "3 mois à 1 an d'emprisonnement",
+        "administratif": "Avertissement, mise en demeure, suspension du traitement (3 mois max), retrait d'autorisation"
+      },
+      "opportunite_forcage_legal": "La Loi 09-08 est le POINT D'ENTRÉE de MYNε au Maroc. L'approche déclarative est plus légère que le RGPD mais le consentement reste obligatoire — ÆLYA simplifie la compliance. La nécessité d'autorisation CNDP pour les transferts internationaux FORCE l'usage d'un intermédiaire de confiance comme MYNε pour les flux EU-Maroc. Le gap avec le RGPD (pas de DPO obligatoire, amendes faibles) crée une opportunité de montée en gamme via MYNε.",
+      "myne_alignment_score": 6,
+      "sources": [
+        "https://www.upsilon-consulting.com/cndp-loi-09-08-protection-donnees-personnelles-maroc/",
+        "https://void.ma/en/guides/conformite-cndp-donnees-personnelles/",
+        "https://www.dgssi.gov.ma/fr/loi-09-08-relative-la-protection-des-personnes-physiques-legard-du-traitement-des"
+      ]
+    },
+    {
+      "id": "AF-004",
+      "nom_complet": "Nigeria Data Protection Act 2023",
+      "acronyme": "NDPA 2023",
+      "juridiction": "République Fédérale du Nigeria",
+      "date_promulgation": "2023-06-12",
+      "statut_implementation": "En vigueur — enforcement actif depuis 2024-2025, mode 'full enforcement' en 2026",
+      "impact_myne": "AUTORISE ET CONTRAINT",
+      "articles_pertinents": {
+        "Section_5_6_NDPC_pouvoirs": "La Nigeria Data Protection Commission (NDPC) a le pouvoir de conduire des investigations, imposer des sanctions, prescrire des frais pour les responsables de traitement.",
+        "Consentement": "Consentement libre, spécifique, éclairé et non ambigu — aligné RGPD.",
+        "Audit_compliance": "Obligation de déposer des rapports d'audit de compliance annuels (Compliance Audit Returns).",
+        "DPO_obligatoire": "Désignation obligatoire d'un Data Protection Officer.",
+        "Transferts_internationaux": "Mécanismes approuvés : décision d'adéquation NDPC, clauses contractuelles types, BCR, consentement explicite."
+      },
+      "sanctions_maximales": {
+        "data_controllers_major": "10 000 000 NGN ou 2% du CA brut annuel (le plus élevé)",
+        "data_controllers_non_major": "2 000 000 NGN ou 2% du CA brut annuel (le plus élevé)",
+        "emprisonnement": "Jusqu'à 3 ans",
+        "bilan_2026": "₦7,2 milliards collectés par la NDPC (registrations + amendes) — enforcement agressif"
+      },
+      "opportunite_forcage_legal": "Le Nigeria est le PLUS GRAND MARCHÉ NUMÉRIQUE d'Afrique (~200M habitants). La NDPA 2023 avec enforcement agressif FORCE les entreprises à se mettre en conformité. MYNε/ÆLYA comme solution de compliance : gestion du consentement, audits automatisés, transferts transfrontaliers conformes. L'obligation d'audit annuel crée un revenu récurrent pour ÆLYA.",
+      "myne_alignment_score": 7,
+      "sources": [
+        "https://cert.gov.ng/ngcert/resources/Nigeria_Data_Protection_Act_2023.pdf",
+        "https://techmoonshot.com/2026/02/10/nigeria-just-collected-%E2%82%A67-2-billion-in-data-privacy-penalties-and-its-just-getting-started/",
+        "https://www.jonesday.com/en/insights/2025/08/nigeria-launches-investigations-into-noncompliance-with-nigeria-data-protection-act-2023"
+      ]
+    },
+    {
+      "id": "AF-005",
+      "nom_complet": "The Data Protection Act, 2019 (Act No. 24 of 2019)",
+      "acronyme": "Kenya DPA 2019",
+      "juridiction": "République du Kenya",
+      "date_promulgation": "2019-11-08",
+      "statut_implementation": "En vigueur — enforcement actif via l'Office of the Data Protection Commissioner (ODPC), inspections nationales annoncées",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Section_25_Consent": "Le traitement est licite si fondé sur le consentement libre, éclairé et spécifique de la personne concernée.",
+        "Section_35_Cross_border": "Transfert de données vers un pays étranger autorisé uniquement si le pays offre une protection adéquate ou si des garanties appropriées sont en place.",
+        "Section_58_Administrative_fines": "Le Data Commissioner peut imposer des amendes administratives.",
+        "Section_63_Penalties": "Peines générales pour infractions."
+      },
+      "sanctions_maximales": {
+        "amendes_administratives": "KES 5 000 000 (~38 000 EUR) ou 1% du CA annuel (le plus bas des deux)",
+        "peines_penales": "KES 3 000 000 (~23 000 EUR) ou 10 ans d'emprisonnement ou les deux",
+        "obstruction": "KES 5 000 000 ou 2 ans d'emprisonnement"
+      },
+      "opportunite_forcage_legal": "Le Kenya est le HUB TECH de l'Afrique de l'Est (Nairobi = Silicon Savannah). L'enforcement actif et les inspections nationales créent une demande pour des outils de compliance. MYNε/ÆLYA comme solution pour les fintechs et startups kényanes. Les amendes faibles (1% CA) réduisent la pression mais les inspections annoncées augmentent la visibilité.",
+      "myne_alignment_score": 5,
+      "sources": [
+        "https://securiti.ai/kenya-data-protection-act-dpa/",
+        "https://www.kkcoeastafrica.com/Data-Protection/",
+        "https://cmadvocates.com/blog/faqs-on-data-protection/"
+      ]
+    },
+    {
+      "id": "AF-006",
+      "nom_complet": "Protection of Personal Information Act, 2013 (Act No. 4 of 2013)",
+      "acronyme": "POPIA",
+      "juridiction": "République d'Afrique du Sud",
+      "date_promulgation": "2013-11-19",
+      "date_application": "2021-07-01",
+      "statut_implementation": "En vigueur — enforcement par l'Information Regulator, notices d'exécution publiées (y compris contre WhatsApp)",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Section_11_Consent": "Consentement comme base juridique principale du traitement. Doit être volontaire, spécifique et informé.",
+        "Section_69_72_Cross_border": "Transfert transfrontalier autorisé si le pays destinataire offre un niveau adéquat de protection, ou avec consentement, contrat, ou intérêt public.",
+        "Section_100_106_Offences": "Infractions incluant : entrave au régulateur, non-conformité aux notices d'exécution, actes illicites sur les numéros de compte.",
+        "Section_107_Penalties": "Sanctions détaillées par infraction."
+      },
+      "sanctions_maximales": {
+        "amendes": "ZAR 10 000 000 (~500 000 EUR)",
+        "emprisonnement": "Jusqu'à 10 ans",
+        "cumul": "Amende ET emprisonnement possibles",
+        "exemples": "WhatsApp : notice d'exécution, risque de 10M ZAR si non-conformité dans 60 jours"
+      },
+      "opportunite_forcage_legal": "L'Afrique du Sud est le marché le plus mature en Afrique pour la protection des données. L'Information Regulator est actif et publie les notices — pression réputationnelle forte. MYNε/ÆLYA comme solution de compliance premium pour les entreprises sud-africaines et les multinationales opérant en Afrique australe. Les peines d'emprisonnement (10 ans) créent une urgence au niveau des dirigeants.",
+      "myne_alignment_score": 6,
+      "sources": [
+        "https://www.popiact-compliance.co.za/popia-information/16-offences-penalties-and-administrative-fines",
+        "https://bowmanslaw.com/insights/south-africa-popia-challenges-that-organisations-should-not-overlook-in-2025/",
+        "https://cybergl.com/za/blog/popia-compliance-consequences-in-south-africa/"
+      ]
+    },
+    {
+      "id": "AF-007",
+      "nom_complet": "Loi n° 2008-12 du 25 janvier 2008 sur la protection des données à caractère personnel",
+      "acronyme": "Loi 2008-12 (Sénégal / CDP)",
+      "juridiction": "République du Sénégal",
+      "date_promulgation": "2008-01-25",
+      "date_application": "2014",
+      "statut_implementation": "En vigueur — supervision par la Commission des Données Personnelles (CDP)",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Art_4_Traitement": "Définition large du traitement : collecte, exploitation, enregistrement, organisation, conservation, modification, extraction, consultation, utilisation, transmission, diffusion, etc.",
+        "Art_18_Declaration_prealable": "Tous les traitements de données personnelles doivent être déclarés préalablement auprès de la CDP.",
+        "Consentement": "Collecte et traitement uniquement avec le consentement de la personne concernée.",
+        "Donnees_sensibles": "Autorisation préalable CDP requise pour les données sensibles (religion, politique, santé, biométrie, etc.).",
+        "Art_39_Sanctions": "Sanctions civiles, administratives et pénales."
+      },
+      "sanctions_maximales": {
+        "amendes_CDP": "1 000 000 à 100 000 000 FCFA (~1 500 à 152 000 EUR)",
+        "administratif": "Retrait provisoire d'autorisation (3 mois, puis définitif), avertissement, mise en demeure",
+        "penal": "7 ans d'emprisonnement pour marketing non-consenti + 1M FCFA"
+      },
+      "opportunite_forcage_legal": "Le Sénégal a ratifié la Convention de Malabo et dispose d'un cadre complet. La CDP est active. MYNε/ÆLYA comme solution de déclaration et conformité automatisée. Le marché sénégalais (hub francophone) est un point d'entrée vers l'Afrique de l'Ouest. Les amendes potentielles jusqu'à 100M FCFA créent une motivation de compliance.",
+      "myne_alignment_score": 5,
+      "sources": [
+        "https://africanlegalfactory.com/2023/05/11/comprendre-protection-donnees-personnelles-senegal/",
+        "https://www.dlapiperdataprotection.com/index.html?t=law&c=SN",
+        "https://dpo-india.com/Resources/privacy_laws_in_africa_nations/data_protection_law_of_senegal(africa).pdf"
+      ]
+    },
+    {
+      "id": "AF-008",
+      "nom_complet": "Protocol to the Agreement Establishing the AfCFTA on Digital Trade",
+      "acronyme": "AfCFTA Digital Trade Protocol",
+      "juridiction": "Zone de Libre-Échange Continentale Africaine (54 États)",
+      "date_adoption_protocole": "2024-02",
+      "date_adoption_annexes": "2025-02-16",
+      "statut_implementation": "En négociation/transition — Protocole adopté, 8 annexes adoptées en février 2025 (dont l'Annexe sur les Transferts Transfrontaliers de Données), ratifications en cours",
+      "impact_myne": "AUTORISE ET ENCOURAGE",
+      "articles_pertinents": {
+        "Art_20_Cross_border_data": "Les parties autorisent les transferts transfrontaliers de données (y compris personnelles) par voie électronique pour le commerce numérique. Des exceptions pour raisons légitimes de politique publique sont possibles.",
+        "Art_21_Protection_donnees": "Obligation pour les États parties d'adopter des cadres juridiques nationaux de protection des données personnelles.",
+        "Art_14_Identite_numerique": "Promotion de systèmes d'identité numérique interopérables via des accords de reconnaissance mutuelle.",
+        "Art_25_Cybersecurite": "Mesures de cybersécurité non affectées par les obligations de flux de données.",
+        "Annexe_Cross_border": "Règles harmonisées pour les transferts de données transfrontaliers — safeguards, bases légales (consentement, contrat, intérêt public)."
+      },
+      "sanctions_maximales": {
+        "montant": "Pas de sanctions harmonisées — le Protocole s'appuie sur les cadres nationaux existants",
+        "note": "Entrera en vigueur après le nombre requis de ratifications conformément à l'Art. 23 AfCFTA"
+      },
+      "opportunite_forcage_legal": "Le Protocole crée les AUTOROUTES NUMÉRIQUES INTRA-AFRICAINES pour MYNε. L'Art. 20 libère les flux de données transfrontaliers = MYNε peut opérer comme intermédiaire de données d'intention pan-africain. L'Art. 14 sur l'identité numérique interopérable est le miroir africain d'eIDAS 2.0 — convergence architecturale avec le corridor EU-Afrique. L'Art. 21 force l'adoption de cadres nationaux = marché pour ÆLYA.",
+      "myne_alignment_score": 8,
+      "sources": [
+        "https://www.linkedin.com/pulse/copy-building-borderless-digital-africa-afcfta-protocol-xnnsf",
+        "https://abdavid.com/unlocking-data-cross-border-data-flows-under-the-african-continental-free-trade-area-agreement/",
+        "https://www.iisd.org/articles/policy-analysis/afcfta-digital-protocol"
+      ]
+    },
+    {
+      "id": "INT-001",
+      "nom_complet": "APEC Cross-Border Privacy Rules System / Global Cross-Border Privacy Rules",
+      "acronyme": "APEC CBPR / Global CBPR",
+      "juridiction": "21 économies APEC + extension mondiale via Global CBPR Forum (lancé juin 2025)",
+      "date_creation_CBPR": "2011",
+      "date_lancement_global": "2025-06-02",
+      "statut_implementation": "En vigueur — certification volontaire, reconnaissance en expansion (Japon, Singapour, Bermudes, Dubai IFC), Global CBPR lancé en 2025",
+      "impact_myne": "AUTORISE",
+      "articles_pertinents": {
+        "Privacy_principles": "9 principes : Accountability, Prévention des dommages, Notice, Choix, Limitation de la collecte, Usage des informations personnelles, Intégrité, Safeguards de sécurité, Accès et correction.",
+        "Certification": "Auto-évaluation + revue par un Accountability Agent indépendant → inscription au répertoire de conformité.",
+        "Cross_border_enforcement": "Global Cooperation Arrangement for Privacy Enforcement (Global CAPE) — coopération entre DPA pour l'enforcement transfrontalier.",
+        "Global_CBPR": "Extension hors APEC : contrôleurs (Global CBPR System) et processeurs (Global PRP System). FTC et UK ICO membres."
+      },
+      "sanctions_maximales": {
+        "montant": "Pas de sanctions propres — enforcement via les autorités nationales des économies participantes",
+        "note": "Certification volontaire mais reconnue comme mécanisme de transfert légitime dans plusieurs juridictions"
+      },
+      "opportunite_forcage_legal": "Global CBPR est le PONT entre les régimes APEC et EU pour MYNε. La certification CBPR valide le modèle de transfert transfrontalier de MYNε hors EU/Afrique. La reconnaissance croissante (Japon, Singapour, UK FTC) élargit le marché adressable. MYNε peut obtenir la certification CBPR pour opérer comme intermédiaire de données d'intention reconnu mondialement.",
+      "myne_alignment_score": 6,
+      "sources": [
+        "https://www.insideglobaltech.com/2025/06/04/global-cbpr-and-prp-certifications-launched-a-new-international-data-transfer-mechanism/",
+        "https://www.onetrust.com/blog/apec-cbpr-certification/",
+        "https://www.imda.gov.sg/how-we-can-help/cross-border-privacy-rules-certification"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "nom_complet": "OECD Recommendation on Artificial Intelligence (OECD AI Principles)",
+      "acronyme": "OECD AI Principles",
+      "juridiction": "47 gouvernements adhérents (36 OECD + 11 non-membres, dont les USA)",
+      "date_adoption": "2019-05-22",
+      "date_mise_a_jour": "2024-05",
+      "statut_implementation": "En vigueur — cadre directeur non-contraignant, mis à jour en mai 2024 pour couvrir l'IA générative",
+      "impact_myne": "AUTORISE ET ENCOURAGE",
+      "articles_pertinents": {
+        "Principe_1_1": "Croissance inclusive, développement durable et bien-être — ajout de la durabilité environnementale en 2024.",
+        "Principe_1_2": "Respect de l'état de droit, des droits humains et des valeurs démocratiques (renommé en 2024) — non-discrimination, agency et oversight humains.",
+        "Principe_1_3": "Transparence et explicabilité — information claire pour contester les décisions IA.",
+        "Principe_1_4": "Robustesse, sécurité et sûreté — mécanismes de désactivation, intégrité de l'information (nouveau 2024).",
+        "Principe_1_5": "Accountability — traçabilité et gestion des risques (réorganisé en 2024), coopération entre acteurs IA.",
+        "Mise_a_jour_2024": "Nouveaux ajouts : lutte contre la désinformation IA, propriété intellectuelle, risques de sécurité, décommissionnement des systèmes."
+      },
+      "sanctions_maximales": {
+        "montant": "Aucune — cadre directeur non-contraignant",
+        "note": "Sert de blueprint pour les législations nationales (ex : EU AI Act, US AI executive orders)"
+      },
+      "opportunite_forcage_legal": "Les OECD AI Principles LÉGITIMENT MYNε au niveau mondial. Le principe de transparence et d'accountability valide l'approche de données d'intention consenties. Le principe d'agency humaine est le cœur de l'économie de l'intention. La mise à jour 2024 renforce la traçabilité des données d'entraînement → avantage compétitif pour les données MYNε. 47 gouvernements adhérents = 47 marchés potentiels.",
+      "myne_alignment_score": 6,
+      "sources": [
+        "https://digitalpolicyalert.org/ai-rules/2024-update-OECD-principles",
+        "https://www.ansi.org/standards-news/all-news/5-9-24-oecd-updates-ai-principles",
+        "https://www.oecd.org/en/topics/policy-issues/artificial-intelligence.html"
+      ]
+    },
+    {
+      "id": "INT-003",
+      "nom_complet": "UNESCO Recommendation on the Ethics of Artificial Intelligence",
+      "acronyme": "UNESCO AI Ethics Recommendation",
+      "juridiction": "194 États membres de l'UNESCO (couverture quasi-universelle)",
+      "date_adoption": "2021-11",
+      "statut_implementation": "En vigueur — cadre directeur non-contraignant mais avec poids politique fort, outils d'implémentation déployés (RAM, EIA)",
+      "impact_myne": "AUTORISE ET ENCOURAGE",
+      "articles_pertinents": {
+        "Valeurs_fondamentales": "Dignité humaine, droits de l'homme, diversité, vivre ensemble, environnement, paix.",
+        "Principes": "Proportionnalité, sûreté, équité/non-discrimination, durabilité, privacy/data protection, oversight humain, transparence, accountability, awareness.",
+        "Policy_areas": {
+          "Data_governance": "Développer des cadres qui équilibrent innovation et protection des droits.",
+          "Ethical_Impact_Assessment": "Évaluations d'impact éthique obligatoires pour les systèmes IA à haut risque.",
+          "Education_recherche": "Intégrer l'éthique IA dans les curricula."
+        },
+        "Outils_implementation": "Readiness Assessment Methodology (RAM), Ethical Impact Assessment (EIA), Policy Development Toolkit, Capacity Building Programs."
+      },
+      "sanctions_maximales": {
+        "montant": "Aucune — recommandation non-contraignante mais les États doivent rapporter régulièrement sur leur implémentation",
+        "note": "Poids politique considérable : adoptée à l'unanimité par 193 États"
+      },
+      "opportunite_forcage_legal": "La Recommandation UNESCO couvre 194 États — c'est le CADRE ÉTHIQUE UNIVERSEL. MYNε incarne les principes de privacy, oversight humain et transparency. L'exigence d'Ethical Impact Assessment crée un marché pour ÆLYA comme outil d'évaluation éthique automatisé. La couverture Afrique est TOTALE — levier pour les pays sans législation nationale.",
+      "myne_alignment_score": 5,
+      "sources": [
+        "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics",
+        "https://www.unesco.org/en/articles/recommendation-ethics-artificial-intelligence",
+        "https://academy.evalcommunity.com/unesco-recommendation-on-ai-ethics/"
+      ]
+    }
+  ],
+  "synthese_corridor_EU_Afrique": {
+    "total_reglementations_analysees": 21,
+    "score_moyen_alignment": 7.0,
+    "repartition_impact": {
+      "FORCE_adoption": ["RGPD (Art. 20 + Art. 7)", "Data Act", "EHDS", "eIDAS 2.0", "DMA"],
+      "AUTORISE_ET_ENCOURAGE": ["DGA", "AI Act", "PSD3/PSR", "AU DPF", "AfCFTA DTP", "APEC CBPR", "OECD AI", "UNESCO AI Ethics"],
+      "AUTORISE": ["Loi 09-08 Maroc", "Nigeria DPA", "Kenya DPA", "POPIA", "Sénégal", "Convention Malabo"],
+      "BLOQUE": []
+    },
+    "vecteurs_forcage_legal_top5": [
+      {
+        "rang": 1,
+        "regulation": "RGPD Art. 20 + eIDAS 2.0",
+        "score_combine": 10,
+        "mecanisme": "Portabilité obligatoire + Wallet d'identité souveraine = infrastructure complète pour MYNε"
+      },
+      {
+        "rang": 2,
+        "regulation": "Data Act + DMA",
+        "score_combine": 9,
+        "mecanisme": "Extension portabilité à toutes les données IoT + ouverture forcée des gatekeepers = flux de données libérés vers MYNε"
+      },
+      {
+        "rang": 3,
+        "regulation": "EHDS + AI Act Art. 10",
+        "score_combine": 8.5,
+        "mecanisme": "Portabilité santé + demande de données d'entraînement conformes = marché vertical santé pour MYNε"
+      },
+      {
+        "rang": 4,
+        "regulation": "AfCFTA DTP + AU Data Policy Framework",
+        "score_combine": 7.5,
+        "mecanisme": "Autoroutes numériques intra-africaines + identité numérique interopérable = corridor EU-Afrique pour MYNε"
+      },
+      {
+        "rang": 5,
+        "regulation": "Nigeria DPA + POPIA",
+        "score_combine": 6.5,
+        "mecanisme": "Enforcement agressif dans les 2 plus grands marchés africains = demande immédiate pour ÆLYA"
+      }
+    ],
+    "gap_reglementaire_critique": {
+      "description": "Le principal gap est l'absence de mécanisme d'adéquation croisée EU-Afrique uniforme. Le RGPD exige un 'niveau de protection adéquat' pour les transferts, mais aucun pays africain n'a reçu de décision d'adéquation de la Commission européenne. Le corridor EU-Afrique nécessite des clauses contractuelles types ou des BCR — MYNε/ÆLYA comme solution.",
+      "opportunite": "MYNε peut devenir le TRUSTED DATA INTERMEDIARY certifié DGA + CBPR opérant sur le corridor EU-Afrique, comblant le gap d'adéquation par design."
+    },
+    "timeline_convergence": {
+      "2025": "RGPD fully enforced + Data Act applicable + EHDS entrée en vigueur + DMA premières amendes + AI Act GPAI applicable + Malabo en vigueur",
+      "2026": "eIDAS 2.0 Wallets déployés + AI Act high-risk applicable + PSD3 adoption formelle + AfCFTA annexes en ratification",
+      "2027": "eIDAS 2.0 acceptation obligatoire VLOP + AI Act pleine conformité + Data Act cloud switching gratuit + AfCFTA DTP potentiellement en vigueur",
+      "2029": "EHDS données santé primaires échangeables + MYNε position dominante corridor EU-Afrique",
+      "2031": "EHDS imagerie + lab + MYNε full spectrum santé",
+      "2035": "EHDS ouvert aux pays tiers (Afrique)"
+    }
+  }
+}

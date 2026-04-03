@@ -1,0 +1,979 @@
+{
+  "metadata": {
+    "title": "Économie de l'Attention - Corridor EU-Afrique",
+    "agent": "WAEL",
+    "date": "2026-04-03",
+    "methodology": "ARPU publicitaire dérivé des rapports annuels FY2025 (Meta, Alphabet, TikTok/ByteDance, Amazon, Apple) ventilés par région géographique et répartis au prorata de la population connectée. ARPU télécom dérivé des résultats FY2025 des opérateurs dominants (Orange, MTN, Safaricom, Maroc Telecom, Airtel). ARPU bancaire estimé à partir des revenus digitaux des banques leaders. Taux de change: 1 USD = 0.926 EUR.",
+    "intention_gap_rate": "53% (MYNε revenue share model)",
+    "currency": "EUR",
+    "total_countries": 20,
+    "corridor_definition": "EU (France, Allemagne, Espagne, Italie, Pays-Bas, Belgique, Portugal) + Afrique (Maroc, Sénégal, Nigeria, Côte d'Ivoire, Ghana, Kenya, Afrique du Sud, Égypte, Tunisie, Éthiopie, Rwanda, Tanzanie, Ouganda)",
+    "primary_sources": [
+      "Meta Platforms FY2025 Earnings (Jan 2026) - $201B revenue, 3.58B DAP",
+      "Alphabet FY2025 10-K (Feb 2026) - $403B revenue, EMEA $117B",
+      "TikTok/ByteDance 2025 estimates (ElectroIQ, MarketingLTB) - ~$22-33B ad revenue",
+      "Amazon FY2025 Advertising (Yahoo Finance) - $68.6B",
+      "Apple Services 2025 (SQ Magazine) - RPU $14.70",
+      "MTN Group FY2025 (mtn.com) - 307M subscribers, $6B data revenue",
+      "Orange FY2025 (dam-broadcast.com) - €40.4B revenue",
+      "Safaricom FY25 (moseskemibaro.com) - KES 388.7B revenue",
+      "Airtel Africa H1 2025 (Ecofin Agency) - ARPU $2.9 data",
+      "Maroc Telecom FY2025 (Reuters) - 36.6B MAD revenue",
+      "GSMA Mobile Economy Africa 2025",
+      "GSMA Mobile Economy Europe 2025",
+      "Connect Europe 2025 - EU mobile ARPU €14.8",
+      "DataReportal Digital 2025 - Global ad trends",
+      "World Population Review 2025 - Internet users by country",
+      "Cognitive Market Research - Social media ad by country",
+      "Wikipedia - Smartphone penetration by country"
+    ]
+  },
+  "countries": [
+    {
+      "country": "France",
+      "code": "FR",
+      "connected_population": 63400000,
+      "smartphone_penetration": "77.6%",
+      "arpu_google_eur": 77,
+      "arpu_meta_eur": 92,
+      "arpu_tiktok_eur": 22,
+      "arpu_apple_eur": 18,
+      "arpu_amazon_eur": 22,
+      "arpu_telecom_data_eur": 180,
+      "arpu_banking_data_eur": 18,
+      "arpu_total_eur": 429,
+      "total_value_captured_eur": 27198600000,
+      "intention_gap_53pct_eur": 14415258000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "28%",
+          "value_eur": 4881800000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "24%",
+          "value_eur": 5832800000
+        },
+        {
+          "name": "Orange (télécom)",
+          "share": "22%",
+          "value_eur": 11412000000
+        },
+        {
+          "name": "Amazon",
+          "share": "12%",
+          "value_eur": 2536000000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "6%",
+          "value_eur": 1394800000
+        }
+      ],
+      "sources": "Alphabet FY2025 10-K, Meta FY2025 Earnings, Orange FY2025 Results, DataReportal 2025, BNP Paribas Q3 2025, Statista 2025",
+      "notes": ""
+    },
+    {
+      "country": "Allemagne",
+      "code": "DE",
+      "connected_population": 78900000,
+      "smartphone_penetration": "77.9%",
+      "arpu_google_eur": 82,
+      "arpu_meta_eur": 95,
+      "arpu_tiktok_eur": 20,
+      "arpu_apple_eur": 16,
+      "arpu_amazon_eur": 28,
+      "arpu_telecom_data_eur": 165,
+      "arpu_banking_data_eur": 16,
+      "arpu_total_eur": 422,
+      "total_value_captured_eur": 33295800000,
+      "intention_gap_53pct_eur": 17646774000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "26%",
+          "value_eur": 6469800000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "23%",
+          "value_eur": 7495500000
+        },
+        {
+          "name": "Deutsche Telekom",
+          "share": "21%",
+          "value_eur": 13018500000
+        },
+        {
+          "name": "Amazon",
+          "share": "15%",
+          "value_eur": 3471600000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "6%",
+          "value_eur": 1578000000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, Connect Europe 2025, Wikipedia smartphone penetration, Cognitive Market Research 2025",
+      "notes": ""
+    },
+    {
+      "country": "Espagne",
+      "code": "ES",
+      "connected_population": 46200000,
+      "smartphone_penetration": "74.3%",
+      "arpu_google_eur": 68,
+      "arpu_meta_eur": 82,
+      "arpu_tiktok_eur": 18,
+      "arpu_apple_eur": 14,
+      "arpu_amazon_eur": 16,
+      "arpu_telecom_data_eur": 150,
+      "arpu_banking_data_eur": 14,
+      "arpu_total_eur": 362,
+      "total_value_captured_eur": 16724400000,
+      "intention_gap_53pct_eur": 8863932000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "27%",
+          "value_eur": 3141600000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "24%",
+          "value_eur": 3788400000
+        },
+        {
+          "name": "Telefónica",
+          "share": "22%",
+          "value_eur": 6930000000
+        },
+        {
+          "name": "Amazon",
+          "share": "12%",
+          "value_eur": 1386000000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "7%",
+          "value_eur": 831600000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, Telefónica FY2025, DataReportal 2025, Cognitive Market Research 2025",
+      "notes": ""
+    },
+    {
+      "country": "Italie",
+      "code": "IT",
+      "connected_population": 53300000,
+      "smartphone_penetration": "85%",
+      "arpu_google_eur": 72,
+      "arpu_meta_eur": 85,
+      "arpu_tiktok_eur": 19,
+      "arpu_apple_eur": 15,
+      "arpu_amazon_eur": 18,
+      "arpu_telecom_data_eur": 140,
+      "arpu_banking_data_eur": 15,
+      "arpu_total_eur": 364,
+      "total_value_captured_eur": 19401200000,
+      "intention_gap_53pct_eur": 10282636000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "27%",
+          "value_eur": 3837600000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "24%",
+          "value_eur": 4530500000
+        },
+        {
+          "name": "TIM/Vodafone Italia",
+          "share": "21%",
+          "value_eur": 7462000000
+        },
+        {
+          "name": "Amazon",
+          "share": "13%",
+          "value_eur": 1758900000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "7%",
+          "value_eur": 1012700000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, Telecom Italia FY2025, Wikipedia smartphone penetration, Cognitive Market Research 2025",
+      "notes": ""
+    },
+    {
+      "country": "Pays-Bas",
+      "code": "NL",
+      "connected_population": 18100000,
+      "smartphone_penetration": "79.3%",
+      "arpu_google_eur": 88,
+      "arpu_meta_eur": 102,
+      "arpu_tiktok_eur": 24,
+      "arpu_apple_eur": 20,
+      "arpu_amazon_eur": 25,
+      "arpu_telecom_data_eur": 175,
+      "arpu_banking_data_eur": 20,
+      "arpu_total_eur": 454,
+      "total_value_captured_eur": 8217400000,
+      "intention_gap_53pct_eur": 4355222000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "26%",
+          "value_eur": 1592800000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "23%",
+          "value_eur": 1846200000
+        },
+        {
+          "name": "KPN/VodafoneZiggo",
+          "share": "21%",
+          "value_eur": 3167500000
+        },
+        {
+          "name": "Amazon",
+          "share": "14%",
+          "value_eur": 814500000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "7%",
+          "value_eur": 434400000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, DataReportal 2025, Tefficient 2025 (NL high rev/GB), Cognitive Market Research 2025",
+      "notes": ""
+    },
+    {
+      "country": "Belgique",
+      "code": "BE",
+      "connected_population": 11300000,
+      "smartphone_penetration": "76.6%",
+      "arpu_google_eur": 80,
+      "arpu_meta_eur": 95,
+      "arpu_tiktok_eur": 21,
+      "arpu_apple_eur": 17,
+      "arpu_amazon_eur": 18,
+      "arpu_telecom_data_eur": 168,
+      "arpu_banking_data_eur": 18,
+      "arpu_total_eur": 417,
+      "total_value_captured_eur": 4712100000,
+      "intention_gap_53pct_eur": 2497413000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "26%",
+          "value_eur": 904000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "24%",
+          "value_eur": 1073500000
+        },
+        {
+          "name": "Proximus/Orange BE",
+          "share": "22%",
+          "value_eur": 1898400000
+        },
+        {
+          "name": "Amazon",
+          "share": "12%",
+          "value_eur": 395500000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "7%",
+          "value_eur": 237300000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, DataReportal 2025, Tefficient 2025, Cognitive Market Research 2025",
+      "notes": ""
+    },
+    {
+      "country": "Portugal",
+      "code": "PT",
+      "connected_population": 9300000,
+      "smartphone_penetration": "72% (estimé)",
+      "arpu_google_eur": 58,
+      "arpu_meta_eur": 72,
+      "arpu_tiktok_eur": 15,
+      "arpu_apple_eur": 12,
+      "arpu_amazon_eur": 10,
+      "arpu_telecom_data_eur": 135,
+      "arpu_banking_data_eur": 12,
+      "arpu_total_eur": 314,
+      "total_value_captured_eur": 2920200000,
+      "intention_gap_53pct_eur": 1547706000,
+      "top_captors": [
+        {
+          "name": "Google/Alphabet",
+          "share": "27%",
+          "value_eur": 539400000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "24%",
+          "value_eur": 669600000
+        },
+        {
+          "name": "NOS/Altice Portugal",
+          "share": "23%",
+          "value_eur": 1255500000
+        },
+        {
+          "name": "Amazon",
+          "share": "10%",
+          "value_eur": 204600000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "7%",
+          "value_eur": 139500000
+        }
+      ],
+      "sources": "Alphabet FY2025, Meta FY2025, DataReportal 2025, Tefficient 2025 (PT steepest rev/GB decline), Statista 2025",
+      "notes": ""
+    },
+    {
+      "country": "Maroc",
+      "code": "MA",
+      "connected_population": 35300000,
+      "smartphone_penetration": "72%",
+      "arpu_google_eur": 18.5,
+      "arpu_meta_eur": 16.7,
+      "arpu_tiktok_eur": 7,
+      "arpu_apple_eur": 3,
+      "arpu_amazon_eur": 0.5,
+      "arpu_telecom_data_eur": 54,
+      "arpu_banking_data_eur": 8,
+      "arpu_total_eur": 107.7,
+      "total_value_captured_eur": 3801810000,
+      "intention_gap_53pct_eur": 2014959300,
+      "top_captors": [
+        {
+          "name": "Maroc Telecom (IAM)",
+          "share": "32%",
+          "value_eur": 1906200000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "22%",
+          "value_eur": 653050000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "20%",
+          "value_eur": 589510000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "10%",
+          "value_eur": 247100000
+        },
+        {
+          "name": "Attijariwafa Bank",
+          "share": "8%",
+          "value_eur": 282400000
+        }
+      ],
+      "sources": "Maroc Telecom FY2025 (Reuters), DataReportal 2025, ANRT Maroc, Meta FY2025 RoW, Alphabet FY2025 EMEA, Statista Africa internet penetration 2025",
+      "notes": "Morocco has Africa's highest internet penetration at 92%. Maroc Telecom ARPU derived from 36.6B MAD / 22M Morocco subscribers. Meta/Google ARPU estimated from regional segmentation."
+    },
+    {
+      "country": "Sénégal",
+      "code": "SN",
+      "connected_population": 11300000,
+      "smartphone_penetration": "45% (estimé)",
+      "arpu_google_eur": 6,
+      "arpu_meta_eur": 8,
+      "arpu_tiktok_eur": 3,
+      "arpu_apple_eur": 0.8,
+      "arpu_amazon_eur": 0.2,
+      "arpu_telecom_data_eur": 28,
+      "arpu_banking_data_eur": 4,
+      "arpu_total_eur": 50.0,
+      "total_value_captured_eur": 565000000,
+      "intention_gap_53pct_eur": 299450000,
+      "top_captors": [
+        {
+          "name": "Orange Sénégal",
+          "share": "35%",
+          "value_eur": 316400000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 90400000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 67800000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "10%",
+          "value_eur": 33900000
+        },
+        {
+          "name": "Free Sénégal",
+          "share": "8%",
+          "value_eur": 45200000
+        }
+      ],
+      "sources": "Orange FY2025 Africa ME Results, GSMA Mobile Economy Africa 2025, DataReportal 2025, Airtel Africa H1 2025 (regional analogy), Meta FY2025 RoW",
+      "notes": "ARPU estimé par analogie régionale Afrique de l'Ouest francophone. Orange Sénégal est l'opérateur dominant."
+    },
+    {
+      "country": "Nigeria",
+      "code": "NG",
+      "connected_population": 107000000,
+      "smartphone_penetration": "54%",
+      "arpu_google_eur": 20,
+      "arpu_meta_eur": 12,
+      "arpu_tiktok_eur": 5,
+      "arpu_apple_eur": 1.2,
+      "arpu_amazon_eur": 0.3,
+      "arpu_telecom_data_eur": 22,
+      "arpu_banking_data_eur": 6,
+      "arpu_total_eur": 66.5,
+      "total_value_captured_eur": 7115500000,
+      "intention_gap_53pct_eur": 3771215000,
+      "top_captors": [
+        {
+          "name": "MTN Nigeria",
+          "share": "30%",
+          "value_eur": 2354000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "22%",
+          "value_eur": 2140000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "18%",
+          "value_eur": 1284000000
+        },
+        {
+          "name": "Airtel Nigeria",
+          "share": "15%",
+          "value_eur": 1070000000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 535000000
+        }
+      ],
+      "sources": "MTN Group FY2025 Results, Airtel Africa FY2025, DataReportal 2025, Cognitive Market Research (Nigeria social ad $746M), Statista Africa 2025",
+      "notes": "Nigeria is Africa's largest internet market (107M users). MTN and Airtel dominate. ARPU telecom derived from Airtel Nigeria data revenue $576M / data subscribers."
+    },
+    {
+      "country": "Côte d'Ivoire",
+      "code": "CI",
+      "connected_population": 12800000,
+      "smartphone_penetration": "42% (estimé)",
+      "arpu_google_eur": 5.5,
+      "arpu_meta_eur": 7,
+      "arpu_tiktok_eur": 2.5,
+      "arpu_apple_eur": 0.6,
+      "arpu_amazon_eur": 0.2,
+      "arpu_telecom_data_eur": 24,
+      "arpu_banking_data_eur": 3.5,
+      "arpu_total_eur": 43.3,
+      "total_value_captured_eur": 554240000,
+      "intention_gap_53pct_eur": 293747200,
+      "top_captors": [
+        {
+          "name": "Orange Côte d'Ivoire",
+          "share": "36%",
+          "value_eur": 307200000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 89600000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 70400000
+        },
+        {
+          "name": "MTN Côte d'Ivoire",
+          "share": "12%",
+          "value_eur": 64000000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 32000000
+        }
+      ],
+      "sources": "Orange FY2025 Africa ME (+14.5% Francophone Africa), GSMA Mobile Economy Africa 2025, DataReportal 2025, Airtel Africa H1 2025 (analogy)",
+      "notes": "ARPU estimé par analogie Afrique de l'Ouest. Orange CI est l'opérateur dominant avec Mobile Money en forte croissance."
+    },
+    {
+      "country": "Ghana",
+      "code": "GH",
+      "connected_population": 24300000,
+      "smartphone_penetration": "55% (estimé)",
+      "arpu_google_eur": 7,
+      "arpu_meta_eur": 9,
+      "arpu_tiktok_eur": 3,
+      "arpu_apple_eur": 0.8,
+      "arpu_amazon_eur": 0.2,
+      "arpu_telecom_data_eur": 22,
+      "arpu_banking_data_eur": 4,
+      "arpu_total_eur": 46.0,
+      "total_value_captured_eur": 1117800000,
+      "intention_gap_53pct_eur": 592434000,
+      "top_captors": [
+        {
+          "name": "MTN Ghana",
+          "share": "34%",
+          "value_eur": 534600000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 218700000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 170100000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "10%",
+          "value_eur": 72900000
+        },
+        {
+          "name": "Vodafone Ghana",
+          "share": "8%",
+          "value_eur": 85050000
+        }
+      ],
+      "sources": "MTN Ghana FY2025 (ARPU GHS 671), GSMA Mobile Economy Africa 2025, DataReportal 2025, Meta FY2025 RoW",
+      "notes": "MTN Ghana ARPU GHS 671 in 2025 vs GHS 513 in 2024 (+30.8%). Data component estimated at ~50% of total ARPU."
+    },
+    {
+      "country": "Kenya",
+      "code": "KE",
+      "connected_population": 27400000,
+      "smartphone_penetration": "48%",
+      "arpu_google_eur": 8,
+      "arpu_meta_eur": 10,
+      "arpu_tiktok_eur": 3.5,
+      "arpu_apple_eur": 1,
+      "arpu_amazon_eur": 0.3,
+      "arpu_telecom_data_eur": 22,
+      "arpu_banking_data_eur": 5,
+      "arpu_total_eur": 49.8,
+      "total_value_captured_eur": 1364520000,
+      "intention_gap_53pct_eur": 723195600,
+      "top_captors": [
+        {
+          "name": "Safaricom",
+          "share": "33%",
+          "value_eur": 739800000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 274000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 219200000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "10%",
+          "value_eur": 95900000
+        },
+        {
+          "name": "Airtel Kenya",
+          "share": "8%",
+          "value_eur": 109600000
+        }
+      ],
+      "sources": "Safaricom FY25 Results (ARPU KES 267.11/month data), NCBA Investment Bank Safaricom FY2025 Update, DataReportal 2025, GSMA Africa 2025",
+      "notes": "Safaricom dominates with M-PESA contributing 44.2% of service revenue. Data ARPU KES 267.11/month converted at ~145 KES/EUR. Banking ARPU reflects M-PESA transaction data value."
+    },
+    {
+      "country": "Afrique du Sud",
+      "code": "ZA",
+      "connected_population": 50800000,
+      "smartphone_penetration": "65%",
+      "arpu_google_eur": 22,
+      "arpu_meta_eur": 18,
+      "arpu_tiktok_eur": 6,
+      "arpu_apple_eur": 3,
+      "arpu_amazon_eur": 1.5,
+      "arpu_telecom_data_eur": 35,
+      "arpu_banking_data_eur": 8,
+      "arpu_total_eur": 93.5,
+      "total_value_captured_eur": 4749800000,
+      "intention_gap_53pct_eur": 2517394000,
+      "top_captors": [
+        {
+          "name": "Vodacom/MTN SA",
+          "share": "30%",
+          "value_eur": 1778000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "24%",
+          "value_eur": 1117600000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "20%",
+          "value_eur": 914400000
+        },
+        {
+          "name": "Standard Bank/FNB",
+          "share": "10%",
+          "value_eur": 406400000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 304800000
+        }
+      ],
+      "sources": "Cognitive Market Research (ZA social ad $2.188B), MTN Group FY2025, Standard Bank 2024 ($2.7B profit), DataReportal 2025, Statista Africa 2025",
+      "notes": "South Africa is Africa's most developed ad market ($2.188B social media ad alone). Standard Bank is Africa's most profitable bank ($2.7B net profit 2024)."
+    },
+    {
+      "country": "Égypte",
+      "code": "EG",
+      "connected_population": 96300000,
+      "smartphone_penetration": "55% (estimé)",
+      "arpu_google_eur": 10,
+      "arpu_meta_eur": 9,
+      "arpu_tiktok_eur": 4,
+      "arpu_apple_eur": 1.2,
+      "arpu_amazon_eur": 0.5,
+      "arpu_telecom_data_eur": 18,
+      "arpu_banking_data_eur": 4,
+      "arpu_total_eur": 46.7,
+      "total_value_captured_eur": 4497210000,
+      "intention_gap_53pct_eur": 2383521300,
+      "top_captors": [
+        {
+          "name": "Vodafone Egypt/Orange Egypt",
+          "share": "30%",
+          "value_eur": 1733400000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "24%",
+          "value_eur": 963000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "20%",
+          "value_eur": 866700000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "12%",
+          "value_eur": 385200000
+        },
+        {
+          "name": "National Bank of Egypt",
+          "share": "6%",
+          "value_eur": 385200000
+        }
+      ],
+      "sources": "Cognitive Market Research (Egypt social ad in ME $958M), DataReportal 2025, National Bank of Egypt ($2.3B profit 2024), GSMA MENA 2025",
+      "notes": "Egypt: 2nd largest African internet market. Social ad market part of Middle East ($6.4B). NBE is 2nd most profitable African bank."
+    },
+    {
+      "country": "Tunisie",
+      "code": "TN",
+      "connected_population": 10500000,
+      "smartphone_penetration": "58% (estimé)",
+      "arpu_google_eur": 12,
+      "arpu_meta_eur": 11,
+      "arpu_tiktok_eur": 4,
+      "arpu_apple_eur": 1.5,
+      "arpu_amazon_eur": 0.3,
+      "arpu_telecom_data_eur": 32,
+      "arpu_banking_data_eur": 5,
+      "arpu_total_eur": 65.8,
+      "total_value_captured_eur": 690900000,
+      "intention_gap_53pct_eur": 366177000,
+      "top_captors": [
+        {
+          "name": "Ooredoo/Orange Tunisie",
+          "share": "32%",
+          "value_eur": 336000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "22%",
+          "value_eur": 126000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "20%",
+          "value_eur": 115500000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "10%",
+          "value_eur": 42000000
+        },
+        {
+          "name": "Tunisie Telecom",
+          "share": "8%",
+          "value_eur": 52500000
+        }
+      ],
+      "sources": "DataReportal 2025, GSMA MENA 2025, Ecofin Agency (Tunisia 3rd fastest mobile in Africa), Statista 2025",
+      "notes": "ARPU estimé par analogie Afrique du Nord. Tunisie 3ème vitesse mobile en Afrique (57.30 Mbps)."
+    },
+    {
+      "country": "Éthiopie",
+      "code": "ET",
+      "connected_population": 28600000,
+      "smartphone_penetration": "25% (estimé)",
+      "arpu_google_eur": 2.5,
+      "arpu_meta_eur": 3,
+      "arpu_tiktok_eur": 1.5,
+      "arpu_apple_eur": 0.3,
+      "arpu_amazon_eur": 0.1,
+      "arpu_telecom_data_eur": 12,
+      "arpu_banking_data_eur": 1.5,
+      "arpu_total_eur": 20.9,
+      "total_value_captured_eur": 597740000,
+      "intention_gap_53pct_eur": 316802200,
+      "top_captors": [
+        {
+          "name": "Ethio Telecom",
+          "share": "40%",
+          "value_eur": 343200000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "18%",
+          "value_eur": 85800000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "16%",
+          "value_eur": 71500000
+        },
+        {
+          "name": "Safaricom Ethiopia",
+          "share": "12%",
+          "value_eur": 71500000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 42900000
+        }
+      ],
+      "sources": "Safaricom FY25 (Ethiopia KES 7.91B revenue), GSMA Africa 2025, DataReportal 2025, GSMA Handset Affordability Coalition 2026",
+      "notes": "Smartphone penetration very low (~25%). GSMA pilot country for $40 smartphone. Ethio Telecom historically monopoly, Safaricom entered 2022."
+    },
+    {
+      "country": "Rwanda",
+      "code": "RW",
+      "connected_population": 4900000,
+      "smartphone_penetration": "38% (estimé)",
+      "arpu_google_eur": 4,
+      "arpu_meta_eur": 5,
+      "arpu_tiktok_eur": 2,
+      "arpu_apple_eur": 0.5,
+      "arpu_amazon_eur": 0.1,
+      "arpu_telecom_data_eur": 18,
+      "arpu_banking_data_eur": 3,
+      "arpu_total_eur": 32.6,
+      "total_value_captured_eur": 159740000,
+      "intention_gap_53pct_eur": 84662200,
+      "top_captors": [
+        {
+          "name": "MTN Rwanda",
+          "share": "35%",
+          "value_eur": 88200000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "20%",
+          "value_eur": 24500000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 19600000
+        },
+        {
+          "name": "Airtel Rwanda",
+          "share": "12%",
+          "value_eur": 14700000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 9800000
+        }
+      ],
+      "sources": "GSMA Africa 2025, DataReportal 2025, MTN Group FY2025, Airtel Africa FY2025",
+      "notes": "Rwanda: GSMA pilot for $40 smartphones. Digital ambitions fortes (Kigali Innovation City). ARPU estimé par analogie East Africa."
+    },
+    {
+      "country": "Tanzanie",
+      "code": "TZ",
+      "connected_population": 20200000,
+      "smartphone_penetration": "35% (estimé)",
+      "arpu_google_eur": 3.5,
+      "arpu_meta_eur": 5,
+      "arpu_tiktok_eur": 2,
+      "arpu_apple_eur": 0.4,
+      "arpu_amazon_eur": 0.1,
+      "arpu_telecom_data_eur": 15,
+      "arpu_banking_data_eur": 2.5,
+      "arpu_total_eur": 28.5,
+      "total_value_captured_eur": 575700000,
+      "intention_gap_53pct_eur": 305121000,
+      "top_captors": [
+        {
+          "name": "Vodacom Tanzania",
+          "share": "33%",
+          "value_eur": 303000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 101000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 70700000
+        },
+        {
+          "name": "Airtel Tanzania",
+          "share": "12%",
+          "value_eur": 60600000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 40400000
+        }
+      ],
+      "sources": "GSMA Africa 2025, DataReportal 2025, Airtel Africa FY2025 (East Africa +23%), Vodacom Tanzania estimates",
+      "notes": "ARPU estimé par analogie East Africa. GSMA pilot country for $40 smartphones. Airtel East Africa revenue $2.2B across 6 markets."
+    },
+    {
+      "country": "Ouganda",
+      "code": "UG",
+      "connected_population": 12000000,
+      "smartphone_penetration": "30% (estimé)",
+      "arpu_google_eur": 3,
+      "arpu_meta_eur": 4,
+      "arpu_tiktok_eur": 1.5,
+      "arpu_apple_eur": 0.3,
+      "arpu_amazon_eur": 0.1,
+      "arpu_telecom_data_eur": 14,
+      "arpu_banking_data_eur": 2,
+      "arpu_total_eur": 24.9,
+      "total_value_captured_eur": 298800000,
+      "intention_gap_53pct_eur": 158364000,
+      "top_captors": [
+        {
+          "name": "MTN Uganda",
+          "share": "35%",
+          "value_eur": 168000000
+        },
+        {
+          "name": "Meta/Facebook",
+          "share": "22%",
+          "value_eur": 48000000
+        },
+        {
+          "name": "Google/Alphabet",
+          "share": "18%",
+          "value_eur": 36000000
+        },
+        {
+          "name": "Airtel Uganda",
+          "share": "12%",
+          "value_eur": 36000000
+        },
+        {
+          "name": "TikTok/ByteDance",
+          "share": "8%",
+          "value_eur": 18000000
+        }
+      ],
+      "sources": "GSMA Africa 2025, DataReportal 2025, MTN Group FY2025, Airtel Africa FY2025 (East Africa segment)",
+      "notes": "ARPU estimé par analogie East Africa. GSMA pilot country for $40 smartphones. Uganda has social media tax impacting usage."
+    }
+  ],
+  "aggregates": {
+    "corridor_total": {
+      "connected_population": 721900000,
+      "total_value_captured_eur": 138558460000,
+      "intention_gap_53pct_eur": 73435983800,
+      "average_arpu_eur": 191.94
+    },
+    "eu_bloc": {
+      "countries": [
+        "FR",
+        "DE",
+        "ES",
+        "IT",
+        "NL",
+        "BE",
+        "PT"
+      ],
+      "connected_population": 280500000,
+      "total_value_captured_eur": 112469700000,
+      "intention_gap_53pct_eur": 59608941000,
+      "average_arpu_eur": 400.96
+    },
+    "africa_bloc": {
+      "countries": [
+        "MA",
+        "SN",
+        "NG",
+        "CI",
+        "GH",
+        "KE",
+        "ZA",
+        "EG",
+        "TN",
+        "ET",
+        "RW",
+        "TZ",
+        "UG"
+      ],
+      "connected_population": 441400000,
+      "total_value_captured_eur": 26088760000,
+      "intention_gap_53pct_eur": 13827042800,
+      "average_arpu_eur": 59.1
+    },
+    "asymmetry_ratio": 6.78,
+    "notes": "Le ratio d'asymétrie montre que chaque internaute européen génère X fois plus de valeur captée qu'un internaute africain du corridor."
+  }
+}
