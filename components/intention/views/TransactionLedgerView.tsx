@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { LEDGER_ENTRIES } from '../shared/mock-data';
 
 interface LedgerEntry {
   id: string;
@@ -13,16 +14,7 @@ interface LedgerEntry {
   status: 'CERTIFIED' | 'PENDING' | 'DISPUTED';
 }
 
-const SIMULATED_LEDGER: LedgerEntry[] = [
-  { id: '1', timestamp: '2026-04-03 04:21:12', buyer: 'B-0x3F9A', category: 'FINANCE', tLevel: 'T4', volume: '12 MB', price: 42.50, hash: '0x7a2f...e4b1', status: 'CERTIFIED' },
-  { id: '2', timestamp: '2026-04-03 04:20:05', buyer: 'B-0x8B1C', category: 'SANTÉ', tLevel: 'T5', volume: '8 MB', price: 115.00, hash: '0x3b1a...f9c2', status: 'PENDING' },
-  { id: '3', timestamp: '2026-04-03 04:18:44', buyer: 'B-0x2A4E', category: 'MOBILITÉ', tLevel: 'T3', volume: '45 MB', price: 18.20, hash: '0x9d4e...a1b8', status: 'CERTIFIED' },
-  { id: '4', timestamp: '2026-04-03 04:15:30', buyer: 'B-0x9F2D', category: 'E-COMMERCE', tLevel: 'T2', volume: '5 MB', price: 8.40, hash: '0x1c8f...d3e7', status: 'DISPUTED' },
-  { id: '5', timestamp: '2026-04-03 04:12:15', buyer: 'B-0x5E7A', category: 'FINANCE', tLevel: 'T4', volume: '22 MB', price: 65.00, hash: '0x8e2a...c5f1', status: 'CERTIFIED' },
-  { id: '6', timestamp: '2026-04-03 04:10:02', buyer: 'B-0x1D8C', category: 'SANTÉ', tLevel: 'T5', volume: '15 MB', price: 180.00, hash: '0x4f1b...e8a3', status: 'CERTIFIED' },
-  { id: '7', timestamp: '2026-04-03 04:05:44', buyer: 'B-0x7C3B', category: 'MOBILITÉ', tLevel: 'T3', volume: '30 MB', price: 12.50, hash: '0x2a9d...b6c4', status: 'PENDING' },
-  { id: '8', timestamp: '2026-04-03 04:01:20', buyer: 'B-0x4A9F', category: 'E-COMMERCE', tLevel: 'T2', volume: '8 MB', price: 15.00, hash: '0x5d7c...a2e9', status: 'CERTIFIED' },
-];
+const SIMULATED_LEDGER: LedgerEntry[] = LEDGER_ENTRIES;
 
 export default function TransactionLedgerView() {
   const [filterCategory, setFilterCategory] = useState<string>('ALL');

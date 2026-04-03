@@ -1,71 +1,11 @@
 import React from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { CORRIDOR_NODES, CORRIDOR_EDGES, CORRIDOR_FLOWS, CORRIDOR_COLORS } from '../shared/mock-data';
 
-interface Node {
-  id: string;
-  x: number;
-  y: number;
-  label: string;
-}
-
-interface Edge {
-  source: string;
-  target: string;
-  volume: number;
-  color: string;
-  category: string;
-}
-
-interface Flow {
-  id: string;
-  route: string;
-  category: string;
-  volumeLabel: string;
-  valeur: number;
-  tLevel: string;
-  reglementation: string;
-}
-
-const NODES: Node[] = [
-  { id: 'FR', x: 200, y: 100, label: 'FRANCE' },
-  { id: 'DE', x: 300, y: 80, label: 'GERMANY' },
-  { id: 'ES', x: 100, y: 150, label: 'SPAIN' },
-  { id: 'MA', x: 150, y: 250, label: 'MOROCCO' },
-  { id: 'SN', x: 100, y: 350, label: 'SENEGAL' },
-  { id: 'CI', x: 200, y: 380, label: 'COTE D\'IVOIRE' },
-  { id: 'GH', x: 280, y: 360, label: 'GHANA' },
-  { id: 'NG', x: 350, y: 320, label: 'NIGERIA' },
-  { id: 'KE', x: 500, y: 300, label: 'KENYA' },
-  { id: 'ZA', x: 300, y: 500, label: 'SOUTH AFRICA' },
-];
-
-const COLORS = {
-  SANTÉ: '#3B82F6',   // noos bleu
-  FINANCE: '#EAB308', // burhan or
-  MOBILE: '#06B6D4',  // cyan
-};
-
-const EDGES: Edge[] = [
-  { source: 'FR', target: 'MA', volume: 8, color: COLORS.FINANCE, category: 'FINANCE' },
-  { source: 'ES', target: 'MA', volume: 4, color: COLORS.MOBILE, category: 'MOBILE' },
-  { source: 'FR', target: 'SN', volume: 5, color: COLORS.SANTÉ, category: 'SANTÉ' },
-  { source: 'MA', target: 'CI', volume: 3, color: COLORS.FINANCE, category: 'FINANCE' },
-  { source: 'DE', target: 'NG', volume: 6, color: COLORS.MOBILE, category: 'MOBILE' },
-  { source: 'FR', target: 'CI', volume: 4, color: COLORS.FINANCE, category: 'FINANCE' },
-  { source: 'NG', target: 'KE', volume: 5, color: COLORS.FINANCE, category: 'FINANCE' },
-  { source: 'ZA', target: 'NG', volume: 7, color: COLORS.SANTÉ, category: 'SANTÉ' },
-];
-
-const FLOWS: Flow[] = [
-  { id: '1', route: 'FR → MA', category: 'FINANCE', volumeLabel: '4.2 PB/mo', valeur: 1250000, tLevel: 'T4', reglementation: 'RGPD / CNDP' },
-  { id: '2', route: 'DE → NG', category: 'MOBILE', volumeLabel: '3.8 PB/mo', valeur: 980000, tLevel: 'T3', reglementation: 'NDPR / RGPD' },
-  { id: '3', route: 'ZA → NG', category: 'SANTÉ', volumeLabel: '3.1 PB/mo', valeur: 850000, tLevel: 'T5', reglementation: 'POPIA / NDPR' },
-  { id: '4', route: 'FR → SN', category: 'SANTÉ', volumeLabel: '2.5 PB/mo', valeur: 720000, tLevel: 'T5', reglementation: 'RGPD / CDP' },
-  { id: '5', route: 'ES → MA', category: 'MOBILE', volumeLabel: '2.1 PB/mo', valeur: 610000, tLevel: 'T2', reglementation: 'RGPD / CNDP' },
-  { id: '6', route: 'NG → KE', category: 'FINANCE', volumeLabel: '1.9 PB/mo', valeur: 580000, tLevel: 'T4', reglementation: 'NDPR / DPA' },
-  { id: '7', route: 'FR → CI', category: 'FINANCE', volumeLabel: '1.5 PB/mo', valeur: 450000, tLevel: 'T4', reglementation: 'RGPD / ARTCI' },
-  { id: '8', route: 'MA → CI', category: 'FINANCE', volumeLabel: '1.2 PB/mo', valeur: 320000, tLevel: 'T4', reglementation: 'CNDP / ARTCI' },
-];
+const NODES = CORRIDOR_NODES;
+const COLORS = CORRIDOR_COLORS;
+const EDGES = CORRIDOR_EDGES;
+const FLOWS = CORRIDOR_FLOWS;
 
 export default function CorridorFlowsView() {
   return (

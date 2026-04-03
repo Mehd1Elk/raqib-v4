@@ -1,35 +1,33 @@
 import React, { useState } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { FATIMA_MULTIPLIERS, FATIMA_COMPARISON } from '../shared/mock-data';
 
-const MULTIPLIERS = [
-  { label: '1 PERSONNE', value: 1 },
-  { label: '37M (MAROC)', value: 37000000 },
-  { label: '500M (CORRIDOR)', value: 500000000 },
-];
+const MULTIPLIERS = FATIMA_MULTIPLIERS;
 
 export default function ParadigmComparatorView() {
   const [step, setStep] = useState<number>(0);
 
   const multiplier = MULTIPLIERS[step].value;
 
+  const fc = FATIMA_COMPARISON;
   const attentionData = {
-    produced: 194 * multiplier,
-    received: 0,
-    ads: 847 * multiplier,
-    time: 766 * multiplier,
-    control: '0%',
-    agent: 'AUCUN',
-    consent: `"J'ACCEPTE TOUT" × ${312 * multiplier} fois/an`
+    produced: fc.attention.dataValuePerPerson * multiplier,
+    received: fc.attention.revenueRecovered * multiplier,
+    ads: fc.attention.adsPerWeek * multiplier,
+    time: fc.attention.timeCapted * multiplier,
+    control: fc.attention.controlPercent,
+    agent: fc.attention.agent,
+    consent: `"J'ACCEPTE TOUT" × ${fc.attention.consentPerYear * multiplier} fois/an`
   };
 
   const intentionData = {
-    produced: 194 * multiplier,
-    received: 103 * multiplier,
-    ads: 0,
-    time: 766 * multiplier, // libéré
-    control: '100%',
-    agent: 'ÆLYA (312 CGU SCANNÉES, 67% REJECT)',
-    intentions: multiplier === 1 ? '3/MOIS → €22/INTENTION' : `${(3 * 12 * multiplier).toLocaleString('fr-FR')} INTENTIONS/AN`
+    produced: fc.intention.dataValuePerPerson * multiplier,
+    received: fc.intention.revenueRecovered * multiplier,
+    ads: fc.intention.adsPerWeek,
+    time: fc.intention.timeLiberated * multiplier,
+    control: fc.intention.controlPercent,
+    agent: fc.intention.agent,
+    intentions: multiplier === 1 ? `${fc.intention.intentionsPerMonth}/MOIS → €${fc.intention.pricePerIntention}/INTENTION` : `${(fc.intention.intentionsPerMonth * 12 * multiplier).toLocaleString('fr-FR')} INTENTIONS/AN`
   };
 
   const formatCurrency = (val: number) => {

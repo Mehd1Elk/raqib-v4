@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { INTENTION_FEED, INTENTION_BIDS_MAP } from '../shared/mock-data';
 
 interface Intention {
   id: string;
@@ -19,38 +20,8 @@ interface Bid {
   reason?: string;
 }
 
-const INTENTIONS: Intention[] = [
-  { id: '1', user: 'Fatima K.', location: 'Casablanca', query: 'Cherche crédit immobilier < 3000 DH/mois', budget: '€150K', urgency: '30j', category: 'FINANCE', basePrice: 42 },
-  { id: '2', user: 'Ahmed T.', location: 'Dakar', query: 'Assurance auto moto', budget: '< 200K CFA/an', urgency: 'Immédiate', category: 'ASSURANCE', basePrice: 15 },
-  { id: '3', user: 'Sophie L.', location: 'Paris', query: 'Thérapie TCC anxiété', budget: '€60-80/séance', urgency: '7j', category: 'SANTÉ', basePrice: 35 },
-  { id: '4', user: 'Youssef B.', location: 'Rabat', query: 'Achat VÉ (Véhicule Électrique)', budget: '€25K', urgency: '15j', category: 'MOBILITÉ', basePrice: 28 },
-  { id: '5', user: 'Marie M.', location: 'Lyon', query: 'Formation Data Science', budget: '€3K', urgency: '60j', category: 'EDUCATION', basePrice: 18 },
-];
-
-const BIDS_MAP: Record<string, Bid[]> = {
-  '1': [
-    { buyer: 'Crédit du Maroc', price: 42, isRecommended: true, reason: 'Meilleur prix + taux historique 2.1%' },
-    { buyer: 'Attijariwafa', price: 38, isRecommended: false },
-    { buyer: 'BOA', price: 35, isRecommended: false },
-  ],
-  '2': [
-    { buyer: 'AXA Sénégal', price: 15, isRecommended: true, reason: 'Couverture optimale pour ce profil' },
-    { buyer: 'Sanlam', price: 12, isRecommended: false },
-  ],
-  '3': [
-    { buyer: 'Qare', price: 35, isRecommended: true, reason: 'Match parfait avec spécialité TCC' },
-    { buyer: 'Livi', price: 30, isRecommended: false },
-    { buyer: 'Doctolib Therapy', price: 28, isRecommended: false },
-  ],
-  '4': [
-    { buyer: 'Renault Maroc', price: 28, isRecommended: true, reason: 'Offre promotionnelle en cours' },
-    { buyer: 'Peugeot', price: 25, isRecommended: false },
-  ],
-  '5': [
-    { buyer: 'Le Wagon', price: 18, isRecommended: true, reason: 'Financement CPF possible' },
-    { buyer: 'OpenClassrooms', price: 15, isRecommended: false },
-  ]
-};
+const INTENTIONS: Intention[] = INTENTION_FEED;
+const BIDS_MAP: Record<string, Bid[]> = INTENTION_BIDS_MAP;
 
 export default function IntentionMarketplaceView() {
   const [selectedId, setSelectedId] = useState<string>(INTENTIONS[0].id);

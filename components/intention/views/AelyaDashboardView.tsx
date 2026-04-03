@@ -2,30 +2,17 @@
 
 import React from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { AEYLA_TRANSACTIONS, AEYLA_STATS } from '../shared/mock-data';
 
-const STATS = [
-  { label: 'REQUÊTES ÉVALUÉES', value: '847K', subtitle: '24h', color: BLOOMBERG_PRUNE_COLORS.textMain },
-  { label: 'TAUX DE REJET', value: '67%', subtitle: 'Protection active', color: BLOOMBERG_PRUNE_COLORS.accentPositive },
-  { label: 'TEMPS DÉCISION MOYEN', value: '3.2ms', subtitle: 'P99 8.1ms', color: BLOOMBERG_PRUNE_COLORS.textMain },
-  { label: 'CGU SCANNÉES', value: '312', subtitle: '+14 (7j)', color: BLOOMBERG_PRUNE_COLORS.textMain },
-  { label: 'COUNTER-OFFERS ÉMISES', value: '28K', subtitle: '3.3% Conv.', color: '#F59E0B' },
-  { label: 'REVENUE PRODUCTEURS', value: '€142K', subtitle: '24h', color: BLOOMBERG_PRUNE_COLORS.accentPositive },
-];
+const STATS = AEYLA_STATS.map(s => ({
+  ...s,
+  color: s.label.includes('REJET') ? BLOOMBERG_PRUNE_COLORS.accentPositive
+    : s.label.includes('COUNTER') ? '#F59E0B'
+    : s.label.includes('REVENUE') ? BLOOMBERG_PRUNE_COLORS.accentPositive
+    : BLOOMBERG_PRUNE_COLORS.textMain,
+}));
 
-const TRANSACTIONS = [
-  { ts: '10:42:01', buyer: 'B**#8A', cat: 'RÉNO ÉNERGIE', tlevel: 'T4', price: 92.5, status: 'ACCEPT' },
-  { ts: '10:41:59', buyer: 'B**#2C', cat: 'SANTÉ MENTALE', tlevel: 'T1', price: 12.0, status: 'REJECT' },
-  { ts: '10:41:45', buyer: 'B**#9F', cat: 'CRÉDIT IMMO', tlevel: 'T3', price: 41.0, status: 'COUNTER' },
-  { ts: '10:41:30', buyer: 'B**#11', cat: 'ASSURANCE AUTO', tlevel: 'T5', price: 15.5, status: 'ACCEPT' },
-  { ts: '10:41:12', buyer: 'B**#9A', cat: 'EMPLOI TECH', tlevel: 'T2', price: 28.0, status: 'REJECT' },
-  { ts: '10:40:55', buyer: 'B**#4D', cat: 'MOBILITÉ ÉLEC', tlevel: 'T4', price: 65.2, status: 'ACCEPT' },
-  { ts: '10:40:42', buyer: 'B**#8A', cat: 'CLOUD B2B', tlevel: 'T4', price: 85.0, status: 'ACCEPT' },
-  { ts: '10:40:10', buyer: 'B**#3B', cat: 'CYBERSECURITÉ', tlevel: 'T2', price: 140.5, status: 'REJECT' },
-  { ts: '10:39:58', buyer: 'B**#2C', cat: 'SANTÉ MENTALE', tlevel: 'T5', price: 38.0, status: 'ACCEPT' },
-  { ts: '10:39:20', buyer: 'B**#7E', cat: 'MUTUELLE SANTÉ', tlevel: 'T3', price: 20.0, status: 'COUNTER' },
-  { ts: '10:38:45', buyer: 'B**#9F', cat: 'CRÉDIT IMMO', tlevel: 'T1', price: 10.0, status: 'REJECT' },
-  { ts: '10:38:12', buyer: 'B**#5C', cat: 'VOYAGE LUXE', tlevel: 'T5', price: 98.0, status: 'ACCEPT' },
-];
+const TRANSACTIONS = AEYLA_TRANSACTIONS;
 
 export default function AelyaDashboardView() {
   const getStatusColor = (status: string) => {

@@ -2,14 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from '../shared/constants';
+import { OBSERVATORY_SAMPLE } from '../shared/mock-data';
 
 interface CountryData {
   id: string;
   pays: string;
   population: string;
   arpu: number;
-  valeurCaptee: number; // in billions
-  gapIntention: number; // in billions
+  valeurCaptee: number;
+  gapIntention: number;
   topCapteur: string;
 }
 
@@ -18,19 +19,15 @@ export default function ObservatoryView() {
   const [data, setData] = useState<CountryData[]>([]);
 
   useEffect(() => {
-    // Simulate fetch from /api/intention/observatory
     const fetchData = async () => {
-      // Mock data
-      const mockResult: CountryData[] = [
-        { id: 'MA', pays: 'Maroc', population: '28M', arpu: 14.5, valeurCaptee: 4.8, gapIntention: 1.2, topCapteur: 'Meta' },
-        { id: 'SN', pays: 'Sénégal', population: '12M', arpu: 8.2, valeurCaptee: 1.1, gapIntention: 0.4, topCapteur: 'TikTok' },
-        { id: 'FR', pays: 'France', population: '54M', arpu: 42.0, valeurCaptee: 27.2, gapIntention: 3.5, topCapteur: 'Google' },
-        { id: 'CI', pays: 'Côte d\'Ivoire', population: '15M', arpu: 9.1, valeurCaptee: 1.6, gapIntention: 0.6, topCapteur: 'Meta' },
-        { id: 'NG', pays: 'Nigeria', population: '105M', arpu: 6.8, valeurCaptee: 8.5, gapIntention: 2.1, topCapteur: 'Google' },
-      ];
-      
-      const sorted = mockResult.sort((a, b) => b.gapIntention - a.gapIntention);
-      setData(sorted);
+      try {
+        const res = await fetch('/api/intention/observatory');
+        const apiData = await res.json();
+        const result = apiData.length > 0 ? apiData : OBSERVATORY_SAMPLE;
+        setData(result.sort((a: CountryData, b: CountryData) => b.gapIntention - a.gapIntention));
+      } catch {
+        setData(OBSERVATORY_SAMPLE);
+      }
       setLoading(false);
     };
 
