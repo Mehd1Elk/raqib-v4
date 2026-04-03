@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_environmental_corrections').select('*');
+    let query = (supabase as any).from('obs_environmental_corrections').select('*');
 
     if (molecule) query = query.eq('molecule', molecule);
     if (factor_type) query = query.eq('factor_type', factor_type);

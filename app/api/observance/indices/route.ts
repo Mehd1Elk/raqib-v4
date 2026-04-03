@@ -3,7 +3,7 @@ import { createClient } from '@/lib/supabase/server';
 export async function GET() {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
+    const { data, error } = await (supabase as any)
       .from('obs_adherence_indices')
       .select('*')
       .order('created_at', { ascending: false });

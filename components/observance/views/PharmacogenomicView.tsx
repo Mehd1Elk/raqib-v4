@@ -45,9 +45,9 @@ export default function PharmacogenomicView() {
             <div className="border border-[#15161A] p-3 mb-6 bg-[#15161A]">MOLÉCULE ACTIVE</div>
             
             <div className="flex justify-between w-full max-w-[300px] mb-6">
-              <div width="1" className="h-10 border-l border-dashed border-[#8A9BA8] ml-4" />
-              <div width="1" className="h-10 border-l border-[#5AACAC]" />
-              <div width="1" className="h-10 border-l border-dashed border-[#8A9BA8] mr-4" />
+              <div className="h-10 border-l border-dashed border-[#8A9BA8] ml-4" />
+              <div className="h-10 border-l border-[#5AACAC]" />
+              <div className="h-10 border-l border-dashed border-[#8A9BA8] mr-4" />
             </div>
             
             <div className="flex justify-between w-full gap-4 mb-6 text-center">

@@ -7,7 +7,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_myne_incentive_sim').select('*');
+    let query = (supabase as any).from('obs_myne_incentive_sim').select('*');
 
     if (molecule) query = query.eq('molecule', molecule);
     if (scenario_name) query = query.eq('scenario_name', scenario_name);

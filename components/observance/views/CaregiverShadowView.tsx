@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
-import { UserHeart, UserX, ActivitySquare, AlertTriangle, ArrowRightRight, BrainCircuit } from 'lucide-react';
+import { HeartHandshake, UserX, Activity, AlertTriangle, ArrowRight, BrainCircuit } from 'lucide-react';
 
 export default function CaregiverShadowView() {
   const { dyads } = MOCK_OBSERVANCE_DATA;
@@ -29,14 +29,14 @@ export default function CaregiverShadowView() {
           <div className="w-32 flex flex-col items-center">
             {isCorrelated ? (
               <>
-                <ArrowRightRight size={32} className="text-[#F44336] animate-pulse mb-2" />
+                <ArrowRight size={32} className="text-[#F44336] animate-pulse mb-2" />
                 <div className="bg-[rgba(244,67,54,0.1)] border border-[#F44336]/30 text-[#F44336] px-2 py-1 text-[10px] font-['JetBrains_Mono']">
                   CORRELATION {selectedDyad.correlation.toFixed(2)}
                 </div>
               </>
             ) : (
               <>
-                <ArrowRightRight size={24} className="text-[#8A9BA8] opacity-50 mb-2" />
+                <ArrowRight size={24} className="text-[#8A9BA8] opacity-50 mb-2" />
                 <div className="bg-[#0B0C10] border border-[#15161A] text-[#8A9BA8] px-2 py-1 text-[10px] font-['JetBrains_Mono']">
                   STABLE
                 </div>
@@ -88,7 +88,7 @@ export default function CaregiverShadowView() {
               <h4 className="font-['JetBrains_Mono'] text-[14px] text-white">CAREGIVER SHADOW</h4>
               <p className="font-['Geist'] text-[12px] text-[#8A9BA8]">Modèle 2 États (Burnout)</p>
             </div>
-            <UserHeart className="text-[#8E4A9F]" size={32} />
+            <HeartHandshake className="text-[#8E4A9F]" size={32} />
           </div>
 
           <div className="flex-1 flex flex-col justify-center gap-8">

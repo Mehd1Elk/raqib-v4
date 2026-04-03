@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_competitors').select('*');
+    let query = (supabase as any).from('obs_competitors').select('*');
 
     if (status) query = query.eq('status', status);
     if (technology) query = query.eq('technology', technology);

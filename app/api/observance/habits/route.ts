@@ -6,7 +6,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_habit_levers').select('*');
+    let query = (supabase as any).from('obs_habit_levers').select('*');
 
     if (lever_id) query = query.eq('lever_id', lever_id);
 

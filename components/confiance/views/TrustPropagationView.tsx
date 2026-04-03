@@ -128,7 +128,6 @@ export const TrustPropagationView: React.FC = () => {
                       animation: node.status === 'UNKNOWN' ? 'blinkRed 1.5s infinite' : 'none',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       color: CONFIANCE_COLORS.text.primary,
-                      fontSize: '10px',
                       ...CONFIANCE_TYPOGRAPHY.labels
                     }}
                   >
