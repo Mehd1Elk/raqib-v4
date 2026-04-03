@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { BLOOMBERG_PRUNE_COLORS, COMMON_STYLES } from './shared/constants';
 import ObservatoryView from './views/ObservatoryView';
 import PricingEngineView from './views/PricingEngineView';
@@ -8,10 +8,10 @@ import IntentionBourseView from './views/IntentionBourseView';
 import ComplianceView from './views/ComplianceView';
 import AelyaDashboardView from './views/AelyaDashboardView';
 import TransactionLedgerView from './views/TransactionLedgerView';
-import IntentionMarketplaceView from './views/IntentionMarketplaceView';
-import CorridorFlowsView from './views/CorridorFlowsView';
-import ParadigmComparatorView from './views/ParadigmComparatorView';
-import CompetitiveLandscapeView from './views/CompetitiveLandscapeView';
+
+// Lazy loaded components for new axes
+const ScorecardView = React.lazy(() => import('./views/ScorecardView'));
+const InventaireView = React.lazy(() => import('./views/InventaireView'));
 
 const TABS = [
   { id: 'observatory', label: 'Observatoire', icon: '◉' },
@@ -20,11 +20,25 @@ const TABS = [
   { id: 'compliance', label: 'Compliance Matrix', icon: '◇' },
   { id: 'aelya', label: 'ÆLYA Performance', icon: '◎' },
   { id: 'ledger', label: 'Transaction Ledger', icon: '⊕' },
-  { id: 'marketplace', label: 'Intention Marketplace', icon: '◊' },
-  { id: 'corridor', label: 'Corridor Data Flows', icon: '▸' },
-  { id: 'paradigme', label: 'Comparateur Paradigme', icon: '⊘' },
-  { id: 'competitive', label: 'Competitive Landscape', icon: '⊞' },
+  { id: 'calcul', label: 'Calcul du Vol', icon: '⊘' },
+  { id: 'pionniers', label: 'Les Pionniers', icon: '⊚' },
+  { id: 'scorecard', label: 'Scorecard', icon: '⊛' },
+  { id: 'diaspora', label: 'Diaspora', icon: '⊜' },
+  { id: 'neuro', label: 'Neuro-Intention', icon: '⊠' },
+  { id: 'conversion', label: 'Matrice Conversion', icon: '⊡' },
+  { id: 'paradoxe', label: 'Paradoxe Gratuité', icon: '⊢' },
+  { id: 'reglementaire', label: 'Cascade Réglementaire', icon: '⊣' },
+  { id: 'souverainete', label: 'Indice Souveraineté', icon: '⊤' },
+  { id: 'inventaire', label: 'Inventaire Vivant', icon: '⊥' },
 ];
+
+const FallbackView = () => (
+  <div className="flex h-full items-center justify-center pt-20">
+    <p style={{ ...COMMON_STYLES.categoryLabel, color: BLOOMBERG_PRUNE_COLORS.textSecondary }}>
+      MODULE EN COURS DE DÉPLOIEMENT...
+    </p>
+  </div>
+);
 
 export default function IntentionShell() {
   const [activeTab, setActiveTab] = useState('observatory');
@@ -41,25 +55,24 @@ export default function IntentionShell() {
   }, []);
 
   const renderActiveView = () => {
+    let content;
     switch (activeTab) {
-      case 'observatory': return <ObservatoryView />;
-      case 'pricing': return <PricingEngineView />;
-      case 'bourse': return <IntentionBourseView />;
-      case 'compliance': return <ComplianceView />;
-      case 'aelya': return <AelyaDashboardView />;
-      case 'ledger': return <TransactionLedgerView />;
-      case 'marketplace': return <IntentionMarketplaceView />;
-      case 'corridor': return <CorridorFlowsView />;
-      case 'paradigme': return <ParadigmComparatorView />;
-      case 'competitive': return <CompetitiveLandscapeView />;
-      default: return (
-        <div className="flex h-full items-center justify-center pt-20">
-          <p style={{ ...COMMON_STYLES.categoryLabel, color: BLOOMBERG_PRUNE_COLORS.textSecondary }}>
-            MODULE EN COURS DE DÉPLOIEMENT...
-          </p>
-        </div>
-      );
+      case 'observatory': content = <ObservatoryView />; break;
+      case 'pricing': content = <PricingEngineView />; break;
+      case 'bourse': content = <IntentionBourseView />; break;
+      case 'compliance': content = <ComplianceView />; break;
+      case 'aelya': content = <AelyaDashboardView />; break;
+      case 'ledger': content = <TransactionLedgerView />; break;
+      case 'scorecard': content = <ScorecardView />; break;
+      case 'inventaire': content = <InventaireView />; break;
+      default: content = <FallbackView />; break;
     }
+    
+    return (
+      <Suspense fallback={<FallbackView />}>
+        {content}
+      </Suspense>
+    );
   };
 
   return (
