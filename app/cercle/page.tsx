@@ -28,7 +28,7 @@ export default function CerclePage() {
       </a>
 
       <iframe
-        src="/cg-vitrine/index.html"
+        src="https://cg-vitrine.vercel.app"
         style={{
           width: '100vw',
           height: '100vh',
