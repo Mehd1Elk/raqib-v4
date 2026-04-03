@@ -1,20 +1,27 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_STYLES, CONFIANCE_TYPOGRAPHY } from '../shared/constants';
 import { DecayBar } from '../shared/DecayBar';
-
-const SECTORS = [
-  { id: '1', name: 'Identity (Medical)', lambda: 0.02, explanation: 'Les diplômes et RPPS changent peu, mais les affiliations cliniques peuvent expirer.' },
-  { id: '2', name: 'AI Models (Drift)', lambda: 0.15, explanation: 'Les modèles génératifs dérivent rapidement selon les prompts et le finetuning en prod.' },
-  { id: '3', name: 'Supply Chain (Tier 2)', lambda: 0.08, explanation: 'Turnover d\'employés, faillites, changements de certificats ISO.' },
-  { id: '4', name: 'Cybersecurity Auth', lambda: 0.25, explanation: 'Rotation forcée. Les tokens et sessions expirent naturellement très vite.' },
-  { id: '5', name: 'Regulatory (Compliance)', lambda: 0.05, explanation: 'La régulation change par saisons (EU AI Act, RGPD), décroissance lente mais subite en cas de loi.' }
-];
+import { DECAY_SECTORS_MOCK } from '../shared/mock-data';
 
 export const DecayView: React.FC = () => {
+  const [sectors, setSectors] = useState(DECAY_SECTORS_MOCK);
   const [months, setMonths] = useState(1);
-  const [selectedSector, setSelectedSector] = useState<typeof SECTORS[0] | null>(null);
+  const [selectedSector, setSelectedSector] = useState<typeof DECAY_SECTORS_MOCK[0] | null>(null);
+
+  useEffect(() => {
+    const fetchDecay = async () => {
+      try {
+        const res = await fetch('/api/confiance/decay');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) setSectors(apiData);
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchDecay();
+  }, []);
 
   const calculateResidual = (lambda: number, m: number) => {
     // T(t) = T(0) * e^(-lambda * t)
@@ -61,7 +68,7 @@ export const DecayView: React.FC = () => {
         
         {/* BARS */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          {SECTORS.map(sec => {
+          {sectors.map(sec => {
             const residual = calculateResidual(sec.lambda, months);
             const isDead = residual < 30;
 

@@ -1,36 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
-
-interface Threat {
-  id: string;
-  name: string;
-  severity: 'CRITIQUE' | 'ÉLEVÉ';
-  trend: '+140% YoY' | '+85% YoY' | '+210% YoY' | '+300% YoY' | '+45% YoY';
-  keyData: string;
-  impact: string;
-  defense: string;
-  gap: string;
-  research: string;
-}
-
-const THREATS: Threat[] = [
-  { id: '1', name: 'Deepfakes & Synthetic Media', severity: 'CRITIQUE', trend: '+300% YoY', keyData: '85% des fausses preuves d\'identité bancaire (2025).', impact: 'Subversion des KYC traditionnels via injection vidéo.', defense: 'Cryptographic Liveness & provenance attestations (Burhan C2).', gap: 'Détection vs Génération: la génération gagne. Seule l\'attestation à la source survit.', research: 'Quantum-resistant origin proofs.' },
-  { id: '2', name: 'Model Poisoning', severity: 'CRITIQUE', trend: '+210% YoY', keyData: '40% des LLMs fine-tuned exposés.', impact: 'Biais indétectables, backdoors logicielle.', defense: 'EigenProof sur le dataset d\'entraînement et le RLHF.', gap: 'Manque de traçabilité des données d\'entraînement open-source.', research: 'Zero-Knowledge Machine Learning (ZKML).' },
-  { id: '3', name: 'Supply Chain Attacks', severity: 'ÉLEVÉ', trend: '+85% YoY', keyData: 'Attaques Tiers (Rank N-3) en hausse.', impact: 'Injection logicielle ou contrefaçon matérielle bypassing les audits Tier 1.', defense: 'Graphe cryptographique NOOS + signature continue BURHAN.', gap: 'Invisibilité au-delà du fournisseur direct.', research: 'Recursive zk-SNARKs pour supply chains.' },
-  { id: '4', name: 'Certificats Frauduleux (ESG/Bio)', severity: 'ÉLEVÉ', trend: '+140% YoY', keyData: '30% des labels environnementaux non-vérifiables.', impact: 'Prime commerciale touchée sans conformité thermodynamique réelle.', defense: 'Oracle IoT inviolable -> Smart Contract.' , gap: 'Papier vs Réalité physique.', research: 'Hardware Roots of Trust pour capteurs IoT ESG.' },
-  { id: '5', name: 'Identity Theft (AI Agents)', severity: 'CRITIQUE', trend: '+300% YoY', keyData: 'Usurpation de wallets autonomes.', impact: 'Agents AI malicieux agissant sous l\'identité d\'entités légales.', defense: 'DIDs (Decentralized Identifiers) pour AI.', gap: 'Cadre légal absent pour la responsabilité des agents.', research: 'Jurisprudence algorithmique ÆLYA.' }
-];
+import { THREATS_MOCK, type Threat } from '../shared/mock-data';
 
 export const AdversarialWatchView: React.FC = () => {
-  const [selectedThreat, setSelectedThreat] = useState<Threat>(THREATS[0]);
+  const [threats, setThreats] = useState<Threat[]>(THREATS_MOCK);
+  const [selectedThreat, setSelectedThreat] = useState<Threat>(THREATS_MOCK[0]);
+
+  useEffect(() => {
+    const fetchThreats = async () => {
+      try {
+        const res = await fetch('/api/confiance/threats');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) { setThreats(apiData); setSelectedThreat(apiData[0]); }
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchThreats();
+  }, []);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px' }}>
-        {THREATS.map(threat => (
+        {threats.map(threat => (
           <button
             key={threat.id}
             onClick={() => setSelectedThreat(threat)}

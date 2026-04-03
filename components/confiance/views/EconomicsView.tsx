@@ -2,15 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
+import { ECONOMICS_SECTORS_MOCK } from '../shared/mock-data';
 
-const SECTORS = [
-  "Pharmaceutique",
-  "Luxe & Traçabilité",
-  "Énergie & ESG",
-  "Aéronautique",
-  "Agroalimentaire Bio",
-  "Intelligence Artificielle"
-];
+const SECTORS = ECONOMICS_SECTORS_MOCK;
 
 export const EconomicsView: React.FC = () => {
   const [ca, setCa] = useState<number>(500); // in millions

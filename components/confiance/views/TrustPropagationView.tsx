@@ -1,59 +1,25 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_STYLES, CONFIANCE_TYPOGRAPHY } from '../shared/constants';
-
-interface TierData {
-  id: number;
-  name: string;
-  totalSuppliers: number;
-  trustFloor: number;
-  holesPercentage: number;
-  auditCost: string;
-  burhanCost: string;
-  nodes: { id: string; status: 'CERTIFIED' | 'PARTIAL' | 'UNCERTIFIED' | 'UNKNOWN' }[];
-}
-
-const MOCK_CASCADE = {
-  anchor: { name: 'TotalEnergies', score: 94 },
-  tiers: [
-    {
-      id: 1, name: 'Tier 1 — Direct Suppliers', totalSuppliers: 450, trustFloor: 85, holesPercentage: 2, auditCost: '4.5M €', burhanCost: '120K €',
-      nodes: [
-        { id: '1-1', status: 'CERTIFIED' as const }, { id: '1-2', status: 'CERTIFIED' as const }, 
-        { id: '1-3', status: 'PARTIAL' as const }, { id: '1-4', status: 'CERTIFIED' as const }, 
-        { id: '1-5', status: 'CERTIFIED' as const }
-      ]
-    },
-    {
-      id: 2, name: 'Tier 2 — Sub-contractors', totalSuppliers: 1200, trustFloor: 65, holesPercentage: 15, auditCost: '18M €', burhanCost: '250K €',
-      nodes: [
-        { id: '2-1', status: 'PARTIAL' as const }, { id: '2-2', status: 'UNCERTIFIED' as const }, 
-        { id: '2-3', status: 'CERTIFIED' as const }, { id: '2-4', status: 'PARTIAL' as const }, 
-        { id: '2-5', status: 'UNKNOWN' as const }
-    ]
-    },
-    {
-      id: 3, name: 'Tier 3 — Raw Materials', totalSuppliers: 3500, trustFloor: 40, holesPercentage: 45, auditCost: 'Impraticable', burhanCost: '500K €',
-      nodes: [
-        { id: '3-1', status: 'UNCERTIFIED' as const }, { id: '3-2', status: 'UNKNOWN' as const }, 
-        { id: '3-3', status: 'PARTIAL' as const }, { id: '3-4', status: 'UNKNOWN' as const }, 
-        { id: '3-5', status: 'UNCERTIFIED' as const }
-      ]
-    },
-    {
-      id: 4, name: 'Tier 4 — Opaque origins', totalSuppliers: 8000, trustFloor: 12, holesPercentage: 88, auditCost: 'Impossible', burhanCost: '1M €',
-      nodes: [
-        { id: '4-1', status: 'UNKNOWN' as const }, { id: '4-2', status: 'UNKNOWN' as const }, 
-        { id: '4-3', status: 'UNKNOWN' as const }, { id: '4-4', status: 'UNCERTIFIED' as const }, 
-        { id: '4-5', status: 'UNKNOWN' as const }
-      ]
-    }
-  ]
-};
+import { SUPPLY_CHAIN_MOCK, type TierData, type SupplyChainCascade } from '../shared/mock-data';
 
 export const TrustPropagationView: React.FC = () => {
+  const [cascade, setCascade] = useState<SupplyChainCascade>(SUPPLY_CHAIN_MOCK);
   const [selectedTier, setSelectedTier] = useState<TierData | null>(null);
+
+  useEffect(() => {
+    const fetchCascade = async () => {
+      try {
+        const res = await fetch('/api/confiance/supply-chain');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.tiers?.length > 0) setCascade(apiData);
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchCascade();
+  }, []);
 
   const getNodeColor = (status: string) => {
     switch(status) {
@@ -94,12 +60,12 @@ export const TrustPropagationView: React.FC = () => {
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
             zIndex: 2
           }}>
-            <div style={{ ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.text.primary }}>{MOCK_CASCADE.anchor.name}</div>
-            <div style={{ ...CONFIANCE_TYPOGRAPHY.scores, fontSize: '24px', color: CONFIANCE_COLORS.scores.green }}>{MOCK_CASCADE.anchor.score}</div>
+            <div style={{ ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.text.primary }}>{cascade.anchor.name}</div>
+            <div style={{ ...CONFIANCE_TYPOGRAPHY.scores, fontSize: '24px', color: CONFIANCE_COLORS.scores.green }}>{cascade.anchor.score}</div>
           </div>
 
           {/* TIERS */}
-          {MOCK_CASCADE.tiers.map((tier, idx) => (
+          {cascade.tiers.map((tier, idx) => (
             <div key={tier.id} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', position: 'relative' }}>
               {/* SVG Link to previous row */}
               <svg style={{ position: 'absolute', top: '-40px', left: 0, width: '100%', height: '40px', zIndex: 1 }}>

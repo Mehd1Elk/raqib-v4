@@ -2,22 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
-
-interface ArbitrageZone {
-  id: string;
-  name: string;
-  declaredTrust: number;
-  measuredTrust: number;
-  opportunityValue: string;
-}
-
-const FALLBACK_ZONES: ArbitrageZone[] = [
-  { id: '1', name: 'Certificats médicaux', declaredTrust: 92, measuredTrust: 34, opportunityValue: '€1.2B' },
-  { id: '2', name: 'Labels Bio', declaredTrust: 88, measuredTrust: 41, opportunityValue: '€850M' },
-  { id: '3', name: 'Audits ESG', declaredTrust: 95, measuredTrust: 22, opportunityValue: '€4.5B' },
-  { id: '4', name: 'IA en production', declaredTrust: 75, measuredTrust: 18, opportunityValue: '€12B' },
-  { id: '5', name: 'Médicaments Corridor Afrique', declaredTrust: 60, measuredTrust: 12, opportunityValue: '€3.1B' },
-];
+import { ARBITRAGE_ZONES_MOCK, type ArbitrageZone } from '../shared/mock-data';
 
 export const ArbitrageView: React.FC = () => {
   const [zones, setZones] = useState<ArbitrageZone[]>([]);
@@ -28,14 +13,14 @@ export const ArbitrageView: React.FC = () => {
       try {
         const res = await fetch('/api/confiance/sectors');
         if (res.ok) {
-          const data = await res.json();
-          // Map API data back to our ArbitrageZone format if necessary, fallback if not
-          setZones(data.zones || FALLBACK_ZONES);
+          const apiData = await res.json();
+          const zones = apiData.zones || apiData;
+          setZones(Array.isArray(zones) && zones.length > 0 ? zones : ARBITRAGE_ZONES_MOCK);
         } else {
-          setZones(FALLBACK_ZONES);
+          setZones(ARBITRAGE_ZONES_MOCK);
         }
       } catch (e) {
-        setZones(FALLBACK_ZONES);
+        setZones(ARBITRAGE_ZONES_MOCK);
       } finally {
         setLoading(false);
       }

@@ -1,36 +1,31 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
-
-interface Regulation {
-  id: string;
-  name: string;
-  fullName: string;
-  status: 'active' | 'upcoming' | 'draft';
-  date: string;
-  maxPenalty: string;
-  tamBurhan: string;
-  role: string;
-  ffScore: number; // 1-10
-}
-
-const REGULATIONS: Regulation[] = [
-  { id: '1', name: 'CS3D', fullName: 'Corporate Sustainability Due Diligence Directive', status: 'upcoming', date: '2027', maxPenalty: '5% du CA mondial', tamBurhan: '€3.5B', role: 'BURHAN fournit la preuve cryptographique de la cascade de responsabilité jusqu\'au rang n. NOOS map l\'écosystème.', ffScore: 9 },
-  { id: '2', name: 'AI Act', fullName: 'European Artificial Intelligence Act', status: 'active', date: 'Août 2024', maxPenalty: '€35M ou 7% du CA mondial', tamBurhan: '€5.2B', role: 'Validation des données d\'entraînement (EigenProof) et audit algorithmique continu via BURHAN.', ffScore: 10 },
-  { id: '3', name: 'EU FMD', fullName: 'Falsified Medicines Directive', status: 'active', date: 'Fév 2019', maxPenalty: 'Révocation licence + Pénal... pénal', tamBurhan: '€1.8B', role: 'Couplage sérialisation existante avec ancrage blockchain et validation Corridor Afrique.', ffScore: 7 },
-  { id: '4', name: 'DORA', fullName: 'Digital Operational Resilience Act', status: 'upcoming', date: 'Jan 2025', maxPenalty: '2% CA mondial', tamBurhan: '€2.1B', role: 'Monitorage cyber en temps réel et preuves mathématiques de résilience des tiers (ÆLYA).', ffScore: 8 },
-  { id: '5', name: 'PSD3 / PSR', fullName: 'Payment Services Directive 3', status: 'draft', date: '2026+', maxPenalty: 'Varie par État Membre', tamBurhan: '€1.5B', role: 'Open Banking renforcé et Strong Customer Authentication unifiée via cryptographie.', ffScore: 6 }
-];
+import { REGULATIONS_MOCK, type Regulation } from '../shared/mock-data';
 
 export const ForcingFunctionsView: React.FC = () => {
-  const [selectedReg, setSelectedReg] = useState<Regulation>(REGULATIONS[0]);
+  const [regulations, setRegulations] = useState<Regulation[]>(REGULATIONS_MOCK);
+  const [selectedReg, setSelectedReg] = useState<Regulation>(REGULATIONS_MOCK[0]);
+
+  useEffect(() => {
+    const fetchRegs = async () => {
+      try {
+        const res = await fetch('/api/confiance/regulations');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) { setRegulations(apiData); setSelectedReg(apiData[0]); }
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchRegs();
+  }, []);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', height: '100%' }}>
       
       <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', paddingBottom: '8px' }}>
-        {REGULATIONS.map(reg => (
+        {regulations.map(reg => (
           <button
             key={reg.id}
             onClick={() => setSelectedReg(reg)}

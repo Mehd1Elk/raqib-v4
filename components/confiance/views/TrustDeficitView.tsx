@@ -2,33 +2,26 @@
 
 import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
-
-interface DeficitData {
-  country: string;
-  trustScore: number;
-  fraudDetected: string;
-  fraudEstimated: string;
-  tamBurhan: string;
-  gap: number;
-}
-
-const FALLBACK_DEFICITS: DeficitData[] = [
-  { country: "République Démocratique du Congo", trustScore: 24, fraudDetected: "€1.2B", fraudEstimated: "€8.5B", tamBurhan: "€450M", gap: 76 },
-  { country: "Nigéria", trustScore: 31, fraudDetected: "€3.4B", fraudEstimated: "€14.2B", tamBurhan: "€850M", gap: 69 },
-  { country: "Afrique du Sud", trustScore: 48, fraudDetected: "€4.1B", fraudEstimated: "€11.0B", tamBurhan: "€600M", gap: 52 },
-  { country: "Kenya", trustScore: 52, fraudDetected: "€800M", fraudEstimated: "€3.2B", tamBurhan: "€210M", gap: 48 },
-  { country: "Sénégal", trustScore: 58, fraudDetected: "€400M", fraudEstimated: "€1.8B", tamBurhan: "€120M", gap: 42 },
-  { country: "Côte d'Ivoire", trustScore: 45, fraudDetected: "€1.1B", fraudEstimated: "€4.5B", tamBurhan: "€280M", gap: 55 },
-  { country: "Maroc", trustScore: 65, fraudDetected: "€1.2B", fraudEstimated: "€3.1B", tamBurhan: "€190M", gap: 35 },
-];
+import { DEFICIT_COUNTRIES_MOCK, type DeficitData } from '../shared/mock-data';
 
 export const TrustDeficitView: React.FC = () => {
   const [data, setData] = useState<DeficitData[]>([]);
 
   useEffect(() => {
-    // Sort by GAP descending
-    const sorted = [...FALLBACK_DEFICITS].sort((a, b) => b.gap - a.gap);
-    setData(sorted);
+    const fetchDeficits = async () => {
+      try {
+        const res = await fetch('/api/confiance/deficit');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) {
+            setData([...apiData].sort((a: DeficitData, b: DeficitData) => b.gap - a.gap));
+            return;
+          }
+        }
+      } catch (e) { /* fallback */ }
+      setData([...DEFICIT_COUNTRIES_MOCK].sort((a, b) => b.gap - a.gap));
+    };
+    fetchDeficits();
   }, []);
 
   const getScoreColor = (score: number) => {

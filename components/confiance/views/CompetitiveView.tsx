@@ -1,17 +1,24 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_TYPOGRAPHY, CONFIANCE_STYLES } from '../shared/constants';
-
-const COMPETITORS = [
-  { name: 'BURHAN (EIGEN)', preuvec: true, bc: true, aicert: true, sc: true, corridor: true, price: 'Infra (B2B)' },
-  { name: 'VeChain', preuvec: false, bc: true, aicert: false, sc: true, corridor: false, price: 'Tx-based' },
-  { name: 'EcoVadis', preuvec: false, bc: false, aicert: false, sc: false, corridor: false, price: 'Abo Annuel' },
-  { name: 'Holistic AI', preuvec: false, bc: false, aicert: true, sc: false, corridor: false, price: 'SaaS' },
-  { name: 'TraceLink', preuvec: false, bc: false, aicert: false, sc: true, corridor: false, price: 'Enterprise' },
-];
+import { COMPETITORS_MOCK } from '../shared/mock-data';
 
 export const CompetitiveView: React.FC = () => {
+  const [competitors, setCompetitors] = useState(COMPETITORS_MOCK);
+
+  useEffect(() => {
+    const fetchCompetitors = async () => {
+      try {
+        const res = await fetch('/api/confiance/competitors');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) setCompetitors(apiData);
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchCompetitors();
+  }, []);
 
   const CheckIcon = () => (
     <span style={{ color: CONFIANCE_COLORS.scores.green, fontWeight: 800 }}>✓</span>
@@ -113,7 +120,7 @@ export const CompetitiveView: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {COMPETITORS.slice(1).map((comp, idx) => (
+            {competitors.slice(1).map((comp, idx) => (
               <tr key={comp.name} style={{ borderBottom: CONFIANCE_STYLES.separator, backgroundColor: idx % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
                 <td style={{ padding: '16px', textAlign: 'left', ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.text.secondary }}>{comp.name}</td>
                 <td style={{ padding: '16px' }}>{comp.preuvec ? <CheckIcon /> : <CrossIcon />}</td>
@@ -126,13 +133,13 @@ export const CompetitiveView: React.FC = () => {
             ))}
             {/* BURHAN STICKY ROW */}
             <tr style={{ backgroundColor: 'rgba(0, 212, 184, 0.08)' }}>
-              <td style={{ padding: '16px', textAlign: 'left', ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.accent.proof }}>{COMPETITORS[0].name}</td>
+              <td style={{ padding: '16px', textAlign: 'left', ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.accent.proof }}>{competitors[0].name}</td>
               <td style={{ padding: '16px' }}><CheckIcon /></td>
               <td style={{ padding: '16px' }}><CheckIcon /></td>
               <td style={{ padding: '16px' }}><CheckIcon /></td>
               <td style={{ padding: '16px' }}><CheckIcon /></td>
               <td style={{ padding: '16px' }}><CheckIcon /></td>
-              <td style={{ padding: '16px', ...CONFIANCE_TYPOGRAPHY.scores, color: CONFIANCE_COLORS.accent.proof }}>{COMPETITORS[0].price}</td>
+              <td style={{ padding: '16px', ...CONFIANCE_TYPOGRAPHY.scores, color: CONFIANCE_COLORS.accent.proof }}>{competitors[0].price}</td>
             </tr>
           </tbody>
         </table>

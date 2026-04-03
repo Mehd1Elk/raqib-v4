@@ -1,17 +1,25 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CONFIANCE_COLORS, CONFIANCE_STYLES, CONFIANCE_TYPOGRAPHY } from '../shared/constants';
-
-const SIGNALS = [
-  { id: 1, signal: "Vitesse de frappe (Keystrokes)", natural: "Variance naturelle, pauses cognitives", fraud: "120 WPM constants, pas de backspace", detection: "Analyse temporelle des events JS" },
-  { id: 2, signal: "Mouvements de souris", natural: "Courbes de Bézier organiques", fraud: "Lignes droites parfaites, snap instantané", detection: "Vecteur CDAO en background" },
-  { id: 3, signal: "Réseau socio-professionnel", natural: "Densité progressive, clusters multiples", fraud: "Burst de connexions vides, pas de hubs", detection: "Graphes d'entropie relationnelle" },
-  { id: 4, signal: "Séquence de navigation", natural: "Exploration, aller-retours, hésitations", fraud: "Direct path to submission form", detection: "Markov Chain anomalies" },
-  { id: 5, signal: "Clozapine / Hypersalivation", natural: "Co-occurrence médicale rare mais avérée", fraud: "Mention scriptée issue de DB leaks", detection: "Correlation LLM textuelle" }
-];
+import { ENTROPY_SIGNALS_MOCK } from '../shared/mock-data';
 
 export const EntropyView: React.FC = () => {
+  const [signals, setSignals] = useState(ENTROPY_SIGNALS_MOCK);
+
+  useEffect(() => {
+    const fetchSignals = async () => {
+      try {
+        const res = await fetch('/api/confiance/entropy');
+        if (res.ok) {
+          const apiData = await res.json();
+          if (apiData.length > 0) setSignals(apiData);
+        }
+      } catch (e) { /* fallback already set */ }
+    };
+    fetchSignals();
+  }, []);
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
       
@@ -69,12 +77,12 @@ export const EntropyView: React.FC = () => {
             </tr>
           </thead>
           <tbody>
-            {SIGNALS.map((sig, i) => (
+            {signals.map((sig, i) => (
               <tr key={sig.id} style={{ backgroundColor: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}>
-                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.text.primary, padding: '16px', borderBottom: i === SIGNALS.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.signal}</td>
-                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.scores.green, padding: '16px', borderBottom: i === SIGNALS.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.natural}</td>
-                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.accent.alert, padding: '16px', borderBottom: i === SIGNALS.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.fraud}</td>
-                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.text.secondary, padding: '16px', borderBottom: i === SIGNALS.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.detection}</td>
+                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.text.primary, padding: '16px', borderBottom: i === signals.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.signal}</td>
+                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.scores.green, padding: '16px', borderBottom: i === signals.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.natural}</td>
+                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.accent.alert, padding: '16px', borderBottom: i === signals.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.fraud}</td>
+                <td style={{ ...CONFIANCE_TYPOGRAPHY.tableData, color: CONFIANCE_COLORS.text.secondary, padding: '16px', borderBottom: i === signals.length - 1 ? 'none' : CONFIANCE_STYLES.separator }}>{sig.detection}</td>
               </tr>
             ))}
           </tbody>
