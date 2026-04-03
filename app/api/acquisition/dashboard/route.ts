@@ -1,21 +1,22 @@
 import { NextResponse } from 'next/server';
 import { createAcqClient } from '@/lib/acquisition/supabase';
-import type { AcquisitionCompany, AcquisitionStage, DashboardData } from '@/components/acquisition/types';
+import { mapCompanies } from '@/lib/acquisition/map-company';
+import type { AcquisitionStage, DashboardData } from '@/components/acquisition/types';
 import { STAGE_ORDER } from '@/components/acquisition/types';
 
 export async function GET() {
   const supabase = await createAcqClient();
 
   const { data: rows, error } = await supabase
-    .from('acquisition_companies')
+    .from('acq_companies')
     .select('*')
-    .order('score', { ascending: false });
+    .order('eigen_score', { ascending: false });
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  const companies = (rows ?? []) as AcquisitionCompany[];
+  const companies = mapCompanies(rows ?? []);
 
   const stageCounts = new Map<AcquisitionStage, number>();
   for (const s of STAGE_ORDER) stageCounts.set(s, 0);

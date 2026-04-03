@@ -1,21 +1,22 @@
 import { NextResponse } from 'next/server';
 import { createAcqClient } from '@/lib/acquisition/supabase';
-import type { AcquisitionCompany, Tier, ProjectionData } from '@/components/acquisition/types';
+import { mapCompanies } from '@/lib/acquisition/map-company';
+import type { Tier, ProjectionData } from '@/components/acquisition/types';
 import { TIER_REVENUE } from '@/components/acquisition/types';
 
 export async function GET() {
   const supabase = await createAcqClient();
 
   const { data: rows, error } = await supabase
-    .from('acquisition_companies')
+    .from('acq_companies')
     .select('*')
-    .order('score', { ascending: false });
+    .order('eigen_score', { ascending: false });
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 
-  const companies = (rows ?? []) as AcquisitionCompany[];
+  const companies = mapCompanies(rows ?? []);
 
   // Revenue by tier
   const tierMap = new Map<Tier, { count: number; revenue: number }>();
@@ -48,7 +49,6 @@ export async function GET() {
     .map(([brique, data]) => ({ brique, ...data }))
     .sort((a, b) => b.revenue - a.revenue);
 
-  // Yearly projection: % of pipeline signed × revenue per tier
   const signedCount = companies.filter((c) => c.stage === 'signed').length;
   const totalRevenue = companies.reduce((s, c) => s + TIER_REVENUE[c.tier].total, 0);
   const signedPct = companies.length ? signedCount / companies.length : 0;
@@ -60,7 +60,6 @@ export async function GET() {
     { year: 'Y4', signed_pct: signedPct * 1.00, revenue: Math.round(totalRevenue * signedPct * 1.00) },
   ];
 
-  // EU vs Corridor
   const eu_total = companies
     .filter((c) => c.region === 'EU')
     .reduce((s, c) => s + TIER_REVENUE[c.tier].total, 0);

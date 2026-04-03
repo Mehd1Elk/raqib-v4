@@ -14,6 +14,7 @@ const TABS = [
   { id: 'evenements', label: 'Événements' },
   { id: 'projection', label: 'Projection' },
   { id: 'playbook', label: 'Playbook' },
+  { id: 'supply-chain', label: 'Supply Chain' },
 ] as const;
 
 type TabId = (typeof TABS)[number]['id'];
@@ -29,6 +30,7 @@ const TAB_COMPONENTS: Record<TabId, ReturnType<typeof dynamic>> = {
   evenements: dynamic(() => import('@/components/acquisition/EvenementsTab')),
   projection: dynamic(() => import('@/components/acquisition/ProjectionTab')),
   playbook: dynamic(() => import('@/components/acquisition/PlaybookTab')),
+  'supply-chain': dynamic(() => import('@/components/acquisition/SupplyChainTab')),
 };
 
 export default function AcquisitionPage() {
