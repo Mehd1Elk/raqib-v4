@@ -54,7 +54,7 @@ async function seedDeficit() {
     detection_rate:             c.detection_rate,
     estimated_total_fraud_eur:  c.estimated_total_fraud_eur,
     annual_audit_spend_eur:     c.annual_audit_spend_eur,
-    certifiable_entities:       c.certifiable_entities,
+    certifiable_entities:       c.certifiable_entities ? JSON.stringify(c.certifiable_entities) : null,
     trust_score_composite:      c.trust_score_composite,
     trust_arbitrage_gap:        c.trust_arbitrage_gap,
     burhan_tam_eur:             c.burhan_tam_eur,
