@@ -352,6 +352,18 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card CERCLE ATLANTIQUE — CG Vitrine, dark green/gold */}
+          <a href="/cercle" style={{ background: '#182218', color: '#EDE4D0', padding: 20, textDecoration: 'none', border: '0.5px solid rgba(176,140,72,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#B08C48', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>CERCLE DU GAZODUC</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: '#EDE4D0', marginBottom: 6 }}>Cercle Atlantique</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(237,228,208,0.55)', marginBottom: 10 }}>
+              22 nations · 124+ membres · Façade atlantique
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#B08C48', letterSpacing: 3, textTransform: 'uppercase' }}>
+              VITRINE CG →
+            </div>
+          </a>
+
         </div>
       </div>
 
