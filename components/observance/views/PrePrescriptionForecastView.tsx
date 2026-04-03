@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { FORECAST_MOLECULES } from '../shared/mock-data';
 import { Activity, Beaker, FileCheck2 } from 'lucide-react';
 
 export default function PrePrescriptionForecastView() {

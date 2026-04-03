@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { MHFS_COMPONENTS } from '../shared/mock-data';
 import { PieChart, Shield } from 'lucide-react';
 
 export default function MHFSScoreView() {
+  const [apiMhfs, setApiMhfs] = useState<any[]>([]);
+  useEffect(() => {
+    fetch('/api/observance/mhfs')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d) && d.length > 0) setApiMhfs(d); })
+      .catch(() => {});
+  }, []);
+  const mhfsRef = apiMhfs.length > 0 ? apiMhfs : MHFS_COMPONENTS;
+
   const [financial, setFinancial] = useState(85);
   const [pattern, setPattern] = useState(60);
   const [hmmState, setHmmState] = useState(70);

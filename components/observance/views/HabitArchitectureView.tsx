@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
-import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
+import { MOCK_OBSERVANCE_DATA, HABIT_LEVERS } from '../shared/mock-data';
 import { Zap, Clock, Users, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 const LEVERS = [
@@ -51,6 +51,16 @@ const LEVERS = [
 const PROFILES = ["Méthodique", "Négligent", "Sceptique", "Anxieux", "Rebelle"];
 
 export default function HabitArchitectureView() {
+  const [apiHabits, setApiHabits] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch('/api/observance/habits')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d) && d.length > 0) setApiHabits(d); })
+      .catch(() => {});
+  }, []);
+
+  const habitData = apiHabits.length > 0 ? apiHabits : HABIT_LEVERS;
   const { habitProfiles } = MOCK_OBSERVANCE_DATA;
 
   const getHeatmapColor = (profileIndex: number, leverIndex: number) => {

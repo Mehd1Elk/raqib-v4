@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
 import { HeartPulse, Activity, AlertTriangle, ActivitySquare, BrainCircuit, ActivityIcon } from 'lucide-react';
@@ -8,8 +8,17 @@ import { HeartPulse, Activity, AlertTriangle, ActivitySquare, BrainCircuit, Acti
 export default function ObservanceEngineView() {
   const [selectedPathology, setSelectedPathology] = useState("Bipolaire");
   const [selectedMolecule, setSelectedMolecule] = useState("Lithium");
-  
-  const { dashboard, recentAlerts, moleculeAggregates } = MOCK_OBSERVANCE_DATA;
+  const [apiDashboard, setApiDashboard] = useState<any>(null);
+
+  useEffect(() => {
+    fetch('/api/observance/dashboard')
+      .then(r => r.json())
+      .then(d => { if (d && !d.error) setApiDashboard(d); })
+      .catch(() => {});
+  }, []);
+
+  const dashboard = apiDashboard ?? MOCK_OBSERVANCE_DATA.dashboard;
+  const { recentAlerts, moleculeAggregates } = MOCK_OBSERVANCE_DATA;
 
   return (
     <div className="h-full flex flex-col gap-6 animate-in fade-in duration-500">

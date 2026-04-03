@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
+import React, { useState, useEffect } from 'react';
+import { MOCK_OBSERVANCE_DATA, ENVIRONMENTAL_CORRECTIONS } from '../shared/mock-data';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
 import { Globe2, ThermometerSun, Map, Clock } from 'lucide-react';
 
@@ -16,11 +16,29 @@ const NODES = Array.from({ length: 20 }).map((_, i) => ({
 export default function EnvironmentalCorrectionView() {
   const [molecule, setMolecule] = useState("Lithium");
   const [factor, setFactor] = useState("Chaleur Extrême");
+  const [apiEnv, setApiEnv] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch('/api/observance/environment')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d) && d.length > 0) setApiEnv(d); })
+      .catch(() => {});
+  }, []);
 
   const factors = ["Chaleur Extrême", "Photopériode", "Ramadan", "Saison des Pluies", "Altitude"];
   const molecules = ["Lithium", "Valproate", "Antidépresseurs", "Antipsychotiques"];
 
-  const { environmentalFactors } = MOCK_OBSERVANCE_DATA;
+  const environmentalFactors = apiEnv.length > 0
+    ? apiEnv.map(e => ({
+        molecule: e.molecule,
+        factor: e.factor_type === 'temperature' ? 'Chaleur Extrême' : e.factor_type === 'photoperiod' ? 'Photopériode' : e.factor_type === 'ramadan' ? 'Ramadan' : e.factor_type,
+        country: e.country,
+        multiplier: `${e.risk_multiplier}x`,
+        adjustment: `${Math.round((e.threshold ?? 0) * 100)}%`,
+        season: e.season,
+        source: e.evidence?.split('(')[1]?.replace(')', '') || 'Littérature',
+      }))
+    : MOCK_OBSERVANCE_DATA.environmentalFactors;
 
   // Determine node color based on risk and selection
   const getNodeColor = (risk: number) => {

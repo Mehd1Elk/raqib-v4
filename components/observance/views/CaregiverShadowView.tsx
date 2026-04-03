@@ -1,12 +1,18 @@
 "use client";
 
 import React, { useState } from 'react';
-import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
+import { CAREGIVER_DYADS } from '../shared/mock-data';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
 import { HeartHandshake, UserX, Activity, AlertTriangle, ArrowRight, BrainCircuit } from 'lucide-react';
 
 export default function CaregiverShadowView() {
-  const { dyads } = MOCK_OBSERVANCE_DATA;
+  const dyads = CAREGIVER_DYADS.map(d => ({
+    id: d.id,
+    patientHMM: d.patientHMM,
+    caregiverExt: d.caregiverState,
+    delay: d.delayToIntervention,
+    correlation: d.correlation,
+  }));
   const [selectedDyad, setSelectedDyad] = useState(dyads[0]);
 
   const isCorrelated = selectedDyad.patientHMM >= 3 && (selectedDyad.caregiverExt === "Épuisé" || selectedDyad.caregiverExt === "Fragile");

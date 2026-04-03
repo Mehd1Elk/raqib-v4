@@ -1,10 +1,20 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { MYNE_INCENTIVE } from '../shared/mock-data';
 import { Coins, Settings } from 'lucide-react';
 
 export default function MyneIncentiveView() {
+  const [apiIncentive, setApiIncentive] = useState<any[]>([]);
+  useEffect(() => {
+    fetch('/api/observance/incentive')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d) && d.length > 0) setApiIncentive(d); })
+      .catch(() => {});
+  }, []);
+  const incentiveScenarios = apiIncentive.length > 0 ? apiIncentive : MYNE_INCENTIVE;
+
   const [patients, setPatients] = useState(100);
   const [molecule, setMolecule] = useState('Lithium');
   const [corridor, setCorridor] = useState('Maroc');

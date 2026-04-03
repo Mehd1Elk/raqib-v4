@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
+import { MOLECULE_SIGNAL_MATRIX } from '../shared/mock-data';
 import { Beaker, Search, RefreshCw, Moon, BarChart2, MessageSquare, Globe, Info } from 'lucide-react';
 
 const CLASSES = [
@@ -60,6 +61,16 @@ const getCellData = (mol: string, sig: string) => {
 
 export default function MoleculeMatrixView() {
   const [selectedCell, setSelectedCell] = useState<{mol: string, sig: string, data: any} | null>(null);
+  const [apiMatrix, setApiMatrix] = useState<any[]>([]);
+
+  useEffect(() => {
+    fetch('/api/observance/matrix')
+      .then(r => r.json())
+      .then(d => { if (Array.isArray(d) && d.length > 0) setApiMatrix(d); })
+      .catch(() => {});
+  }, []);
+
+  const matrixData = apiMatrix.length > 0 ? apiMatrix : MOLECULE_SIGNAL_MATRIX;
 
   return (
     <div className="h-full flex gap-6 animate-in fade-in duration-500">

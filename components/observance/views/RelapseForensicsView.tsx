@@ -2,34 +2,28 @@
 
 import React, { useState } from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { FORENSICS_CASES } from '../shared/mock-data';
 import { AlertTriangle, Fingerprint, ShieldAlert } from 'lucide-react';
 
 export default function RelapseForensicsView() {
-  const [selectedCase, setSelectedCase] = useState('P-892A');
-  
-  const CASES = [
-    { id: 'P-892A', mol: 'Lithium', date: '12 Nov 2025', stable: '14 mois', cost: '€18,200', cause: 'Épuisement aidant', active: true },
-    { id: 'P-441B', mol: 'Aripiprazole', date: '04 Oct 2025', stable: '8 mois', cost: '€12,500', cause: 'Trou d\'observance', active: false },
-    { id: 'P-112C', mol: 'Olanzapine', date: '21 Sep 2025', stable: '22 mois', cost: '€21,000', cause: 'Intolérance métabolique', active: false },
-    { id: 'P-992D', mol: 'Quetiapine', date: '05 Sep 2025', stable: '5 mois', cost: '€9,800', cause: 'Arrêt brutal', active: false },
-    { id: 'P-505E', mol: 'Risperidone', date: '14 Aou 2025', stable: '11 mois', cost: '€15,300', cause: 'Facteur environnemental', active: false },
-    { id: 'P-334F', mol: 'Lamotrigine', date: '02 Jui 2025', stable: '18 mois', cost: '€19,100', cause: 'Interaction médicamenteuse', active: false },
-    { id: 'P-772G', mol: 'Lithium', date: '19 Jun 2025', stable: '9 mois', cost: '€11,200', cause: 'Toxicité rénale légère', active: false },
-    { id: 'P-221H', mol: 'Aripiprazole', date: '08 Mai 2025', stable: '31 mois', cost: '€24,500', cause: 'Stress aigu', active: false },
-    { id: 'P-663I', mol: 'Olanzapine', date: '22 Avr 2025', stable: '4 mois', cost: '€8,900', cause: 'Sédation diurne', active: false },
-    { id: 'P-884J', mol: 'Quetiapine', date: '11 Mar 2025', stable: '16 mois', cost: '€16,000', cause: 'Oubli répété', active: false },
-  ];
+  const [selectedCase, setSelectedCase] = useState(FORENSICS_CASES[0]?.patientId ?? 'P-892A');
 
-  const TIMELINE_EVENTS = [
-    { dy: -45, title: "Aidant signale fatigue (EMA aidant : score 3/10)", color: CLINICAL_TEAL_COLORS.accentAmber },
-    { dy: -38, title: "Entropie EMA patient augmente de 0.3 → 0.7", color: CLINICAL_TEAL_COLORS.accentAmber },
-    { dy: -30, title: "Refill en retard de 3 jours", color: CLINICAL_TEAL_COLORS.accentAmber },
-    { dy: -25, title: "Linguistic proof absent — patient ne nomme plus les tremblements", color: CLINICAL_TEAL_COLORS.accentAmber },
-    { dy: -21, title: "HMM transition 2→3 — ALERTE FRAGILISATION", color: CLINICAL_TEAL_COLORS.accentRed },
-    { dy: -14, title: "Intervention psychiatre — appel téléphonique (délai : 7j vs cible 48-72h)", color: CLINICAL_TEAL_COLORS.accentRed },
-    { dy: -7, title: "HMM transition 3→4 — RUPTURE CONFIRMÉE", color: CLINICAL_TEAL_COLORS.accentRed },
-    { dy: 0, title: "Réhospitalisation — Service d'urgence — Coût : €18,200", color: CLINICAL_TEAL_COLORS.accentRed },
-  ];
+  const CASES = FORENSICS_CASES.map((c, i) => ({
+    id: c.id,
+    mol: c.molecule,
+    date: c.dateRelapse,
+    stable: c.stableDuration,
+    cost: `€${c.costHospitalization.toLocaleString()}`,
+    cause: c.cause,
+    active: i === 0,
+  }));
+
+  const currentCase = FORENSICS_CASES.find(c => c.id === selectedCase) ?? FORENSICS_CASES[0];
+  const TIMELINE_EVENTS = currentCase.timeline.map(t => ({
+    dy: t.day,
+    title: t.event,
+    color: t.day >= -7 ? CLINICAL_TEAL_COLORS.accentRed : CLINICAL_TEAL_COLORS.accentAmber,
+  }));
   
   return (
     <div className="flex flex-col space-y-6 h-full overflow-hidden text-sm">

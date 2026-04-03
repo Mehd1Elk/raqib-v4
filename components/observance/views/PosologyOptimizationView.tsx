@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { POSOLOGY_HEATMAP } from '../shared/mock-data';
 import { Network, ArrowRight } from 'lucide-react';
 
 export default function PosologyOptimizationView() {

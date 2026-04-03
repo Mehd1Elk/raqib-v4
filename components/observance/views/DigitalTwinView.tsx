@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { CLINICAL_TEAL_COLORS, COMMON_STYLES } from '../shared/constants';
+import { DIGITAL_TWIN_SCENARIOS } from '../shared/mock-data';
 import { Play, TrendingDown, RefreshCcw } from 'lucide-react';
 
 export default function DigitalTwinView() {

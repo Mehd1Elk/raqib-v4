@@ -2,35 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
+import { CONTAGION_NETWORK } from '../shared/mock-data';
 import { Network, ActivitySquare, ShieldAlert } from 'lucide-react';
-
-// Generates fake nodes
-const generateNodes = (count: number) => {
-  return Array.from({ length: count }).map((_, i) => ({
-    id: i,
-    x: 10 + Math.random() * 80, // %
-    y: 10 + Math.random() * 80, // %
-    state: Math.random() > 0.8 ? (Math.random() > 0.5 ? 4 : 3) : (Math.random() > 0.8 ? 2 : 1), // 1=green, 2=amber, 3=orange, 4=red
-  }));
-};
-
-const generateLinks = (nodes: any[]) => {
-  const links = [];
-  for (let i = 0; i < nodes.length; i++) {
-    const numLinks = Math.floor(Math.random() * 3) + 1; // 1 to 3 connections
-    for (let j = 0; j < numLinks; j++) {
-      const target = Math.floor(Math.random() * nodes.length);
-      if (target !== i) {
-        links.push({
-          source: i,
-          target: target,
-          weight: 0.5 + Math.random()
-        });
-      }
-    }
-  }
-  return links;
-};
 
 export default function ContagionNetworkView() {
   const [nodes, setNodes] = useState<any[]>([]);
@@ -38,13 +11,12 @@ export default function ContagionNetworkView() {
   const [activeNode, setActiveNode] = useState<number | null>(null);
 
   useEffect(() => {
-    const n = generateNodes(30);
-    setNodes(n);
-    setLinks(generateLinks(n));
+    setNodes(CONTAGION_NETWORK.nodes);
+    setLinks(CONTAGION_NETWORK.links);
 
     // Simulation d'un nœud qui shift (animation)
     const interval = setInterval(() => {
-      setActiveNode(Math.floor(Math.random() * 30));
+      setActiveNode(Math.floor(Math.random() * CONTAGION_NETWORK.nodes.length));
       setTimeout(() => setActiveNode(null), 1000);
     }, 3000);
 
@@ -114,7 +86,7 @@ export default function ContagionNetworkView() {
                 )}
                 <circle 
                   cx={`${n.x}%`} cy={`${n.y}%`} 
-                  r="6" fill={getStateColor(n.state)} 
+                  r="6" fill={getStateColor(n.hmmState ?? n.state)}
                   className="transition-colors duration-1000 shadow-[0_0_10px_currentColor]"
                 />
               </g>
