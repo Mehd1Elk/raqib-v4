@@ -5,6 +5,8 @@ import { MOCK_OBSERVANCE_DATA } from '../shared/mock-data';
 import { CLINICAL_TEAL_COLORS } from '../shared/constants';
 import { HeartPulse, Activity, AlertTriangle, ActivitySquare, BrainCircuit, ActivityIcon } from 'lucide-react';
 
+const fmt = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
 export default function ObservanceEngineView() {
   const [selectedPathology, setSelectedPathology] = useState("Bipolaire");
   const [selectedMolecule, setSelectedMolecule] = useState("Lithium");
@@ -13,7 +15,16 @@ export default function ObservanceEngineView() {
   useEffect(() => {
     fetch('/api/observance/dashboard')
       .then(r => r.json())
-      .then(d => { if (d && !d.error) setApiDashboard(d); })
+      .then(d => {
+        if (d && !d.error) setApiDashboard({
+          activePatients: d.total_patients ?? 0,
+          averageObservance: d.mean_adherence_score ?? 0,
+          ruptureAlerts24h: d.alert_count_24h ?? 0,
+          hmmState4Count: 0,
+          myneDataValue: `€${((d.myne_revenue_24h ?? 0) / 1000).toFixed(1)}K`,
+          avgMhfs: d.mean_mhfs ?? 0,
+        });
+      })
       .catch(() => {});
   }, []);
 
@@ -25,7 +36,7 @@ export default function ObservanceEngineView() {
       
       {/* HEADER: 6 STAT CARDS */}
       <div className="grid grid-cols-6 gap-4 shrink-0">
-        <StatCard title="PATIENTS ACTIFS" value={dashboard.activePatients.toLocaleString()} icon={<HeartPulse size={16} />} color={CLINICAL_TEAL_COLORS.primary} />
+        <StatCard title="PATIENTS ACTIFS" value={dashboard.activePatients.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} icon={<HeartPulse size={16} />} color={CLINICAL_TEAL_COLORS.primary} />
         <StatCard title="OBSERVANCE MOYENNE" value={`${dashboard.averageObservance}%`} icon={<Activity size={16} />} color={CLINICAL_TEAL_COLORS.greenAELYA} />
         <StatCard title="ALERTES RUPTURE 24H" value={dashboard.ruptureAlerts24h} icon={<AlertTriangle size={16} />} color={CLINICAL_TEAL_COLORS.redDisruptive} pulseIf={true} />
         <StatCard title="HMM ÉTAT 4 (RUPTURE)" value={dashboard.hmmState4Count} icon={<ActivitySquare size={16} />} color={CLINICAL_TEAL_COLORS.redDisruptive} />
@@ -60,7 +71,7 @@ export default function ObservanceEngineView() {
         {/* PANNEAU CENTRAL: DISTRIBUTION HMM */}
         <div className="flex-1 bg-[#15161A] p-6 flex flex-col">
           <h3 className="font-['Playfair_Display'] text-[20px] text-white mb-2">Distribution Hidden Markov Model</h3>
-          <p className="font-['Geist'] text-[14px] text-[#8A9BA8] mb-8">Base: {dashboard.activePatients.toLocaleString()} patients • Modèle prédictif à 4 états</p>
+          <p className="font-['Geist'] text-[14px] text-[#8A9BA8] mb-8">Base: {dashboard.activePatients.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} patients • Modèle prédictif à 4 états</p>
           
           <div className="flex-1 flex flex-col justify-center gap-6">
             <HMMBar label="ÉTAT 1 : Observance Nominale" percent={60} color={CLINICAL_TEAL_COLORS.greenAELYA} desc="Prises régulières, entropie comportementale faible." />
@@ -112,7 +123,7 @@ export default function ObservanceEngineView() {
             {moleculeAggregates.map(agg => (
               <tr key={agg.molecule} className="border-b border-[#0B0C10] hover:bg-[#0B0C10]/50 transition-colors">
                 <td className="py-3 font-semibold">{agg.molecule}</td>
-                <td className="font-['JetBrains_Mono'] text-[12px]">{agg.activePatients.toLocaleString()}</td>
+                <td className="font-['JetBrains_Mono'] text-[12px]">{agg.activePatients.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</td>
                 <td>
                   <div className="flex items-center gap-2">
                     <span className="font-['JetBrains_Mono'] text-[12px]">{agg.observance}%</span>

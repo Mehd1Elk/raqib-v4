@@ -53,7 +53,7 @@ export default function MyneIncentiveView() {
             <div>
                <label className="flex justify-between" style={COMMON_STYLES.label}>
                  <span>Patients</span>
-                 <span style={{ color: CLINICAL_TEAL_COLORS.textMain }}>{patients.toLocaleString()}</span>
+                 <span style={{ color: CLINICAL_TEAL_COLORS.textMain }}>{patients.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</span>
                </label>
                <input type="range" min="100" max="500000" step="1000" value={patients} onChange={e => setPatients(Number(e.target.value))} className="w-full mt-2 accent-teal-500" />
             </div>
@@ -104,14 +104,14 @@ export default function MyneIncentiveView() {
       <div className="flex-1 grid grid-cols-3 gap-6 p-6" style={COMMON_STYLES.card}>
          <div className="flex flex-col justify-center border-r pr-6" style={{ borderColor: CLINICAL_TEAL_COLORS.border }}>
             <div style={COMMON_STYLES.label} className="mb-2">REVENUS BRUTS MENSUELS</div>
-            <div style={{ ...COMMON_STYLES.value, fontSize: '36px' }}>€{revenusBruts.toLocaleString(undefined, {maximumFractionDigits:0})}</div>
+            <div style={{ ...COMMON_STYLES.value, fontSize: '36px' }}>€{revenusBruts.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</div>
             <div className="mt-2 text-xs" style={{ color: CLINICAL_TEAL_COLORS.textSecondary }}>Prix unitaire moyen : €{pricePerPatient}</div>
          </div>
          
          <div className="flex flex-col justify-center border-r px-6" style={{ borderColor: CLINICAL_TEAL_COLORS.border }}>
             <div style={{...COMMON_STYLES.label, color: CLINICAL_TEAL_COLORS.accentPurple}} className="mb-2">PART PATIENT (53%)</div>
             <div style={{ fontFamily: 'JetBrains Mono', fontWeight: 600, fontSize: '36px', color: CLINICAL_TEAL_COLORS.accentPurple }}>
-               €{partPatient.toLocaleString(undefined, {maximumFractionDigits:0})}
+               €{partPatient.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
             </div>
             <div className="mt-2 p-3 bg-purple-900/20 text-xs" style={{ border: `1px solid ${CLINICAL_TEAL_COLORS.accentPurple}50`, color: '#D8B4FE', lineHeight: 1.5 }}>
                <strong>CASH-OUT :</strong> Le patient bipolaire reçoit ~€{(partPatient/patients/12).toFixed(2)}/mois.<br/>
@@ -124,15 +124,15 @@ export default function MyneIncentiveView() {
             
             <div className="flex justify-between items-center" style={COMMON_STYLES.separator}>
                <span style={COMMON_STYLES.label}>ÆLYA Fees</span>
-               <span style={{...COMMON_STYLES.value, fontSize: '15px'}}>€{aelyaFee.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+               <span style={{...COMMON_STYLES.value, fontSize: '15px'}}>€{aelyaFee.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</span>
             </div>
             <div className="flex justify-between items-center" style={COMMON_STYLES.separator}>
                <span style={COMMON_STYLES.label}>BURHAN Fees</span>
-               <span style={{...COMMON_STYLES.value, fontSize: '15px'}}>€{burhanFee.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+               <span style={{...COMMON_STYLES.value, fontSize: '15px'}}>€{burhanFee.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</span>
             </div>
             <div className="flex justify-between items-center pt-2">
                <span style={{...COMMON_STYLES.label, color: CLINICAL_TEAL_COLORS.accentGold}}>Eigen Marge Nette</span>
-               <span style={{...COMMON_STYLES.value, fontSize: '18px', color: CLINICAL_TEAL_COLORS.accentGold}}>€{eigenNet.toLocaleString(undefined, {maximumFractionDigits:0})}</span>
+               <span style={{...COMMON_STYLES.value, fontSize: '18px', color: CLINICAL_TEAL_COLORS.accentGold}}>€{eigenNet.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}</span>
             </div>
          </div>
       </div>

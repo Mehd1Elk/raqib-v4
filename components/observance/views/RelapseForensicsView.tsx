@@ -13,7 +13,7 @@ export default function RelapseForensicsView() {
     mol: c.molecule,
     date: c.dateRelapse,
     stable: c.stableDuration,
-    cost: `€${c.costHospitalization.toLocaleString()}`,
+    cost: `€${c.costHospitalization.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}`,
     cause: c.cause,
     active: i === 0,
   }));

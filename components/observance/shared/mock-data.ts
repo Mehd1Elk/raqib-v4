@@ -17,12 +17,12 @@ const jitter = (base: number, pct = 5) => {
 // 1. VITALS_DATA — 6 indicateurs du bandeau principal
 // ---------------------------------------------------------------------------
 export const VITALS_DATA = {
-  get activePatients() { return jitter(14250); },
-  get averageObservance() { return +(jitter(685, 3) / 10).toFixed(1); }, // ~68.5% — WHO psychiatry baseline
-  get ruptureAlerts24h() { return jitter(312); },
-  get hmmState4Count() { return jitter(845); },
-  get myneDataValue24h() { return `€${(jitter(42500) / 1000).toFixed(1)}K`; },
-  get avgMhfs() { return jitter(645); }, // /1000
+  activePatients: jitter(14250),
+  averageObservance: +(jitter(685, 3) / 10).toFixed(1), // ~68.5% — WHO psychiatry baseline
+  ruptureAlerts24h: jitter(312),
+  hmmState4Count: jitter(845),
+  myneDataValue24h: `€${(jitter(42500) / 1000).toFixed(1)}K`,
+  avgMhfs: jitter(645), // /1000
 };
 
 // ---------------------------------------------------------------------------

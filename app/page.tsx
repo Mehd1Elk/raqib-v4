@@ -328,11 +328,9 @@ export default function Dashboard() {
           {/* Card CONFIANCE — Trust teal accent */}
           <a href="/confiance" style={{ background: '#0A1414', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(0,212,184,0.25)' }}>
             <div style={{ fontFamily: MN, fontSize: 8, color: '#00D4B8', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>CONFIANCE</div>
-            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>
-              <span style={{ marginRight: 8 }}>&#9670;</span>Intelligence de la Confiance
-            </div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Intelligence de la Confiance</div>
             <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(224,240,240,0.55)', marginBottom: 10 }}>
-              CRIT de la Confiance &middot; 12 onglets &middot; Proof of Being &middot; AI Authentication &middot; Trust Thermodynamics
+              CRIT de la Confiance · 12 onglets · Proof of Being · AI Authentication · Trust Thermodynamics
             </div>
             <div style={{ fontFamily: MN, fontSize: 8, color: '#00D4B8', letterSpacing: 3, textTransform: 'uppercase' }}>
               MODULE CONFIANCE
