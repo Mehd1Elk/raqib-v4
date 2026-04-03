@@ -6,7 +6,7 @@ import { FORENSICS_CASES } from '../shared/mock-data';
 import { AlertTriangle, Fingerprint, ShieldAlert } from 'lucide-react';
 
 export default function RelapseForensicsView() {
-  const [selectedCase, setSelectedCase] = useState(FORENSICS_CASES[0]?.patientId ?? 'P-892A');
+  const [selectedCase, setSelectedCase] = useState(FORENSICS_CASES[0]?.id ?? 'P-892A');
 
   const CASES = FORENSICS_CASES.map((c, i) => ({
     id: c.id,
