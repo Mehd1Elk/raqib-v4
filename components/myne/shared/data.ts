@@ -380,3 +380,12 @@ export const PSY_TRANSFORMS: Record<string, Record<string, string>> = {
 
 export const PSY_PRICES: Record<string, number> = {T1:0.005,T2:0.012,T3:0.025,T4:0.045,T5:0.100};
 export const PSY_PROTECTIONS: Record<string, number> = {T1:20,T2:45,T3:70,T4:90,T5:100};
+
+export const DP_RAW_DATA = {qeeg_alpha:8.9,theta_beta:4.1,phq9:17.4,gad7:13.8,humeur:3.4,sommeil:5.3};
+
+export const BUYER_TYPES = [
+  {id:'startup',label:'Startup',mult:1.0},
+  {id:'pme',label:'PME',mult:1.0},
+  {id:'entreprise',label:'Entreprise',mult:1.0},
+  {id:'academique',label:'Académique',mult:0.7},
+];

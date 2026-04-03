@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import { M, HD, BD, MN } from '../shared/constants';
 import MYNECard from '../shared/MYNECard';
-import { AELYA_TOUCHPOINTS, CGU_CLAUSES } from '../shared/data';
+import { AELYA_TOUCHPOINTS, CGU_CLAUSES, SDK_TIERS, DISTRIBUTION_RINGS, ROADMAP_HORIZONS } from '../shared/data';
 
-const TABS = ['Agent Fiduciaire','CGU Scanner','Extension Navigateur'];
+const TABS = ['Agent Fiduciaire','CGU Scanner','Extension Navigateur','SDK','Distribution','Roadmap'];
 
 function Badge({ label, color }: { label: string; color: string }) {
   return <span style={{ display:'inline-block', padding:'3px 10px', borderRadius:4, background:`${color}15`, color, fontFamily:MN, fontSize:10, fontWeight:600, letterSpacing:1, textTransform:'uppercase' }}>{label}</span>;
@@ -107,9 +107,90 @@ function SubExtension() {
   );
 }
 
+function SubSDK() {
+  const code = `npm install @myne/aelya-sdk
+
+import { AelyaClient } from '@myne/aelya-sdk'
+const aelya = new AelyaClient({ apiKey: 'YOUR_KEY' })
+const consent = await aelya.requestConsent({
+  userId: 'user_123',
+  categories: ['health', 'behavior'],
+  tLevel: 'T3',
+})
+console.log(consent.decision) // 'ACCEPT'
+console.log(consent.price)    // 0.025`;
+  return (
+    <div>
+      <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>SDK ÆLYA — Intégrez la souveraineté en 3 lignes</h2>
+      <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>4 tiers adaptés à votre usage. Du prototype gratuit au déploiement enterprise.</p>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:16, marginBottom:32 }}>
+        {SDK_TIERS.map(t => (
+          <MYNECard key={t.label} hover style={{ borderTop:`3px solid ${t.color}`, position:'relative' }}>
+            {t.rec && <div style={{ position:'absolute', top:-10, right:16 }}><Badge label="RECOMMANDÉ" color={M.green} /></div>}
+            <div style={{ fontWeight:600, fontSize:16, color:M.t1, marginBottom:4 }}>{t.label}</div>
+            <div style={{ fontFamily:MN, fontSize:28, color:t.color, fontWeight:700, marginBottom:4 }}>{t.price}{typeof t.price === 'number' ? ' €/mois' : ''}</div>
+            <div style={{ fontSize:11, color:M.t3, marginBottom:12 }}>{t.uam}</div>
+            <ul style={{ padding:0, listStyle:'none', margin:'0 0 16px' }}>{t.features.map((f, i) => <li key={i} style={{ fontSize:12, color:M.t2, padding:'4px 0', borderBottom:`1px solid ${M.border}` }}>&#10022; {f}</li>)}</ul>
+            <button style={{ width:'100%', padding:'10px', background:t.color, color:'#000', border:'none', borderRadius:6, fontFamily:BD, fontSize:13, fontWeight:600, cursor:'pointer' }}>{t.cta}</button>
+          </MYNECard>
+        ))}
+      </div>
+      <h3 style={{ fontFamily:HD, marginBottom:12, color:M.t1 }}>Exemple d&apos;intégration</h3>
+      <MYNECard style={{ borderLeft:`3px solid ${M.purple}` }}>
+        <pre style={{ fontFamily:MN, fontSize:12, color:M.t2, lineHeight:1.8, whiteSpace:'pre-wrap', margin:0 }}>{code}</pre>
+      </MYNECard>
+    </div>
+  );
+}
+
+function SubDistribution() {
+  return (
+    <div>
+      <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>310 000 n&#339;uds à M24 — Zéro acquisition payante</h2>
+      <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Quatre anneaux de distribution concentriques. CAC moyen {'<'} 0,10 €. La viralité organique du CGU Scanner alimente 65 % du volume.</p>
+      <div style={{ display:'flex', gap:16, marginBottom:24, flexWrap:'wrap' }}>
+        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.gold, fontWeight:700 }}>310 000</div><div style={{ fontSize:11, color:M.t3 }}>n&#339;uds cibles M24</div></div>
+        <div style={{ textAlign:'center', padding:16 }}><div style={{ fontFamily:MN, fontSize:42, color:M.green, fontWeight:700 }}>{'<'} 0,10 €</div><div style={{ fontSize:11, color:M.t3 }}>CAC moyen</div></div>
+      </div>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:16 }}>
+        {DISTRIBUTION_RINGS.map(r => (
+          <MYNECard key={r.ring} hover style={{ borderTop:`3px solid ${r.color}` }}>
+            <div style={{ fontFamily:MN, fontSize:18, color:r.color, fontWeight:700 }}>Ring {r.ring}</div>
+            <div style={{ fontWeight:600, marginBottom:4, color:M.t1 }}>{r.label}</div>
+            <div style={{ fontSize:12, color:M.t2, marginBottom:8 }}>{r.ch}</div>
+            <div style={{ display:'flex', gap:12 }}>
+              <div><span style={{ fontFamily:MN, fontSize:11, color:M.t3 }}>Nodes</span><div style={{ fontFamily:MN, color:M.gold }}>{r.nodes}</div></div>
+              <div><span style={{ fontFamily:MN, fontSize:11, color:M.t3 }}>CAC</span><div style={{ fontFamily:MN, color:M.green }}>{r.cac}</div></div>
+            </div>
+          </MYNECard>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SubRoadmap() {
+  return (
+    <div>
+      <h2 style={{ fontFamily:HD, fontSize:28, fontWeight:400, marginBottom:12, color:M.t1 }}>2026–2040 — De l&apos;extension au firewall neural</h2>
+      <p style={{ fontSize:15, color:M.t2, maxWidth:720, lineHeight:1.8, marginBottom:24 }}>Quatre horizons. Chaque horizon débloque une nouvelle couche de souveraineté.</p>
+      {ROADMAP_HORIZONS.map(h => (
+        <MYNECard key={h.period} style={{ marginBottom:16, borderLeft:`3px solid ${h.color}` }}>
+          <div style={{ display:'flex', gap:12, alignItems:'center', marginBottom:8 }}>
+            <Badge label={h.period} color={h.color} />
+            <span style={{ fontWeight:600, color:M.t1 }}>{h.label}</span>
+          </div>
+          <ul style={{ padding:0, listStyle:'none', margin:'0 0 8px' }}>{h.actions.map((a, i) => <li key={i} style={{ fontSize:13, color:M.t2, padding:'3px 0' }}>&rarr; {a}</li>)}</ul>
+          <div style={{ fontFamily:MN, fontSize:12, color:h.color }}>Milestone: {h.milestone}</div>
+        </MYNECard>
+      ))}
+    </div>
+  );
+}
+
 export default function AelyaView() {
   const [tab, setTab] = useState(0);
-  const subs = [SubAgent, SubCGU, SubExtension];
+  const subs = [SubAgent, SubCGU, SubExtension, SubSDK, SubDistribution, SubRoadmap];
   const Sub = subs[tab];
   return (
     <div style={{ padding:'32px 32px 60px', maxWidth:1100, margin:'0 auto' }}>

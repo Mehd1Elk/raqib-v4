@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { M, HD, BD, MN } from '../shared/constants';
 import MYNECard from '../shared/MYNECard';
-import { T_LEVELS, TL_TRANSFORMS, A2A_STEPS, BURHAN_FEATURES, BURHAN_JURISDICTIONS, WEB_ERAS, WEB3_VS_WEB4, MIZAN_DISTRIBUTION, MIZAN_CURRENCIES, MIZAN_PIPELINE, API_ENDPOINTS } from '../shared/data';
+import { T_LEVELS, TL_TRANSFORMS, A2A_STEPS, BURHAN_FEATURES, BURHAN_JURISDICTIONS, WEB_ERAS, WEB3_VS_WEB4, MIZAN_DISTRIBUTION, MIZAN_CURRENCIES, MIZAN_PIPELINE, API_ENDPOINTS, DP_RAW_DATA } from '../shared/data';
 
 const TABS = ['T-Levels','Differential Privacy','A2A','BURHAN','MIZAN','Architecture','Web 4.0'];
 
@@ -76,6 +76,27 @@ function SubDP() {
             <div style={{ fontSize:10, color:M.t3, marginTop:4 }}>{l.u}</div>
           </MYNECard>
         ))}
+      </div>
+      <h3 style={{ fontFamily:HD, marginTop:32, marginBottom:12, color:M.t1 }}>Simulateur — Marie-Claire Dubois</h3>
+      <p style={{ fontSize:13, color:M.t2, marginBottom:16, lineHeight:1.6 }}>Bruit de Laplace appliqué à 6 champs cliniques agrégés T3. Le bruit varie à chaque changement d&apos;epsilon.</p>
+      <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(160px, 1fr))', gap:12 }}>
+        {Object.entries(DP_RAW_DATA).map(([k, v]) => {
+          const sens = v * 0.15;
+          const sc = sens / epsilon;
+          const u = Math.sin(v * epsilon * 7.13) * 0.4;
+          const noised = (v - sc * Math.sign(u) * Math.log(1 - 2 * Math.abs(u))).toFixed(1);
+          return (
+            <MYNECard key={k}>
+              <div style={{ fontFamily:MN, fontSize:11, color:M.t3, marginBottom:4 }}>{k}</div>
+              <div style={{ display:'flex', justifyContent:'space-between', alignItems:'baseline' }}>
+                <span style={{ fontFamily:MN, fontSize:14, color:M.t2 }}>{v}</span>
+                <span style={{ fontFamily:MN, fontSize:10, color:M.t3 }}>→</span>
+                <span style={{ fontFamily:MN, fontSize:14, color:M.gold, fontWeight:700 }}>{noised}</span>
+              </div>
+              <div style={{ fontSize:10, color:M.t3, marginTop:4 }}>&#916; = {(+noised - v).toFixed(2)}</div>
+            </MYNECard>
+          );
+        })}
       </div>
     </div>
   );
