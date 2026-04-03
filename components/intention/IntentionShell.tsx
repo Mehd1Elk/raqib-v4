@@ -15,6 +15,10 @@ const InventaireView = React.lazy(() => import('./views/InventaireView'));
 const ParadoxeGratuiteView = React.lazy(() => import('./views/ParadoxeGratuiteView'));
 const CascadeReglementaireView = React.lazy(() => import('./views/CascadeReglementaireView'));
 const IndiceSouveraineteView = React.lazy(() => import('./views/IndiceSouveraineteView'));
+const DiasporaView = React.lazy(() => import('./views/DiasporaView'));
+const NeuroIntentionView = React.lazy(() => import('./views/NeuroIntentionView'));
+const MatriceConversionView = React.lazy(() => import('./views/MatriceConversionView'));
+const CompetitiveLandscapeView = React.lazy(() => import('./views/CompetitiveLandscapeView'));
 
 const TABS = [
   { id: 'observatory', label: 'Observatoire', icon: '◉' },
@@ -71,6 +75,10 @@ export default function IntentionShell() {
       case 'paradoxe': content = <ParadoxeGratuiteView />; break;
       case 'reglementaire': content = <CascadeReglementaireView />; break;
       case 'souverainete': content = <IndiceSouveraineteView />; break;
+      case 'diaspora': content = <DiasporaView />; break;
+      case 'neuro': content = <NeuroIntentionView />; break;
+      case 'conversion': content = <MatriceConversionView />; break;
+      case 'pionniers': content = <CompetitiveLandscapeView />; break;
       default: content = <FallbackView />; break;
     }
     

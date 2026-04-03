@@ -1,0 +1,1192 @@
+{
+  "meta": {
+    "agent": "NAWFAL",
+    "date_generation": "2026-04-03",
+    "objet": "Cartographie réglementaire complète — NOOS CE IIa MDR — Corridor EU-Afrique",
+    "device": "NOOS — Dispositif médical logiciel (SaMD) de gouvernance collective, classé CE IIa sous EU MDR 2017/745",
+    "ecosystem": "EIGEN (NOOS, BURHAN, ÆLYA, MYNε, YrKnown, MIZAN, RAQIB)",
+    "nombre_reglementations": 25,
+    "sources_methode": "Web search, publications officielles EU/AU/nationales, bases académiques"
+  },
+  "reglementations": [
+    {
+      "id": 1,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "Règlement (UE) 2017/745 du Parlement européen et du Conseil du 5 avril 2017 relatif aux dispositifs médicaux (EU MDR)",
+      "acronyme": "EU MDR 2017/745",
+      "juridiction": "Union Européenne / Espace Économique Européen",
+      "date_entree_en_vigueur": "2017-05-25 (applicable depuis 2021-05-26)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CLASSIFIE + AUTORISE + CONTRAINT",
+        "detail": "NOOS est classifié Class IIa sous Rule 11 (Annexe VIII) en tant que SaMD fournissant des informations utilisées pour des décisions diagnostiques ou thérapeutiques. Requiert : implication d'un Organisme Notifié, dossier technique complet (Annexe II/III), évaluation clinique (Annexe XIV), système de gestion de la qualité (Art. 10), marquage UDI (Unique Device Identification), enregistrement EUDAMED, surveillance post-commercialisation, et déclaration de conformité CE. La classification IIa impose une procédure de conformité via Annexe IX (assurance qualité complète) ou Annexe XI (vérification de type). Chaque module logiciel de NOOS peut être classifié indépendamment selon MDCG 2019-11 révisé."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données d'observance hashées générées par BURHAN constituent des données relatives à la santé au sens de l'Art. 2(1) MDR si elles sont utilisées dans le cadre d'un dispositif médical. Le hachage ne supprime pas leur qualification de données de santé tant qu'elles restent pseudonymisées (réversibles). Seule une anonymisation irréversible certifiée les exclut du périmètre.",
+        "articles": [
+          "Art. 2(1) définition dispositif médical",
+          "Art. 10(3) obligations du fabricant",
+          "Annexe I GSPR 17.1-17.4 (protection données)"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Le MDR n'interdit pas la vente de données anonymisées mais impose que toute donnée collectée via un dispositif médical respecte les GSPR (General Safety and Performance Requirements) Annexe I, notamment les exigences de protection des données (Section 17). Les données doivent être irréversiblement anonymisées avant commercialisation. La finalité de monétisation doit être déclarée dans l'intended purpose si elle influence la conception du dispositif.",
+        "contraintes": [
+          "Anonymisation irréversible obligatoire",
+          "Déclaration dans l'intended purpose",
+          "Conformité GSPR Annexe I Section 17",
+          "Traçabilité auditée par l'Organisme Notifié"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 63 (consentement éclairé pour investigations cliniques), Annexe I Section 17.1 (protection données patients)",
+        "anonymisation": "Annexe I GSPR 17.2 — mesures techniques et organisationnelles pour protéger les données, y compris anonymisation",
+        "transfert_transfrontalier": "Art. 56 (investigations cliniques dans pays tiers), Art. 120 (dispositions transitoires)",
+        "recherche": "Art. 61-82 (évaluation clinique et investigations cliniques), Art. 83-86 (surveillance post-commercialisation)"
+      },
+      "sanctions_maximales": "Définies par chaque État membre (Art. 113). Exemples : Allemagne jusqu'à 500 000 EUR ou emprisonnement ; France jusqu'à 150 000 EUR et 1 an emprisonnement. Retrait du marché, rappel de produit, suspension/retrait du certificat CE par l'Organisme Notifié.",
+      "opportunite_eigen": "Le MDR FORCE l'adoption du stack NOOS/ÆLYA/BURHAN car : (1) Rule 11 reclassifie la majorité des SaMD en IIa minimum, éliminant les concurrents non conformes ; (2) Les GSPR Section 17 exigent une couche de consentement et protection des données intégrée dès la conception (Privacy by Design) — exactement ce que fait ÆLYA ; (3) La surveillance post-commercialisation exige un système de collecte de données terrain structuré — BURHAN ; (4) L'obligation UDI/EUDAMED favorise les plateformes traçables comme NOOS ; (5) Les concurrents sans QMS ISO 13485 sont bloqués à l'entrée du marché.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "NOOS étant déjà classifié CE IIa, le cadre MDR est le référentiel de base. Score 7/10 car la classification est acquise mais la maintenance continue (PMS, PSUR, vigilance, EUDAMED) requiert des ressources permanentes et des audits réguliers par l'Organisme Notifié.",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32017R0745",
+        "https://blog.johner-institute.com/regulatory-affairs/class-iia-medical-devices/",
+        "https://www.registrarcorp.com/blog/medical-devices/medical-device-regulations/understanding-eu-class-iia-medical-devices/",
+        "https://digital.nemko.com/regulations/medical-devices-regulation"
+      ]
+    },
+    {
+      "id": 2,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "Règlement (UE) 2017/746 du Parlement européen et du Conseil du 5 avril 2017 relatif aux dispositifs médicaux de diagnostic in vitro (IVDR)",
+      "acronyme": "IVDR 2017/746",
+      "juridiction": "Union Européenne / Espace Économique Européen",
+      "date_entree_en_vigueur": "2017-05-25 (applicable depuis 2022-05-26)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "NE CLASSIFIE PAS directement — DELIMITE le périmètre",
+        "detail": "NOOS en tant que SaMD de gouvernance collective ne relève pas de l'IVDR sauf si un module spécifique est destiné à l'analyse in vitro de spécimens biologiques. L'IVDR délimite le périmètre : si MYNε traite des données issues de diagnostics in vitro (biomarqueurs, tests génétiques), ces modules logiciels pourraient relever de l'IVDR (potentiellement Class C pour diagnostics compagnons). La qualification SaMD vs IVD-SaMD est critique."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "CONDITIONNEL — Les données d'observance hashées ne sont pas a priori des données IVD sauf si BURHAN traite des résultats de tests diagnostiques in vitro. Si les données d'observance incluent des résultats de tests biologiques, elles entrent dans le périmètre IVDR.",
+        "articles": [
+          "Art. 2(2) définition IVD",
+          "Recital 17 (software as IVD)"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Mêmes contraintes que MDR pour les données issues de dispositifs IVD. Les données de diagnostics compagnons sont Class C et soumises à des exigences renforcées. La vente de données anonymisées IVD est possible si conformité aux GSPR spécifiques IVDR.",
+        "contraintes": [
+          "Qualification IVD vs MDR critique",
+          "Class C pour diagnostics compagnons",
+          "Conformité GSPR IVDR",
+          "Certification Organisme Notifié spécifique IVD"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 58 (consentement pour études de performance), Annexe I GSPR",
+        "anonymisation": "Annexe I GSPR — protection données patients IVD",
+        "transfert_transfrontalier": "Art. 51 (études de performance dans pays tiers)",
+        "recherche": "Art. 56-77 (études de performance clinique)"
+      },
+      "sanctions_maximales": "Définies par chaque État membre (Art. 113). Similaires au MDR. Retrait du marché, suspension certificat CE.",
+      "opportunite_eigen": "L'IVDR crée une barrière massive pour les concurrents MYNε qui voudraient vendre des données de diagnostics compagnons sans conformité IVD. NOOS/ÆLYA peuvent intégrer la traçabilité IVD et offrir un canal conforme de monétisation de données diagnostiques. La reclassification des IVD (de 80% auto-certifiés sous l'ancienne directive à une majorité nécessitant un Organisme Notifié) élimine les acteurs non conformes.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 car NOOS n'est pas directement un IVD mais pourrait traiter des données IVD. La qualification SaMD/IVD-SaMD n'est pas encore formalisée pour tous les modules. Si des modules MYNε traitent des données de biomarqueurs, une conformité IVDR supplémentaire sera nécessaire.",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32017R0746",
+        "https://criterionedge.com/software-can-be-an-in-vitro-diagnostic-device-under-ivdr-2017-746/",
+        "https://www.efpia.eu/media/554434/2020_05_27_efpia-mte_determining-the-path-for-assessment-of-cdx-under-ivdr_final.pdf"
+      ]
+    },
+    {
+      "id": 3,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "MDCG 2019-11 Rev. 1 — Guidance on Qualification and Classification of Software as a Medical Device",
+      "acronyme": "MDCG 2019/11",
+      "juridiction": "Union Européenne (guidance non contraignante mais suivie par les Organismes Notifiés)",
+      "date_entree_en_vigueur": "2019-10 (révisée 2024-2025)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CLASSIFIE + GUIDE",
+        "detail": "MDCG 2019-11 est le document de référence pour la qualification et classification de NOOS en tant que SaMD. La révision introduit les sub-rules 11a (diagnostic/thérapeutique → IIa minimum), 11b (monitoring physiologique → IIa minimum), 11c (autres → Class I). NOOS relève de Rule 11a (gouvernance collective avec décisions thérapeutiques/diagnostiques). La guidance formalise la classification modulaire : chaque module logiciel NOOS peut être classifié indépendamment, et seuls les modules à finalité médicale doivent être CE-marqués. Les modules non-médicaux (ex: facturation, planification) restent hors périmètre MDR."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "La guidance confirme que le software qui 'provides information used to take decisions with diagnosis or therapeutic purposes' est MDSW. Si BURHAN fournit des informations d'observance utilisées pour des décisions cliniques, il est qualifié MDSW et ses données sont des données de dispositif médical.",
+        "articles": [
+          "Section 3 Qualification",
+          "Section 4.2.1 Rule 11 sub-rules",
+          "Step 1-6 decision flowchart"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "La guidance clarifie que le logiciel à finalité non-médicale (stockage simple, transmission) n'est pas un MDSW. Si MYNε est positionné comme une plateforme de données (et non comme un dispositif médical), il peut opérer hors périmètre MDR tant qu'il ne prend pas de décisions médicales. La séparation architecturale NOOS (medical) / MYNε (data monetization) est critique.",
+        "contraintes": [
+          "Séparation claire intended purpose médical vs non-médical",
+          "Documentation de la non-qualification MDSW pour MYNε",
+          "Risque de requalification si MYNε influence des décisions cliniques"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "N/A — guidance de qualification/classification, pas de dispositions spécifiques sur le consentement",
+        "anonymisation": "N/A directement, mais la qualification MDSW détermine le régime de données applicable",
+        "transfert_transfrontalier": "N/A",
+        "recherche": "Section 3.3 — software driving or influencing use of a medical device"
+      },
+      "sanctions_maximales": "Aucune sanction directe (guidance non contraignante). Mais le non-respect de la guidance lors de l'évaluation par un Organisme Notifié peut entraîner le refus de certification CE.",
+      "opportunite_eigen": "MDCG 2019-11 FORCE l'architecture modulaire de NOOS : en permettant la certification indépendante de modules logiciels, elle valide le modèle EIGEN de composants séparés (NOOS médical, ÆLYA consent, MYNε data). Les concurrents monolithiques doivent certifier l'ensemble, ce qui est plus coûteux et risqué. La guidance légitime la stratégie d'EIGEN de séparer les couches médicales et non-médicales.",
+      "noos_readiness_score": 8,
+      "noos_readiness_justification": "Score 8/10 car l'architecture modulaire d'EIGEN est précisément ce que MDCG 2019-11 encourage. La classification Rule 11a pour NOOS est claire. Le risque résiduel est dans la documentation de la non-qualification MDSW de MYNε et BURHAN (si ils restent hors périmètre médical).",
+      "sources": [
+        "https://health.ec.europa.eu/system/files/2020-09/md_mdcg_2019_11_guidance_en_0.pdf",
+        "https://dawn.tech/en/publication/greater-clarity-for-classifying-software-as-a-medical-device-under-rule-11-of-the-mdr",
+        "https://blog.johner-institute.com/regulatory-affairs/mdr-rule-11/"
+      ]
+    },
+    {
+      "id": 4,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "ISO 13485:2016 — Medical devices — Quality management systems — Requirements for regulatory purposes",
+      "acronyme": "ISO 13485",
+      "juridiction": "International (reconnu par EU MDR, FDA, Health Canada, TGA, ANVISA, etc.)",
+      "date_entree_en_vigueur": "2016-03-01 (3ème édition)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT (prérequis opérationnel)",
+        "detail": "ISO 13485 est le standard QMS de référence pour le MDR. Bien que non formellement obligatoire sous le MDR, il est de facto requis par les Organismes Notifiés pour la procédure d'évaluation de conformité Annexe IX. NOOS doit opérer sous un QMS certifié ISO 13485 couvrant : conception et développement, gestion des risques, achats, production, traçabilité, CAPA, surveillance post-commercialisation. Pour un SaMD, les exigences de validation logicielle (Clause 7.5.6, 7.6) et de gestion des processus externalisés sont critiques."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "ISO 13485 exige le contrôle des enregistrements (Clause 4.2.5) et la traçabilité (Clause 7.5.3). Si BURHAN fait partie du système qualité NOOS, ses données d'observance doivent être gérées sous le QMS, avec conservation, intégrité et accessibilité garanties. Le hachage est acceptable comme mesure de protection mais doit être validé.",
+        "articles": [
+          "Clause 4.2 Documentation requirements",
+          "Clause 7.5.3 Traceability",
+          "Clause 7.5.6 Validation of processes"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "ISO 13485 n'interdit pas la commercialisation de données mais exige que tout processus affectant la qualité du dispositif soit contrôlé. Si la collecte de données pour MYNε est intégrée au dispositif NOOS, elle doit être documentée dans le QMS. Si MYNε opère séparément, il n'est pas directement soumis à ISO 13485.",
+        "contraintes": [
+          "Documentation QMS si intégré au dispositif",
+          "Validation des processus logiciels",
+          "Audit trail pour données collectées via le dispositif"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Clause 7.2 Customer-related processes (exigences clients et réglementaires)",
+        "anonymisation": "Clause 4.2.5 Control of records — intégrité et conservation",
+        "transfert_transfrontalier": "Clause 7.4 Purchasing — contrôle des fournisseurs et sous-traitants (y compris data processors)",
+        "recherche": "Clause 7.3 Design and development — validation clinique"
+      },
+      "sanctions_maximales": "Pas de sanctions directes (standard volontaire). Mais la perte de certification ISO 13485 entraîne de facto l'impossibilité d'obtenir ou maintenir le marquage CE sous le MDR. Impact commercial : exclusion du marché EU.",
+      "opportunite_eigen": "ISO 13485 est une barrière à l'entrée massive pour les startups et concurrents. NOOS ayant un QMS certifié crée un avantage compétitif durable. La certification ISO 13485 couvrant l'ensemble du stack EIGEN (NOOS + ÆLYA + BURHAN) démontre une maturité réglementaire que peu de concurrents sur le corridor EU-Afrique possèdent. Les acheteurs institutionnels (hôpitaux, pharma) exigent ISO 13485 comme prérequis.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — ISO 13485 est un prérequis pour la certification CE IIa déjà obtenue. Le score n'est pas 10 car la maintenance du QMS est continue et les audits de surveillance annuels imposent une vigilance constante, surtout pour un SaMD évolutif avec mises à jour fréquentes.",
+      "sources": [
+        "https://www.iso.org/standard/59752.html",
+        "https://www.ptc.com/en/blogs/medtech/iso-13485-qms-medical-device",
+        "https://www.greenlight.guru/blog/iso-13485-qms-medical-device",
+        "https://www.nsf.org/management-systems/quality-management/iso-13485"
+      ]
+    },
+    {
+      "id": 5,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "IEC 62304:2006+AMD1:2015 — Medical device software — Software life cycle processes",
+      "acronyme": "ISO 62304",
+      "juridiction": "International (harmonisé avec EU MDR)",
+      "date_entree_en_vigueur": "2006-05-09 (amendement 1: 2015)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT (prérequis technique)",
+        "detail": "IEC 62304 définit le cycle de vie logiciel obligatoire pour les SaMD. NOOS doit respecter : classification de sécurité logicielle (Class A, B, ou C selon les risques), planification du développement, gestion des exigences, conception architecturale, implémentation, tests unitaires/intégration/système, maintenance, et gestion de configuration. Pour un SaMD IIa, la classification de sécurité logicielle est typiquement Class B (blessure non-grave possible) ou C (décès/blessure grave possible). Chaque mise à jour logicielle NOOS doit suivre le processus IEC 62304."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Si BURHAN est intégré comme composant logiciel de NOOS (SOUP — Software of Unknown Provenance, ou composant interne), ses processus de développement doivent respecter IEC 62304. Les données d'observance traitées par le logiciel sont soumises aux exigences d'intégrité et de traçabilité du cycle de vie logiciel.",
+        "articles": [
+          "Clause 4 General requirements",
+          "Clause 5 Software development process",
+          "Clause 7 Software risk management"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "IEC 62304 ne régule pas directement la vente de données. Mais si le module de collecte de données pour MYNε est embarqué dans le SaMD NOOS, ce module doit être développé selon IEC 62304 et sa classification de sécurité doit tenir compte de l'impact potentiel d'une défaillance du module de collecte sur la sécurité patient.",
+        "contraintes": [
+          "Module de collecte données doit suivre le lifecycle IEC 62304 si intégré au SaMD",
+          "Classification de sécurité logicielle du module",
+          "Tests de régression à chaque mise à jour"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "N/A (standard technique, pas de dispositions consentement)",
+        "anonymisation": "Clause 5.2 Software requirements — exigences de sécurité et confidentialité des données",
+        "transfert_transfrontalier": "N/A",
+        "recherche": "Clause 6 Software maintenance process — gestion des anomalies et mises à jour"
+      },
+      "sanctions_maximales": "Aucune sanction directe (standard technique). Non-conformité entraîne l'impossibilité de démontrer la conformité aux GSPR du MDR, donc refus/retrait du certificat CE.",
+      "opportunite_eigen": "IEC 62304 FORCE les concurrents à formaliser leur développement logiciel — un investissement de 6-18 mois minimum. NOOS avec un cycle de vie IEC 62304 implémenté a un avantage de time-to-market de 12+ mois sur tout nouveau concurrent. La gestion de SOUP (composants open-source) est un point de friction majeur pour les concurrents utilisant des stacks non documentés.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — Prérequis pour CE IIa déjà acquis. Le défi continu est la gestion des mises à jour logicielles fréquentes (chaque release doit suivre le processus complet) et la documentation des SOUP/composants tiers dans l'écosystème EIGEN.",
+      "sources": [
+        "https://www.iso.org/standard/38421.html",
+        "https://odelletechnology.com/how-to-prevent-accumulating-regulatory-debt-under-eu-mdr-2026/"
+      ]
+    },
+    {
+      "id": 6,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "IEC 62366-1:2015+AMD1:2020 — Medical devices — Part 1: Application of usability engineering to medical devices",
+      "acronyme": "IEC 62366",
+      "juridiction": "International (harmonisé avec EU MDR)",
+      "date_entree_en_vigueur": "2015-02-06 (amendement 1: 2020)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT (prérequis UX/sécurité)",
+        "detail": "IEC 62366 exige l'application de l'ingénierie de l'utilisabilité à NOOS : analyse des utilisateurs (professionnels de santé, patients, administrateurs), identification des tâches critiques pour la sécurité, évaluation formative et sommative de l'utilisabilité, documentation des use errors potentiels et de leurs conséquences. Pour un SaMD de gouvernance collective, les interfaces utilisateur doivent être conçues pour minimiser les erreurs de saisie, d'interprétation et de prise de décision. Les populations cibles (médecins, infirmiers, patients en Afrique avec différents niveaux de littératie numérique) imposent des tests d'utilisabilité spécifiques au corridor EU-Afrique."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Si BURHAN a une interface utilisateur (saisie d'observance par le patient), cette interface doit être conçue selon IEC 62366 pour minimiser les erreurs de saisie qui pourraient corrompre les données d'observance. Les use errors sur les données d'observance sont des risques de sécurité patient.",
+        "articles": [
+          "Clause 5 Usability engineering process",
+          "Clause 5.7 Summative evaluation"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Impact indirect — la qualité des données MYNε dépend de l'utilisabilité de la collecte. Des use errors dans la saisie d'observance dégradent la valeur commerciale des données. IEC 62366 n'interdit pas la vente mais la qualité des données est liée à la conformité d'utilisabilité.",
+        "contraintes": [
+          "Tests d'utilisabilité sur les populations cibles corridor EU-Afrique",
+          "Documentation des use errors potentiels affectant la qualité des données"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Clause 5.1 — Use specification incluant les caractéristiques des utilisateurs",
+        "anonymisation": "N/A",
+        "transfert_transfrontalier": "N/A",
+        "recherche": "Clause 5.7-5.9 — Évaluation sommative et validation de l'utilisabilité"
+      },
+      "sanctions_maximales": "Aucune sanction directe. Non-conformité = non-conformité aux GSPR MDR (Annexe I, Section 5 — Benefit-risk, Section 17.4 — usability), donc refus/retrait CE.",
+      "opportunite_eigen": "IEC 62366 FORCE une approche centrée utilisateur qui avantage NOOS sur le corridor Afrique : les concurrents conçus pour des utilisateurs européens devront refaire leurs tests d'utilisabilité pour les populations africaines (littératie numérique variable, langues multiples, conditions d'utilisation terrain). NOOS conçu dès le départ pour le corridor EU-Afrique avec ÆLYA (consent layer multilingue) a un avantage natif.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 — L'ingénierie d'utilisabilité est un processus continu. Le score reflète le besoin de tests d'utilisabilité spécifiques aux populations africaines (différents niveaux de littératie, langues, conditions d'utilisation) qui ne sont peut-être pas encore tous réalisés.",
+      "sources": [
+        "https://www.iso.org/standard/63179.html"
+      ]
+    },
+    {
+      "id": 7,
+      "categorie": "EU_DISPOSITIFS",
+      "full_name": "ISO 14971:2019 — Medical devices — Application of risk management to medical devices",
+      "acronyme": "ISO 14971",
+      "juridiction": "International (harmonisé avec EU MDR)",
+      "date_entree_en_vigueur": "2019-12 (3ème édition)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT (prérequis fondamental)",
+        "detail": "ISO 14971 est le cadre de gestion des risques obligatoire pour NOOS sous le MDR. Couvre : plan de gestion des risques, identification des dangers (hazards), estimation des risques, évaluation des risques, maîtrise des risques, évaluation du risque résiduel global, et revue de la gestion des risques. Pour un SaMD IIa, les risques spécifiques incluent : erreurs algorithmiques, perte de données, cyber-attaques, mauvaise interprétation des outputs, dépendance excessive à l'outil. Le MDR exige que les bénéfices l'emportent sur les risques résiduels (GSPR Annexe I, Section 1-9)."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Les données d'observance hashées de BURHAN sont des inputs dans l'analyse de risque : perte d'intégrité des données d'observance = danger pour le patient (mauvaise décision thérapeutique). Le hachage doit être évalué comme mesure de maîtrise du risque dans le fichier de gestion des risques ISO 14971.",
+        "articles": [
+          "Clause 5 Risk analysis",
+          "Clause 6 Risk evaluation",
+          "Clause 7 Risk control",
+          "Clause 9 Production and post-production review"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "ISO 14971 n'interdit pas la vente de données mais la monétisation doit être évaluée comme un risque potentiel : conflit d'intérêt (optimisation collecte vs sécurité patient), risque de ré-identification, risque de dégradation de la confiance patient. Ces risques doivent figurer dans le risk management file.",
+        "contraintes": [
+          "Évaluation du risque de ré-identification dans le risk file",
+          "Conflit d'intérêt monétisation vs sécurité patient documenté",
+          "Mesures de maîtrise documentées"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Clause 4.2 Top management responsibilities — incluant la conformité réglementaire",
+        "anonymisation": "Clause 7 Risk control — anonymisation comme mesure de maîtrise",
+        "transfert_transfrontalier": "Clause 9 Production and post-production information — risques émergents dans nouveaux marchés",
+        "recherche": "Clause 10 Risk management review"
+      },
+      "sanctions_maximales": "Aucune sanction directe. Non-conformité ISO 14971 = non-conformité GSPR MDR = impossibilité de certificat CE.",
+      "opportunite_eigen": "ISO 14971 FORCE une analyse de risque qui documente les avantages du stack EIGEN : ÆLYA comme mesure de maîtrise du risque consentement, BURHAN comme mesure de maîtrise du risque intégrité données, NOOS comme mesure de maîtrise du risque gouvernance. Le risk management file devient un outil de vente démontrant la supériorité architecturale.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — Prérequis CE IIa acquis. Le risk management file doit être maintenu vivant avec chaque mise à jour logicielle et chaque nouveau marché (risques spécifiques Afrique : connectivité intermittente, formation utilisateurs, infrastructure).",
+      "sources": [
+        "https://www.iso.org/standard/72704.html"
+      ]
+    },
+    {
+      "id": 8,
+      "categorie": "EU_DONNEES_SANTE",
+      "full_name": "Règlement relatif à l'espace européen des données de santé (European Health Data Space — EHDS)",
+      "acronyme": "EHDS",
+      "juridiction": "Union Européenne",
+      "date_entree_en_vigueur": "2025-03-26 (entrée en vigueur). Applications progressives : Primary use mars 2029, Secondary use mars 2029 (EHR/claims), 2031 (génomique/imagerie), 2035 (pays tiers)",
+      "statut_implementation": "en transition (entrée en vigueur mars 2025, application progressive 2027-2035)",
+      "impact_noos": {
+        "type": "AUTORISE + CONTRAINT + OUVRE un marché massif",
+        "detail": "L'EHDS transforme l'écosystème de données de santé : (1) Primary use — les patients ont le droit d'accéder et partager leurs données via MyHealth@EU ; NOOS doit être interopérable avec les formats EHR européens (Patient Summary, ePrescription). (2) Secondary use — crée un cadre légal pour l'utilisation de données de santé à des fins de recherche, innovation, santé publique via les Health Data Access Bodies (HDAB). Les données d'observance NOOS/BURHAN pourraient être rendues accessibles pour usage secondaire sous permis HDAB. (3) 2035 — pays tiers (Afrique) pourront rejoindre HealthData@EU, ouvrant le corridor. L'EHDS impose aussi un nouveau régime pour les logiciels EHR (chapitre III) : même les logiciels non qualifiés comme dispositifs médicaux doivent respecter des exigences de sécurité et interopérabilité."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données d'observance constituent des 'electronic health data' au sens de l'EHDS si elles sont liées à un patient identifié/identifiable. Les données hashées restent des données de santé pseudonymisées. Sous l'EHDS, les données d'observance seraient accessibles pour usage secondaire (recherche, pharma) via un permis HDAB, avec anonymisation ou environnement sécurisé obligatoire.",
+        "articles": [
+          "Art. 2 Definitions (electronic health data)",
+          "Art. 33-43 Secondary use",
+          "Art. 44-49 Health Data Access Bodies"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "TRANSFORME LE MODÈLE — L'EHDS ne permet pas la 'vente' directe de données de santé pour usage secondaire. Le modèle est le 'data permit' délivré par un HDAB : les données sont accessibles dans un 'secure processing environment' et ne peuvent être extraites qu'anonymisées. MYNε doit pivoter vers un modèle de 'data holder' enregistré auprès des HDAB, avec des redevances (fees) plutôt qu'une vente directe. Cependant, l'Art. 33 permet l'usage secondaire pour la R&D (y compris privée), ce qui légitime la demande pharma. Les données MYNε consenties via ÆLYA ont un premium car le consentement EHDS pour usage secondaire est opt-out (les patients ne peuvent refuser que pour certaines finalités), alors que les données ÆLYA sont opt-in explicite.",
+        "contraintes": [
+          "Enregistrement comme 'data holder' auprès des HDAB",
+          "Accès via secure processing environment uniquement",
+          "Interdiction d'extraction de données non anonymisées",
+          "Fees réglementées (pas de prix libre)",
+          "Opt-out patient possible pour certaines finalités"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 8-11 Primary use — droits patients, accès et partage ; Art. 33(5) — opt-out pour certaines finalités de secondary use",
+        "anonymisation": "Art. 44-46 — secure processing environments, anonymisation obligatoire pour extraction",
+        "transfert_transfrontalier": "Art. 63-65 — HealthData@EU infrastructure ; Art. 73 — accès pays tiers à partir de 2035",
+        "recherche": "Art. 34 — finalités d'usage secondaire incluant recherche scientifique, R&D, innovation, santé publique, statistiques officielles"
+      },
+      "sanctions_maximales": "Art. 65 — les États membres déterminent les sanctions. Obligation de sanctions 'effectives, proportionnées et dissuasives'. Pour les violations des règles de secondary use : amendes jusqu'à 10M EUR ou 2% du chiffre d'affaires mondial selon les principes RGPD. Interdiction d'accès aux données de santé pour les contrevenants.",
+      "opportunite_eigen": "L'EHDS est l'OPPORTUNITÉ STRATÉGIQUE MAJEURE pour EIGEN : (1) Il crée un marché structuré de données de santé secondaires estimé à 15+ Mrd EUR d'ici 2032 ; (2) Il FORCE les data holders à s'enregistrer et rendre leurs données accessibles — NOOS/BURHAN peuvent être le canal de collecte conforme ; (3) ÆLYA comme couche de consentement opt-in premium vaut 30-50% de plus que les données opt-out EHDS ; (4) Le corridor Afrique s'ouvre en 2035 via HealthData@EU ; (5) Les HDAB ont besoin de 'data holders' fiables avec des données de qualité — position idéale pour EIGEN. L'EHDS FORCE littéralement la création d'un écosystème comme EIGEN.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — L'EHDS est une opportunité massive mais le cadre est en transition (2025-2035). NOOS doit : (1) s'aligner sur les formats EHR européens (interopérabilité), (2) s'enregistrer auprès des futurs HDAB, (3) adapter le modèle MYNε de 'vente directe' vers 'data holder + fees HDAB', (4) préparer l'interopérabilité avec HealthData@EU. Beaucoup de travail mais les timelines sont longues.",
+      "sources": [
+        "https://health.ec.europa.eu/ehealth-digital-health-and-care/european-health-data-space-regulation-ehds_en",
+        "https://healthcarelifesciences.bakermckenzie.com/2025/03/05/european-health-data-space-regulation-published-whats-next/",
+        "https://datamatters.sidley.com/2025/01/23/european-health-data-space-regulation-adopted-whats-next-for-life-sciences-companies/"
+      ]
+    },
+    {
+      "id": 9,
+      "categorie": "EU_DONNEES_SANTE",
+      "full_name": "Règlement (UE) 2016/679 — Règlement Général sur la Protection des Données (RGPD/GDPR) — Art. 9 (données de santé) et Art. 89 (recherche)",
+      "acronyme": "RGPD Art. 9 & Art. 89",
+      "juridiction": "Union Européenne / Espace Économique Européen (+ effet extraterritorial)",
+      "date_entree_en_vigueur": "2018-05-25",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT fortement + AUTORISE sous conditions strictes",
+        "detail": "Le RGPD Art. 9 interdit par défaut le traitement des données de santé sauf exceptions limitées : (a) consentement explicite, (b) médecine préventive/du travail, (c) intérêt vital, (g) intérêt public substantiel, (h) finalités médicales sous secret professionnel, (i) santé publique, (j) recherche/statistiques (Art. 89). NOOS traite des données de santé au sens de l'Art. 4(15) et doit fonder chaque traitement sur une base légale Art. 9(2). Le consentement explicite via ÆLYA est la base la plus solide pour la monétisation MYNε. Art. 25 (Privacy by Design) impose l'intégration de la protection des données dès la conception — exactement le rôle d'ÆLYA."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données d'observance hashées sont des données de santé au sens du RGPD Art. 4(15) : 'données relatives à la santé physique ou mentale d'une personne physique, y compris la prestation de services de soins de santé, qui révèlent des informations sur l'état de santé de cette personne'. Le hachage constitue une pseudonymisation (Art. 4(5)), PAS une anonymisation. Les données restent des données personnelles de santé soumises à l'Art. 9.",
+        "articles": [
+          "Art. 4(15) définition données de santé",
+          "Art. 4(5) pseudonymisation",
+          "Art. 9(1) interdiction de principe",
+          "Art. 9(2)(a) consentement explicite",
+          "Recital 26 (anonymisation)"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Deux voies : (1) Données pseudonymisées (hashées) : restent des données personnelles, vente soumise à Art. 9 + base légale (consentement explicite ÆLYA le plus robuste). Le destinataire doit avoir sa propre base légale. (2) Données véritablement anonymisées (irréversibles, selon critères du WP29 Opinion 05/2014) : hors périmètre RGPD, vente libre. MAIS le Recital 26 et la jurisprudence imposent un test d'anonymisation strict — le hachage seul n'est généralement PAS suffisant. MYNε doit utiliser des techniques d'anonymisation avancées (k-anonymité, differential privacy, agrégation) validées.",
+        "contraintes": [
+          "Consentement explicite Art. 9(2)(a) via ÆLYA pour données pseudonymisées",
+          "Anonymisation irréversible selon WP29 criteria pour données hors RGPD",
+          "DPIA (Data Protection Impact Assessment) Art. 35 obligatoire",
+          "DPO (Data Protection Officer) Art. 37 obligatoire",
+          "Registre des traitements Art. 30",
+          "Transferts hors EEE : Art. 44-49 (décision d'adéquation ou garanties appropriées)"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 9(2)(a) consentement explicite ; Art. 7 conditions du consentement ; Art. 4(11) définition consentement",
+        "anonymisation": "Recital 26 — données anonymisées hors périmètre ; Art. 89(1) — pseudonymisation pour recherche",
+        "transfert_transfrontalier": "Art. 44-49 — transferts vers pays tiers : décision d'adéquation (Art. 45), garanties appropriées (Art. 46 — BCR, SCC), dérogations (Art. 49). Le Maroc n'a PAS de décision d'adéquation UE.",
+        "recherche": "Art. 89 — garanties et dérogations pour recherche scientifique/historique/statistiques. Art. 89(1) impose pseudonymisation ; Art. 89(2) permet aux États membres de déroger aux droits des personnes pour la recherche."
+      },
+      "sanctions_maximales": "Art. 83 — jusqu'à 20 000 000 EUR ou 4% du chiffre d'affaires annuel mondial, le montant le plus élevé étant retenu. Pour violations Art. 9 (données de santé) : montant maximum applicable. Sanctions administratives + droit à compensation Art. 82.",
+      "opportunite_eigen": "Le RGPD FORCE l'adoption d'ÆLYA car : (1) Le consentement explicite Art. 9(2)(a) est la base légale la plus robuste pour la monétisation — ÆLYA est un consent management platform (CMP) intégré ; (2) Privacy by Design Art. 25 est exactement le positionnement d'ÆLYA ; (3) Les transferts EU→Maroc→Afrique nécessitent des garanties appropriées (BCR, SCC) — EIGEN peut les intégrer nativement ; (4) La DPIA obligatoire pour le traitement de données de santé à grande échelle documente la supériorité du stack ; (5) Les concurrents sans CMP intégré sont en violation potentielle de l'Art. 9.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — ÆLYA comme consent layer est un atout majeur pour la conformité Art. 9. Points d'attention : (1) Le Maroc n'a pas de décision d'adéquation UE — nécessité de SCC/BCR pour les transferts, (2) La qualification 'anonymisée' des données MYNε doit être validée par une expertise indépendante, (3) Les DPIA doivent être réalisées et maintenues pour chaque traitement.",
+      "sources": [
+        "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679",
+        "https://donnees.net/article-9-rgpd-tout-savoir-pour-traiter-les-donnees-sensibles",
+        "https://www.gdpr-expert.eu/article.html?id=89",
+        "https://monexpertrgpd.com/article-89/"
+      ]
+    },
+    {
+      "id": 10,
+      "categorie": "EU_DONNEES_SANTE",
+      "full_name": "Règlement (UE) 2024/1689 — Règlement établissant des règles harmonisées concernant l'intelligence artificielle (AI Act)",
+      "acronyme": "AI Act",
+      "juridiction": "Union Européenne",
+      "date_entree_en_vigueur": "2024-08-01 (entrée en vigueur). High-risk AI (dispositifs médicaux Annexe I) : applicable 2027-08-02",
+      "statut_implementation": "en transition (entrée en vigueur août 2024, application progressive : IA interdites février 2025, high-risk médical août 2027, full août 2027)",
+      "impact_noos": {
+        "type": "CLASSIFIE HIGH-RISK + CONTRAINT lourdement",
+        "detail": "NOOS est un système d'IA à haut risque sous Art. 6(1) car il est un composant de sécurité d'un produit couvert par la législation d'harmonisation de l'Annexe I (EU MDR 2017/745). Un SaMD CE IIa utilisant de l'IA/ML est automatiquement high-risk sous l'AI Act. Obligations : système de gestion des risques IA (Art. 9), gouvernance des données (Art. 10), documentation technique (Art. 11), enregistrement automatique (Art. 12), transparence (Art. 13), contrôle humain (Art. 14), exactitude, robustesse et cybersécurité (Art. 15). La conformité AI Act sera vérifiée lors de l'évaluation de conformité MDR par l'Organisme Notifié (Art. 43 AI Act). MDCG 2025-6 clarifie l'articulation MDR/AI Act."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Art. 10 impose des exigences de qualité des données d'entraînement : les données d'observance BURHAN utilisées pour entraîner/affiner des modèles IA dans NOOS doivent être pertinentes, représentatives, exemptes d'erreurs et complètes. Les biais dans les données d'observance (ex: sous-représentation de populations africaines) doivent être identifiés et mitigés. Les données hashées utilisées pour l'IA doivent respecter les exigences Art. 10(2)(f) — examen des biais possibles.",
+        "articles": [
+          "Art. 6(1) classification high-risk via Annexe I",
+          "Art. 9 risk management system",
+          "Art. 10 data and data governance",
+          "Art. 10(2)(f) examination of biases"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "L'AI Act ne régule pas directement la vente de données mais impose que les données utilisées dans des systèmes IA high-risk respectent des critères de qualité stricts. Si des acheteurs MYNε utilisent les données pour entraîner des systèmes IA high-risk (pharma, diagnostic), les données MYNε doivent satisfaire les exigences Art. 10. Cela AUGMENTE la valeur des données MYNε si elles sont documentées comme 'AI Act compliant datasets'.",
+        "contraintes": [
+          "Documentation qualité des datasets selon Art. 10",
+          "Identification des biais dans les données corridor EU-Afrique",
+          "Traçabilité des données sources pour audit AI Act"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 10(5) — traitement de catégories spéciales de données (santé) pour détecter les biais, sous conditions strictes (anonymisation/pseudonymisation, sécurité technique)",
+        "anonymisation": "Art. 10(5) — permet le traitement de données sensibles pour la détection de biais si anonymisées/pseudonymisées dans un environnement sécurisé",
+        "transfert_transfrontalier": "Art. 51-53 — obligations pour les fournisseurs et déployeurs, y compris pour les systèmes IA mis sur le marché EU depuis des pays tiers",
+        "recherche": "Art. 53-54 — bacs à sable réglementaires IA (regulatory sandboxes) ; Art. 60 — conditions d'essai en conditions réelles"
+      },
+      "sanctions_maximales": "Art. 99 — Pratiques interdites : jusqu'à 35M EUR ou 7% du CA mondial. High-risk non-conforme : jusqu'à 15M EUR ou 3% du CA mondial. Fausses informations aux autorités : jusqu'à 7.5M EUR ou 1% du CA mondial. Pour les PME/startups : le montant le plus bas entre ces plafonds et les montants proportionnés.",
+      "opportunite_eigen": "L'AI Act FORCE l'adoption du stack NOOS/ÆLYA/BURHAN car : (1) Les exigences Art. 10 de qualité données imposent un pipeline de données structuré et documenté — BURHAN ; (2) La transparence Art. 13 exige une explicabilité des décisions IA — la gouvernance collective NOOS rend les décisions traçables ; (3) Le contrôle humain Art. 14 est natif dans un système de gouvernance collective ; (4) Les bacs à sable réglementaires (Art. 53) offrent une voie accélérée pour NOOS sur les marchés EU ; (5) Les datasets 'AI Act compliant' de MYNε commandent un premium de 40-60% vs données non documentées.",
+      "noos_readiness_score": 4,
+      "noos_readiness_justification": "Score 4/10 — Le cadre AI Act est nouveau (full application août 2027) et les exigences sont lourdes. NOOS doit : (1) réaliser une conformity assessment AI Act intégrée à la procédure MDR, (2) documenter le système de gestion des risques IA (Art. 9), (3) formaliser la gouvernance des données Art. 10 pour les données corridor EU-Afrique, (4) préparer la documentation technique Annexe IV. Les synergies avec le MDR (Organisme Notifié unique) allègent le processus mais le travail de documentation est substantiel.",
+      "sources": [
+        "https://artificialintelligenceact.eu/article/6/",
+        "https://qmsdoc.com/2026/01/13/the-eu-ai-act-and-samd-development/",
+        "https://health.ec.europa.eu/document/download/b78a17d7-e3cd-4943-851d-e02a2f22bbb4_en"
+      ]
+    },
+    {
+      "id": 11,
+      "categorie": "EU_DONNEES_SANTE",
+      "full_name": "Règlement (UE) No 536/2014 du Parlement européen et du Conseil relatif aux essais cliniques de médicaments à usage humain",
+      "acronyme": "Règlement Essais Cliniques 536/2014",
+      "juridiction": "Union Européenne",
+      "date_entree_en_vigueur": "2014-06-16 (applicable depuis 2022-01-31)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT indirectement + OUVRE un marché",
+        "detail": "Le Règlement 536/2014 ne s'applique pas directement à NOOS (dispositif médical, pas médicament). Mais il crée des exigences pour les essais cliniques de médicaments qui UTILISENT des SaMD comme outils de collecte de données. Si NOOS/BURHAN sont utilisés dans des essais cliniques pharmaceutiques (collecte d'observance, monitoring patient), ils doivent respecter les exigences du règlement en matière de : protection des sujets (Art. 28-35), consentement éclairé (Art. 29), gestion des données (Art. 37-43), signalement SUSAR (Art. 42), et utilisation du portail CTIS. Le CTIS (Clinical Trials Information System) est le point d'entrée unique pour les essais cliniques dans l'UE."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Si BURHAN collecte des données d'observance dans le cadre d'un essai clinique, ces données sont des 'clinical trial data' soumises aux exigences du règlement : intégrité, traçabilité, conservation pendant 25 ans minimum (Art. 58), accessibilité pour inspection. Les données hashées doivent pouvoir être dé-pseudonymisées pour audit par les autorités compétentes.",
+        "articles": [
+          "Art. 37-43 data management",
+          "Art. 56-58 retention of data",
+          "Art. 29 informed consent"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Les données collectées dans le cadre d'un essai clinique sont soumises à des restrictions strictes de réutilisation. Le règlement impose la transparence (Art. 81 — EU Database publique) mais les données au niveau individuel restent protégées. MYNε ne peut pas vendre des données d'essais cliniques sans respect des conditions de réutilisation. Cependant, les données d'observance collectées HORS essais cliniques ne sont pas directement couvertes par ce règlement.",
+        "contraintes": [
+          "Données d'essais cliniques non réutilisables librement",
+          "Conservation 25 ans",
+          "Accessibilité pour audit",
+          "Consentement éclairé spécifique essai clinique"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 29 — consentement éclairé préalable, libre, écrit ; Art. 29(8) — consentement pour utilisation secondaire des données",
+        "anonymisation": "Art. 81 — base de données EU publique (données anonymisées/agrégées)",
+        "transfert_transfrontalier": "Art. 3 — essais multinationaux via portail unique CTIS ; Art. 74 — essais dans pays tiers",
+        "recherche": "Art. 1 — objectif : faciliter la recherche clinique dans l'UE ; Art. 28 — évaluation par autorité compétente + comité éthique"
+      },
+      "sanctions_maximales": "Art. 94 — sanctions définies par chaque État membre (effectives, proportionnées, dissuasives). Exemples : suspension/retrait de l'autorisation d'essai clinique ; sanctions pénales selon droit national.",
+      "opportunite_eigen": "Le Règlement 536/2014 FORCE l'adoption de NOOS/BURHAN car : (1) Les pharma ont besoin d'outils de collecte de données conformes pour les essais multinationaux (CTIS) — BURHAN ; (2) Le consentement éclairé Art. 29 exige une traçabilité que seul un CMP comme ÆLYA peut fournir de manière scalable ; (3) Les essais décentralisés (DCT) encouragés par ICH E6(R3) nécessitent des SaMD de collecte terrain — marché direct pour NOOS ; (4) La transparence Art. 81 crée un besoin de données de haute qualité documentées.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — NOOS n'est pas un outil d'essai clinique par défaut mais peut être utilisé dans ce contexte. Le score reflète le potentiel non encore exploité : (1) Nécessité de validation GAMP5/GxP pour utilisation en essai clinique, (2) Intégration CTIS non encore réalisée, (3) Procédures de conservation 25 ans à formaliser.",
+      "sources": [
+        "https://health.ec.europa.eu/medicinal-products/clinical-trials/clinical-trials-regulation-eu-no-5362014_en",
+        "https://blog.montrium.com/blog/eu-regulation-no-536/2014-achieves-regulatory-harmonisation-for-clinical-trials"
+      ]
+    },
+    {
+      "id": 12,
+      "categorie": "EU_DONNEES_SANTE",
+      "full_name": "Règlement (UE) 2024/1183 modifiant le règlement (UE) No 910/2014 en ce qui concerne l'établissement du cadre européen relatif à une identité numérique (eIDAS 2.0)",
+      "acronyme": "eIDAS 2.0",
+      "juridiction": "Union Européenne",
+      "date_entree_en_vigueur": "2024-05-20 (entrée en vigueur). Déploiement portefeuilles d'identité numérique : fin 2026",
+      "statut_implementation": "en transition (entrée en vigueur mai 2024, déploiement wallets fin 2026)",
+      "impact_noos": {
+        "type": "AUTORISE + OPPORTUNITE MAJEURE",
+        "detail": "eIDAS 2.0 crée le European Digital Identity Wallet (EUDI Wallet) — chaque citoyen UE aura un portefeuille d'identité numérique interopérable d'ici fin 2026. Pour NOOS : (1) Identification patient certifiée — résout le problème d'identification dans les systèmes de santé (KYC patient), (2) Attestations d'attributs vérifiables (diplômes médicaux, prescriptions, consentements), (3) L'utilisateur contrôle quelles données il partage (data minimization native), (4) Intégration avec l'EHDS pour l'accès aux données de santé. NOOS peut utiliser l'EUDI Wallet comme couche d'authentification et de consentement, renforçant ÆLYA."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "L'EUDI Wallet permet de lier les données d'observance BURHAN à une identité patient vérifiée de manière pseudonymisée. Les attestations d'attributs (ex: diagnostic confirmé, prescription active) peuvent être partagées de manière sélective sans révéler l'identité complète. Cela RENFORCE la valeur des données d'observance car leur authenticité est cryptographiquement prouvable.",
+        "articles": [
+          "Art. 5a EUDI Wallet",
+          "Art. 6a-6e Attestations d'attributs",
+          "Art. 45 Qualified trust services"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "eIDAS 2.0 facilite le modèle MYNε en permettant un consentement granulaire et vérifiable : le patient peut autoriser (via son wallet) le partage de données d'observance anonymisées pour la recherche, avec une trace cryptographique du consentement. Cela SÉCURISE juridiquement la chaîne de consentement ÆLYA et augmente la valeur des données MYNε.",
+        "contraintes": [
+          "Intégration technique avec l'EUDI Wallet (standards en développement)",
+          "Interopérabilité avec les wallets des 27 États membres",
+          "L'utilisation du wallet doit rester volontaire (Art. 6a)"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 5a — wallet permet le partage sélectif de données avec consentement granulaire",
+        "anonymisation": "Art. 5a(4) — pseudonymisation native via le wallet ; génération de pseudonymes possibles",
+        "transfert_transfrontalier": "Art. 12 — reconnaissance mutuelle des identifications électroniques entre États membres",
+        "recherche": "Art. 45 — qualified electronic attestations utilisables pour la preuve de consentement recherche"
+      },
+      "sanctions_maximales": "Art. 11 — sanctions définies par États membres pour les prestataires de services de confiance. Retrait de la qualification pour les prestataires non conformes.",
+      "opportunite_eigen": "eIDAS 2.0 FORCE l'adoption d'ÆLYA car : (1) Le consentement granulaire via wallet est exactement le modèle ÆLYA — premier au marché à l'intégrer ; (2) L'identification patient certifiée résout un problème majeur sur le corridor Afrique (identité patient fiable) ; (3) La preuve cryptographique du consentement sécurise juridiquement MYNε ; (4) Les concurrents sans intégration wallet seront perçus comme moins sécurisés et moins conformes ; (5) Le lien EUDI Wallet + EHDS crée un écosystème de données de santé où NOOS est le connecteur naturel.",
+      "noos_readiness_score": 3,
+      "noos_readiness_justification": "Score 3/10 — eIDAS 2.0 est une opportunité massive mais les standards techniques (EUDI Wallet specifications, ARF — Architecture Reference Framework) sont encore en développement. NOOS doit : (1) suivre les spécifications techniques EUDI, (2) développer l'intégration wallet, (3) tester l'interopérabilité. Le déploiement wallets est prévu fin 2026, laissant du temps.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11624493/",
+        "https://www.signaturit.com/blog/eidas-2-regulation/",
+        "https://www.kennedyslaw.com/en/thought-leadership/article/2026/the-european-digital-identity-framework-introducing-the-new-eu-digital-identity-wallet/"
+      ]
+    },
+    {
+      "id": 13,
+      "categorie": "PHARMA",
+      "full_name": "ICH Guideline E6(R3) — Good Clinical Practice",
+      "acronyme": "ICH-GCP E6(R3)",
+      "juridiction": "International (adopté par EMA, FDA, PMDA Japon, NMPA Chine, Health Canada, etc.)",
+      "date_entree_en_vigueur": "2025 (adoption finale ICH, implémentation par régulateurs 2025-2026)",
+      "statut_implementation": "en transition (guideline adoptée, implémentation progressive par les régulateurs nationaux)",
+      "impact_noos": {
+        "type": "AUTORISE + OUVRE un marché massif",
+        "detail": "ICH E6(R3) transforme les essais cliniques en légitimant : (1) Les essais décentralisés (DCT) avec collecte de données à distance via digital health technologies (DHT) — marché direct pour NOOS/BURHAN ; (2) Le Risk-Based Quality Management (RBQM) qui remplace le monitoring 100% on-site — favorise les outils numériques ; (3) L'e-consent (consentement électronique/distant) — ÆLYA ; (4) L'utilisation de Real-World Data (RWD) via l'Annexe 2 — données BURHAN. E6(R3) est 'media-neutral' : les enregistrements électroniques ont la même valeur que le papier si l'intégrité est garantie."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données d'observance BURHAN sont des 'trial data' si utilisées dans un essai clinique, soumises aux exigences GCP : intégrité, audit trail, traçabilité, accessibilité pour inspection. L'Annexe 2 E6(R3) valide explicitement l'utilisation de DHT (Digital Health Technologies) pour la collecte de données terrain dans les essais décentralisés. Le hachage est acceptable comme mesure de protection si l'intégrité des données est démontrable.",
+        "articles": [
+          "Principle 2.12 data integrity",
+          "Annex 2 — DCT, pragmatic trials, RWD",
+          "Section 5 — Sponsor responsibilities"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "E6(R3) ouvre la voie à l'utilisation des données d'observance comme RWD/RWE : l'Annexe 2 fournit un cadre GCP pour les données collectées hors site clinique traditionnel. MYNε peut positionner ses données comme 'GCP-compliant Real-World Data' si collectées via un processus conforme E6(R3). Ce label GCP-compliant commande un premium significatif sur le marché pharma.",
+        "contraintes": [
+          "Conformité GCP complète si utilisation en essai clinique",
+          "Validation des DHT selon Annexe 2",
+          "Consentement spécifique essai clinique vs consentement général"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Annexe 2 — e-consent : consentement électronique/distant valide si identité vérifiée et compréhension assurée",
+        "anonymisation": "Principle 2.12 — data integrity and confidentiality",
+        "transfert_transfrontalier": "Section 5 — essais multinationaux, harmonisation des exigences",
+        "recherche": "Annexe 2 complète — cadre pour essais décentralisés, pragmatiques, et utilisation de RWD"
+      },
+      "sanctions_maximales": "ICH guidelines n'ont pas de sanctions propres. Les sanctions sont celles des régulateurs qui adoptent la guideline : refus d'autorisation de mise sur le marché, retrait d'autorisation, inspection findings, warning letters (FDA), etc.",
+      "opportunite_eigen": "ICH E6(R3) est l'OPPORTUNITÉ PHARMA pour NOOS : (1) Elle crée un marché de DHT pour essais décentralisés estimé à 10+ Mrd USD ; (2) Le e-consent Annexe 2 est exactement ÆLYA ; (3) Le RBQM favorise les systèmes intégrés de collecte et monitoring comme NOOS ; (4) Les pharma cherchent des 'GCP-compliant DHT platforms' — NOOS/BURHAN ; (5) Les données d'observance GCP-compliant via MYNε commandent un premium de 50-100% vs données non-GCP.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — E6(R3) ouvre un marché massif mais NOOS n'est pas encore positionné comme DHT pour essais cliniques. Nécessite : (1) Validation GxP/GAMP5 du logiciel, (2) Audit trails conformes 21 CFR Part 11 / EU Annex 11, (3) Procédures d'e-consent conformes Annexe 2, (4) Documentation RWD selon le cadre Annexe 2.",
+      "sources": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12133055/",
+        "https://pharmaeducenter.com/blog/ich-gcp-e6-r3-annex-2/",
+        "https://acrpnet.org/2025/04/08/ich-e6r3-transforming-the-future-of-clinical-trials-with-enhanced-efficiency-safety-and-innovation-a-commentary"
+      ]
+    },
+    {
+      "id": 14,
+      "categorie": "PHARMA",
+      "full_name": "Guideline on Good Pharmacovigilance Practices (GVP) — Module VI — Collection, management and submission of reports of suspected adverse reactions to medicinal products (Rev. 2)",
+      "acronyme": "EU GVP Module VI",
+      "juridiction": "Union Européenne (EMA/HMA)",
+      "date_entree_en_vigueur": "2012 (original), Rev. 2 en vigueur (dernière mise à jour)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT indirectement + OUVRE un marché pharmacovigilance",
+        "detail": "GVP Module VI régit la collecte et le signalement des effets indésirables (ICSRs — Individual Case Safety Reports) via EudraVigilance. Si NOOS est utilisé dans un contexte de suivi thérapeutique, il peut détecter des effets indésirables liés à l'observance (non-observance → effets rebond, surdosage après reprise). Ces événements doivent être signalés si identifiés. NOOS pourrait être positionné comme un outil de pharmacovigilance active : détection en temps réel d'effets indésirables via les données d'observance."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Les données d'observance BURHAN peuvent constituer des données de pharmacovigilance si elles révèlent des patterns d'effets indésirables (ex: non-observance corrélée avec événements hospitaliers). Sous GVP Module VI, les MAH (Marketing Authorization Holders) doivent collecter et signaler tous les effets indésirables suspectés dont ils ont connaissance. Si BURHAN est un outil de pharmacovigilance, ses données sont des 'safety data'.",
+        "articles": [
+          "Section VI.B — Validity and completeness of ICSRs",
+          "Section VI.C — Reporting timelines (15 jours serious, 90 jours non-serious)",
+          "Appendix 6 — Data quality"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Les données d'observance corrélées avec des événements de sécurité ont une VALEUR MASSIVE pour les MAH pharma : détection de signaux précoces, real-world pharmacovigilance, études post-autorisation de sécurité (PASS). MYNε peut vendre des données d'observance anonymisées aux MAH pour leur pharmacovigilance. Le format ICH E2B(R3) est requis pour la soumission à EudraVigilance.",
+        "contraintes": [
+          "Obligation de signalement si NOOS détecte un effet indésirable suspecté",
+          "Format ICH E2B(R3) pour les ICSRs",
+          "Terminologie MedDRA obligatoire",
+          "Séparation données pharmacovigilance (obligatoire) vs données MYNε (commercial)"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Section VI.B.1 — informations minimum pour un ICSR valide (identifiable patient, identifiable reporter, suspected adverse reaction, suspected medicinal product)",
+        "anonymisation": "Section VI.B.7 — protection de l'identité des patients dans les ICSRs",
+        "transfert_transfrontalier": "Section VI.C — reporting to EudraVigilance (base de données centralisée EU)",
+        "recherche": "Appendix 6 — data quality monitoring pour améliorer la détection de signaux"
+      },
+      "sanctions_maximales": "Sanctions pharma standard : non-signalement d'un ICSR peut entraîner des inspections, mesures correctives, et dans les cas graves, suspension de l'autorisation de mise sur le marché. Amendes nationales variables.",
+      "opportunite_eigen": "GVP Module VI FORCE l'adoption de BURHAN car : (1) Les MAH ont l'obligation de collecter TOUS les effets indésirables suspectés — BURHAN comme outil de détection active remplit cette obligation ; (2) La pharmacovigilance active (vs passive) est de plus en plus exigée par l'EMA — NOOS/BURHAN sont des outils de PV active ; (3) Les données d'observance corrélées PV de MYNε sont un produit à très haute valeur pour les MAH (budget PV annuel pharma : 500M+ EUR EU) ; (4) Le format E2B(R3) impose une structuration des données que BURHAN peut fournir nativement.",
+      "noos_readiness_score": 4,
+      "noos_readiness_justification": "Score 4/10 — NOOS n'est pas encore positionné comme outil de pharmacovigilance. Nécessite : (1) Intégration MedDRA pour codage des événements, (2) Module de signalement ICSR conforme E2B(R3), (3) Procédures de détection d'effets indésirables dans les données d'observance, (4) Accords avec les MAH pour le reporting.",
+      "sources": [
+        "https://www.pharmanow.live/knowledge-hub/research/gvp-module-vi-icsr-reporting-eu",
+        "https://alvigilance.siralance.com/guideline-on-good-pharmacovigilance-practices-gvp-module-vi-collection-management-and-submission-of-reports-of-suspected-adverse-reactions-to-medicinal-products/"
+      ]
+    },
+    {
+      "id": 15,
+      "categorie": "PHARMA",
+      "full_name": "FDA Guidance — Use of Real-World Evidence to Support Regulatory Decision-Making for Medical Devices (December 2025) + Real-World Data: Assessing Electronic Health Records and Medical Claims Data (July 2024)",
+      "acronyme": "RWE FDA Framework 2024-2025",
+      "juridiction": "États-Unis (FDA), avec influence internationale",
+      "date_entree_en_vigueur": "2024-07-25 (guidance EHR/claims) ; 2025-12-18 (guidance RWE medical devices)",
+      "statut_implementation": "en vigueur (guidances finales)",
+      "impact_noos": {
+        "type": "AUTORISE + OUVRE le marché US",
+        "detail": "Le framework RWE de la FDA valide l'utilisation de Real-World Data (RWD) — y compris les données patient-generated et device-generated — pour les décisions réglementaires sur les dispositifs médicaux. NOOS/BURHAN génèrent exactement ces types de données. La guidance de décembre 2025 supprime l'exigence de données individuelles privées, permettant l'utilisation de données macro-level agrégées. Les sources RWD acceptées incluent : registries, EHR, patient-generated data (wearables, DHT), device-generated data — toutes dans le périmètre NOOS."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Les données d'observance BURHAN sont des 'patient-generated data' au sens de la guidance FDA. Elles peuvent être utilisées comme RWE si elles satisfont les critères de relevance (pertinence) et reliability (fiabilité) : (1) Data source selection — BURHAN doit être documenté comme source fiable, (2) Data quality — intégrité, complétude, exactitude, (3) Bias mitigation — représentativité des populations, (4) Generalizability — représentation de la population d'utilisation prévue.",
+        "articles": [
+          "Section III — Relevance assessment",
+          "Section IV — Reliability assessment",
+          "Section V — Data quality and integrity"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Le framework FDA LÉGITIME COMPLÈTEMENT le modèle MYNε pour le marché US : les données d'observance anonymisées/agrégées peuvent être vendues comme RWE aux sponsors de dispositifs médicaux et de médicaments pour des soumissions réglementaires FDA. La guidance ne mandate pas l'utilisation de RWE mais la valide comme voie acceptable. Les données MYNε 'FDA RWE-compliant' commandent un premium encore supérieur au label 'GCP-compliant'.",
+        "contraintes": [
+          "Relevance and reliability assessment pour chaque dataset",
+          "Data quality assurance plans",
+          "Compliance GCP pour les investigations cliniques",
+          "HIPAA compliance si données US"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "La guidance n'impose pas de consentement spécifique mais renvoie aux GCP et à la réglementation HIPAA/Common Rule pour la protection des sujets humains",
+        "anonymisation": "La guidance de 2025 supprime l'exigence de données individuelles confidentielles, favorisant les données macro-level et anonymisées",
+        "transfert_transfrontalier": "Les données RWE de pays tiers (EU, Afrique) sont acceptables si elles satisfont les critères de relevance/reliability",
+        "recherche": "Entire guidance — cadre pour l'utilisation de RWD/RWE dans les décisions réglementaires"
+      },
+      "sanctions_maximales": "Guidances FDA non contraignantes (pas de sanctions directes). Mais le non-respect des recommandations peut entraîner le refus des soumissions RWE, ce qui a un impact commercial majeur.",
+      "opportunite_eigen": "Le RWE FDA Framework FORCE l'adoption de MYNε car : (1) Il crée un marché réglementaire pour les données d'observance comme RWE ; (2) Les sponsors pharma/medtech ont besoin de sources RWD fiables et documentées — MYNε ; (3) Les données patient-generated via NOOS/BURHAN sont explicitement listées comme sources acceptables ; (4) Les données corridor EU-Afrique (diversité génétique, populations sous-représentées) commandent un premium x5-10 en precision medicine et sont EXIGÉES par la FDA pour la représentativité (Section V — generalizability).",
+      "noos_readiness_score": 4,
+      "noos_readiness_justification": "Score 4/10 — Le marché US est une opportunité massive mais NOOS n'a pas encore d'approche FDA : (1) Pas de 510(k) ou De Novo pour le marché US, (2) Les données BURHAN ne sont pas encore documentées selon les critères FDA RWE (relevance/reliability), (3) HIPAA compliance nécessaire pour données US. Score reflète l'opportunité non encore activée.",
+      "sources": [
+        "https://www.duanemorris.com/alerts/fda_releases_guidance_use_real_world_evidence_medical_devices_1225.html",
+        "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/real-world-data-assessing-electronic-health-records-and-medical-claims-data-support-regulatory",
+        "https://becarispublishing.com/digital-content/blog-post/fda-issues-final-guidance-clarifying-role-real-world-data-electronic-health-records"
+      ]
+    },
+    {
+      "id": 16,
+      "categorie": "MAROC",
+      "full_name": "Loi n° 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel",
+      "acronyme": "Loi 09-08 (CNDP)",
+      "juridiction": "Maroc",
+      "date_entree_en_vigueur": "2009-02-18 (publication Bulletin Officiel)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT + AUTORISE sous conditions CNDP",
+        "detail": "La Loi 09-08 est le cadre de protection des données personnelles au Maroc, inspiré de la loi française de 1978 et du RGPD. Pour NOOS opérant au Maroc : (1) AUTORISATION PRÉALABLE de la CNDP obligatoire pour le traitement de données sensibles (santé) — Art. 12 ; (2) Déclaration CNDP pour les traitements non sensibles ; (3) Consentement de la personne concernée pour les données de santé ; (4) Transfert à l'étranger soumis à autorisation CNDP si le pays de destination n'offre pas un niveau de protection adéquat. Le Maroc a une liste de pays avec protection adéquate établie par la CNDP. Le Maroc NE DISPOSE PAS d'une décision d'adéquation UE."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données d'observance hashées sont des données de santé sous la Loi 09-08 (Art. 1 — données sensibles incluant 'la santé, y compris les données génétiques'). Le hachage est une pseudonymisation, pas une anonymisation. Traitement soumis à autorisation CNDP préalable. Consentement explicite du patient requis.",
+        "articles": [
+          "Art. 1 définition données sensibles",
+          "Art. 12 autorisation préalable pour données sensibles",
+          "Art. 43-44 transfert à l'étranger",
+          "Art. 52-60 sanctions"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — La Loi 09-08 n'interdit pas explicitement la commercialisation de données mais : (1) Le détournement de finalité est puni (Art. 54 — 1 à 5 ans de prison + amende), (2) Le traitement commercial de données de santé nécessite une autorisation CNDP avec une finalité déclarée incluant la commercialisation, (3) Le transfert vers l'UE ou d'autres pays nécessite soit un pays sur la liste CNDP, soit une autorisation spécifique avec garanties (SCC, BCR). Le transfert vers l'UE pour la prévention/traitement médical est autorisé (Art. 44(g)).",
+        "contraintes": [
+          "Autorisation CNDP préalable avec finalité 'commercialisation données de santé anonymisées'",
+          "Consentement explicite du patient",
+          "Interdiction détournement de finalité (sanction pénale)",
+          "Transfert étranger sous autorisation CNDP (formulaire F118)",
+          "Anonymisation obligatoire avant commercialisation"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 4 — consentement de la personne concernée ; Art. 12 — autorisation préalable données sensibles",
+        "anonymisation": "Art. 2 — données anonymisées hors périmètre si irréversiblement anonymisées",
+        "transfert_transfrontalier": "Art. 43-44 — transfert vers pays avec protection adéquate (liste CNDP) ou autorisation CNDP avec garanties ; Art. 44(g) — exception pour prévention/traitement médical",
+        "recherche": "Art. 12 — le traitement de données sensibles est autorisé pour les finalités de médecine préventive, diagnostics médicaux, administration de soins ou traitements, gestion de services de santé"
+      },
+      "sanctions_maximales": "Art. 52 : 10 000 à 100 000 MAD (amende) pour traitement sans déclaration/autorisation. Art. 54 : 1 à 5 ans d'emprisonnement + 10 000 à 300 000 MAD pour détournement de finalité. Art. 60 : 3 mois à 1 an d'emprisonnement + 20 000 à 200 000 MAD pour transfert illicite à l'étranger. La CNDP peut ordonner la cessation du traitement.",
+      "opportunite_eigen": "La Loi 09-08 FORCE l'adoption d'ÆLYA car : (1) L'autorisation CNDP préalable exige un système de consentement documenté et traçable — ÆLYA ; (2) Le transfert EU→Maroc et Maroc→EU nécessite des garanties contractuelles formalisées que seul un stack intégré comme EIGEN peut gérer de bout en bout ; (3) Le Maroc comme hub pour l'Afrique impose un double régime (Loi 09-08 + RGPD/EHDS) que la plupart des concurrents ne peuvent pas gérer ; (4) La CNDP est relativement active (enforcement en cours) ce qui élimine les concurrents non conformes.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 — Le cadre marocain est moins complexe que le RGPD mais l'autorisation CNDP préalable pour les données de santé est un prérequis bloquant. NOOS doit : (1) obtenir l'autorisation CNDP, (2) formaliser les mécanismes de transfert EU↔Maroc (SCC ou BCR), (3) documenter la finalité de commercialisation dans l'autorisation CNDP.",
+      "sources": [
+        "https://www.upsilon-consulting.com/cndp-loi-09-08-protection-donnees-personnelles-maroc/",
+        "https://www.cndp.ma/transfert-de-donnees-a-letranger/",
+        "https://www.lexisma.info/2023/02/27/infraction-a-la-loi-n-09-08-communique-de-la-cndp-suite-a-labsence-de-notification-dun-transfert-de-donnees-personnelles-a-letranger/"
+      ]
+    },
+    {
+      "id": 17,
+      "categorie": "MAROC",
+      "full_name": "Loi n° 84-12 relative aux dispositifs médicaux",
+      "acronyme": "Loi 84-12",
+      "juridiction": "Maroc",
+      "date_entree_en_vigueur": "2016 (publication), avec décrets d'application progressifs",
+      "statut_implementation": "en vigueur (avec certains décrets d'application en cours)",
+      "impact_noos": {
+        "type": "AUTORISE + CONTRAINT (enregistrement obligatoire)",
+        "detail": "La Loi 84-12 régit les dispositifs médicaux au Maroc avec un système de classification aligné sur le modèle européen (Classes I, IIa, IIb, III). NOOS comme SaMD Class IIa doit être ENREGISTRÉ auprès du Ministère de la Santé (Direction du Médicament et de la Pharmacie) AVANT toute mise en service. Le dossier d'enregistrement exige : (1) Certificat de marquage CE (pour DM d'origine européenne) — NOOS CE IIa est directement recevable, (2) Certificat ISO 13485, (3) Déclaration de conformité, (4) Dossier technique, (5) Fiche signalétique, (6) Frais de 1 000 MAD/dossier. Le marquage CE est RECONNU comme preuve de conformité au Maroc — avantage majeur pour NOOS. Les logiciels sont explicitement inclus dans la définition des dispositifs médicaux (Art. 1)."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "La Loi 84-12 ne traite pas spécifiquement des données mais impose la traçabilité des DM (Art. 23) et des exigences essentielles de sécurité (Art. 5). Si BURHAN est considéré comme un accessoire du DM NOOS, il doit être inclus dans l'enregistrement. Les données d'observance ne sont pas directement régulées par cette loi mais relèvent de la Loi 09-08.",
+        "articles": [
+          "Art. 1 — définition DM incluant les logiciels",
+          "Art. 5 — exigences essentielles de sécurité",
+          "Art. 12 — obligation d'enregistrement",
+          "Art. 23 — traçabilité"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "La Loi 84-12 ne régule pas la commercialisation de données. MYNε n'est pas un dispositif médical au sens de cette loi (sauf s'il a une finalité médicale). La commercialisation de données relève de la Loi 09-08 et du droit commercial.",
+        "contraintes": [
+          "Enregistrement NOOS obligatoire avant toute mise en service au Maroc",
+          "Lien Loi 84-12 (enregistrement DM) + Loi 09-08 (données) pour couverture complète"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Non traité spécifiquement (renvoi aux lois de santé et déontologie)",
+        "anonymisation": "Non traité",
+        "transfert_transfrontalier": "Art. 12-13 — conditions d'importation de DM (marquage CE/FDA requis)",
+        "recherche": "Art. 13 — exonération d'enregistrement pour DM expérimentaux (recherche biomédicale)"
+      },
+      "sanctions_maximales": "Art. 42 : 60 000 à 100 000 MAD pour non-déclaration de modifications ou infractions publicitaires. Art. 44-47 : amendes de 2 à 5% du CA (minimum 500 000 MAD) pour distribution de DM non enregistrés de classes IIb et III. Art. 48 : confiscation, interdiction d'exercer, interdiction en cas de risque de décès. Art. 50 : entrée en vigueur progressive avec période transitoire.",
+      "opportunite_eigen": "La Loi 84-12 FORCE l'adoption de NOOS car : (1) Le marquage CE est reconnu comme preuve de conformité — avantage immédiat sur les DM non-CE ; (2) L'obligation d'enregistrement élimine les DM non conformes du marché marocain ; (3) Le Maroc comme porte d'entrée de l'Afrique francophone : un DM enregistré au Maroc a une crédibilité accrue pour les marchés CEDEAO ; (4) La classification marocaine alignée sur l'UE simplifie le déploiement corridor EU→Maroc→Afrique.",
+      "noos_readiness_score": 8,
+      "noos_readiness_justification": "Score 8/10 — NOOS CE IIa est directement recevable pour l'enregistrement marocain. Le marquage CE satisfait l'exigence principale. Reste : (1) constitution du dossier d'enregistrement (administratif), (2) désignation d'un représentant local/distributeur au Maroc, (3) étiquetage en français et arabe.",
+      "sources": [
+        "https://export.flandersinvestmentandtrade.com/sites/fit_domains/files/media/report/Dispositifs%20M%C3%A9dicaux%20au%20Maroc_2020_2.pdf",
+        "https://pharmacie.ma/uploads/pdfs/enregistrement-des-dm-mai-2015.pdf",
+        "https://fr.scribd.com/document/855468649/lLTzZ1bBbcuyNWGE5zcR7v4f8Yp6YpVEXtbXetbI"
+      ]
+    },
+    {
+      "id": 18,
+      "categorie": "MAROC",
+      "full_name": "Décret n° 2.18.378 relatif à la télémédecine et cadre réglementaire de la télémédecine au Maroc (Loi 131-13 + Décret 2018 + Décret 2023)",
+      "acronyme": "Circulaire/Décret Télémédecine Maroc",
+      "juridiction": "Maroc",
+      "date_entree_en_vigueur": "2015 (Loi 131-13), 2018 (Décret 2.18.378), 2023 (décrets complémentaires secteur privé)",
+      "statut_implementation": "en vigueur (cadre évolutif avec décrets successifs)",
+      "impact_noos": {
+        "type": "AUTORISE + CONTRAINT (autorisation préalable)",
+        "detail": "Le cadre télémédecine marocain reconnaît 5 actes : téléconsultation, téléexpertise, télésurveillance médicale, téléassistance, télé-régulation. NOOS en tant que SaMD de gouvernance collective peut faciliter ces actes. Toute plateforme de télémédecine doit obtenir : (1) Autorisation CNDP pour le traitement des données de santé, (2) Visite de conformité par une commission incluant un représentant du Ministère de la Santé et de l'Ordre des médecins, (3) Convention entre les médecins participants précisant les responsabilités. Le décret de 2023 étend la télémédecine au secteur privé, élargissant le marché pour NOOS."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — La télésurveillance médicale (un des 5 actes reconnus) implique la collecte de données de suivi patient à distance — exactement ce que fait BURHAN. Les données d'observance collectées dans un contexte de télésurveillance sont des données de santé protégées par le secret médical et la Loi 09-08. Le médecin doit conserver 'le détail des conseils fournis' et le support utilisé.",
+        "articles": [
+          "Art. 3 Décret 2.18.378 — 5 actes de télémédecine",
+          "Art. 4 — consentement patient obligatoire",
+          "Art. 7 — autorisation CNDP préalable"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Les données de télésurveillance sont couvertes par le secret médical — leur commercialisation nécessite un consentement explicite du patient ET une autorisation CNDP avec la finalité de commercialisation déclarée. L'anonymisation doit être certifiée. Le cadre télémédecine renforce les obligations de confidentialité et de traçabilité.",
+        "contraintes": [
+          "Secret médical applicable",
+          "Autorisation CNDP avec finalité recherche/commercialisation",
+          "Consentement patient préalable",
+          "Traçabilité complète des accès aux données"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 4 Décret — consentement explicite, libre et éclairé du patient, y compris par voie électronique",
+        "anonymisation": "Art. 7 — sécurisation des échanges et de l'hébergement des données",
+        "transfert_transfrontalier": "Le cadre autorise la collaboration internationale (médecins étrangers) sous conditions réglementaires",
+        "recherche": "Le cadre ne traite pas spécifiquement de la recherche mais la télésurveillance médicale peut générer des données utilisables en recherche sous autorisation CNDP"
+      },
+      "sanctions_maximales": "Sanctions définies par la Loi 131-13 sur l'exercice de la médecine et la Loi 09-08 pour les données. Sanctions ordinales (Ordre des médecins) en cas de non-respect de la déontologie. Sanctions pénales (Art. 446 Code pénal) pour violation du secret médical.",
+      "opportunite_eigen": "Le cadre télémédecine marocain FORCE l'adoption de NOOS car : (1) La télésurveillance médicale nécessite des outils conformes — NOOS/BURHAN ; (2) L'autorisation CNDP préalable élimine les solutions non conformes ; (3) L'extension au secteur privé (2023) ouvre un marché de cliniques, hôpitaux privés, et cabinets ; (4) Le consentement électronique est reconnu — ÆLYA est directement utilisable ; (5) Le Maroc comme hub francophone : un outil conforme au cadre marocain est crédible dans toute l'Afrique francophone.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 — NOOS peut opérer dans le cadre de la télésurveillance médicale. Nécessite : (1) Autorisation CNDP spécifique pour la télémédecine, (2) Conformité technique aux exigences de sécurisation des échanges, (3) Partenariat avec des médecins/établissements autorisés, (4) Visite de conformité de la commission ministérielle.",
+      "sources": [
+        "https://www.josooor.com/pdfs/twentynine_one/24.pdf",
+        "https://www.sdg16.plus/fr/policies/telemedecine-pour-les-communautes-rurales-maroc/",
+        "https://revues.imist.ma/index.php/REEJD/article/download/62560/31411"
+      ]
+    },
+    {
+      "id": 19,
+      "categorie": "MAROC",
+      "full_name": "Secret médical — Article 446 du Code pénal marocain + Code de déontologie médicale 2022 + Dahir portant loi sur l'exercice de la médecine",
+      "acronyme": "Dahir Secret Médical",
+      "juridiction": "Maroc",
+      "date_entree_en_vigueur": "Code pénal 1962 (Art. 446), Code déontologie médicale 2022 (nouvelle version)",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT fortement (obligation pénale)",
+        "detail": "Le secret médical marocain est un socle juridique pluriel : (1) Art. 446 Code pénal — érige en délit la révélation d'un secret par un médecin/pharmacien/professionnel de santé ; (2) Art. 4 Code déontologie 2022 — le secret professionnel s'impose à tout médecin et s'étend à 'tout ce qui a été vu, entendu ou compris', quel que soit le support (papier, numérique, image, audio) ; (3) Le secret persiste même après la mort du patient. Pour NOOS : chaque acteur ayant accès aux données (hébergeurs, sociétés de télémédecine, chercheurs) est soumis au secret médical. Le non-respect est une infraction PÉNALE."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI ABSOLUMENT — Les données d'observance BURHAN sont couvertes par le secret médical dès lors qu'elles révèlent des informations sur l'état de santé du patient. Le hachage ne lève pas le secret médical. Seule une anonymisation irréversible permet de sortir du périmètre du secret médical. Le médecin prescripteur reste responsable du secret pour les données qu'il a générées via NOOS/BURHAN.",
+        "articles": [
+          "Art. 446 Code pénal",
+          "Art. 4 Code déontologie médicale 2022",
+          "Loi 131-13 sur l'exercice de la médecine"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CRITIQUE — La commercialisation de données de santé couvertes par le secret médical est une infraction pénale SAUF si : (1) les données sont irréversiblement anonymisées (hors périmètre secret médical), (2) le patient a donné son consentement explicite à la levée du secret pour cette finalité, (3) le traitement est autorisé par la CNDP. Le Code déontologie 2022 souligne que le secret s'applique 'quel que soit le support' — les bases de données numériques sont explicitement couvertes.",
+        "contraintes": [
+          "Anonymisation irréversible obligatoire pour sortir du secret médical",
+          "Consentement patient explicite pour levée partielle du secret",
+          "Responsabilité pénale du médecin",
+          "Gouvernance collective de la confidentialité numérique"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 446 alinéa 2 — exceptions au secret : autorisation de la personne concernée, obligation légale de dénonciation",
+        "anonymisation": "Non traité spécifiquement — le principe est l'interdiction absolue de révélation, l'anonymisation est la seule voie de sortie",
+        "transfert_transfrontalier": "Non traité directement — le secret s'applique quel que soit le lieu de traitement",
+        "recherche": "Les publications de recherche doivent anonymiser les données patient. Les comités d'éthique de la recherche évaluent le respect du secret."
+      },
+      "sanctions_maximales": "Art. 446 Code pénal : 1 à 6 mois d'emprisonnement + amende de 1 200 à 20 000 MAD pour violation du secret médical. Sanctions ordinales : suspension ou radiation. L'absence de chiffres élevés est trompeuse — la sanction pénale (emprisonnement) est dissuasive pour les médecins.",
+      "opportunite_eigen": "Le secret médical FORCE l'adoption d'ÆLYA car : (1) La chaîne de consentement pour la levée du secret doit être traçable et juridiquement valide — ÆLYA ; (2) L'anonymisation irréversible exigée pour la commercialisation MYNε doit être certifiable — un processus documenté dans le stack EIGEN ; (3) La responsabilité collective (hébergeurs, chercheurs, plateformes) impose une gouvernance de la confidentialité — NOOS comme couche de gouvernance ; (4) Le nouveau Code déontologie 2022 étend le secret au numérique, éliminant les solutions sans protection by design.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 — ÆLYA comme couche de consentement est un atout pour le respect du secret médical. Points d'attention : (1) Documentation de l'anonymisation irréversible pour MYNε, (2) Formation des médecins utilisateurs sur leurs obligations de secret via NOOS, (3) Audit trail démontrant le respect du secret pour chaque accès aux données.",
+      "sources": [
+        "https://iaj.ma/wp-content/uploads/2025/12/Le-secret-medical-a-lepreuve-de-la-sante-numerique-.pdf.pdf",
+        "https://www.josooor.com/pdfs/twentynine_one/24.pdf"
+      ]
+    },
+    {
+      "id": 20,
+      "categorie": "AFRIQUE",
+      "full_name": "Convention de l'Union Africaine sur la cybersécurité et la protection des données à caractère personnel (Convention de Malabo)",
+      "acronyme": "Convention de Malabo",
+      "juridiction": "Union Africaine — 55 États membres (entrée en vigueur 8 juin 2023 après 15ème ratification par la Mauritanie). 19+ États ratificateurs à mi-2025.",
+      "date_entree_en_vigueur": "2023-06-08 (30 jours après 15ème ratification — Mauritanie, 9 mai 2023)",
+      "statut_implementation": "en vigueur mais FAIBLEMENT appliquée (seuls les États ayant ratifié sont liés ; nombreux pays majeurs — Nigeria, Afrique du Sud, Kenya, Maroc, Égypte — n'ont PAS ratifié)",
+      "impact_noos": {
+        "type": "CADRE + OPPORTUNITE (faible contrainte immédiate)",
+        "detail": "La Convention de Malabo est l'unique traité régional contraignant de protection des données hors Europe. Elle couvre : transactions électroniques, protection des données personnelles, cybersécurité. Pour NOOS : (1) Elle impose aux États parties d'adopter une législation nationale de protection des données — crée un cadre prévisible ; (2) Elle couvre les transferts internationaux de données (Art. 14) avec des exigences d'adéquation ; (3) Elle impose la mise en place d'autorités nationales de protection des données. CEPENDANT : les pays clés du corridor (Nigeria, Afrique du Sud, Kenya, Maroc) n'ont PAS ratifié, limitant l'impact immédiat. La Convention a une portée plus symbolique que pratique à ce stade."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "La Convention classe les données de santé comme 'données sensibles' (Art. 14) soumises à des protections renforcées dans les États parties. Les données d'observance hashées sont des données personnelles au sens de la Convention. Le niveau de protection varie selon la transposition nationale de chaque État ratificateur.",
+        "articles": [
+          "Art. 8-24 Protection des données personnelles",
+          "Art. 14 Données sensibles",
+          "Art. 14(3) Transferts internationaux"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "La Convention ne régule pas directement la commercialisation de données mais impose des principes (finalité, proportionnalité, conservation limitée, sécurité) qui encadrent indirectement MYNε. Les transferts transfrontaliers sont soumis à des conditions d'adéquation. L'anonymisation permettrait de sortir du périmètre dans les États parties.",
+        "contraintes": [
+          "Principes de finalité et proportionnalité",
+          "Transferts transfrontaliers soumis à adéquation",
+          "Législations nationales de transposition variables",
+          "Faible harmonisation entre États parties"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 14 — consentement pour les données sensibles (santé)",
+        "anonymisation": "Art. 10 — définition données personnelles (exclut données anonymisées)",
+        "transfert_transfrontalier": "Art. 14(3) — transferts vers pays avec protection adéquate",
+        "recherche": "Art. 14 — exceptions pour recherche scientifique sous conditions"
+      },
+      "sanctions_maximales": "La Convention laisse les sanctions aux législations nationales. Pas de sanctions supranationales propres. L'efficacité dépend entièrement de la transposition nationale.",
+      "opportunite_eigen": "La Convention de Malabo crée une OPPORTUNITE de positionnement pour EIGEN : (1) En tant que premier traité panafricain de protection des données, elle crée un cadre de référence que NOOS/ÆLYA peuvent satisfaire dès maintenant ; (2) Les États qui ratifient doivent mettre en place des autorités nationales — EIGEN peut se positionner comme fournisseur de solutions conformes AVANT que les autorités ne sévissent ; (3) Le Maroc n'a pas ratifié mais a déjà la Loi 09-08 — NOOS conforme à la Loi 09-08 est de facto conforme à Malabo ; (4) La faible ratification des pays clés est en fait une OPPORTUNITE : NOOS peut s'implanter avant la vague réglementaire.",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — La conformité de NOOS aux standards EU (RGPD, MDR) dépasse largement les exigences de la Convention de Malabo. Le score est élevé car la conformité EU implique la conformité Malabo. Le point d'attention est l'hétérogénéité des transpositions nationales.",
+      "sources": [
+        "https://guy-germain.me/lentree-en-vigueur-de-la-convention-de-malabo-une-avancee-saluee-mais-des-defis-a-relever-pour-sa-mise-en-oeuvre-et-son-adaptation/",
+        "https://cybersecuritymag.africa/entree-vigueur-convention-malabo-cybersecurite-afrique/",
+        "https://fr.wikipedia.org/wiki/Convention_de_l%27Union_Africaine_sur_la_cybers%C3%A9curit%C3%A9_et_la_protection_des_donn%C3%A9es_personnelles",
+        "https://droitnumerique.cd/convention-malabo-rdc/"
+      ]
+    },
+    {
+      "id": 21,
+      "categorie": "AFRIQUE",
+      "full_name": "Nigeria Data Protection Act 2023 (NDPA)",
+      "acronyme": "Nigeria DPA 2023",
+      "juridiction": "Nigeria (200+ millions d'habitants, plus grande économie d'Afrique)",
+      "date_entree_en_vigueur": "2023-06-14",
+      "statut_implementation": "en vigueur",
+      "impact_noos": {
+        "type": "CONTRAINT + AUTORISE sous conditions",
+        "detail": "Le NDPA est la loi fédérale nigériane de protection des données, remplaçant le NDPR 2019. Pour NOOS au Nigeria : (1) Inscription auprès de la Nigeria Data Protection Commission (NDPC), (2) Nomination d'un DPO, (3) DPIA obligatoire pour les traitements à haut risque (données de santé = haut risque), (4) Base légale pour le traitement : consentement explicite pour les données sensibles (santé), (5) Transferts transfrontaliers : vers pays avec protection adéquate ou avec garanties appropriées. Le NDPA ne définit pas 'données de santé' spécifiquement mais les classe comme 'sensitive personal data'. Le National Health Act 2014 complète le cadre pour la confidentialité médicale."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données de santé sont des 'sensitive personal data' sous le NDPA. Les données d'observance hashées restent des données personnelles (pseudonymisation ≠ anonymisation). Le traitement nécessite le consentement explicite du patient OU un fondement de public health (sous supervision d'un professionnel de santé) OU une obligation légale.",
+        "articles": [
+          "Section 30 — Sensitive personal data definition (health, genetic, biometric)",
+          "Section 26 — lawful basis for processing",
+          "Section 29 — Data Privacy Impact Assessment"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Le NDPA impose la limitation de finalité (Section 24). La commercialisation de données de santé nécessite : (1) consentement explicite incluant cette finalité, (2) anonymisation ou base légale solide. Le NDPA permet le traitement de données sensibles pour la santé publique si sous supervision d'un professionnel de santé. Pas d'interdiction explicite de commercialisation de données anonymisées.",
+        "contraintes": [
+          "Consentement explicite pour données sensibles",
+          "DPIA obligatoire",
+          "Limitation de finalité (commercialisation à déclarer)",
+          "Transferts transfrontaliers soumis à adéquation ou garanties",
+          "DPO obligatoire"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Section 26 — bases légales incluant consentement ; Section 30 — conditions spécifiques données sensibles",
+        "anonymisation": "Non défini explicitement dans le NDPA — renvoie aux standards internationaux",
+        "transfert_transfrontalier": "Section 43-44 — transferts vers pays avec protection adéquate ou avec garanties",
+        "recherche": "Section 30(3) — traitement de données sensibles pour santé publique sous supervision professionnelle"
+      },
+      "sanctions_maximales": "Système de sanctions graduées : (1) Compliance orders, (2) Enforcement orders avec amendes réglementaires (montant déterminé par la NDPC — pour les 'Data Controllers of Major Importance' les amendes sont plus élevées), (3) Compensation aux data subjects, (4) Accounts for profits, (5) Sanctions pénales (emprisonnement) pour les cas les plus graves. Les montants spécifiques ne sont pas encore plafonnés dans la loi — la NDPC a le pouvoir discrétionnaire.",
+      "opportunite_eigen": "Le NDPA FORCE l'adoption de NOOS/ÆLYA car : (1) Le Nigeria est le plus grand marché africain (200M+ habitants, croissance du marché santé numérique) ; (2) Le NDPA impose des DPIA et un DPO — ÆLYA comme plateforme de consentement intégrée facilite la conformité ; (3) Le National Health Act + NDPA créent un double régime que les concurrents locaux non conformes ne peuvent pas satisfaire ; (4) Les lacunes du NDPA (pas de définition de 'données de santé', pas de cadre pour la recherche secondaire) créent un espace pour EIGEN de définir les bonnes pratiques de facto.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — Le NDPA est récent et le cadre d'application encore en développement. NOOS doit : (1) s'inscrire auprès de la NDPC, (2) adapter les mécanismes de consentement ÆLYA au cadre nigérian, (3) réaliser les DPIA, (4) formaliser les mécanismes de transfert Nigeria→EU. La NDPC n'a pas encore publié toutes les régulations secondaires nécessaires.",
+      "sources": [
+        "https://healthlaw.com.ng/wp-content/uploads/2024/03/Nigeria-Data-Protection-Legislation-and-the-Health-Sector-1.pdf",
+        "https://nigeriadataprotection.com/nigeria-data-protection-act-2023-summary/",
+        "https://clarensec.com/blog/data-protection-laws.html"
+      ]
+    },
+    {
+      "id": 22,
+      "categorie": "AFRIQUE",
+      "full_name": "Kenya Data Protection Act, 2019",
+      "acronyme": "Kenya DPA 2019",
+      "juridiction": "Kenya",
+      "date_entree_en_vigueur": "2019-11-08",
+      "statut_implementation": "en vigueur (avec Data Protection (General) Regulations 2021)",
+      "impact_noos": {
+        "type": "CONTRAINT + AUTORISE sous conditions strictes",
+        "detail": "Le Kenya DPA 2019 est l'une des lois de protection des données les plus complètes d'Afrique. Pour NOOS : (1) Inscription auprès de l'Office of the Data Protection Commissioner (ODPC), (2) DPIA obligatoire pour les traitements à haut risque, (3) Les données de santé sont des 'sensitive personal data' (Section 2) soumises à des conditions de traitement strictes, (4) Data localization partielle : au moins une copie des données doit être stockée au Kenya pour les données critiques, (5) Transferts transfrontaliers : consentement explicite obligatoire pour les données sensibles MÊME avec des garanties appropriées."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Les données de santé, données génétiques et données biométriques sont des 'sensitive personal data' (Section 2). Pour les transferts transfrontaliers de données sensibles, le consentement explicite du data subject est TOUJOURS requis, même si d'autres conditions sont remplies (Section 49(1)). Le hachage ne lève pas cette obligation.",
+        "articles": [
+          "Section 2 — definitions (sensitive personal data includes health)",
+          "Section 31-34 — conditions processing sensitive data",
+          "Section 48-50 — cross-border transfers"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Pas d'interdiction explicite de commercialisation de données anonymisées. Le DPA exige l'anonymisation pour rendre les données 'non identifiables'. Les données anonymisées sortent du périmètre. Pour les données pseudonymisées : consentement explicite + autorisation ODPC pour les transferts. La data localization peut imposer de conserver une copie au Kenya.",
+        "contraintes": [
+          "Consentement explicite pour données sensibles (toujours)",
+          "Data localization partielle (copie au Kenya)",
+          "ODPC peut prohiber/suspendre les transferts",
+          "Anonymisation selon 'no longer identifiable' standard"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Section 31-34 — traitement données sensibles : consentement explicite ou exceptions limitées (vital interests, medical care, public health)",
+        "anonymisation": "Section 2 — données anonymisées exclues du périmètre si 'data subject is no longer identifiable'",
+        "transfert_transfrontalier": "Section 48-50 — 8 bases légales pour transfert incluant adéquation, consentement, garanties appropriées. Consentement explicite obligatoire pour données sensibles.",
+        "recherche": "Section 31(c) — traitement de données sensibles autorisé pour la recherche scientifique avec garanties appropriées"
+      },
+      "sanctions_maximales": "Section 63 — jusqu'à 5 000 000 KES (≈ 35 000 EUR) d'amende OU emprisonnement jusqu'à 2 ans OU les deux. Section 62 — compensation aux victimes. L'ODPC peut émettre des enforcement notices et interdire les traitements.",
+      "opportunite_eigen": "Le Kenya DPA FORCE l'adoption d'ÆLYA car : (1) Le consentement explicite pour les données sensibles est TOUJOURS requis, même pour les transferts avec garanties — ÆLYA est la solution ; (2) Le Kenya est un hub tech africain (Nairobi = 'Silicon Savannah') — marché clé pour les health tech ; (3) La data localization exige une infrastructure locale que NOOS peut gérer via déploiement hybride ; (4) L'ODPC est active et visible — la conformité est un avantage compétitif.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — Le cadre kenyan est solide mais les exigences de data localization et de consentement explicite systématique pour les données sensibles imposent des adaptations : (1) Infrastructure locale (serveur/copie au Kenya), (2) Flux de consentement ÆLYA adapté au Kenya DPA, (3) Inscription ODPC.",
+      "sources": [
+        "https://datagovernance.africa/cross-border-data-transfers/",
+        "https://securiti.ai/kenya-data-protection-act-dpa/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC11065056/"
+      ]
+    },
+    {
+      "id": 23,
+      "categorie": "AFRIQUE",
+      "full_name": "Protection of Personal Information Act, 2013 (POPIA)",
+      "acronyme": "South Africa POPIA",
+      "juridiction": "Afrique du Sud",
+      "date_entree_en_vigueur": "2013-11-19 (signed into law), pleinement applicable depuis 2021-07-01",
+      "statut_implementation": "en vigueur (pleinement applicable)",
+      "impact_noos": {
+        "type": "CONTRAINT + AUTORISE sous conditions Section 32",
+        "detail": "POPIA est la loi de protection des données la plus mature d'Afrique. Section 26 classe les données de santé comme 'special personal information' — traitement interdit sauf exceptions Sections 27-33. Pour NOOS : (1) Inscription auprès de l'Information Regulator, (2) Section 32 autorise le traitement de données de santé par les professionnels de santé, assureurs, medical schemes, et employeurs pour des finalités spécifiques, (3) Section 57 — autorisation préalable du Regulator pour les transferts de special personal information hors Afrique du Sud, (4) Section 72 — transferts vers pays avec protection adéquate ou binding agreements. L'Information Regulator a émis ses premiers enforcement notices en 2025."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "OUI — Section 26 interdit le traitement de 'special personal information' incluant les données de santé. Exceptions Section 32 : (1) Consentement, (2) Nécessité pour finalités médicales sous secret professionnel, (3) Intérêt public. Les données d'observance hashées restent des 'special personal information'. Le traitement par un tiers (BURHAN/NOOS) nécessite un operator agreement conforme Section 21.",
+        "articles": [
+          "Section 26 — prohibition on processing special personal information",
+          "Section 32 — authorisation for health data",
+          "Section 21 — operator agreements"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "CONDITIONNEL — Section 32(3) interdit l'utilisation secondaire des données de santé au-delà des finalités autorisées (assurance, soins, emploi). La commercialisation par MYNε nécessite : (1) consentement explicite du data subject, (2) finalité de recherche/innovation déclarée, (3) autorisation Section 57 pour les transferts hors Afrique du Sud. Les données véritablement anonymisées sortent du périmètre POPIA.",
+        "contraintes": [
+          "Section 57 — autorisation Information Regulator pour transferts de special personal information",
+          "Section 72 — binding agreements pour transferts",
+          "Purpose limitation stricte (Section 13-14)",
+          "Operator agreements obligatoires (Section 21)",
+          "Amendes significatives"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Section 27(1)(a) — consentement du data subject ; Section 32 — conditions spécifiques santé",
+        "anonymisation": "Section 6(1) — POPIA ne s'applique pas aux données dé-identifiées si l'on ne peut raisonnablement identifier le data subject",
+        "transfert_transfrontalier": "Section 72 — pays avec protection adéquate OU binding corporate rules OU consentement OU nécessité contractuelle ; Section 57 — autorisation préalable du Regulator pour special personal information",
+        "recherche": "Section 27(1)(d) — traitement de special personal information pour recherche si dans l'intérêt public et impossible d'obtenir le consentement"
+      },
+      "sanctions_maximales": "Section 107-109 : amendes administratives jusqu'à ZAR 10 000 000 (≈ 500 000 EUR) OU 10% du CA annuel (le plus élevé). Sanctions pénales : emprisonnement jusqu'à 10 ans pour obstruction ou divulgation non autorisée. Responsabilité civile des directeurs.",
+      "opportunite_eigen": "POPIA FORCE l'adoption de NOOS/ÆLYA car : (1) L'Afrique du Sud est le marché le plus réglementé d'Afrique — la conformité POPIA est un avantage concurrentiel majeur ; (2) L'Information Regulator a commencé les enforcement (2025) — les acteurs non conformes seront éliminés ; (3) Les operator agreements Section 21 imposent une architecture de sous-traitance formalisée — exactement le modèle EIGEN ; (4) L'Afrique du Sud est le hub médical de l'Afrique australe — marché de données de santé le plus mature du continent.",
+      "noos_readiness_score": 5,
+      "noos_readiness_justification": "Score 5/10 — POPIA est mature et l'enforcement commence. NOOS doit : (1) s'inscrire auprès de l'Information Regulator, (2) obtenir l'autorisation Section 57 pour les transferts de special personal information, (3) formaliser les operator agreements Section 21, (4) adapter ÆLYA aux conditions de consentement POPIA (nuances avec le RGPD).",
+      "sources": [
+        "https://captaincompliance.com/education/south-africas-popia-health-data-rules/",
+        "https://popia.co.za/protection-of-personal-information-act-popia/chapter-3-2/chapter-3-part-b/",
+        "https://carbidesecure.com/resources/what-is-the-protection-of-personal-information-act-popia/"
+      ]
+    },
+    {
+      "id": 24,
+      "categorie": "AFRIQUE",
+      "full_name": "Protocol to the Agreement Establishing the African Continental Free Trade Area on Digital Trade (AfCFTA Digital Trade Protocol)",
+      "acronyme": "AfCFTA Digital Trade Protocol",
+      "juridiction": "Union Africaine — 55 États membres (50 ont ratifié l'AfCFTA principal au Q1 2026)",
+      "date_entree_en_vigueur": "2024-02 (adoption du Protocol). 2025-02 (adoption des 8 annexes, dont Cross-Border Data Transfers). Entrée en vigueur effective : après ratification par le nombre requis d'États — pas encore atteint.",
+      "statut_implementation": "en négociation/transition (Protocol adopté, annexes adoptées février 2025, ratification en cours, 5 ans pour alignement national)",
+      "impact_noos": {
+        "type": "OPPORTUNITE STRATEGIQUE (pas encore contraignant)",
+        "detail": "Le Protocol AfCFTA Digital Trade est le cadre juridique panafricain pour le commerce numérique. Il couvre : flux de données transfrontaliers (Part IV), protection des données personnelles (Art. 21), localisation des facilities de calcul (Art. 22), identité numérique (Annex), technologies émergentes (Annex). Pour NOOS : (1) Le Protocol facilite les flux de données transfrontaliers pour le commerce numérique — légitime le corridor EU-Afrique pour les données de santé ; (2) Art. 20 permet le transfert transfrontalier de données pour le commerce numérique sous conditions ; (3) L'Annex on Cross-Border Data Transfers (adopté février 2025) harmonise les conditions de transfert ; (4) 50/55 États ont ratifié l'AfCFTA principal — le Protocol bénéficie de cette base. Le Protocol n'est PAS encore en vigueur (ratification du Protocol spécifique en cours) mais le momentum politique est fort."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Le Protocol ne distingue pas spécifiquement les données de santé mais impose aux États de protéger les données personnelles (Art. 21). Les données d'observance hashées seraient soumises aux cadres nationaux de protection des données, avec le Protocol comme cadre harmonisateur. L'Annex on Cross-Border Data Transfers impose des safeguards pour les données personnelles.",
+        "articles": [
+          "Art. 20 — Cross-border data transfers",
+          "Art. 21 — Protection of personal data",
+          "Art. 22 — Location of computing facilities",
+          "Annex on Cross-Border Data Transfers (2025)"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Le Protocol FACILITE le modèle MYNε car : (1) Art. 20 autorise les transferts transfrontaliers pour le commerce numérique (data-as-a-service), (2) Les exceptions pour legitimate public policy et national security sont prévues mais limitées, (3) L'harmonisation des conditions de transfert réduit la complexité réglementaire pour MYNε opérant dans multiple pays africains. Les données anonymisées seraient facilitées par le Protocol.",
+        "contraintes": [
+          "Pas encore en vigueur (ratification en cours)",
+          "5 ans pour alignement national après entrée en vigueur",
+          "Exceptions nationales possibles pour legitimate public policy",
+          "Cadre encore théorique dans de nombreux pays"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "Art. 21 — renvoie aux législations nationales pour les conditions de traitement des données personnelles",
+        "anonymisation": "Non traité spécifiquement — renvoie aux standards internationaux",
+        "transfert_transfrontalier": "Art. 20 + Annex on Cross-Border Data Transfers — harmonisation des conditions de transfert",
+        "recherche": "Art. 23 — Data innovation — encourage l'innovation basée sur les données sous conditions de protection"
+      },
+      "sanctions_maximales": "Le Protocol ne prévoit pas de sanctions propres. Dispute settlement via le mécanisme AfCFTA (Art. XI). Les sanctions sont nationales.",
+      "opportunite_eigen": "Le Protocol AfCFTA DTP est l'OPPORTUNITE CONTINENT pour EIGEN : (1) Il crée un marché unique numérique africain de 1.4 milliard de personnes ; (2) L'harmonisation des flux de données facilite le scaling de MYNε à travers l'Afrique depuis un hub (Maroc) ; (3) Le Protocol légitime le commerce de données (data-as-a-service) comme une activité économique protégée ; (4) Les 5 ans de transition créent une fenêtre pour EIGEN de s'implanter comme standard de facto avant la vague réglementaire ; (5) Le secrétariat AfCFTA a lancé le projet ADAPT (avec WEF) — EIGEN pourrait se positionner comme partenaire technologique.",
+      "noos_readiness_score": 6,
+      "noos_readiness_justification": "Score 6/10 — Score élevé car le Protocol n'est pas encore contraignant et NOOS, conforme aux standards EU, dépasse largement les exigences attendues. Le cadre est favorable mais théorique. NOOS est bien positionné pour être 'AfCFTA-ready' avant la plupart des concurrents.",
+      "sources": [
+        "https://www.iisd.org/articles/policy-analysis/afcfta-digital-protocol",
+        "https://techreviewafrica.purplealmondconsulting.com/public/news/3700/davos-2026-afcfta-shifts-focus-to-delivery-as-digital-trade-implementation-advances",
+        "https://abdavid.com/unlocking-data-cross-border-data-flows-under-the-african-continental-free-trade-area-agreement/"
+      ]
+    },
+    {
+      "id": 25,
+      "categorie": "AFRIQUE",
+      "full_name": "Pharmaceutical Manufacturing Plan for Africa (PMPA) / Plan de Fabrication Pharmaceutique pour l'Afrique (PhAMPA)",
+      "acronyme": "PhAMPA / PMPA",
+      "juridiction": "Union Africaine — continental",
+      "date_entree_en_vigueur": "2007 (adoption AU), Business Plan 2012, relancé post-COVID 2021-2023",
+      "statut_implementation": "en vigueur (plan stratégique) mais implémentation très partielle",
+      "impact_noos": {
+        "type": "OPPORTUNITE STRATEGIQUE (pas de contrainte directe)",
+        "detail": "Le PMPA/PhAMPA est le plan stratégique de l'UA pour développer la production pharmaceutique locale en Afrique. Il ne régule PAS directement les dispositifs médicaux logiciels mais crée un contexte favorable : (1) Promotion de la fabrication locale de produits de santé — incluant potentiellement les logiciels médicaux 'made in Africa' ; (2) Transfert de technologie — NOOS comme technologie transférable ; (3) Renforcement des capacités réglementaires nationales pour les produits de santé ; (4) Coordination avec l'AMRH (African Medicines Regulatory Harmonisation) pour l'harmonisation des procédures d'enregistrement des DM. Le PMPA ne bloque PAS NOOS mais crée un environnement politique favorable à la production locale."
+      },
+      "impact_burhan_observance": {
+        "donnees_sante": "Impact indirect — le PMPA encourage la collecte de données sur l'utilisation des médicaments (observance, pharmacovigilance) pour améliorer la qualité de la production locale. Les données d'observance BURHAN pourraient être valorisées dans le cadre du PMPA pour le monitoring de la qualité des médicaments produits localement.",
+        "articles": [
+          "Business Plan — Pillar 3 Technology Transfer",
+          "Business Plan — Pillar 5 Quality Assurance"
+        ]
+      },
+      "impact_myne_vente_donnees": {
+        "legalite": "Non directement applicable — le PMPA est un plan stratégique, pas un instrument réglementaire contraignant. Cependant, les données d'observance MYNε (patterns de consommation, efficacité médicaments) ont une valeur directe pour les objectifs du PMPA : améliorer la pharmacovigilance africaine, orienter la production locale vers les besoins réels, et démontrer l'efficacité des génériques fabriqués en Afrique.",
+        "contraintes": [
+          "Cadre stratégique non contraignant",
+          "Implémentation très variable par pays",
+          "Pas de mécanisme d'application"
+        ]
+      },
+      "articles_specifiques": {
+        "consentement_sante": "N/A (plan stratégique)",
+        "anonymisation": "N/A",
+        "transfert_transfrontalier": "Le PMPA encourage les échanges de données pharmaceutiques entre pays africains pour améliorer la production et la pharmacovigilance",
+        "recherche": "Le PMPA encourage la R&D pharmaceutique en Afrique — données MYNε comme input"
+      },
+      "sanctions_maximales": "Aucune (plan stratégique non contraignant).",
+      "opportunite_eigen": "Le PMPA crée un ENVIRONNEMENT POLITIQUE favorable pour EIGEN car : (1) Les gouvernements africains investissent dans la production locale de santé — NOOS comme infrastructure numérique de santé 'made in Africa/EU' s'aligne avec cette vision ; (2) La pharmacovigilance est un pilier du PMPA — BURHAN comme outil de PV active ; (3) Le transfert de technologie est encouragé — EIGEN peut se positionner comme transfert de technologie EU→Afrique ; (4) L'harmonisation réglementaire via l'AMRH facilite le déploiement multi-pays ; (5) Les données d'observance MYNε soutiennent les objectifs du PMPA (qualité des génériques, efficacité des traitements).",
+      "noos_readiness_score": 7,
+      "noos_readiness_justification": "Score 7/10 — Le PMPA ne pose aucune contrainte et crée un environnement favorable. NOOS est 'PhAMPA-aligned' par nature (technologie de santé, pharmacovigilance, données d'observance). Le score reflète l'alignement stratégique et l'absence de barrières.",
+      "sources": [
+        "https://au.int/sites/default/files/pages/32895-file-pmpa_business_plan.pdf",
+        "https://au.int/sites/default/files/newsevents/workingdocuments/28095-wd-pmpa_strategic_framework_1.pdf",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10615155/"
+      ]
+    }
+  ],
+  "synthese": {
+    "score_moyen_readiness": 5.76,
+    "repartition_scores": {
+      "score_8_10_conforme": [
+        "MDCG 2019/11 (8)",
+        "Loi 84-12 (8)"
+      ],
+      "score_6_7_quasi_conforme": [
+        "EU MDR (7)",
+        "ISO 13485 (7)",
+        "ISO 62304 (7)",
+        "ISO 14971 (7)",
+        "RGPD (7)",
+        "Convention Malabo (7)",
+        "PhAMPA (7)",
+        "IEC 62366 (6)",
+        "Loi 09-08 (6)",
+        "Circulaire Télémédecine (6)",
+        "Dahir Secret Médical (6)",
+        "IVDR (6)",
+        "AfCFTA DTP (6)"
+      ],
+      "score_4_5_travail_significatif": [
+        "EHDS (5)",
+        "Règlement Essais Cliniques (5)",
+        "ICH-GCP E6(R3) (5)",
+        "Nigeria DPA (5)",
+        "Kenya DPA (5)",
+        "POPIA (5)",
+        "AI Act (4)",
+        "GVP Module VI (4)",
+        "RWE FDA Framework (4)"
+      ],
+      "score_1_3_non_conforme": [
+        "eIDAS 2.0 (3)"
+      ]
+    },
+    "risques_bloquants": [
+      "AI Act compliance d'ici août 2027 — documentation technique IA lourde",
+      "Transferts EU↔Maroc sans décision d'adéquation — nécessité SCC/BCR",
+      "Anonymisation MYNε — qualification juridique critique (hachage ≠ anonymisation)",
+      "eIDAS 2.0 wallet integration — standards techniques encore en développement",
+      "Data localization Kenya — infrastructure locale requise"
+    ],
+    "opportunites_majeures": [
+      "EHDS secondary use (2029-2035) — marché 15+ Mrd EUR de données de santé",
+      "ICH E6(R3) DCT market — 10+ Mrd USD pour les DHT pharma",
+      "FDA RWE Framework — données corridor Afrique premium x5-10 pour precision medicine",
+      "AfCFTA DTP — marché unique numérique 1.4 Mrd personnes",
+      "Maroc hub réglementaire — CE reconnu, gateway Afrique francophone"
+    ],
+    "timeline_critique": {
+      "2026_Q2": "eIDAS 2.0 — wallets nationaux déployés (intégration ÆLYA)",
+      "2026_Q3": "AI Act — IA interdites applicable (vérifier non-applicabilité à NOOS)",
+      "2027_Q3": "AI Act — high-risk medical devices (conformité NOOS obligatoire)",
+      "2029_Q1": "EHDS primary use — interopérabilité EHR, secondary use données EHR/claims",
+      "2031_Q1": "EHDS secondary use — données génomiques/imagerie",
+      "2035_Q1": "EHDS pays tiers — corridor Afrique via HealthData@EU"
+    }
+  }
+}

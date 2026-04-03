@@ -1,0 +1,772 @@
+[
+  {
+    "certification": "ISO 9001 (Qualité)",
+    "certifier": "ISO via accredited bodies (BSI, TÜV Rheinland, Bureau Veritas, DNV, SGS, Intertek/Entela, JQA)",
+    "sector": "Manufacturing, Services, Cross-industry",
+    "renewal_frequency": "Triennal (cycle 3 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Initial certification €3,000–€15,000; annual surveillance €700–€3,000; full 3-year cycle €5,000–€40,000+ depending on company size",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Takata Corporation",
+        "certifier": "Entela Inc. (later acquired by Intertek); Japanese plant also under JQA",
+        "year": 2013,
+        "fraud_amount_eur": 920000000,
+        "detection_lag_months": 156
+      },
+      {
+        "entity": "Poly Implant Prothèse (PIP) – ISO 9001 component",
+        "certifier": "TÜV Rheinland (likely, per Oxebridge research; ISO 9001 records were scrubbed)",
+        "year": 2010,
+        "fraud_amount_eur": 35000000,
+        "detection_lag_months": 108
+      }
+    ],
+    "avg_detection_lag_months": 132,
+    "lambda": 0.0053,
+    "halflife_months": 132,
+    "continuous_argument": "Un audit triennal avec surveillance annuelle est une photo floue — Takata a dissimulé des défauts pendant 13 ans entre les audits. BURHAN fournit une vérification continue de la qualité en temps réel, détectant les déviations dès qu'elles surviennent.",
+    "sources": "https://www.mangolive.com/blog-mango/what-you-need-to-know-about-the-takata-product-recall | https://www.oxebridge.com/emma/japanese-firm-that-falsified-seat-belt-safety-data-still-holds-iso-9001-certification/ | https://www.motortrend.com/news/takata-to-pay-1-billion-in-airbag-settlement-three-execs-indicted | https://www.linkedin.com/pulse/iso-certification-scheme-dodged-bullet-pip-breast-implant-paris | https://www.oxebridge.com/emma/tuv-rheinland-found-culpable-by-french-high-court-in-pip-breast-implant-scandal/ | https://acato.co.uk/iso-9001-certification-what-is-the-average-cost-in-europe/ | https://www.nhtsa.gov/vehicle-safety/takata-recall-spotlight | https://jble.thebrpi.org/journals/jble/Vol_8_No_2_December_2020/1.pdf | https://www.massdevice.com/pip-breast-implant-scandal-story-triggered-change/"
+  },
+  {
+    "certification": "ISO 14001 (Environnement)",
+    "certifier": "ISO via accredited bodies (Bureau Veritas, TÜV Nord, TÜV Rheinland, DNV, BSI, SGS)",
+    "sector": "Manufacturing, Automotive, Energy, Cross-industry",
+    "renewal_frequency": "Triennal (cycle 3 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Initial certification €3,000–€12,000 for small-medium companies; large/complex operations €30,000–€100,000+; annual surveillance approximately 20–30% of initial audit cost",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Volkswagen AG (Dieselgate / Emissionsgate)",
+        "certifier": "Bureau Veritas (confirmed by VW Court Settlement EMS Audit Report); TÜV Nord Cert also certifies VW entities to ISO 14001:2015",
+        "year": 2015,
+        "fraud_amount_eur": 27600000000,
+        "detection_lag_months": 108
+      }
+    ],
+    "avg_detection_lag_months": 108,
+    "lambda": 0.0064,
+    "halflife_months": 108,
+    "continuous_argument": "Volkswagen a triché sur les émissions pendant 9 ans sous certification ISO 14001. Un système EMS 'certifié' ne mesure pas les émissions réelles en continu. BURHAN intègre des capteurs IoT et des données satellites pour un monitoring environnemental permanent.",
+    "sources": "https://www.bbc.com/news/business-34324772 | https://www.justice.gov/archives/opa/pr/volkswagen-spend-147-billion-settle-allegations-cheating-emissions-tests-and-deceiving | https://phillipslaw.com/blog/volkswagen-emissions-scandal-settlement/ | https://www.vwcourtsettlement.com/wp-content/uploads/2018/04/March-2018-EMS-AR-VW-Volkswagen.pdf | https://www.ppsc-sppc.gc.ca/eng/nws-nvs/2020/22_01_20.html | https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal | https://theicct.org/dieselgate-emissions-scandal/ | https://www.bprhub.com/blogs/iso-14001-certification-cost-analysis | https://amtivo.com/us/resources/insights/how-much-does-iso-14001-certification-cost/ | https://www.occrp.org/en/news/former-vw-managers-sentenced-over-diesel-fraud"
+  },
+  {
+    "certification": "ISO 27001 (Sécurité Info)",
+    "certifier": "ISO via accredited bodies (BSI, Bureau Veritas, EY CertifyPoint/RvA, Schellman/ANAB, NQA/ANAB, SGS, Alcumus ISOQAR/UKAS)",
+    "sector": "Technology, Financial Services, Healthcare, Cross-industry",
+    "renewal_frequency": "Triennal (cycle 3 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Initial certification audit €5,800–€37,000+ depending on company size (EU rate ~€1,600/auditor day per ISO 27006); annual surveillance ~33% of initial audit; total 3-year cycle €15,000–€80,000+",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Equifax Inc.",
+        "certifier": "EY CertifyPoint (accredited by RvA, Dutch accreditation body)",
+        "year": 2017,
+        "fraud_amount_eur": 618000000,
+        "detection_lag_months": 3
+      },
+      {
+        "entity": "Okta Inc.",
+        "certifier": "Schellman (accredited by ANAB and UKAS)",
+        "year": 2023,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 14
+      }
+    ],
+    "avg_detection_lag_months": 8,
+    "lambda": 0.0866,
+    "halflife_months": 8,
+    "continuous_argument": "Equifax était certifié ISO 27001 quand 147 millions de dossiers ont fuité. La cybersécurité change chaque seconde — un audit ponctuel est obsolète le jour même. BURHAN assure un scan de vulnérabilités continu et une attestation cryptographique en temps réel.",
+    "sources": "https://www.oxebridge.com/emma/equifax-held-iso-27001-certification-at-time-of-massive-system-hack/ | https://www.ftc.gov/news-events/news/press-releases/2019/07/equifax-pay-575-million-part-settlement-ftc-cfpb-states-related-2017-data-breach | https://www.oxebridge.com/emma/okta-breach-occurred-while-company-held-iso-27001-certification-from-schellman/ | https://www.oxebridge.com/emma/fidelity-investments-hit-with-data-breach-while-holding-iso-27001-certification/ | https://www.sec.gov/newsroom/press-releases/2023-227 | https://hightable.io/iso-27001-certification-cost/ | https://www.onetrust.com/blog/iso-27001-certification/ | https://www.vanta.com/collection/iso-27001/iso-27001-certification-cost"
+  },
+  {
+    "certification": "ISO 13485 (Dispositifs Médicaux)",
+    "certifier": "ISO via notified bodies (TÜV Rheinland, BSI, SGS, TÜV SÜD, DQS, DEKRA)",
+    "sector": "Medical Devices, Healthcare",
+    "renewal_frequency": "Triennal (cycle 3 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Initial certification minimum €7,500 (small company) to €40,000+; annual surveillance minimum €4,000; renewal minimum €5,500; large multi-site operations up to €100,000+",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Poly Implant Prothèse (PIP)",
+        "certifier": "TÜV Rheinland (TRLP) as Notified Body for CE Mark and ISO 13485",
+        "year": 2010,
+        "fraud_amount_eur": 35000000,
+        "detection_lag_months": 108
+      },
+      {
+        "entity": "Philips Respironics",
+        "certifier": "Multiple notified bodies (held ISO 13485 across global facilities)",
+        "year": 2021,
+        "fraud_amount_eur": 550000000,
+        "detection_lag_months": 48
+      }
+    ],
+    "avg_detection_lag_months": 78,
+    "lambda": 0.0089,
+    "halflife_months": 78,
+    "continuous_argument": "PIP a substitué du silicone industriel pendant 9 ans sous les yeux de TÜV Rheinland. Un audit annoncé ne détecte pas la fraude délibérée. BURHAN impose une traçabilité blockchain des matériaux et des tests de lots automatisés.",
+    "sources": "https://www.tuv.com/press/en/press-releases/pip-cases-in-germany-successfully-closed.html | https://www.oxebridge.com/emma/tuv-rheinland-found-culpable-by-french-high-court-in-pip-breast-implant-scandal/ | https://www.linkedin.com/pulse/iso-certification-scheme-dodged-bullet-pip-breast-implant-paris | https://www.cbsnews.com/news/breast-implant-victims-pip-compensation-tuv-rheinland-france-court-cassation/ | https://pmc.ncbi.nlm.nih.gov/articles/PMC8534631/ | https://pmc.ncbi.nlm.nih.gov/articles/PMC3676226/ | https://www.massdevice.com/pip-breast-implant-scandal-story-triggered-change/ | https://neoemki.hu/wp-content/uploads/2025/08/Szolgaltatasi-dijak-jegyzeke_EN_25-AUG.pdf | https://registraratlas.com/iso-blog/how-much-does-it-cost-to-get-iso-13485-certified | https://reuters.com/world/court-orders-germanys-tuv-pay-compensation-faulty-breast-implant-victims-2023-02-02/"
+  },
+  {
+    "certification": "SOC 2 (SaaS)",
+    "certifier": "AICPA via licensed CPA firms (Schellman, Deloitte, EY, KPMG, PwC, A-LIGN, Coalfire, Vanta Auditors, etc.)",
+    "sector": "SaaS, Cloud Services, Technology, Financial Services",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Type I audit €4,600–€18,500; Type II audit €6,500–€92,000+; large enterprises €140,000–€370,000+; annual renewal similar to initial Type II audit cost",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "SolarWinds Corporation",
+        "certifier": "Multiple CPA firms (SolarWinds DPM product confirmed SOC 2 Type II, June 2019; corporate-level SOC 2 also held)",
+        "year": 2020,
+        "fraud_amount_eur": 23920000,
+        "detection_lag_months": 14
+      },
+      {
+        "entity": "Delve (compliance automation platform) – SOC 2 fraud scheme",
+        "certifier": "Partner CPA audit firms (unnamed; multiple implicated)",
+        "year": 2026,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 18
+      }
+    ],
+    "avg_detection_lag_months": 14,
+    "lambda": 0.0495,
+    "halflife_months": 14,
+    "continuous_argument": "SolarWinds avait un SOC 2 Type II quand des hackers russes sont restés 14 mois dans leur réseau. Un rapport annuel est une autopsie, pas un diagnostic. BURHAN fournit une attestation de sécurité continue avec preuves cryptographiques.",
+    "sources": "https://www.solarwinds.com/blog/solarwinds-achieves-soc-2-type-ii-certification | https://www.breachsense.com/blog/solarwinds-data-breach-case-study/ | https://fedscoop.com/solarwinds-agrees-to-pay-26m-to-settle-shareholder-lawsuit-over-2020-cyberattack/ | https://www.sec.gov/newsroom/press-releases/2023-227 | https://corpgov.law.harvard.edu/2025/12/07/solarwinds-dismissed-what-the-secs-u-turn-signals-for-cyber-enforcement/ | https://www.linkedin.com/posts/frankmcgovern_desperately-needing-a-reporter-to-pick-this-activity-7415101631228379136-BxjN | https://www.linkedin.com/pulse/soc-2-fraud-scheme-everybody-talking-google-drive-link-exposed-u1mhe | https://www.youtube.com/watch?v=Z5Gg3kpTEuo | https://www.tempoaudits.com/soc-2/certification-cost | https://secureframe.com/hub/soc-2/audit-cost | https://www.6clicks.com/resources/blog/solarwinds-breach-iso-27001 | https://jon4hotaisle.substack.com/p/soc2-is-broken"
+  },
+  {
+    "certification": "SOC 1 (Finance)",
+    "certifier": "AICPA via licensed CPA firms (Big 4 + Grant Thornton, BDO, RSM, regional CPA firms)",
+    "sector": "Financial Services / IT / Payroll / Third-Party Administrators",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Type I: €9,000–€55,000; Type II: €18,000–€110,000; Big 4 enterprise engagements: €140,000–€370,000+",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Multiple SOC 1-certified payment processors / payroll service organizations (systemic)",
+        "certifier": "Various Big 4 and mid-tier CPA firms",
+        "year": 2022,
+        "fraud_amount_eur": null,
+        "detection_lag_months": null
+      },
+      {
+        "entity": "General SOC 1 ecosystem – PCAOB systemic audit quality failure",
+        "certifier": "EY, Deloitte, KPMG, PwC",
+        "year": 2022,
+        "fraud_amount_eur": null,
+        "detection_lag_months": null
+      }
+    ],
+    "avg_detection_lag_months": 24,
+    "lambda": 0.0289,
+    "halflife_months": 24,
+    "continuous_argument": "Le PCAOB trouve 40% de déficiences dans les audits SOC. Le modèle issuer-pay corrompt l'indépendance. BURHAN remplace l'audit ponctuel par un monitoring continu des contrôles financiers avec vérification automatisée.",
+    "sources": "https://www.thoropass.com/blog/soc-1-audit-cost-a-guide | https://linfordco.com/blog/soc-audit-cost/ | https://www.nysscpa.org/news/publications/the-trusted-professional/article/pcaob-inspection-reports-show-increase-in-audit-deficiencies-by-big-four-firms-022924 | https://floydadvisory.com/wp-content/uploads/2025/02/Floyd-Advisory_PCAOB-2022-Inspection-Reports_Audit-Quality-Article.pdf | https://finance.yahoo.com/news/22-years-63-billion-enron-173348320.html"
+  },
+  {
+    "certification": "Audit Big 4 annuel",
+    "certifier": "Deloitte, EY (Ernst & Young), KPMG, PwC (formerly also Arthur Andersen)",
+    "sector": "All public companies (mandatory for listed entities under PCAOB / IAASB standards)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Mid-cap companies: €500,000–€2,000,000/year; Large-cap (Fortune 500 equivalent): €5,000,000–€50,000,000+/year; Big 4 minimum engagement: ~€150,000",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Wirecard AG",
+        "certifier": "EY (Ernst & Young Germany)",
+        "year": 2020,
+        "fraud_amount_eur": 1900000000,
+        "detection_lag_months": 60
+      },
+      {
+        "entity": "Enron Corporation",
+        "certifier": "Arthur Andersen LLP",
+        "year": 2001,
+        "fraud_amount_eur": 57000000000,
+        "detection_lag_months": 48
+      },
+      {
+        "entity": "Luckin Coffee Inc.",
+        "certifier": "EY (Ernst & Young Hua Ming, China affiliate)",
+        "year": 2020,
+        "fraud_amount_eur": 280000000,
+        "detection_lag_months": 9
+      },
+      {
+        "entity": "Parmalat SpA",
+        "certifier": "Grant Thornton SpA (1990–1999) then Deloitte SpA (1999–2003)",
+        "year": 2003,
+        "fraud_amount_eur": 14000000000,
+        "detection_lag_months": 156
+      },
+      {
+        "entity": "Steinhoff International",
+        "certifier": "Deloitte (Netherlands / South Africa)",
+        "year": 2017,
+        "fraud_amount_eur": 6500000000,
+        "detection_lag_months": 96
+      },
+      {
+        "entity": "FTX Trading Ltd",
+        "certifier": "Prager Metis CPAs (not Big 4; mid-tier firm)",
+        "year": 2022,
+        "fraud_amount_eur": 9900000000,
+        "detection_lag_months": 36
+      }
+    ],
+    "avg_detection_lag_months": 67.5,
+    "lambda": 0.0103,
+    "halflife_months": 67.5,
+    "continuous_argument": "Wirecard, Enron, Parmalat, Steinhoff, FTX — tous audités et tous frauduleux. L'audit annuel est une photo d'un moment choisi par l'audité. BURHAN fournit la vidéo continue avec vérification en temps réel des transactions.",
+    "sources": "https://www.irishtimes.com/business/financial-services/whistleblower-warned-ey-of-wirecard-fraud-four-years-before-collapse-1.4367784 | https://www.acfe.com/fraud-magazine/all-issues/issue/article?s=2021-marapr-cover-wirecard | https://www.sec.gov/newsroom/press-releases/2020-319 | https://www.cohenmilstein.com/case-study/in-re-parmalat-securities-litigation/ | https://insights.issgovernance.com/posts/investors-on-track-for-large-steinhoff-settlement/ | https://tax.thomsonreuters.com/news/prager-metis-settles-sec-charges-for-faulty-ftx-audits-violations-of-auditor-independence-rule/ | https://www.nysscpa.org/news/publications/the-trusted-professional/article/pcaob-inspection-reports-show-increase-in-audit-deficiencies-by-big-four-firms-022924 | https://www.insurancejournal.com/news/international/2020/07/02/574138.htm"
+  },
+  {
+    "certification": "Notation S&P/Moody's",
+    "certifier": "S&P Global Ratings, Moody's Investors Service, Fitch Ratings",
+    "sector": "Corporate Bonds / Sovereign Debt / Structured Finance (CDOs, MBS, ABS)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Corporate issuer annual surveillance fee: €20,000–€250,000/year (varies by issuer size and complexity); Structured finance (CDO/ABS): €50,000–€500,000+ per transaction; Sovereign ratings: €50,000–€270,000/year. Average corporate fee ~€150,000/year (based on IADB data showing US$163,000 average annual fee for LAC sovereign issuers).",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Subprime CDOs / RMBS (2004–2007 vintage, systemic)",
+        "certifier": "S&P Global Ratings and Moody's Investors Service",
+        "year": 2008,
+        "fraud_amount_eur": 2000000000000,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "Enron Corporation",
+        "certifier": "Moody's, S&P Global Ratings, Fitch Ratings",
+        "year": 2001,
+        "fraud_amount_eur": 57000000000,
+        "detection_lag_months": 48
+      },
+      {
+        "entity": "Lehman Brothers Holdings Inc.",
+        "certifier": "Moody's Investors Service (primary), S&P, Fitch",
+        "year": 2008,
+        "fraud_amount_eur": 108000000000,
+        "detection_lag_months": 24
+      }
+    ],
+    "avg_detection_lag_months": 36,
+    "lambda": 0.0193,
+    "halflife_months": 36,
+    "continuous_argument": "Les agences ont noté AAA des CDO toxiques, et Enron investment-grade 4 jours avant la faillite. Le modèle issuer-pay est structurellement corrompu. BURHAN calcule le risque de crédit en continu à partir de données de marché réelles.",
+    "sources": "https://truthout.org/articles/the-indisputable-role-of-credit-ratings-agencies-in-the-2008-collapse-and-why-nothing-has-changed/ | https://scholarship.law.umn.edu/faculty_articles/79/ | https://www.bloomberg.com/news/articles/2009-09-30/kanjorski-open-to-changes-in-bill-on-ratings-firm-liability | http://web.stanford.edu/~jbulow/lehmandocs/docs/DEBTORS/LBEX-DOCID%20017840.pdf | https://www.govinfo.gov/content/pkg/CPRT-107SPRT80604/pdf/CPRT-107SPRT80604.pdf | https://www.sec.gov/newsroom/press-releases/2024-114 | https://www.tavakolistructuredfinance.com/credit-rating-agencies/ | https://www.youtube.com/watch?v=kv4HFbLjxRs"
+  },
+  {
+    "certification": "Score ESG MSCI",
+    "certifier": "MSCI Inc. (formerly KLD Research & Analytics / MSCI IVA)",
+    "sector": "ESG / Sustainable Finance / Equity Investment (all sectors; ~14,000 companies covered)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "MSCI does not publish a standard fee schedule. Based on market intelligence: investor-side license fees for ESG data range from €50,000–€500,000+/year depending on AUM and data scope. Company-side engagement: no public fee; MSCI rates companies based on public data without issuer payment (investor-pay model). ESG and Climate segment reported $345.5M in 2024 revenue (MSCI Annual Report 2024).",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Boohoo Group PLC",
+        "certifier": "MSCI ESG Ratings",
+        "year": 2020,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 60
+      },
+      {
+        "entity": "Volkswagen AG",
+        "certifier": "MSCI ESG Ratings / Dow Jones Sustainability Index (RobecoSAM)",
+        "year": 2015,
+        "fraud_amount_eur": 30000000000,
+        "detection_lag_months": 84
+      },
+      {
+        "entity": "Vale S.A. (Brumadinho dam disaster)",
+        "certifier": "MSCI ESG Ratings",
+        "year": 2019,
+        "fraud_amount_eur": 7000000000,
+        "detection_lag_months": 38
+      }
+    ],
+    "avg_detection_lag_months": 60.7,
+    "lambda": 0.0114,
+    "halflife_months": 60.7,
+    "continuous_argument": "Boohoo avait un score AA quand ses ouvriers gagnaient £3.50/h. VW était #1 DJSI quand il trichait sur les émissions. Les scores ESG mesurent la documentation, pas la réalité. BURHAN vérifie les pratiques ESG en continu via données satellites, IoT et whistleblower channels.",
+    "sources": "https://www.longfinance.net/programmes/sustainable-futures/london-accord/reports/volkswagen-downgraded-to-ccc/ | https://www.peregrineblack.com/insights/boohoo-and-the-failure-of-esg-ratings | https://montanaro.co.uk/insight/esg-ratings-useful-research-tool-or-not-fit-for-purpose/ | https://www.dandodiary.com/2022/05/articles/securities-litigation/sec-action-against-brazilian-mining-company-alleges-esg-misrepresentations/ | https://www.cnbc.com/2015/09/29/volkswagen-cut-from-dow-jones-sustainability-ranking.html | https://www.cityam.com/msci-under-fire-for-esg-ratings-biases-that-could-cost-investors/ | https://corporatejusticecoalition.org/wp-content/uploads/2023/05/CJC_CaseStudy_Boohoo.pdf | https://cdn.ihsmarkit.com/www/pdf/0121/619640977-0121-GC-FS-WhyFastFashionNeedsESG-Report-lores.pdf | https://vale.com/documents/d/guest/msci_letter_ceo_vale_mar25-assinado | https://www.rockpointadvisors.com/insights-the-vw-emissions-scandal-a-failure-of-esg-investing.php"
+  },
+  {
+    "certification": "Score ESG Sustainalytics",
+    "certifier": "Sustainalytics (acquired by Morningstar in 2020; rebranded as Morningstar Sustainalytics)",
+    "sector": "ESG / Sustainable Finance / Equity and Fixed Income Investment (17,000+ companies covered)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Investor-pay model: institutional investor subscriptions €30,000–€200,000+/year depending on coverage universe. Company-side ESG Risk Ratings License (for issuers to use their own rating in disclosures): estimated €5,000–€50,000/year. No public standard fee schedule.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Wirecard AG",
+        "certifier": "Sustainalytics (and MSCI)",
+        "year": 2020,
+        "fraud_amount_eur": 1900000000,
+        "detection_lag_months": 60
+      },
+      {
+        "entity": "NMC Health PLC",
+        "certifier": "Sustainalytics",
+        "year": 2020,
+        "fraud_amount_eur": 5900000000,
+        "detection_lag_months": 24
+      },
+      {
+        "entity": "Vale S.A. (Brumadinho dam disaster)",
+        "certifier": "Sustainalytics",
+        "year": 2019,
+        "fraud_amount_eur": 7000000000,
+        "detection_lag_months": 38
+      },
+      {
+        "entity": "General ESG ratings reliability (systemic)",
+        "certifier": "Sustainalytics (vs. MSCI, S&P, Refinitiv)",
+        "year": 2024,
+        "fraud_amount_eur": null,
+        "detection_lag_months": null
+      }
+    ],
+    "avg_detection_lag_months": 40.7,
+    "lambda": 0.017,
+    "halflife_months": 40.7,
+    "continuous_argument": "Wirecard avait un score ESG médian de Sustainalytics jusqu'à l'effondrement. La corrélation entre MSCI et Sustainalytics est quasi-nulle (G: -0.02), prouvant qu'aucun ne mesure la réalité. BURHAN remplace l'opinion subjective par des données vérifiables en continu.",
+    "sources": "https://www.ft.com/content/3aeb9395-1f4d-4774-8f4b-5331acc28e04 | https://media.hardingloevner.com/fileadmin/pdf/HL-ESG-Trouble-With-Third-Party-ESG-Rating-Providers.pdf | https://www.forbes.com/sites/erikakelton/2020/07/06/eys-shameful-year--nmc-health-luckin-wirecard-and-a-failed-attack-on-a-whistleblower/ | https://wenzhi-ding.com/assets/paper/2024_ESG_Scandal.pdf | https://corpgov.law.harvard.edu/2022/08/24/esg-ratings-a-compass-without-direction/ | https://sustainablefinancealliance.org/wp-content/uploads/2024/02/GW20240724-Clean.pdf | https://www.fdd.org/analysis/2022/11/21/how-to-assess-changes-in-morningstar-sustainalytics-esg-ratings/ | https://www.sustainalytics.com/esg-research/resource/investors-esg-blog/esg-ratings-a-rebuttal-of-prevailing-criticisms"
+  },
+  {
+    "certification": "EcoVadis Assessment",
+    "certifier": "EcoVadis SAS (Paris, France)",
+    "sector": "Cross-sector supply chain sustainability / CSR (manufacturing, retail, services, logistics)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "€490–€18,000/year depending on company size and plan tier (Basic ~€490, Premium ~€990, Corporate/Select up to ~€18,000 for 3-year contract for large firms; buyer-side enterprise subscriptions are quote-based, running $9,000–$68,000/year for bulk assessment packages)",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Volkswagen AG",
+        "certifier": "EcoVadis SAS (rated/assessed at time of scandal)",
+        "year": 2015,
+        "fraud_amount_eur": 25000000000,
+        "detection_lag_months": 12
+      },
+      {
+        "entity": "Multiple EcoVadis Gold/Silver-rated suppliers (systemic document fraud — anonymous/sector-wide)",
+        "certifier": "EcoVadis SAS",
+        "year": 2024,
+        "fraud_amount_eur": null,
+        "detection_lag_months": null
+      },
+      {
+        "entity": "Samsung Electronics supply chain (HEG Electronics, China)",
+        "certifier": "EcoVadis SAS (Samsung held EcoVadis ratings during this period)",
+        "year": 2012,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 24
+      }
+    ],
+    "avg_detection_lag_months": 48,
+    "lambda": 0.0144,
+    "halflife_months": 48,
+    "continuous_argument": "EcoVadis évalue des documents, pas des usines. Aucune inspection sur site obligatoire. Des entreprises copient-collent des politiques RSE sans les appliquer. BURHAN exige des preuves continues : données de capteurs, audits aléatoires automatisés, et attestations cryptographiques.",
+    "sources": "EcoVadis pricing: https://www.trustditto.com/en/collection/ecovadis/cost-ecovadis-assessment | https://www.suppliergateway.com/ecovadis-pricing-explained-in-2024/ | https://www.doubleyoursustainability.com/blog/true-cost-of-ecovadis | EcoVadis methodology/fraud handling: https://ecovadis.com/blog/anti-corruption-in-the-ecovadis-rating/ | https://support.ecovadis.com/hc/en-us/articles/4412124657554 | https://www.doubleyoursustainability.com/blog/ecovadis-score-went-down | Volkswagen Dieselgate: https://www.justice.gov/archives/opa/pr/volkswagen-spend-147-billion-settle-allegations | https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal | Samsung labor abuses: https://www.asso-sherpa.org/violation-of-workers-rights-at-samsung-ngos-barred-from-court | Reddit systemic critique: https://www.reddit.com/r/europeanunion/comments/1rvaxg1/ | https://www.reddit.com/r/Renewable/comments/1hebo0r/is_ecovadis_greenwashing/"
+  },
+  {
+    "certification": "Certification Bio EU",
+    "certifier": "Accredited national control bodies under EU Regulation 2018/848: Ecocert (FR/global), AB France, Soil Association (UK), ICEA (IT), Bioagricert (IT), Suolo e Salute (IT), CERES (DE), BCS Öko-Garantie (DE), Control Union Certifications (NL), among others. National competent authorities (e.g., Ministry of Agriculture) oversee accreditation via national accreditation bodies (e.g., Accredia in Italy).",
+    "sector": "Food & agriculture (crop production, livestock, processed food, aquaculture, feed)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "€200–€3,000+/year for small to medium farms (EU average: small farms €260–€800/year inspection + certification; large farms/processors €1,500–€25,000+/year). Ecocert EU: application €800–€1,500; annual from ~€500 (small) to €3,000+ (large processors). Soil Association (UK): variable by farm size, starting ~£400/year. CERES: €100/hour for inspection (Category 1, EU countries); €800/day.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Hakan Organics DMCC / Hakan Agro DMCC (Dubai)",
+        "certifier": "Multiple USDA-accredited certifiers (three EU-linked certifiers duped by falsified documents)",
+        "year": 2017,
+        "fraud_amount_eur": 3500000,
+        "detection_lag_months": 12
+      },
+      {
+        "entity": "Italian organic farm ring — Ragusa, Sicily (nine farms)",
+        "certifier": "Bioagricert, QCertificazioni, Suolo e Salute (certified victims of fraud)",
+        "year": 2017,
+        "fraud_amount_eur": 1000000,
+        "detection_lag_months": 24
+      },
+      {
+        "entity": "Italy–Serbia OCG (Eurojust case — organic apple juice/jam fraud)",
+        "certifier": "Italian and Serbian organic certifiers (undisclosed)",
+        "year": 2019,
+        "fraud_amount_eur": 11000000,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "Santa Maria Capua Vetere, Italy (almonds/tomatoes — organic fraud ring)",
+        "certifier": "Italian control bodies (undisclosed)",
+        "year": 2022,
+        "fraud_amount_eur": 500000,
+        "detection_lag_months": 72
+      },
+      {
+        "entity": "Verona company (fake organic wheat, flax, spelt, soya — Italy/Romania operation)",
+        "certifier": "Italian organic certifier (undisclosed); also operated in Romania",
+        "year": 2020,
+        "fraud_amount_eur": 300000,
+        "detection_lag_months": 24
+      }
+    ],
+    "avg_detection_lag_months": 34,
+    "lambda": 0.0204,
+    "halflife_months": 34,
+    "continuous_argument": "Des réseaux mafieux italiens ont vendu du conventionnel comme bio pendant des années. Les certificats de transaction sont facilement falsifiables. BURHAN trace chaque lot de la ferme à l'assiette avec des analyses isotopiques automatiques et une blockchain de traçabilité.",
+    "sources": "Hakan Organics: https://therottenapple.substack.com/p/case-study-multi-million-dollar-organic | Iowa organic fraud (Randy Constant context): https://thecounter.org/organic-food-fraud-usda-doj-randy-constant/ | Ragusa/Italy cases: https://theorganictest.euromoves.eu/organic-fraud-cases-risk-hurting-consumer-trust-in-italian-food/ | Eurojust Italy-Serbia: https://www.eurojust.europa.eu/news/eurojust-helps-reveal-fake-organic-food-fraud | Ukrainian/Romanian grain fraud: https://www.riseproject.ro/en/investigations/uncategorized/black-grains-from-ukraine-fraud-and-the-big-beneficiaries-from-romania/ | USDA fraudulent certificates list: https://www.ams.usda.gov/sites/default/files/media/FraudulentOrganicCertificatesMasterList.xlsx | Ecocert pricing: https://www.ecocert.com/en-US/certification-detail/organic-farming-europe-eu-n-848-2018 | CERES price list: https://www.ceres-cert.de/docs/transfer/3-3-0_EN.pdf | EU Organic cost study: https://orgprints.org/18440/"
+  },
+  {
+    "certification": "Label Halal",
+    "certifier": "Multiple bodies: JAKIM (Malaysia), BPJPH/MUI-LPPOM (Indonesia), ESMA (UAE), AVS/SFCV (France), HMC/HFA (UK), IFANCA (USA), various national bodies globally. No single global standard — fragmented certification landscape.",
+    "sector": "Food & beverage (meat, dairy, processed food, confectionery), cosmetics, pharmaceuticals, logistics",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "€230–€6,500/year depending on certifier, facility size, and sector. JAKIM: subsidised, <RM1,500 (~€300) for domestic manufacturers. HFA (UK): variable by sector/size; audit fee + annual certification fee (typically £500–£5,000+). IFANCA (US): $250–$7,000/year. AVS/French bodies: comparable ranges. Large multisite operations: €5,000–€50,000+/year.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Spanghero SAS / Comigel (horsemeat scandal — EU-wide)",
+        "certifier": "Various EU halal certifiers (products sold as halal-certified beef across EU markets)",
+        "year": 2013,
+        "fraud_amount_eur": 50000000,
+        "detection_lag_months": 18
+      },
+      {
+        "entity": "Malaysian fake halal meat cartel (Raihanah Cold Storage et al.)",
+        "certifier": "JAKIM (halal logos falsified/counterfeited; JAKIM logos were forged)",
+        "year": 2020,
+        "fraud_amount_eur": 6700000,
+        "detection_lag_months": 480
+      },
+      {
+        "entity": "Dutch Bangla Ltd (Peterborough, UK — turkey sold as halal lamb)",
+        "certifier": "Forged halal certificate (certifier's identity falsified)",
+        "year": 2017,
+        "fraud_amount_eur": 350000,
+        "detection_lag_months": 21
+      },
+      {
+        "entity": "BPJPH-certified products with pork DNA (Indonesia — 9 products, 7 halal-certified)",
+        "certifier": "BPJPH / MUI-LPPOM (Indonesia)",
+        "year": 2025,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 12
+      },
+      {
+        "entity": "Midamar Corporation (US — fraudulent halal beef export to Malaysia/Indonesia)",
+        "certifier": "ISWA (Islamic Services of America) — fraudulent certification chain",
+        "year": 2015,
+        "fraud_amount_eur": 4000000,
+        "detection_lag_months": 36
+      }
+    ],
+    "avg_detection_lag_months": 113,
+    "lambda": 0.0061,
+    "halflife_months": 113,
+    "continuous_argument": "Un cartel malaisien a vendu de la viande non-halal pendant 40 ans avec de faux logos JAKIM. 200+ organismes sans standard universel = chaos. BURHAN impose des tests ADN automatisés à chaque lot et une traçabilité blockchain de l'abattoir au consommateur.",
+    "sources": "Horsemeat scandal: https://en.wikipedia.org/wiki/2013_horse_meat_scandal | https://food.ec.europa.eu/food-safety/eu-agri-food-fraud-network/eu-coordinated-actions/horse-meat-2013-14_en | Malaysian cartel: https://www.reddit.com/r/malaysia/comments/zmbmbt/fake_halal_meat_scandal_in_malaysia_horse/ | https://www.straitstimes.com/asia/se-asia/malaysians-blast-federal-agency-minister-over-halal-meat-scandal | https://asiafoodbeverages.com/fake-halal-scandal-has-shaken-the-malaysian-meat-industry/ | Dutch Bangla UK: https://www.bbc.com/news/uk-england-cambridgeshire-39220397 | Indonesia pork DNA 2025: https://www.foodnavigator-asia.com/Article/2025/05/06/indonesia-halal-authority-issues-strict-warnings | https://halalmui.org/en/maintaining-public-trust-here-is-lppoms-explanation | Midamar: https://salaamgateway.com/story/halal-food-industry-challenged-with-fraudulent-products-and-certification-disputes | Halal cert cost: https://halalfoundation.org/halal-certification-cost/ | https://halalfoodauthority.com/fee-policy/ | https://pmc.ncbi.nlm.nih.gov/articles/PMC6550181/"
+  },
+  {
+    "certification": "Certification CE (MDR)",
+    "certifier": "EU Notified Bodies designated under MDR: TÜV Rheinland (CE 0197, DE), TÜV SÜD (CE 0123, DE), BSI Group (CE 2797, NL/UK), SGS Belgium NV (CE 1639), DEKRA (CE 0344, NL), DNV, Kiwa, NSAI, SIQ, and approximately 40 others across EU. Oversight by national competent authorities (e.g., ANSM in France, MHRA in UK, BfArM in Germany).",
+    "sector": "Medical devices and in vitro diagnostics (Class I–III under EU MDR 2017/745, replacing MDD 93/42/EEC)",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Class I (self-declaration): €0 notified body fee. Class IIa: €13,000–€40,000. Class IIb: €16,000–€80,000. Class III (highest risk): €24,000–€150,000+. Annual NB surveillance audit: €5,000–€20,000/year. Hourly NB rates: TÜV SÜD €430/h, SGS €3,000/day, BSI €2,185/day, TÜV Rheinland €2,320/day. Total lifecycle compliance (including technical documentation, clinical data, PMS) can exceed €500,000 for Class III devices.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Poly Implant Prothèse (PIP) — breast implants with industrial silicone",
+        "certifier": "TÜV Rheinland LGA Products GmbH (CE 0197) — Notified Body under MDD 93/42/EEC",
+        "year": 2010,
+        "fraud_amount_eur": 60000000,
+        "detection_lag_months": 108
+      },
+      {
+        "entity": "DePuy Orthopaedics ASR Hip System (Johnson & Johnson)",
+        "certifier": "EU Notified Body under MDD (BSI and others); FDA 510(k) clearance in US",
+        "year": 2010,
+        "fraud_amount_eur": 3600000000,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "Medtronic Sprint Fidelis defibrillator leads",
+        "certifier": "FDA (US) 510(k) clearance; CE marked under MDD for EU market",
+        "year": 2007,
+        "fraud_amount_eur": 2500000000,
+        "detection_lag_months": 24
+      }
+    ],
+    "avg_detection_lag_months": 56,
+    "lambda": 0.0124,
+    "halflife_months": 56,
+    "continuous_argument": "PIP a substitué du silicone pendant 9 ans — TÜV n'a jamais testé un seul implant. Le MDR impose maintenant des audits inopinés, mais BURHAN va plus loin : monitoring continu de la fabrication, tests de lots automatisés, et alertes en temps réel.",
+    "sources": "PIP scandal: https://en.wikipedia.org/wiki/Poly_Implant_Proth%C3%A8se | https://qmsdoc.com/2026/01/13/from-the-pip-scandal-to-mdr-a-new-era-in-medical-device-regulation/ | https://www.massdevice.com/pip-breast-implant-scandal-story-triggered-change/ | https://www.bbc.com/news/health-57179180 | https://www.tuv.com/press/en/press-releases/pip-cases-in-germany-successfully-closed.html | https://www.oxebridge.com/emma/tuv-rheinland-found-culpable-by-french-high-court-in-pip-breast-implant-scandal/ | https://medicaldeviceslegal.com/2017/02/20/eu-court-decides-tuv-rheinland-pip-breast-implants-case/ | DePuy ASR: https://www.jnj.com/media-center/press-releases/depuy-announces-us-settlement-agreement-to-compensate-asr-hip-system-patients | https://topclassactions.com/lawsuit-settlements/medical-devices/depuy-asr-hip-replacement-recall-examined/ | https://www.bmj.com/content/345/bmj.e7163 | NB fees: https://www.peercode-regulatory.nl/news/85/29/Notified-Body-Fees-And-MDR-Pricing-For-Medical-Device-Makers-Explained/ | https://www.qualitiso.com/en/comparison-of-notified-body-fees/ | https://medenvoyglobal.com/blog/what-are-the-fees-for-selling-medical-devices-in-europe/ | MDR context: https://decomplix.com/medical-device-compliance/ | https://inxso.pro/insights/core-issues-that-terminate-the-mdr-conformity-assessment/"
+  },
+  {
+    "certification": "Certification AIQ (AI Act)",
+    "certifier": "FUTURE FRAMEWORK — not yet operational as of April 2026. High-risk AI systems will require conformity assessments by EU-designated Notified Bodies (analogous to MDR model) or internal Quality Management Systems under EU AI Act (Regulation 2024/1689, in force August 2024). National AI authorities (notifying authorities + market surveillance authorities) designated per Article 70, operational from August 2025. First mandatory Notified Body conformity assessments for high-risk AI: August 2026 deadline.",
+    "sector": "High-risk AI systems across all sectors: biometric ID, critical infrastructure, education, employment/HR, essential services, law enforcement, migration, justice/democracy (Annex III); also general-purpose AI (GPAI) models",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "Estimated (no official tariff yet): €16,800–€23,000 for EU-type audit conformity assessment per AI model (EC/German FSO estimate 2024); €29,277/year annual compliance labor cost per high-risk AI unit; total annual governance cost ~€52,000/AI model (including certification + compliance). Third-party audit range: $25,000–$150,000 per audit cycle for complex systems. Internal QMS: €193,000–€330,000 initial setup + €71,400/year maintenance. Non-compliance fines: up to €35M or 7% global turnover for prohibited AI; €15M or 3% for other violations.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Amazon Recruiting AI (sexist hiring algorithm)",
+        "certifier": "N/A — no AI certification existed; analogous to a future AIQ-certified HR AI tool",
+        "year": 2018,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "Clearview AI (mass facial recognition — GDPR/AI Act violations)",
+        "certifier": "N/A — no AI certification existed; would be prohibited/high-risk AI under AI Act",
+        "year": 2022,
+        "fraud_amount_eur": 50500000,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "Uber Advanced Technologies Group — fatal autonomous vehicle crash (Elaine Herzberg)",
+        "certifier": "N/A — no AI certification framework existed; analogous to a future AIQ-certified autonomous driving AI system",
+        "year": 2018,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 18
+      },
+      {
+        "entity": "COMPAS Recidivism Algorithm (judicial risk scoring — racial bias)",
+        "certifier": "N/A — no AI certification existed; ProPublica investigation exposed system; would be high-risk AI under EU AI Act Annex III (administration of justice)",
+        "year": 2016,
+        "fraud_amount_eur": null,
+        "detection_lag_months": 24
+      }
+    ],
+    "avg_detection_lag_months": 29,
+    "lambda": 0.0239,
+    "halflife_months": 29,
+    "continuous_argument": "Amazon a utilisé un IA sexiste pendant 3 ans, Clearview a violé le RGPD pendant 4 ans. L'IA dérive continuellement (model drift). Un certificat ponctuel est obsolète dès le premier retraining. BURHAN impose un monitoring continu du biais, de la performance et de la conformité.",
+    "sources": "EU AI Act text and timeline: https://artificialintelligenceact.eu/implementation-timeline/ | https://trilateralresearch.com/responsible-ai/eu-ai-act-implementation-timeline-mapping-your-models-to-the-new-risk-tiers | https://bastion.tech/learn/eu-ai-act/timeline-and-enforcement/ | AI Act conformity bodies: https://artificialintelligenceact.eu/article/28/ | https://artificialintelligenceact.eu/article/29/ | AI Act costs: https://2021.ai/news/understanding-the-eu-ai-act-penalties-and-achieving-regulatory-compliance | https://sqmagazine.co.uk/ai-compliance-cost-statistics/ | Amazon bias: https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/ | https://www.technologyreview.com/2018/10/10/139858/amazon-ditched-ai-recruitment-software-because-it-was-biased-against-women/ | Clearview AI fines: https://dataprivacymanager.net/cnil-issues-e20-million-gdpr-fine-to-clearview-ai/ | https://www.complianceweek.com/regulatory-enforcement/clearview-ais-gdpr-fines-rise-to-110m-total-after-latest-penalty-by-dutch-dpa/35338.article | Uber AV crash: https://www.bbc.com/news/business-43459156 | https://incidentdatabase.ai/cite/4/ | COMPAS bias: ProPublica 2016 investigation (referenced in academic literature)"
+  },
+  {
+    "certification": "KYC/AML Verification",
+    "certifier": "Regulated financial institutions via third-party providers (Refinitiv, LexisNexis, Dow Jones, Chainalysis, FINCEN, national regulators)",
+    "sector": "Financial Services / Banking / FinTech",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "€12–€120 per individual check (basic database to full biometric/document); €2,400 per corporate client KYC review (Fenergo 2023 average of $2,598 USD); banks spend €56–€460M annually on full AML/KYC compliance programs",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Danske Bank Estonia Branch",
+        "certifier": "Danish FSA / Estonian FSA (AML supervisors); internal KYC compliance",
+        "year": 2015,
+        "fraud_amount_eur": 200000000000,
+        "detection_lag_months": 96
+      },
+      {
+        "entity": "HSBC Bank USA / HSBC Mexico",
+        "certifier": "OCC, Federal Reserve, US DOJ (AML supervisors)",
+        "year": 2012,
+        "fraud_amount_eur": 810000000,
+        "detection_lag_months": 72
+      },
+      {
+        "entity": "Wirecard AG",
+        "certifier": "BaFin (German Financial Regulator); EY (auditor); internal KYC/AML",
+        "year": 2020,
+        "fraud_amount_eur": 1900000000,
+        "detection_lag_months": 60
+      },
+      {
+        "entity": "Deutsche Bank AG",
+        "certifier": "FCA (UK), US Federal Reserve",
+        "year": 2017,
+        "fraud_amount_eur": 150000000,
+        "detection_lag_months": 48
+      },
+      {
+        "entity": "TD Bank (Toronto-Dominion)",
+        "certifier": "US DOJ, FinCEN, OCC, Federal Reserve",
+        "year": 2024,
+        "fraud_amount_eur": 2770000000,
+        "detection_lag_months": 120
+      },
+      {
+        "entity": "Goldman Sachs / 1MDB",
+        "certifier": "US SEC, DOJ, Federal Reserve; Malaysian regulators",
+        "year": 2020,
+        "fraud_amount_eur": 2680000000,
+        "detection_lag_months": 84
+      }
+    ],
+    "avg_detection_lag_months": 80,
+    "lambda": 0.0087,
+    "halflife_months": 80,
+    "continuous_argument": "Danske Bank a blanchi €200 milliards en 8 ans, TD Bank €670M en 10 ans — avec des KYC 'conformes'. La vérification ponctuelle est un tampon. BURHAN assure un monitoring transactionnel continu avec détection d'anomalies en temps réel.",
+    "sources": "Danske Bank official press release Sept 2018: https://danskebank.com/news-and-insights/news-archive/press-releases/2018/pr19092018 | Danske Bank Wikipedia scandal: https://en.wikipedia.org/wiki/Danske_Bank_money_laundering_scandal | US DOJ HSBC press release Dec 2012: https://www.justice.gov/archives/opa/pr/hsbc-holdings-plc-and-hsbc-bank-usa-na-admit-anti-money-laundering-and-sanctions-violations | Reuters HSBC drug cartel article: https://www.reuters.com/article/business/hsbc-became-bank-to-drug-cartels-pays-big-for-lapses-idUSBRE8BA05N/ | Wirecard scandal Wikipedia: https://en.wikipedia.org/wiki/Wirecard_scandal | Oxford Law Blogs Wirecard analysis: https://blogs.law.ox.ac.uk/business-law-blog/blog/2020/11/wirecard-scandal-when-all-lines-defense-against-corporate-fraud-fail | FCA Deutsche Bank fine press release: https://www.fca.org.uk/news/press-releases/fca-fines-deutsche-bank-163-million-anti-money-laundering-controls-failure | ACAMS Deutsche Bank Fed fine 2023: https://www.acams.org/en/news/fed-fines-deutsche-bank-186-million-for-failure-to-address-aml-issues | TD Bank $3B fine analysis: https://www.lowenstein.com/news-insights/publications/client-alerts/td-bank-to-pay-historic-3-billion-over-aml-compliance-violations-aml | Goldman Sachs 1MDB BBC: https://www.bbc.com/news/business-54597256 | Sanction Scanner top AML fines: https://www.sanctionscanner.com/blog/top-14-biggest-aml-fines-of-all-time-updated-for-2025-1034 | Fenergo KYC cost $2,598 per corporate client: https://www.corporatecomplianceinsights.com/kyc-review-cost-survey-2023/ | Oscilar KYC cost study 2025 ($72.9M avg annual): https://oscilar.com/blog/secure-kyc"
+  },
+  {
+    "certification": "Certificat médical",
+    "certifier": "Licensed physicians (médecins généralistes, médecins du sport, médecins fédéraux agréés, aviation medical examiners)",
+    "sector": "Healthcare / Sports / Aviation / Social Benefits",
+    "renewal_frequency": "Annuel",
+    "renewal_cost_eur": "€25–€70 per consultation (standard GP consultation in France; not reimbursed by Sécu for sports fitness); aviation medicals €80–€200; specialist sports medicals €50–€150",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "French COVID-19 Fake Health Pass Network (Paris/Lyon)",
+        "certifier": "French Ministry of Health (digital vaccination certification system)",
+        "year": 2022,
+        "fraud_amount_eur": 396000,
+        "detection_lag_months": 6
+      },
+      {
+        "entity": "US Pilot Medical Certificate Fraud (Operation Safe Pilot)",
+        "certifier": "FAA (Federal Aviation Administration) / DOT Inspector General",
+        "year": 2006,
+        "fraud_amount_eur": 185000,
+        "detection_lag_months": 168
+      },
+      {
+        "entity": "Danil Lysenko / Russian Athletics Federation (RusAF)",
+        "certifier": "World Athletics / Athletics Integrity Unit (AIU)",
+        "year": 2019,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 4
+      },
+      {
+        "entity": "Zholia Alemi (Fake NHS Psychiatrist)",
+        "certifier": "UK General Medical Council / NHS",
+        "year": 2023,
+        "fraud_amount_eur": 940000,
+        "detection_lag_months": 264
+      },
+      {
+        "entity": "Italian Disability Benefits Fraud (Florence)",
+        "certifier": "Italian INPS (Social Security); physicians",
+        "year": 2019,
+        "fraud_amount_eur": 137000,
+        "detection_lag_months": 144
+      }
+    ],
+    "avg_detection_lag_months": 117,
+    "lambda": 0.0059,
+    "halflife_months": 117,
+    "continuous_argument": "Zholia Alemi a exercé 22 ans comme psychiatre avec de faux diplômes. Un certificat médical est un snapshot qui ne capture ni l'évolution ni la fraude. BURHAN fournit un monitoring de santé continu via wearables et des vérifications biométriques automatisées.",
+    "sources": "Euronews – 13 arrested France fake COVID passes Jan 2022: https://www.euronews.com/2022/01/27/thirteen-suspects-arrested-in-france-for-forging-more-than-60-000-fake-covid-passes | Le Monde – 10,000 fake health passes €396K case Nanterre Nov 2022: https://www.lemonde.fr/en/france/article/2022/11/09/10-000-fake-health-passes-400-000-in-receipts-a-team-of-scammers-appears-before-french-court_6003466_7.html | US DOT OIG Operation Safe Pilot testimony 2007: https://www.oig.dot.gov/sites/default/files/SAFE_PILOT_Testimony_july17.pdf | FAA suspects 5,000 pilots concealing medical issues Yahoo Finance 2023: https://finance.yahoo.com/news/faa-suspects-nearly-5-000-145450072.html | AOPA pilot sentenced 2024 fake FAA medical: https://www.aopa.org/news-and-media/all-news/2024/june/13/pilot-sentenced-for-lying-on-faa-medical-applications | Sports Integrity Initiative – Lysenko fake medical certificate RusAF: https://www.sportsintegrityinitiative.com/aiu-sanctions-show-wada-was-correct-to-sanction-russia/ | CPS UK – Zholia Alemi fake doctor confiscation order June 2025: https://www.cps.gov.uk/cps/news/fake-doctor-has-been-ordered-pay-back-ps406624-nhs-fraud-and-forgery-offending | Euronews – Italian man €137K disability fraud 2019: https://www.euronews.com/2019/04/15/italian-man-claims-137-000-in-benefits-by-faking-disability-for-over-10-years | Sports.gouv.fr – certificat médical sport France regulations: https://www.sports.gouv.fr/le-certificat-medical-pour-le-sport-676 | Mes Allocs – certificat médical sport prix France: https://www.mes-allocs.fr/guides/aides-sociales/certificat-medical-sport/"
+  },
+  {
+    "certification": "Accréditation hospitalière HAS",
+    "certifier": "Haute Autorité de Santé (HAS), France",
+    "sector": "Healthcare / Hospitals / Clinics (public and private)",
+    "renewal_frequency": "Quadriennal (4 ans)",
+    "renewal_cost_eur": "HAS certification is mandatory and state-funded; direct cost to establishments primarily indirect (preparation, quality management staff). Belgian comparative study (closest proxy): €879/bed for initial certification, €223/bed for recertification; representing 0.2% and 0.05% of annual gross revenues respectively. For a 300-bed French hospital: estimated €260,000–€600,000 for initial, €66,000–€160,000 for recertification in preparation costs.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Clinique du Sport (Paris) – Nosocomial Infections Scandal",
+        "certifier": "ANAES / HAS predecessor (French hospital accreditation body)",
+        "year": 1997,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 108
+      },
+      {
+        "entity": "Hôpital Gabriel Martin (Saint-Paul, La Réunion) – Surgical Error Cover-Up",
+        "certifier": "HAS (certified during the period of events)",
+        "year": 2013,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 132
+      },
+      {
+        "entity": "Affaire du Médiator / Servier (systemic HAS failure)",
+        "certifier": "HAS Transparency Committee / AFSSAPS",
+        "year": 2010,
+        "fraud_amount_eur": 415000000,
+        "detection_lag_months": 204
+      },
+      {
+        "entity": "CHU de Limoges – Doctors Boycott HAS Certification (2022)",
+        "certifier": "HAS",
+        "year": 2022,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 0
+      }
+    ],
+    "avg_detection_lag_months": 111,
+    "lambda": 0.0062,
+    "halflife_months": 111,
+    "continuous_argument": "La Clinique du Sport a infecté 58 patients pendant 9 ans sous accréditation. Le Médiator a tué 2000 personnes sur 33 ans malgré les évaluations HAS. BURHAN remplace les visites quadriennales par un monitoring qualité continu et des audits aléatoires automatisés.",
+    "sources": "Affaire Clinique du Sport Wikipedia: https://fr.wikipedia.org/wiki/Affaire_de_la_Clinique_du_sport | Le Monde enquête Clinique du Sport 2004: https://www.lemonde.fr/archives/article/2004/04/03/enquete-sur-le-scandale-oublie-de-la-clinique-du-sport_359864_1819218.html | PharmaBoardroom interview Alain-Michel Ceretti: https://pharmaboardroom.com/interviews/alain-michel-ceretti-president-france-assos-sante/ | IPPA academic paper on HAS quality indicators / Clinique du Sport context: https://www.ippapublicpolicy.org/file/paper/1434897504.pdf | Qualitiges.org – HAS hospital certification critique / Gabriel Martin case: https://qualitiges.org/la-certification-hospitaliere-nest-pas-credible/ | Affaire du Mediator Wikipedia: https://fr.wikipedia.org/wiki/Affaire_du_Mediator | HAS statement on Mediator: https://www.has-sante.fr/jcms/c_1004608/fr/mise-au-point-de-la-haute-autorite-de-sante-sur-mediator | Cour administrative d'appel Paris – Servier vs État July 2024: https://paris.cour-administrative-appel.fr/decisions-de-justice/dernieres-decisions/action-de-la-societe-les-laboratoires-servier-contre-l-etat-dans-l-affaire-du-mediator-R | CHU Limoges doctors boycott HAS certification YouTube/media: https://www.youtube.com/watch?v=qdyV7JTI5TQ | Ouest-France – HAS 4% non-certified hospitals Dec 2024: https://www.ouest-france.fr/sante/hopital/hopitaux-la-qualite-des-soins-insuffisante-dans-un-nombre-croissant-detablissements-de-sante-6c004284-bd3c-11ef-b01b-18b70b7523f7 | Belgian hospital certification cost study (proxy for France): https://www.prevention-medicale.org/revues-de-questions-thematiques/toutes-les-revues-de-questions/Accreditation-et-certification-des-hopitaux-systemes-normes-ISO-et-indicateurs/l-experience-belge-quel-cout-pour-les-hopitaux-a-s-engager-dans-la-preparation-d-une-certification | HAS certification cycle 6th – ARS Hauts-de-France: https://www.hauts-de-france.ars.sante.fr/la-certification-des-etablissements-de-sante"
+  },
+  {
+    "certification": "LEED (Bâtiment Vert)",
+    "certifier": "U.S. Green Building Council (USGBC) / Green Building Certification Institute (GBCI)",
+    "sector": "Real Estate / Construction / Built Environment / Sustainability",
+    "renewal_frequency": "Quinquennal (5 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Registration fee: €900–€2,750 (small to large new construction); Certification fee: €1,750–€22,000 (USD equivalent, billed in EUR for European projects). Consultant fees: €9,000–€28,000. Testing/verification: €900–€9,000. Total all-in: €20,000–€55,000 for typical commercial project. USGBC estimates compliance upgrade costs €18,000–€55,000 beyond fees. Recertification: registration fee waived; certification fee per standard schedule.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Henry Gifford v. USGBC (Class Action – Systemic LEED Greenwashing)",
+        "certifier": "USGBC / GBCI",
+        "year": 2010,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 84
+      },
+      {
+        "entity": "Federal Building Youngstown, Ohio (LEED Certified, Energy Star Ineligible)",
+        "certifier": "USGBC / GBCI",
+        "year": 2009,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 24
+      },
+      {
+        "entity": "LEED Certified Academic Buildings – Ontario, Canada (Systemic Underperformance)",
+        "certifier": "USGBC / GBCI",
+        "year": 2013,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 36
+      },
+      {
+        "entity": "LEED Certified Federal Retrofits – US Nationwide (No Measurable Savings)",
+        "certifier": "USGBC / GBCI",
+        "year": 2018,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 60
+      }
+    ],
+    "avg_detection_lag_months": 51,
+    "lambda": 0.0136,
+    "halflife_months": 51,
+    "continuous_argument": "28-35% des bâtiments LEED consomment PLUS d'énergie que les bâtiments conventionnels. LEED certifie le design, pas la performance réelle. BURHAN mesure la consommation énergétique réelle en continu et révoque automatiquement si les seuils sont dépassés.",
+    "sources": "Bass Berry & Sims – USGBC lawsuit LEED Feb 2011: https://www.bassberry.com/news/us-green-building-council-sued-over-leed-certification-system-02-11-2011/ | Green Building Advisor – USGBC v Energy Efficiency litigation 2010: https://www.greenbuildingadvisor.com/article/usgbc-v-energy-efficiency-finds-its-way-to-litigation | Eco Brooklyn – LEED lawsuit dismissed: https://ecobrooklyn.com/design/leed-wins-law-suit-bad-energy/ | ScienceDirect – Do LEED buildings save energy? (Newsham et al. 2009): https://www.sciencedirect.com/science/article/abs/pii/S0378778809000693 | Nature – Critical look at LEED energy savings claims (Scofield 2018): https://www.nature.com/articles/s41370-018-0078-1 | PataBid – LEED construction performance gap 2026: https://www.patabid.com/post/leed-in-construction-why-certified-doesn-t-always-mean-green | Lean Urbanism – The Problems with LEED (Orr): https://leanurbanism.org/wp-content/uploads/2014/06/Orr-LEED.pdf | USGBC LEED fees and price quotes: https://support.usgbc.org/hc/en-us/articles/4417283182355-LEED-fees-and-price-quotes | ugreen.io – How Much Does LEED Certification Cost? 2025: https://ugreen.io/how-much-does-leed-certification-cost/ | Zero Consulting – LEED fee changes 2023 (12% increase): https://blog.zeroconsulting.com/en/changes-in-leed-registration-and-certification-fees"
+  },
+  {
+    "certification": "Fair Trade Certification",
+    "certifier": "Fairtrade International (FLO) / FLOCERT (audit body); Fair Trade USA; World Fair Trade Organization (WFTO)",
+    "sector": "Agriculture / Food & Beverage / Retail / Supply Chain (cocoa, coffee, tea, bananas, cotton, etc.)",
+    "renewal_frequency": "Triennal (cycle 3 ans, surveillance annuelle)",
+    "renewal_cost_eur": "Producer application fee: €597 (one-time, non-refundable). Producer initial/annual certification fee: €630–€1,426 depending on organization size (up to 1,000+ members). Trader base certification fee varies by volume; large volume additional fee: €1,257/product. Typical small cooperative total: €1,200–€3,500/year. Brand/trader licensing fees scale with sales volume. Full audit and certification including travel costs can reach €5,000–€15,000 for remote producers.",
+    "post_cert_fraud_cases": [
+      {
+        "entity": "Ivory Coast Fairtrade Cocoa Program Suspension (CCC Fraud)",
+        "certifier": "Fairtrade International / FLOCERT; Ivory Coast Conseil du Café-Cacao (CCC)",
+        "year": 2024,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 3
+      },
+      {
+        "entity": "Fairtrade / Rainforest Alliance Certified Cocoa Farms – Child Labor (Ivory Coast & Ghana)",
+        "certifier": "Fairtrade International / FLOCERT; UTZ/Rainforest Alliance",
+        "year": 2021,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 240
+      },
+      {
+        "entity": "Fair Trade USA / Equitable Food Initiative – San Quintín Valley Mexico (Forced Labor)",
+        "certifier": "Fair Trade USA; Equitable Food Initiative (EFI)",
+        "year": 2023,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 60
+      },
+      {
+        "entity": "Nestlé / Cocoa Supply Chain – Fair Trade Certified Farms with Child Labor",
+        "certifier": "Fairtrade International; UTZ Certified",
+        "year": 2018,
+        "fraud_amount_eur": 0,
+        "detection_lag_months": 204
+      }
+    ],
+    "avg_detection_lag_months": 127,
+    "lambda": 0.0055,
+    "halflife_months": 127,
+    "continuous_argument": "1.56 million d'enfants travaillent dans le cacao en Côte d'Ivoire — y compris sur des fermes certifiées Fairtrade. Un audit annuel ne voit pas ce qui se passe les 364 autres jours. BURHAN impose un monitoring continu des conditions de travail via IoT, GPS et canaux de dénonciation protégés.",
+    "sources": "Bloomberg – Ivory Coast suspends Fairtrade cocoa program April 2024: https://www.bloomberg.com/news/articles/2024-04-30/top-cocoa-producer-ivory-coast-suspects-fraud-in-fairtrade-beans | Scribd – Ivory Coast Fairtrade suspension document: https://www.scribd.com/document/758290890/Ivory-Coast-Suspends-Fairtrade-Cocoa-Program-on-Suspicions-of-Fraud-Bloomberg | Corporate Accountability Lab – Child labor on Rainforest Alliance/Fairtrade certified farms Oct 2021: https://corpaccountabilitylab.org/calblog/2021/10/25/cal-finds-evidence-of-child-labor-on-rainforest-alliance-certified-farms | Corporate Accountability Lab – Certified Exploitation report Oct 2023: https://corpaccountabilitylab.org/calblog/2023/10/24/new-report-for-fair-trade-month-certified-exploitation | ClassAction.org – Nestlé cocoa child labor class action Feb 2018: https://www.classaction.org/blog/this-is-shameful-class-action-alleges-nestls-supply-chain-for-west-african-cocoa-relies-on-child-labor | Humanium – Child labour cocoa industry Ivory Coast Ghana 2024: https://www.humanium.org/en/the-dark-side-of-chocolate-child-labour-in-the-cocoa-industry/ | FLOCERT Fee System document (CERT-FeeSystem-ED-13-en.pdf): https://www.flocert.net/app/uploads/2025/09/CERT-FeeSystem-ED-13-en.pdf | EthixMerch – Fairtrade certification process and costs: https://ethixmerch.com/blog/fairtrade-certification-process-businesses/ | Sustainability Directory – Fair Trade Certification Costs: https://lifestyle.sustainability-directory.com/term/fair-trade-certification-costs/"
+  }
+]

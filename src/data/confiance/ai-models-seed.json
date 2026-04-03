@@ -1,0 +1,155 @@
+[
+  {
+    "model_name": "ChatGPT (GPT-3.5)",
+    "sector": "Justice",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "COMPAS (Northpointe/Equivant)",
+    "sector": "Justice",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "nH Predict (Navihealth/Optum)",
+    "sector": "Santé",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Zestimate ML (Facebook Prophet)",
+    "sector": "Finance / Immobilier",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Tesla Autopilot / FSD (Neural Network)",
+    "sector": "Transport",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Lavender + The Gospel + Where's Daddy (IDF Unit 8200)",
+    "sector": "Défense",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Ofqual DCP Algorithm (Direct Centre-level Performance)",
+    "sector": "Éducation",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Recruitment Screening AI (custom)",
+    "sector": "RH / Emploi",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Workday AI Screening System",
+    "sector": "RH / Emploi",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Amazon Internal Recruitment AI",
+    "sector": "RH / Emploi",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Multiple HFT Algorithms (High-Frequency Trading)",
+    "sector": "Finance",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Multiple algorithmic trading bots & liquidation engines",
+    "sector": "Finance",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Patriot Missile System (automated threat classification)",
+    "sector": "Défense",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "AI Radiology System (non nommé)",
+    "sector": "Santé",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "AI Essay Grading System (Cognia contractor)",
+    "sector": "Éducation",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Waymo Driver (5th Gen autonomous driving system)",
+    "sector": "Transport",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "GPT-4o (OpenAI ChatGPT)",
+    "sector": "Santé mentale / Technologie",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "Ford BlueCruise (Level 2 ADAS)",
+    "sector": "Transport",
+    "source": "burhan_v2_incidents"
+  },
+  {
+    "model_name": "[AGGREGATE] marketing_ventes",
+    "sector": "marketing_ventes",
+    "estimated_count": 154000,
+    "note": "Premier usage IA en enterprise (McKinsey)",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] finance_banque_assurance",
+    "sector": "finance_banque_assurance",
+    "estimated_count": 126000,
+    "note": "Trading algo, scoring crédit, détection fraude, KYC/AML",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] sante",
+    "sector": "sante",
+    "estimated_count": 98000,
+    "note": "$18B investis en IA santé 2025. FDA: 1,357 dispositifs médicaux IA autorisés",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] transport_automobile",
+    "sector": "transport_automobile",
+    "estimated_count": 70000,
+    "note": "Véhicules autonomes, logistique, navigation. 75% des constructeurs auto testent GenAI",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] education",
+    "sector": "education",
+    "estimated_count": 56000,
+    "note": "Grading AI, tutorat adaptatif, admission screening",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] justice_juridique",
+    "sector": "justice_juridique",
+    "estimated_count": 49000,
+    "note": "Legal research AI, scoring récidive, contract review",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] defense_securite",
+    "sector": "defense_securite",
+    "estimated_count": 42000,
+    "note": "Targeting, surveillance, cyberdéfense, reconnaissance",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] services_publics_gouvernement",
+    "sector": "services_publics_gouvernement",
+    "estimated_count": 35000,
+    "note": "Aide sociale, immigration, fraude fiscale",
+    "source": "burhan_v2_decomposition"
+  },
+  {
+    "model_name": "[AGGREGATE] autres",
+    "sector": "autres",
+    "estimated_count": 70000,
+    "note": "Manufacturing, retail, énergie, telecom",
+    "source": "burhan_v2_decomposition"
+  }
+]

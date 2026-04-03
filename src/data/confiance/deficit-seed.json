@@ -1,0 +1,539 @@
+{
+  "corridor_summary": {
+    "total_countries": 20,
+    "total_detected_fraud_eur": 98500000000,
+    "total_estimated_fraud_eur": 791270000000,
+    "total_annual_audit_spend_eur": 41403000000,
+    "total_certifiable_entities": 5233540,
+    "total_burhan_tam_eur": 49445000000,
+    "avg_trust_score": 45.5,
+    "avg_trust_arbitrage_gap": 33.9,
+    "methodology": "Fraude détectée: sources officielles nationales. Ratio détection: 3-15% selon maturité institutionnelle. Fraude santé: 3-10% dépenses santé (OMS). Fraude financière: Nasdaq Verafin 2024, EPPO 2024, rapports nationaux. Trust composite: Edelman 2026 × 0.25 + CPI 2025 × 0.30 + NCSI × 0.25 + GCI 2024 × 0.20 (normalisé 0-100). Trust arbitrage: écart Edelman vs (CPI × compliance réelle). BURHAN TAM: entités certifiables × prix moyen certification (€30-150K selon complexité).",
+    "key_sources": [
+      "Nasdaq Verafin - Financial Crime Insights: Europe 2024",
+      "EPPO Annual Report 2024 (€24.8B estimated damage)",
+      "Bercy - Bilan 2024 Lutte contre les fraudes",
+      "Sénat - Commission d'enquête délinquance financière 2025",
+      "IFRAP 2026 - Fraude sociale",
+      "Cour des Comptes 2025",
+      "TRACFIN Rapport 2024-2025",
+      "Transparency International CPI 2025",
+      "Edelman Trust Barometer 2026",
+      "NCSI Cyber Security Index 2025",
+      "ITU Global Cybersecurity Index 2024",
+      "Interpol Africa Cyberthreat Assessment 2025",
+      "Mo Ibrahim Foundation 2025 ($100B/yr Africa)",
+      "NIBSS Nigeria Fraud Report 2024",
+      "SABRIC South Africa Crime Statistics 2024",
+      "Bank of Ghana Fraud Report 2024",
+      "CBK Kenya Banking Fraud 2024",
+      "Mordor Intelligence - Europe Auditing Services 2026",
+      "Eurostat Business Demography 2024",
+      "WHO Health Facility Data",
+      "Surfshark Deepfake Study 2025 (€863M global)",
+      "EBA-ECB Payment Fraud Report 2025 (€4.2B EEA)"
+    ]
+  },
+  "countries": [
+    {
+      "country": "France",
+      "code": "FR",
+      "detected_fraud_eur": 19600000000,
+      "detection_rate": "15%",
+      "estimated_total_fraud_eur": 130700000000,
+      "annual_audit_spend_eur": 9200000000,
+      "certifiable_entities": {
+        "enterprises": 200000,
+        "health_facilities": 33000,
+        "ai_models_production": 5200,
+        "supply_chain_tier1_4": 920000
+      },
+      "trust_score_composite": 58,
+      "trust_arbitrage_gap": 24,
+      "burhan_tam_eur": 10400000000,
+      "fraud_breakdown": {
+        "health": 4500000000,
+        "finance": 10500000000,
+        "esg": 2200000000,
+        "digital": 2400000000
+      },
+      "sources": "Bercy Bilan 2024 (19.6Md€ detected total fraud fiscal+social+douanière), Sénat Commission Enquête 2025 (blanchiment 38-58Md€/an), IFRAP 2026 (fraude sociale 14Md€ estimée), Cour des Comptes 2025 (fraude santé 4.5Md€), Nasdaq Verafin 2024 ($25.7B fraud losses France), TRACFIN 2024, Edelman 2026 (France 42), TI CPI 2025 (France 66), NCSI (France 89.17), Assemblée Nationale 2024 (fraude fiscale 80-100Md€), Tax Justice Network 2025",
+      "notes": "Fraude fiscale estimée 80-100Md€ (Assemblée Nationale/Attac). Blanchiment estimé 38-58Md€ (Sénat 2025). Fraude sociale estimée 14Md€ (HCFiPS). Les 19.6Md€ détectés représentent ~15% du total estimé."
+    },
+    {
+      "country": "Maroc",
+      "code": "MA",
+      "detected_fraud_eur": 850000000,
+      "detection_rate": "8%",
+      "estimated_total_fraud_eur": 10600000000,
+      "annual_audit_spend_eur": 320000000,
+      "certifiable_entities": {
+        "enterprises": 35000,
+        "health_facilities": 3200,
+        "ai_models_production": 180,
+        "supply_chain_tier1_4": 85000
+      },
+      "trust_score_composite": 42,
+      "trust_arbitrage_gap": 35,
+      "burhan_tam_eur": 1480000000,
+      "fraud_breakdown": {
+        "health": 220000000,
+        "finance": 380000000,
+        "esg": 100000000,
+        "digital": 150000000
+      },
+      "sources": "Interpol Africa Cyberthreat Assessment 2025, Morocco Interior Ministry 2026 (182 pyramid fraud cases 2024-2026), Hespresss/Global Fraud Index 2025 (Morocco rank 50th), TI CPI 2025 (Morocco 39), Edelman 2026 (non-surveyed, estimé par analogie MENA 55), NCSI (Morocco 79.17), ITU GCI 2024 (estimé 93+)",
+      "notes": "Estimé par analogie régionale Afrique du Nord. Fraude santé basée sur 3% des dépenses santé (PIB santé ~5.3% du PIB 134Md€). Fraude financière estimée incluant blanchiment transit vers Europe."
+    },
+    {
+      "country": "Sénégal",
+      "code": "SN",
+      "detected_fraud_eur": 120000000,
+      "detection_rate": "6%",
+      "estimated_total_fraud_eur": 2000000000,
+      "annual_audit_spend_eur": 45000000,
+      "certifiable_entities": {
+        "enterprises": 8000,
+        "health_facilities": 2800,
+        "ai_models_production": 25,
+        "supply_chain_tier1_4": 18000
+      },
+      "trust_score_composite": 40,
+      "trust_arbitrage_gap": 38,
+      "burhan_tam_eur": 345000000,
+      "fraud_breakdown": {
+        "health": 35000000,
+        "finance": 50000000,
+        "esg": 15000000,
+        "digital": 20000000
+      },
+      "sources": "Ecofin Agency 2026 (3,794 cybercrime offenses 2025 Sénégal), Interpol Africa Cyberthreat 2025 ($3B+ losses Africa 2019-2025), Police Nationale Sénégal 2025, TI CPI 2025 (Sénégal 46), NCSI (Sénégal 37.50)",
+      "notes": "Estimé. 3794 plaintes cybercrime en 2025. Opération Interpol en Afrique (651 arrestations, $45M de pertes identifiées). Fraude financière mobile money significative en Afrique de l'Ouest."
+    },
+    {
+      "country": "Nigeria",
+      "code": "NG",
+      "detected_fraud_eur": 1800000000,
+      "detection_rate": "5%",
+      "estimated_total_fraud_eur": 36000000000,
+      "annual_audit_spend_eur": 180000000,
+      "certifiable_entities": {
+        "enterprises": 45000,
+        "health_facilities": 20800,
+        "ai_models_production": 120,
+        "supply_chain_tier1_4": 95000
+      },
+      "trust_score_composite": 45,
+      "trust_arbitrage_gap": 42,
+      "burhan_tam_eur": 1930000000,
+      "fraud_breakdown": {
+        "health": 450000000,
+        "finance": 850000000,
+        "esg": 200000000,
+        "digital": 300000000
+      },
+      "sources": "NIBSS Fraud Report 2024 (N52.26B bank fraud = ~€30M), Ecofin Agency 2025 (Big 4 audit market N28.2B = $14.4M), TechCabal 2025 (Flutterwave N11B lost), EFCC 2025 (N18.74B fraud schemes), Interpol Africa 2025 (Nigeria top BEC hub), Mo Ibrahim Foundation 2025 ($100B/yr Africa financial crime), TI CPI 2025 (Nigeria 28 estimé), Edelman 2026 (Nigeria 72), NCSI (Nigeria 58.33)",
+      "notes": "Fraude bancaire détectée N52.26B (~€30M au taux officiel), mais fraude totale bien supérieure. Nigeria hub principal de fraude BEC en Afrique (Interpol). Total estimé basé sur 5% du PIB (standard UNODC pour pays à haut risque). Audit market très petit ($14.4M) vs taille économie."
+    },
+    {
+      "country": "Côte d'Ivoire",
+      "code": "CI",
+      "detected_fraud_eur": 250000000,
+      "detection_rate": "6%",
+      "estimated_total_fraud_eur": 4200000000,
+      "annual_audit_spend_eur": 55000000,
+      "certifiable_entities": {
+        "enterprises": 12000,
+        "health_facilities": 2400,
+        "ai_models_production": 30,
+        "supply_chain_tier1_4": 28000
+      },
+      "trust_score_composite": 38,
+      "trust_arbitrage_gap": 40,
+      "burhan_tam_eur": 510000000,
+      "fraud_breakdown": {
+        "health": 70000000,
+        "finance": 100000000,
+        "esg": 30000000,
+        "digital": 50000000
+      },
+      "sources": "Interpol Africa Cyberthreat Assessment 2025 (CI top 4 BEC hub Africa), Interpol Operation 2025-2026 ($45M losses Africa), TI CPI 2025 (estimé 37), NCSI (estimé 45), Ecofin Agency 2025 ($3B Africa cybercrime losses)",
+      "notes": "Estimé par analogie régionale Afrique de l'Ouest. Côte d'Ivoire identifiée par Interpol comme l'un des 4 principaux hubs BEC en Afrique aux côtés du Nigeria, Ghana et Afrique du Sud."
+    },
+    {
+      "country": "Ghana",
+      "code": "GH",
+      "detected_fraud_eur": 95000000,
+      "detection_rate": "7%",
+      "estimated_total_fraud_eur": 1360000000,
+      "annual_audit_spend_eur": 65000000,
+      "certifiable_entities": {
+        "enterprises": 10000,
+        "health_facilities": 4200,
+        "ai_models_production": 35,
+        "supply_chain_tier1_4": 22000
+      },
+      "trust_score_composite": 43,
+      "trust_arbitrage_gap": 36,
+      "burhan_tam_eur": 435000000,
+      "fraud_breakdown": {
+        "health": 25000000,
+        "finance": 40000000,
+        "esg": 12000000,
+        "digital": 18000000
+      },
+      "sources": "Bank of Ghana Fraud Report 2024 (GH¢99M total value at risk = ~€6M), BoG 2025 (16,733 fraud cases +5%), Ghana Association of Banks 2025, Interpol Africa 2025 (Ghana top 4 BEC hub), TI CPI 2025 (estimé 43), NCSI (Ghana 63.33), ITU GCI 2024 (Ghana 99.27)",
+      "notes": "Fraude bancaire détectée GH¢99M (~€6M), mais ne couvre que le secteur formel bancaire. Total estimé inclut économie informelle significative (~40% PIB). GCI score très élevé (99.27) malgré risque fraude élevé."
+    },
+    {
+      "country": "Kenya",
+      "code": "KE",
+      "detected_fraud_eur": 420000000,
+      "detection_rate": "7%",
+      "estimated_total_fraud_eur": 6000000000,
+      "annual_audit_spend_eur": 180000000,
+      "certifiable_entities": {
+        "enterprises": 18000,
+        "health_facilities": 6150,
+        "ai_models_production": 85,
+        "supply_chain_tier1_4": 35000
+      },
+      "trust_score_composite": 44,
+      "trust_arbitrage_gap": 39,
+      "burhan_tam_eur": 710000000,
+      "fraud_breakdown": {
+        "health": 110000000,
+        "finance": 180000000,
+        "esg": 50000000,
+        "digital": 80000000
+      },
+      "sources": "Intelpoint 2025 (KES 2.0T total fraud exposure = ~€14B, KES 1.6T lost), CBK 2024 (Sh1.59B bank cybercrime losses), Kenya Times 2025 ($230M cybercrime losses 2024/25), Edelman 2026 (Kenya 68), TI CPI 2025 (Kenya 30), NCSI (Kenya 50.83)",
+      "notes": "Chiffres Intelpoint astronomiques (KES 2T exposure) incluent transactions suspectes pré-filtrées. Pertes bancaires confirmées Sh1.59B (€11M). Estimation prudente €420M détectée basée sur $230M cybercrime + fraude financière traditionnelle."
+    },
+    {
+      "country": "Afrique du Sud",
+      "code": "ZA",
+      "detected_fraud_eur": 1200000000,
+      "detection_rate": "8%",
+      "estimated_total_fraud_eur": 15000000000,
+      "annual_audit_spend_eur": 1680000000,
+      "certifiable_entities": {
+        "enterprises": 32000,
+        "health_facilities": 4500,
+        "ai_models_production": 150,
+        "supply_chain_tier1_4": 65000
+      },
+      "trust_score_composite": 45,
+      "trust_arbitrage_gap": 33,
+      "burhan_tam_eur": 1220000000,
+      "fraud_breakdown": {
+        "health": 350000000,
+        "finance": 500000000,
+        "esg": 150000000,
+        "digital": 200000000
+      },
+      "sources": "SABRIC Annual Crime Statistics 2024 (R1.888B digital banking fraud = ~€95M), EWN 2026 (R5.3B telecom fraud 2025 = ~€265M), TransUnion H2 2025, Grand View Research 2025 (SA TIC market $1.68B), Mordor Intelligence (SA TIC market $2.08B 2025), Edelman 2026 (SA 54), TI CPI 2025 (SA 41), NCSI (SA 51.67)",
+      "notes": "Fraude bancaire digitale R1.888B +74% en 2024 (SABRIC). Fraude télécom R5.3B en 2025. Marché TIC (Testing Inspection Certification) $1.68B en 2025. Estimation totale incluant fraude du secteur public significative."
+    },
+    {
+      "country": "Allemagne",
+      "code": "DE",
+      "detected_fraud_eur": 15500000000,
+      "detection_rate": "12%",
+      "estimated_total_fraud_eur": 129200000000,
+      "annual_audit_spend_eur": 12800000000,
+      "certifiable_entities": {
+        "enterprises": 180000,
+        "health_facilities": 25000,
+        "ai_models_production": 6800,
+        "supply_chain_tier1_4": 780000
+      },
+      "trust_score_composite": 62,
+      "trust_arbitrage_gap": 21,
+      "burhan_tam_eur": 8900000000,
+      "fraud_breakdown": {
+        "health": 3800000000,
+        "finance": 7200000000,
+        "esg": 2100000000,
+        "digital": 2400000000
+      },
+      "sources": "Nasdaq Verafin 2024 ($13.2B fraud losses + $128.7B money laundering Germany), BKA 2024 (61,358 economic crimes, €2.76B damages), TradingView/Nasdaq 2026 ($579.4B financial crime Germany 2023-2025 CAGR 9.2%), Edelman 2026 (Germany 44), TI CPI 2025 (Germany 77), NCSI (Germany 90.83), ITU GCI 2024 (Germany 97.85), Mordor Intelligence (Europe audit market Germany #2)",
+      "notes": "BKA rapporte €2.76B de dommages économiques détectés en 2024. Nasdaq Verafin estime $13.2B de pertes fraude totales et $128.7B de blanchiment. Hausse de 847% de la fraude au système de santé en 2024 (BKA)."
+    },
+    {
+      "country": "Espagne",
+      "code": "ES",
+      "detected_fraud_eur": 7400000000,
+      "detection_rate": "12%",
+      "estimated_total_fraud_eur": 61700000000,
+      "annual_audit_spend_eur": 3200000000,
+      "certifiable_entities": {
+        "enterprises": 120000,
+        "health_facilities": 18000,
+        "ai_models_production": 2800,
+        "supply_chain_tier1_4": 450000
+      },
+      "trust_score_composite": 48,
+      "trust_arbitrage_gap": 27,
+      "burhan_tam_eur": 5310000000,
+      "fraud_breakdown": {
+        "health": 1800000000,
+        "finance": 3200000000,
+        "esg": 1100000000,
+        "digital": 1300000000
+      },
+      "sources": "GASA 2024 (€7.4B scam losses Spain 2024 = 0.5% GDP), Nasdaq Verafin 2024 ($5.6B fraud losses + $44.3B money laundering Spain), Edelman 2026 (Spain 45), TI CPI 2025 (Spain 55), NCSI (Spain 89.17), ITU GCI 2024 (Spain 99.74)",
+      "notes": "GASA (Global Anti-Scam Alliance) reporte €7.4B de pertes arnaque en 2024. Nasdaq Verafin estime $5.6B fraude bancaire + $44.3B blanchiment. 1 Espagnol sur 6 ciblé par une arnaque en 2024."
+    },
+    {
+      "country": "Italie",
+      "code": "IT",
+      "detected_fraud_eur": 36200000000,
+      "detection_rate": "14%",
+      "estimated_total_fraud_eur": 258600000000,
+      "annual_audit_spend_eur": 5400000000,
+      "certifiable_entities": {
+        "enterprises": 150000,
+        "health_facilities": 22000,
+        "ai_models_production": 3200,
+        "supply_chain_tier1_4": 680000
+      },
+      "trust_score_composite": 50,
+      "trust_arbitrage_gap": 29,
+      "burhan_tam_eur": 7680000000,
+      "fraud_breakdown": {
+        "health": 5500000000,
+        "finance": 22000000000,
+        "esg": 3500000000,
+        "digital": 5200000000
+      },
+      "sources": "VATUpdate 2026 (€36.2B recovered from tax evasion in 2025 = record), Reuters 2024 (€1B+ Superbonus tax credit scam, €16B fraudulent Superbonus total), Nasdaq Verafin 2024 ($3.7B fraud losses + $65.8B money laundering Italy), EPPO 2024 (Italy significant VAT fraud contributor), Edelman 2026 (Italy 50), TI CPI 2025 (Italy 53), NCSI (Italy 88.33), ITU GCI 2024 (Italy 100)",
+      "notes": "Italie a récupéré un record de €36.2B d'évasion fiscale en 2025 (+8.4%). Superbonus a généré €16B de fraude identifiée. Blanchiment estimé $65.8B (3.09% PIB). €13.15B de fraude TVA transfrontalière investigée par EPPO incluant l'Italie comme contributeur majeur."
+    },
+    {
+      "country": "Pays-Bas",
+      "code": "NL",
+      "detected_fraud_eur": 8500000000,
+      "detection_rate": "15%",
+      "estimated_total_fraud_eur": 56700000000,
+      "annual_audit_spend_eur": 4600000000,
+      "certifiable_entities": {
+        "enterprises": 85000,
+        "health_facilities": 8500,
+        "ai_models_production": 4200,
+        "supply_chain_tier1_4": 320000
+      },
+      "trust_score_composite": 64,
+      "trust_arbitrage_gap": 18,
+      "burhan_tam_eur": 3750000000,
+      "fraud_breakdown": {
+        "health": 1800000000,
+        "finance": 4200000000,
+        "esg": 1200000000,
+        "digital": 1300000000
+      },
+      "sources": "Nasdaq Verafin 2024 ($8.5B fraud losses + $25.7B money laundering Netherlands), Ideagen 2025 (Netherlands highest avg audit fees €4.6M), Edelman 2026 (Netherlands 58), TI CPI 2025 (Netherlands 78), NCSI (Netherlands 81.67), ITU GCI 2024 (Netherlands 99.22), Mordor Intelligence (BENELUX fastest growing audit market 7.74% CAGR)",
+      "notes": "Hub financier européen majeur. Plus hauts honoraires d'audit moyens en Europe (€4.6M). Nasdaq Verafin estime $8.5B de pertes fraude et $25.7B de blanchiment. BENELUX = croissance audit la plus rapide en Europe."
+    },
+    {
+      "country": "Belgique",
+      "code": "BE",
+      "detected_fraud_eur": 2800000000,
+      "detection_rate": "13%",
+      "estimated_total_fraud_eur": 21500000000,
+      "annual_audit_spend_eur": 2100000000,
+      "certifiable_entities": {
+        "enterprises": 55000,
+        "health_facilities": 6200,
+        "ai_models_production": 1800,
+        "supply_chain_tier1_4": 180000
+      },
+      "trust_score_composite": 60,
+      "trust_arbitrage_gap": 22,
+      "burhan_tam_eur": 2190000000,
+      "fraud_breakdown": {
+        "health": 650000000,
+        "finance": 1300000000,
+        "esg": 400000000,
+        "digital": 450000000
+      },
+      "sources": "Nasdaq Verafin 2024 (Belgium in Rest of EU $2.2B fraud + $65.3B ML aggregate), EPPO 2024, Edelman 2026 (non-surveyed, estimé 58), TI CPI 2025 (Belgium 69), NCSI (Belgium 94.17), Mordor Intelligence (BENELUX audit 7.74% CAGR), Baker Tilly 2025 (EMEA 13% growth including Belgium)",
+      "notes": "Estimé. Belgique incluse dans 'Rest of EU' par Nasdaq Verafin. Estimation basée sur PIB relatif dans agrégat Rest of EU et position comme centre administratif UE. Score NCSI très élevé (94.17, rank 7 mondial)."
+    },
+    {
+      "country": "Portugal",
+      "code": "PT",
+      "detected_fraud_eur": 1500000000,
+      "detection_rate": "12%",
+      "estimated_total_fraud_eur": 12500000000,
+      "annual_audit_spend_eur": 850000000,
+      "certifiable_entities": {
+        "enterprises": 42000,
+        "health_facilities": 5800,
+        "ai_models_production": 950,
+        "supply_chain_tier1_4": 120000
+      },
+      "trust_score_composite": 54,
+      "trust_arbitrage_gap": 25,
+      "burhan_tam_eur": 1520000000,
+      "fraud_breakdown": {
+        "health": 380000000,
+        "finance": 680000000,
+        "esg": 200000000,
+        "digital": 240000000
+      },
+      "sources": "Nasdaq Verafin 2024 (Portugal in Rest of EU aggregate), EPPO 2024, TI CPI 2025 (Portugal 56), NCSI (Portugal 84.17), ITU GCI 2024 (Portugal 99.86), Eurostat 2024",
+      "notes": "Estimé. Portugal inclus dans 'Rest of EU' par Nasdaq Verafin. Estimation basée sur ratio PIB Portugal/agrégat. Score GCI exceptionnel (99.86). CPI en baisse (-3 points)."
+    },
+    {
+      "country": "Tunisie",
+      "code": "TN",
+      "detected_fraud_eur": 350000000,
+      "detection_rate": "7%",
+      "estimated_total_fraud_eur": 5000000000,
+      "annual_audit_spend_eur": 120000000,
+      "certifiable_entities": {
+        "enterprises": 15000,
+        "health_facilities": 3800,
+        "ai_models_production": 60,
+        "supply_chain_tier1_4": 35000
+      },
+      "trust_score_composite": 41,
+      "trust_arbitrage_gap": 34,
+      "burhan_tam_eur": 645000000,
+      "fraud_breakdown": {
+        "health": 95000000,
+        "finance": 150000000,
+        "esg": 45000000,
+        "digital": 60000000
+      },
+      "sources": "Interpol Africa Cyberthreat 2025 (Tunisia among ransomware targets), TI CPI 2025 (Tunisia 39), NCSI (Tunisia 79.17), Numbeo Healthcare 2025 (Tunisia #2 Africa), Ecofin Agency 2025 ($3B Africa cybercrime)",
+      "notes": "Estimé par analogie régionale Afrique du Nord. Tunisie identifiée parmi les cibles ransomware majeures en Afrique (Interpol 2025). Système de santé relativement développé (rank #2 Africa Numbeo)."
+    },
+    {
+      "country": "Égypte",
+      "code": "EG",
+      "detected_fraud_eur": 900000000,
+      "detection_rate": "7%",
+      "estimated_total_fraud_eur": 12900000000,
+      "annual_audit_spend_eur": 450000000,
+      "certifiable_entities": {
+        "enterprises": 28000,
+        "health_facilities": 8500,
+        "ai_models_production": 95,
+        "supply_chain_tier1_4": 55000
+      },
+      "trust_score_composite": 39,
+      "trust_arbitrage_gap": 41,
+      "burhan_tam_eur": 1100000000,
+      "fraud_breakdown": {
+        "health": 250000000,
+        "finance": 380000000,
+        "esg": 110000000,
+        "digital": 160000000
+      },
+      "sources": "CBE 2025 (EGP 4B fraud prevented 2025 = ~€75M), DFAdvisers/LinkedIn 2026, Global Organized Crime Index 2025 (Egypt financial crimes profile), Interpol Africa 2025 (Egypt #2 ransomware Africa after SA), Data Bridge Research 2025 (Egypt fraud detection market $281M), TI CPI 2025 (Egypt 30), NCSI (Egypt 65.00), ITU GCI 2024 (Egypt 100)",
+      "notes": "CBE a prévenu EGP 4B de fraude en 2025 (+268%). 12,281 détections ransomware en 2024 (Trend Micro). Économie cash-heavy facilitant l'évasion fiscale (Global OC Index). Marché fraud detection en croissance rapide (CAGR 23.47%)."
+    },
+    {
+      "country": "RDC",
+      "code": "CD",
+      "detected_fraud_eur": 450000000,
+      "detection_rate": "3%",
+      "estimated_total_fraud_eur": 15000000000,
+      "annual_audit_spend_eur": 35000000,
+      "certifiable_entities": {
+        "enterprises": 5000,
+        "health_facilities": 14600,
+        "ai_models_production": 8,
+        "supply_chain_tier1_4": 12000
+      },
+      "trust_score_composite": 18,
+      "trust_arbitrage_gap": 58,
+      "burhan_tam_eur": 380000000,
+      "fraud_breakdown": {
+        "health": 120000000,
+        "finance": 200000000,
+        "esg": 50000000,
+        "digital": 80000000
+      },
+      "sources": "DefenceWeb 2015 ($15B/yr fraud loss DRC - presidential advisor), BTI Transformation Index 2026 (DRC 12% financial inclusion), Ecofin Agency 2026 (DRC creates specialized court), TI CPI 2025 (estimé 20), NCSI (DRC 21.67), ITU GCI 2024 (DRC 56.75 - +51.45 growth)",
+      "notes": "Estimé. DRC perd jusqu'à $15B/an en fraude selon le conseiller anti-corruption présidentiel (2015). Seulement 12% d'inclusion financière. 85%+ transactions en USD. Création d'un tribunal spécialisé anti-fraude en 2026. Trust score le plus bas du corridor."
+    },
+    {
+      "country": "Rwanda",
+      "code": "RW",
+      "detected_fraud_eur": 65000000,
+      "detection_rate": "8%",
+      "estimated_total_fraud_eur": 810000000,
+      "annual_audit_spend_eur": 28000000,
+      "certifiable_entities": {
+        "enterprises": 6000,
+        "health_facilities": 1800,
+        "ai_models_production": 25,
+        "supply_chain_tier1_4": 8500
+      },
+      "trust_score_composite": 50,
+      "trust_arbitrage_gap": 28,
+      "burhan_tam_eur": 195000000,
+      "fraud_breakdown": {
+        "health": 18000000,
+        "finance": 28000000,
+        "esg": 8000000,
+        "digital": 11000000
+      },
+      "sources": "KT Press 2025 (Rwf 93B criminal proceeds 2019-2024 = ~$76M), Rwanda ML/TF Risk Assessment 2024, Zawya 2025 (Rwanda ranks poorly in Global Fraud Index), TI CPI 2025 (Rwanda 58), NCSI (Rwanda 65.00), ITU GCI 2024 (estimé 85+)",
+      "notes": "Rwf 93B (€76M) de produits criminels identifiés 2019-2024. Embezzlement 39%, fraude 24%, taxe 20%, cybercrime 13%. Moins de 1% récupéré. CPI élevé (58) pour la région reflétant gouvernance perçue stricte."
+    },
+    {
+      "country": "Tanzanie",
+      "code": "TZ",
+      "detected_fraud_eur": 200000000,
+      "detection_rate": "5%",
+      "estimated_total_fraud_eur": 4000000000,
+      "annual_audit_spend_eur": 55000000,
+      "certifiable_entities": {
+        "enterprises": 8000,
+        "health_facilities": 8500,
+        "ai_models_production": 15,
+        "supply_chain_tier1_4": 18000
+      },
+      "trust_score_composite": 37,
+      "trust_arbitrage_gap": 42,
+      "burhan_tam_eur": 415000000,
+      "fraud_breakdown": {
+        "health": 55000000,
+        "finance": 85000000,
+        "esg": 25000000,
+        "digital": 35000000
+      },
+      "sources": "Zawya/East African 2025 (Tanzania ranks poorly in 2025 Global Fraud Index), Interpol Africa Cyberthreat 2025, TI CPI 2025 (Tanzania 40), NCSI (Tanzania 57.50), ITU GCI 2024 (Tanzania 99.27)",
+      "notes": "Estimé par analogie régionale Est-Africain. Tanzania rank parmi les plus vulnérables à la fraude (Global Fraud Index 2025). GCI score très élevé (99.27) paradoxalement malgré vulnérabilité fraude élevée."
+    },
+    {
+      "country": "Éthiopie",
+      "code": "ET",
+      "detected_fraud_eur": 300000000,
+      "detection_rate": "4%",
+      "estimated_total_fraud_eur": 7500000000,
+      "annual_audit_spend_eur": 40000000,
+      "certifiable_entities": {
+        "enterprises": 7000,
+        "health_facilities": 5500,
+        "ai_models_production": 12,
+        "supply_chain_tier1_4": 15000
+      },
+      "trust_score_composite": 33,
+      "trust_arbitrage_gap": 45,
+      "burhan_tam_eur": 330000000,
+      "fraud_breakdown": {
+        "health": 80000000,
+        "finance": 130000000,
+        "esg": 35000000,
+        "digital": 55000000
+      },
+      "sources": "Interpol Africa Cyberthreat 2025 (Ethiopia among ransomware targets), Zawya 2025 (Ethiopia near bottom Global Fraud Index), TI CPI 2025 (Ethiopia 38), NCSI (Ethiopia 60.00), ITU GCI 2024 (Ethiopia 76.51 - +48.77 growth)",
+      "notes": "Estimé. Éthiopie identifiée parmi les cibles ransomware (Interpol 2025). Forte progression GCI (+48.77 points). Économie en transition avec libéralisation télécom récente augmentant les risques cyber."
+    }
+  ]
+}
