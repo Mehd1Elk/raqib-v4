@@ -108,7 +108,7 @@ export const ThermoView: React.FC = () => {
             backgroundColor: 'rgba(201, 168, 76, 0.05)',
             borderTopRightRadius: CONFIANCE_STYLES.borderRadius,
             borderBottomRightRadius: CONFIANCE_STYLES.borderRadius,
-            padding: '16px', paddingLeft: '20px'
+            padding: '16px 16px 16px 20px'
           }}>
             <h4 style={{ ...CONFIANCE_TYPOGRAPHY.labels, color: CONFIANCE_COLORS.accent.certification, margin: 0 }}>IMPLICATION STRATÉGIQUE</h4>
             <div style={{ ...CONFIANCE_TYPOGRAPHY.subtitles, color: CONFIANCE_COLORS.text.primary, lineHeight: 1.6, fontWeight: 400 }}>

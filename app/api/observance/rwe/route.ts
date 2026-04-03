@@ -7,7 +7,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_rwe_pricing').select('*');
+    let query =     (supabase as any).from('obs_rwe_pricing').select('*');
 
     if (data_category) query = query.eq('data_category', data_category);
     if (buyer) query = query.eq('buyer', buyer);

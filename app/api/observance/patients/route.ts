@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_patients_aggregate').select('*');
+    let query =     (supabase as any).from('obs_patients_aggregate').select('*');
 
     if (country) query = query.eq('country', country);
     if (pathology) query = query.eq('pathology', pathology);

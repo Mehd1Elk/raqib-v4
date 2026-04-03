@@ -7,7 +7,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_molecule_signal_matrix').select('*');
+    let query =     (supabase as any).from('obs_molecule_signal_matrix').select('*');
 
     if (molecule) query = query.eq('molecule', molecule);
     if (signal_type) query = query.eq('signal_type', signal_type);

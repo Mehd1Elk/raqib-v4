@@ -7,7 +7,7 @@ export async function GET(request: Request) {
 
   try {
     const supabase = await createClient();
-    let query = supabase.from('obs_regulations').select('*');
+    let query =     (supabase as any).from('obs_regulations').select('*');
 
     if (jurisdiction) query = query.eq('jurisdiction', jurisdiction);
     if (status) query = query.eq('status', status);
