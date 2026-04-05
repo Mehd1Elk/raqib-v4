@@ -19,6 +19,9 @@ const DiasporaView = React.lazy(() => import('./views/DiasporaView'));
 const NeuroIntentionView = React.lazy(() => import('./views/NeuroIntentionView'));
 const MatriceConversionView = React.lazy(() => import('./views/MatriceConversionView'));
 const CompetitiveLandscapeView = React.lazy(() => import('./views/CompetitiveLandscapeView'));
+const CorridorFlowsView = React.lazy(() => import('./views/CorridorFlowsView'));
+const IntentionMarketplaceView = React.lazy(() => import('./views/IntentionMarketplaceView'));
+const ParadigmComparatorView = React.lazy(() => import('./views/ParadigmComparatorView'));
 
 const TABS = [
   { id: 'observatory', label: 'Observatoire', icon: '◉' },
@@ -37,6 +40,9 @@ const TABS = [
   { id: 'reglementaire', label: 'Cascade Réglementaire', icon: '⊣' },
   { id: 'souverainete', label: 'Indice Souveraineté', icon: '⊤' },
   { id: 'inventaire', label: 'Inventaire Vivant', icon: '⊥' },
+  { id: 'corridor-flows', label: 'Corridor Flows', icon: '⊦' },
+  { id: 'marketplace', label: 'Marketplace', icon: '⊧' },
+  { id: 'paradigm', label: 'Paradigm Comparator', icon: '⊨' },
 ];
 
 const FallbackView = () => (
@@ -79,6 +85,9 @@ export default function IntentionShell() {
       case 'neuro': content = <NeuroIntentionView />; break;
       case 'conversion': content = <MatriceConversionView />; break;
       case 'pionniers': content = <CompetitiveLandscapeView />; break;
+      case 'corridor-flows': content = <CorridorFlowsView />; break;
+      case 'marketplace': content = <IntentionMarketplaceView />; break;
+      case 'paradigm': content = <ParadigmComparatorView />; break;
       default: content = <FallbackView />; break;
     }
     

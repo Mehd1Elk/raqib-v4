@@ -10,6 +10,12 @@ import PharmacogenomicView from './views/PharmacogenomicView';
 import HabitArchitectureView from './views/HabitArchitectureView';
 import ContagionNetworkView from './views/ContagionNetworkView';
 import CaregiverShadowView from './views/CaregiverShadowView';
+import DigitalTwinView from './views/DigitalTwinView';
+import MHFSScoreView from './views/MHFSScoreView';
+import PosologyOptimizationView from './views/PosologyOptimizationView';
+import PrePrescriptionForecastView from './views/PrePrescriptionForecastView';
+import RelapseForensicsView from './views/RelapseForensicsView';
+import MyneIncentiveView from './views/MyneIncentiveView';
 
 const SIDEBAR_TABS = [
   {
@@ -42,6 +48,7 @@ const SIDEBAR_TABS = [
     category: "CONVERGENCE MYNε",
     items: [
       { id: "simulator", label: "Simulateur MYNε", icon: "◊", color: CLINICAL_TEAL_COLORS.purpleMYNE },
+      { id: "incentive", label: "Incentive MYNε", icon: "◈", color: CLINICAL_TEAL_COLORS.purpleMYNE },
       { id: "score", label: "Score MHFS", icon: "★", color: CLINICAL_TEAL_COLORS.goldBURHAN },
     ]
   }
@@ -59,6 +66,12 @@ export default function ObservanceShell() {
       case "habit": return <HabitArchitectureView />;
       case "contagion": return <ContagionNetworkView />;
       case "caregiver": return <CaregiverShadowView />;
+      case "twin": return <DigitalTwinView />;
+      case "score": return <MHFSScoreView />;
+      case "posology": return <PosologyOptimizationView />;
+      case "forecast": return <PrePrescriptionForecastView />;
+      case "forensics": return <RelapseForensicsView />;
+      case "incentive": return <MyneIncentiveView />;
       default: return (
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
