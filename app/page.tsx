@@ -364,6 +364,18 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card OPERATIONS — TAHRIK deep blue/teal */}
+          <a href="/operations" style={{ background: '#0C2EC8', color: '#E8FCFA', padding: 20, textDecoration: 'none', border: '0.5px solid rgba(0,212,192,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#00D4C0', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>TAHRIK · تحريك</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: '#E8FCFA', marginBottom: 6 }}>Opérations Terrain</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(232,252,250,0.55)', marginBottom: 10 }}>
+              Mission Dakhla · 5 contacts · 12 jalons · Roadmap 2026-2027
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#00D4C0', letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE TAHRIK →
+            </div>
+          </a>
+
         </div>
       </div>
 
