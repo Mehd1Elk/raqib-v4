@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
 import dynamic from 'next/dynamic';
-import { Activity } from 'lucide-react';
+import { Activity, Compass } from 'lucide-react';
 import { ENTITIES, PLATFORMS } from '@/lib/constants';
 
 const EigenStream = dynamic(() => import('@/components/stream/EigenStream'), { ssr: false });
@@ -170,7 +170,40 @@ export default function Dashboard() {
 
       {/* ═══ ZONE 2 — NAVIGATION CARDS ═══ */}
       <div style={{ background: N2, borderBottom: `0.5px solid ${DIV}`, padding: '20px 32px', flexShrink: 0 }}>
+        <style dangerouslySetInnerHTML={{__html: `
+          .dastgah-card {
+            transition: border-color 0.4s ease;
+            border: 1px solid #FF535330;
+          }
+          .dastgah-card:hover {
+            border-color: #FF7979 !important;
+          }
+        `}} />
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12 }}>
+
+          {/* Card DASTGAH PREMIUM */}
+          <a href="/dastgah" className="dastgah-card" style={{ gridColumn: 'span 2', background: 'linear-gradient(135deg, #D60000 0%, #AA0000 100%)', color: N, padding: 24, textDecoration: 'none', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            <div style={{ position: 'absolute', top: 24, right: 24, fontFamily: MN, fontSize: 8, color: '#FFA5A5', letterSpacing: 3, textTransform: 'uppercase', padding: '4px 8px', border: '1px solid #FFA5A530', background: 'transparent' }}>
+              Eigen-Powered App
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+              <Compass size={20} color="#FFA5A5" />
+              <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 28, fontStyle: 'italic', color: N, letterSpacing: 2 }}>
+                DAST<span style={{ color: '#FFA5A5' }}>G</span>AH
+              </div>
+            </div>
+            <div style={{ fontFamily: '"DM Sans", sans-serif', fontSize: 13, color: '#FFD9D9', marginBottom: 24 }}>
+              Votre système modal personnel — Graphe culturel vivant
+            </div>
+            <div style={{ display: 'flex', gap: 24, marginTop: 'auto', borderTop: '0.5px solid #FF535330', paddingTop: 16 }}>
+              {[['12', 'Gusheh'], ['4', "Sho'beh"], ['1', 'Owj']].map(([v, l]) => (
+                <div key={l}>
+                  <div style={{ fontFamily: GR, fontSize: 20, fontWeight: 700, color: N }}>{v}</div>
+                  <div style={{ fontFamily: MN, fontSize: 8, color: '#FFD9D9', letterSpacing: 2, textTransform: 'uppercase' }}>{l}</div>
+                </div>
+              ))}
+            </div>
+          </a>
 
           {/* Card COCKPIT EIGEN — prune dark, double height */}
           <a href="/eigen" style={{ gridRow: 'span 2', background: P, color: N, padding: 24, textDecoration: 'none', border: `0.5px solid ${P2}`, display: 'flex', flexDirection: 'column' }}>
