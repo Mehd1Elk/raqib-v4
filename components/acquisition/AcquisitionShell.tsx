@@ -1,7 +1,46 @@
 'use client';
 
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect, lazy, Suspense, Component, type ReactNode, type ErrorInfo } from 'react';
 import { C, GR, SN, MN } from './shared/constants';
+
+class TabErrorBoundary extends Component<
+  { children: ReactNode; onReset: () => void },
+  { error: Error | null }
+> {
+  state: { error: Error | null } = { error: null };
+  static getDerivedStateFromError(error: Error) { return { error }; }
+  componentDidCatch(error: Error, info: ErrorInfo) {
+    console.error('[AcquisitionShell] Tab render error:', error, info.componentStack);
+  }
+  componentDidUpdate(prevProps: { children: ReactNode }) {
+    if (this.state.error && prevProps.children !== this.props.children) {
+      this.setState({ error: null });
+    }
+  }
+  render() {
+    if (this.state.error) {
+      return (
+        <div style={{ padding: 40, fontFamily: '"JetBrains Mono", monospace' }}>
+          <div style={{ fontSize: 11, color: '#B8363E', marginBottom: 12, textTransform: 'uppercase', letterSpacing: 2 }}>
+            Erreur de rendu
+          </div>
+          <pre style={{ fontSize: 10, color: '#1E0A20', background: '#F5F2F8', padding: 16, overflow: 'auto', border: '0.5px solid rgba(30,10,32,0.08)', whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+            {this.state.error.message}
+            {'\n\n'}
+            {this.state.error.stack}
+          </pre>
+          <button
+            onClick={() => { this.setState({ error: null }); this.props.onReset(); }}
+            style={{ marginTop: 16, padding: '8px 20px', border: 'none', background: '#1E0A20', color: '#fff', fontFamily: '"Geist", sans-serif', fontSize: 12, cursor: 'pointer' }}
+          >
+            Recharger l&apos;onglet
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 const TABS = [
   { key: 'dashboard', label: 'Dashboard', icon: '◈', subs: ['Vue globale'] },
@@ -179,11 +218,13 @@ export default function AcquisitionShell() {
 
         {/* Content */}
         <main style={{ flex: 1, overflow: 'auto', background: C.nacre }}>
-          <Suspense fallback={
-            <div style={{ fontFamily: MN, fontSize: 10, color: C.t3, padding: 40, letterSpacing: 2, textTransform: 'uppercase' }}>Chargement...</div>
-          }>
-            <TabContent tab={mainTab} subIdx={subIdx} />
-          </Suspense>
+          <TabErrorBoundary onReset={() => switchTab('dashboard')}>
+            <Suspense fallback={
+              <div style={{ fontFamily: MN, fontSize: 10, color: C.t3, padding: 40, letterSpacing: 2, textTransform: 'uppercase' }}>Chargement...</div>
+            }>
+              <TabContent tab={mainTab} subIdx={subIdx} />
+            </Suspense>
+          </TabErrorBoundary>
         </main>
 
         {/* Footer */}
