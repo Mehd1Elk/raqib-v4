@@ -277,6 +277,18 @@ export default function Dashboard() {
             </div>
           </a>
 
+          {/* Card DASTGAH — Red monochrome, cultural graph */}
+          <a href="/dastgah" style={{ background: '#1A0A0A', color: N, padding: 20, textDecoration: 'none', border: '0.5px solid rgba(214,0,0,0.25)' }}>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#D60000', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>DASTGAH</div>
+            <div style={{ fontFamily: GR, fontSize: 16, color: N, marginBottom: 6 }}>Graphe Culturel Personnel</div>
+            <div style={{ fontFamily: SN, fontSize: 10, color: 'rgba(255,165,165,0.55)', marginBottom: 10 }}>
+              Musique · Cinema · Litterature · Arts · Influences · Cartographie
+            </div>
+            <div style={{ fontFamily: MN, fontSize: 8, color: '#D60000', letterSpacing: 3, textTransform: 'uppercase' }}>
+              MODULE DASTGAH
+            </div>
+          </a>
+
           {/* Card ACQUISITION */}
           <a href="/acquisition" style={{ background: P2, color: N, padding: 20, textDecoration: 'none', border: `0.5px solid rgba(168,125,62,0.25)` }}>
             <div style={{ fontFamily: MN, fontSize: 8, color: '#A87D3E', letterSpacing: 4, textTransform: 'uppercase', marginBottom: 8 }}>ACQUISITION</div>
